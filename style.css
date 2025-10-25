@@ -184,6 +184,12 @@ button:active {
     font-weight: 600;
     color: var(--text-primary);
 }
+.panel-center .panel-header h2 {
+    background: linear-gradient(135deg, #00e1b2, #00c3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.3px;
+}
 
 .btn-collapse {
     background: transparent;
@@ -757,12 +763,25 @@ background: linear-gradient(var(--bg-angle, 135deg), var(--card-bg-a), var(--car
 }
 
 .skill-name {
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: #f8f9ff;
+    letter-spacing: 0.2px;
+    text-shadow:
+      0 1px 0 rgba(0,0,0,0.6),
+      0 2px 6px rgba(0,0,0,0.35),
+      0 0 6px color-mix(in srgb, var(--engine-a) 28%, transparent);
+}
+/* subtle gradient underline accent for engine color identity */
+.skill-name::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 28%;
+    margin-top: 4px;
+    border-radius: 2px;
     background: linear-gradient(90deg, var(--engine-a), var(--engine-b));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
 }
 
 .skill-status {
@@ -814,9 +833,43 @@ background: linear-gradient(var(--bg-angle, 135deg), var(--card-bg-a), var(--car
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.06);
     transition: all var(--transition-smooth);
     cursor: pointer;
+    position: relative; /* anchor for clear button */
+}
+.fusion-slot .slot-skill { position: relative; }
+.fusion-slot .slot-clear {
+    position: absolute; top: 6px; right: 6px;
+    width: 32px; height: 32px;
+    display: grid; place-items: center;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 0;
+    cursor: pointer;
+    z-index: 5;
+    backdrop-filter: blur(6px) saturate(110%);
+    transition: transform 120ms ease, background 150ms ease;
+    touch-action: manipulation;
+}
+.fusion-slot .slot-clear:hover { background: rgba(0,0,0,0.36); }
+.fusion-slot .slot-clear:active { transform: scale(0.92); }
+@media (max-width: 900px){
+  .fusion-slot .slot-clear { width: 36px; height: 36px; font-size: 18px; }
+}
+.fusion-slot.filled {
+    border-style: solid;
+    border-color: rgba(0, 184, 148, 0.6);
+    box-shadow: 0 0 24px rgba(0, 184, 148, 0.25);
+    animation: slot-pop 220ms ease-out;
+}
+@keyframes slot-pop {
+    0% { transform: scale(0.98); }
+    100% { transform: scale(1); }
 }
 
 .fusion-slot:hover {
@@ -840,10 +893,29 @@ background: linear-gradient(var(--bg-angle, 135deg), var(--card-bg-a), var(--car
 #fusion-synergy {
     text-align: center;
     padding: 1rem;
-    background: rgba(0, 184, 148, 0.1);
-    border: 1px solid rgba(0, 184, 148, 0.3);
-    border-radius: 8px;
+    background: rgba(0, 184, 148, 0.06);
+    border: 1px solid rgba(0, 184, 148, 0.25);
+    border-radius: 10px;
     margin-bottom: 1rem;
+}
+.synergy-bar {
+    position: relative;
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+.synergy-bar-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+}
+.synergy-bar-fill {
+    position: absolute; left:0; top:0; bottom:0;
+    width: 0%;
+    background: linear-gradient(90deg, #00e1b2, #00c3ff);
+    box-shadow: 0 0 14px rgba(0, 227, 214, 0.35);
+    transition: width 200ms ease-out;
 }
 
 #synergy-score {
@@ -893,6 +965,10 @@ background: linear-gradient(var(--bg-angle, 135deg), var(--card-bg-a), var(--car
 
 .btn-primary:not(:disabled):hover {
     box-shadow: 0 0 20px var(--glow-energy);
+}
+.btn-primary.ready {
+    box-shadow: 0 0 28px var(--glow-energy), 0 0 12px rgba(0, 227, 214, 0.35);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {

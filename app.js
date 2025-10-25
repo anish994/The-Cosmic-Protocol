@@ -1425,21 +1425,32 @@ function selectSkillForFusion(skill) {
     const placeholder = slotElement.querySelector('.slot-placeholder');
     const skillDisplay = slotElement.querySelector('.slot-skill');
     
+    // mark as filled for visual emphasis
+    slotElement.classList.add('filled');
+    slotElement.classList.remove('charging');
+    
     const engine = ENGINES.find(e => e.id === skill.engine);
     placeholder.style.display = 'none';
     skillDisplay.style.display = 'block';
     skillDisplay.innerHTML = `
-        <div style="text-align: center;">
-            <div style="font-weight: 600; margin-bottom: 0.5rem;">${skill.name}</div>
-            <div style="font-size: 0.85rem; color: #666;">${engine?.icon || ''} ${engine?.name || skill.engine} • Tier ${skill.tier}</div>
-            <div style="margin-top: 0.5rem;">⚡ ${skill.powerScore || skill.power || 0}</div>
+        <div style=\"text-align: center;\">\r
+            <div style=\"font-weight: 600; margin-bottom: 0.5rem;\">${skill.name}</div>
+            <div style=\"font-size: 0.85rem; color: #999;\">${engine?.icon || ''} ${engine?.name || skill.engine} • Tier ${skill.tier}</div>
+            <div style=\"margin-top: 0.5rem;\">⚡ ${skill.powerScore || skill.power || 0}</div>
         </div>
     `;
+    ensureSlotClearButton(currentSlot);
     
     // Check if at least two slots filled
     const hasTwo = (fusionSlots.slot1 && fusionSlots.slot2) || (fusionSlots.slot1 && fusionSlots.slot3) || (fusionSlots.slot2 && fusionSlots.slot3);
     if (hasTwo) {
         calculateFusion();
+    } else {
+        // ensure CTA state updates when only one slot filled
+        const btn = document.getElementById('create-fusion');
+        if (btn){ btn.disabled = true; btn.classList.remove('ready'); }
+        document.getElementById('fusion-synergy').style.display = 'none';
+        document.getElementById('fusion-preview').style.display = 'none';
     }
 }
 
@@ -1509,6 +1520,11 @@ function calculateFusion() {
     const createBtn = document.getElementById('create-fusion');
     createBtn.disabled = seedBalance < seedCost;
     createBtn.textContent = seedBalance < seedCost ? `Need ${seedCost} Seeds` : 'Create Fusion';
+    createBtn.classList.toggle('ready', !createBtn.disabled);
+
+    // Update synergy bar fill
+    const barFill = document.getElementById('synergy-bar-fill');
+    if (barFill) barFill.style.width = `${synergy}%`;
 }
 
 function safeCreateFusionName(skill1, skill2, synergy) {
@@ -1708,10 +1724,55 @@ function createFusion() {
     }
 }
 
+function ensureSlotClearButton(slotNum){
+    try{
+        const slotEl = document.getElementById(`slot-${slotNum}`);
+        if (!slotEl) return;
+        let btn = slotEl.querySelector('.slot-clear');
+        if (!btn){
+            btn = document.createElement('button');
+            btn.className = 'slot-clear';
+            btn.title = 'Remove';
+            btn.textContent = '×';
+            btn.addEventListener('click', (ev)=>{ ev.stopPropagation(); clearSlot(slotNum); });
+            slotEl.appendChild(btn);
+        } else {
+            btn.style.display = 'grid';
+        }
+    }catch(_){ }
+}
+
+function clearSlot(slotNum){
+    try{
+        const key = `slot${slotNum}`;
+        fusionSlots[key] = null;
+        const el = document.getElementById(`slot-${slotNum}`);
+        if (el){
+            el.classList.remove('filled','charging');
+            const ph = el.querySelector('.slot-placeholder');
+            const sk = el.querySelector('.slot-skill');
+            const clr = el.querySelector('.slot-clear');
+            if (ph) ph.style.display = 'block';
+            if (sk) sk.style.display = 'none';
+            if (clr) clr.remove();
+        }
+        const hasTwo = (fusionSlots.slot1 && fusionSlots.slot2) || (fusionSlots.slot1 && fusionSlots.slot3) || (fusionSlots.slot2 && fusionSlots.slot3);
+        if (hasTwo){
+            calculateFusion();
+        } else {
+            const btn = document.getElementById('create-fusion');
+            if (btn){ btn.disabled = true; btn.classList.remove('ready'); }
+            document.getElementById('fusion-synergy').style.display = 'none';
+            document.getElementById('fusion-preview').style.display = 'none';
+        }
+    }catch(e){ console.warn('clearSlot failed', e); }
+}
+
 function clearFusion() {
     fusionSlots = { slot1: null, slot2: null, slot3: null };
     
     document.querySelectorAll('.fusion-slot').forEach(slot => {
+        slot.classList.remove('filled','charging');
         slot.querySelector('.slot-placeholder').style.display = 'block';
         slot.querySelector('.slot-skill').style.display = 'none';
     });
