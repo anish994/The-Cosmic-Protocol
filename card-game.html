@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Clash - Strategic Card Battle</title>
+    <link rel="stylesheet" href="card-game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="player-info opponent">
+                <div class="player-name">Cosmic AI</div>
+                <div class="player-stats">
+                    <span class="lives">❤️ <span id="opponent-lives">2</span></span>
+                    <span class="cards-left">🃏 <span id="opponent-deck-count">10</span></span>
+                </div>
+            </div>
+            <div class="round-info">
+                <div class="round-display">Round <span id="current-round">1</span>/3</div>
+                <div class="scores">
+                    <span class="score opponent-score" id="opponent-score">0</span>
+                    <span class="vs">VS</span>
+                    <span class="score player-score" id="player-score">0</span>
+                </div>
+            </div>
+            <div class="player-info player">
+                <div class="player-name">You</div>
+                <div class="player-stats">
+                    <span class="lives">❤️ <span id="player-lives">2</span></span>
+                    <span class="cards-left">🃏 <span id="player-deck-count">10</span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Board -->
+        <div class="game-board">
+            <!-- Opponent's Battlefield -->
+            <div class="battlefield opponent-field">
+                <div class="row melee" id="opponent-melee" data-row="melee">
+                    <div class="row-label">⚔️ Melee</div>
+                    <div class="card-zone" data-player="opponent" data-row="melee"></div>
+                    <div class="row-total" id="opponent-melee-total">0</div>
+                </div>
+                <div class="row ranged" id="opponent-ranged" data-row="ranged">
+                    <div class="row-label">🏹 Ranged</div>
+                    <div class="card-zone" data-player="opponent" data-row="ranged"></div>
+                    <div class="row-total" id="opponent-ranged-total">0</div>
+                </div>
+                <div class="row siege" id="opponent-siege" data-row="siege">
+                    <div class="row-label">🏰 Siege</div>
+                    <div class="card-zone" data-player="opponent" data-row="siege"></div>
+                    <div class="row-total" id="opponent-siege-total">0</div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="battlefield-divider"></div>
+
+            <!-- Player's Battlefield -->
+            <div class="battlefield player-field">
+                <div class="row siege" id="player-siege" data-row="siege">
+                    <div class="row-label">🏰 Siege</div>
+                    <div class="card-zone" data-player="player" data-row="siege"></div>
+                    <div class="row-total" id="player-siege-total">0</div>
+                </div>
+                <div class="row ranged" id="player-ranged" data-row="ranged">
+                    <div class="row-label">🏹 Ranged</div>
+                    <div class="card-zone" data-player="player" data-row="ranged"></div>
+                    <div class="row-total" id="player-ranged-total">0</div>
+                </div>
+                <div class="row melee" id="player-melee" data-row="melee">
+                    <div class="row-label">⚔️ Melee</div>
+                    <div class="card-zone" data-player="player" data-row="melee"></div>
+                    <div class="row-total" id="player-melee-total">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Hand -->
+        <div class="player-hand-container">
+            <div class="hand-controls">
+                <button id="pass-btn" class="action-btn pass-btn">Pass Round</button>
+                <div class="turn-indicator" id="turn-indicator">Your Turn</div>
+            </div>
+            <div class="player-hand" id="player-hand"></div>
+        </div>
+    </div>
+
+    <!-- Game Overlay -->
+    <div class="game-overlay" id="game-overlay">
+        <div class="overlay-content">
+            <h2 id="overlay-title">Cosmic Clash</h2>
+            <p id="overlay-message">Prepare for battle!</p>
+            <button id="overlay-btn" class="action-btn">Start Game</button>
+        </div>
+    </div>
+
+    <script src="card-game.js"></script>
+</body>
+</html>
