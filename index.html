@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Skill Fusion System</title>
+    <link rel="stylesheet" href="style.css?v=owned1">
+</head>
+<body>
+    <!-- Video Background with 2.5D Effect -->
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="../../pictures and mp4s/game background1.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+    
+    <!-- Main Container -->
+    <div class="fusion-container">
+        <!-- Header -->
+        <header class="fusion-header">
+            <h1>⚡ Skill Fusion System</h1>
+            <div class="header-info">
+                <span class="kp-display">Seeds: <strong id="seed-balance">0</strong></span>
+                <span class="kp-display">KP: <strong id="kp-balance">0</strong></span>
+                <span class="kp-display">Unlocked: <strong id="unlocked-count">0</strong></span>
+                <span class="kp-display">Fused: <strong id="fused-count">0</strong></span>
+                <button id="open-recipes">📜 Saved</button>
+                <button id="open-shop">🛒 Shop</button>
+                <button id="reset-progress" class="btn-danger">Reset</button>
+                <button onclick="window.location.href='../../workshop/index.html'">
+                    🏭️ Workshop
+                </button>
+            </div>
+        </header>
+        
+        <!-- 3-Panel Horizontal Layout -->
+        <main class="fusion-main">
+            
+            <!-- LEFT PANEL: Skill Library -->
+            <section class="panel panel-left">
+                <div class="panel-header">
+                    <h2>📚 Skill Library</h2>
+                    <div class="library-stats">
+                        <span class="stat-badge">🔓 <span id="unlocked-count-lib">0</span></span>
+                        <span class="stat-badge">✨ <span id="fused-count-lib">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="panel-content">
+                    <!-- Advanced Search Bar -->
+                    <div class="search-advanced">
+                        <div class="search-main">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="search" placeholder="Search by name, description, or keyword...">
+                            <button class="search-clear" id="clear-search" style="display:none;">✕</button>
+                        </div>
+                        
+                        <div class="search-filters">
+                            <button class="filter-btn" id="filter-tier-btn" data-active="false">
+                                <span class="filter-icon">🎯</span>
+                                <span class="filter-label">Tier</span>
+                            </button>
+                            <button class="filter-btn" id="filter-sort-btn" data-active="false">
+                                <span class="filter-icon">⬆️</span>
+                                <span class="filter-label">Sort</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Filter Dropdowns (hidden by default) -->
+                        <div class="filter-dropdown" id="tier-dropdown" style="display:none;">
+                            <button class="filter-option" data-tier="all">All Tiers</button>
+                            <button class="filter-option" data-tier="0">Tier 0 - Basic</button>
+                            <button class="filter-option" data-tier="1">Tier 1 - Standard</button>
+                            <button class="filter-option" data-tier="2">Tier 2 - Advanced</button>
+                            <button class="filter-option" data-tier="3">Tier 3 - Ultimate</button>
+                        </div>
+                        
+                        <div class="filter-dropdown" id="sort-dropdown" style="display:none;">
+                            <button class="filter-option" data-sort="name">Name (A-Z)</button>
+                            <button class="filter-option" data-sort="power">Power (High-Low)</button>
+                            <button class="filter-option" data-sort="tier">Tier (High-Low)</button>
+                            <button class="filter-option" data-sort="recent">Recently Added</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Engine Filter Tabs -->
+                    <div class="engine-tabs" id="engine-filters">
+                        <button class="engine-tab active" data-engine="all">
+                            <span class="tab-icon">🌐</span>
+                            <span class="tab-label">All Skills</span>
+                            <span class="tab-count">0</span>
+                        </button>
+                        <button class="engine-tab" data-engine="owned">
+                            <span class="tab-icon">🎁</span>
+                            <span class="tab-label">Owned Skills</span>
+                            <span class="tab-count">0</span>
+                        </button>
+                        <button class="engine-tab" data-engine="fused">
+                            <span class="tab-icon">✨</span>
+                            <span class="tab-label">Fused Skills</span>
+                            <span class="tab-count">0</span>
+                        </button>
+                        <!-- Populated by JS from ENGINES data -->
+                    </div>
+                    
+                    <!-- Skill Grid with Animations -->
+                    <div id="skill-list" class="skill-grid-enhanced">
+                        <!-- Skills populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- CENTER PANEL: Fusion Workshop -->
+            <section class="panel panel-center">
+                <div class="panel-header">
+                    <h2>⚡ Fusion Workshop</h2>
+                </div>
+                
+                <div class="panel-content">
+                    <div class="fusion-slots">
+                        <div class="fusion-slot" id="slot-1" data-slot="1">
+                            <div class="slot-placeholder">Tap to select skill</div>
+                            <div class="slot-skill" style="display:none;"></div>
+                        </div>
+                        <div class="fusion-operator">+</div>
+                        <div class="fusion-slot" id="slot-2" data-slot="2">
+                            <div class="slot-placeholder">Tap to select skill</div>
+                            <div class="slot-skill" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div id="fusion-synergy" style="display:none;">
+                        <p>Synergy: <span id="synergy-score">0</span>%</p>
+                    </div>
+                    <div id="fusion-preview" style="display:none;">
+                        <h3>Preview Result</h3>
+                        <div id="preview-card"></div>
+                    </div>
+                    <div class="fusion-actions">
+                        <button id="clear-fusion" class="btn-secondary">Clear</button>
+                        <button id="create-fusion" class="btn-primary" disabled>Create Fusion</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Shop Modal -->
+    <div id="shop-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div style="padding:1rem 1.5rem;">
+                <h3 style="margin-bottom:0.75rem;">Shop</h3>
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                    <button id="buy-starter-pack" class="btn-primary">Starter Pack — 3 random skills (100 KP)</button>
+                    <button id="buy-engine-pack" class="btn-primary">Engine Pack — 3 skills from active engine (150 KP)</button>
+                </div>
+                <p style="margin-top:0.75rem; color:#aaa; font-size:0.9rem;">Packs unlock new base skills (non-fused). Duplicates are rerolled.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipes Modal -->
+    <div id="recipes-modal" class="modal">
+        <div class="modal-content large">
+            <button class="modal-close">&times;</button>
+            <div style="padding:1rem 1.5rem;">
+                <h3 style="margin-bottom:0.75rem;">Saved Fusions</h3>
+                <div style="display:flex; gap:0.5rem; margin-bottom:0.75rem;">
+                    <button id="copy-recipes" class="btn-secondary">Copy All</button>
+                </div>
+                <div id="recipes-list" class="skill-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Detail Modal -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="detail-content">
+                <!-- Populated by JS -->
+            </div>
+            <div class="modal-actions">
+                <button id="fuse-from-detail" class="btn-primary">Fuse This Skill</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Selector Modal (for fusion workshop) -->
+    <div id="selector-modal" class="modal">
+        <div class="modal-content large">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>Select a Skill for Fusion</h3>
+                <input type="text" id="selector-search" placeholder="Search owned skills...">
+            </div>
+            <div id="selector-engine-filters" class="engine-tabs">
+                <!-- Engine tabs for selector populated by JS -->
+            </div>
+            <div id="selector-list" class="skill-grid-enhanced">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../../shared/skillSystem.js"></script>
+    <script src="data-full.js"></script>
+    <script src="fusionNamer.js"></script>
+    <!-- Lightweight rendering + animation stack -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="effects.js?v=1"></script>
+    <script src="app.js?v=owned3"></script>
+</body>
+</html>
