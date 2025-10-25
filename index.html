@@ -9,7 +9,7 @@
 <body>
     <!-- Video Background with 2.5D Effect -->
     <video class="video-background" autoplay loop muted playsinline>
-        <source src="../../pictures and mp4s/game background1.mp4" type="video/mp4">
+        <source src="assets/background.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
     
@@ -50,36 +50,15 @@
                     <div class="search-advanced">
                         <div class="search-main">
                             <span class="search-icon">🔍</span>
-                            <input type="text" id="search" placeholder="Search by name, description, or keyword...">
+                            <input type="text" id="search" placeholder="Search or type commands e.g. engine:tantra tier:3 sort:power">
                             <button class="search-clear" id="clear-search" style="display:none;">✕</button>
                         </div>
+                        <div id="search-tags" class="search-tags"></div>
+                        <div id="search-suggestions" class="search-suggestions"></div>
+                        <div id="search-quick" class="search-quick"></div>
                         
-                        <div class="search-filters">
-                            <button class="filter-btn" id="filter-tier-btn" data-active="false">
-                                <span class="filter-icon">🎯</span>
-                                <span class="filter-label">Tier</span>
-                            </button>
-                            <button class="filter-btn" id="filter-sort-btn" data-active="false">
-                                <span class="filter-icon">⬆️</span>
-                                <span class="filter-label">Sort</span>
-                            </button>
-                        </div>
-                        
-                        <!-- Filter Dropdowns (hidden by default) -->
-                        <div class="filter-dropdown" id="tier-dropdown" style="display:none;">
-                            <button class="filter-option" data-tier="all">All Tiers</button>
-                            <button class="filter-option" data-tier="0">Tier 0 - Basic</button>
-                            <button class="filter-option" data-tier="1">Tier 1 - Standard</button>
-                            <button class="filter-option" data-tier="2">Tier 2 - Advanced</button>
-                            <button class="filter-option" data-tier="3">Tier 3 - Ultimate</button>
-                        </div>
-                        
-                        <div class="filter-dropdown" id="sort-dropdown" style="display:none;">
-                            <button class="filter-option" data-sort="name">Name (A-Z)</button>
-                            <button class="filter-option" data-sort="power">Power (High-Low)</button>
-                            <button class="filter-option" data-sort="tier">Tier (High-Low)</button>
-                            <button class="filter-option" data-sort="recent">Recently Added</button>
-                        </div>
+                        <!-- Command bar replaces legacy filter buttons -->
+                        <div class="search-filters" style="display:none;"></div>
                     </div>
                     
                     <!-- Engine Filter Tabs -->
@@ -113,6 +92,7 @@
             <section class="panel panel-center">
                 <div class="panel-header">
                     <h2>⚡ Fusion Workshop</h2>
+                    <button id="open-upgrades" class="btn-secondary">⚙️ Upgrades</button>
                 </div>
                 
                 <div class="panel-content">
@@ -126,9 +106,14 @@
                             <div class="slot-placeholder">Tap to select skill</div>
                             <div class="slot-skill" style="display:none;"></div>
                         </div>
+                        <div class="fusion-operator">+</div>
+                        <div class="fusion-slot" id="slot-3" data-slot="3">
+                            <div class="slot-placeholder">(Optional) Catalyst/Third Skill</div>
+                            <div class="slot-skill" style="display:none;"></div>
+                        </div>
                     </div>
                     <div id="fusion-synergy" style="display:none;">
-                        <p>Synergy: <span id="synergy-score">0</span>%</p>
+                        <p>Synergy: <span id="synergy-score">0</span>% • Crit: <span id="crit-chance">0</span>% • Unstable: <span id="unstable-chance">0</span>%</p>
                     </div>
                     <div id="fusion-preview" style="display:none;">
                         <h3>Preview Result</h3>
@@ -136,6 +121,7 @@
                     </div>
                     <div class="fusion-actions">
                         <button id="clear-fusion" class="btn-secondary">Clear</button>
+                        <button id="toggle-catalyst" class="btn-secondary">Apply Catalyst (x0)</button>
                         <button id="create-fusion" class="btn-primary" disabled>Create Fusion</button>
                     </div>
                 </div>
@@ -146,16 +132,17 @@
 
     <!-- Shop Modal -->
     <div id="shop-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content large">
             <button class="modal-close">&times;</button>
-            <div style="padding:1rem 1.5rem;">
-                <h3 style="margin-bottom:0.75rem;">Shop</h3>
-                <div style="display:flex; flex-direction:column; gap:0.5rem;">
-                    <button id="buy-starter-pack" class="btn-primary">Starter Pack — 3 random skills (100 KP)</button>
-                    <button id="buy-engine-pack" class="btn-primary">Engine Pack — 3 skills from active engine (150 KP)</button>
+            <div class="shop-header">
+                <h3>Shop</h3>
+                <div class="shop-balances">
+                    <span>KP: <strong id="shop-kp">0</strong></span>
+                    <span>Seeds: <strong id="shop-seeds">0</strong></span>
                 </div>
-                <p style="margin-top:0.75rem; color:#aaa; font-size:0.9rem;">Packs unlock new base skills (non-fused). Duplicates are rerolled.</p>
             </div>
+            <div class="shop-categories" id="shop-categories"></div>
+            <div id="shop-grid" class="shop-grid"></div>
         </div>
     </div>
 
@@ -201,6 +188,19 @@
             </div>
             <div id="selector-list" class="skill-grid-enhanced">
                 <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Upgrades Modal -->
+    <div id="upgrades-modal" class="modal">
+        <div class="modal-content large">
+            <button class="modal-close">&times;</button>
+            <div style="padding:1rem 1.5rem;">
+                <h3 style="margin-bottom:0.75rem;">Workshop Upgrades</h3>
+                <div id="upgrades-list" class="shop-grid">
+                    <!-- Populated by JS -->
+                </div>
             </div>
         </div>
     </div>
