@@ -417,12 +417,20 @@ function initVirtualGrid() {
 
     function loadMore() {
         const end = Math.min(state.index + BATCH, state.data.length);
+        let inserted = 0;
         for (let i = state.index; i < end; i++) {
             const skill = state.data[i];
             const card = createSkillCard(skill);
             container.insertBefore(card, state.sentinel);
+            inserted++;
         }
         state.index = end;
+        // Fallback: if nothing inserted and we have data, render directly
+        if (inserted === 0 && state.data.length > 0 && container.children.length <= 1) {
+            container.innerHTML = '';
+            state.data.forEach(s => container.appendChild(createSkillCard(s)));
+            return;
+        }
         // trim from top
         if (container.children.length > MAX_NODES) {
             const excess = container.children.length - MAX_NODES;
@@ -452,12 +460,18 @@ function initVirtualGrid() {
 
 // === SKILL RENDERING ===
 function renderSkillList() {
-    if (virtualGrid) {
-        virtualGrid.setData(filteredSkills);
-        return;
-    }
+    try {
+        if (virtualGrid) {
+            virtualGrid.setData(filteredSkills);
+            return;
+        }
+    } catch (e) { console.warn('Virtual grid render failed, falling back', e); }
     const container = document.getElementById('skill-list');
     container.innerHTML = '';
+    if (!filteredSkills || filteredSkills.length === 0) {
+        container.innerHTML = '<div class="empty-state"><p>📭</p><p>No skills to show</p></div>';
+        return;
+    }
     filteredSkills.forEach(skill => container.appendChild(createSkillCard(skill)));
 }
 
@@ -498,7 +512,6 @@ function createSkillCard(skill) {
         <div class="skill-stats">
             <span>⚡ ${computedPower(skill)}</span>
             <span>🕐 ${skill.cooldown}s</span>
-            <span>🌱 ${seedCost} Seeds</span>
             <span>💰 ${skill.cost?.kp || 0} KP</span>
         </div>
     `;
@@ -623,6 +636,9 @@ function openSkillSelector() {
     
     // Prefer owned base skills only (exclude fused)
     const ownedSkills = allSkills.filter(s => s.unlocked && !s.fusionIngredients);
+    if (ownedSkills.length === 0) {
+        alert('No owned skills available. Buy/unlock skills first.');
+    }
     
     const engineContainer = document.getElementById('selector-engine-filters');
     const list = document.getElementById('selector-list');
@@ -786,7 +802,7 @@ function calculateFusion() {
 
     // Generate preview
     const fusedSkill = generateFusedSkill(skill1, skill2, synergy);
-    displayFusionPreview(fusedSkill);
+    displayFusionPreview(fusedSkill, seedCost);
     
     // Enable create button
     const createBtn = document.getElementById('create-fusion');
@@ -866,9 +882,10 @@ function removeSavedRecipe(id){
     if (idx >= 0){ savedRecipes.splice(idx,1); saveSavedRecipes(); }
 }
 
-function displayFusionPreview(skill) {
+function displayFusionPreview(skill, seedCost) {
     const engine = ENGINES.find(e => e.id === skill.engine);
     const preview = document.getElementById('preview-card');
+    const seeds = typeof seedCost === 'number' ? seedCost : 1;
     preview.innerHTML = `
         <div style="text-align: center; margin-bottom: 1rem;">
             <h3 style="margin-bottom: 0.5rem;">${skill.name}</h3>
@@ -879,6 +896,7 @@ function displayFusionPreview(skill) {
         <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
             <span>⚡ ${skill.powerScore || skill.power || 0}</span>
             <span>🕐 ${skill.cooldown}s</span>
+            <span>🌱 ${seeds} Seeds</span>
         </div>
         <div style="font-size: 0.9rem;">
             <strong>Combined Effects:</strong>
@@ -890,7 +908,6 @@ function displayFusionPreview(skill) {
     
     document.getElementById('fusion-preview').style.display = 'block';
 }
-
 function createFusion() {
     try {
         const skill1 = fusionSlots.slot1;
