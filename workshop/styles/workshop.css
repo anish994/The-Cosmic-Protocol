@@ -46,54 +46,11 @@
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: #000;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-}
-
-/* Video Background - Full Visible, Mobile Optimized */
-.video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -3;
-    opacity: 1;
-    filter: brightness(0.95) contrast(1.3) saturate(1.4);
-    animation: videoFloat 25s ease-in-out infinite;
-}
-
-@keyframes videoFloat {
-    0%, 100% {
-        filter: brightness(0.95) contrast(1.3) saturate(1.4);
-    }
-    50% {
-        filter: brightness(1.0) contrast(1.35) saturate(1.5);
-    }
-}
-
-/* Minimal overlay - let video shine through */
-.video-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    background: rgba(0, 0, 0, 0.1);
-    pointer-events: none;
-}
-
-/* Enhanced text shadows for readability over vibrant video */
-body * {
-    text-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.9),
-        0 4px 12px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(0, 0, 0, 0.7);
 }
 
 /* === WORKSHOP CONTAINER === */
