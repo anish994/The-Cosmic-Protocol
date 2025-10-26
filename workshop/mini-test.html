@@ -323,6 +323,37 @@
             filter: brightness(1.2);
         }
         
+        /* Tag Badge System */
+        .tag-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 600;
+            cursor: help;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        
+        .tag-badge:hover {
+            transform: scale(1.08);
+            filter: brightness(1.3);
+            box-shadow: 0 0 8px currentColor;
+        }
+        
+        .tag-info-icon {
+            font-size: 8px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        
+        .tag-badge:hover .tag-info-icon {
+            opacity: 1;
+        }
+        
         /* Info Tooltip System */
         .info-tooltip {
             position: fixed;
@@ -439,6 +470,78 @@
         .house-theme .info-tooltip-title {
             color: #00c3ff;
             animation: textGlow 2.2s infinite;
+        }
+        
+        .tag-theme {
+            border-color: #b894ff;
+            max-width: 400px;
+        }
+        
+        .tag-theme .info-tooltip-title {
+            color: #b894ff;
+            animation: textGlow 2s infinite;
+        }
+        
+        /* Tag tooltip content sections */
+        .tag-section {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .tag-section-title {
+            font-weight: 700;
+            font-size: 11px;
+            margin-bottom: 6px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tag-section-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tag-section-list li {
+            font-size: 12px;
+            line-height: 1.5;
+            padding: 3px 0;
+            opacity: 0.9;
+        }
+        
+        .tag-section-list li::before {
+            content: '• ';
+            color: currentColor;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+        
+        .tag-expand-btn {
+            width: 100%;
+            margin-top: 12px;
+            padding: 8px;
+            background: rgba(184,148,255,0.2);
+            border: 1px solid rgba(184,148,255,0.4);
+            border-radius: 6px;
+            color: #b894ff;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .tag-expand-btn:hover {
+            background: rgba(184,148,255,0.3);
+            border-color: rgba(184,148,255,0.6);
+            transform: scale(1.02);
+        }
+        
+        .tag-expanded .tag-expand-btn {
+            background: rgba(255,80,80,0.2);
+            border-color: rgba(255,80,80,0.4);
+            color: #ff5050;
         }
         
         
@@ -1134,9 +1237,21 @@
                 };
                 
                 keywordContainer.innerHTML = Array.from(allKeywords).map(kw => {
-                    const color = keywordColors[kw] || '#8b5cf6';
-                    return `<span style="background: ${color}33; border: 1px solid ${color}80; color: ${color}; padding: 3px 6px; border-radius: 4px; font-size: 9px; font-weight: 600;">${kw.toUpperCase()}</span>`;
+                    // Get tag data if available, otherwise use default colors
+                    const tagData = TAG_DATA[kw.toLowerCase()];
+                    const color = tagData ? tagData.color : (keywordColors[kw] || '#8b5cf6');
+                    
+                    return `<span class="tag-badge" 
+                                  style="background: ${color}33; border: 1px solid ${color}80; color: ${color};" 
+                                  data-tag="${kw.toLowerCase()}"
+                                  onclick="showTagInfo('${kw.toLowerCase()}'); event.stopPropagation();">
+                        ${kw.toUpperCase()}
+                        <span class="tag-info-icon">ⓘ</span>
+                    </span>`;
                 }).join('');
+                
+                // Reset tag view to short when building new card
+                currentTagView = 'short';
             }
             
             // Detect synergies
@@ -1503,6 +1618,715 @@
             document.addEventListener('dragover', (e) => e.preventDefault());
         }
         
+        // === TAG GLOSSARY DATABASE ===
+        const TAG_DATA = {
+            // === ENGINES (Elemental Types) ===
+            fire: {
+                name: '🔥 Fire',
+                category: 'engine',
+                color: '#ff6464',
+                short: 'Burning damage over time',
+                medium: 'Deals fire damage with burning DoT effects. High burst potential.',
+                detailed: {
+                    description: 'Fire engine skills deal direct damage plus burning effects that tick over time. Excels at sustained damage and area control through burn spreading.',
+                    strengths: ['Strong vs Nature (+25%)', 'Strong vs Ice (+25%)', 'DoT synergy'],
+                    weaknesses: ['Weak vs Water (-25%)', 'Can be cleansed'],
+                    combos: ['Fire + Lightning = Explosion (+50% burst)', 'Fire + Earth = Lava DoT', 'Fire + Wind = Spread burn']
+                }
+            },
+            ice: {
+                name: '❄️ Ice',
+                category: 'engine',
+                color: '#64b4ff',
+                short: 'Slows and freezes enemies',
+                medium: 'Ice damage slows movement and attack speed. Can freeze targets solid.',
+                detailed: {
+                    description: 'Ice engine focuses on crowd control through slows and freezes. Great for kiting and controlling enemy positioning.',
+                    strengths: ['Strong vs Water (+25%)', 'Strong vs Earth (+25%)', 'CC lockdown'],
+                    weaknesses: ['Weak vs Fire (-25%)', 'Bosses resist freeze'],
+                    combos: ['Ice + Water = Blizzard AoE', 'Ice + Dark = Frostbite DoT', 'Ice + Wind = Freeze spread']
+                }
+            },
+            lightning: {
+                name: '⚡ Lightning',
+                category: 'engine',
+                color: '#ffeb64',
+                short: 'Fast chain damage',
+                medium: 'Lightning strikes fast and chains between enemies. High crit chance.',
+                detailed: {
+                    description: 'Lightning engine delivers instant damage with chain mechanics. Highest single-target burst and multi-target potential.',
+                    strengths: ['Strong vs Water (+25%)', 'Strong vs Metal (+25%)', 'Chain hits multiple'],
+                    weaknesses: ['Weak vs Earth (-25%)', 'Random targeting'],
+                    combos: ['Lightning + Fire = Explosion', 'Lightning + Wind = Storm (+30% range)', 'Lightning + Water = Shock AoE']
+                }
+            },
+            water: {
+                name: '💧 Water',
+                category: 'engine',
+                color: '#64c8ff',
+                short: 'Healing and flow',
+                medium: 'Water heals, cleanses, and flows around defenses. Adaptive damage.',
+                detailed: {
+                    description: 'Water engine balances offense and support. Bypasses armor, heals allies, and adapts to situations.',
+                    strengths: ['Strong vs Fire (+25%)', 'Ignores armor', 'Cleanses debuffs'],
+                    weaknesses: ['Weak vs Lightning (-25%)', 'Weak vs Ice (-25%)'],
+                    combos: ['Water + Ice = Blizzard', 'Water + Earth = Mud (slow)', 'Water + Light = Purify']
+                }
+            },
+            earth: {
+                name: '🌍 Earth',
+                category: 'engine',
+                color: '#96c864',
+                short: 'Defense and roots',
+                medium: 'Earth provides shields, roots enemies, and scales with defense.',
+                detailed: {
+                    description: 'Earth engine excels at tanking and controlling space. Roots pin enemies, shields absorb damage.',
+                    strengths: ['Strong vs Lightning (+25%)', 'Strong vs Wind (+25%)', 'High defense scaling'],
+                    weaknesses: ['Weak vs Ice (-25%)', 'Slow animations'],
+                    combos: ['Earth + Fire = Lava DoT', 'Earth + Water = Mud slow', 'Earth + Dark = Decay']
+                }
+            },
+            dark: {
+                name: '🌑 Dark',
+                category: 'engine',
+                color: '#9664c8',
+                short: 'Curses and life drain',
+                medium: 'Dark deals damage and drains life. Applies curses and debuffs.',
+                detailed: {
+                    description: 'Dark engine focuses on debuffs, life-steal, and DoT effects. Self-sustaining through damage dealt.',
+                    strengths: ['Strong vs Light (+25%)', 'Life-steal scaling', 'Stacking curses'],
+                    weaknesses: ['Weak vs Light (-25%)', 'Less burst damage'],
+                    combos: ['Dark + Fire = Hellfire', 'Dark + Ice = Frostbite', 'Dark + Earth = Decay']
+                }
+            },
+            light: {
+                name: '✨ Light',
+                category: 'engine',
+                color: '#ffe664',
+                short: 'Healing and holy damage',
+                medium: 'Light heals allies and deals bonus damage to undead/dark.',
+                detailed: {
+                    description: 'Light engine combines healing and holy damage. Counters dark/undead enemies, provides team support.',
+                    strengths: ['Strong vs Dark (+50%)', 'Heals allies', 'Cleanses curses'],
+                    weaknesses: ['Weak vs Dark (-25%)', 'Lower damage vs normal'],
+                    combos: ['Light + Water = Purify', 'Light + Fire = Holy Fire', 'Light + Wind = Blessing AoE']
+                }
+            },
+            
+            // === TYPES (Skill Categories) ===
+            damage: {
+                name: '💥 Damage',
+                category: 'type',
+                color: '#ff6496',
+                short: 'Hurts enemies',
+                medium: 'Direct damage skills that reduce enemy HP. Core offensive abilities.',
+                detailed: {
+                    description: 'Damage skills are your primary offense. Scales with Power stat and benefits from crits.',
+                    strengths: ['Universal utility', 'Scales with gear', 'Multiple combo options'],
+                    weaknesses: ['Countered by shields', 'Needs accuracy'],
+                    combos: ['Damage + Buff = Enhanced strikes', 'Damage + Debuff = Vulnerable targets']
+                }
+            },
+            heal: {
+                name: '💚 Heal',
+                category: 'type',
+                color: '#64ff96',
+                short: 'Restores HP',
+                medium: 'Healing skills restore health to you or allies. Essential for survival.',
+                detailed: {
+                    description: 'Heal skills keep your team alive. Can target self, single ally, or AoE group healing.',
+                    strengths: ['Sustain in long fights', 'Counters DoT', 'Enables tank builds'],
+                    weaknesses: ['No offensive value', 'Can be interrupted', 'Anti-heal debuffs'],
+                    combos: ['Heal + Shield = Mega defense', 'Heal + Regen = Sustained recovery']
+                }
+            },
+            buff: {
+                name: '⬆️ Buff',
+                category: 'type',
+                color: '#c896ff',
+                short: 'Enhances allies',
+                medium: 'Buffs increase stats like power, speed, or defense temporarily.',
+                detailed: {
+                    description: 'Buff skills multiply your team\'s effectiveness. Stack multiple buffs for exponential gains.',
+                    strengths: ['Force multiplier', 'Stacks with other buffs', 'Team-wide impact'],
+                    weaknesses: ['Temporary duration', 'Can be dispelled', 'No immediate damage'],
+                    combos: ['Buff + Damage = Enhanced burst', 'Multiple buffs = Exponential scaling']
+                }
+            },
+            debuff: {
+                name: '⬇️ Debuff',
+                category: 'type',
+                color: '#ff9664',
+                short: 'Weakens enemies',
+                medium: 'Debuffs reduce enemy stats, making them easier to defeat.',
+                detailed: {
+                    description: 'Debuff skills cripple enemies before they can act. Great setup for burst damage.',
+                    strengths: ['Reduces threat', 'Enables team combos', 'Control difficult enemies'],
+                    weaknesses: ['Can be cleansed', 'Bosses resist', 'No direct damage'],
+                    combos: ['Debuff + Damage = Easy kills', 'Multiple debuffs = Hard CC']
+                }
+            },
+            control: {
+                name: '🎯 Control',
+                category: 'type',
+                color: '#96ffeb',
+                short: 'Stuns and disables',
+                medium: 'Control skills stun, root, or disable enemy actions.',
+                detailed: {
+                    description: 'Control (CC) skills lock down enemies completely. Prevent attacks, abilities, and movement.',
+                    strengths: ['Total shutdown', 'Interrupt abilities', 'Enables escapes'],
+                    weaknesses: ['Diminishing returns', 'Short duration', 'Bosses resist heavily'],
+                    combos: ['Control + Damage = Free hits', 'Control chain = Perma-stun (PvE)']
+                }
+            },
+            
+            // === TRAITS (Special Properties) ===
+            aoe: {
+                name: '💫 AoE',
+                category: 'trait',
+                color: '#b894ff',
+                short: 'Area of Effect',
+                medium: 'Hits multiple enemies in an area. Great for clearing groups.',
+                detailed: {
+                    description: 'AoE skills damage/affect all enemies in a radius. Essential for mob clearing and farming.',
+                    strengths: ['Multi-target damage', 'Farm efficiency', 'Zone control'],
+                    weaknesses: ['Lower single-target DPS', 'Can wake sleeping enemies', 'Friendly fire (sometimes)'],
+                    combos: ['AoE + DoT = Spread damage', 'AoE + Control = Mass CC']
+                }
+            },
+            dot: {
+                name: '🔥 DoT',
+                category: 'trait',
+                color: '#ff8c64',
+                short: 'Damage over Time',
+                medium: 'Deals damage in ticks over several seconds. Stacks for huge damage.',
+                detailed: {
+                    description: 'DoT (Damage over Time) applies ticking damage. Stack multiple DoTs for exponential scaling.',
+                    strengths: ['Scales with stacks', 'Continues while doing other things', 'Ignores one-time shields'],
+                    weaknesses: ['Can be cleansed', 'Delayed damage', 'Needs time to ramp'],
+                    combos: ['DoT + DoT = Mega damage', 'DoT + Slow = Guaranteed ticks']
+                }
+            },
+            instant: {
+                name: '⚡ Instant',
+                category: 'trait',
+                color: '#ffe664',
+                short: 'Immediate effect',
+                medium: 'Activates instantly with no cast time. Cannot be interrupted.',
+                detailed: {
+                    description: 'Instant skills have zero cast time. Perfect for reaction plays and dodging while attacking.',
+                    strengths: ['Cannot be interrupted', 'Use while moving', 'Quick reactions'],
+                    weaknesses: ['Usually lower damage', 'Limited range sometimes'],
+                    combos: ['Instant + High cooldown = Emergency button', 'Multiple instants = Burst rotation']
+                }
+            },
+            channeled: {
+                name: '🌀 Channeled',
+                category: 'trait',
+                color: '#96d4ff',
+                short: 'Must maintain focus',
+                medium: 'Requires continuous casting. Can be interrupted but deals massive damage.',
+                detailed: {
+                    description: 'Channeled skills require standing still and focusing. Highest damage potential but vulnerable.',
+                    strengths: ['Huge damage potential', 'Scaling per second', 'Resource efficient'],
+                    weaknesses: ['Immobile', 'Easily interrupted', 'Dangerous in PvP'],
+                    combos: ['Channeled + Shield = Protected casting', 'Channeled + Slow = Free damage']
+                }
+            },
+            ultimate: {
+                name: '⭐ Ultimate',
+                category: 'trait',
+                color: '#ffd700',
+                short: 'Game-changing power',
+                medium: 'Extremely powerful abilities with long cooldowns. Match-winning potential.',
+                detailed: {
+                    description: 'Ultimate skills are the most powerful abilities in the game. Use wisely for maximum impact.',
+                    strengths: ['Massive impact', 'Turn the tide', 'Guaranteed value'],
+                    weaknesses: ['Very long cooldown', 'High cost', 'One-time use per fight'],
+                    combos: ['Ultimate + Buff = Maximum power', 'Ultimate + Debuff = Guaranteed kill']
+                }
+            },
+            
+            // === ADDITIONAL GAME TAGS ===
+            structure: {
+                name: '🏗️ Structure',
+                category: 'trait',
+                color: '#8db4d2',
+                short: 'Creates physical constructs',
+                medium: 'Summons walls, barriers, or structures. Blocks movement and provides cover.',
+                detailed: {
+                    description: 'Structure skills create physical objects on the battlefield. Use for area denial, protection, or tactical positioning.',
+                    strengths: ['Zone control', 'Blocks projectiles', 'Forces enemy pathing'],
+                    weaknesses: ['Can be destroyed', 'Blocks allies too', 'Limited duration'],
+                    combos: ['Structure + AoE = Protected damage', 'Structure + Control = Complete lockdown']
+                }
+            },
+            silence: {
+                name: '🔇 Silence',
+                category: 'trait',
+                color: '#9b7fb8',
+                short: 'Prevents ability usage',
+                medium: 'Disables enemy skills. They can still move and auto-attack but no abilities.',
+                detailed: {
+                    description: 'Silence is one of the strongest CC effects. Completely shuts down casters and ability-reliant enemies.',
+                    strengths: ['Counters casters', 'Stops combos', 'Interrupt channels'],
+                    weaknesses: ['Short duration', 'Bosses resist', "Doesn't stop autos"],
+                    combos: ['Silence + Burst = Free damage window', 'Silence + Escape = Safe retreat']
+                }
+            },
+            shield: {
+                name: '🛡️ Shield',
+                category: 'trait',
+                color: '#6eb5ff',
+                short: 'Absorbs incoming damage',
+                medium: 'Creates a damage-absorbing barrier. Shield breaks when depleted.',
+                detailed: {
+                    description: 'Shields provide temporary HP that absorbs damage before affecting your real health. Stack multiple shields!',
+                    strengths: ['Extra effective HP', 'Prevents one-shots', 'Stacks with other shields'],
+                    weaknesses: ['Temporary', 'Some attacks pierce shields', 'Can be dispelled'],
+                    combos: ['Shield + Heal = Maximum sustain', 'Multiple shields = Layered defense', 'Shield + Channeled = Protected casting']
+                }
+            },
+            vulnerable: {
+                name: '🎯 Vulnerable',
+                category: 'trait',
+                color: '#ff7b9c',
+                short: 'Increases damage taken',
+                medium: 'Debuff that makes targets take more damage. Essential for burst setups.',
+                detailed: {
+                    description: 'Vulnerable amplifies ALL damage the target takes. Best used right before your team\'s big damage window.',
+                    strengths: ['Force multiplier', 'Team synergy', 'Enables one-shots'],
+                    weaknesses: ['No direct damage', 'Needs follow-up', 'Short window'],
+                    combos: ['Vulnerable + Burst = Huge damage', 'Vulnerable + DoT = Amplified ticks', 'Multiple vulnerable = Exponential damage']
+                }
+            },
+            analyze: {
+                name: '🔍 Analyze',
+                category: 'trait',
+                color: '#7dd8c8',
+                short: 'Reveals weaknesses',
+                medium: 'Scans enemies to reveal weak points and increase crit chance against them.',
+                detailed: {
+                    description: 'Analyze marks enemies with tactical information. Increases crit chance, reveals hidden stats, and helps team focus fire.',
+                    strengths: ['Increased crit chance', 'Reveals enemy info', 'Team coordination'],
+                    weaknesses: ['Takes time to apply', 'No immediate damage', 'Single target usually'],
+                    combos: ['Analyze + Crit build = Massive crits', 'Analyze + Focus fire = Melt priority targets']
+                }
+            },
+            speed: {
+                name: '💨 Speed',
+                category: 'trait',
+                color: '#64ffa8',
+                short: 'Increases movement/attack speed',
+                medium: 'Buffs that increase how fast you move and attack. Essential for DPS.',
+                detailed: {
+                    description: 'Speed buffs make you attack faster, move quicker, and cast abilities sooner. More attacks = more damage!',
+                    strengths: ['More DPS', 'Better positioning', 'Escape/chase potential'],
+                    weaknesses: ['Temporary buff', 'Can be slowed', 'Movement speed capped'],
+                    combos: ['Speed + DoT = Apply stacks faster', 'Speed + Kiting = Untouchable', 'Speed + Instant cast = Machine gun']
+                }
+            },
+            
+            // === BATCH 1: CORE GAMEPLAY TAGS ===
+            flash: {
+                name: '⚡ Flash',
+                category: 'trait',
+                color: '#fff44f',
+                short: 'Instant teleport/dash',
+                medium: 'Blink to target location instantly. Perfect for dodging or engaging.',
+                detailed: {
+                    description: 'Flash skills teleport you instantly to a location. The ultimate mobility tool for clutch plays.',
+                    strengths: ['Instant repositioning', 'Dodge anything', 'Gap closer/escape'],
+                    weaknesses: ['Long cooldown', 'Can\'t pass walls (sometimes)', 'Limited range'],
+                    combos: ['Flash + Burst = Surprise attack', 'Flash + Escape = Safe retreat', 'Flash + AoE = Perfect positioning']
+                }
+            },
+            ward: {
+                name: '👁️ Ward',
+                category: 'trait',
+                color: '#ffd98e',
+                short: 'Provides vision and detection',
+                medium: 'Places a ward that reveals hidden enemies and provides map vision.',
+                detailed: {
+                    description: 'Wards grant vision of an area, revealing stealthed enemies and preventing ambushes.',
+                    strengths: ['Reveals stealth', 'Map awareness', 'Prevents ganks'],
+                    weaknesses: ['Can be destroyed', 'Limited duration', 'Limited quantity'],
+                    combos: ['Ward + Trap = Complete control', 'Multiple wards = Full vision', 'Ward + Team = Coordinated plays']
+                }
+            },
+            strike: {
+                name: '⚔️ Strike',
+                category: 'trait',
+                color: '#ff6b6b',
+                short: 'Quick attack ability',
+                medium: 'Fast, reliable damage. Your bread-and-butter attack.',
+                detailed: {
+                    description: 'Strike abilities are quick, spammable attacks. Lower damage but reliable and fast.',
+                    strengths: ['Low cooldown', 'Reliable damage', 'Easy to land'],
+                    weaknesses: ['Lower damage than finishers', 'No special effects usually'],
+                    combos: ['Strike + Speed = Rapid hits', 'Strike spam = Consistent DPS', 'Strike + On-hit effects = Trigger machine']
+                }
+            },
+            field: {
+                name: '🌐 Field',
+                category: 'trait',
+                color: '#5dade2',
+                short: 'Persistent area effect',
+                medium: 'Creates a zone that affects everyone inside. Lasts multiple turns.',
+                detailed: {
+                    description: 'Field abilities create persistent zones that continuously affect units inside. Great for area control.',
+                    strengths: ['Continuous effect', 'Zone control', 'Forces positioning'],
+                    weaknesses: ['Stationary', 'Can be avoided', 'Resource intensive'],
+                    combos: ['Field + DoT = Constant damage', 'Field + Slow = Trapped enemies', 'Multiple fields = Layered control']
+                }
+            },
+            zone: {
+                name: '🎯 Zone',
+                category: 'trait',
+                color: '#48c9b0',
+                short: 'Area control ability',
+                medium: 'Controls space, forcing enemies to reposition or take penalties.',
+                detailed: {
+                    description: 'Zone abilities dominate areas of the battlefield, denying space and controlling enemy movement.',
+                    strengths: ['Area denial', 'Forces movement', 'Tactical advantage'],
+                    weaknesses: ['Can be played around', 'Limited coverage', 'Setup time'],
+                    combos: ['Zone + AoE = Maximum coverage', 'Zone + Structure = Fortress', 'Zone + DoT = Dangerous area']
+                }
+            },
+            chain: {
+                name: '🔗 Chain',
+                category: 'trait',
+                color: '#a29bfe',
+                short: 'Bounces between targets',
+                medium: 'Hits primary target, then jumps to nearby enemies. Great for groups.',
+                detailed: {
+                    description: 'Chain abilities jump from target to target, spreading damage across multiple enemies efficiently.',
+                    strengths: ['Multi-target damage', 'Efficient vs groups', 'Scales with enemy density'],
+                    weaknesses: ['Less single-target damage', 'Random targeting', 'Range limited'],
+                    combos: ['Chain + Lightning = Storm damage', 'Chain + Debuff = Spread curses', 'Chain + Execute = Multi-kill potential']
+                }
+            },
+            threshold: {
+                name: '⚠️ Threshold',
+                category: 'trait',
+                color: '#e74c3c',
+                short: 'Triggers at HP breakpoints',
+                medium: 'Activates or gains power when target is below certain HP%. Clutch finisher.',
+                detailed: {
+                    description: 'Threshold abilities become stronger or gain effects when targets are low HP. Perfect for securing kills.',
+                    strengths: ['Execute potential', 'Scales with missing HP', 'Clutch plays'],
+                    weaknesses: ['Useless at high HP', 'Wasted if overkill', 'Timing critical'],
+                    combos: ['Threshold + Burst = Guaranteed kill', 'Threshold + Chain = Multi-execute', 'Threshold + Reset = Pentakill']
+                }
+            },
+            finisher: {
+                name: '💀 Finisher',
+                category: 'trait',
+                color: '#c44569',
+                short: 'Execute low-HP enemies',
+                medium: 'Deals massive damage to low-health targets. The killing blow.',
+                detailed: {
+                    description: 'Finisher abilities are designed to secure kills on wounded enemies. Often instakill below certain HP.',
+                    strengths: ['Guaranteed kills', 'Prevents escapes', 'High impact'],
+                    weaknesses: ['Useless vs full HP', 'Wasted if used wrong', 'Long cooldown'],
+                    combos: ['Finisher + Threshold = Double execute', 'Finisher + Vision = No escapes', 'Finisher + Reset = Rampage']
+                }
+            },
+            amplify: {
+                name: '📈 Amplify',
+                category: 'trait',
+                color: '#fd79a8',
+                short: 'Increases effect power',
+                medium: 'Boosts next ability or effect. Multiplies damage/healing/buffs.',
+                detailed: {
+                    description: 'Amplify effects multiply the power of your next action. Essential setup for big plays.',
+                    strengths: ['Force multiplier', 'Enables huge plays', 'Flexible usage'],
+                    weaknesses: ['Setup required', 'Timing matters', 'Needs follow-up'],
+                    combos: ['Amplify + Burst = Massive damage', 'Amplify + Heal = Emergency save', 'Amplify + Ultimate = Game-winning']
+                }
+            },
+            cleanse: {
+                name: '✨ Cleanse',
+                category: 'trait',
+                color: '#74b9ff',
+                short: 'Removes debuffs',
+                medium: 'Purifies negative effects. Counters crowd control and DoTs.',
+                detailed: {
+                    description: 'Cleanse removes debuffs, poisons, curses, and CC. Essential counter to debuff-heavy enemies.',
+                    strengths: ['Counter debuffs', 'Removes CC', 'Saves lives'],
+                    weaknesses: ['Reactive not proactive', 'Can be baited', 'Long cooldown'],
+                    combos: ['Cleanse + Heal = Full recovery', 'Cleanse + Engage = Unstoppable', 'Cleanse + Escape = Safe retreat']
+                }
+            },
+            
+            // === BATCH 2: STRATEGIC & MYSTICAL TAGS ===
+            initiative: {
+                name: '🎯 Initiative',
+                category: 'trait',
+                color: '#f39c12',
+                short: 'Act first in combat',
+                medium: 'Grants priority turn order. Strike before enemies can react.',
+                detailed: {
+                    description: 'Initiative abilities guarantee you act first, allowing preemptive strikes and perfect positioning.',
+                    strengths: ['First strike advantage', 'Prevent enemy setup', 'Control tempo'],
+                    weaknesses: ['No damage bonus', 'Wasted if already fast', 'One-time effect'],
+                    combos: ['Initiative + Burst = Kill before retaliation', 'Initiative + CC = Lock them down first', 'Initiative + Buff = Setup unopposed']
+                }
+            },
+            adapt: {
+                name: '🧠 Adapt',
+                category: 'trait',
+                color: '#3498db',
+                short: 'Changes based on situation',
+                medium: 'Modifies effect based on target or conditions. Flexible and unpredictable.',
+                detailed: {
+                    description: 'Adaptive abilities change their effect based on the situation, countering enemy strategies automatically.',
+                    strengths: ['Always relevant', 'Hard to counter', 'Versatile'],
+                    weaknesses: ['Unpredictable', 'No guaranteed effect', 'Complex'],
+                    combos: ['Adapt + Analyze = Perfect counter', 'Adapt + Multiple enemies = Multi-threat', 'Adapt + AI = Auto-optimize']
+                }
+            },
+            foresight: {
+                name: '🔮 Foresight',
+                category: 'trait',
+                color: '#9b59b6',
+                short: 'Predicts future events',
+                medium: 'Reveals enemy actions before they happen. Perfect preparation.',
+                detailed: {
+                    description: 'Foresight grants knowledge of upcoming events, allowing perfect counterplay and strategic advantage.',
+                    strengths: ['Perfect information', 'Counter enemy plans', 'Avoid traps'],
+                    weaknesses: ['No direct power', 'Needs skill to use info', 'Limited duration'],
+                    combos: ['Foresight + Counter = Perfect defense', 'Foresight + Dodge = Untouchable', 'Foresight + Team = Coordinated domination']
+                }
+            },
+            insight: {
+                name: '💡 Insight',
+                category: 'trait',
+                color: '#e67e22',
+                short: 'Reveals hidden information',
+                medium: 'Uncovers secrets, weaknesses, and tactical data. Knowledge is power.',
+                detailed: {
+                    description: 'Insight reveals hidden stats, weak points, and tactical information about enemies and situations.',
+                    strengths: ['Information advantage', 'Find weaknesses', 'Better decisions'],
+                    weaknesses: ['No immediate combat value', 'Requires interpretation', 'Can overwhelm with data'],
+                    combos: ['Insight + Exploit = Maximum damage', 'Insight + Share = Team advantage', 'Insight + Database = Complete intel']
+                }
+            },
+            flow: {
+                name: '🌀 Flow',
+                category: 'trait',
+                color: '#1abc9c',
+                short: 'Momentum-based power',
+                medium: 'Gains strength from continuous action. Chain skills together smoothly.',
+                detailed: {
+                    description: 'Flow abilities build power through consecutive actions, rewarding skilled combos and sustained pressure.',
+                    strengths: ['Scales with combos', 'Smooth rotations', 'Momentum advantage'],
+                    weaknesses: ['Needs setup', 'Interrupted easily', 'Reset on break'],
+                    combos: ['Flow + Low CD = Infinite combos', 'Flow + Speed = Unstoppable', 'Flow state + Concentration = Zone mode']
+                }
+            },
+            invoke: {
+                name: '🙏 Invoke',
+                category: 'trait',
+                color: '#f1c40f',
+                short: 'Calls upon higher powers',
+                medium: 'Channels divine or cosmic energy. Massive but costly.',
+                detailed: {
+                    description: 'Invoke abilities call upon external powers - deities, spirits, or cosmic forces - for overwhelming strength.',
+                    strengths: ['Massive power boost', 'Unique effects', 'Game-changing'],
+                    weaknesses: ['High cost', 'Long cooldown', 'Can be risky'],
+                    combos: ['Invoke + Ritual = Maximum power', 'Invoke + Sacrifice = Desperate play', 'Invoke + Alignment = Perfect timing']
+                }
+            },
+            divine: {
+                name: '✨ Divine',
+                category: 'trait',
+                color: '#ffd700',
+                short: 'Holy/celestial power',
+                medium: 'Blessed by higher powers. Extra effective vs darkness and evil.',
+                detailed: {
+                    description: 'Divine abilities carry holy power, dealing bonus damage to dark/undead enemies and providing sacred protection.',
+                    strengths: ['vs Dark (+50%)', 'vs Undead (+50%)', 'Cannot be cursed'],
+                    weaknesses: ['Weaker vs normal enemies', 'Can be profaned', 'Faith-dependent'],
+                    combos: ['Divine + Light = Holy nuke', 'Divine + Heal = Miracle recovery', 'Divine + Cleanse = Purification']
+                }
+            },
+            harmony: {
+                name: '☯️ Harmony',
+                category: 'trait',
+                color: '#16a085',
+                short: 'Balance and synergy',
+                medium: 'Creates balance between elements. Enhances when diverse skills combine.',
+                detailed: {
+                    description: 'Harmony abilities promote balance and synergy, gaining power from diverse team compositions and mixed elements.',
+                    strengths: ['Rewards diversity', 'Team synergy', 'Stable power'],
+                    weaknesses: ['Needs variety', 'Complex optimization', 'No solo power spike'],
+                    combos: ['Harmony + Mixed elements = Balanced team', 'Harmony + Different roles = Perfect comp', 'Harmony + Diversity = Unity bonus']
+                }
+            },
+            balance: {
+                name: '⚖️ Balance',
+                category: 'trait',
+                color: '#95a5a6',
+                short: 'Equalizes or stabilizes',
+                medium: 'Brings things to equilibrium. Neutralizes extremes.',
+                detailed: {
+                    description: 'Balance abilities equalize disparities, countering extreme builds and creating stable conditions.',
+                    strengths: ['Counters cheese', 'Stabilizes fights', 'Fair trades'],
+                    weaknesses: ['Hurts your own extremes', 'Passive effect', 'No burst potential'],
+                    combos: ['Balance + Tank = Equalizer', 'Balance + Trade = Fair fight', 'Balance + Sustain = Outlast cheese']
+                }
+            },
+            revelation: {
+                name: '📜 Revelation',
+                category: 'trait',
+                color: '#8e44ad',
+                short: 'Unveils hidden truths',
+                medium: 'Reveals secrets and unlocks hidden potential. Knowledge breakthrough.',
+                detailed: {
+                    description: 'Revelation abilities unveil hidden mechanics, secret weaknesses, and unlock dormant powers.',
+                    strengths: ['Unlock secrets', 'Discover mechanics', 'Hidden power'],
+                    weaknesses: ['Random discoveries', 'Not always useful', 'Requires exploration'],
+                    combos: ['Revelation + Insight = Complete knowledge', 'Revelation + Experiment = Innovation', 'Revelation + Archive = Mastery']
+                }
+            },
+            
+            // === BATCH 3: FINAL CORE TAGS ===
+            pacify: {
+                name: '🕊️ Pacify',
+                category: 'trait',
+                color: '#d4a5a5',
+                short: 'Reduces aggression',
+                medium: 'Calms enemies, reducing their attack power and willingness to fight.',
+                detailed: {
+                    description: 'Pacify abilities reduce enemy aggression and combat effectiveness, making them less threatening.',
+                    strengths: ['Reduces damage taken', 'De-escalates fights', 'Stacks with other debuffs'],
+                    weaknesses: ['Doesn\'t prevent attacks', 'Broken by damage', 'Bosses resist'],
+                    combos: ['Pacify + Negotiate = Avoid combat', 'Pacify + Tank = Safe frontline', 'Pacify + Escape = Safe withdrawal']
+                }
+            },
+            calm: {
+                name: '🌿 Calm',
+                category: 'trait',
+                color: '#a8d5ba',
+                short: 'Soothes and relaxes',
+                medium: 'Removes negative mental states. Restores clarity and focus.',
+                detailed: {
+                    description: 'Calm abilities restore mental equilibrium, removing fear, rage, confusion, and panic effects.',
+                    strengths: ['Counter mental debuffs', 'Restore focus', 'Team morale'],
+                    weaknesses: ['No offensive value', 'Preventable is better', 'Short duration'],
+                    combos: ['Calm + Meditation = Deep focus', 'Calm + Cleanse = Full clarity', 'Calm + Team = Coordinated recovery']
+                }
+            },
+            structures: {
+                name: '🏛️ Structures',
+                category: 'trait',
+                color: '#7d8fa3',
+                short: 'Multiple constructs',
+                medium: 'Creates several physical structures at once. Complex battlefield control.',
+                detailed: {
+                    description: 'Structures (plural) deploy multiple constructs simultaneously, creating complex defensive or offensive formations.',
+                    strengths: ['Multi-point control', 'Complex setups', 'Hard to destroy all'],
+                    weaknesses: ['High cost', 'Setup time', 'Can block allies'],
+                    combos: ['Structures + Formation = Fortress', 'Structures + Traps = Maze', 'Structures + Cover = Unbreakable defense']
+                }
+            },
+            truth: {
+                name: '⚔️ Truth',
+                category: 'trait',
+                color: '#daa520',
+                short: 'Absolute reality',
+                medium: 'Cannot be negated or denied. Pure damage that ignores defenses.',
+                detailed: {
+                    description: 'Truth damage represents absolute reality - it cannot be blocked, dodged, or reduced. What is, is.',
+                    strengths: ['Ignores all defenses', 'Cannot be negated', 'Guaranteed damage'],
+                    weaknesses: ['Usually lower base damage', 'High cost', 'Rare effect'],
+                    combos: ['Truth + Execute = Guaranteed kill', 'Truth + Amplify = Unstoppable nuke', 'Truth + Multi-hit = Unavoidable DPS']
+                }
+            },
+            mark: {
+                name: '🎯 Mark',
+                category: 'trait',
+                color: '#e74c3c',
+                short: 'Tags target for focus',
+                medium: 'Marks enemy for team focus. Everyone deals bonus damage to marked targets.',
+                detailed: {
+                    description: 'Mark abilities tag enemies, making them take increased damage from all sources and easier to track.',
+                    strengths: ['Team damage multiplier', 'Track target', 'Focus fire'],
+                    weaknesses: ['Needs team coordination', 'Single target', 'Can be cleansed'],
+                    combos: ['Mark + Burst = Delete target', 'Mark + Team = Coordinated kill', 'Mark + Vision = No escape']
+                }
+            },
+            enemies: {
+                name: '👿 Enemies',
+                category: 'trait',
+                color: '#c0392b',
+                short: 'Anti-enemy specialization',
+                medium: 'Deals extra damage or effects specifically against hostile targets.',
+                detailed: {
+                    description: 'Enemies tag indicates abilities that specifically target hostile units with enhanced effectiveness.',
+                    strengths: ['Bonus vs hostiles', 'Combat-focused', 'Scaling damage'],
+                    weaknesses: ['Useless outside combat', 'No utility', 'One-dimensional'],
+                    combos: ['Enemies + AoE = Mass damage', 'Enemies + Scan = Hunt all', 'Enemies + Vengeance = Escalation']
+                }
+            },
+            authority: {
+                name: '👑 Authority',
+                category: 'trait',
+                color: '#af7ac5',
+                short: 'Command and dominate',
+                medium: 'Assert dominance. Enemies respect or fear your power.',
+                detailed: {
+                    description: 'Authority abilities command respect and obedience, forcing enemies to acknowledge your power.',
+                    strengths: ['Intimidate enemies', 'Control minions', 'Leadership bonus'],
+                    weaknesses: ['Doesn\'t work on fearless', 'Can be challenged', 'Requires presence'],
+                    combos: ['Authority + Summons = Loyal army', 'Authority + Buff = Inspired troops', 'Authority + Dominate = Complete control']
+                }
+            },
+            regen: {
+                name: '💚 Regen',
+                category: 'trait',
+                color: '#52c41a',
+                short: 'Heal over time',
+                medium: 'Restores health gradually over multiple turns. Sustain powerhouse.',
+                detailed: {
+                    description: 'Regen (regeneration) heals you continuously over time, providing incredible sustain in prolonged fights.',
+                    strengths: ['Continuous healing', 'Outlast enemies', 'Stacks with other regen'],
+                    weaknesses: ['Slow healing', 'Can be overwhelmed', 'Anti-heal counters it'],
+                    combos: ['Regen + Tank = Unkillable', 'Multiple regen = Immortal', 'Regen + Time = Outlast everything']
+                }
+            },
+            summon: {
+                name: '👾 Summon',
+                category: 'trait',
+                color: '#9c27b0',
+                short: 'Calls allies/creatures',
+                medium: 'Brings forth minions, allies, or creatures to fight for you.',
+                detailed: {
+                    description: 'Summon abilities call forth entities to aid in battle, providing extra damage, tanking, or utility.',
+                    strengths: ['Extra units', 'Soak damage', 'Multi-tasking'],
+                    weaknesses: ['Can be killed', 'Splits resources', 'Limited duration'],
+                    combos: ['Summon + Buff = Army boost', 'Summon + Sacrifice = Fuel for power', 'Multiple summons = Overwhelming force']
+                }
+            },
+            ritual: {
+                name: '🕯️ Ritual',
+                category: 'trait',
+                color: '#6a1b9a',
+                short: 'Complex preparation spell',
+                medium: 'Requires setup but delivers massive effects. High risk, high reward.',
+                detailed: {
+                    description: 'Ritual abilities require preparation time or specific conditions but deliver overwhelming power when completed.',
+                    strengths: ['Massive power', 'Game-changing effects', 'Strategic depth'],
+                    weaknesses: ['Setup time', 'Can be interrupted', 'Vulnerable during cast'],
+                    combos: ['Ritual + Protection = Safe casting', 'Ritual + Team = Coordinated setup', 'Ritual + Invoke = Divine intervention']
+                }
+            }
+        };
+        
+        // Log tag database on init for testing
+        console.log('🏷️ Tag Database loaded:', Object.keys(TAG_DATA).length, 'tags');
+        
         // === INFO TOOLTIP SYSTEM ===
         const INFO_DATA = {
             power: {
@@ -1621,14 +2445,103 @@
             document.getElementById('info-title').textContent = data.title;
             document.getElementById('info-desc').textContent = data.desc;
             
-            // Remove all theme classes
+            // Remove all theme classes and expansion
             tooltip.className = 'info-tooltip';
             // Add specific theme
             tooltip.classList.add(data.theme, 'active');
         }
         
+        // === TAG TOOLTIP SYSTEM ===
+        let currentTagView = 'short'; // short, medium, or detailed
+        
+        function showTagInfo(tagKey) {
+            const tagData = TAG_DATA[tagKey];
+            if (!tagData) {
+                console.warn('⚠️ Tag not found:', tagKey);
+                return;
+            }
+            
+            const tooltip = document.getElementById('info-tooltip');
+            const titleEl = document.getElementById('info-title');
+            const descEl = document.getElementById('info-desc');
+            
+            // Set title
+            titleEl.textContent = tagData.name;
+            
+            // Build content based on current view
+            let content = '';
+            
+            if (currentTagView === 'short') {
+                // Just the one-liner
+                content = tagData.short;
+            } else if (currentTagView === 'medium') {
+                // 2-3 lines with basic info
+                content = tagData.medium;
+            } else if (currentTagView === 'detailed') {
+                // Full sections with combos
+                const det = tagData.detailed;
+                content = det.description;
+                
+                // Add sections
+                if (det.strengths && det.strengths.length > 0) {
+                    content += '\n\n💪 STRENGTHS:\n' + det.strengths.map(s => '• ' + s).join('\n');
+                }
+                
+                if (det.weaknesses && det.weaknesses.length > 0) {
+                    content += '\n\n⚠️ WEAKNESSES:\n' + det.weaknesses.map(w => '• ' + w).join('\n');
+                }
+                
+                if (det.combos && det.combos.length > 0) {
+                    content += '\n\n⚡ COMBOS:\n' + det.combos.map(c => '• ' + c).join('\n');
+                }
+            }
+            
+            descEl.textContent = content;
+            
+            // Add expand/collapse button if not in detailed view
+            if (currentTagView !== 'detailed') {
+                const expandBtn = document.createElement('button');
+                expandBtn.className = 'tag-expand-btn';
+                expandBtn.textContent = currentTagView === 'short' ? '📖 Show More' : '📚 Full Details';
+                expandBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    if (currentTagView === 'short') {
+                        currentTagView = 'medium';
+                    } else {
+                        currentTagView = 'detailed';
+                    }
+                    showTagInfo(tagKey); // Refresh with new view
+                };
+                descEl.appendChild(document.createElement('br'));
+                descEl.appendChild(expandBtn);
+            } else {
+                // Add collapse button
+                const collapseBtn = document.createElement('button');
+                collapseBtn.className = 'tag-expand-btn';
+                collapseBtn.textContent = '🔼 Show Less';
+                collapseBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    currentTagView = 'short';
+                    showTagInfo(tagKey);
+                };
+                descEl.appendChild(document.createElement('br'));
+                descEl.appendChild(collapseBtn);
+            }
+            
+            // Apply tag theme
+            tooltip.className = 'info-tooltip';
+            tooltip.classList.add('tag-theme', 'active');
+            if (currentTagView === 'detailed') {
+                tooltip.classList.add('tag-expanded');
+            }
+            
+            console.log('🏷️ Showing tag:', tagData.name, '- View:', currentTagView);
+        }
+        
         function closeInfo() {
-            document.getElementById('info-tooltip').classList.remove('active');
+            const tooltip = document.getElementById('info-tooltip');
+            tooltip.classList.remove('active');
+            tooltip.classList.remove('tag-expanded'); // Reset expansion state
         }
         
         // Close on escape key
