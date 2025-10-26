@@ -825,13 +825,13 @@
         }
         
         .nakshatra-info-header {
-            padding: 10px 12px;
+            padding: 6px 10px;
             background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(0,227,214,0.2));
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
         }
         
         .nakshatra-info-header:hover {
@@ -839,16 +839,16 @@
         }
         
         .nakshatra-info-title {
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 600;
             color: #00e3d6;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
         .nakshatra-expand-icon {
-            font-size: 14px;
+            font-size: 10px;
             transition: transform 0.3s ease;
             color: #b894ff;
         }
@@ -928,6 +928,254 @@
             opacity: 0.8;
             white-space: nowrap;
         }
+        
+        /* Astrological Info Container */
+        .astro-info-container {
+            margin-top: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .astro-info-container.view-all {
+            grid-template-columns: 1fr;
+        }
+        
+        .view-toggle-bar {
+            margin-top: 4px;
+            padding: 3px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .view-toggle-btn {
+            padding: 3px 8px;
+            background: rgba(139,92,246,0.15);
+            border: 1px solid rgba(139,92,246,0.25);
+            border-radius: 4px;
+            color: #b894ff;
+            font-size: 9px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        
+        .view-toggle-btn:hover {
+            background: rgba(139,92,246,0.3);
+            border-color: rgba(139,92,246,0.5);
+        }
+        
+        .view-toggle-btn.active {
+            background: rgba(139,92,246,0.4);
+            border-color: rgba(139,92,246,0.6);
+            color: #00e3d6;
+        }
+        
+        /* Lagna Info Dropdown */
+        .lagna-info-panel {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(139,92,246,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Element-based theming for Lagna */
+        .lagna-info-panel[data-element="fire"] {
+            border-color: rgba(255,140,0,0.3);
+        }
+        
+        .lagna-info-panel[data-element="fire"] .lagna-info-header {
+            background: linear-gradient(135deg, rgba(255,140,0,0.2), rgba(255,69,0,0.2));
+        }
+        
+        .lagna-info-panel[data-element="fire"] .lagna-info-title {
+            color: #ff8c00;
+        }
+        
+        .lagna-info-panel[data-element="earth"] {
+            border-color: rgba(34,139,34,0.3);
+        }
+        
+        .lagna-info-panel[data-element="earth"] .lagna-info-header {
+            background: linear-gradient(135deg, rgba(34,139,34,0.2), rgba(107,142,35,0.2));
+        }
+        
+        .lagna-info-panel[data-element="earth"] .lagna-info-title {
+            color: #6b8e23;
+        }
+        
+        .lagna-info-panel[data-element="air"] {
+            border-color: rgba(135,206,250,0.3);
+        }
+        
+        .lagna-info-panel[data-element="air"] .lagna-info-header {
+            background: linear-gradient(135deg, rgba(135,206,250,0.2), rgba(0,191,255,0.2));
+        }
+        
+        .lagna-info-panel[data-element="air"] .lagna-info-title {
+            color: #87ceeb;
+        }
+        
+        .lagna-info-panel[data-element="water"] {
+            border-color: rgba(70,130,180,0.3);
+        }
+        
+        .lagna-info-panel[data-element="water"] .lagna-info-header {
+            background: linear-gradient(135deg, rgba(70,130,180,0.2), rgba(25,25,112,0.2));
+        }
+        
+        .lagna-info-panel[data-element="water"] .lagna-info-title {
+            color: #4682b4;
+        }
+        
+        .lagna-info-header {
+            padding: 6px 10px;
+            background: linear-gradient(135deg, rgba(255,140,0,0.2), rgba(139,92,246,0.2));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        
+        .lagna-info-header:hover {
+            background: linear-gradient(135deg, rgba(255,140,0,0.3), rgba(139,92,246,0.3));
+        }
+        
+        .lagna-info-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #ffa500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .lagna-expand-icon {
+            font-size: 10px;
+            transition: transform 0.3s ease;
+            color: #b894ff;
+        }
+        
+        .lagna-info-panel.expanded .lagna-expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .lagna-info-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+            padding: 0 12px;
+        }
+        
+        .lagna-info-panel.expanded .lagna-info-body {
+            max-height: 900px;
+            padding: 12px;
+        }
+        
+        .lagna-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .lagna-stat-box {
+            background: rgba(255,140,0,0.05);
+            border: 1px solid rgba(255,140,0,0.2);
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .lagna-stat-label {
+            font-size: 9px;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .lagna-stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffa500;
+            margin-top: 4px;
+        }
+        
+        .lagna-section {
+            margin-bottom: 12px;
+        }
+        
+        .lagna-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #b894ff;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        
+        .lagna-passive-item {
+            background: rgba(139,92,246,0.1);
+            border-left: 3px solid rgba(139,92,246,0.5);
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+        
+        .lagna-passive-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: #00e3d6;
+            margin-bottom: 3px;
+        }
+        
+        .lagna-passive-desc {
+            font-size: 10px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
+        }
+        
+        .lagna-synergy-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .lagna-synergy-tag {
+            padding: 3px 6px;
+            background: rgba(0,227,214,0.08);
+            border: 1px solid rgba(0,227,214,0.25);
+            border-radius: 10px;
+            font-size: 10px;
+            color: #00e3d6;
+            font-weight: 600;
+        }
+        
+        /* Strategic tag colors (used in text highlights and chips) */
+        .tag { padding: 1px 5px; border-radius: 8px; font-weight: 700; font-size: 10px; white-space: nowrap; }
+        .tag-power { color: #ff7b5a; background: rgba(255,123,90,0.12); border: 1px solid rgba(255,123,90,0.3); }
+        .tag-speed { color: #00e3d6; background: rgba(0,227,214,0.12); border: 1px solid rgba(0,227,214,0.3); }
+        .tag-defense { color: #64a2ff; background: rgba(100,162,255,0.12); border: 1px solid rgba(100,162,255,0.3); }
+        .tag-crit { color: #ff79c6; background: rgba(255,121,198,0.12); border: 1px solid rgba(255,121,198,0.3); }
+        .tag-dot { color: #b794f4; background: rgba(183,148,244,0.12); border: 1px solid rgba(183,148,244,0.3); }
+        .tag-heal { color: #6ee7b7; background: rgba(110,231,183,0.12); border: 1px solid rgba(110,231,183,0.3); }
+        .tag-shield { color: #86efac; background: rgba(134,239,172,0.12); border: 1px solid rgba(134,239,172,0.3); }
+        .tag-cc { color: #fbbf24; background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.3); }
+        .tag-ranged { color: #f59e0b; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3); }
+        .tag-stealth { color: #9ca3af; background: rgba(156,163,175,0.12); border: 1px solid rgba(156,163,175,0.3); }
+        .tag-magic { color: #8b5cf6; background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.3); }
+        .tag-bleed { color: #ef4444; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); }
+        .tag-lightning { color: #60a5fa; background: rgba(96,165,250,0.12); border: 1px solid rgba(96,165,250,0.3); }
+        .tag-aoe { color: #fb923c; background: rgba(251,146,60,0.12); border: 1px solid rgba(251,146,60,0.3); }
+        .tag-fire { color: #ff8c00; background: rgba(255,140,0,0.12); border: 1px solid rgba(255,140,0,0.3); }
+        .tag-earth { color: #6b8e23; background: rgba(107,142,35,0.12); border: 1px solid rgba(107,142,35,0.3); }
+        .tag-air { color: #87ceeb; background: rgba(135,206,235,0.12); border: 1px solid rgba(135,206,235,0.3); }
+        .tag-water { color: #4682b4; background: rgba(70,130,180,0.12); border: 1px solid rgba(70,130,180,0.3); }
     </style>
 </head>
 <body>
@@ -972,7 +1220,64 @@
                     <option value="11">Aquarius ♒ - Air</option>
                     <option value="12">Pisces ♓ - Water</option>
                 </select>
+            </div>
+            
+            <!-- View Toggle Bar -->
+            <div class="view-toggle-bar">
+                <button class="view-toggle-btn active" onclick="setViewMode('separate')">⚙️ Separate View</button>
+                <button class="view-toggle-btn" onclick="setViewMode('all')">🌌 View All</button>
+            </div>
+            
+            <!-- Astrological Info Container (Side by Side) -->
+            <div class="astro-info-container" id="astro-info-container">
+                <!-- Lagna Info Dropdown -->
+                <div class="lagna-info-panel" id="lagna-info-panel">
+                    <div class="lagna-info-header" onclick="toggleLagnaInfo()">
+                        <div class="lagna-info-title">
+                            <span>🌅</span>
+                            <span id="lagna-title-display">Aries ♈ - Fire Sign</span>
+                        </div>
+                        <div class="lagna-expand-icon">▼</div>
+                    </div>
+                    <div class="lagna-info-body">
+                        <!-- Stats Grid -->
+                        <div class="lagna-stat-grid" id="lagna-stat-grid"></div>
+                        
+                        <!-- Passives Section -->
+                        <div class="lagna-section">
+                            <div class="lagna-section-title">⚔️ Sign Passives</div>
+                            <div id="lagna-passives-list"></div>
+                        </div>
+                        
+                        <!-- Synergies Section -->
+                        <div class="lagna-section">
+                            <div class="lagna-section-title">🔗 Elemental Synergies</div>
+                            <div class="lagna-synergy-tags" id="lagna-synergy-tags"></div>
+                        </div>
+                        
+                        <!-- Strategic Note -->
+                        <div class="nakshatra-description" id="lagna-strategy"></div>
+                    </div>
+                </div>
                 
+                <!-- Nakshatra Info Dropdown -->
+                <div class="nakshatra-info-panel" id="nakshatra-info-panel">
+                    <div class="nakshatra-info-header" onclick="toggleNakshatraInfo()">
+                        <div class="nakshatra-info-title">
+                            <span>⭐</span>
+                            <span id="nakshatra-title-display">Ashwini (1st Pada)</span>
+                        </div>
+                        <div class="nakshatra-expand-icon">▼</div>
+                    </div>
+                    <div class="nakshatra-info-body">
+                        <div class="nakshatra-detail-grid" id="nakshatra-detail-grid">
+                            <!-- Details populated by JS -->
+                        </div>
+                        <div class="nakshatra-description" id="nakshatra-description">
+                            <!-- Description populated by JS -->
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Lean Degree Scale -->
@@ -987,25 +1292,6 @@
                     <span id="current-degree-display">0°</span>
                     <span style="opacity: 0.6;">•</span>
                     <span id="current-sign-display">Aries ♈</span>
-                </div>
-            </div>
-            
-            <!-- Nakshatra Info Dropdown -->
-            <div class="nakshatra-info-panel" id="nakshatra-info-panel">
-                <div class="nakshatra-info-header" onclick="toggleNakshatraInfo()">
-                    <div class="nakshatra-info-title">
-                        <span>⭐</span>
-                        <span id="nakshatra-title-display">Ashwini (1st Pada)</span>
-                    </div>
-                    <div class="nakshatra-expand-icon">▼</div>
-                </div>
-                <div class="nakshatra-info-body">
-                    <div class="nakshatra-detail-grid" id="nakshatra-detail-grid">
-                        <!-- Details populated by JS -->
-                    </div>
-                    <div class="nakshatra-description" id="nakshatra-description">
-                        <!-- Description populated by JS -->
-                    </div>
                 </div>
             </div>
             
@@ -1400,6 +1686,262 @@
             }
         }
         
+        // === LAGNA DROPDOWN FUNCTIONS ===
+        function toggleLagnaInfo() {
+            const panel = document.getElementById('lagna-info-panel');
+            if (panel) {
+                panel.classList.toggle('expanded');
+            }
+        }
+        
+        // === VIEW MODE TOGGLE ===
+        let currentViewMode = 'separate';
+        
+        function setViewMode(mode) {
+            currentViewMode = mode;
+            const container = document.getElementById('astro-info-container');
+            const buttons = document.querySelectorAll('.view-toggle-btn');
+            
+            // Update container class
+            if (mode === 'all') {
+                container.classList.add('view-all');
+                // Auto-expand both panels
+                document.getElementById('lagna-info-panel').classList.add('expanded');
+                document.getElementById('nakshatra-info-panel').classList.add('expanded');
+            } else {
+                container.classList.remove('view-all');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                if ((mode === 'separate' && btn.textContent.includes('Separate')) ||
+                    (mode === 'all' && btn.textContent.includes('View All'))) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            console.log('🌌 View mode:', mode);
+        }
+        
+        // === LAGNA GAME DATA ===
+        const LAGNA_GAME_DATA = {
+            1: { // Aries
+                stats: { power: 25, speed: 20, defense: 10 },
+                passives: [
+                    { name: 'Pioneer Spirit', desc: '+15% First Strike damage. Skills deal bonus damage when you attack first.' },
+                    { name: 'Berserker Rage', desc: 'Every 3rd attack grants +20% Attack Speed for 5s.' }
+                ],
+                synergies: ['Fire Skills', 'Physical Attacks', 'Bleed Effects', 'Aggressive Playstyle'],
+                strategy: 'Aries Lagna excels in aggressive, offensive builds. Prioritize high-power physical skills and capitalize on first-strike advantages.'
+            },
+            2: { // Taurus
+                stats: { power: 15, speed: 5, defense: 30 },
+                passives: [
+                    { name: 'Immovable Force', desc: '+25% Max HP. Cannot be moved by knockback effects.' },
+                    { name: 'Resource Magnet', desc: '+30% Gold and material drops from all sources.' }
+                ],
+                synergies: ['Earth Skills', 'Defensive Abilities', 'Healing', 'Tank Builds'],
+                strategy: 'Taurus Lagna is perfect for tanky, sustain-heavy builds. Stack HP and defense while profiting from increased resource generation.'
+            },
+            3: { // Gemini
+                stats: { power: 15, speed: 25, defense: 10 },
+                passives: [
+                    { name: 'Dual Nature', desc: 'Skills have 20% chance to cast twice at no extra cost.' },
+                    { name: 'Quick Learner', desc: '+35% XP gain from all activities.' }
+                ],
+                synergies: ['Air Skills', 'Multi-Hit Combos', 'Quick-Cast', 'Versatile Builds'],
+                strategy: 'Gemini Lagna thrives with fast, multi-hit combos. Build around skill chains and rapid ability cycling for maximum effectiveness.'
+            },
+            4: { // Cancer
+                stats: { power: 10, speed: 10, defense: 25 },
+                passives: [
+                    { name: 'Lunar Shield', desc: '+30% Shield effectiveness. Shields regenerate 2% per second.' },
+                    { name: 'Emotional Strength', desc: '+20% Healing received. Heals grant 5s damage immunity.' }
+                ],
+                synergies: ['Water Skills', 'Healing', 'Shield', 'Support Builds'],
+                strategy: 'Cancer Lagna excels as a sustain-based support or self-healing tank. Maximize shield and healing effects for incredible survivability.'
+            },
+            5: { // Leo
+                stats: { power: 30, speed: 15, defense: 10 },
+                passives: [
+                    { name: 'Solar Radiance', desc: '+25% AoE skill damage. Allies within 10m gain +10% Power.' },
+                    { name: 'Majestic Presence', desc: '+15% Crit chance. Crits restore 5% Max HP.' }
+                ],
+                synergies: ['Fire Skills', 'AoE Abilities', 'Critical Strikes', 'Leadership Buffs'],
+                strategy: 'Leo Lagna dominates with high-power AoE and critical-focused builds. Lead from the front and empower your team.'
+            },
+            6: { // Virgo
+                stats: { power: 12, speed: 18, defense: 20 },
+                passives: [
+                    { name: 'Precision Strike', desc: '+30% Accuracy. Never miss attacks against targets below 30% HP.' },
+                    { name: 'Analytical Mind', desc: '-20% All Cooldowns. Skills cost 10% less KP.' }
+                ],
+                synergies: ['Earth Skills', 'Precision Attacks', 'Cooldown Reduction', 'Efficient Builds'],
+                strategy: 'Virgo Lagna rewards precise, calculated gameplay. Build around cooldown reduction and execute low-HP enemies flawlessly.'
+            },
+            7: { // Libra
+                stats: { power: 15, speed: 20, defense: 15 },
+                passives: [
+                    { name: 'Perfect Balance', desc: '+10% to all stats. Skills deal balanced Physical + Magic damage.' },
+                    { name: 'Karmic Justice', desc: 'Reflect 20% of damage taken back to attackers.' }
+                ],
+                synergies: ['Air Skills', 'Hybrid Damage', 'Reflect', 'Balanced Builds'],
+                strategy: 'Libra Lagna offers perfect versatility. Build hybrid offense/defense for adaptable gameplay in any situation.'
+            },
+            8: { // Scorpio
+                stats: { power: 22, speed: 12, defense: 18 },
+                passives: [
+                    { name: 'Venomous Strike', desc: 'Attacks apply Poison (3% Max HP/sec for 8s). Stacks 3x.' },
+                    { name: 'Phoenix Rebirth', desc: 'Once per battle, revive at 40% HP when killed.' }
+                ],
+                synergies: ['Water Skills', 'DoT Effects', 'Stealth', 'Assassination Builds'],
+                strategy: 'Scorpio Lagna excels with damage-over-time and burst assassination. Stack poisons and utilize the revive for clutch plays.'
+            },
+            9: { // Sagittarius
+                stats: { power: 20, speed: 25, defense: 8 },
+                passives: [
+                    { name: 'Wanderer\'s Luck', desc: '+25% Movement Speed. +15% Rare item drop chance.' },
+                    { name: 'Long Range Mastery', desc: 'Ranged skills deal +35% damage beyond 15m.' }
+                ],
+                synergies: ['Fire Skills', 'Ranged Attacks', 'Mobility', 'Explorer Builds'],
+                strategy: 'Sagittarius Lagna dominates with hit-and-run kiting tactics. Maximize range and mobility for untouchable gameplay.'
+            },
+            10: { // Capricorn
+                stats: { power: 18, speed: 8, defense: 28 },
+                passives: [
+                    { name: 'Mountain\'s Endurance', desc: '+40% Defense. Gain +2% Defense per 10% missing HP.' },
+                    { name: 'Disciplined Strike', desc: 'Every 5th attack is a guaranteed Critical Hit with +50% Crit Damage.' }
+                ],
+                synergies: ['Earth Skills', 'Defense Stacking', 'Counter-Attacks', 'Endurance Builds'],
+                strategy: 'Capricorn Lagna thrives as an unkillable fortress. Stack defense and survive to deliver devastating counter-strikes.'
+            },
+            11: { // Aquarius
+                stats: { power: 18, speed: 22, defense: 12 },
+                passives: [
+                    { name: 'Innovative Mind', desc: 'Skills have 15% chance to reset cooldown instantly. Unique skill effects trigger twice.' },
+                    { name: 'Electric Surge', desc: 'Lightning/Shock skills chain to 2 additional targets at 75% damage.' }
+                ],
+                synergies: ['Air Skills', 'Lightning', 'Chain Effects', 'Experimental Builds'],
+                strategy: 'Aquarius Lagna rewards creative, unconventional builds. Experiment with chaining effects and cooldown manipulation.'
+            },
+            12: { // Pisces
+                stats: { power: 20, speed: 15, defense: 15 },
+                passives: [
+                    { name: 'Mystic Veil', desc: '+25% Magic Damage. 10% chance to phase through attacks (evade).' },
+                    { name: 'Dream Weaver', desc: 'CC effects last 50% longer on enemies. Immune to Charm and Sleep.' }
+                ],
+                synergies: ['Water Skills', 'Magic Damage', 'CC Effects', 'Mystic Builds'],
+                strategy: 'Pisces Lagna excels with magic-heavy control builds. Layer crowd-control effects while dealing consistent magic damage.'
+            }
+        };
+        
+        function updateLagnaInfo() {
+            const lagnaData = LAGNA_GAME_DATA[currentLagna];
+            if (!lagnaData) return;
+            
+            const sign = LAGNA_NAMES[currentLagna - 1];
+            
+            // Set element attribute for color theming
+            const lagnaPanel = document.getElementById('lagna-info-panel');
+            if (lagnaPanel) {
+                lagnaPanel.setAttribute('data-element', sign.element.toLowerCase());
+            }
+            
+            // Update title
+            const title = document.getElementById('lagna-title-display');
+            if (title) {
+                title.textContent = `${sign.sign} - ${sign.element} Sign`;
+            }
+            
+            // Populate stats grid
+            const statsGrid = document.getElementById('lagna-stat-grid');
+            if (statsGrid) {
+                statsGrid.innerHTML = `
+                    <div class="lagna-stat-box">
+                        <div class="lagna-stat-label">🔥 Power</div>
+                        <div class="lagna-stat-value">+${lagnaData.stats.power}</div>
+                    </div>
+                    <div class="lagna-stat-box">
+                        <div class="lagna-stat-label">⚡ Speed</div>
+                        <div class="lagna-stat-value">+${lagnaData.stats.speed}</div>
+                    </div>
+                    <div class="lagna-stat-box">
+                        <div class="lagna-stat-label">🛡️ Defense</div>
+                        <div class="lagna-stat-value">+${lagnaData.stats.defense}</div>
+                    </div>
+                `;
+            }
+            
+            // Populate passives with colored keywords
+            const passivesList = document.getElementById('lagna-passives-list');
+            if (passivesList) {
+                passivesList.innerHTML = lagnaData.passives.map(passive => {
+                    // Highlight strategic keywords with colors
+                    let coloredDesc = passive.desc
+                        .replace(/\+\d+%\s*(Power|Attack|Damage)/gi, '<span class="tag tag-power">$&</span>')
+                        .replace(/\+\d+%\s*(Speed|Movement|Attack Speed)/gi, '<span class="tag tag-speed">$&</span>')
+                        .replace(/\+\d+%\s*(Defense|HP|Max HP)/gi, '<span class="tag tag-defense">$&</span>')
+                        .replace(/\+\d+%\s*Crit(ical)?/gi, '<span class="tag tag-crit">$&</span>')
+                        .replace(/Poison|DoT|Bleed/gi, '<span class="tag tag-dot">$&</span>')
+                        .replace(/Heal(ing)?/gi, '<span class="tag tag-heal">$&</span>')
+                        .replace(/Shield/gi, '<span class="tag tag-shield">$&</span>')
+                        .replace(/Knockback|Stun|CC/gi, '<span class="tag tag-cc">$&</span>')
+                        .replace(/Ranged/gi, '<span class="tag tag-ranged">$&</span>')
+                        .replace(/Stealth/gi, '<span class="tag tag-stealth">$&</span>')
+                        .replace(/Magic(al)?/gi, '<span class="tag tag-magic">$&</span>')
+                        .replace(/AoE/gi, '<span class="tag tag-aoe">$&</span>')
+                        .replace(/Fire/gi, '<span class="tag tag-fire">$&</span>')
+                        .replace(/Lightning|Shock/gi, '<span class="tag tag-lightning">$&</span>')
+                        .replace(/XP|Gold|Loot/gi, '<span class="tag tag-speed">$&</span>')
+                        .replace(/Revive|Rebirth/gi, '<span class="tag tag-heal">$&</span>');
+                    
+                    return `
+                        <div class="lagna-passive-item">
+                            <div class="lagna-passive-name">${passive.name}</div>
+                            <div class="lagna-passive-desc">${coloredDesc}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            // Populate synergies with color-coded tags
+            const synergyTags = document.getElementById('lagna-synergy-tags');
+            if (synergyTags) {
+                synergyTags.innerHTML = lagnaData.synergies.map(syn => {
+                    // Determine tag class based on synergy type
+                    let tagClass = 'tag';
+                    if (syn.match(/Fire|Physical|Aggressive/i)) tagClass += ' tag-fire';
+                    else if (syn.match(/Water|Magic|Mystic/i)) tagClass += ' tag-water';
+                    else if (syn.match(/Earth|Defense|Tank/i)) tagClass += ' tag-earth';
+                    else if (syn.match(/Air|Lightning|Speed/i)) tagClass += ' tag-air';
+                    else if (syn.match(/DoT|Poison|Bleed/i)) tagClass += ' tag-dot';
+                    else if (syn.match(/Heal/i)) tagClass += ' tag-heal';
+                    else if (syn.match(/Shield/i)) tagClass += ' tag-shield';
+                    else if (syn.match(/Crit/i)) tagClass += ' tag-crit';
+                    else if (syn.match(/Ranged/i)) tagClass += ' tag-ranged';
+                    else if (syn.match(/Stealth|Assassination/i)) tagClass += ' tag-stealth';
+                    else if (syn.match(/AoE/i)) tagClass += ' tag-aoe';
+                    else if (syn.match(/CC|Control/i)) tagClass += ' tag-cc';
+                    else tagClass += ' tag-speed'; // Default to speed color
+                    
+                    return `<span class="${tagClass}">${syn}</span>`;
+                }).join(' ');
+            }
+            
+            // Populate strategy
+            const strategy = document.getElementById('lagna-strategy');
+            if (strategy) {
+                strategy.innerHTML = `
+                    <strong>${sign.sign} Strategic Overview:</strong><br>
+                    ${lagnaData.strategy}
+                `;
+            }
+            
+            console.log('🌅 Lagna info updated:', sign.sign);
+        }
+        
         function updateNakshatraDetails(nakshatraInfo) {
             const grid = document.getElementById('nakshatra-detail-grid');
             const description = document.getElementById('nakshatra-description');
@@ -1692,6 +2234,9 @@
             // Update Nakshatra display for new Lagna
             updateDegree();
             
+            // Update Lagna info panel
+            updateLagnaInfo();
+            
             // Re-render chart with new rotation (preserves slotted skills)
             try {
                 renderVedicChart();
@@ -1720,6 +2265,7 @@
                 
                 // Initialize degree scale and Nakshatra info
                 updateDegree(); // Initial displays
+                updateLagnaInfo(); // Initial Lagna info
                 renderDegreeScale(); // Render the scale
                 setupDegreeScaleInteraction(); // Setup drag/scroll/click
             } catch (e) {
