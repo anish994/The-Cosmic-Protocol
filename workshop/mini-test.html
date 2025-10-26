@@ -2194,6 +2194,40 @@
             
             // Check house patterns
             const filledHouses = getFilledHouses(slottedGlyphs);
+
+            // New Keyword Fusions & Dharma/Karma System
+            if (tagCounts['sutras'] >= 2 && tagCounts['light'] >= 1) {
+                abilities.push({
+                    name: "Divine Decree",
+                    description: "Ancient sutras combined with light energy create a powerful divine area-of-effect heal and buff.",
+                    icon: "✨",
+                    tier: "Epic",
+                    multiplier: 1.8,
+                    pattern: "2+ Sutras + 1+ Light"
+                });
+            }
+            
+            if (tagCounts['subservience'] >= 3) {
+                abilities.push({
+                    name: "Absolute Dominion",
+                    description: "Complete mastery over the will of others, causing enemies to fight each other.",
+                    icon: "🔗",
+                    tier: "Legendary",
+                    multiplier: 2.5,
+                    pattern: "3+ Subservience"
+                });
+            }
+            
+            const lightCount = tagCounts['light'] || 0;
+            const darkCount = tagCounts['dark'] || 0;
+            
+            if (lightCount >= 4 && darkCount === 0) {
+                abilities.push({ name: "Dharma State: Ascendant", description: "Pure light alignment. Gain +20% healing and buff effectiveness.", icon: "⚪", tier: "Rare", multiplier: 1.3, pattern: "4+ Light" });
+            } else if (darkCount >= 4 && lightCount === 0) {
+                abilities.push({ name: "Karma State: Descendant", description: "Pure dark alignment. Gain +20% damage and debuff effectiveness.", icon: "⚫", tier: "Rare", multiplier: 1.3, pattern: "4+ Dark" });
+            } else if (lightCount >= 2 && darkCount >= 2) {
+                abilities.push({ name: "Twilight Pact", description: "Balance of light and dark. Unlock the ability to switch between Dharma and Karma states.", icon: "☯️", tier: "Epic", multiplier: 1.6, pattern: "2+ Light + 2+ Dark" });
+            }
             for (let [patternName, pattern] of Object.entries(HOUSE_PATTERNS)) {
                 if (hasAllHouses(filledHouses, pattern.houses)) {
                     abilities.push({ ...pattern.ability, source: 'house', pattern: patternName });
@@ -4751,7 +4785,116 @@
                     weaknesses: ['Setup time', 'Can be interrupted', 'Vulnerable during cast'],
                     combos: ['Ritual + Protection = Safe casting', 'Ritual + Team = Coordinated setup', 'Ritual + Invoke = Divine intervention']
                 }
-            }
+            },
+            subservience: {
+                name: '🔗 Subservience',
+                category: 'control',
+                color: '#888888',
+                short: 'Control and dominate enemies',
+                medium: 'Skills that involve control, domination, or forcing actions upon opponents.',
+                detailed: {
+                    description: 'Subservience abilities allow you to control the battlefield by manipulating enemy actions and positions.',
+                    strengths: ['High control', 'Enemy manipulation', 'Disruption'],
+                    weaknesses: ['Low damage', 'Resisted by bosses', 'Can be broken'],
+                    combos: ['Subservience + Fear = Total lockdown', 'Subservience + Charm = Enemy puppet', 'Subservience + Slow = Helpless target']
+                }
+            },
+            sutras: {
+                name: '📜 Sutras',
+                category: 'ancient',
+                color: '#ffd700',
+                short: 'Ancient and powerful abilities',
+                medium: 'Ancient and powerful skills derived from sacred texts, often with profound and complex effects.',
+                detailed: {
+                    description: 'Sutras are ancient, powerful abilities learned from sacred texts, often with complex and game-changing effects.',
+                    strengths: ['High impact', 'Unique effects', 'Profound power'],
+                    weaknesses: ['High cost', 'Long cooldowns', 'Situational'],
+                    combos: ['Sutras + Ritual = Divine power', 'Sutras + Meditation = Enlightened state', 'Sutras + Time = Transcendence']
+                }
+            },
+            decay: {
+                name: '🦠 Decay',
+                category: 'damage',
+                color: '#8b6914',
+                short: 'Damage over time corruption',
+                medium: 'Inflicts decay damage that eats away at enemy health and armor over time.',
+                detailed: {
+                    description: 'Decay abilities corrupt and rot enemies, dealing damage over time and reducing their maximum health and defenses.',
+                    strengths: ['Persistent damage', 'Armor reduction', 'Stacks over time'],
+                    weaknesses: ['Slow to kill', 'Can be cleansed', 'No burst damage'],
+                    combos: ['Decay + Dark = Cursed rot', 'Decay + Poison = Terminal disease', 'Decay + Time = Accelerated aging']
+                }
+            },
+            builder: {
+                name: '🏭 Builder',
+                category: 'utility',
+                color: '#cd853f',
+                short: 'Creates structures and constructs',
+                medium: 'Builds permanent or semi-permanent structures, fortifications, or constructs.',
+                detailed: {
+                    description: 'Builder abilities allow you to create lasting structures that shape the battlefield and provide strategic advantages.',
+                    strengths: ['Lasting impact', 'Battlefield control', 'Strategic depth'],
+                    weaknesses: ['Setup time', 'Can be destroyed', 'Resource intensive'],
+                    combos: ['Builder + Shield = Fortress', 'Builder + Structures = Complex base', 'Builder + Permanence = Unbreakable construction']
+                }
+            },
+            permanence: {
+                name: '♾️ Permanence',
+                category: 'trait',
+                color: '#4682b4',
+                short: 'Lasts indefinitely',
+                medium: 'Effects that last forever until dispelled or destroyed. No time limit.',
+                detailed: {
+                    description: 'Permanence abilities create effects that last indefinitely, remaining until actively removed or destroyed.',
+                    strengths: ['Infinite duration', 'Long-term value', 'Compounds over time'],
+                    weaknesses: ['Can be dispelled', 'Usually expensive', 'Slow payoff'],
+                    combos: ['Permanence + Buff = Forever boost', 'Permanence + Builder = Eternal structure', 'Permanence + Ward = Invincible barrier']
+                }
+            },
+            
+            // === COMBAT ROLE KEYWORDS ===
+            defense: { name: '🛡️ Defense', category: 'role', color: '#4682b4', short: 'Reduces damage taken', medium: 'Defense reduces incoming damage and increases survivability.', detailed: { description: 'Defense abilities make you tankier through damage reduction, armor, and damage mitigation.', strengths: ['Survive longer', 'Enables facetank', 'Counters burst'], weaknesses: ['No offensive value', 'Can be penetrated', 'DoT bypasses'], combos: ['Defense + Heal = Unkillable', 'Defense + Shield = Mega tank'] } },
+            attack: { name: '⚔️ Attack', category: 'role', color: '#dc143c', short: 'Offensive power', medium: 'Attack focuses on dealing direct damage to enemies.', detailed: { description: 'Attack abilities are pure offense, maximizing damage output and kills.', strengths: ['High damage', 'Fast clear', 'Pressure enemies'], weaknesses: ['Low defense', 'Glass cannon', 'Vulnerable'], combos: ['Attack + Crit = Burst king', 'Attack + Buff = Oneshot'] } },
+            counter: { name: '↩️ Counter', category: 'role', color: '#ff6347', short: 'Punish enemy actions', medium: 'Counter abilities trigger when enemies act, dealing return damage.', detailed: { description: 'Counter mechanics punish aggression, reflecting damage or triggering effects.', strengths: ['Free damage', 'Deters attacks', 'Scales with enemy'], weaknesses: ['Reactive only', 'Needs enemy action', 'Low vs passive'], combos: ['Counter + Defense = Tank reflect', 'Multiple counters = Death spiral'] } },
+            stealth: { name: '👥 Stealth', category: 'role', color: '#2f4f4f', short: 'Become invisible', medium: 'Stealth makes you undetectable, enabling surprise attacks.', detailed: { description: 'Stealth abilities let you vanish, reposition, and strike from shadows.', strengths: ['Surprise attacks', 'Reposition freely', 'Escape danger'], weaknesses: ['Broken by damage', 'Short duration', 'Revealed by detection'], combos: ['Stealth + Attack = Backstab', 'Stealth + Escape = Safe retreat'] } },
+            crit: { name: '✨ Crit', category: 'combat', color: '#ffd700', short: 'Critical hits', medium: 'Crit abilities deal bonus damage on critical strikes.', detailed: { description: 'Critical hit skills multiply damage output through lucky strikes and precision.', strengths: ['Massive burst', 'Scales exponentially', 'RNG excitement'], weaknesses: ['Unreliable', 'Needs crit chance', 'Can miss'], combos: ['Crit + Attack = Oneshot potential', 'Multiple crit = Crit cascade'] } },
+            multihit: { name: '🔄 Multi-Hit', category: 'combat', color: '#ff69b4', short: 'Multiple strikes', medium: 'Hits enemies multiple times in rapid succession.', detailed: { description: 'Multi-hit skills attack several times per activation, stacking effects.', strengths: ['Proc on-hit effects', 'Bypass shields', 'Feels impactful'], weaknesses: ['Each hit weaker', 'Can miss individually', 'Animation time'], combos: ['Multi-hit + On-hit = Effect spam', 'Multi-hit + Crit = RNG explosion'] } },
+            combo: { name: '🎯 Combo', category: 'combat', color: '#ff1493', short: 'Chain abilities', medium: 'Skills that combo into each other for enhanced effects.', detailed: { description: 'Combo abilities reward chaining specific skills in sequence.', strengths: ['High skill ceiling', 'Massive payoff', 'Engaging gameplay'], weaknesses: ['Requires setup', 'Complex execution', 'Punishes mistakes'], combos: ['Combo + Attack = Infinite chain', 'Combo finisher = Ultimate burst'] } },
+            quickcast: { name: '⚡ Quick-Cast', category: 'combat', color: '#00ffff', short: 'Instant activation', medium: 'Casts instantly with no delay or channel time.', detailed: { description: 'Quick-cast skills activate immediately, perfect for reactions.', strengths: ['No cast time', 'React instantly', 'Use while moving'], weaknesses: ['Lower damage usually', 'Cooldown gated'], combos: ['Quick-cast + Combo = Smooth chains', 'Multiple quick-casts = Burst'] } },
+            power: { name: '💪 Power', category: 'attribute', color: '#ff4500', short: 'Raw strength', medium: 'Power increases all damage dealt.', detailed: { description: 'Power is your primary offensive stat, scaling all damage output.', strengths: ['Universal scaling', 'Straightforward', 'Feels impactful'], weaknesses: ['No utility', 'Countered by defense'], combos: ['Power + Crit = Maximum burst', 'Power + Multi-hit = Sustained DPS'] } },
+            slow: { name: '🐌 Slow', category: 'debuff', color: '#4169e1', short: 'Reduces movement', medium: 'Slows enemy movement and attack speed.', detailed: { description: 'Slow effects reduce enemy speed, making them easier to kite.', strengths: ['Safe kiting', 'Control positioning', 'Stack with roots'], weaknesses: ['Doesn\'t stop attacks', 'Can be cleansed'], combos: ['Slow + DoT = Guaranteed ticks', 'Slow + Kite = Untouchable'] } },
+            support: { name: '🤝 Support', category: 'role', color: '#96ffeb', short: 'Helps teammates', medium: 'Abilities that assist, empower, or protect allies in combat.', detailed: { description: 'Support abilities keep your team alive, buffed, and effective through healing, shielding, and utility.', strengths: ['Team multiplier', 'Enable carries', 'Force multiplier'], weaknesses: ['Low solo power', 'Requires team', 'Can\'t carry alone'], combos: ['Support + Heal = Ultimate sustain', 'Support + Buff = Team carry', 'Support + Shield = Immortal allies'] } },
+            
+            // === RESOURCE & PROGRESSION KEYWORDS ===
+            loot: { name: '💰 Loot', category: 'resource', color: '#ffd700', short: 'Increases item drops', medium: 'Loot skills increase chances of better rewards and drops.', detailed: { description: 'Loot abilities boost your reward quality and quantity from enemies and chests.', strengths: ['More rewards', 'Better quality', 'Farming king'], weaknesses: ['No combat value', 'RNG dependent'], combos: ['Loot + Gold = Rich quick', 'Loot + XP = Complete grinder'] } },
+            xp: { name: '⬆️ XP', category: 'resource', color: '#00ff7f', short: 'Experience boost', medium: 'XP skills accelerate leveling and progression.', detailed: { description: 'XP-boosting abilities make you level faster and unlock content quicker.', strengths: ['Fast progression', 'Early power spike', 'Content unlock'], weaknesses: ['No direct combat power'], combos: ['XP + Loot = Full grinder', 'XP stack = Power level'] } },
+            gold: { name: '🪙 Gold', category: 'resource', color: '#daa520', short: 'Currency generation', medium: 'Gold skills generate wealth and purchasing power.', detailed: { description: 'Gold abilities boost your economy, letting you buy better gear faster.', strengths: ['Buy upgrades', 'Economic advantage', 'Scales forever'], weaknesses: ['Needs shop access'], combos: ['Gold + Loot = Wealth king', 'Gold stack = Full economy'] } },
+            wisdom: { name: '🧙 Wisdom', category: 'resource', color: '#8a2be2', short: 'Knowledge and insight', medium: 'Wisdom grants strategic advantages and hidden knowledge.', detailed: { description: 'Wisdom abilities reveal secrets, grant tactical info, and enhance decision-making.', strengths: ['Strategic edge', 'Info advantage', 'Outsmart enemies'], weaknesses: ['No direct power'], combos: ['Wisdom + Scout = Perfect intel', 'Wisdom + Adapt = Counter everything'] } },
+            material: { name: '🔨 Material', category: 'resource', color: '#cd853f', short: 'Crafting resources', medium: 'Material skills provide components for crafting and upgrades.', detailed: { description: 'Material abilities grant crafting components and upgrade resources.', strengths: ['Craft powerful items', 'Long-term value'], weaknesses: ['Needs crafting system'], combos: ['Material + Builder = Master crafter'] } },
+            
+            // === TRAIT/MODIFIER KEYWORDS ===
+            physical: { name: '💪 Physical', category: 'trait', color: '#b8860b', short: 'Physical damage type', medium: 'Physical abilities deal non-magical damage.', detailed: { description: 'Physical damage ignores magic resistance but is blocked by armor.', strengths: ['Counters mages', 'Reliable damage'], weaknesses: ['Blocked by armor'], combos: ['Physical + Armor break = True damage'] } },
+            spiritual: { name: '🕊️ Spiritual', category: 'trait', color: '#9370db', short: 'Spiritual power', medium: 'Spiritual abilities channel inner energy and meditation.', detailed: { description: 'Spiritual skills draw from inner peace and mental clarity.', strengths: ['Unique mechanics', 'Mental fortitude'], weaknesses: ['Situational'], combos: ['Spiritual + Meditation = Enlightenment'] } },
+            mystic: { name: '🔮 Mystic', category: 'trait', color: '#4b0082', short: 'Mysterious and arcane', medium: 'Mystic abilities use ancient and mysterious powers.', detailed: { description: 'Mystic skills tap into hidden and esoteric knowledge.', strengths: ['Unique effects', 'Unpredictable'], weaknesses: ['Complex to master'], combos: ['Mystic + Ritual = Ancient power'] } },
+            phoenix: { name: '🦅 Phoenix', category: 'trait', color: '#ff4500', short: 'Rebirth and resurrection', medium: 'Phoenix abilities revive or return from death.', detailed: { description: 'Phoenix skills grant second chances through rebirth mechanics.', strengths: ['Extra lives', 'Psychological edge'], weaknesses: ['Limited uses'], combos: ['Phoenix + Heal = Immortal'] } },
+            signature: { name: '✍️ Signature', category: 'trait', color: '#ff00ff', short: 'Unique personal ability', medium: 'Signature skills are your personal trademark moves.', detailed: { description: 'Signature abilities define your playstyle and identity.', strengths: ['Unique identity', 'Personal power'], weaknesses: ['One per character'], combos: ['Signature + Buff = Ultimate form'] } },
+            balanced: { name: '⚖️ Balanced', category: 'trait', color: '#778899', short: 'Neither extreme', medium: 'Balanced abilities provide well-rounded effects.', detailed: { description: 'Balanced skills offer versatility without specialization.', strengths: ['Versatile', 'Reliable'], weaknesses: ['Master of none'], combos: ['Balanced + Adapt = Swiss army knife'] } },
+            unorthodox: { name: '🎭 Unorthodox', category: 'trait', color: '#ff6ec7', short: 'Unusual and creative', medium: 'Unorthodox skills use unusual mechanics and approaches.', detailed: { description: 'Unorthodox abilities surprise enemies with unexpected tactics.', strengths: ['Unpredictable', 'Creative solutions'], weaknesses: ['Hard to master'], combos: ['Unorthodox + Combo = Mind games'] } },
+            versatile: { name: '🎭 Versatile', category: 'trait', color: '#20b2aa', short: 'Multi-purpose utility', medium: 'Versatile skills adapt to many situations.', detailed: { description: 'Versatile abilities work in multiple scenarios and playstyles.', strengths: ['Always useful', 'Flex pick'], weaknesses: ['Not specialized'], combos: ['Versatile + Adapt = Perfect flex'] } },
+            aggressive: { name: '💢 Aggressive', category: 'trait', color: '#ff0000', short: 'All-in offense', medium: 'Aggressive skills sacrifice defense for raw damage.', detailed: { description: 'Aggressive abilities maximize offense at the cost of safety.', strengths: ['Maximum damage', 'Fast kills'], weaknesses: ['Glass cannon', 'Risky'], combos: ['Aggressive + Crit = Oneshot king'] } },
+            discipline: { name: '🎯 Discipline', category: 'trait', color: '#4169e1', short: 'Controlled precision', medium: 'Discipline skills reward precise timing and execution.', detailed: { description: 'Discipline abilities demand skill but deliver superior results.', strengths: ['High skill ceiling', 'Consistent'], weaknesses: ['Punishes mistakes'], combos: ['Discipline + Combo = Perfect execution'] } },
+            transcend: { name: '✨ Transcend', category: 'trait', color: '#ffd700', short: 'Beyond normal limits', medium: 'Transcend abilities break through normal limitations.', detailed: { description: 'Transcendence skills exceed conventional boundaries and rules.', strengths: ['Ignore limits', 'Ultimate power'], weaknesses: ['Rare', 'Expensive'], combos: ['Transcend + Ultimate = Godmode'] } },
+            transform: { name: '🧙 Transform', category: 'trait', color: '#9400d3', short: 'Change form or state', medium: 'Transform skills alter your character\'s form or state.', detailed: { description: 'Transformation abilities change your capabilities temporarily.', strengths: ['New abilities', 'Situation adapt'], weaknesses: ['Temporary', 'Can be risky'], combos: ['Transform + Power = Beast mode'] } },
+            
+            // === SPECIAL MECHANICS KEYWORDS ===
+            sustain: { name: '💚 Sustain', category: 'mechanic', color: '#32cd32', short: 'Long-term survival', medium: 'Sustain abilities provide continuous health and resource recovery.', detailed: { description: 'Sustain skills keep you alive and resourced over long fights.', strengths: ['Outlast enemies', 'Win wars of attrition'], weaknesses: ['Slow', 'Low burst'], combos: ['Sustain + Tank = Unkillable'] } },
+            charm: { name: '💘 Charm', category: 'mechanic', color: '#ff69b4', short: 'Mind control enemies', medium: 'Charm abilities make enemies fight for you temporarily.', detailed: { description: 'Charm skills turn enemies into allies for a short duration.', strengths: ['Free ally', 'Disruption'], weaknesses: ['Temporary', 'Bosses resist'], combos: ['Charm + Buff = Super puppet'] } },
+            cc: { name: '⛓️ CC', category: 'mechanic', color: '#1e90ff', short: 'Crowd control', medium: 'CC abilities stun, root, or disable enemies.', detailed: { description: 'Crowd control skills completely lock down enemy actions.', strengths: ['Total shutdown', 'Safety'], weaknesses: ['Diminishing returns', 'Boss resist'], combos: ['CC + Damage = Free hits'] } },
+            bleed: { name: '🩸 Bleed', category: 'mechanic', color: '#8b0000', short: 'Physical DoT', medium: 'Bleed inflicts damage over time through wounds.', detailed: { description: 'Bleed skills stack physical DoT that bypasses shields.', strengths: ['Stacks high', 'Bypasses shields'], weaknesses: ['Can be healed'], combos: ['Bleed + Physical = Death by cuts'] } },
+            air: { name: '🌬️ Air', category: 'element', color: '#87ceeb', short: 'Wind element', medium: 'Air abilities use wind and storms for mobility and AoE.', detailed: { description: 'Air element focuses on mobility, speed, and area control.', strengths: ['Fast', 'Mobile', 'AoE spread'], weaknesses: ['Lower damage'], combos: ['Air + Lightning = Storm'] } },
+            chaos: { name: '🌀 Chaos', category: 'element', color: '#9400d3', short: 'Chaotic and random', medium: 'Chaos abilities have unpredictable and random effects.', detailed: { description: 'Chaos skills embrace randomness for wild swings of power.', strengths: ['High variance', 'Surprising'], weaknesses: ['Unreliable', 'RNG dependent'], combos: ['Chaos + Crit = RNG extreme'] } },
+            expansion: { name: '🌌 Expansion', category: 'mechanic', color: '#ffa500', short: 'Growing effects', medium: 'Expansion abilities grow stronger over time or area.', detailed: { description: 'Expansion skills scale up the longer they persist or the more they spread.', strengths: ['Snowball power', 'Area control'], weaknesses: ['Slow start'], combos: ['Expansion + AoE = Map control'] } },
+            leadership: { name: '👑 Leadership', category: 'mechanic', color: '#ffd700', short: 'Empowers allies', medium: 'Leadership skills buff and inspire your team.', detailed: { description: 'Leadership abilities make everyone around you stronger.', strengths: ['Team multiplier', 'Force multiplier'], weaknesses: ['Needs allies'], combos: ['Leadership + Support = Unstoppable team'] } }
         };
         
         // Log tag database on init for testing
