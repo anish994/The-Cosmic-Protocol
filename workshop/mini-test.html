@@ -143,6 +143,13 @@
             opacity: 0.6;
             text-align: center;
             margin-bottom: 4px;
+            position: relative;
+            cursor: help;
+            transition: opacity 0.2s;
+        }
+        
+        .house-label:hover {
+            opacity: 1;
         }
         
         .house-slot {
@@ -423,6 +430,15 @@
         .dosha-theme .info-tooltip-title {
             color: #ff5050;
             animation: textGlow 2s infinite;
+        }
+        
+        .house-theme {
+            border-color: #00c3ff;
+        }
+        
+        .house-theme .info-tooltip-title {
+            color: #00c3ff;
+            animation: textGlow 2.2s infinite;
         }
         
         
@@ -815,7 +831,7 @@
                 houseEl.dataset.houseIndex = index;
                 
                 houseEl.innerHTML = `
-                    <div class="house-label">H${house.id}: ${house.name}</div>
+                    <div class="house-label" onclick="showInfo('house${house.id}')">H${house.id}: ${house.name}</div>
                     <div class="house-slot" id="slot-${index}">
                         <div class="placeholder">Empty</div>
                     </div>
@@ -1491,48 +1507,109 @@
         const INFO_DATA = {
             power: {
                 title: '🔥 Power Score',
-                desc: 'The raw OOMPH of your card! \n\nThis is the total combined power of all your skills, boosted by their house positions. House 1 gives 1.2×, House 12 gives 1.3×! \n\nThink of it like... if your skills were muscles, this is how much they can lift! 💪 Higher = More impact in everything you do!',
+                desc: '💪 WHAT: Your card\'s raw damage output!\n\n🎮 IN GAME: Higher power = Bigger crits, faster enemy kills, more impact per skill activation. Every point matters in boss fights!\n\n🎯 PRO TIP: Focus power in H1 (1.2×) and H12 (1.3×) for maximum gains. A 50-power skill in H12 becomes 65 power!\n\n⚡ STRATEGY: Balance power with cooldowns. 1000 power with 10s cooldown = same DPS as 500 power with 5s cooldown!',
                 theme: 'active-theme'
             },
             cooldown: {
                 title: '⏱️ Average Cooldown',
-                desc: 'How fast can you spam your moves? \n\nLower cooldowns = More action! This shows the average wait time between your skill activations. \n\nIt\'s like... how quickly you can throw punches in a fight! 🥊 Fast cooldowns mean you\'re a skill-slinging machine!',
+                desc: '⚡ WHAT: How often you can use your abilities!\n\n🎮 IN GAME: Low cooldowns = constant action. 2s average? You\'re a machine gun! 8s average? You\'re a sniper - gotta make shots count!\n\n🎯 PRO TIP: Mix cooldowns! Spam skills (1-2s) for sustained damage, heavy skills (5-8s) for burst. Always have SOMETHING ready!\n\n💡 COMBO IDEA: Pair high-CD skills with passive speed buffs to cut wait times!',
                 theme: 'defense-theme'
             },
             versatility: {
                 title: '✨ Versatility',
-                desc: 'How adaptable is your card? \n\nMore slots filled = More options in combat! This measures your tactical flexibility. \n\nImagine having a Swiss Army knife vs a butter knife 🔪 The more tools (skills) you have, the more situations you can handle! Jack of all trades? Master of awesome!',
+                desc: '🎲 WHAT: Your tactical options count!\n\n🎮 IN GAME: More filled slots = More tools for different situations. Fighting fire enemy? Use ice skill. Need healing? Got it. Facing tank? Switch to armor break!\n\n🎯 PRO TIP: Aim for 8-10 slots minimum. Full 12? You\'re unstoppable! Each slot adds +5 versatility.\n\n🔥 META: Versatile decks beat specialized decks 70% of the time in PvP!',
                 theme: 'speed-theme'
             },
             density: {
                 title: '🎯 Skill Density',
-                desc: 'How PACKED is your card with abilities? \n\nThis shows how many of the 12 houses you\'ve filled. More skills = More combos = More fun! \n\nThink of it like... loading up a pizza with toppings 🍕 Empty slots are wasted potential! Fill \'em up!',
+                desc: '📊 WHAT: How many house slots you\'ve filled (X/12)\n\n🎮 IN GAME: Empty slots = wasted potential! Each skill adds combos, synergies, and flexibility. Dense decks dominate!\n\n🎯 PRO TIP: Fill at least 6 slots to unlock combo potential. 9+ slots? Elite tier! Full 12? Legendary status!\n\n🌟 BONUS: Full density unlocks "Perfect Mandala" yoga = +20% ALL STATS!',
                 theme: 'attack-theme'
             },
             active: {
                 title: '⚔️ Active Skills',
-                desc: 'Your BIG GUNS! 💥 \n\nThese are skills with 3+ second cooldowns - your heavy hitters and game-changers. They pack a punch but need time to recharge. \n\nLike special moves in a fighting game! Save them for the right moment, then UNLEASH THE PAIN! Each one shows its power (boosted by house position), cooldown, and which house it calls home.',
+                desc: '💥 WHAT: Your heavy hitters! (3s+ cooldown)\n\n🎮 IN GAME: These are your "OHHHH" moments. Boss at 10% HP? Drop that 8s cooldown nuke! Enemy charging? Interrupt with your 5s stun!\n\n🎯 PRO TIP: Don\'t hoard! Good players use actives on cooldown. Great players time them for maximum impact.\n\n🔥 EXAMPLES: Meteor Strike, Summon Dragon, Time Stop, Ultimate Heal',
                 theme: 'active-theme'
             },
             passive: {
                 title: '🌟 Passive Abilities',
-                desc: 'Your secret sauce! ✨ \n\nFast-cycling skills (under 3s cooldown) that constantly boost you. They work in the background like a good playlist - always there, always helping! \n\nThink of them as your "always-on" superpowers. No activation needed, just pure continuous awesome! The faster the cooldown, the more often they kick in!',
+                desc: '⚡ WHAT: Your always-on power! (<3s cooldown)\n\n🎮 IN GAME: These cycle SO fast they\'re basically permanent. +2% damage every 1s? That\'s +120% per minute! Small numbers, BIG impact over time!\n\n🎯 PRO TIP: Stack similar passives for exponential gains! 3 speed buffs = zoom zoom!\n\n✨ EXAMPLES: Auto-regen, Speed Aura, Crit Chance Up, Mana Flow',
                 theme: 'passive-theme'
             },
             keyword: {
                 title: '🏷️ Keywords',
-                desc: 'The DNA of your skills! 🧬 \n\nEach keyword (Fire, Ice, Heal, etc.) is like a personality trait. Match them up and BOOM - synergies (Yogas)! Mix wrong ones and... yikes, conflicts (Doshas). \n\nIt\'s like building a band 🎸 - get the right mix and you make beautiful music. Get it wrong and it\'s just noise! Hover over any keyword to see it glow with elemental power!',
+                desc: '🧬 WHAT: Your skill\'s elemental DNA!\n\n🎮 IN GAME: Keywords unlock combo bonuses (Yogas) and reveal conflicts (Doshas). 3 FIRE keywords? +30% fire damage! FIRE + WATER? They cancel out!\n\n🎯 PRO TIP: Build themed decks! All ICE = freeze synergy! Mix HEAL + BUFF = support god! Random keywords = chaos.\n\n🎨 POPULAR BUILDS: Fire Mage, Ice Tank, Shadow Assassin, Holy Paladin',
                 theme: 'keyword-theme'
             },
             yoga: {
                 title: '✨ Yogas = COMBO BONUSES!',
-                desc: '🎉 When your skills vibe together, magic happens! \n\n🔥 FIRE TRINITY: Stack 3 fire skills anywhere? +30% power! \n🔺 ELEMENTAL TRINE: Fill houses 1-5-9? +25% elemental damage! \n🌊 FLOW COMBO: Put matching skills side-by-side? +5% smooth! \n🌟 PERFECT MANDALA: Fill ALL 12 houses? +20% to EVERYTHING! \n\nMore yogas = More power! It\'s like getting bonus loot for smart deck building! 🎰',
+                desc: '🎊 WHAT: Hidden power-ups from smart building!\n\n🔥 TRINITY: 3+ same keyword anywhere = +30% that element\n🔺 TRINE: Fill houses 1-5-9 (or 2-6-10, etc.) = +25% elemental\n🌊 FLOW: Adjacent matching keywords = +5% efficiency\n💎 CORE: Fill H1 = Stats locked in permanently\n🌟 MANDALA: All 12 slots filled = +20% EVERYTHING\n\n🎮 IN GAME: These stack! Get 3 yogas? MEGA POWER!',
                 theme: 'yoga-theme'
             },
             dosha: {
-                title: '⚠️ Doshas = OOPS MOMENTS!',
-                desc: '😅 Even legends make mistakes! Here\'s how to avoid them: \n\n💸 BUDGET DISASTER: Spent more than 30 KP? Card\'s too expensive! \n👻 IDENTITY CRISIS: House 1 empty? -15% power! (That\'s your CORE!) \n🔥💧 ELEMENTAL BEEF: Fire + Water in same deck? They\'re fighting! -10% \n🎲 SCATTERED BRAIN: Skills all over with no flow? -5% efficiency! \n\nFix these and watch your card go from "meh" to LEGENDARY! 🏆',
+                title: '⚠️ Doshas = BUILD MISTAKES!',
+                desc: '🚨 WHAT: Penalties from bad deck construction!\n\n💸 OVER BUDGET: >30 KP total = Card too expensive to use!\n👻 NO CORE: H1 empty = -15% power (Fix THIS first!)\n🔥💧 ELEMENT CLASH: Fire + Water, Light + Dark = -10% both\n🎲 SCATTERED: 6+ skills, no adjacents = -5% efficiency\n\n🎮 IN GAME: Fix doshas BEFORE going into battle! Check this before every match!',
                 theme: 'dosha-theme'
+            },
+            // === 12 HOUSE INFO (H1-H12) ===
+            house1: {
+                title: '🌟 H1: Self',
+                desc: '💎 MEANING: Your core identity and signature style!\n\n🎮 IN GAME: This is YOUR main ability - the skill everyone knows you for! Empty H1 triggers "Hollow Identity" dosha (-15% power). ALWAYS fill this first!\n\n⚡ BONUS: 1.2× power multiplier\n\n🎯 BEST FOR: Your most iconic skill, main damage dealer, or defining ability. Think "Naruto\'s Rasengan" or "Goku\'s Kamehameha"!',
+                theme: 'house-theme'
+            },
+            house2: {
+                title: '💰 H2: Resources',
+                desc: '🛠️ MEANING: Your assets, reserves, and backup tools!\n\n🎮 IN GAME: Put resource-generation skills here! Mana regen, gold farming, loot buffs, anything that builds your economy. Passive income = always useful!\n\n⚡ BONUS: 1.0× power (neutral)\n\n🎯 BEST FOR: Mana Flow, Gold Rush, Item Find, Resource Harvest, Energy Regen',
+                theme: 'house-theme'
+            },
+            house3: {
+                title: '💬 H3: Communication',
+                desc: '📡 MEANING: Your voice, signals, and tactical coordination!\n\n🎮 IN GAME: Perfect for team buffs, ally pings, enemy debuff marks, and skills that coordinate group attacks! Also good for ranged skills that "reach out".\n\n⚡ BONUS: 1.0× power\n\n🎯 BEST FOR: Rally Cry, Mark Target, Message Allies, Taunt, Long-Range Attacks',
+                theme: 'house-theme'
+            },
+            house4: {
+                title: '🏠 H4: Foundation',
+                desc: '🛡️ MEANING: Your home base, stability, and defensive core!\n\n🎮 IN GAME: Tank abilities live here! Shields, armor buffs, HP regen, damage reduction. When you need to stand your ground, H4\'s got your back!\n\n⚡ BONUS: 1.1× power\n\n🎯 BEST FOR: Iron Skin, Fortress Mode, Shield Wall, Healing Ward, Root abilities',
+                theme: 'house-theme'
+            },
+            house5: {
+                title: '🎨 H5: Creativity',
+                desc: '✨ MEANING: Your creative spark and experimental zone!\n\n🎮 IN GAME: This is where WEIRD builds shine! Unique combos, flashy skills, signature moves. 1.15× bonus rewards innovation! Try that crazy skill fusion here!\n\n⚡ BONUS: 1.15× power\n\n🎯 BEST FOR: Signature combos, experimental builds, unique fusions, "your style" abilities',
+                theme: 'house-theme'
+            },
+            house6: {
+                title: '⚔️ H6: Enemies',
+                desc: '🥊 MEANING: Your combat skills and daily grind tools!\n\n🎮 IN GAME: Bread-and-butter damage skills go here! Your "enemy killer" abilities. Direct damage, DoTs, crowd control - if it HURTS enemies, it belongs here!\n\n⚡ BONUS: 1.0× power\n\n🎯 BEST FOR: Fireball, Slash, Poison Strike, Stun, Basic Attacks, Enemy Debuffs',
+                theme: 'house-theme'
+            },
+            house7: {
+                title: '🤝 H7: Partnerships',
+                desc: '🌐 MEANING: Your co-op and team play abilities!\n\n🎮 IN GAME: Multiplayer specialists LOVE this house! Skills that buff allies, heal party members, or scale with team size get maximum value here!\n\n⚡ BONUS: 1.0× power\n\n🎯 BEST FOR: Group Heal, Allied Buff, Team Shield, Res Ally, Linked Damage',
+                theme: 'house-theme'
+            },
+            house8: {
+                title: '🔮 H8: Transformation',
+                desc: '🌙 MEANING: Metamorphosis, death, rebirth, and mysteries!\n\n🎮 IN GAME: Shape-shifters rejoice! Transformation skills, life-steal, resurrection, necromancy, and "evolve" abilities thrive here. Embrace the darkness!\n\n⚡ BONUS: 1.1× power\n\n🎯 BEST FOR: Werewolf Form, Life Drain, Raise Dead, Phoenix Rebirth, Evolution',
+                theme: 'house-theme'
+            },
+            house9: {
+                title: '🎲 H9: Fortune',
+                desc: '🍀 MEANING: Luck, philosophy, and high-risk/high-reward!\n\n🎮 IN GAME: Gamblers love H9! Crit chance, RNG skills, lucky strikes, and "bet it all" abilities. 1.2× bonus = fortune favors the bold! YOLO builds start here!\n\n⚡ BONUS: 1.2× power\n\n🎯 BEST FOR: Critical Strike, Lucky Shot, Gamble, Divine Intervention, Treasure Hunt',
+                theme: 'house-theme'
+            },
+            house10: {
+                title: '👑 H10: Authority',
+                desc: '📈 MEANING: Your public power and leadership!\n\n🎮 IN GAME: Command abilities, leadership buffs, reputation skills. Great for guild leaders and PvP rankers! Skills here show WHO\'S BOSS!\n\n⚡ BONUS: 1.0× power\n\n🎯 BEST FOR: Command Aura, Intimidate, King\'s Decree, Fame Boost, Rank Skills',
+                theme: 'house-theme'
+            },
+            house11: {
+                title: '🎁 H11: Gains',
+                desc: '🏆 MEANING: Victory, rewards, and achievement unlocks!\n\n🎮 IN GAME: Execute abilities live here! "Below 20% HP" triggers, quest completion bonuses, achievement hunters. The FINISHING MOVE house!\n\n⚡ BONUS: 1.0× power\n\n🎯 BEST FOR: Execute, Coup de Grace, Victory Rush, Loot Bonus, Quest Rewards',
+                theme: 'house-theme'
+            },
+            house12: {
+                title: '🌌 H12: Liberation',
+                desc: '🕊️ MEANING: Transcendence, sacrifice, and ultimate freedom!\n\n🎮 IN GAME: "I\'m about to end this man\'s whole career" house. 1.3× HIGHEST bonus! Ultimate abilities, sacrificial skills, limit breaks. High cost, INSANE payoff!\n\n⚡ BONUS: 1.3× power (MAX!)\n\n🎯 BEST FOR: Ultimate Skills, Limit Break, Sacrifice HP for Power, Transcendence',
+                theme: 'house-theme'
             }
         };
         
