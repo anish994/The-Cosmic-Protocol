@@ -1,0 +1,9 @@
+/* keyword-tooltips.css - minimal styling */
+.kw {
+  padding: 0 2px;
+  border-bottom: 1px dotted #888;
+  cursor: help;
+}
+.kw:hover {
+  color: #0ea5e9;
+}

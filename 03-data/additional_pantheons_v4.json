@@ -1,0 +1,3312 @@
+{
+  "version": "4.0 EXPANSION",
+  "totalEntities": 100,
+  "categories": {
+    "Greek Pantheon": 30,
+    "Chinese Pantheon": 25,
+    "Japanese Pantheon": 25,
+    "African Pantheon": 20
+  },
+  "entities": [
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_001",
+      "number": 1,
+      "name": "Zeus",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Deal 6 damage to any target. Create three 2/2 Lightning tokens. You gain control of target creature until end of turn.",
+      "keywords": [
+        "Lightning",
+        "Authority",
+        "Storm"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "control"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sky & Thunder"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_002",
+      "number": 2,
+      "name": "Poseidon",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Return all nonland permanents to owners' hands. Create a 5/5 Kraken token.",
+      "keywords": [
+        "Tsunami",
+        "Shake",
+        "Flood"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sea & Earthquakes"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_003",
+      "number": 3,
+      "name": "Hades",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Destroy all creatures. Exile them instead of putting them in graveyards. Create X 2/2 Shade tokens where X is creatures destroyed.",
+      "keywords": [
+        "Death",
+        "Exile",
+        "Souls"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "execute"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Underworld & Death"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_004",
+      "number": 4,
+      "name": "Hera",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "All your creatures get +2/+2 and gain Lifelink. Destroy target enchantment.",
+      "keywords": [
+        "Bond",
+        "Unity",
+        "Jealousy"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "buff"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Marriage & Family"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_005",
+      "number": 5,
+      "name": "Athena",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Counter target spell. Create two 3/3 Soldier tokens with Vigilance. Draw 2 cards.",
+      "keywords": [
+        "Strategy",
+        "Aegis",
+        "Wisdom"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Wisdom & War"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_006",
+      "number": 6,
+      "name": "Apollo",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Deal 4 damage divided among any targets. Scry 4, then draw 2 cards. Heal 4 damage to any target.",
+      "keywords": [
+        "Light",
+        "Oracle",
+        "Music"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sun & Prophecy"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_007",
+      "number": 7,
+      "name": "Artemis",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Destroy target creature with flying. Create three 2/2 Wolf tokens. Gain 3 life.",
+      "keywords": [
+        "Hunt",
+        "Precision",
+        "Wild"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "wild"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Hunt & Moon"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_008",
+      "number": 8,
+      "name": "Ares",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "All creatures get +3/+0 and gain First Strike and Menace until end of turn. Deal 3 damage to each player.",
+      "keywords": [
+        "Rage",
+        "Battle",
+        "Slaughter"
+      ],
+      "themes": [
+        "divine",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 91,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "War & Bloodlust"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_009",
+      "number": 9,
+      "name": "Aphrodite",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Gain control of up to three target creatures until end of turn. They gain Haste. Draw a card for each.",
+      "keywords": [
+        "Charm",
+        "Allure",
+        "Passion"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 93,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Love & Beauty"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_010",
+      "number": 10,
+      "name": "Hephaestus",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Create three 3/3 Artifact Creature tokens with Haste. Search library for an artifact and put it onto battlefield.",
+      "keywords": [
+        "Forge",
+        "Craft",
+        "Automation"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Forge & Craft"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_011",
+      "number": 11,
+      "name": "Hermes",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Target creature gains +2/+0, Flying, Haste, and 'When this attacks, draw a card.' Take an extra turn after this one.",
+      "keywords": [
+        "Haste",
+        "Steal",
+        "Swift"
+      ],
+      "themes": [
+        "divine",
+        "tempo",
+        "offense"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Speed & Thieves"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_012",
+      "number": 12,
+      "name": "Dionysus",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Each player discards their hand, then draws 7 cards. All creatures attack this turn if able, chosen randomly.",
+      "keywords": [
+        "Frenzy",
+        "Chaos",
+        "Revel"
+      ],
+      "themes": [
+        "divine",
+        "chaos",
+        "control"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Wine & Madness"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_013",
+      "number": 13,
+      "name": "Kronos",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 7
+      },
+      "cooldown": 7,
+      "effect": "Take two extra turns after this one. Exile all graveyards. Deal 10 damage divided among any targets.",
+      "keywords": [
+        "Time",
+        "Devour",
+        "Ages"
+      ],
+      "themes": [
+        "ancient",
+        "ultimate",
+        "control"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Time"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_014",
+      "number": 14,
+      "name": "Rhea",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Return all creature cards from your graveyard to battlefield. They gain Haste. You gain 10 life.",
+      "keywords": [
+        "Birth",
+        "Protect",
+        "Nurture"
+      ],
+      "themes": [
+        "ancient",
+        "support",
+        "healing"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Motherhood"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_015",
+      "number": 15,
+      "name": "Prometheus",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Sacrifice a permanent: Draw 3 cards and create three Treasure tokens. Repeat this twice.",
+      "keywords": [
+        "Fire",
+        "Gift",
+        "Sacrifice"
+      ],
+      "themes": [
+        "ancient",
+        "economy",
+        "infrastructure"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Fire & Foresight"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_016",
+      "number": 16,
+      "name": "Atlas",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "All your permanents gain Indestructible until your next turn. You can't lose the game and opponents can't win this turn.",
+      "keywords": [
+        "Burden",
+        "Strength",
+        "Endure"
+      ],
+      "themes": [
+        "ancient",
+        "defense",
+        "survival"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Strength & Endurance"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_017",
+      "number": 17,
+      "name": "Hecate",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Copy target instant or sorcery three times. You may choose new targets for the copies.",
+      "keywords": [
+        "Witchcraft",
+        "Choice",
+        "Night"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Magic & Crossroads"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_018",
+      "number": 18,
+      "name": "Nike",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "All your creatures gain +2/+2, Flying, and Double Strike until end of turn. You can't lose this turn.",
+      "keywords": [
+        "Victory",
+        "Triumph",
+        "Glory"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "buff"
+      ],
+      "powerScore": 91,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Victory"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_019",
+      "number": 19,
+      "name": "Nemesis",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Destroy target permanent that dealt damage to you this turn. Deal damage equal to your life lost this turn to any target.",
+      "keywords": [
+        "Vengeance",
+        "Justice",
+        "Balance"
+      ],
+      "themes": [
+        "divine",
+        "revenge",
+        "offense"
+      ],
+      "powerScore": 93,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Revenge"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_020",
+      "number": 20,
+      "name": "Pan",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Create five 1/1 Satyr tokens with Haste. All creatures you control gain Trample. Opponents discard a card.",
+      "keywords": [
+        "Wild",
+        "Panic",
+        "Nature"
+      ],
+      "themes": [
+        "divine",
+        "wild",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Nature & Wild"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_021",
+      "number": 21,
+      "name": "Persephone",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Return target creature from any graveyard to battlefield under your control. Create three Food tokens. Heal 5 damage.",
+      "keywords": [
+        "Rebirth",
+        "Seasons",
+        "Death"
+      ],
+      "themes": [
+        "divine",
+        "resurrection",
+        "healing"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Spring & Underworld"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_022",
+      "number": 22,
+      "name": "Demeter",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Search library for up to three lands and put them onto battlefield. Create five Food tokens. Draw 2 cards.",
+      "keywords": [
+        "Growth",
+        "Abundance",
+        "Harvest"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "economy"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Harvest"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_023",
+      "number": 23,
+      "name": "Helios",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Deal 5 damage to each creature and each opponent. Reveal all face-down cards. Draw a card for each revealed.",
+      "keywords": [
+        "Light",
+        "Burn",
+        "Reveal"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "information"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sun Chariot"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_024",
+      "number": 24,
+      "name": "Nyx",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "All your permanents gain Hexproof and Shroud until your next turn. Opponents skip their next combat phase.",
+      "keywords": [
+        "Darkness",
+        "Dreams",
+        "Hide"
+      ],
+      "themes": [
+        "ancient",
+        "defense",
+        "control"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Night"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_025",
+      "number": 25,
+      "name": "Gaia",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Create three 5/5 Elemental tokens. All your lands become 3/3 creatures until end of turn. They're still lands. Gain 15 life.",
+      "keywords": [
+        "Earth",
+        "Creation",
+        "Life"
+      ],
+      "themes": [
+        "ancient",
+        "ultimate",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Earth Mother"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_026",
+      "number": 26,
+      "name": "Eros",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 1,
+        "mana": 2
+      },
+      "cooldown": 7,
+      "effect": "Gain control of target creature until end of turn. Untap it and it gains Haste. Create a copy of it.",
+      "keywords": [
+        "Love",
+        "Control",
+        "Charm"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Desire"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_027",
+      "number": 27,
+      "name": "Thanatos",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Exile all creatures with power 3 or less. Opponents can't cast creature spells this turn. Gain life equal to creatures exiled.",
+      "keywords": [
+        "Death",
+        "Peaceful",
+        "End"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "execute"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Death"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_028",
+      "number": 28,
+      "name": "Hypnos",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Tap all creatures opponents control. They don't untap during their next untap step. Draw 2 cards.",
+      "keywords": [
+        "Sleep",
+        "Dreams",
+        "Rest"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 91,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sleep"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_029",
+      "number": 29,
+      "name": "Eris",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Each player sacrifices half their permanents rounded up. Each player discards their hand. Chaos reigns.",
+      "keywords": [
+        "Chaos",
+        "Strife",
+        "Discord"
+      ],
+      "themes": [
+        "divine",
+        "chaos",
+        "anarchy"
+      ],
+      "powerScore": 93,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Discord"
+    },
+    {
+      "id": "SKILL_INVOCATION_GREEK_GRK_030",
+      "number": 30,
+      "name": "Tyche",
+      "engine": "Invocation",
+      "category": "Greek Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Olympian",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Flip five coins. For each heads, draw 2 cards and create a Treasure. For each tails, deal 3 damage to any target.",
+      "keywords": [
+        "Luck",
+        "Chance",
+        "Fate"
+      ],
+      "themes": [
+        "divine",
+        "chaos",
+        "tempo"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Fortune"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_001",
+      "number": 1,
+      "name": "Jade Emperor",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 7
+      },
+      "cooldown": 7,
+      "effect": "You become the Monarch. Draw 3 cards. Create three 4/4 Celestial tokens. Your life total becomes 50.",
+      "keywords": [
+        "Authority",
+        "Heaven",
+        "Decree"
+      ],
+      "themes": [
+        "divine",
+        "ultimate",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Heaven & Order"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_002",
+      "number": 2,
+      "name": "Sun Wukong",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Create five copies of target creature you control. They gain Haste and 'When this dies, deal 3 damage to any target.'",
+      "keywords": [
+        "Immortal",
+        "Clone",
+        "Chaos"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "tempo"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Rebellion & Trickery"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_003",
+      "number": 3,
+      "name": "Guan Yu",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Deal 5 damage to target creature. If it dies, create two 3/3 Warrior tokens. All Warriors you control gain +2/+2.",
+      "keywords": [
+        "Honor",
+        "Valor",
+        "Strike"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "War & Loyalty"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_004",
+      "number": 4,
+      "name": "Nezha",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Deal 4 damage to each opponent. Create two 2/2 Fire Spirit tokens with Haste and Flying.",
+      "keywords": [
+        "Fire",
+        "Youth",
+        "Wheels"
+      ],
+      "themes": [
+        "divine",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Youth & Fire"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_005",
+      "number": 5,
+      "name": "Erlang Shen",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Destroy target creature or enchantment. Look at target opponent's hand and exile a card from it. Draw 2 cards.",
+      "keywords": [
+        "Third Eye",
+        "Truth",
+        "Hunt"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "information"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Truth & Justice"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_006",
+      "number": 6,
+      "name": "Chang'e",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "All your creatures gain Flying and Lifelink until end of turn. Gain 5 life. Draw a card.",
+      "keywords": [
+        "Moon",
+        "Immortality",
+        "Beauty"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "healing"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Moon"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_007",
+      "number": 7,
+      "name": "Dragon King",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Return all nonland permanents to owners' hands. Create a 7/7 Dragon token with Flying. Draw 3 cards.",
+      "keywords": [
+        "Storm",
+        "Flood",
+        "Dragon"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "ultimate"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Seas & Weather"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_008",
+      "number": 8,
+      "name": "Nüwa",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Return all creature cards from your graveyard to hand. Create three 2/2 Human tokens. Gain 10 life.",
+      "keywords": [
+        "Create",
+        "Repair",
+        "Mother"
+      ],
+      "themes": [
+        "divine",
+        "resurrection",
+        "support"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Creation & Humanity"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_009",
+      "number": 9,
+      "name": "Fuxi",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Destroy target creature with power 4 or greater. Scry 4, then draw 2 cards. Create a Food token.",
+      "keywords": [
+        "Hunt",
+        "Knowledge",
+        "Trap"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "support"
+      ],
+      "powerScore": 91,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Wisdom & Hunting"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_010",
+      "number": 10,
+      "name": "Shennong",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Search library for three lands and put them onto battlefield. Heal all damage from all creatures. Gain 8 life.",
+      "keywords": [
+        "Heal",
+        "Growth",
+        "Herbs"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "healing"
+      ],
+      "powerScore": 73,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Agriculture & Medicine"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_011",
+      "number": 11,
+      "name": "Xuanwu",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "All your permanents gain Indestructible and Hexproof until your next turn. Create a 5/5 Tortoise token.",
+      "keywords": [
+        "Shield",
+        "Turtle",
+        "Snake"
+      ],
+      "themes": [
+        "divine",
+        "defense",
+        "survival"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "North & Protection"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_012",
+      "number": 12,
+      "name": "Zhurong",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Deal 7 damage divided among any targets. All your creatures gain +3/+0 and First Strike until end of turn.",
+      "keywords": [
+        "Fire",
+        "Burn",
+        "Rage"
+      ],
+      "themes": [
+        "divine",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Fire God"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_013",
+      "number": 13,
+      "name": "Gonggong",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Return three target nonland permanents to owners' hands. Draw 2 cards. Opponents discard a card.",
+      "keywords": [
+        "Flood",
+        "Chaos",
+        "Destruction"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Water & Flood"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_014",
+      "number": 14,
+      "name": "Caishen",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Create five Treasure tokens. Draw cards equal to treasures you control. Gain 5 life.",
+      "keywords": [
+        "Wealth",
+        "Fortune",
+        "Gold"
+      ],
+      "themes": [
+        "divine",
+        "economy",
+        "infrastructure"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Wealth"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_015",
+      "number": 15,
+      "name": "Mazu",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "All your creatures gain Indestructible until end of turn. Counter target spell. Draw 2 cards.",
+      "keywords": [
+        "Protection",
+        "Safe",
+        "Guide"
+      ],
+      "themes": [
+        "divine",
+        "defense",
+        "control"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sea Protection"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_016",
+      "number": 16,
+      "name": "Guanyin",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Heal all damage from all permanents. Remove all poison counters. All players gain 10 life. Draw a card.",
+      "keywords": [
+        "Mercy",
+        "Heal",
+        "Peace"
+      ],
+      "themes": [
+        "divine",
+        "healing",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Mercy & Compassion"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_017",
+      "number": 17,
+      "name": "Pangu",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 8
+      },
+      "cooldown": 7,
+      "effect": "Exile all permanents, then return all lands to battlefield. Each player draws 7 cards. Reset all life totals to 40.",
+      "keywords": [
+        "Creation",
+        "Separation",
+        "Giant"
+      ],
+      "themes": [
+        "ancient",
+        "ultimate",
+        "broken"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Creation"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_018",
+      "number": 18,
+      "name": "Lei Gong",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Deal 4 damage to each creature. If a creature dealt damage this way would die, exile it instead.",
+      "keywords": [
+        "Thunder",
+        "Justice",
+        "Drum"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "offense"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Thunder"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_019",
+      "number": 19,
+      "name": "Dian Mu",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Deal 5 damage to target creature or planeswalker. If it dies, you may cast this again without paying mana cost.",
+      "keywords": [
+        "Lightning",
+        "Flash",
+        "Strike"
+      ],
+      "themes": [
+        "divine",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 91,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Lightning"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_020",
+      "number": 20,
+      "name": "Zao Jun",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 1,
+        "mana": 2
+      },
+      "cooldown": 7,
+      "effect": "Create three Food tokens. Draw a card for each Food you control. Gain 3 life.",
+      "keywords": [
+        "Food",
+        "Home",
+        "Report"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "economy"
+      ],
+      "powerScore": 73,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Hearth & Kitchen"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_021",
+      "number": 21,
+      "name": "Wen Chang",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Draw 4 cards. You have no maximum hand size this turn. Scry 3.",
+      "keywords": [
+        "Knowledge",
+        "Study",
+        "Wisdom"
+      ],
+      "themes": [
+        "divine",
+        "information",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Literature"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_022",
+      "number": 22,
+      "name": "Bixia Yuanjun",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Return target creature from graveyard to battlefield. Create two 2/2 Spirit tokens. Gain 7 life.",
+      "keywords": [
+        "Dawn",
+        "Life",
+        "Protection"
+      ],
+      "themes": [
+        "divine",
+        "resurrection",
+        "healing"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Dawn & Birth"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_023",
+      "number": 23,
+      "name": "Tu Di Gong",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 1,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Search library for up to two basic lands and put them onto battlefield tapped. Create two Treasure tokens.",
+      "keywords": [
+        "Earth",
+        "Growth",
+        "Local"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "economy"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Earth & Soil"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_024",
+      "number": 24,
+      "name": "Yan Wang",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Destroy all creatures with power 4 or greater. Exile all graveyards. Each opponent loses 5 life.",
+      "keywords": [
+        "Judge",
+        "Death",
+        "Karma"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "execute"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Underworld Judge"
+    },
+    {
+      "id": "SKILL_INVOCATION_CHINESE_CHN_025",
+      "number": 25,
+      "name": "Bai Hu",
+      "engine": "Invocation",
+      "category": "Chinese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Celestial",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Create a 5/5 White Tiger token with First Strike and Vigilance. All creatures you control gain +1/+1 and Vigilance.",
+      "keywords": [
+        "Tiger",
+        "West",
+        "Metal"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "White Tiger"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_001",
+      "number": 1,
+      "name": "Amaterasu",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Deal 6 damage to each opponent. All your creatures gain +3/+3 and Lifelink. You gain 15 life.",
+      "keywords": [
+        "Sun",
+        "Light",
+        "Divine"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "healing"
+      ],
+      "powerScore": 73,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sun Goddess"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_002",
+      "number": 2,
+      "name": "Susanoo",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Destroy all artifacts and enchantments. Deal 5 damage divided among any targets. Create a 6/6 Dragon token with Flying.",
+      "keywords": [
+        "Storm",
+        "Sword",
+        "Chaos"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Storm God"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_003",
+      "number": 3,
+      "name": "Tsukuyomi",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Tap all creatures. They don't untap during their next untap step. Take an extra turn after this one.",
+      "keywords": [
+        "Moon",
+        "Night",
+        "Time"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Moon God"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_004",
+      "number": 4,
+      "name": "Inari",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Create five 2/2 Fox Spirit tokens. Create three Food tokens. Draw 2 cards.",
+      "keywords": [
+        "Fox",
+        "Prosperity",
+        "Shape"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "economy"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Rice & Foxes"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_005",
+      "number": 5,
+      "name": "Raijin",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Deal 4 damage to each creature. Create three 2/2 Lightning Spirit tokens with Haste.",
+      "keywords": [
+        "Thunder",
+        "Drums",
+        "Storm"
+      ],
+      "themes": [
+        "divine",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Thunder"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_006",
+      "number": 6,
+      "name": "Fujin",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Return three target nonland permanents to owners' hands. All your creatures gain Flying until end of turn.",
+      "keywords": [
+        "Wind",
+        "Bag",
+        "Storm"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Wind"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_007",
+      "number": 7,
+      "name": "Hachiman",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Deal 5 damage to any target. Create three 3/3 Samurai tokens with First Strike. Draw a card.",
+      "keywords": [
+        "War",
+        "Victory",
+        "Archery"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "War God"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_008",
+      "number": 8,
+      "name": "Benzaiten",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Draw 3 cards. You may play an additional land this turn. All your spells cost 1 less this turn.",
+      "keywords": [
+        "Music",
+        "Flow",
+        "Beauty"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "economy"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Music & Arts"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_009",
+      "number": 9,
+      "name": "Izanagi",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Create five 3/3 Spirit tokens. Return all creatures from your graveyard to hand. Gain 10 life.",
+      "keywords": [
+        "Creation",
+        "Life",
+        "Father"
+      ],
+      "themes": [
+        "divine",
+        "resurrection",
+        "support"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Creation"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_010",
+      "number": 10,
+      "name": "Izanami",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Destroy all creatures. Exile them. Create X 2/2 Spirit tokens where X is creatures destroyed.",
+      "keywords": [
+        "Death",
+        "Underworld",
+        "Mother"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "execute"
+      ],
+      "powerScore": 71,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Death"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_011",
+      "number": 11,
+      "name": "Ryujin",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Return all nonland permanents to owners' hands. Create a 8/8 Dragon token with Flying. Draw 4 cards.",
+      "keywords": [
+        "Dragon",
+        "Sea",
+        "Storm"
+      ],
+      "themes": [
+        "divine",
+        "ultimate",
+        "control"
+      ],
+      "powerScore": 73,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Dragon King"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_012",
+      "number": 12,
+      "name": "Tengu",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Create three 3/3 Tengu tokens with Flying and First Strike. Draw a card for each.",
+      "keywords": [
+        "Flight",
+        "Martial",
+        "Trick"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "tempo"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Mountain Spirits"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_013",
+      "number": 13,
+      "name": "Kitsune",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Create a copy of target creature you control. It gains Haste. At end of turn, create another copy.",
+      "keywords": [
+        "Fox",
+        "Illusion",
+        "Nine Tails"
+      ],
+      "themes": [
+        "divine",
+        "tempo",
+        "support"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Fox Spirits"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_014",
+      "number": 14,
+      "name": "Oni",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Create two 5/5 Demon tokens with Menace. Deal 5 damage divided among any targets.",
+      "keywords": [
+        "Demon",
+        "Rage",
+        "Club"
+      ],
+      "themes": [
+        "demonic",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Demons"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_015",
+      "number": 15,
+      "name": "Yuki-Onna",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Tap all creatures opponents control. They don't untap during their next two untap steps. Gain 5 life.",
+      "keywords": [
+        "Ice",
+        "Cold",
+        "Freeze"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Snow Woman"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_016",
+      "number": 16,
+      "name": "Tanuki",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 1,
+        "mana": 2
+      },
+      "cooldown": 7,
+      "effect": "Create a copy of target artifact or enchantment you control. Draw a card.",
+      "keywords": [
+        "Shape",
+        "Trick",
+        "Leaf"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "tempo"
+      ],
+      "powerScore": 83,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Raccoon Dog"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_017",
+      "number": 17,
+      "name": "Gashadokuro",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Create a 10/10 Skeleton token. Each opponent sacrifices three permanents.",
+      "keywords": [
+        "Undead",
+        "Giant",
+        "Hunger"
+      ],
+      "themes": [
+        "ancient",
+        "control",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Giant Skeleton"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_018",
+      "number": 18,
+      "name": "Kappa",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 1,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Return target permanent to owner's hand. Draw 2 cards. Create a Food token.",
+      "keywords": [
+        "Water",
+        "Trick",
+        "Cucumber"
+      ],
+      "themes": [
+        "divine",
+        "tempo",
+        "support"
+      ],
+      "powerScore": 87,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Water Imp"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_019",
+      "number": 19,
+      "name": "Jorōgumo",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Destroy target creature with Flying. Create three 2/2 Spider tokens with Reach. Draw a card.",
+      "keywords": [
+        "Spider",
+        "Web",
+        "Deceit"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "offense"
+      ],
+      "powerScore": 89,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Spider Woman"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_020",
+      "number": 20,
+      "name": "Yamata no Orochi",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 7
+      },
+      "cooldown": 7,
+      "effect": "Create an 8/8 Dragon Hydra token with 'When this enters, deal 8 damage divided among any targets.' Draw 4 cards.",
+      "keywords": [
+        "Dragon",
+        "Hydra",
+        "Heads"
+      ],
+      "themes": [
+        "divine",
+        "ultimate",
+        "offense"
+      ],
+      "powerScore": 71,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Eight-Headed Dragon"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_021",
+      "number": 21,
+      "name": "Ame-no-Uzume",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "All your creatures gain +2/+2 and Haste until end of turn. Draw 2 cards. Gain 5 life.",
+      "keywords": [
+        "Dance",
+        "Joy",
+        "Light"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "tempo"
+      ],
+      "powerScore": 73,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Dawn & Mirth"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_022",
+      "number": 22,
+      "name": "Takemikazuchi",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Deal 5 damage to target creature. If it dies, create a 4/4 Samurai token. Draw a card.",
+      "keywords": [
+        "Thunder",
+        "Blade",
+        "Victory"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Thunder & Sword"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_023",
+      "number": 23,
+      "name": "Okuninushi",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Search library for up to three lands and put them onto battlefield. Heal 10 damage divided. Draw 2 cards.",
+      "keywords": [
+        "Medicine",
+        "Magic",
+        "Build"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "healing"
+      ],
+      "powerScore": 77,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Nation-Building"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_024",
+      "number": 24,
+      "name": "Bishamon",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Create four Treasure tokens. Create two 3/3 Warrior tokens. Draw a card for each treasure.",
+      "keywords": [
+        "Fortune",
+        "Warrior",
+        "Treasure"
+      ],
+      "themes": [
+        "divine",
+        "economy",
+        "support"
+      ],
+      "powerScore": 79,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Fortune & War"
+    },
+    {
+      "id": "SKILL_INVOCATION_JAPANESE_JPN_025",
+      "number": 25,
+      "name": "Fudo Myoo",
+      "engine": "Invocation",
+      "category": "Japanese Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Kami",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "All your permanents gain Indestructible until your next turn. Deal 6 damage divided. You can't lose this turn.",
+      "keywords": [
+        "Immovable",
+        "Fire",
+        "Sword"
+      ],
+      "themes": [
+        "divine",
+        "defense",
+        "ultimate"
+      ],
+      "powerScore": 81,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Immovable Wisdom"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_001",
+      "number": 1,
+      "name": "Olodumare",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 7
+      },
+      "cooldown": 7,
+      "effect": "You become the Monarch. Create five 4/4 Spirit tokens. Your life total becomes 60. Draw 5 cards.",
+      "keywords": [
+        "Creation",
+        "Supreme",
+        "Wisdom"
+      ],
+      "themes": [
+        "divine",
+        "ultimate",
+        "support"
+      ],
+      "powerScore": 76,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Supreme Creator"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_002",
+      "number": 2,
+      "name": "Ogun",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Deal 6 damage divided among any targets. Create three 3/3 Warrior tokens with First Strike. All artifacts cost 2 less.",
+      "keywords": [
+        "Iron",
+        "War",
+        "Forge"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "infrastructure"
+      ],
+      "powerScore": 78,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Iron & War"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_003",
+      "number": 3,
+      "name": "Shango",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Deal 7 damage divided among any targets. Create three 2/2 Lightning tokens with Haste.",
+      "keywords": [
+        "Thunder",
+        "Fire",
+        "Dance"
+      ],
+      "themes": [
+        "divine",
+        "aggro",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Thunder & Fire"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_004",
+      "number": 4,
+      "name": "Oshun",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Gain control of target creature. Create three 2/2 River Spirit tokens. Heal 8 damage. Draw 2 cards.",
+      "keywords": [
+        "Love",
+        "River",
+        "Beauty"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "healing"
+      ],
+      "powerScore": 82,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Love & Rivers"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_005",
+      "number": 5,
+      "name": "Yemoja",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Return all creatures from your graveyard to hand. Create five 2/2 Fish tokens. Gain 15 life.",
+      "keywords": [
+        "Mother",
+        "Ocean",
+        "Life"
+      ],
+      "themes": [
+        "divine",
+        "resurrection",
+        "healing"
+      ],
+      "powerScore": 84,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Motherhood & Oceans"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_006",
+      "number": 6,
+      "name": "Eshu",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Each player draws 3 cards, then discards 2 cards. Each player creates two Treasure tokens. Chaos ensues.",
+      "keywords": [
+        "Trick",
+        "Chaos",
+        "Choice"
+      ],
+      "themes": [
+        "divine",
+        "chaos",
+        "tempo"
+      ],
+      "powerScore": 86,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Crossroads & Trickery"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_007",
+      "number": 7,
+      "name": "Oya",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Return three target permanents to owners' hands. Deal 4 damage to any target. Draw 2 cards.",
+      "keywords": [
+        "Wind",
+        "Storm",
+        "Transformation"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "tempo"
+      ],
+      "powerScore": 88,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Winds & Change"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_008",
+      "number": 8,
+      "name": "Obatala",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Exile all enchantments. Create five 2/2 Human tokens. All your creatures gain Lifelink. Gain 10 life.",
+      "keywords": [
+        "Pure",
+        "Create",
+        "White"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "healing"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Purity & Creation"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_009",
+      "number": 9,
+      "name": "Orunmila",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Scry 5, then draw 4 cards. Look at top 5 cards of opponent's library. You may rearrange them.",
+      "keywords": [
+        "Wisdom",
+        "Oracle",
+        "Fate"
+      ],
+      "themes": [
+        "divine",
+        "information",
+        "control"
+      ],
+      "powerScore": 92,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Wisdom & Divination"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_010",
+      "number": 10,
+      "name": "Elegua",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 1,
+        "mana": 2
+      },
+      "cooldown": 7,
+      "effect": "Search library for a land and put it onto battlefield. Draw a card. Create a Treasure token.",
+      "keywords": [
+        "Path",
+        "Open",
+        "Key"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "economy"
+      ],
+      "powerScore": 74,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Paths & Opportunities"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_011",
+      "number": 11,
+      "name": "Babaluaye",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Destroy all creatures with power 2 or less. Heal all damage from remaining creatures. Gain 10 life.",
+      "keywords": [
+        "Heal",
+        "Disease",
+        "Transform"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "healing"
+      ],
+      "powerScore": 76,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Healing & Disease"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_012",
+      "number": 12,
+      "name": "Anansi",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Create three 2/2 Spider tokens with Reach. Draw 3 cards. You may play an additional land this turn.",
+      "keywords": [
+        "Spider",
+        "Story",
+        "Trick"
+      ],
+      "themes": [
+        "divine",
+        "support",
+        "economy"
+      ],
+      "powerScore": 78,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Stories & Spiders"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_013",
+      "number": 13,
+      "name": "Mami Wata",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Create five Treasure tokens. Draw cards equal to treasures you control. Gain 5 life.",
+      "keywords": [
+        "Water",
+        "Beauty",
+        "Wealth"
+      ],
+      "themes": [
+        "divine",
+        "economy",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Water Spirits"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_014",
+      "number": 14,
+      "name": "Chukwu",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Exile all nonland permanents, then return all your permanents from exile. Draw 5 cards. Gain 20 life.",
+      "keywords": [
+        "Supreme",
+        "Chi",
+        "Creator"
+      ],
+      "themes": [
+        "divine",
+        "ultimate",
+        "broken"
+      ],
+      "powerScore": 82,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Supreme God"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_015",
+      "number": 15,
+      "name": "Ogun",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 4
+      },
+      "cooldown": 7,
+      "effect": "Destroy target creature with flying or power 4+. Create two 3/3 Hunter tokens. Draw a card.",
+      "keywords": [
+        "Hunt",
+        "War",
+        "Iron"
+      ],
+      "themes": [
+        "divine",
+        "control",
+        "offense"
+      ],
+      "powerScore": 84,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "War & Hunting"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_016",
+      "number": 16,
+      "name": "Nyame",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "You become the Monarch. All your creatures gain Flying. Deal 5 damage to each opponent. Draw 3 cards.",
+      "keywords": [
+        "Sky",
+        "Father",
+        "Supreme"
+      ],
+      "themes": [
+        "divine",
+        "offense",
+        "support"
+      ],
+      "powerScore": 86,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Sky Father"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_017",
+      "number": 17,
+      "name": "Asase Ya",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 5
+      },
+      "cooldown": 7,
+      "effect": "Search library for up to four lands and put them onto battlefield. Create four Food tokens. Gain 10 life.",
+      "keywords": [
+        "Earth",
+        "Fertility",
+        "Mother"
+      ],
+      "themes": [
+        "divine",
+        "infrastructure",
+        "healing"
+      ],
+      "powerScore": 88,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Earth Mother"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_018",
+      "number": 18,
+      "name": "Legba",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 2,
+        "mana": 3
+      },
+      "cooldown": 7,
+      "effect": "Draw 3 cards. You may cast spells from your hand without paying their mana costs until end of turn (max 3).",
+      "keywords": [
+        "Speak",
+        "Messenger",
+        "Gate"
+      ],
+      "themes": [
+        "divine",
+        "economy",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Communication"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_019",
+      "number": 19,
+      "name": "Nana Buluku",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 7
+      },
+      "cooldown": 7,
+      "effect": "Create the universe anew: Reset all graveyards, exile zones, and hands. Each player draws 7 cards. Gain 30 life.",
+      "keywords": [
+        "Ancient",
+        "Creator",
+        "Primordial"
+      ],
+      "themes": [
+        "ancient",
+        "ultimate",
+        "broken"
+      ],
+      "powerScore": 92,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Ancient Creator"
+    },
+    {
+      "id": "SKILL_INVOCATION_AFRICAN_AFR_020",
+      "number": 20,
+      "name": "Mawu-Lisa",
+      "engine": "Invocation",
+      "category": "African Pantheon",
+      "pillar": "Divine Pantheon",
+      "rank": "Orisha",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "devotion": 3,
+        "mana": 6
+      },
+      "cooldown": 7,
+      "effect": "Deal 5 damage to each creature. Heal 5 damage to each player. Draw 3 cards. Create three 3/3 tokens.",
+      "keywords": [
+        "Dual",
+        "Balance",
+        "Eclipse"
+      ],
+      "themes": [
+        "divine",
+        "balance",
+        "support"
+      ],
+      "powerScore": 74,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0 Expansion",
+      "domain": "Moon & Sun"
+    }
+  ]
+}

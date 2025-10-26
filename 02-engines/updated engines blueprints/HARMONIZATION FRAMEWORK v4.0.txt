@@ -1,0 +1,517 @@
+# MASTER HARMONIZATION FRAMEWORK v4.0
+## Converting Skill Lists → Balanced v4.0 Engines
+
+---
+
+## 📋 PURPOSE
+
+This framework provides the **systematic methodology** for integrating 100-skill engine lists into the v3.0 Master Game Design, creating harmonized v4.0 engines with:
+- ✅ Perfect stat balance (TTK targets, control caps, cost curves)
+- ✅ Canonical keyword consistency ([Burn], [Silence], [Charge], etc.)
+- ✅ Cross-engine synergy integration (Architect's Codex)
+- ✅ Jyotish gravitational hooks (planets, houses, nakshatras)
+- ✅ Trinity meta alignment (Aggro • Control • Ramp)
+
+---
+
+## 🎯 CORE HARMONIZATION PRINCIPLES
+
+### 1. RESOURCE UNIFICATION
+**Problem:** Skill lists use unique resources (Ananda, Siddhi, Nirvana, Gnosis, etc.)
+**Solution:** Map to Master v3.0 standard:
+- **Primary:** KP (Knowledge Points) - universal tactical currency
+- **Engine-Specific:** Threshold, Prana, Insight, Bandwidth, Coherence, Ojas, Sanctity, Threads
+- **Conversion Formula:**
+  - Ananda/Gnosis → Threshold (for Singularity)
+  - Unique resources → Engine-specific resource + KP
+  - Cost Range: 1-5 KP + 10-100 engine resource
+
+### 2. KEYWORD CANONICALIZATION
+**Problem:** Skill lists use varied terminology
+**Solution:** Map to Master v3.0 keywords:
+
+**Status Effects:**
+- [Burn], [Decay], [Silence], [Stasis], [Banish], [Transcendent], [Seal], [Omen]
+
+**Actions:**
+- [Charge], [Threshold], [Collapse], [Invoke], [Chant], [Consecrate], [Foretell], [Analyze], [Mark], [Field], [Anchor], [Channel]
+
+**Grammar:**
+- Apply, Consume, Detonate, Bind, Transit, Seal, Chant
+
+### 3. STAT BALANCE FRAMEWORK
+
+#### Power Levels (Tier System)
+**Tier 0 (Basic):** Foundational effects, always available
+- Damage: 10-30
+- Heal: 15-40
+- Duration: 1-2 turns
+- Cost: 1-2 KP + 10-30 engine resource
+
+**Tier 1 (Standard):** Main deck workhorses
+- Damage: 40-80
+- Heal: 50-100
+- Duration: 2-3 turns
+- Cost: 2-3 KP + 30-60 engine resource
+- Cooldown: 0-2
+
+**Tier 2 (Advanced):** Powerful effects with conditions
+- Damage: 100-150
+- Heal: 120-200
+- Duration: 3-4 turns
+- Cost: 3-4 KP + 60-100 engine resource
+- Cooldown: 2-4
+
+**Tier 3 (Ultimate):** Game-changing effects
+- Damage: 200-300
+- Heal: 250-400
+- Duration: 4-5 turns
+- Cost: 4-5 KP + 80-120 engine resource
+- Cooldown: 4-5
+
+**Tier 4 (Apocalypse):** Win-condition effects
+- Damage: 400+
+- Heal: 500+
+- Duration: 5+ turns or permanent
+- Cost: 5 KP + 100-150 engine resource
+- Cooldown: 5+ or once per duel
+
+#### Cost Curve Formula
+```
+Base Cost = Tier × 1 KP
+Engine Cost = (Tier × 20) + Complexity Modifier
+Cooldown = Tier (0 for Tier 0, 1-2 for Tier 1, etc.)
+```
+
+**Complexity Modifiers:**
+- Simple effect: +0
+- Conditional effect: +10
+- Multi-target/AoE: +20
+- Cross-engine synergy: +15
+- Reality-bending: +30
+
+#### Balance Caps (from Master v3.0)
+- **[Silence]:** ≤ 2 total turns in any 4-turn window
+- **[Stasis]:** Stack cap varies by engine (2-5 max)
+- **Damage caps:** Removed for specific "ceiling breaker" effects only
+- **Healing overflow:** Converts to secondary benefits (Insight, Shield, etc.)
+- **TTK Targets:** Aggro 3-5 turns, Midrange 5-7, Control 7-10
+
+### 4. JYOTISH INTEGRATION
+
+Every skill must have **gravitational hooks** for planetary/house influence:
+
+**Planet Modifiers:**
+- **Mars:** +30% [Burn] damage, +aggro effects
+- **Saturn:** +duration, +[Stasis] effectiveness, +threshold rewards
+- **Jupiter:** +AoE range, +expansion effects
+- **Mercury:** -cooldowns, +tempo effects
+- **Venus:** +healing, +[Cleanse] effects
+- **Moon:** -ritual requirements (chant breakpoints), +intuition effects
+- **Sun:** +authority effects, +damage
+- **Rahu:** +chaos/variance, obsession bonuses
+- **Ketu:** +liberation effects, void mechanics
+
+**House Modifiers (Key Houses):**
+- **House 6 (Enemies):** +debuff duration
+- **House 8 (Transformation):** Ultimate cost -1
+- **House 12 (Liberation):** +[Void]/[Banish] effects
+
+**Nakshatra Examples:**
+- **Pushya:** Shields regen Ojas
+- **Purva Bhadrapada:** Duplicate [Channel] effects
+
+### 5. CROSS-ENGINE SYNERGY SEEDS
+
+Each skill should have **at least 1-2 cross-engine hooks** for Architect's Codex:
+
+**Synergy Pattern Template:**
+```
+[Engine1 Keyword] + [Engine2 Keyword] → Enhanced Effect
+```
+
+**Examples:**
+- Singularity [Charge] + Divination [Foretell] → Threshold gain on resolution
+- Tantra [Burn] + Jyotish Mars → +30% [Burn] damage
+- Invocation [Chant] + Moon → -1 chant requirement for breakpoint
+- Consciousness [Field] + Jupiter → +radius expansion
+
+### 6. EVOLUTION SYSTEM (from Skill Lists)
+
+**Problem:** Skill lists have Evo A/Evo B branches
+**Solution:** Integrate as **upgrade paths**:
+
+**Standard Structure:**
+- **Base Effect:** Core function (always available)
+- **Upgrade A (Intensity):** +potency/damage/healing/duration
+- **Upgrade B (Complexity):** New mechanics, cross-engine synergy, flexibility
+
+**Upgrade Costs:**
+- Upgrade A: +20-30% base cost
+- Upgrade B: +40-50% base cost
+- Both unlockable through: Jyotish mastery, Siddhi progression, or deckbuilding investment
+
+---
+
+## 🔧 HARMONIZATION WORKFLOW (7-Step Process)
+
+### STEP 1: SKILL AUDIT
+**Action:** Read skill list + v3.0 engine
+**Output:** Spreadsheet with:
+- Skill name
+- Original cost/effect
+- Power tier (0-4)
+- Primary keyword(s)
+- Cross-engine synergy potential
+- Jyotish gravity hooks
+- Conflicts/overlaps with v3.0
+
+### STEP 2: RESOURCE MAPPING
+**Action:** Convert unique resources to Master v3.0 standard
+**Output:** Resource conversion table
+```
+Example (Singularity):
+Ananda → Threshold
+Siddhi → Permanent progression (like Invocation Presence)
+Nirvana → Stack-based buff system
+Gnosis → Cost currency (mapped to KP + Threshold)
+```
+
+### STEP 3: KEYWORD STANDARDIZATION
+**Action:** Map skill effects to canonical keywords
+**Output:** Keyword mapping table
+```
+Example:
+"Shatter Ceiling" → [Threshold] mechanic + resource cap removal
+"Transcendent" status → Use canonical [Transcendent] from Master v3.0
+"Limit Breaking" → [Charge] mechanics + overflow handling
+```
+
+### STEP 4: STAT REBALANCING
+**Action:** Apply cost curve formula, adjust damage/healing to tier system
+**Output:** Balanced stat sheet with:
+- KP cost (1-5)
+- Engine resource cost (10-150)
+- Cooldown (0-5+)
+- Damage/heal values (tier-appropriate)
+- Duration (tier-appropriate)
+
+### STEP 5: GRAVITY HOOK INTEGRATION
+**Action:** Add planet/house/nakshatra modifiers to each skill
+**Output:** Gravity matrix per skill
+```
+Example:
+Glyph: Reality Break
+- Saturn: +1 turn duration
+- Ketu: +bonus chaos effect
+- House 8: Cost -20 Threshold
+```
+
+### STEP 6: SYNERGY SEED PLANTING
+**Action:** Identify 2-3 cross-engine synergies per skill
+**Output:** Architect's Codex entries
+```
+Example:
+ACX-SING-DIV-03: Reality Break + Foretell
+  → Rewritten reality sealed in future draw
+```
+
+### STEP 7: EVOLUTIONARY BRANCH DESIGN
+**Action:** Create upgrade paths (Evo A/B from skill lists)
+**Output:** Upgrade tree with clear progression
+
+---
+
+## 📊 BALANCE VALIDATION CHECKLIST
+
+### Damage Output Check
+- [ ] Tier 0: 10-30 damage
+- [ ] Tier 1: 40-80 damage
+- [ ] Tier 2: 100-150 damage
+- [ ] Tier 3: 200-300 damage
+- [ ] Tier 4: 400+ damage (limited access)
+
+### Healing Output Check
+- [ ] Tier 0: 15-40 healing
+- [ ] Tier 1: 50-100 healing
+- [ ] Tier 2: 120-200 healing
+- [ ] Tier 3: 250-400 healing
+- [ ] Tier 4: 500+ healing (with overflow handling)
+
+### Control Effect Check
+- [ ] [Silence]: ≤ 2 turns total in 4-turn window
+- [ ] [Stasis]: Capped at 2-5 stacks (engine-specific)
+- [ ] [Banish]: Limited to 1-3 turns max
+- [ ] Counterplay: [Cleanse] available in multiple engines
+
+### Resource Economy Check
+- [ ] Starting resources: 50-100 (engine-specific)
+- [ ] Generation rate: 10-30 per turn
+- [ ] Max resources: 100-200 (can be broken by specific effects)
+- [ ] Cost distribution: 70% Tier 0-1, 20% Tier 2, 10% Tier 3-4
+
+### TTK Validation
+- [ ] Aggro decks: 3-5 turn average kill
+- [ ] Midrange: 5-7 turns
+- [ ] Control: 7-10 turns
+- [ ] Ramp/Singularity: 8-12 turns (with spike potential)
+
+### Cross-Engine Synergy Check
+- [ ] At least 3 Architect's Codex entries per engine pair
+- [ ] Synergies balanced (not auto-include combinations)
+- [ ] Clear hooks in keyword grammar
+
+### Jyotish Gravity Check
+- [ ] Every skill has at least 1 planetary modifier
+- [ ] Key skills have house interactions
+- [ ] Nakshatra effects add flavor without breaking balance
+
+---
+
+## 🗂️ ENGINE-SPECIFIC MAPPING TEMPLATES
+
+### SINGULARITY ENGINE
+**Core Identity:** Threshold mechanics, reality warping, rule breaking
+**Primary Keywords:** [Charge], [Threshold], [Collapse], [Banish]
+**Resource Mapping:**
+- Ananda → Threshold (0-150)
+- Siddhi → Mastery Levels (permanent +10% per level)
+- Nirvana → [Transcendent] stacks
+
+**Skill Categories:**
+1. Limit Breaking (20 skills) → [Charge] + overflow mechanics
+2. Reality Warping (20 skills) → [Collapse] effects
+3. God Forms (15 skills) → Transformation states
+4. Void Manipulation (15 skills) → [Banish] mechanics
+5. Time Control (15 skills) → Turn manipulation
+6. Transcendence (15 skills) → [Transcendent] status effects
+
+**Balance Focus:**
+- Threshold gain rate: 5-15 per charge action
+- Collapse threshold: 50-150 Threshold
+- Cooldowns: Longer (3-5) to prevent spam
+- Cross-engine: Gains Threshold from [Foretell], [Support], [Field] synergies
+
+---
+
+### DIVINATION ENGINE
+**Core Identity:** Foresight, timing manipulation, probability control
+**Primary Keywords:** [Foretell], [Omen], [Seal], [Weave]
+**Resource Mapping:**
+- Darshan → Insight (0-100)
+- Karma → Permanent progression tracker
+- Temporal Threads → Duration/timing currency
+
+**Skill Categories:**
+1. Scrying (20 skills) → Perfect information
+2. Timeline Manipulation (20 skills) → Turn/phase control
+3. Fate Weaving (20 skills) → RNG control
+4. Prophetic Power (20 skills) → Conditional bonuses
+5. Omen Reading (20 skills) → Enhanced draws
+
+**Balance Focus:**
+- Info advantage without game-breaking omniscience
+- [Foretell] discount: 30-50% cost reduction
+- Probability control: Limited to 1-3 uses per duel
+- Cross-engine: Synergizes with Singularity [Threshold] and Invocation timing
+
+---
+
+### TANTRA ENGINE
+**Core Identity:** Energy manipulation, [Burn]/[Decay] detonation, chakra system
+**Primary Keywords:** [Burn], [Decay], [Charge] (Prana), [Detonate]
+**Resource Mapping:**
+- Prana → Prana (0-100) - kept as-is
+- Kundalini → Power level (0-10)
+- Chakra Balance → Dual resource system
+
+**Skill Categories:**
+1. Burn Application (25 skills)
+2. Decay Detonation (20 skills)
+3. Chakra Activation (15 skills)
+4. Energy Transmutation (20 skills)
+5. Kundalini Rising (20 skills)
+
+**Balance Focus:**
+- [Burn]: 5-15 damage/turn, stacks 3-10
+- [Decay]: +10% detonation damage per stack
+- Detonation caps: 200-400 max (prevents one-shots)
+- Cross-engine: Mars +30% [Burn], Jupiter AoE detonations
+
+---
+
+### CONSCIOUSNESS ENGINE
+**Core Identity:** Field control, state transitions, recursive effects
+**Primary Keywords:** [Field], [Anchor], [Channel], [Coherence]
+**Resource Mapping:**
+- Coherence → Coherence (0-100) - kept as-is
+- Bandwidth → Multi-target resource
+- States → Transformation system
+
+**Skill Categories:**
+1. Field Generation (25 skills)
+2. Anchor Placement (20 skills)
+3. Channel Creation (20 skills)
+4. State Transitions (20 skills)
+5. Recursive Loops (15 skills)
+
+**Balance Focus:**
+- Field duration: 3-5 turns
+- Anchor limit: 3-5 max on board
+- Recursion caps: 2-3 max triggers per turn
+- Cross-engine: Jupiter +radius, [Collapse] converts to shields
+
+---
+
+### FOUNDATIONAL ENGINE
+**Core Identity:** Infrastructure, support, resource generation
+**Primary Keywords:** [Support], [Structure], [Refresh]
+**Resource Mapping:**
+- Foundation Points → Secondary KP generation
+- Structural Integrity → Health/durability system
+
+**Skill Categories:**
+1. Support Effects (25 skills)
+2. Structure Building (25 skills)
+3. Resource Generation (20 skills)
+4. Ally Enhancement (20 skills)
+5. Infrastructure (10 skills)
+
+**Balance Focus:**
+- Resource gen: +10-30 per support action
+- Structure durability: 50-200 Ojas
+- Support buff values: +20-50% effects
+- Cross-engine: Boosts all engines through [Support] keyword
+
+---
+
+### CHARACTER ANALYSIS ENGINE
+**Core Identity:** Debuffs, enemy manipulation, information warfare
+**Primary Keywords:** [Analyze], [Mark], [Expose], [Debilitate]
+**Resource Mapping:**
+- Analysis Points → Insight (0-100)
+- Marks → Stack system on enemies
+
+**Skill Categories:**
+1. Analysis (25 skills)
+2. Marking (20 skills)
+3. Exploitation (25 skills)
+4. Enemy Control (20 skills)
+5. Information Warfare (10 skills)
+
+**Balance Focus:**
+- [Mark] stacks: 1-10 max
+- Exploitation damage: +20-100% per mark
+- [Analyze] info depth: Balanced to not reveal entire hand
+- Cross-engine: Mercury -cooldowns on [Analyze]
+
+---
+
+### THERAPEUTIC ENGINE
+**Core Identity:** Healing, cleansing, transformation
+**Primary Keywords:** [Heal], [Cleanse], [Purify], [Transmute], [Shield]
+**Resource Mapping:**
+- Ojas → Ojas (0-100) - kept as-is
+- Vitality → Healing power modifier
+
+**Skill Categories:**
+1. Direct Healing (30 skills)
+2. Cleansing (20 skills)
+3. Shielding (20 skills)
+4. Transformation (20 skills)
+5. Resurrection (10 skills)
+
+**Balance Focus:**
+- Healing caps: Tier-appropriate (see validation)
+- Overflow → Insight conversion
+- [Cleanse]: Removes 1-3 debuffs (not infinite)
+- Cross-engine: Venus +30% healing, Moon intuitive healing
+
+---
+
+## 🎨 IMPLEMENTATION ROADMAP
+
+### Phase 1: Foundation (1 Engine as Pilot)
+**Target:** Singularity Engine v4.0
+**Timeline:** Complete harmonization of 100 skills
+**Deliverable:** Fully balanced Singularity v4.0 with all framework elements
+
+### Phase 2: Expansion (3 Engines)
+**Targets:** Divination, Tantra, Consciousness
+**Parallel Processing:** Apply proven framework
+**Deliverables:** 3 more v4.0 engines
+
+### Phase 3: Completion (3 Engines)
+**Targets:** Foundational, Character Analysis, Therapeutic
+**Refinement:** Balance adjustments based on cross-testing
+**Deliverables:** Final 3 v4.0 engines
+
+### Phase 4: Integration
+**Action:** Update Master Game Engine v4.0
+**Components:**
+- Complete Architect's Codex (72+ entries)
+- Full Jyotish gravity matrix
+- Balance validation report
+- Cross-engine synergy map
+
+### Phase 5: Polish
+**Actions:**
+- Final stat tweaking
+- Keyword canonicalization audit
+- Data schema validation
+- UI/UX guidelines
+
+---
+
+## 🚀 SUCCESS METRICS
+
+### Quantitative
+- [ ] All 9 engines at v4.0 standard
+- [ ] 700+ skills harmonized (100 per engine avg, except Invocation/Jyotish with 200+)
+- [ ] 72+ Architect's Codex synergies
+- [ ] 100% keyword canonicalization
+- [ ] TTK targets met for all archetypes
+
+### Qualitative
+- [ ] Each engine feels unique yet balanced
+- [ ] Cross-engine play is rewarding
+- [ ] Jyotish adds strategic depth
+- [ ] No auto-include cards dominate
+- [ ] Clear archetype identity per engine
+
+---
+
+## 📝 NOTES & CONSIDERATIONS
+
+**Power Creep Management:**
+- Skill lists have god-tier effects (500% potency, reality breaking)
+- v4.0 must preserve these as **aspirational peaks** but gate them appropriately
+- Solution: Ultimate tier (Tier 4) with high costs, cooldowns, or duel limits
+
+**Complexity Budget:**
+- 100 skills per engine = high complexity
+- Solution: Clear tier system, beginner/intermediate/advanced card pools
+- New players start with Tier 0-1, advance to Tier 2-4
+
+**Cross-Engine Balance:**
+- Some engines (Invocation, Jyotish) already have 200+ skills
+- Solution: Accept different skill counts, focus on play pattern balance
+
+**Evolution System:**
+- Evo A/B from skill lists = great depth
+- Solution: Integrate as **masteries** or **aspect upgrades** in deckbuilding
+
+---
+
+## 🔗 REFERENCE LINKS
+
+- **Master Game Engine Design v3.0:** Core balance framework
+- **Invocation Engine v4.0 COMPLETE:** Example of fully detailed system
+- **Jyotish Engine v4.0 SUPREME COMPLETE:** Example of cosmic integration
+- **Individual Skill Lists:** Raw 100-skill content per engine
+
+---
+
+**FRAMEWORK STATUS:** ✅ COMPLETE AND READY FOR DEPLOYMENT
+
+**The harmonization framework is now the blueprint for systematically converting all skill lists into balanced, integrated v4.0 engines. Let's begin with Singularity Engine v4.0 as the pilot project!** 🌟

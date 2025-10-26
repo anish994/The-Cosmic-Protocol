@@ -1,0 +1,628 @@
+# Tantra Engine — Complete Skills List (v3.1 Expanded)
+## Total Skills: 100 (40 Original + 60 Build-Defining)
+
+---
+
+### **Maran (Annihilation) — 4 New Skills**
+
+1.  **Glyph: Resonant Detonation** (Catalyst, Gnosis 40)
+    *   **Core Function:** Consume all *types* of Resonance on a target. For each unique Resonance type consumed (e.g., [Decay], [Stasis], [Discord]), deal 15 AoE damage around the target.
+    *   **Evo A (Chain Reaction):** The AoE radius increases by 1 for each unique Resonance type.
+    *   **Evo B (Focused Blast):** Damage is dealt to the primary target only but is increased by 50%.
+    *   *Design Note: Encourages cross-karma skill weaving for a massive damage payoff.*
+
+2.  **Glyph: Cull the Weak** (Execute, Gnosis 35)
+    *   **Core Function:** Deal 20 damage to a target. If the target is below 30% Ojas, the damage is doubled and applies 2 stacks of [Decay].
+    *   **Evo A (Ruthless Precision):** The execute threshold is increased to 40% Ojas.
+    *   **Evo B (Spreading Plague):** On a successful execute (kills the target), applies 2 [Decay] to adjacent enemies.
+
+3.  **Glyph: Withering Curse** (DoT, Gnosis 25)
+    *   **Core Function:** Apply a debuff for 3 turns: "Target cannot be healed." At the end of the duration, the target takes damage equal to the healing they would have received. Applies 2 [Decay].
+    *   **Evo A (Caustic Wound):** Healing prevented is increased to 125% of the damage dealt.
+    *   **Evo B (Lingering Malediction):** The debuff duration is increased to 4 turns.
+
+4.  **Mantra: Jvala (The Flame)** (Chant, Gnosis 15)
+    *   **Core Function:** Chant to load the "Jvala" Bija into the Mantra Matrix.
+    *   **Bija Passive:** Your skills have a +5% critical hit chance.
+    *   **Stuti (Jvala + Aakrosh):** Your next damage glyph has +25% critical hit damage.
+    *   *Design Note: Adds a critical strike subsystem to the Maran path.*
+
+---
+
+### **Vashikaran (Subjugation) — 3 New Skills**
+
+5.  **Glyph: Glimpse of Betrayal** (Control, Gnosis 45)
+    *   **Core Function:** For 1 turn, a target enemy Yantra's passive aura affects its owner and their allies instead. Applies 3 [Subservience].
+    *   **Evo A (Sustained Treachery):** The effect lasts for 2 turns.
+    *   **Evo B (Infectious Betrayal):** The effect also applies to another random enemy Yantra.
+
+6.  **Glyph: Forced Allegiance** (Catalyst, Gnosis 50)
+    *   **Core Function:** Consume 5 [Subservience] stacks from an enemy Architect. The next buff they cast on themselves is also applied to you.
+    *   **Evo A (Perfect Mirror):** You also gain 10 Ojas when the buff is copied.
+    *   **Evo B (Stolen Power):** The enemy does not receive the buff; only you do.
+
+7.  **Yantra: The Overseer** (Yantra, Gnosis 40)
+    *   **Core Function:** Deploys a Yantra with a passive aura: "Enemy Yantras in the same row cost +1 Prana to activate their abilities."
+    *   **Resonance Link:** If linked with another Vashikaran Yantra, the aura affects the entire board.
+    *   **Evo A (Oppressive Gaze):** The Prana cost increase is now +2.
+    *   **Evo B (Resource Drain):** The Yantra also drains 1 Prana from the enemy Architect at the start of your turn.
+
+---
+
+### **Stambhan (Paralysis) — 3 New Skills**
+
+8.  **Glyph: Pranic Stagnation** (Lockdown, Gnosis 30)
+    *   **Core Function:** Apply a debuff for 2 turns: "Target cannot gain Prana from passive sources (e.g., turn-based generation)." Applies 3 [Stasis].
+    *   **Evo A (Total Blockade):** The effect now blocks all Prana gain, including from active glyphs.
+    *   **Evo B (Lingering Stagnation):** The duration is increased to 3 turns.
+
+9.  **Glyph: Field of Inertia** (Catalyst/AoE, Gnosis 55)
+    *   **Core Function:** Consume 5 [Stasis] stacks from a target to create a 3x3 field around them for 2 turns. Units (friend and foe) inside the field cannot use movement abilities.
+    *   **Evo A (Expanding Field):** The field's radius is increased to 5x5.
+    *   **Evo B (Paralyzing Field):** Enemies entering the field are also [Stunned] for 1 turn.
+
+10. **Mantra: Sthira (Stillness)** (Chant, Gnosis 15)
+    *   **Core Function:** Chant to load the "Sthira" Bija into the Mantra Matrix.
+    *   **Bija Passive:** Enemy debuffs on you tick down 10% faster.
+    *   **Stuti (Sthira + Shanta):** Your next [Shield] glyph also applies a 1-turn [Stun] to any enemy that breaks it.
+
+---
+
+### **Vidveshan (Discord) — 3 New Skills**
+
+11. **Glyph: Shared Suffering** (Debuff, Gnosis 30)
+    *   **Core Function:** Link two enemy Yantras for 3 turns. Whenever one takes damage, the other takes 50% of that damage. Applies 2 [Discord] to both.
+    *   **Evo A (Amplified Pain):** The shared damage is increased to 75%.
+    *   **Evo B (Chain of Agony):** You can now link up to three Yantras.
+
+12. **Glyph: Corrupted Boon** (Catalyst, Gnosis 45)
+    *   **Core Function:** Consume 4 [Discord] stacks from an Architect. The next healing or shielding buff they receive is converted into a [Decay] DoT instead.
+    *   **Evo A (Inverted Grace):** The DoT's damage is equal to 150% of the healing/shielding that was prevented.
+    *   **Evo B (Prolonged Corruption):** The effect now corrupts the next two boons instead of one.
+
+13. **Yantra: The Chaos Spire** (Yantra, Gnosis 35)
+    *   **Core Function:** At the start of your turn, swaps the current Ojas values of two random enemy Yantras.
+    *   **Resonance Link:** If linked with another Vidveshan Yantra, you can choose which two Yantras to swap.
+    *   **Evo A (Unstable Matrix):** The swap also applies 1 stack of [Discord] to both Yantras.
+    *   **Evo B (Health Siphon):** The Yantra with the higher health loses 10% of its Ojas before the swap.
+
+---
+
+### **Uchatan (Banishment) — 5 New Skills**
+
+14. **Glyph: Resonance Siphon** (Resource Denial, Gnosis 40)
+    *   **Core Function:** Remove up to 5 Resonance stacks of a single type from a target and gain 1 Prana for each stack removed. Applies 1 [Void].
+    *   **Evo A (Manaforge):** Also gain 1 Prana for activating the glyph.
+    *   **Evo B (Resonance Shatter):** Instead of gaining Prana, deal 5 damage to the target for each stack removed.
+    *   *Design Note: A powerful tool for countering other Tantra players.*
+
+15. **Glyph: Un-naming Rite** (Banish, Gnosis 60)
+    *   **Core Function:** Target an enemy Invocation glyph. If it has been cast this duel, [Banish] it for 2 turns. If it has not been cast, increase its Sanctity/Anarchy cost by 10. Applies 4 [Void].
+    *   **Evo A (Memory Wipe):** Increases the Banished duration to 3 turns.
+    *   **Evo B (Cost Inflation):** The cost increase is now a permanent +15.
+
+16. **Glyph: Void Trap** (Trap, Gnosis 35)
+    *   **Core Function:** Place a latent trap on an enemy. The next time they gain a resource (Prana, Insight, etc.), you steal 50% of it. Applies 2 [Void].
+    *   **Evo A (Hungering Void):** You steal 75% of the resources instead.
+    *   **Evo B (Resource Burn):** The enemy gains no resources, and you gain nothing. The resources are simply destroyed.
+
+17. **Yantra: The Null Field Generator** (Yantra, Gnosis 50)
+    *   **Core Function:** Deploys a Yantra with a passive aura: "Buffs cannot be applied to any unit (friend or foe) in this Yantra's row."
+    *   **Resonance Link:** If linked with another Uchatan Yantra, the aura also prevents debuffs.
+    *   **Evo A (Expanded Null Field):** The aura affects the two adjacent rows as well.
+    *   **Evo B (Targeted Erasure):** The aura is disabled. Gains an activatable ability: "Pay 3 Prana to [Banish] all buffs on a target unit."
+
+18. **Samputa: Shunya → Shunya → Shunya** (Ultimate)
+    *   **Core Function:** A Samputa triggered by loading three "Shunya" Bija into the Mantra Matrix.
+    *   **Effect (Absolute Nothingness):** For 2 turns, no player can gain new buffs, debuffs, or resources. All existing timed effects are paused.
+    *   *Design Note: The ultimate stall and reset button.*
+
+19. **Glyph: Dissonant Barrier** (Defensive, Gnosis 30)
+    * **Core Function:** Gain a shield that absorbs 15 damage. If the shield is broken by an attack, the attacker is [Silenced] for 1 turn. Applies 1 [Discord].
+    * **Evo A (Feedback Pulse):** When broken, also deals 10 damage to the attacker.
+    * **Evo B (Resonant Shield):** The shield absorbs 25 damage but the [Silence] does not apply.
+
+20. **Glyph: Stasis Web** (AoE Control, Gnosis 40)
+    * **Core Function:** Apply 2 stacks of [Stasis] to all enemies in a target column.
+    * **Evo A (Widened Web):** Affects two adjacent columns.
+    * **Evo B (Sticky Web):** Also applies a debuff that reduces movement speed by 50% for 2 turns.
+
+---
+
+### Additional Skills (21–40)
+
+#### **Maran (Annihilation) — 4 More**
+
+21. **Glyph: Ashen Vortex** (Zone DoT, Gnosis 45)
+    * **Core Function:** Create a 3x3 vortex for 2 turns: Enemies inside take 6 [Burn] damage at the start of their turn; if they move, apply 1 [Decay].
+    * **Evo A (Expanding Vortex):** Radius increases to 5x5.
+    * **Evo B (Smoldering Wake):** The zone persists 1 extra turn at half potency.
+
+22. **Glyph: Thermal Overrun** (DoT Manipulation, Gnosis 40)
+    * **Core Function:** Consume up to 3 [Burn] stacks from each enemy; extend remaining [Burn]/[Decay] durations by 1 turn and deal 5 damage per stack consumed.
+    * **Evo A (Accelerant):** +2 turns instead of +1.
+    * **Evo B (Scorch Surge):** Immediate damage becomes 8 per stack consumed.
+
+23. **Glyph: Ember Reprise** (Echo, Gnosis 35)
+    * **Core Function:** For the next 2 turns, the first time you detonate [Decay], repeat 50% of that detonation damage at end of turn.
+    * **Evo A (Full Refrain):** Echo repeats 100% instead of 50%.
+    * **Evo B (Lingering Cinders):** Each echo applies 1 [Burn].
+
+24. **Yantra: Pyre Nexus** (Yantra, Gnosis 45)
+    * **Core Function:** At end of your turn, deal 4 damage per [Decay] stack on the nearest enemy.
+    * **Resonance Link:** Linked Maran Yantras cause Pyre Nexus to also apply 1 [Decay].
+    * **Evo A (Inferno Conduit):** Damage +50% if enemy has ≥3 [Decay].
+    * **Evo B (Volcanic Vent):** Can be activated to detonate all [Decay] on the board for half value (2-turn cooldown).
+
+#### **Vashikaran (Subjugation) — 4 More**
+
+25. **Glyph: Command Override** (Prediction/Control, Gnosis 45)
+    * **Core Function:** Force an enemy Architect to repeat their last non-Invocation glyph this turn; you choose a valid allied target for it. Consumes 3 [Subservience].
+    * **Evo A (Double Override):** Repeat twice on the same turn (new targets).
+    * **Evo B (Hijacked Focus):** The repeated glyph costs the enemy +2 Prana.
+
+26. **Glyph: Covenant Chain** (Buff Intercept, Gnosis 40)
+    * **Core Function:** For 2 turns, whenever the enemy casts a self-buff, you choose whether it applies to them or to you instead. Applies 2 [Subservience].
+    * **Evo A (Binding Oath):** Duration +1 turn.
+    * **Evo B (Forfeit):** If redirected to you, enemy loses 5 Ojas.
+
+27. **Mantra: Vashi (The Enchanter)** (Chant, Gnosis 20)
+    * **Bija Passive:** Your debuffs that apply [Subservience] have +1 stack.
+    * **Stuti (Vashi + Mohanam):** "Seize Blessing" — Next time enemy casts a buff, you gain a copied version with +50% duration.
+
+28. **Glyph: Dominion Lattice** (Link, Gnosis 50)
+    * **Core Function:** Link a target Architect for 2 turns: their first glyph each turn can be redirected by you (once). Applies 3 [Subservience].
+    * **Evo A (Tighten Lattice):** Redirect twice per turn.
+    * **Evo B (Price of Service):** Each redirected glyph costs them +2 Prana and +1 cooldown.
+
+#### **Stambhan (Paralysis) — 4 More**
+
+29. **Glyph: Glacial Hour** (Global Tempo, Gnosis 55)
+    * **Core Function:** For 2 turns, global cooldown ticks are 50% slower (rounding up). Applies 1 [Stasis] to all enemy glyphs on cast.
+    * **Evo A (Permafrost):** 3 turns instead of 2.
+    * **Evo B (Selective Freeze):** Your glyphs are unaffected.
+
+30. **Glyph: Time Snare** (Trap, Gnosis 35)
+    * **Core Function:** Place a snare on an enemy Glyph: the next time its cooldown decreases, [Stun] its owner for 1 turn and apply 2 [Stasis].
+    * **Evo A (Chrono Clamp):** Also increase that glyph's cooldown by 1.
+    * **Evo B (Numbing Shock):** The [Stun] lasts 2 turns if cooldown was ≥3.
+
+31. **Yantra: Iron Lattice** (Yantra, Gnosis 40)
+    * **Core Function:** First enemy glyph cast each turn gets +1 cooldown after resolving.
+    * **Resonance Link:** With another Stambhan Yantra, this applies to the first two glyphs.
+    * **Evo A (Hardened Bars):** +2 cooldown instead of +1.
+    * **Evo B (Gelling Field):** Also applies 1 [Stasis] to that glyph.
+
+32. **Glyph: Deferred Silence** (Delayed Control, Gnosis 30)
+    * **Core Function:** Apply a floating [Silence] to an enemy Glyph; it triggers the next time they attempt to cast it within 2 turns. Applies 2 [Stasis].
+    * **Evo A (Quietus):** Duration window 3 turns.
+    * **Evo B (Muzzled Echo):** When it triggers, also increases cooldown by 2.
+
+#### **Vidveshan (Discord) — 4 More**
+
+33. **Glyph: Mirror Fracture** (Inversion, Gnosis 45)
+    * **Core Function:** The next positive effect on the target becomes negative (heal → damage, buff → debuff of equal potency). Applies 2 [Discord].
+    * **Evo A (Shattered Boon):** Inversion potency +25%.
+    * **Evo B (Reverberation):** Applies to the next two positive effects instead of one.
+
+34. **Glyph: Counter-Harmony Field** (Zone, Gnosis 40)
+    * **Core Function:** Create a field for 2 turns: enemy buffs inside have -50% potency and cost +1 Prana.
+    * **Evo A (Dissonant Dome):** Field lasts 3 turns.
+    * **Evo B (Cacophony):** On cast inside the field, apply 1 [Discord] to the caster.
+
+35. **Glyph: Discordant Reverb** (Expiry Punish, Gnosis 35)
+    * **Core Function:** For 2 turns, whenever an enemy buff expires, deal 10 damage and apply 1 [Discord].
+    * **Evo A (Splinter Shock):** Damage 15 instead.
+    * **Evo B (Resounding Dissonance):** Also increase the expired glyph's cooldown by 1.
+
+36. **Yantra: Splinter Node** (Yantra, Gnosis 45)
+    * **Core Function:** Once per turn, an enemy aura randomly affects their allies for 1 instance.
+    * **Resonance Link:** With another Vidveshan Yantra, you choose the target ally.
+    * **Evo A (Chaotic Feedback):** Also applies 1 [Discord] to both source and target.
+    * **Evo B (Shiver Web):** Trigger twice per turn.
+
+#### **Uchatan (Banishment) — 4 More**
+
+37. **Glyph: Void Ledger** (Economic Denial, Gnosis 40)
+    * **Core Function:** For 3 turns, at the start of the enemy turn, they lose 1 resource they would have generated (Prana/Insight/Threads prioritized), and you gain 1 Prana. Applies 1 [Void].
+    * **Evo A (Audited Scarcity):** Lose 2 resources instead of 1 (still gain 1 Prana).
+    * **Evo B (Silent Books):** Prevents resource-gain triggers from showing in UI (cosmetic stealth).
+
+38. **Glyph: Banishment Well** (Tile Trap, Gnosis 50)
+    * **Core Function:** Choose an enemy House. The next buff or Yantra applied to that House this duel is immediately [Banished] for 2 turns. Applies 2 [Void].
+    * **Evo A (Deep Well):** Banish duration 3 turns.
+    * **Evo B (Bottomless):** Triggers twice this duel.
+
+39. **Glyph: Null Recall** (Lockout, Gnosis 45)
+    * **Core Function:** If a glyph was [Banished] this duel, it cannot be cast for 1 additional turn after returning. Applies 2 [Void].
+    * **Evo A (Total Forgetting):** Lockout becomes 2 turns.
+    * **Evo B (Fraying Memory):** The glyph's effectiveness is -25% for the rest of the duel.
+
+40. **Mantra: Nist'ya (The Nil)** (Chant, Gnosis 20)
+    * **Bija Passive:** Your [Void] applications have a 15% chance to also apply a 1-turn [Heal Block].
+    * **Stuti (Nist'ya + Shunya):** "Eventide Exile" — Instantly [Banish] all temporary buffs on a target and refund 1 Prana per effect removed.
+
+---
+
+### **KARMA SPECIALIZATIONS — 15 Skills**
+
+41. **Glyph: Maran Purist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other Karma paths. All [Burn] and [Decay] effects +100%. [Decay] stacks infinitely.
+    * **Evo A (Perfect Annihilation):** +150% effects instead.
+    * **Evo B (Rapid Burn):** [Burn] and [Decay] tick twice per turn.
+    * **Note:** *Pure damage-over-time specialist. Mono-karma build.*
+
+42. **Glyph: Vashikaran Purist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other Karma paths. All [Subservience] effects +75%. Can redirect 2 enemy actions per turn.
+    * **Evo A (Perfect Control):** Can redirect 3 actions.
+    * **Evo B (Puppet Master):** [Subservience] stacks last +2 turns.
+    * **Note:** *Pure control/theft specialist. Master manipulator.*
+
+43. **Glyph: Stambhan Purist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other Karma paths. All [Stasis] and [Stun] effects +100%. Enemy cooldowns tick 50% slower.
+    * **Evo A (Perfect Paralysis):** [Stun] duration doubled.
+    * **Evo B (Time Freeze):** Cooldowns tick 75% slower.
+    * **Note:** *Pure tempo control. Freeze time itself.*
+
+44. **Glyph: Vidveshan Purist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other Karma paths. All [Discord] effects +75%. Enemy beneficial effects have 50% chance to fail.
+    * **Evo A (Perfect Discord):** 75% failure chance.
+    * **Evo B (Chaos Amplifier):** [Discord] also reduces enemy accuracy by 25%.
+    * **Note:** *Pure disruption specialist. Chaos incarnate.*
+
+45. **Glyph: Uchatan Purist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other Karma paths. All [Void] and [Banish] effects +100%. Can [Banish] 3 effects simultaneously.
+    * **Evo A (Perfect Nullification):** [Banish] duration doubled.
+    * **Evo B (Void Master):** [Void] prevents resource generation entirely.
+    * **Note:** *Pure denial specialist. Erase everything.*
+
+46. **Glyph: Dual Karma Harmony** (Hybrid, Gnosis 55)
+    * **Core Function:** Choose 2 Karma paths at start. Can only use those 2, but transitions between them are free and grant +5 Prana.
+    * **Evo A (Perfect Harmony):** Gain +8 Prana per transition.
+    * **Evo B (Deep Synergy):** Effects from both paths have +25% potency.
+    * **Note:** *Restricts options but perfects two-path synergy.*
+
+47. **Glyph: Karma Anarchist** (Chaos, Gnosis 60)
+    * **Core Function:** Cannot specialize. Each time you use a different Karma path, deal 15 damage to all enemies and apply 1 random Resonance.
+    * **Evo A (Perfect Anarchy):** Damage increased to 25.
+    * **Evo B (Controlled Chaos):** Choose which Resonance to apply.
+    * **Note:** *Hyper-aggressive Karma switching vs specialization.*
+
+48. **Glyph: Resonance Collector** (Stacking, Gnosis 50)
+    * **Core Function:** Passive: Gain +1 Prana per unique Resonance type active on enemies (up to +5).
+    * **Evo A (Perfect Collection):** +2 Prana per type.
+    * **Evo B (Resonance Bonus):** Also increase all Resonance damage by 10%.
+    * **Note:** *Rewards spreading different Resonances. Tactical diversity.*
+
+49. **Glyph: Resonance Purge** (Anti-Tantra, Gnosis 45)
+    * **Core Function:** Remove all Resonances from target. Deal 20 damage per Resonance removed.
+    * **Evo A (Perfect Purge):** 35 damage per Resonance.
+    * **Evo B (Mass Purge):** Affects all enemies.
+    * **Note:** *Counter to Resonance stacking. Anti-Tantra specialist.*
+
+50. **Glyph: Resonance Transfer** (Tactical, Gnosis 45)
+    * **Core Function:** Move all Resonances from one target to another. Transferred Resonances +1 turn duration.
+    * **Evo A (Perfect Transfer):** +2 turns duration.
+    * **Evo B (Mass Transfer):** Can transfer from 2 targets to 2 targets.
+    * **Note:** *Dynamic Resonance management. Save allies, doom enemies.*
+
+51. **Glyph: Karma Sacrifice** (All-in, Gnosis 60)
+    * **Core Function:** Choose one Karma path. For rest of duel, that path +200% potency but you lose all other Karma access.
+    * **Evo A (Perfect Sacrifice):** +300% potency.
+    * **Evo B (Tolerable Sacrifice):** Can still use one other Karma path at 50% potency.
+    * **Note:** *Mid-duel specialization. Adaptation vs commitment.*
+
+52. **Glyph: Resonance Echo** (Multiplication, Gnosis 55)
+    * **Core Function:** When you apply Resonance, 50% chance to apply it twice.
+    * **Evo A (Perfect Echo):** 75% chance.
+    * **Evo B (Guaranteed Echo):** Always applies twice but at 75% duration.
+    * **Note:** *Resonance spam build. Volume vs precision.*
+
+53. **Glyph: Karma Overload** (Burst, Gnosis 65)
+    * **Core Function:** For 2 turns, all Karma effects trigger twice. Costs 30 Prana.
+    * **Evo A (Perfect Overload):** Duration 3 turns.
+    * **Evo B (Economic Overload):** Cost reduced to 25 Prana.
+    * **Note:** *Ultimate power spike. All-in moment.*
+
+54. **Glyph: Resonance Conversion** (Flexibility, Gnosis 50)
+    * **Core Function:** Convert any Resonance type to any other type on target. Cooldown: 3 turns.
+    * **Evo A (Perfect Conversion):** Can convert 3 Resonances.
+    * **Evo B (Frequent Conversion):** Cooldown reduced to 2 turns.
+    * **Note:** *Ultimate flexibility. Adapt to any situation.*
+
+55. **Glyph: Karma Memory** (Scaling, Gnosis 55)
+    * **Core Function:** Each unique Karma path used this duel permanently increases all Karma effects by 10% (stacks 5x).
+    * **Evo A (Perfect Memory):** +15% per path.
+    * **Evo B (Deep Memory):** No stack limit.
+    * **Note:** *Rewards exploration. Long-game scaling.*
+
+---
+
+### **BURN & DECAY SPECIALIZATIONS — 12 Skills**
+
+56. **Glyph: Burn Master** (DoT Specialist, Gnosis 45)
+    * **Core Function:** [Burn] effects +75% damage. [Burn] spreads to adjacent enemies when applied.
+    * **Evo A (Perfect Burn):** +100% damage.
+    * **Evo B (Inferno Spread):** Spreads to all enemies in 3x3 area.
+    * **Note:** *Pure fire damage. AoE burn specialist.*
+
+57. **Glyph: Decay Master** (Stack Specialist, Gnosis 45)
+    * **Core Function:** [Decay] stacks have no cap. For each 5 stacks on target, all [Decay] damage +25%.
+    * **Evo A (Perfect Decay):** Bonus every 4 stacks.
+    * **Evo B (Enhanced Decay):** +40% damage per threshold.
+    * **Note:** *Infinite stacking. Late-game monster.*
+
+58. **Glyph: Rapid Burn** (Speed, Gnosis 40)
+    * **Core Function:** [Burn] ticks twice per turn but has -30% damage per tick.
+    * **Evo A (Perfect Rapid):** Only -15% damage penalty.
+    * **Evo B (Intense Rapid):** No damage penalty but costs +2 Prana.
+    * **Note:** *Fast ticking vs slow burn. Different tempo.*
+
+59. **Glyph: Slow Decay** (Patience, Gnosis 40)
+    * **Core Function:** [Decay] lasts +4 turns but deals -40% damage per tick.
+    * **Evo A (Extended Decay):** Lasts +6 turns.
+    * **Evo B (Tolerable Decay):** Only -25% damage penalty.
+    * **Note:** *Opposite of rapid. Long-game pressure.*
+
+60. **Glyph: Burn-Decay Fusion** (Hybrid, Gnosis 55)
+    * **Core Function:** When you apply [Burn], also apply [Decay]. Both at 75% potency.
+    * **Evo A (Perfect Fusion):** Both at 100% potency.
+    * **Evo B (Enhanced Fusion):** Also deals 10 immediate damage.
+    * **Note:** *Double DoT specialist. Maximum pressure.*
+
+61. **Glyph: Explosive Decay** (Detonation, Gnosis 50)
+    * **Core Function:** Detonate all [Decay] on target, dealing damage equal to (stacks × remaining duration × 3).
+    * **Evo A (Perfect Explosion):** ×5 instead of ×3.
+    * **Evo B (Chain Explosion):** Explosion spreads to adjacent enemies.
+    * **Note:** *Burst finisher. Setup vs execution.*
+
+62. **Glyph: Burn Reflexion** (Counter, Gnosis 45)
+    * **Core Function:** When enemy deals damage to you, apply 2 [Burn] to them.
+    * **Evo A (Perfect Reflexion):** Apply 4 [Burn].
+    * **Evo B (Widespread Reflexion):** Also affects adjacent enemies.
+    * **Note:** *Counter-attack DoT. Defensive offense.*
+
+63. **Glyph: Decay Multiplication** (Scaling, Gnosis 60)
+    * **Core Function:** Each [Decay] tick increases next tick's damage by 10% (resets on target death).
+    * **Evo A (Perfect Multiplication):** +20% per tick.
+    * **Evo B (Persistent Multiplication):** Doesn't reset on death, transfers to next target.
+    * **Note:** *Exponential scaling. Snowball build.*
+
+64. **Glyph: Burn Conversion** (Resource, Gnosis 40)
+    * **Core Function:** Consume all [Burn] from target. Gain +2 Prana per stack consumed.
+    * **Evo A (Perfect Conversion):** +3 Prana per stack.
+    * **Evo B (Healing Conversion):** Also [Heal] 5 Ojas per stack.
+    * **Note:** *DoT as resource. Flexible adaptation.*
+
+65. **Glyph: Decay Theft** (Anti-Tank, Gnosis 50)
+    * **Core Function:** Transfer all [Decay] from ally to enemy at +50% potency.
+    * **Evo A (Perfect Theft):** +100% potency.
+    * **Evo B (Mass Theft):** Can transfer from 2 allies to 2 enemies.
+    * **Note:** *Save allies, doom enemies. Tactical cleansing.*
+
+66. **Glyph: Eternal Burn** (Permanence, Gnosis 65)
+    * **Core Function:** [Burn] on target never expires but deals -50% damage per tick.
+    * **Evo A (Perfect Eternal):** Only -30% damage.
+    * **Evo B (Spreading Eternal):** Can affect 2 targets.
+    * **Note:** *Permanent pressure vs burst damage.*
+
+67. **Glyph: Decay Amplifier** (Multiplier, Gnosis 55)
+    * **Core Function:** For 3 turns, all [Decay] damage dealt by anyone doubled.
+    * **Evo A (Perfect Amplifier):** Tripled instead of doubled.
+    * **Evo B (Extended Amplifier):** Duration 4 turns.
+    * **Note:** *Team buff. Multiplayer synergy.*
+
+---
+
+### **CONTROL & STUN SPECIALIZATIONS — 12 Skills**
+
+68. **Glyph: Stun Master** (Control Specialist, Gnosis 50)
+    * **Core Function:** All [Stun] effects +2 turns duration. Cannot be reduced by enemy effects.
+    * **Evo A (Perfect Stun):** +3 turns duration.
+    * **Evo B (Mass Stun):** [Stun] spreads to adjacent enemies.
+    * **Note:** *Ultimate crowd control. Lockdown specialist.*
+
+69. **Glyph: Silence Master** (Lockout, Gnosis 45)
+    * **Core Function:** All [Silence] effects +2 turns. [Silenced] enemies take +25% damage.
+    * **Evo A (Perfect Silence):** +3 turns duration.
+    * **Evo B (Punishing Silence):** +40% damage taken.
+    * **Note:** *Silence into execution. Setup-punish combo.*
+
+70. **Glyph: Chain Stun** (Combo, Gnosis 55)
+    * **Core Function:** When [Stun] expires on target, 50% chance to apply another 1-turn [Stun].
+    * **Evo A (Perfect Chain):** 75% chance.
+    * **Evo B (Guaranteed Chain):** Always chains but at 1 turn only.
+    * **Note:** *Stun-lock build. Infinite control potential.*
+
+71. **Glyph: Cooldown Destroyer** (Tempo, Gnosis 60)
+    * **Core Function:** Increase all enemy cooldowns by 3 turns. Once per duel.
+    * **Evo A (Perfect Destruction):** Increase by 5 turns.
+    * **Evo B (Frequent Destruction):** Usable twice per duel.
+    * **Note:** *Ultimate tempo swing. Freeze enemy strategy.*
+
+72. **Glyph: Stasis Field** (Zone Control, Gnosis 50)
+    * **Core Function:** Create 3x3 field for 3 turns: Enemies inside have all actions cost +2 Prana.
+    * **Evo A (Perfect Field):** +4 Prana cost.
+    * **Evo B (Extended Field):** Duration 4 turns.
+    * **Note:** *Economic control. Drain enemy resources.*
+
+73. **Glyph: Subservience Master** (Puppet, Gnosis 55)
+    * **Core Function:** At 10 [Subservience] stacks, fully control target for 1 turn.
+    * **Evo A (Perfect Control):** Only requires 8 stacks.
+    * **Evo B (Extended Control):** Control lasts 2 turns.
+    * **Note:** *Ultimate mind control. Puppet master.*
+
+74. **Glyph: Discord Amplifier** (Chaos, Gnosis 50)
+    * **Core Function:** For each [Discord] on enemy, they have +10% chance for actions to fail entirely.
+    * **Evo A (Perfect Amplifier):** +15% per stack.
+    * **Evo B (Cascading Discord):** Failed actions apply +1 [Discord].
+    * **Note:** *Chaos scaling. Failure feedback loop.*
+
+75. **Glyph: Void Zone** (Denial, Gnosis 60)
+    * **Core Function:** Create 3x3 zone for 2 turns: No effects can be applied inside (friend or foe).
+    * **Evo A (Perfect Void):** Duration 3 turns.
+    * **Evo B (Selective Void):** Only affects enemies.
+    * **Note:** *Ultimate denial. Freeze game state.*
+
+76. **Glyph: Resource Lock** (Economy, Gnosis 55)
+    * **Core Function:** Enemy cannot gain any resources for 3 turns.
+    * **Evo A (Perfect Lock):** Duration 4 turns.
+    * **Evo B (Mass Lock):** Affects all enemies.
+    * **Note:** *Economic shutdown. Starvation strategy.*
+
+77. **Glyph: Banish Master** (Denial, Gnosis 60)
+    * **Core Function:** All [Banish] effects +2 turns. Can [Banish] 5 effects simultaneously.
+    * **Evo A (Perfect Banish):** +3 turns duration.
+    * **Evo B (Permanent Banish):** [Banished] effects cost +5 Prana when they return.
+    * **Note:** *Ultimate removal. Erase threats.*
+
+78. **Glyph: Paralysis Loop** (Chain, Gnosis 65)
+    * **Core Function:** When you apply [Stasis], 25% chance to also apply [Stun] (1 turn).
+    * **Evo A (Perfect Loop):** 50% chance.
+    * **Evo B (Guaranteed Loop):** Always applies but [Stun] can be [Cleansed] normally.
+    * **Note:** *Double control. Layered lockdown.*
+
+79. **Glyph: Control Overload** (Burst, Gnosis 70)
+    * **Core Function:** For 2 turns, all control effects ([Stun]/[Silence]/[Stasis]) have +100% duration. Costs 30 Prana.
+    * **Evo A (Perfect Overload):** +150% duration.
+    * **Evo B (Extended Overload):** Duration 3 turns.
+    * **Note:** *Ultimate control spike. Lock everything.*
+
+---
+
+### **YANTRA & RESONANCE SPECIALIZATIONS — 11 Skills**
+
+80. **Glyph: Yantra Master** (Build-Defining, Gnosis 55)
+    * **Core Function:** Can deploy 2 additional Yantras beyond normal limit. All Yantras have +50% Ojas.
+    * **Evo A (Perfect Master):** 3 additional Yantras.
+    * **Evo B (Fortified Master):** +100% Ojas instead.
+    * **Note:** *Yantra specialist. Board control through structures.*
+
+81. **Glyph: Resonance Link Master** (Network, Gnosis 60)
+    * **Core Function:** All Yantras automatically link with each other. Linked bonus effects doubled.
+    * **Evo A (Perfect Link):** Linked effects tripled.
+    * **Evo B (Extended Link):** Links work across entire board, not just adjacent.
+    * **Note:** *Network specialist. Exponential synergy.*
+
+82. **Glyph: Yantra Sacrifice** (Power, Gnosis 50)
+    * **Core Function:** Destroy your Yantra to deal damage equal to (Yantra Ojas × 2) to all enemies.
+    * **Evo A (Perfect Sacrifice):** ×3 damage instead.
+    * **Evo B (Selective Sacrifice):** Choose targets.
+    * **Note:** *Explosive Yantras. Kamikaze structures.*
+
+83. **Glyph: Yantra Healing** (Support, Gnosis 45)
+    * **Core Function:** All Yantras [Heal] adjacent allies for 10 Ojas per turn.
+    * **Evo A (Perfect Healing):** 20 Ojas per turn.
+    * **Evo B (Extended Healing):** Affects 5x5 area.
+    * **Note:** *Support Yantras. Structure-based healing.*
+
+84. **Glyph: Mobile Yantra** (Tactical, Gnosis 50)
+    * **Core Function:** Can move Yantras freely. Moving grants adjacent allies 15 Shield.
+    * **Evo A (Perfect Mobility):** 25 Shield instead.
+    * **Evo B (Free Mobility):** Moving costs 0 actions.
+    * **Note:** *Dynamic positioning. Chess-like gameplay.*
+
+85. **Glyph: Yantra Evolution** (Scaling, Gnosis 60)
+    * **Core Function:** Yantras gain +10% potency per turn they survive (no cap).
+    * **Evo A (Rapid Evolution):** +15% per turn.
+    * **Evo B (Perfect Evolution):** Also gain +5 Ojas per turn.
+    * **Note:** *Growing threats. Must-answer targets.*
+
+86. **Glyph: Resonance Amplifier** (Power, Gnosis 55)
+    * **Core Function:** All Resonance effects have +50% potency and last +1 turn.
+    * **Evo A (Perfect Amplifier):** +75% potency.
+    * **Evo B (Extended Amplifier):** Last +2 turns.
+    * **Note:** *Universal Resonance boost. Scales everything.*
+
+87. **Glyph: Yantra Cloning** (Multiplication, Gnosis 65)
+    * **Core Function:** When you deploy Yantra, 50% chance to create weaker copy (50% potency).
+    * **Evo A (Perfect Cloning):** Copy at 75% potency.
+    * **Evo B (Guaranteed Cloning):** 100% chance.
+    * **Note:** *Board flooding. Overwhelming structures.*
+
+88. **Glyph: Resonance Theft** (Anti-Build, Gnosis 50)
+    * **Core Function:** Steal all Resonances from enemy and apply to another enemy at +50% potency.
+    * **Evo A (Perfect Theft):** +100% potency.
+    * **Evo B (Mass Theft):** Can steal from 2 enemies.
+    * **Note:** *Turn enemy power against them.*
+
+89. **Glyph: Yantra Network** (Synergy, Gnosis 60)
+    * **Core Function:** For each Yantra you control, all other Yantras gain +10% potency.
+    * **Evo A (Perfect Network):** +15% per Yantra.
+    * **Evo B (Deep Network):** Also gain +5 Ojas per Yantra.
+    * **Note:** *Exponential Yantra scaling. Critical mass.*
+
+90. **Glyph: Resonance Overload** (Ultimate, Gnosis 70)
+    * **Core Function:** For 2 turns, applying Resonance triggers all other Resonance types on target simultaneously. Costs 35 Prana.
+    * **Evo A (Perfect Overload):** Duration 3 turns.
+    * **Evo B (Economic Overload):** Cost reduced to 30 Prana.
+    * **Note:** *Ultimate combo. All Resonances at once.*
+
+---
+
+### **UNIQUE BUILD ENABLERS — 10 Skills**
+
+91. **Glyph: Glass Tantra** (Risk, Gnosis 60)
+    * **Core Function:** -50% max Ojas, but all Tantra effects +150%.
+    * **Evo A (Perfect Glass):** +200% effects.
+    * **Evo B (Tolerable Glass):** Only -30% max Ojas.
+    * **Note:** *Extreme offense. Glass cannon Tantra.*
+
+92. **Glyph: Tank Tantra** (Endurance, Gnosis 55)
+    * **Core Function:** +50% max Ojas, but all Tantra effects -30%.
+    * **Evo A (Perfect Tank):** +75% max Ojas.
+    * **Evo B (Tolerable Tank):** Only -15% effect penalty.
+    * **Note:** *Opposite of glass. Sustained control.*
+
+93. **Glyph: Prana Vampire** (Resource, Gnosis 65)
+    * **Core Function:** Gain +1 Prana each time enemy is affected by your Resonance.
+    * **Evo A (Perfect Vampire):** +2 Prana per effect.
+    * **Evo B (Enhanced Vampire):** Also [Heal] 5 Ojas per effect.
+    * **Note:** *Self-sustaining Tantra. Resource loop.*
+
+94. **Glyph: Minimalist Tantra** (Restriction, Gnosis 55)
+    * **Core Function:** Can only use 5 Tantra glyphs total, but they all have -50% costs and +50% effects.
+    * **Evo A (Perfect Minimalism):** +75% effects.
+    * **Evo B (Efficient Minimalism):** -75% costs.
+    * **Note:** *Extreme simplicity vs complexity.*
+
+95. **Glyph: Maximalist Tantra** (Complexity, Gnosis 70)
+    * **Core Function:** Can use 20 Tantra glyphs. For each glyph over 10, gain +5% all Tantra effects.
+    * **Evo A (Perfect Maximalism):** +8% per glyph.
+    * **Evo B (Deep Maximalism):** Can use 25 glyphs.
+    * **Note:** *Toolbox specialist. Infinite options.*
+
+96. **Glyph: Karma Gambit** (High-Roll, Gnosis 65)
+    * **Core Function:** All Tantra effects have random potency between 50% and 200%.
+    * **Evo A (Controlled Gambit):** Range improved to 75%-200%.
+    * **Evo B (Perfect Gambit):** Range improved to 100%-300%.
+    * **Note:** *RNG build. High variance vs consistency.*
+
+97. **Glyph: Perfect Tantra** (Consistency, Gnosis 60)
+    * **Core Function:** All Tantra effects have exactly listed potency—no scaling, crits, or variance.
+    * **Evo A (Predictable Power):** All effects +20% base potency.
+    * **Evo B (Enhanced Stability):** Immune to anti-Tantra effects.
+    * **Note:** *Anti-variance. Reliable power.*
+
+98. **Glyph: Solo Tantra** (Lone Wolf, Gnosis 55)
+    * **Core Function:** If you have no allies, all Tantra effects +150%, immune to [Subservience].
+    * **Evo A (Perfect Solo):** +200% effects.
+    * **Evo B (Survivor):** Also +50% max Ojas.
+    * **Note:** *Anti-team build. Solo domination.*
+
+99. **Glyph: Team Tantra** (Network, Gnosis 60)
+    * **Core Function:** For each ally, gain +25% Tantra effects and +10 max Ojas.
+    * **Evo A (Perfect Team):** +40% effects per ally.
+    * **Evo B (Deep Team):** +20 max Ojas per ally.
+    * **Note:** *Opposite of solo. Multiplayer specialist.*
+
+100. **Glyph: Master of Karma** (Ultimate Passive, Gnosis 80)
+    * **Core Function:** Passive: All Karma paths cost -2 Prana. Applying Resonance grants +1 Prana. Can use all Karma paths without restriction.
+    * **Evo A (Perfect Mastery):** Cost -3 Prana, grant +2 Prana.
+    * **Evo B (Deep Mastery):** All Resonances have +25% potency.
+    * **Note:** *Ultimate Tantra synergy. Master of all Karma.*
+
+---
+
+**End of Tantra Engine Complete Skills List**
+

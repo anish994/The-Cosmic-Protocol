@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop - Card Crafting System v4.0</title>
+    <link rel="stylesheet" href="styles/workshop.css">
+</head>
+<body>
+    <!-- Video Background with 2.5D Effect -->
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="../pictures and mp4s/game background1.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+    
+    <!-- Main Workshop Container -->
+    <div class="workshop-container">
+        
+        <!-- Header -->
+        <header class="workshop-header">
+            <h1>🏭️ Workshop v4.0</h1>
+            <div class="header-info">
+                <span class="kp-display">KP: <strong id="current-kp">0</strong>/10</span>
+                <span class="card-status" id="card-status">No card loaded</span>
+                <button onclick="window.location.href='../05-fusion/demo/index.html'" style="padding:8px 16px; background:rgba(139,92,246,0.3); color:#b894ff; border:2px solid rgba(139,92,246,0.6); border-radius:5px; cursor:pointer; font-family:inherit; font-size:14px">
+                    ⚡ Fusion System
+                </button>
+                <button class="btn-save" id="btn-save">💾 Save Card</button>
+                <button class="btn-load" id="btn-load">📂 Load Card</button>
+            </div>
+        </header>
+        
+        <!-- 3-Panel Layout -->
+        <main class="workshop-main">
+            
+            <!-- LEFT PANEL: Glyph Library -->
+            <section class="panel panel-left">
+                <div class="panel-header">
+                    <h2>📚 Glyph Library</h2>
+                    <div class="panel-controls">
+                        <button class="btn-collapse" data-panel="left">◀</button>
+                    </div>
+                </div>
+                
+                <!-- Filters -->
+                <div class="glyph-filters">
+                    <div class="filter-group">
+                        <label>Engine:</label>
+                        <select id="filter-engine">
+                            <option value="">All Engines</option>
+                            <option value="fused" id="fused-engine-option" style="color:#8b5cf6; font-weight:bold; display:none;">✨ Fused Skills</option>
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Tier:</label>
+                        <select id="filter-tier">
+                            <option value="">All Tiers</option>
+                            <option value="0">Tier 0 (Basic)</option>
+                            <option value="1">Tier 1 (Standard)</option>
+                            <option value="2">Tier 2 (Advanced)</option>
+                            <option value="3">Tier 3 (Ultimate)</option>
+                            <option value="4">Tier 4 (Apocalypse)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Keyword:</label>
+                        <select id="filter-keyword">
+                            <option value="">All Keywords</option>
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Search:</label>
+                        <input type="text" id="filter-search" placeholder="Search skills...">
+                    </div>
+                </div>
+                
+                <!-- Glyph List -->
+                <div class="glyph-list" id="glyph-list">
+                    <div class="loading">Loading glyphs...</div>
+                </div>
+            </section>
+            
+            <!-- CENTER PANEL: 12-House Vedic Chart -->
+            <section class="panel panel-center">
+                <div class="panel-header">
+                    <h2>🌟 Vedic Chart (12 Houses)</h2>
+                    <div class="chart-info">
+                        <span id="slots-filled">0/12 Slots</span>
+                    </div>
+                </div>
+                
+                <!-- 12-House Vedic Chart - 4x4 Grid -->
+                <div class="vedic-chart">
+                    <!-- Row 1: Houses 12, 1, 2, 3 -->
+                    <div class="house house-12" data-house="12">
+                        <div class="house-label">House 12<br><small>Liberation</small></div>
+                        <div class="glyph-slot" data-slot="12"></div>
+                    </div>
+                    
+                    <div class="house house-1" data-house="1">
+                        <div class="house-label">House 1<br><small>Self/Identity</small></div>
+                        <div class="glyph-slot" data-slot="1"></div>
+                    </div>
+                    
+                    <div class="house house-2" data-house="2">
+                        <div class="house-label">House 2<br><small>Resources</small></div>
+                        <div class="glyph-slot" data-slot="2"></div>
+                    </div>
+                    
+                    <div class="house house-3" data-house="3">
+                        <div class="house-label">House 3<br><small>Communication</small></div>
+                        <div class="glyph-slot" data-slot="3"></div>
+                    </div>
+                    
+                    <!-- Row 2: Houses 11, 10 (sides only) -->
+                    <div class="house house-11" data-house="11">
+                        <div class="house-label">House 11<br><small>Gains</small></div>
+                        <div class="glyph-slot" data-slot="11"></div>
+                    </div>
+                    
+                    <div class="house house-10" data-house="10">
+                        <div class="house-label">House 10<br><small>Authority</small></div>
+                        <div class="glyph-slot" data-slot="10"></div>
+                    </div>
+                    
+                    <!-- Row 3: Houses 8, 9 (sides only) -->
+                    <div class="house house-8" data-house="8">
+                        <div class="house-label">House 8<br><small>Transformation</small></div>
+                        <div class="glyph-slot" data-slot="8"></div>
+                    </div>
+                    
+                    <div class="house house-9" data-house="9">
+                        <div class="house-label">House 9<br><small>Fortune</small></div>
+                        <div class="glyph-slot" data-slot="9"></div>
+                    </div>
+                    
+                    <!-- Row 4: Houses 7, 6, 5, 4 -->
+                    <div class="house house-7" data-house="7">
+                        <div class="house-label">House 7<br><small>Partnerships</small></div>
+                        <div class="glyph-slot" data-slot="7"></div>
+                    </div>
+                    
+                    <div class="house house-6" data-house="6">
+                        <div class="house-label">House 6<br><small>Enemies</small></div>
+                        <div class="glyph-slot" data-slot="6"></div>
+                    </div>
+                    
+                    <div class="house house-5" data-house="5">
+                        <div class="house-label">House 5<br><small>Creativity</small></div>
+                        <div class="glyph-slot" data-slot="5"></div>
+                    </div>
+                    
+                    <div class="house house-4" data-house="4">
+                        <div class="house-label">House 4<br><small>Foundation</small></div>
+                        <div class="glyph-slot" data-slot="4"></div>
+                    </div>
+                </div>
+                
+                <!-- Jyotish Modifiers Panel (Collapsible) -->
+                <div class="jyotish-panel collapsed" id="jyotish-panel">
+                    <button class="jyotish-toggle" id="jyotish-toggle">
+                        🪐 Jyotish Modifiers ▼
+                    </button>
+                    <div class="jyotish-content">
+                        <div class="jyotish-section">
+                            <h4>Active Planetary Bonuses:</h4>
+                            <div id="planetary-bonuses">No bonuses active</div>
+                        </div>
+                        <div class="jyotish-section">
+                            <h4>House Effects:</h4>
+                            <div id="house-effects">No house effects</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- RIGHT PANEL: Card Preview -->
+            <section class="panel panel-right">
+                <div class="panel-header">
+                    <h2>🃏 Card Preview</h2>
+                    <div class="panel-controls">
+                        <button class="btn-collapse" data-panel="right">▶</button>
+                    </div>
+                </div>
+                
+                <!-- 3D Card Display -->
+                <div class="card-preview" id="card-preview">
+                    <div class="card-3d">
+                        <div class="card-face">
+                            <div class="card-name" id="card-name">Unnamed Card</div>
+                            <div class="card-stats">
+                                <div class="stat-hp">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value" id="stat-hp">100</span>
+                                </div>
+                                <div class="stat-attack">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value" id="stat-attack">10</span>
+                                </div>
+                                <div class="stat-defense">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value" id="stat-defense">10</span>
+                                </div>
+                                <div class="stat-speed">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value" id="stat-speed">50</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card-budget">
+                                <div class="budget-bar">
+                                    <span class="budget-label">KP Budget:</span>
+                                    <span class="budget-value" id="budget-value">0/30</span>
+                                </div>
+                                <div class="budget-status" id="budget-status">Optimal</div>
+                            </div>
+                            
+                            <div class="card-glyphs" id="card-glyphs">
+                                <h4>Slotted Glyphs (0/12):</h4>
+                                <div class="glyph-list-mini"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Synergies & Warnings -->
+                <div class="card-analysis">
+                    <div class="analysis-section synergies">
+                        <h4>✨ Active Synergies:</h4>
+                        <div id="active-synergies">
+                            <p class="placeholder">No synergies yet</p>
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section yogas">
+                        <h4>🌟 Yogas (Beneficial):</h4>
+                        <div id="active-yogas">
+                            <p class="placeholder">No yogas detected</p>
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-section doshas">
+                        <h4>⚠️ Doshas (Warnings):</h4>
+                        <div id="active-doshas">
+                            <p class="placeholder">No doshas detected</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../shared/skillSystem.js"></script>
+    <script src="scripts/SkillDatabase_v4.js"></script>
+    <script src="scripts/CardCalculator.js"></script>
+    <script src="scripts/WorkshopController.js"></script>
+    
+    <script>
+        // Integrate SkillSystem with Workshop
+        (function() {
+            if (window.SkillSystem) {
+                console.log('🔗 SkillSystem bridge loaded:', SkillSystem.getStats());
+                
+                // Enhance SkillDatabase with SkillSystem data
+                if (window.SkillDatabase) {
+                    const originalFilterSkills = SkillDatabase.prototype.filterSkills;
+                    
+                    SkillDatabase.prototype.filterSkills = function(criteria = {}) {
+                        // Get base skills from JSON files
+                        let results = originalFilterSkills.call(this, criteria);
+                        
+                        // Add fused skills from SkillSystem
+                        const fusedSkills = SkillSystem.getAllSkills().filter(s => s.isFused);
+                        
+                        // Convert fused skills to workshop format
+                        const convertedFused = fusedSkills.map(s => ({
+                            id: s.id,
+                            name: s.name + ' ✨',
+                            description: s.effect || s.description || 'Fused skill',
+                            cost: { kp: s.cost || 8, prana: s.prana || 3 },
+                            tier: s.tier || 2,
+                            keywords: s.keywords || [],
+                            engine: s.school || 'fused',
+                            isFused: true,
+                            cooldown: s.cooldown || 1
+                        }));
+                        
+                        // Apply filters to fused skills
+                        let filteredFused = convertedFused;
+                        
+                        if (criteria.tier !== undefined) {
+                            filteredFused = filteredFused.filter(s => s.tier === criteria.tier);
+                        }
+                        if (criteria.maxKPCost !== undefined) {
+                            filteredFused = filteredFused.filter(s => s.cost.kp <= criteria.maxKPCost);
+                        }
+                        if (criteria.keyword) {
+                            filteredFused = filteredFused.filter(s => s.keywords.includes(criteria.keyword));
+                        }
+                        if (criteria.search) {
+                            const search = criteria.search.toLowerCase();
+                            filteredFused = filteredFused.filter(s => 
+                                s.name.toLowerCase().includes(search) || 
+                                s.description.toLowerCase().includes(search)
+                            );
+                        }
+                        
+                        // Merge and return
+                        return [...results, ...filteredFused];
+                    };
+                    
+                    console.log('\u2705 Workshop enhanced with fused skills from SkillSystem');
+                    
+                    // Show fused skills option if any exist
+                    const fusedCount = SkillSystem.getAllSkills().filter(s => s.isFused).length;
+                    if (fusedCount > 0) {
+                        const fusedOption = document.getElementById('fused-engine-option');
+                        if (fusedOption) {
+                            fusedOption.style.display = 'block';
+                            fusedOption.textContent = `\u2728 Fused Skills (${fusedCount})`;
+                        }
+                    }
+                }
+            } else {
+                console.warn('\u26a0\ufe0f SkillSystem not found - only JSON skills available');
+            }
+        })();
+        
+        // Initialize Workshop
+        window.addEventListener('DOMContentLoaded', async () => {
+            console.log('🏭️ Initializing Workshop...');
+            
+            // Create SkillDatabase instance
+            window.skillDB = new SkillDatabase();
+            
+            // Try to load - may fail if JSON files don't exist yet
+            try {
+                await window.skillDB.load();
+            } catch (error) {
+                console.warn('⚠️ JSON files not found, using fallback mode');
+            }
+            
+            // Create and initialize controller
+            const controller = new WorkshopController();
+            await controller.init();
+        });
+    </script>
+</body>
+</html>

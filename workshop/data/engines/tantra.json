@@ -1,0 +1,365 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "tantra",
+  "_description": "Pressure & Denial Aggro Engine - Transformation through Energy",
+  "_source": "Tantra Engine v4.0 COMPLETE.txt + Global Balance Schema v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_TANTRA_001",
+      "name": "Pranic Ignition",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "prana": 15
+      },
+      "cooldown": 0,
+      "keywords": ["[Burn]"],
+      "description": "Apply 2 [Burn] stacks to target, deal 8 immediate damage",
+      "effect": {
+        "damage": 8,
+        "status_apply": [{"type": "[Burn]", "stacks": 2, "duration": 3}]
+      },
+      "jyotish_hooks": {
+        "Mars_T1+": "3 [Burn] stacks instead of 2",
+        "6th_House_L3+": "Also apply 1 [Decay]"
+      },
+      "synergy_seeds": ["ACX-TAN-DIV-01"],
+      "ai_priority": 7,
+      "ai_conditions": ["early_game", "stack_building"],
+      "flavor_text": "The first spark that begins the inferno."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_002",
+      "name": "Decay Seed",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "prana": 20
+      },
+      "cooldown": 0,
+      "keywords": ["[Decay]"],
+      "description": "Apply 3 [Decay] stacks to target",
+      "effect": {
+        "status_apply": [{"type": "[Decay]", "stacks": 3, "duration": "permanent"}]
+      },
+      "jyotish_hooks": {
+        "Mars_T1+": "Apply 4 [Decay] stacks",
+        "8th_House_L2+": "[Decay] spreads to adjacent enemy if target dies"
+      },
+      "synergy_seeds": ["ACX-TAN-SING-01"],
+      "ai_priority": 8,
+      "ai_conditions": ["combo_setup", "detonation_prep"],
+      "flavor_text": "Plant the seeds of entropy."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_003",
+      "name": "Ember Strike",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "prana": 18
+      },
+      "cooldown": 0,
+      "keywords": ["[Burn]", "Direct"],
+      "description": "Deal 25 damage and apply 1 [Burn] stack",
+      "effect": {
+        "damage": 25,
+        "status_apply": [{"type": "[Burn]", "stacks": 1, "duration": 3}]
+      },
+      "jyotish_hooks": {
+        "Mars_T2+": "30 damage",
+        "Sun_T1+": "+25% damage during day phase"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 6,
+      "ai_conditions": ["direct_damage_needed"],
+      "flavor_text": "Strike with flame-infused fury."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_011",
+      "name": "Thermal Overrun",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "prana": 40
+      },
+      "cooldown": 2,
+      "keywords": ["[Burn]", "[Decay]", "[Consume]"],
+      "description": "Consume up to 3 [Burn] stacks from each enemy; extend remaining [Burn]/[Decay] durations by 1 turn and deal 5 damage per stack consumed",
+      "effect": {
+        "consume": {"type": "[Burn]", "max_stacks": 3},
+        "damage_per_stack": 5,
+        "extend_duration": {"types": ["[Burn]", "[Decay]"], "amount": 1}
+      },
+      "jyotish_hooks": {
+        "Mars_T2+": "8 damage per stack",
+        "Jupiter_T2+": "Affects all enemies in row"
+      },
+      "synergy_seeds": ["ACX-TAN-CON-01"],
+      "ai_priority": 7,
+      "ai_conditions": ["burn_stacks_high", "tempo_control"],
+      "flavor_text": "Manipulate the flames of destruction."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_012",
+      "name": "Resonant Detonation",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "prana": 40
+      },
+      "cooldown": 4,
+      "keywords": ["[Detonate]", "[Consume]", "AoE"],
+      "description": "Consume all resonance types on target; deal 15 AoE damage per unique type (max 90 if all 6 types)",
+      "effect": {
+        "consume": {"types": ["[Burn]", "[Decay]", "[Stasis]", "[Discord]", "[Void]", "[Subservience]"], "all_unique": true},
+        "damage_per_type": 15,
+        "aoe": "3x3 around target"
+      },
+      "jyotish_hooks": {
+        "Jupiter_T2+": "AoE radius +1",
+        "Mars_T3+": "25 damage per type"
+      },
+      "synergy_seeds": ["ACX-TAN-CON-01"],
+      "ai_priority": 9,
+      "ai_conditions": ["multi_resonance_stacked", "combo_finisher"],
+      "flavor_text": "Cascade of sacred geometry."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_013",
+      "name": "Cull the Weak",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "prana": 35
+      },
+      "cooldown": 3,
+      "keywords": ["Direct", "[Decay]"],
+      "description": "Deal 20 damage; if target below 30% Ojas, double damage and apply 2 [Decay]",
+      "effect": {
+        "damage": 20,
+        "conditional": {
+          "condition": "target_hp_below_30%",
+          "effect": {
+            "damage_multiplier": 2,
+            "status_apply": [{"type": "[Decay]", "stacks": 2}]
+          }
+        }
+      },
+      "jyotish_hooks": {
+        "6th_House_L5+": "Threshold increases to 40%",
+        "Mars_T2+": "3 [Decay] stacks"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 8,
+      "ai_conditions": ["enemy_low_hp", "execute_range"],
+      "flavor_text": "Finish what was started."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_021",
+      "name": "Pyroclasm",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "prana": 70
+      },
+      "cooldown": 5,
+      "keywords": ["[Detonate]", "AoE", "[Burn]"],
+      "description": "Consume all [Decay] stacks on target; deal base 100 damage × (1 + 0.10 × stacks consumed) in AoE",
+      "effect": {
+        "base_damage": 100,
+        "consume": {"type": "[Decay]", "all": true},
+        "multiplier_per_stack": 0.10,
+        "aoe": "3x3 around target",
+        "apply_burn": {"stacks": 2, "to": "all_hit"}
+      },
+      "jyotish_hooks": {
+        "Mars_T3+": "+15% multiplier per stack (becomes 0.25)",
+        "Jupiter_T2+": "AoE becomes global on even turns"
+      },
+      "synergy_seeds": ["ACX-TAN-SING-02"],
+      "ai_priority": 10,
+      "ai_conditions": ["decay_stacks_8+", "burst_window"],
+      "flavor_text": "The volcano erupts."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_022",
+      "name": "Chains of Subjugation",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "prana": 60
+      },
+      "cooldown": 4,
+      "keywords": ["[Subservience]", "Control"],
+      "description": "Apply 5 [Subservience] stacks; at 10 stacks, control target for 1 turn",
+      "effect": {
+        "status_apply": [{"type": "[Subservience]", "stacks": 5, "duration": 5}],
+        "control_threshold": 10
+      },
+      "jyotish_hooks": {
+        "Saturn_T2+": "+1 turn control duration",
+        "8th_House_L4+": "Control threshold reduced to 8 stacks"
+      },
+      "synergy_seeds": ["ACX-TAN-CHAR-01"],
+      "ai_priority": 8,
+      "ai_conditions": ["control_strategy", "high_value_target"],
+      "flavor_text": "Bend their will to yours."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_023",
+      "name": "Entropic Cascade",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "prana": 75
+      },
+      "cooldown": 6,
+      "keywords": ["[Decay]", "[Discord]", "[Void]"],
+      "description": "Apply 3 stacks each of [Decay], [Discord], and [Void] to target",
+      "effect": {
+        "status_apply": [
+          {"type": "[Decay]", "stacks": 3},
+          {"type": "[Discord]", "stacks": 3, "duration": 4},
+          {"type": "[Void]", "stacks": 3, "duration": 3}
+        ]
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "+2 stacks to all",
+        "12th_House_L3+": "[Void] duration +2 turns"
+      },
+      "synergy_seeds": ["ACX-TAN-SING-03"],
+      "ai_priority": 9,
+      "ai_conditions": ["mid_game", "lockdown_needed"],
+      "flavor_text": "Weave the tapestry of entropy."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_031",
+      "name": "Maran: Death's Embrace",
+      "tier": 3,
+      "cost": {
+        "kp": 4,
+        "prana": 100
+      },
+      "cooldown": 8,
+      "keywords": ["[Ultimate]", "[Detonate]", "Execute"],
+      "description": "If target below 25% Ojas: instant death. Otherwise: consume all debuffs for 200 damage + 50 per unique type",
+      "effect": {
+        "execute_threshold": 0.25,
+        "fallback_damage": 200,
+        "bonus_per_unique_debuff": 50,
+        "consume": {"all_debuffs": true}
+      },
+      "jyotish_hooks": {
+        "Mars_T4": "Execute threshold increases to 35%",
+        "8th_House_L7+": "Instant death ignores resurrection effects"
+      },
+      "synergy_seeds": ["ACX-TAN-THER-01"],
+      "ai_priority": 10,
+      "ai_conditions": ["enemy_low_hp", "kill_window"],
+      "flavor_text": "The final breath."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_032",
+      "name": "Vashikaran: Puppet Master",
+      "tier": 3,
+      "cost": {
+        "kp": 4,
+        "prana": 110
+      },
+      "cooldown": 10,
+      "keywords": ["[Ultimate]", "[Subservience]", "Control"],
+      "description": "Gain full control of target for 3 turns; they act as your ally",
+      "effect": {
+        "control_duration": 3,
+        "full_control": true,
+        "target_acts_for_you": true
+      },
+      "jyotish_hooks": {
+        "Saturn_T3+": "Control duration 4 turns",
+        "Moon_T2+": "Target retains controlled state memory (psychological damage)"
+      },
+      "synergy_seeds": ["ACX-TAN-DIV-02"],
+      "ai_priority": 10,
+      "ai_conditions": ["late_game", "enemy_has_power"],
+      "flavor_text": "They are yours to command."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_033",
+      "name": "Uchatan: Banishment Rite",
+      "tier": 3,
+      "cost": {
+        "kp": 4,
+        "prana": 90
+      },
+      "cooldown": 7,
+      "keywords": ["[Banish]", "[Void]"],
+      "description": "Consume 5 [Void] stacks to [Banish] target for 3 turns",
+      "effect": {
+        "consume": {"type": "[Void]", "stacks": 5},
+        "banish_duration": 3,
+        "return_effect": "summoning_sickness"
+      },
+      "jyotish_hooks": {
+        "Ketu_T2+": "[Banish] duration +1 turn",
+        "12th_House_L5+": "Target returns with -50% max Ojas"
+      },
+      "synergy_seeds": ["ACX-TAN-SING-04"],
+      "ai_priority": 9,
+      "ai_conditions": ["threat_elimination", "void_stacked"],
+      "flavor_text": "Exile them to the void."
+    },
+    
+    {
+      "id": "SKILL_TANTRA_041",
+      "name": "Apocalypse: Shiva's Dance",
+      "tier": 4,
+      "cost": {
+        "kp": 5,
+        "prana": 150
+      },
+      "cooldown": 999,
+      "keywords": ["[Apocalypse]", "[Ultimate]", "[Detonate]"],
+      "description": "Once per duel: Consume ALL debuffs on ALL enemies; deal 400 true damage (ignores defense) globally; apply 5 [Burn] to survivors",
+      "effect": {
+        "consume": {"all_debuffs": true, "all_targets": true},
+        "damage": 400,
+        "damage_type": "true",
+        "target": "all_enemies",
+        "apply_burn": {"stacks": 5, "to": "all_survivors"}
+      },
+      "jyotish_hooks": {
+        "Mars_T4": "Damage increases to 600",
+        "Jupiter_T4": "Also destroys all enemy structures",
+        "Saturn_T4": "Applies 3 [Stasis] to survivors"
+      },
+      "synergy_seeds": ["ACX-TAN-INV-01"],
+      "ai_priority": 10,
+      "ai_conditions": ["apocalypse_available", "multiple_enemies", "win_condition"],
+      "flavor_text": "Tandava - the cosmic dance of destruction.",
+      "once_per_match": true
+    }
+  ],
+  
+  "_tier_distribution": {
+    "tier_0": 3,
+    "tier_1": 3,
+    "tier_2": 3,
+    "tier_3": 3,
+    "tier_4": 1,
+    "total": 13,
+    "note": "Sample showing full tier range; complete engine has 100 skills"
+  }
+}

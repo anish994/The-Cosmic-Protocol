@@ -1,0 +1,301 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "divination",
+  "_description": "Support & Control Engine - Cosmic Insight and Manipulation",
+  "_source": "Divination Engine v4.0 COMPLETE.txt + Global Balance Schema v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_DIV_001",
+      "name": "Astral Shield",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "prana": 20
+      },
+      "cooldown": 0,
+      "keywords": ["Shield", "Defense"],
+      "description": "Grant target ally 25 Shield for 2 turns",
+      "effect": {
+        "shield": 25,
+        "duration": 2,
+        "target": "ally"
+      },
+      "jyotish_hooks": {
+        "Venus_T1+": "30 Shield",
+        "4th_House_L2+": "Affects 2 allies"
+      },
+      "synergy_seeds": ["ACX-DIV-CON-01"],
+      "ai_priority": 7,
+      "ai_conditions": ["ally_low_hp", "defensive_setup"],
+      "flavor_text": "Weave starlight into protection."
+    },
+    
+    {
+      "id": "SKILL_DIV_002",
+      "name": "Stasis Bind",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "prana": 18
+      },
+      "cooldown": 0,
+      "keywords": ["[Stasis]", "Control"],
+      "description": "Apply 2 [Stasis] stacks to target (reduces action speed)",
+      "effect": {
+        "status_apply": [{"type": "[Stasis]", "stacks": 2, "duration": 2}]
+      },
+      "jyotish_hooks": {
+        "Saturn_T1+": "3 [Stasis] stacks",
+        "7th_House_L3+": "[Stasis] lasts 1 extra turn"
+      },
+      "synergy_seeds": ["ACX-DIV-TAN-01"],
+      "ai_priority": 6,
+      "ai_conditions": ["speed_control", "tempo_shift"],
+      "flavor_text": "Time bends to your will."
+    },
+    
+    {
+      "id": "SKILL_DIV_003",
+      "name": "Cosmic Pulse",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "prana": 15
+      },
+      "cooldown": 0,
+      "keywords": ["Heal", "Support"],
+      "description": "Heal target ally for 30 Ojas",
+      "effect": {
+        "heal": 30,
+        "target": "ally"
+      },
+      "jyotish_hooks": {
+        "Moon_T1+": "40 Ojas healing",
+        "4th_House_L2+": "Also grant 10 Shield"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 8,
+      "ai_conditions": ["ally_damaged", "sustain_priority"],
+      "flavor_text": "Channel the universe's renewal."
+    },
+    
+    {
+      "id": "SKILL_DIV_011",
+      "name": "Fate's Intervention",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "prana": 45
+      },
+      "cooldown": 4,
+      "keywords": ["Shield", "Redirect"],
+      "description": "Grant ally 60 Shield; redirect next enemy attack to different target",
+      "effect": {
+        "shield": 60,
+        "duration": 2,
+        "redirect": "next_attack"
+      },
+      "jyotish_hooks": {
+        "Venus_T2+": "80 Shield",
+        "Jupiter_T2+": "Redirect 2 attacks"
+      },
+      "synergy_seeds": ["ACX-DIV-CON-02"],
+      "ai_priority": 9,
+      "ai_conditions": ["critical_save", "key_ally_protection"],
+      "flavor_text": "Rewrite destiny's threads."
+    },
+    
+    {
+      "id": "SKILL_DIV_012",
+      "name": "Temporal Lock",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "prana": 40
+      },
+      "cooldown": 3,
+      "keywords": ["[Stasis]", "AoE"],
+      "description": "Apply 3 [Stasis] to all enemies in row; they skip next action",
+      "effect": {
+        "status_apply": [{"type": "[Stasis]", "stacks": 3}],
+        "skip_action": true,
+        "target": "enemy_row"
+      },
+      "jyotish_hooks": {
+        "Saturn_T2+": "Global effect (all enemies)",
+        "7th_House_L5+": "Skip 2 actions"
+      },
+      "synergy_seeds": ["ACX-DIV-SING-01"],
+      "ai_priority": 10,
+      "ai_conditions": ["tempo_control", "emergency_freeze"],
+      "flavor_text": "Time stands still."
+    },
+    
+    {
+      "id": "SKILL_DIV_013",
+      "name": "Prophecy of Pain",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "prana": 35
+      },
+      "cooldown": 2,
+      "keywords": ["Mark", "[Foresee]"],
+      "description": "Mark enemy; next 2 attacks against them deal +50% damage",
+      "effect": {
+        "mark": {
+          "type": "[Foresee]",
+          "damage_increase": 1.5,
+          "hits": 2
+        }
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "+75% damage instead",
+        "9th_House_L4+": "Next 3 attacks"
+      },
+      "synergy_seeds": ["ACX-DIV-TAN-02"],
+      "ai_priority": 8,
+      "ai_conditions": ["burst_setup", "focus_fire"],
+      "flavor_text": "See the wounds before they land."
+    },
+    
+    {
+      "id": "SKILL_DIV_021",
+      "name": "Celestial Aegis",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "prana": 70
+      },
+      "cooldown": 5,
+      "keywords": ["Shield", "AoE", "Cleanse"],
+      "description": "Grant all allies 80 Shield and cleanse 2 negative status types",
+      "effect": {
+        "shield": 80,
+        "target": "all_allies",
+        "cleanse": {"types": "any", "amount": 2}
+      },
+      "jyotish_hooks": {
+        "Venus_T3+": "120 Shield",
+        "Moon_T2+": "Also heal 40 Ojas"
+      },
+      "synergy_seeds": ["ACX-DIV-CON-03"],
+      "ai_priority": 10,
+      "ai_conditions": ["team_protection", "cleanse_needed"],
+      "flavor_text": "The stars shelter the worthy."
+    },
+    
+    {
+      "id": "SKILL_DIV_022",
+      "name": "Chrono Reversal",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "prana": 65
+      },
+      "cooldown": 6,
+      "keywords": ["[Transform]", "Rewind"],
+      "description": "Reset target ally to state from 2 turns ago (HP, status, cooldowns)",
+      "effect": {
+        "rewind": {
+          "turns": 2,
+          "restore": ["hp", "status", "cooldowns"]
+        }
+      },
+      "jyotish_hooks": {
+        "Saturn_T3+": "Rewind 3 turns",
+        "12th_House_L6+": "Can target enemy to rewind negatively"
+      },
+      "synergy_seeds": ["ACX-DIV-SING-02"],
+      "ai_priority": 9,
+      "ai_conditions": ["undo_disaster", "tactical_reset"],
+      "flavor_text": "Turn back the clock of fate."
+    },
+    
+    {
+      "id": "SKILL_DIV_023",
+      "name": "Oracle's Curse",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "prana": 60
+      },
+      "cooldown": 4,
+      "keywords": ["[Subservience]", "Control"],
+      "description": "Apply 5 [Subservience] stacks; enemy's next skill targets their own team",
+      "effect": {
+        "status_apply": [{"type": "[Subservience]", "stacks": 5}],
+        "mind_control": {
+          "next_action": "redirect_to_allies"
+        }
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "Affects next 2 skills",
+        "8th_House_L5+": "Enemy takes damage from their own skill"
+      },
+      "synergy_seeds": ["ACX-DIV-TAN-03"],
+      "ai_priority": 9,
+      "ai_conditions": ["disruption", "chaos_advantage"],
+      "flavor_text": "Your will is not your own."
+    },
+    
+    {
+      "id": "SKILL_DIV_031",
+      "name": "Cosmic Resurrection",
+      "tier": 3,
+      "cost": {
+        "kp": 4,
+        "prana": 100
+      },
+      "cooldown": 8,
+      "keywords": ["Revive", "Ultimate"],
+      "description": "Revive fallen ally with 50% HP and all buffs they had when alive",
+      "effect": {
+        "revive": {
+          "hp_percent": 50,
+          "restore_buffs": true
+        }
+      },
+      "jyotish_hooks": {
+        "Moon_T3+": "Revive with 80% HP",
+        "4th_House_L7+": "Can revive 2 allies"
+      },
+      "synergy_seeds": ["ACX-DIV-CON-04"],
+      "ai_priority": 10,
+      "ai_conditions": ["ally_dead", "comeback_setup"],
+      "flavor_text": "Death is merely a suggestion."
+    },
+    
+    {
+      "id": "SKILL_DIV_041",
+      "name": "Singularity of Fate",
+      "tier": 4,
+      "cost": {
+        "kp": 5,
+        "prana": 150
+      },
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "Global", "Control"],
+      "description": "Freeze all enemies for 1 turn; all allies gain 150 Shield and act twice next turn",
+      "effect": {
+        "global": true,
+        "freeze": {"target": "all_enemies", "duration": 1},
+        "shield": 150,
+        "shield_target": "all_allies",
+        "extra_action": {
+          "target": "all_allies",
+          "next_turn": true
+        }
+      },
+      "jyotish_hooks": {
+        "Saturn_T4+": "Freeze for 2 turns",
+        "Jupiter_T3+": "Allies act 3 times"
+      },
+      "synergy_seeds": ["ACX-DIV-ALL"],
+      "ai_priority": 10,
+      "ai_conditions": ["apocalypse_ready", "game_changer"],
+      "flavor_text": "I am the eye of eternity."
+    }
+  ]
+}

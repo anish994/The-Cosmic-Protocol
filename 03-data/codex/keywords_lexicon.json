@@ -1,0 +1,26 @@
+{
+  "version": "3.0",
+  "keywords": {
+    "control": ["Stun", "Silence", "Root", "Banish", "Imprison", "Lock", "Veil", "Charm", "Taunt", "Heal Block", "Sunder", "Vulnerable", "Debuff", "Control", "Mark", "Expose"],
+    "combat": ["Damage", "Burn", "Bleed", "Poison", "Execute", "Lifesteal", "AoE", "Chain", "Chant", "Shield", "Heal", "Cleanse", "Reveal", "DoT", "Consume"],
+    "boardcraft": ["Field", "Anchor", "Channel", "Amplify", "Support", "Structure", "Refresh", "Reduce", "Delay"],
+    "invocation_core": ["Invoke", "Consecrate", "Blessing"],
+    "singularity_core": ["Charge", "Collapse"],
+    "therapeutic_core": ["Transmute", "Purify"],
+    "jyotish_core": ["Bind", "Transit", "Aspect"],
+    "engine_specific": {
+      "tantra_resonance": ["Decay", "Stasis", "Subservience", "Discord", "Void"],
+      "consciousness": ["Alpha", "Beta", "Theta", "Delta", "Gamma", "Epsilon", "Coherence"],
+      "divination": ["Threads", "Weave", "Sever", "Prophecy", "Omen", "Scry", "Foretell", "Seal"],
+      "invocation": ["Sanctity", "Anarchy", "ResonanceScore"],
+      "singularity": ["Threshold", "Protocol"]
+    }
+  },
+  "synergy_grammar": [
+    { "template": "bonus_vs_afflicted", "rule": "+X% effect if target has [KEYWORD]" },
+    { "template": "detonate", "rule": "Detonate [KEYWORD]: apply STATE/EFFECT" },
+    { "template": "shatter_counter", "rule": "[Sunder] vs [Shield] => Shield Shatter, apply [Vulnerable] 1 turn" },
+    { "template": "state_locked", "rule": "In [STATE], apply BONUS (e.g., Cooldown −1)" },
+    { "template": "cross_resource", "rule": "Spend RESOURCE_A to affect RESOURCE_B (e.g., 10 [Insight] → Purify 10 Adharma)" }
+  ]
+}

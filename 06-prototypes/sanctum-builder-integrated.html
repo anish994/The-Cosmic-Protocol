@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>ASTRA KARMA - Sanctum Builder</title>
+    
+    <!-- THREE.js for WebGL Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* WebGL Cosmic Background */
+        #cosmicBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Top Control Bar */
+        .control-bar {
+            padding: 12px 15px;
+            background: linear-gradient(135deg, 
+                rgba(15, 10, 30, 0.95),
+                rgba(25, 15, 35, 0.9));
+            border-bottom: 2px solid rgba(180, 120, 255, 0.4);
+            box-shadow: 0 5px 30px rgba(150, 100, 200, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .chart-name-input {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .chart-name-input label {
+            display: block;
+            font-size: 10px;
+            color: #b894ff;
+            margin-bottom: 4px;
+        }
+
+        .chart-name-input input {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(180, 120, 255, 0.1);
+            border: 2px solid rgba(180, 120, 255, 0.4);
+            border-radius: 5px;
+            color: #d8c8ff;
+            font-size: 14px;
+            font-family: inherit;
+            min-height: 44px;
+        }
+
+        .kp-budget {
+            text-align: center;
+        }
+
+        .kp-label {
+            font-size: 10px;
+            color: #b894ff;
+        }
+
+        .kp-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: 2px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .btn-save {
+            background: linear-gradient(135deg, #2a5a2f, #4a8a4f);
+            border-color: rgba(100, 200, 100, 0.6);
+            color: #e0ffe0;
+        }
+
+        .btn-save:active {
+            transform: scale(0.95);
+        }
+
+        .btn-cancel {
+            background: linear-gradient(135deg, #5a2a2a, #8a4a4a);
+            border-color: rgba(200, 100, 100, 0.6);
+            color: #ffe0e0;
+        }
+
+        /* Main Grid Layout */
+        .sanctum-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+
+        @media (min-width: 1025px) {
+            .sanctum-grid {
+                display: grid;
+                grid-template-columns: 180px 1fr 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+        }
+
+        /* School Index */
+        .school-index {
+            background: linear-gradient(135deg,
+                rgba(15, 10, 30, 0.9),
+                rgba(25, 15, 35, 0.85));
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 10px;
+            padding: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .school-title {
+            font-size: 12px;
+            color: #b894ff;
+            text-align: center;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .school-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (min-width: 1025px) {
+            .school-scroll {
+                flex-direction: column;
+            }
+        }
+
+        .school-item {
+            padding: 12px;
+            min-width: 100px;
+            background: rgba(180, 120, 255, 0.1);
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .school-item:active {
+            transform: scale(0.95);
+        }
+
+        .school-item.active {
+            background: rgba(180, 120, 255, 0.3);
+            border-color: rgba(200, 150, 255, 0.8);
+            box-shadow: 0 0 15px rgba(180, 120, 255, 0.4);
+        }
+
+        .school-icon {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .school-name {
+            font-size: 10px;
+            color: #c8b8d8;
+        }
+
+        /* Glyph List Panel */
+        .glyph-list-panel {
+            background: linear-gradient(135deg,
+                rgba(15, 10, 30, 0.9),
+                rgba(25, 15, 35, 0.85));
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .glyph-list-panel {
+                max-height: none;
+            }
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(180, 120, 255, 0.1);
+            border: 2px solid rgba(180, 120, 255, 0.4);
+            border-radius: 5px;
+            color: #d8c8ff;
+            font-family: inherit;
+            margin-bottom: 8px;
+            min-height: 44px;
+        }
+
+        .glyph-count {
+            font-size: 11px;
+            color: #b894ff;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .glyph-scroll {
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-right: 8px;
+        }
+
+        .glyph-card {
+            background: rgba(180, 120, 255, 0.1);
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .glyph-card:active {
+            transform: scale(0.98);
+        }
+
+        .glyph-card.selected {
+            background: rgba(180, 120, 255, 0.25);
+            border-color: rgba(200, 150, 255, 0.8);
+            box-shadow: 0 0 15px rgba(180, 120, 255, 0.4);
+        }
+
+        /* Chart Panel */
+        .chart-panel {
+            background: linear-gradient(135deg,
+                rgba(15, 10, 30, 0.9),
+                rgba(25, 15, 35, 0.85));
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .chart-display-area {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .vedic-chart-builder {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: rgba(20, 10, 35, 0.9);
+            border: 3px solid rgba(180, 120, 255, 0.8);
+            box-shadow: 
+                0 0 40px rgba(180, 120, 255, 0.4),
+                inset 0 0 30px rgba(100, 50, 150, 0.2);
+        }
+
+        .house-slot {
+            position: absolute;
+            border: 2px solid rgba(180, 120, 255, 0.5);
+            background: rgba(30, 20, 50, 0.7);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+        }
+
+        .house-slot:active {
+            transform: scale(1.05);
+            background: rgba(200, 150, 255, 0.2);
+        }
+
+        .house-slot.selected {
+            background: rgba(200, 150, 255, 0.3);
+            border-color: rgba(200, 150, 255, 1);
+        }
+
+        .house-slot.filled {
+            background: rgba(100, 200, 100, 0.2);
+            border-color: rgba(100, 255, 100, 0.6);
+        }
+
+        .house-number {
+            font-size: 8px;
+            color: rgba(180, 120, 255, 0.6);
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .house-label {
+            font-size: 7px;
+            color: rgba(180, 120, 255, 0.5);
+            text-align: center;
+        }
+
+        .empty-slot {
+            font-size: 16px;
+            color: rgba(180, 120, 255, 0.3);
+            opacity: 0.5;
+        }
+
+        /* House Positions */
+        .house-4 { width: 25%; height: 25%; top: 0; left: 0; }
+        .house-3 { width: 25%; height: 25%; top: 0; left: 25%; }
+        .house-2 { width: 25%; height: 25%; top: 0; left: 50%; }
+        .house-1 { width: 25%; height: 25%; top: 0; right: 0; }
+        .house-5 { width: 25%; height: 25%; top: 25%; left: 0; }
+        .house-12 { width: 25%; height: 25%; top: 25%; right: 0; }
+        .house-6 { width: 25%; height: 25%; top: 50%; left: 0; }
+        .house-11 { width: 25%; height: 25%; top: 50%; right: 0; }
+        .house-7 { width: 25%; height: 25%; bottom: 0; left: 0; }
+        .house-8 { width: 25%; height: 25%; bottom: 0; left: 25%; }
+        .house-9 { width: 25%; height: 25%; bottom: 0; left: 50%; }
+        .house-10 { width: 25%; height: 25%; bottom: 0; right: 0; }
+
+        /* ⭐ JYOTISH FOUNDATION - INTEGRATED BELOW CHART */
+        .jyotish-foundation {
+            width: 100%;
+            max-width: 400px;
+            background: linear-gradient(135deg, rgba(15, 10, 30, 0.9), rgba(25, 15, 35, 0.85));
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .foundation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(180, 120, 255, 0.3);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .foundation-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .title-icon {
+            font-size: 20px;
+        }
+
+        .title-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #b894ff;
+        }
+
+        .title-badge {
+            font-size: 14px;
+            color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .foundation-summary {
+            display: flex;
+            gap: 15px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+        }
+
+        .summary-value {
+            font-weight: bold;
+            color: #90ee90;
+        }
+
+        .summary-item.warning .summary-value {
+            color: #ff9090;
+        }
+
+        /* Collapsible Sections */
+        .foundation-section {
+            margin-bottom: 12px;
+            border: 2px solid rgba(180, 120, 255, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .foundation-section.expanded {
+            border-color: rgba(180, 120, 255, 0.4);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(180, 120, 255, 0.1);
+            cursor: pointer;
+            min-height: 44px;
+            transition: all 0.2s;
+        }
+
+        .section-header:active {
+            background: rgba(180, 120, 255, 0.2);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .section-icon {
+            font-size: 18px;
+        }
+
+        .section-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #d8c8ff;
+        }
+
+        .section-count {
+            font-size: 11px;
+            color: #b894ff;
+            background: rgba(180, 120, 255, 0.2);
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+
+        .toggle-icon {
+            font-size: 14px;
+            color: #b894ff;
+            transition: transform 0.3s;
+        }
+
+        /* Ascendant Dropdown */
+        .ascendant-selector {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .ascendant-selector:hover {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .ascendant-current {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ascendant-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            margin-top: 10px;
+        }
+
+        .ascendant-dropdown.open {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .ascendant-option {
+            padding: 10px;
+            margin: 4px 0;
+            background: rgba(180, 120, 255, 0.1);
+            border: 2px solid rgba(180, 120, 255, 0.3);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ascendant-option:hover {
+            background: rgba(180, 120, 255, 0.25);
+            border-color: rgba(200, 150, 255, 0.6);
+            transform: translateX(5px);
+        }
+
+        .ascendant-option.selected {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.8);
+        }
+
+        /* Planet Dragging */
+        .planet-card.draggable {
+            cursor: grab;
+            transition: all 0.3s;
+        }
+
+        .planet-card.dragging {
+            opacity: 0.5;
+            transform: scale(0.95);
+            cursor: grabbing;
+        }
+
+        .house-slot.drag-over {
+            background: rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 1);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            transform: scale(1.05);
+        }
+
+        .house-slot.has-planet {
+            background: rgba(100, 200, 100, 0.2);
+            border-color: rgba(100, 255, 100, 0.8);
+        }
+
+        .planet-in-house {
+            font-size: 16px;
+            margin: 4px 0;
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 12px;
+        }
+
+        .foundation-section.expanded .section-content {
+            max-height: 2000px;
+            padding: 12px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        /* Ascendant Details */
+        .ascendant-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .detail-card {
+            background: rgba(180, 120, 255, 0.1);
+            border: 1px solid rgba(180, 120, 255, 0.3);
+            border-radius: 5px;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .detail-card.primary {
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .card-label {
+            font-size: 9px;
+            color: #b894ff;
+            margin-bottom: 4px;
+        }
+
+        .card-value {
+            font-size: 12px;
+            font-weight: bold;
+            color: #d8c8ff;
+        }
+
+        .card-value.cost {
+            color: #ffd700;
+        }
+
+        .passive-ability {
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .ability-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 4px;
+        }
+
+        .ability-effect {
+            font-size: 11px;
+            color: #90ee90;
+            margin-bottom: 6px;
+        }
+
+        .ability-description {
+            font-size: 10px;
+            color: #c8b8d8;
+            line-height: 1.4;
+        }
+
+        /* Planets Grid */
+        .planets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+        }
+
+        .planet-card {
+            background: rgba(180, 120, 255, 0.1);
+            border: 1px solid rgba(180, 120, 255, 0.3);
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+        .planet-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .planet-symbol {
+            font-size: 18px;
+        }
+
+        .planet-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #d8c8ff;
+        }
+
+        .planet-house {
+            font-size: 10px;
+            color: #b894ff;
+            margin-bottom: 4px;
+        }
+
+        .planet-modifier {
+            font-size: 10px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 3px;
+        }
+
+        .planet-effect {
+            font-size: 9px;
+            color: #c8b8d8;
+            line-height: 1.3;
+        }
+
+        /* Nakshatras, Yogas, Doshas Lists */
+        .nakshatras-list, .yogas-list, .doshas-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nakshatra-card, .yoga-card, .dosha-card {
+            background: rgba(180, 120, 255, 0.1);
+            border: 1px solid rgba(180, 120, 255, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .nakshatra-card.deva {
+            border-color: rgba(144, 238, 144, 0.5);
+        }
+
+        .nakshatra-card.rakshasa {
+            border-color: rgba(255, 144, 144, 0.5);
+        }
+
+        .yoga-card.global {
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .dosha-card {
+            border-color: rgba(255, 144, 144, 0.5);
+        }
+
+        .see-all-link {
+            text-align: center;
+            color: #b894ff;
+            font-size: 11px;
+            cursor: pointer;
+            padding: 8px;
+            transition: all 0.2s;
+        }
+
+        .see-all-link:active {
+            color: #ffd700;
+        }
+
+        /* Dasha Timeline */
+        .dasha-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .dasha-period {
+            background: rgba(180, 120, 255, 0.1);
+            border: 1px solid rgba(180, 120, 255, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .dasha-period.current {
+            border-color: rgba(255, 215, 0, 0.6);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .period-number {
+            font-size: 16px;
+            font-weight: bold;
+            color: #b894ff;
+        }
+
+        .period-planet {
+            font-size: 12px;
+            font-weight: bold;
+            color: #d8c8ff;
+        }
+
+        .period-duration {
+            font-size: 10px;
+            color: #b894ff;
+        }
+
+        .period-effect {
+            grid-column: 2 / 4;
+            font-size: 10px;
+            color: #c8b8d8;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <!-- WebGL Cosmic Background -->
+    <canvas id="cosmicBackground"></canvas>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Top Control Bar -->
+        <div class="control-bar">
+            <div class="chart-name-input">
+                <label>Chart Name</label>
+                <input type="text" id="chartName" placeholder="My Chart" value="Warrior's Path">
+            </div>
+            <div class="kp-budget">
+                <div class="kp-label">KP Budget</div>
+                <div class="kp-value"><span id="kpUsed">8</span> / <span id="kpTotal">100</span></div>
+            </div>
+            <div>
+                <button class="btn btn-save" onclick="saveChart()">💾</button>
+                <button class="btn btn-cancel" onclick="cancelEdit()">✖</button>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="sanctum-grid">
+            <!-- School Index -->
+            <div class="school-index">
+                <div class="school-title">Schools</div>
+                <div class="school-scroll" id="schoolList"></div>
+            </div>
+
+            <!-- Glyph List -->
+            <div class="glyph-list-panel">
+                <input type="text" class="search-bar" id="searchBar" placeholder="🔍 Search glyphs...">
+                <div class="glyph-count" id="glyphCount">Loading...</div>
+                <div class="glyph-scroll" id="glyphList"></div>
+            </div>
+
+            <!-- Chart Display with Integrated Foundation -->
+            <div class="chart-panel">
+                <div class="chart-display-area">
+                    <div class="vedic-chart-builder" id="vedicChart">
+                        <!-- Houses generated by JS -->
+                    </div>
+                </div>
+
+                <!-- ⭐ INTEGRATED JYOTISH FOUNDATION -->
+                <div id="jyotishFoundation" class="jyotish-foundation"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // 🎨 WEBGL COSMIC BACKGROUND
+        // ============================================
+        let scene, camera, renderer;
+        
+        function initCosmicBackground() {
+            const canvas = document.getElementById('cosmicBackground');
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            
+            const starGeometry = new THREE.BufferGeometry();
+            const starMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 2,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            const starVertices = [];
+            for (let i = 0; i < 1000; i++) {
+                starVertices.push(
+                    (Math.random() - 0.5) * 2000,
+                    (Math.random() - 0.5) * 2000,
+                    -Math.random() * 2000
+                );
+            }
+            
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            const starField = new THREE.Points(starGeometry, starMaterial);
+            scene.add(starField);
+            
+            camera.position.z = 1;
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                starField.rotation.x += 0.0001;
+                starField.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+        
+        window.addEventListener('resize', () => {
+            if (renderer) {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+        });
+
+        // ============================================
+        // 📱 HAPTIC FEEDBACK
+        // ============================================
+        const haptic = {
+            tap: () => navigator.vibrate && navigator.vibrate(10),
+            success: () => navigator.vibrate && navigator.vibrate([20, 10, 20])
+        };
+
+        // ============================================
+        // 🎮 JYOTISH ENGINE - INLINE FOR DEMO (will be replaced with import later)
+        // ============================================
+        const JyotishEngine = {
+            ascendants: [
+                { id: 'aries', name: 'Aries', symbol: '♈', element: 'Fire', ruler: 'Mars', kpCost: 10,
+                  passive: { name: "Warrior's Fury", effect: 'Direct Damage +5%', description: 'Fiery warrior energy' } },
+                { id: 'taurus', name: 'Taurus', symbol: '♉', element: 'Earth', ruler: 'Venus', kpCost: 10,
+                  passive: { name: 'Earthen Resilience', effect: 'Start with 10 Ojas Shield', description: 'Stable protection' } },
+                { id: 'gemini', name: 'Gemini', symbol: '♊', element: 'Air', ruler: 'Mercury', kpCost: 10,
+                  passive: { name: 'Clever Mind', effect: 'Intel/Debuff -1 Prana', description: 'Mental agility' } },
+                { id: 'cancer', name: 'Cancer', symbol: '♋', element: 'Water', ruler: 'Moon', kpCost: 10,
+                  passive: { name: 'Nurturing Tide', effect: 'Healing +10%', description: 'Lunar care' } },
+                { id: 'leo', name: 'Leo', symbol: '♌', element: 'Fire', ruler: 'Sun', kpCost: 10,
+                  passive: { name: 'Royal Authority', effect: 'Ultimate -1 Prana', description: 'Solar majesty' } },
+                { id: 'virgo', name: 'Virgo', symbol: '♍', element: 'Earth', ruler: 'Mercury', kpCost: 10,
+                  passive: { name: 'Precision Medicine', effect: 'DoT +1 turn', description: 'Meticulous detail' } },
+                { id: 'libra', name: 'Libra', symbol: '♎', element: 'Air', ruler: 'Venus', kpCost: 10,
+                  passive: { name: 'Harmonic Shield', effect: 'Buff = 5pt Shield', description: 'Balance harmony' } },
+                { id: 'scorpio', name: 'Scorpio', symbol: '♏', element: 'Water', ruler: 'Mars', kpCost: 10,
+                  passive: { name: 'Vengeful Strike', effect: 'Kill = +15% dmg', description: 'Intense focus' } },
+                { id: 'sagittarius', name: 'Sagittarius', symbol: '♐', element: 'Fire', ruler: 'Jupiter', kpCost: 10,
+                  passive: { name: "Fortune's Favor", effect: '5% refund 50% Prana', description: 'Lucky optimism' } },
+                { id: 'capricorn', name: 'Capricorn', symbol: '♑', element: 'Earth', ruler: 'Saturn', kpCost: 10,
+                  passive: { name: 'Structured Foundation', effect: 'Yantra +15% Ojas', description: 'Disciplined build' } },
+                { id: 'aquarius', name: 'Aquarius', symbol: '♒', element: 'Air', ruler: 'Saturn', kpCost: 10,
+                  passive: { name: 'Cyclical Energy', effect: '+1 Prana every 3rd turn', description: 'Cosmic rhythm' } },
+                { id: 'pisces', name: 'Pisces', symbol: '♓', element: 'Water', ruler: 'Jupiter', kpCost: 10,
+                  passive: { name: 'Compassionate Recovery', effect: '<50% Ojas: Heal +50%', description: 'Empathic resonance' } }
+            ],
+            planets: [
+                { id: 'sun', name: 'Sun', symbol: '☀️', modifier: 'Authoritative', effect: '+10% Power, +1 Prana Cost' },
+                { id: 'moon', name: 'Moon', symbol: '🌙', modifier: 'Reflective', effect: 'Defensive: reflect 10% damage' },
+                { id: 'mars', name: 'Mars', symbol: '♂️', modifier: 'Aggressive', effect: '+15% Power, 5% self-damage' },
+                { id: 'mercury', name: 'Mercury', symbol: '☿️', modifier: 'Adaptive', effect: '-1 Turn Cooldown' },
+                { id: 'jupiter', name: 'Jupiter', symbol: '♃', modifier: 'Expansive', effect: 'All effects +15%' },
+                { id: 'venus', name: 'Venus', symbol: '♀️', modifier: 'Harmonious', effect: '-1 Prana, -10% Power' },
+                { id: 'saturn', name: 'Saturn', symbol: '♄', modifier: 'Disciplined', effect: '+1 CD, undispellable' },
+                { id: 'rahu', name: 'Rahu', symbol: '☊', modifier: 'Unpredictable', effect: '25% ±50% effect' },
+                { id: 'ketu', name: 'Ketu', symbol: '☋', modifier: 'Severing', effect: '20% Heal Block' }
+            ],
+            nakshatras: [
+                { id: 1, name: 'Ashwini', guna: 'Deva', lord: 'Ketu', effect: 'Healing removes extra debuff' },
+                { id: 2, name: 'Bharani', guna: 'Manushya', lord: 'Venus', effect: 'Destroyed Yantra grants Prana' },
+                { id: 3, name: 'Krittika', guna: 'Rakshasa', lord: 'Sun', effect: '+10% critical hit chance' }
+            ],
+            yogas: [
+                { name: 'Raja Yoga', type: 'Global', power: 85, condition: 'Sun/Moon in own house', effect: '+1 Prana/turn' },
+                { name: 'Dhana Yoga', type: 'Global', power: 70, condition: 'Jupiter/Venus in 2nd/11th', effect: '+15% Prana gen' }
+            ],
+            doshas: [
+                { name: 'Kuja Dosha', type: 'Conditional', severity: 'Moderate', condition: 'Mars in specific houses',
+                  effect: 'Healing -15%, Shields -10%', remedy: 'Red Coral' }
+            ],
+            mahadashas: [
+                { planet: 'Sun', duration: 4, effect: 'Authority: +10% damage, Sun Glyphs -1 Prana' },
+                { planet: 'Moon', duration: 4, effect: 'Fluctuation: +15% healing, random cooldown reduction' }
+            ],
+            getAscendant(id) { return this.ascendants.find(a => a.id === id); },
+            calculatePlanetaryPositions() { return { sun: 5, moon: 4, mars: 10 }; }
+        };
+
+        // ============================================
+        // 🎨 JYOTISH FOUNDATION UI
+        // ============================================
+        class JyotishFoundationUI {
+            constructor(containerId, engine) {
+                this.container = document.getElementById(containerId);
+                this.engine = engine;
+                this.expanded = { ascendant: true, planets: false, nakshatras: false, yogas: false, doshas: false, dasha: false };
+                this.currentData = null;
+            }
+
+            init(chartData) {
+                this.currentData = chartData;
+                this.render();
+            }
+
+            render() {
+                const ascendant = this.engine.getAscendant(this.currentData.ascendantId || 'aries');
+                const positions = this.engine.calculatePlanetaryPositions();
+
+                this.container.innerHTML = `
+                    <div class="foundation-header">
+                        <div class="foundation-title">
+                            <span class="title-icon">⚡</span>
+                            <span class="title-text">Jyotish Foundation</span>
+                            <span class="title-badge">${ascendant.symbol} ${ascendant.name}</span>
+                        </div>
+                        <div class="foundation-summary">
+                            <span class="summary-item">
+                                <span class="summary-icon">✨</span>
+                                <span class="summary-value">${this.currentData.yogaCount}</span>
+                                <span class="summary-label">Yogas</span>
+                            </span>
+                            <span class="summary-item warning">
+                                <span class="summary-icon">⚠️</span>
+                                <span class="summary-value">${this.currentData.doshaCount}</span>
+                                <span class="summary-label">Doshas</span>
+                            </span>
+                        </div>
+                    </div>
+                    ${this.renderAscendant(ascendant)}
+                    ${this.renderPlanets(positions)}
+                    ${this.renderNakshatras()}
+                    ${this.renderYogas()}
+                    ${this.renderDoshas()}
+                    ${this.renderDasha()}
+                `;
+            }
+
+            renderAscendant(asc) {
+                const allAscendants = this.engine.ascendants;
+                return `
+                    <div class="foundation-section ${this.expanded.ascendant ? 'expanded' : ''}" data-section="ascendant">
+                        <div class="section-header" onclick="jyotishUI.toggle('ascendant')">
+                            <div class="section-title">
+                                <span class="section-icon">🏛️</span>
+                                <span class="section-name">Ascendant: ${asc.symbol} ${asc.name}</span>
+                            </div>
+                            <span class="toggle-icon">${this.expanded.ascendant ? '▼' : '▶'}</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="ascendant-selector" onclick="toggleAscendantDropdown();">
+                                <div class="ascendant-current">
+                                    <div>
+                                        <div style="font-size: 11px; color: #ffd700; margin-bottom: 4px;">👆 Click to Choose</div>
+                                        <div style="font-size: 15px; color: #d8c8ff; font-weight: bold;">${asc.symbol} ${asc.name} (${asc.element})</div>
+                                    </div>
+                                    <span style="font-size: 18px; color: #ffd700;" id="dropdownArrow">▼</span>
+                                </div>
+                                <div class="ascendant-dropdown" id="ascendantDropdown">
+                                    ${allAscendants.map(a => `
+                                        <div class="ascendant-option ${a.id === asc.id ? 'selected' : ''}" onclick="selectAscendant('${a.id}'); event.stopPropagation();">
+                                            <div>
+                                                <div style="font-size: 13px; font-weight: bold; color: #d8c8ff;">${a.symbol} ${a.name}</div>
+                                                <div style="font-size: 9px; color: #b894ff; margin-top: 2px;">${a.element} • ${a.ruler}</div>
+                                            </div>
+                                            <div style="font-size: 10px; color: #90ee90;">${a.kpCost} KP</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div class="ascendant-details">
+                                <div class="detail-card primary">
+                                    <div class="card-label">Element</div>
+                                    <div class="card-value">${this.getElementIcon(asc.element)} ${asc.element}</div>
+                                </div>
+                                <div class="detail-card">
+                                    <div class="card-label">Ruler</div>
+                                    <div class="card-value">${asc.ruler}</div>
+                                </div>
+                                <div class="detail-card">
+                                    <div class="card-label">KP Cost</div>
+                                    <div class="card-value cost">${asc.kpCost} KP</div>
+                                </div>
+                            </div>
+                            <div class="passive-ability">
+                                <div class="ability-name">${asc.passive.name}</div>
+                                <div class="ability-effect">${asc.passive.effect}</div>
+                                <div class="ability-description">${asc.passive.description}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderPlanets(pos) {
+                return `
+                    <div class="foundation-section ${this.expanded.planets ? 'expanded' : ''}" data-section="planets">
+                        <div class="section-header" onclick="jyotishUI.toggle('planets')">
+                            <div class="section-title">
+                                <span class="section-icon">🌟</span>
+                                <span class="section-name">Planetary Positions (Drag to Place)</span>
+                                <span class="section-count">${this.engine.planets.length}</span>
+                            </div>
+                            <span class="toggle-icon">${this.expanded.planets ? '▼' : '▶'}</span>
+                        </div>
+                        <div class="section-content">
+                            <div style="font-size: 10px; color: #b894ff; text-align: center; margin-bottom: 10px;">
+                                🖱️ Click & Drag planets to house slots • Click planet to remove
+                            </div>
+                            <div class="planets-grid">
+                                ${this.engine.planets.map(p => {
+                                    const houseNum = jyotishState.planetPlacements[p.id];
+                                    return `
+                                    <div class="planet-card draggable ${houseNum ? 'has-planet' : ''}" 
+                                         draggable="true" 
+                                         data-planet-id="${p.id}"
+                                         onclick="removePlanetPlacement('${p.id}');">
+                                        <div class="planet-header">
+                                            <span class="planet-symbol">${p.symbol}</span>
+                                            <span class="planet-name">${p.name}</span>
+                                        </div>
+                                        <div class="planet-house" style="${houseNum ? 'color: #90ee90; font-weight: bold;' : 'color: #ff9090;'}">House ${houseNum || '—'}</div>
+                                        <div class="planet-modifier">${p.modifier}</div>
+                                        <div class="planet-effect" style="font-size: 9px;">${p.effect}</div>
+                                    </div>
+                                `}).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderNakshatras() {
+                return `
+                    <div class="foundation-section ${this.expanded.nakshatras ? 'expanded' : ''}" data-section="nakshatras">
+                        <div class="section-header" onclick="jyotishUI.toggle('nakshatras')">
+                            <div class="section-title">
+                                <span class="section-icon">🔮</span>
+                                <span class="section-name">Nakshatras</span>
+                                <span class="section-count">27</span>
+                            </div>
+                            <span class="toggle-icon">${this.expanded.nakshatras ? '▼' : '▶'}</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="nakshatras-list">
+                                ${this.engine.nakshatras.map(n => `
+                                    <div class="nakshatra-card ${n.guna.toLowerCase()}">
+                                        <div style="font-size: 12px; font-weight: bold; margin-bottom: 4px;">${n.name} • ${this.getGunaIcon(n.guna)} ${n.guna}</div>
+                                        <div style="font-size: 10px; color: #b894ff; margin-bottom: 4px;">Lord: ${n.lord}</div>
+                                        <div style="font-size: 10px; color: #c8b8d8;">${n.effect}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderYogas() {
+                return `
+                    <div class="foundation-section ${this.expanded.yogas ? 'expanded' : ''}" data-section="yogas">
+                        <div class="section-header" onclick="jyotishUI.toggle('yogas')">
+                            <div class="section-title">
+                                <span class="section-icon">✨</span>
+                                <span class="section-name">Yogas</span>
+                                <span class="section-count">${this.engine.yogas.length}</span>
+                            </div>
+                            <span class="toggle-icon">${this.expanded.yogas ? '▼' : '▶'}</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="yogas-list">
+                                ${this.engine.yogas.map(y => `
+                                    <div class="yoga-card ${y.type.toLowerCase()}">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                            <span style="font-size: 12px; font-weight: bold;">${y.name}</span>
+                                            <span style="font-size: 11px; color: #ffd700;">${y.power}%</span>
+                                        </div>
+                                        <div style="font-size: 10px; color: #b894ff; margin-bottom: 4px;">${y.condition}</div>
+                                        <div style="font-size: 10px; color: #90ee90;">${y.effect}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderDoshas() {
+                return `
+                    <div class="foundation-section ${this.expanded.doshas ? 'expanded' : ''}" data-section="doshas">
+                        <div class="section-header" onclick="jyotishUI.toggle('doshas')">
+                            <div class="section-title">
+                                <span class="section-icon">⚠️</span>
+                                <span class="section-name">Doshas</span>
+                                <span class="section-count">${this.engine.doshas.length}</span>
+                            </div>
+                            <span class="toggle-icon">${this.expanded.doshas ? '▼' : '▶'}</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="doshas-list">
+                                ${this.engine.doshas.map(d => `
+                                    <div class="dosha-card">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                                            <span style="font-size: 12px; font-weight: bold;">${d.name}</span>
+                                            <span style="font-size: 11px; color: #ff9090;">${d.severity}</span>
+                                        </div>
+                                        <div style="font-size: 10px; color: #b894ff; margin-bottom: 4px;">${d.condition}</div>
+                                        <div style="font-size: 10px; color: #ff9090; margin-bottom: 6px;">${d.effect}</div>
+                                        <div style="font-size: 10px; color: #ffd700;">💎 Remedy: ${d.remedy}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderDasha() {
+                return `
+                    <div class="foundation-section ${this.expanded.dasha ? 'expanded' : ''}" data-section="dasha">
+                        <div class="section-header" onclick="jyotishUI.toggle('dasha')">
+                            <div class="section-title">
+                                <span class="section-icon">⏳</span>
+                                <span class="section-name">Dasha System</span>
+                                <span class="section-count">${this.engine.mahadashas.length}</span>
+                            </div>
+                            <span class="toggle-icon">${this.expanded.dasha ? '▼' : '▶'}</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="dasha-timeline">
+                                ${this.engine.mahadashas.map((d, i) => `
+                                    <div class="dasha-period ${i === 0 ? 'current' : ''}">
+                                        <div class="period-number">${i + 1}</div>
+                                        <div class="period-planet">${d.planet}</div>
+                                        <div class="period-duration">${d.duration} Turns</div>
+                                        <div class="period-effect">${d.effect}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            toggle(section) {
+                this.expanded[section] = !this.expanded[section];
+                const el = this.container.querySelector(`[data-section="${section}"]`);
+                el.classList.toggle('expanded');
+                el.querySelector('.toggle-icon').textContent = this.expanded[section] ? '▼' : '▶';
+                haptic.tap();
+            }
+            
+            update(newData) {
+                this.currentData = newData;
+                this.render();
+            }
+
+            getElementIcon(element) {
+                return { Fire: '🔥', Earth: '🌍', Air: '💨', Water: '💧' }[element] || '';
+            }
+
+            getGunaIcon(guna) {
+                return { Deva: '✨', Manushya: '👤', Rakshasa: '⚡' }[guna] || '';
+            }
+        }
+
+        // ============================================
+        // 🚀 INITIALIZATION
+        // ============================================
+        let jyotishUI;
+        let jyotishState = {
+            ascendantId: 'aries',
+            planetPlacements: {}, // planetId -> houseNumber
+            yogaCount: 0,
+            doshaCount: 0
+        };
+        let selectedPlanetToPlace = null;
+
+        function init() {
+            initCosmicBackground();
+            generateHouses();
+            renderSchools();
+            setupPlanetDragging();
+            
+            // Initialize Jyotish Foundation
+            jyotishUI = new JyotishFoundationUI('jyotishFoundation', JyotishEngine);
+            jyotishUI.init(jyotishState);
+        }
+
+        function generateHouses() {
+            const chart = document.getElementById('vedicChart');
+            const labels = ['Self', 'Wealth', 'Courage', 'Home', 'Creativity', 'Service', 
+                           'Partner', 'Transform', 'Wisdom', 'Career', 'Gains', 'Loss'];
+            const romans = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+            
+            for (let i = 1; i <= 12; i++) {
+                const house = document.createElement('div');
+                house.className = `house-slot house-${i}`;
+                house.dataset.houseNumber = i;
+                house.innerHTML = `
+                    <div class="house-number">${romans[i-1]}</div>
+                    <div class="planet-display" id="planet-display-${i}"></div>
+                    <div class="house-label">${labels[i-1]}</div>
+                `;
+                
+                // Drag & Drop Events
+                house.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    house.classList.add('drag-over');
+                });
+                
+                house.addEventListener('dragleave', () => {
+                    house.classList.remove('drag-over');
+                });
+                
+                house.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    house.classList.remove('drag-over');
+                    const planetId = e.dataTransfer.getData('planetId');
+                    if (planetId) {
+                        placePlanetInHouse(planetId, i);
+                    }
+                });
+                
+                chart.appendChild(house);
+            }
+        }
+
+        function renderSchools() {
+            const schools = [
+                { id: 'tantra', name: 'Tantra', icon: '🔥' },
+                { id: 'consciousness', name: 'Consciousness', icon: '🧠' },
+                { id: 'therapeutic', name: 'Therapeutic', icon: '🛡️' }
+            ];
+            
+            document.getElementById('schoolList').innerHTML = schools.map((s, i) => `
+                <div class="school-item ${i === 0 ? 'active' : ''}">
+                    <div class="school-icon">${s.icon}</div>
+                    <div class="school-name">${s.name}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('glyphCount').textContent = '3 Glyphs Available';
+            document.getElementById('glyphList').innerHTML = '<div class="glyph-card"><div style="font-size: 14px; font-weight: bold; margin-bottom: 6px;">Astral Lance</div><div style="font-size: 11px; color: #c8b8d8;">Deal 15 damage. Apply 1 [Decay].</div></div>';
+        }
+
+        function saveChart() {
+            haptic.success();
+            alert('💾 Chart saved successfully!');
+        }
+
+        function cancelEdit() {
+            if (confirm('Cancel editing?')) window.history.back();
+        }
+
+        // ============================================
+        // 🎭 ASCENDANT DROPDOWN
+        // ============================================
+        let dropdownOpen = false;
+        
+        function toggleAscendantDropdown() {
+            dropdownOpen = !dropdownOpen;
+            const dropdown = document.getElementById('ascendantDropdown');
+            const arrow = document.getElementById('dropdownArrow');
+            
+            if (dropdownOpen) {
+                dropdown.classList.add('open');
+                arrow.textContent = '▲';
+            } else {
+                dropdown.classList.remove('open');
+                arrow.textContent = '▼';
+            }
+            haptic.tap();
+        }
+        
+        function selectAscendant(ascendantId) {
+            jyotishState.ascendantId = ascendantId;
+            jyotishUI.update(jyotishState);
+            dropdownOpen = false;
+            haptic.success();
+        }
+        
+        // ============================================
+        // 🪐 PLANET DRAG & DROP
+        // ============================================
+        function setupPlanetDragging() {
+            document.addEventListener('dragstart', (e) => {
+                if (e.target.classList.contains('draggable')) {
+                    e.target.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('planetId', e.target.dataset.planetId);
+                    haptic.tap();
+                }
+            });
+            
+            document.addEventListener('dragend', (e) => {
+                if (e.target.classList.contains('draggable')) {
+                    e.target.classList.remove('dragging');
+                }
+            });
+        }
+        
+        function placePlanetInHouse(planetId, houseNum) {
+            // Remove planet from any previous house
+            Object.keys(jyotishState.planetPlacements).forEach(pId => {
+                if (jyotishState.planetPlacements[pId] === houseNum) {
+                    delete jyotishState.planetPlacements[pId];
+                }
+            });
+            
+            jyotishState.planetPlacements[planetId] = houseNum;
+            const planet = JyotishEngine.getPlanet(planetId);
+            
+            // Update house display
+            updateHouseDisplay(houseNum, planet);
+            jyotishUI.update(jyotishState);
+            haptic.success();
+        }
+        
+        function removePlanetPlacement(planetId) {
+            if (jyotishState.planetPlacements[planetId]) {
+                const houseNum = jyotishState.planetPlacements[planetId];
+                delete jyotishState.planetPlacements[planetId];
+                updateHouseDisplay(houseNum, null);
+                jyotishUI.update(jyotishState);
+                haptic.tap();
+            }
+        }
+        
+        function updateHouseDisplay(houseNum, planet) {
+            const display = document.getElementById(`planet-display-${houseNum}`);
+            const houseEl = document.querySelector(`.house-${houseNum}`);
+            
+            if (planet) {
+                display.innerHTML = `<div class="planet-in-house">${planet.symbol}</div>`;
+                houseEl.classList.add('has-planet');
+            } else {
+                display.innerHTML = '<div class="empty-slot">⬡</div>';
+                houseEl.classList.remove('has-planet');
+            }
+        }
+        
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

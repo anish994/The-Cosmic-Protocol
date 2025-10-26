@@ -1,0 +1,929 @@
+{
+  "rules_engine_version": "1.0.0",
+  "game_version": "v4.0",
+  "last_updated": "2025-01-23",
+  "description": "AI Rules Engine - Layer 2 (Resource Rules) - Ultra-detailed validation system for resource economy",
+  
+  "LAYER_2_RESOURCE_RULES": {
+    
+    "2.1_KUNDALINI_POWER_KP": {
+      "description": "Universal resource required for all glyph activations",
+      
+      "2.1.1_KP_generation": {
+        "rule_id": "R-2.1.1",
+        "description": "How KP is generated each turn",
+        "base_generation": {
+          "amount": 1,
+          "timing": "START_OF_TURN phase",
+          "guaranteed": true,
+          "description": "Every player gains +1 KP automatically at turn start"
+        },
+        "maximum_KP": {
+          "base_cap": 10,
+          "description": "Maximum KP that can be stored",
+          "overflow_behavior": "Excess KP generation is wasted (does not carry over)",
+          "validation": "player.KP <= 10 (unless modified by effects)"
+        },
+        "bonus_generation": [
+          {
+            "source": "Sun planetary influence",
+            "condition": "Sun Tier 2+",
+            "bonus": "+1 KP per turn (total +2)",
+            "note": "Doubles base KP generation"
+          },
+          {
+            "source": "Certain Foundational glyphs",
+            "examples": ["Structure (Skill 5): +1 KP if no damage taken last turn"],
+            "conditional": true
+          },
+          {
+            "source": "Singularity Coherence Engine",
+            "condition": "Pattern Recognition tier bonuses",
+            "bonus": "Variable (+1 to +2 KP depending on patterns)"
+          }
+        ],
+        "sub_rules": {
+          "2.1.1.1_first_turn_KP": {
+            "rule_id": "R-2.1.1.1",
+            "description": "Both players start with 3 KP at round start",
+            "reason": "Prevents slow early game, allows immediate glyph usage",
+            "validation": "at_round_start: player.KP = 3"
+          },
+          "2.1.1.2_KP_cap_increases": {
+            "rule_id": "R-2.1.1.2",
+            "description": "Maximum KP can be increased by effects",
+            "examples": [
+              "Jupiter Tier 3+: +2 max KP (cap becomes 12)",
+              "Certain Foundational glyphs: +1 to +3 max KP",
+              "Singularity Infinite Capacity: Removes KP cap entirely (rare)"
+            ],
+            "validation": "player.max_KP = base_cap + modifiers"
+          }
+        }
+      },
+      
+      "2.1.2_KP_spending": {
+        "rule_id": "R-2.1.2",
+        "description": "How KP is consumed when activating glyphs",
+        "cost_structure": {
+          "base_cost": "All glyphs cost 1-3 KP + engine resource",
+          "tier_scaling": [
+            "Tier 1 glyphs: 1 KP",
+            "Tier 2 glyphs: 2 KP",
+            "Tier 3 glyphs: 3 KP",
+            "Ultimate glyphs: 3-4 KP"
+          ],
+          "validation": "player.KP >= glyph.KP_cost"
+        },
+        "cost_reduction": [
+          {
+            "source": "Mercury planetary influence",
+            "condition": "Mercury Tier 2+",
+            "effect": "-1 KP cost to all glyphs (minimum 0)",
+            "example": "Tier 2 glyph costs 2 KP → Reduced to 1 KP"
+          },
+          {
+            "source": "Consciousness Engine efficiency",
+            "condition": "Alpha/Beta/Gamma State active",
+            "effect": "Specific glyphs cost -1 KP while in state",
+            "state_dependent": true
+          },
+          {
+            "source": "Character Analysis prediction bonuses",
+            "condition": "Correct prediction made",
+            "effect": "Next glyph costs -1 KP",
+            "duration": "1 turn after prediction"
+          }
+        ],
+        "insufficient_KP_behavior": {
+          "validation": "if (player.KP < glyph.KP_cost) { block_activation() }",
+          "UI_indication": "Glyph grayed out, shows KP deficit",
+          "error_message": "Not enough KP! Need X, have Y"
+        },
+        "sub_rules": {
+          "2.1.2.1_free_activation": {
+            "rule_id": "R-2.1.2.1",
+            "description": "Certain effects allow free glyph activation (0 KP cost)",
+            "examples": [
+              "Invocation: Grace overflow (50+ Grace) → Next glyph free",
+              "Character Analysis: Perfect Prediction → Next glyph free",
+              "Foundational: Grounding (Skill 25) → Next defensive glyph free"
+            ],
+            "limitation": "Usually limited to 1 free activation per trigger"
+          },
+          "2.1.2.2_KP_refund": {
+            "rule_id": "R-2.1.2.2",
+            "description": "Some glyphs refund KP under conditions",
+            "examples": [
+              "Character Analysis: If prediction correct → Refund 1 KP",
+              "Singularity: If pattern detected → Refund 2 KP",
+              "Invocation: Divine Surge → Refund KP if overkill"
+            ],
+            "timing": "Refund occurs immediately after glyph resolves",
+            "validation": "player.KP = min(player.KP + refund_amount, max_KP)"
+          }
+        }
+      },
+      
+      "2.1.3_KP_manipulation": {
+        "rule_id": "R-2.1.3",
+        "description": "Effects that steal, deny, or manipulate opponent KP",
+        "KP_denial": [
+          {
+            "glyph": "Tantra: Energy Drain",
+            "effect": "Opponent gains 0 KP next turn",
+            "duration": "1 turn",
+            "stacks": "No (multiple applications extend duration)"
+          },
+          {
+            "glyph": "Singularity: Void Lock",
+            "effect": "Both players gain 0 KP for 2 turns",
+            "symmetrical": true,
+            "strategic": "Use when ahead in KP to lock advantage"
+          }
+        ],
+        "KP_stealing": [
+          {
+            "glyph": "Tantra: Siphon",
+            "effect": "Steal 1-2 KP from opponent",
+            "validation": "opponent.KP = max(0, opponent.KP - steal_amount); player.KP = min(player.KP + steal_amount, max_KP)"
+          },
+          {
+            "glyph": "Character Analysis: Resource Prediction",
+            "effect": "If prediction correct → Steal 2 KP",
+            "conditional": true
+          }
+        ],
+        "KP_burning": [
+          {
+            "description": "Force opponent to waste KP",
+            "glyph": "Foundational: Disruption",
+            "effect": "Opponent loses 2 KP (not transferred, just lost)",
+            "validation": "opponent.KP = max(0, opponent.KP - 2)"
+          }
+        ],
+        "sub_rules": {
+          "2.1.3.1_cannot_steal_below_zero": {
+            "rule_id": "R-2.1.3.1",
+            "description": "KP cannot go negative",
+            "validation": "player.KP = max(0, calculated_KP)",
+            "example": "Opponent has 1 KP, you try to steal 2 → You only steal 1, opponent has 0"
+          }
+        }
+      }
+    },
+    
+    "2.2_ENGINE_SPECIFIC_RESOURCES": {
+      "description": "Unique resources for each of the 8 engines",
+      
+      "2.2.1_TANTRA_prana": {
+        "resource_name": "Prana",
+        "description": "Vital life force energy for Tantra glyphs",
+        "rule_id": "R-2.2.1",
+        
+        "generation": {
+          "base_amount": 5,
+          "timing": "START_OF_TURN",
+          "formula": "base_amount + mars_bonus + jyotish_modifiers",
+          "modifiers": [
+            "Mars Tier 2+: +3 Prana per turn",
+            "1st House (Self): +5% Prana generation",
+            "Certain Tantra glyphs: +2 to +5 Prana"
+          ]
+        },
+        "maximum": {
+          "base_cap": 50,
+          "overflow": "Excess Prana wasted",
+          "cap_increases": [
+            "Mars Tier 3+: +10 max Prana (cap = 60)",
+            "Tantra mastery bonuses: +5 to +15 max Prana"
+          ],
+          "validation": "player.prana <= max_prana"
+        },
+        "spending": {
+          "cost_range": "3-25 Prana per glyph",
+          "tier_costs": [
+            "Tier 1: 3-8 Prana",
+            "Tier 2: 8-15 Prana",
+            "Tier 3: 15-25 Prana",
+            "Ultimate: 20-35 Prana"
+          ],
+          "validation": "player.prana >= glyph.prana_cost"
+        },
+        "special_mechanics": {
+          "prana_overload": {
+            "condition": "Prana at 50/50",
+            "effect": "Next Tantra glyph deals +20% damage",
+            "consumed_on_use": true
+          },
+          "prana_starvation": {
+            "condition": "Prana below 10",
+            "effect": "Tantra glyphs deal -10% damage",
+            "threshold_based": true
+          }
+        },
+        "sub_rules": {
+          "2.2.1.1_burn_synergy": {
+            "rule_id": "R-2.2.1.1",
+            "description": "[Burn] stacks grant +1 Prana per turn",
+            "validation": "prana_generation += active_burn_stacks",
+            "example": "3 [Burn] stacks on opponent → +3 Prana per turn"
+          }
+        }
+      },
+      
+      "2.2.2_INVOCATION_sanctity": {
+        "resource_name": "Sanctity",
+        "description": "Divine purity for Invocation glyphs",
+        "rule_id": "R-2.2.2",
+        
+        "generation": {
+          "base_amount": 5,
+          "timing": "START_OF_TURN",
+          "formula": "base_amount + jupiter_bonus + grace_conversion",
+          "modifiers": [
+            "Jupiter Tier 2+: +5 Sanctity per turn",
+            "9th House (Dharma): +10% Sanctity generation",
+            "Grace Points: Convert 10 Grace → +3 Sanctity (optional)"
+          ]
+        },
+        "maximum": {
+          "base_cap": 60,
+          "overflow": "Convert excess to Grace (2 Sanctity → 1 Grace)",
+          "cap_increases": [
+            "Jupiter Tier 3+: +15 max Sanctity (cap = 75)",
+            "Invocation mastery: +10 to +20 max Sanctity"
+          ]
+        },
+        "spending": {
+          "cost_range": "5-30 Sanctity per glyph",
+          "tier_costs": [
+            "Tier 1: 5-10 Sanctity",
+            "Tier 2: 10-20 Sanctity",
+            "Tier 3: 20-30 Sanctity",
+            "Miracle glyphs: 25-40 Sanctity"
+          ]
+        },
+        "special_mechanics": {
+          "sanctity_overflow": {
+            "condition": "Sanctity reaches cap",
+            "effect": "Auto-convert excess to Grace Points",
+            "conversion_rate": "2 Sanctity = 1 Grace",
+            "automatic": true
+          },
+          "sanctity_depletion": {
+            "condition": "Sanctity below 15",
+            "effect": "Cannot activate Tier 3 Invocation glyphs",
+            "threshold_lock": true
+          }
+        },
+        "sub_rules": {
+          "2.2.2.1_grace_sanctity_synergy": {
+            "rule_id": "R-2.2.2.1",
+            "description": "Grace Points enhance Sanctity generation",
+            "formula": "If Grace >= 20 → +2 Sanctity per turn",
+            "tiered_bonus": "Grace 40+ → +5 Sanctity per turn"
+          }
+        }
+      },
+      
+      "2.2.3_CONSCIOUSNESS_bandwidth": {
+        "resource_name": "Bandwidth",
+        "description": "Mental processing capacity for Consciousness glyphs",
+        "rule_id": "R-2.2.3",
+        
+        "generation": {
+          "base_amount": 8,
+          "timing": "START_OF_TURN",
+          "state_dependent": true,
+          "modifiers": [
+            "Alpha State: +3 Bandwidth",
+            "Beta State: +5 Bandwidth",
+            "Gamma State: +8 Bandwidth",
+            "Delta State: +2 Bandwidth (defensive focus)",
+            "Theta State: 0 Bandwidth (immunity state, no actions)",
+            "Mercury Tier 2+: +5 Bandwidth"
+          ]
+        },
+        "maximum": {
+          "base_cap": 100,
+          "dynamic_cap": "Varies by Neural State",
+          "state_caps": [
+            "Alpha: 80 max",
+            "Beta: 100 max",
+            "Gamma: 120 max",
+            "Delta: 60 max",
+            "Theta: 0 max (cannot act)"
+          ]
+        },
+        "spending": {
+          "cost_range": "5-30 Bandwidth per glyph",
+          "state_discounts": [
+            "Alpha State: -2 Bandwidth to all glyphs",
+            "Beta State: -3 Bandwidth to offensive glyphs",
+            "Gamma State: No discount, but glyphs activate twice"
+          ]
+        },
+        "special_mechanics": {
+          "bandwidth_overflow": {
+            "condition": "Bandwidth reaches cap",
+            "effect": "Gain Coherence Points (+1 per 10 excess Bandwidth)",
+            "conversion": "10 Bandwidth → 1 Coherence"
+          },
+          "bandwidth_exhaustion": {
+            "condition": "Bandwidth below 10",
+            "effect": "Cannot enter higher Neural States (stuck in current/lower)",
+            "recovery": "Must regenerate Bandwidth to unlock state transitions"
+          }
+        },
+        "sub_rules": {
+          "2.2.3.1_neural_state_cost": {
+            "rule_id": "R-2.2.3.1",
+            "description": "Transitioning Neural States costs Bandwidth",
+            "cost_formula": "10 Bandwidth per state tier increase",
+            "example": "Alpha → Gamma (2 tiers) costs 20 Bandwidth",
+            "validation": "player.bandwidth >= transition_cost"
+          }
+        }
+      },
+      
+      "2.2.4_THERAPEUTIC_restoration": {
+        "resource_name": "Restoration",
+        "description": "Healing energy for Therapeutic glyphs",
+        "rule_id": "R-2.2.4",
+        
+        "generation": {
+          "base_amount": 6,
+          "timing": "START_OF_TURN",
+          "formula": "base_amount + moon_bonus + HP_deficit_bonus",
+          "modifiers": [
+            "Moon Tier 2+: +4 Restoration per turn",
+            "4th House (Heart): +10% Restoration generation",
+            "HP below 50%: +3 Restoration per turn",
+            "HP below 25%: +6 Restoration per turn"
+          ]
+        },
+        "maximum": {
+          "base_cap": 70,
+          "overflow": "Convert excess to temporary HP",
+          "conversion": "10 Restoration → 5 temporary HP",
+          "cap_increases": [
+            "Moon Tier 3+: +20 max Restoration (cap = 90)"
+          ]
+        },
+        "spending": {
+          "cost_range": "4-25 Restoration per glyph",
+          "tier_costs": [
+            "Minor heals: 4-8 Restoration",
+            "Moderate heals: 8-15 Restoration",
+            "Major heals: 15-25 Restoration",
+            "Miracle heals: 25-40 Restoration"
+          ]
+        },
+        "special_mechanics": {
+          "restoration_surge": {
+            "condition": "Restoration at 70/70 and HP below 50%",
+            "effect": "Next heal restores +50% HP",
+            "consumed_on_use": true
+          },
+          "restoration_sharing": {
+            "description": "Can convert Restoration to Sanctity",
+            "conversion_rate": "10 Restoration = 8 Sanctity",
+            "manual_activation": true
+          }
+        },
+        "sub_rules": {
+          "2.2.4.1_HP_deficit_scaling": {
+            "rule_id": "R-2.2.4.1",
+            "description": "Lower HP grants more Restoration",
+            "scaling": [
+              "HP 100%-51%: No bonus",
+              "HP 50%-26%: +3 Restoration/turn",
+              "HP 25%-1%: +6 Restoration/turn"
+            ],
+            "reason": "Rewards defensive play, comeback mechanic"
+          }
+        }
+      },
+      
+      "2.2.5_FOUNDATIONAL_structure": {
+        "resource_name": "Structure",
+        "description": "Stability and foundation for Foundational glyphs",
+        "rule_id": "R-2.2.5",
+        
+        "generation": {
+          "base_amount": 4,
+          "timing": "START_OF_TURN",
+          "conditional_bonus": [
+            "No damage taken last turn: +3 Structure",
+            "Saturn Tier 2+: +5 Structure per turn",
+            "10th House (Foundation): +10% Structure generation"
+          ]
+        },
+        "maximum": {
+          "base_cap": 40,
+          "overflow": "Convert to Defense stat (+1 Defense per 5 excess Structure)",
+          "cap_increases": [
+            "Saturn Tier 3+: +15 max Structure (cap = 55)"
+          ]
+        },
+        "spending": {
+          "cost_range": "3-20 Structure per glyph",
+          "defensive_focus": "Defensive glyphs cost 20% less Structure"
+        },
+        "special_mechanics": {
+          "structure_fortress": {
+            "condition": "Structure at 40/40",
+            "effect": "Gain [Shield] equal to 20% max HP",
+            "duration": "Until shield depleted",
+            "auto_trigger": true
+          },
+          "structure_collapse": {
+            "condition": "Structure below 10",
+            "effect": "Defense stat reduced by 10",
+            "penalty": true
+          }
+        },
+        "sub_rules": {
+          "2.2.5.1_no_damage_bonus": {
+            "rule_id": "R-2.2.5.1",
+            "description": "Taking 0 damage grants Structure bonus",
+            "validation": "if (damage_taken_last_turn == 0) { structure += 3 }",
+            "includes_shield_absorption": "Shield absorbing damage counts as 'no damage taken'"
+          }
+        }
+      },
+      
+      "2.2.6_CHARACTER_ANALYSIS_insight": {
+        "resource_name": "Insight",
+        "description": "Predictive knowledge for Character Analysis glyphs",
+        "rule_id": "R-2.2.6",
+        
+        "generation": {
+          "base_amount": 7,
+          "timing": "START_OF_TURN",
+          "prediction_bonus": [
+            "Correct prediction last turn: +5 Insight",
+            "Incorrect prediction: -2 Insight",
+            "Mercury Tier 2+: +4 Insight per turn"
+          ]
+        },
+        "maximum": {
+          "base_cap": 80,
+          "overflow": "Bank excess as 'Stored Predictions' (1 per 10 Insight)",
+          "stored_prediction_use": "Spend 1 Stored Prediction to guarantee next prediction correct"
+        },
+        "spending": {
+          "cost_range": "5-25 Insight per glyph",
+          "prediction_cost": "Making prediction costs 10-15 Insight",
+          "analysis_cost": "Revealing opponent info costs 5-10 Insight"
+        },
+        "special_mechanics": {
+          "insight_mastery": {
+            "condition": "Insight at 80/80",
+            "effect": "Next 3 predictions guaranteed correct",
+            "consumed_on_use": true
+          },
+          "insight_blindness": {
+            "condition": "Insight below 15",
+            "effect": "Cannot make predictions until Insight regenerated",
+            "lockout": true
+          }
+        },
+        "sub_rules": {
+          "2.2.6.1_prediction_accuracy_reward": {
+            "rule_id": "R-2.2.6.1",
+            "description": "Correct predictions grant escalating Insight bonuses",
+            "scaling": [
+              "1 correct: +5 Insight",
+              "2 correct in a row: +8 Insight",
+              "3+ correct in a row: +12 Insight"
+            ],
+            "streak_broken_on_incorrect": true
+          }
+        }
+      },
+      
+      "2.2.7_SINGULARITY_coherence": {
+        "resource_name": "Coherence",
+        "description": "Pattern recognition energy for Singularity glyphs",
+        "rule_id": "R-2.2.7",
+        
+        "generation": {
+          "base_amount": 3,
+          "timing": "START_OF_TURN",
+          "pattern_bonus": [
+            "Pattern detected: +5 Coherence",
+            "No pattern detected: +1 Coherence only",
+            "Rahu/Ketu Tier 2+: +3 Coherence"
+          ],
+          "pattern_types": [
+            "Same glyph used 2+ turns in a row (opponent)",
+            "Same engine glyphs used 3+ times consecutively",
+            "Opponent HP changing in predictable pattern"
+          ]
+        },
+        "maximum": {
+          "base_cap": 90,
+          "overflow": "Convert to Bandwidth (5 Coherence = 3 Bandwidth)",
+          "cap_increases": [
+            "Rahu/Ketu Tier 3+: +20 max Coherence (cap = 110)"
+          ]
+        },
+        "spending": {
+          "cost_range": "5-35 Coherence per glyph",
+          "pattern_discount": "If pattern active, glyphs cost -5 Coherence",
+          "collapse_cost": "Ultimate [Collapse] costs 30-50 Coherence"
+        },
+        "special_mechanics": {
+          "coherence_singularity": {
+            "condition": "Coherence at 90/90",
+            "effect": "Next Singularity glyph activates [Collapse] effect (instant win condition check)",
+            "consumed_on_use": true,
+            "rare": true
+          },
+          "coherence_chaos": {
+            "condition": "Coherence below 10",
+            "effect": "Cannot detect patterns, Singularity glyphs cost +5 Coherence",
+            "penalty": true
+          }
+        },
+        "sub_rules": {
+          "2.2.7.1_pattern_detection_formula": {
+            "rule_id": "R-2.2.7.1",
+            "description": "How patterns are detected algorithmically",
+            "detection_rules": [
+              "Repetition: Same action 2+ times in row",
+              "Cycle: Actions repeat in fixed order (A→B→C→A→B→C)",
+              "Threshold: Stat crosses same value 3+ times",
+              "Prediction: Character Analysis predictions align with reality"
+            ],
+            "validation": "pattern_engine.detect() returns true/false"
+          }
+        }
+      },
+      
+      "2.2.8_INVOCATION_grace": {
+        "resource_name": "Grace",
+        "description": "Secondary accumulation resource for divine favor",
+        "rule_id": "R-2.2.8",
+        
+        "generation": {
+          "base_amount": 0,
+          "timing": "Not auto-generated, earned through actions",
+          "earn_conditions": [
+            "Healing: +1 Grace per 20 HP healed",
+            "Blessing: +2 Grace when applying [Bless]",
+            "Miracles: +5 Grace when miracle glyph succeeds",
+            "Sanctity overflow: Excess Sanctity converts to Grace (2:1 ratio)"
+          ]
+        },
+        "maximum": {
+          "base_cap": 100,
+          "no_overflow": "Grace caps at 100, excess wasted",
+          "cap_increases": "Jupiter Tier 3+: +20 max Grace (cap = 120)"
+        },
+        "spending": {
+          "not_spent_directly": true,
+          "threshold_bonuses": [
+            "Grace 20+: All healing +10%",
+            "Grace 40+: All healing +20%, Invocation glyphs +10% damage",
+            "Grace 60+: All Invocation effects +30%",
+            "Grace 80+: Unlock Divine Intervention (auto-save from lethal damage once)",
+            "Grace 100: Next Invocation glyph costs 0 KP and 0 Sanctity"
+          ]
+        },
+        "special_mechanics": {
+          "grace_overflow_trigger": {
+            "condition": "Grace reaches 100",
+            "effect": "Next Invocation glyph is FREE and enhanced (+50% potency)",
+            "consumed_on_use": "Grace resets to 50 after free glyph used"
+          },
+          "grace_depletion": {
+            "description": "Certain debuffs can reduce Grace",
+            "glyphs": ["Tantra: Corruption", "Singularity: Pattern Break"],
+            "penalty": "Lose 10-20 Grace"
+          }
+        },
+        "sub_rules": {
+          "2.2.8.1_grace_healing_synergy": {
+            "rule_id": "R-2.2.8.1",
+            "description": "Grace Points scale healing effectiveness",
+            "formula": "healing_multiplier = 1.0 + (grace_points * 0.01)",
+            "example": "50 Grace = healing * 1.50 (+50% healing)",
+            "applies_to": "All healing effects, including HoT"
+          }
+        }
+      }
+    },
+    
+    "2.3_RESOURCE_CONVERSION": {
+      "description": "Rules for converting between resource types",
+      
+      "2.3.1_conversion_mechanics": {
+        "rule_id": "R-2.3.1",
+        "description": "Manual and automatic resource conversions",
+        
+        "manual_conversions": [
+          {
+            "conversion_id": "C1",
+            "from": "Prana",
+            "to": "KP",
+            "rate": "15 Prana = 1 KP",
+            "glyph_required": "Tantra: Energy Conversion",
+            "cooldown": "3 turns"
+          },
+          {
+            "conversion_id": "C2",
+            "from": "Sanctity",
+            "to": "Grace",
+            "rate": "10 Sanctity = 5 Grace",
+            "glyph_required": "Invocation: Grace Infusion",
+            "cooldown": "2 turns"
+          },
+          {
+            "conversion_id": "C3",
+            "from": "Bandwidth",
+            "to": "Coherence",
+            "rate": "10 Bandwidth = 3 Coherence",
+            "automatic_on_overflow": true,
+            "glyph_optional": true
+          },
+          {
+            "conversion_id": "C4",
+            "from": "Restoration",
+            "to": "Sanctity",
+            "rate": "10 Restoration = 8 Sanctity",
+            "glyph_required": "Therapeutic: Divine Healing",
+            "cooldown": "4 turns"
+          },
+          {
+            "conversion_id": "C5",
+            "from": "Structure",
+            "to": "Defense stat",
+            "rate": "5 Structure = +1 Defense",
+            "automatic_on_overflow": true,
+            "temporary": "Lasts until end of round"
+          }
+        ],
+        
+        "automatic_conversions": [
+          {
+            "trigger": "Sanctity overflow",
+            "conversion": "2 Sanctity → 1 Grace",
+            "condition": "Sanctity reaches cap",
+            "automatic": true
+          },
+          {
+            "trigger": "Bandwidth overflow",
+            "conversion": "10 Bandwidth → 1 Coherence",
+            "condition": "Bandwidth exceeds cap",
+            "automatic": true
+          },
+          {
+            "trigger": "Insight overflow",
+            "conversion": "10 Insight → 1 Stored Prediction",
+            "condition": "Insight reaches cap",
+            "automatic": true
+          }
+        ],
+        
+        "sub_rules": {
+          "2.3.1.1_conversion_efficiency": {
+            "rule_id": "R-2.3.1.1",
+            "description": "Jyotish chart affects conversion rates",
+            "modifiers": [
+              "Venus Tier 2+: All conversions +10% efficiency",
+              "2nd House (Resources): +15% conversion rates",
+              "Specific glyph upgrades: +20% to +50% efficiency"
+            ],
+            "formula": "converted_amount = (base_conversion * efficiency_modifier)"
+          },
+          "2.3.1.2_conversion_cooldowns": {
+            "rule_id": "R-2.3.1.2",
+            "description": "Most manual conversions have cooldowns",
+            "validation": "turns_since_last_conversion >= cooldown_duration",
+            "prevents_spam": "Cannot convert same resource type every turn"
+          }
+        }
+      },
+      
+      "2.3.2_universal_conversion_glyph": {
+        "rule_id": "R-2.3.2",
+        "description": "Invocation Universal Wildcard allows any resource conversion",
+        "glyph": "Universal Wildcard (Invocation Skill 100)",
+        "effect": "Convert any resource to any other resource",
+        "rate": "10:5 ratio (10 of Resource A = 5 of Resource B)",
+        "cost": "3 KP + 25 Sanctity",
+        "cooldown": "5 turns",
+        "flexibility": "Player chooses both source and target resource",
+        "limitation": "Cannot convert KP to KP (circular conversion blocked)"
+      }
+    },
+    
+    "2.4_RESOURCE_DENIAL_AND_DISRUPTION": {
+      "description": "Effects that interfere with opponent resource economy",
+      
+      "2.4.1_resource_steal": {
+        "rule_id": "R-2.4.1",
+        "description": "Stealing resources from opponent",
+        "steal_glyphs": [
+          {
+            "glyph": "Tantra: Siphon",
+            "steals": "1-2 KP",
+            "cost": "2 KP + 12 Prana",
+            "validation": "opponent.KP = max(0, opponent.KP - steal_amount)"
+          },
+          {
+            "glyph": "Character Analysis: Resource Prediction",
+            "steals": "2 KP if prediction correct",
+            "conditional": true
+          },
+          {
+            "glyph": "Singularity: Pattern Drain",
+            "steals": "5 Coherence from opponent",
+            "rare": true
+          }
+        ],
+        "limitations": [
+          "Cannot steal below 0 (no negative resources)",
+          "Stolen amount capped by your max resource cap",
+          "Some glyphs grant steal immunity"
+        ]
+      },
+      
+      "2.4.2_resource_denial": {
+        "rule_id": "R-2.4.2",
+        "description": "Preventing opponent resource generation",
+        "denial_glyphs": [
+          {
+            "glyph": "Tantra: Energy Drain",
+            "effect": "Opponent gains 0 KP next turn",
+            "duration": "1 turn",
+            "cost": "2 KP + 15 Prana"
+          },
+          {
+            "glyph": "Singularity: Void Lock",
+            "effect": "Both players gain 0 KP for 2 turns",
+            "symmetrical": true,
+            "strategic": "Use when ahead in resources"
+          },
+          {
+            "glyph": "Consciousness: Bandwidth Jam",
+            "effect": "Opponent gains 50% Bandwidth next turn",
+            "duration": "2 turns"
+          }
+        ]
+      },
+      
+      "2.4.3_resource_burning": {
+        "rule_id": "R-2.4.3",
+        "description": "Forcing opponent to lose resources (not stolen)",
+        "burn_glyphs": [
+          {
+            "glyph": "Foundational: Disruption",
+            "effect": "Opponent loses 2 KP (not transferred)",
+            "cost": "2 KP + 10 Structure"
+          },
+          {
+            "glyph": "Character Analysis: Mind Games",
+            "effect": "Opponent loses 10 Insight",
+            "psychological": true
+          }
+        ],
+        "validation": "opponent.resource = max(0, opponent.resource - burn_amount)"
+      }
+    },
+    
+    "2.5_JYOTISH_RESOURCE_MODIFIERS": {
+      "description": "How Jyotish chart affects resource economy",
+      
+      "2.5.1_planetary_influences": {
+        "rule_id": "R-2.5.1",
+        "description": "Planets modify resource generation and caps",
+        "planetary_effects": [
+          {
+            "planet": "Sun",
+            "tier_2_plus": "+1 KP per turn (doubles base generation)",
+            "tier_3_plus": "+2 max KP cap"
+          },
+          {
+            "planet": "Moon",
+            "tier_2_plus": "+4 Restoration per turn, +50% healing effectiveness",
+            "tier_3_plus": "+20 max Restoration cap"
+          },
+          {
+            "planet": "Mars",
+            "tier_2_plus": "+3 Prana per turn, +10% Tantra damage",
+            "tier_3_plus": "+10 max Prana cap"
+          },
+          {
+            "planet": "Mercury",
+            "tier_2_plus": "+5 Bandwidth per turn, -1 KP cost to all glyphs",
+            "tier_3_plus": "+15 max Bandwidth cap"
+          },
+          {
+            "planet": "Jupiter",
+            "tier_2_plus": "+5 Sanctity per turn, +2 turns to buff duration",
+            "tier_3_plus": "+15 max Sanctity cap, +2 max KP cap"
+          },
+          {
+            "planet": "Venus",
+            "tier_2_plus": "+10% conversion efficiency, +15% healing",
+            "tier_3_plus": "+20% all resource generation"
+          },
+          {
+            "planet": "Saturn",
+            "tier_2_plus": "+5 Structure per turn, +20 HP",
+            "tier_3_plus": "+15 max Structure cap, +1 Defense stat"
+          },
+          {
+            "planet": "Rahu/Ketu",
+            "tier_2_plus": "+3 Coherence per turn, pattern detection enhanced",
+            "tier_3_plus": "+20 max Coherence cap"
+          }
+        ]
+      },
+      
+      "2.5.2_house_influences": {
+        "rule_id": "R-2.5.2",
+        "description": "Houses modify specific resource aspects",
+        "house_effects": [
+          {
+            "house": "1st (Self)",
+            "effect": "+10% max HP, +5% all resource generation"
+          },
+          {
+            "house": "2nd (Resources)",
+            "effect": "+15% conversion rates, +10% resource caps"
+          },
+          {
+            "house": "4th (Heart)",
+            "effect": "+10% Restoration generation, +20% healing received"
+          },
+          {
+            "house": "6th (Enemies)",
+            "effect": "+5% max HP, +10% resource steal effectiveness"
+          },
+          {
+            "house": "9th (Dharma)",
+            "effect": "+10% Sanctity generation, +15% Grace accumulation"
+          },
+          {
+            "house": "10th (Foundation)",
+            "effect": "+10% Structure generation, +10% Defense stat"
+          }
+        ]
+      }
+    }
+  },
+  
+  "VALIDATION_FRAMEWORK": {
+    "description": "How AI validates resource actions",
+    "validation_process": [
+      {
+        "step": 1,
+        "action": "Player attempts glyph activation",
+        "validation": "Check if player has required KP + engine resource"
+      },
+      {
+        "step": 2,
+        "action": "Deduct resource costs",
+        "validation": "player.KP -= glyph.KP_cost; player.engine_resource -= glyph.engine_cost"
+      },
+      {
+        "step": 3,
+        "action": "Check resource caps",
+        "validation": "Ensure no resource exceeds max cap (accounting for Jyotish modifiers)"
+      },
+      {
+        "step": 4,
+        "action": "Apply overflow conversions",
+        "validation": "Auto-convert excess resources per rules (Sanctity→Grace, Bandwidth→Coherence, etc.)"
+      },
+      {
+        "step": 5,
+        "action": "Trigger resource-based effects",
+        "validation": "Check threshold bonuses (Grace 20+, Prana Overload, etc.)"
+      }
+    ],
+    "error_messages": {
+      "insufficient_KP": "Not enough KP! Need {required}, have {current}",
+      "insufficient_engine_resource": "Not enough {resource_name}! Need {required}, have {current}",
+      "cap_reached": "{Resource_name} is at maximum capacity ({cap})",
+      "conversion_on_cooldown": "Resource conversion on cooldown ({remaining} turns)"
+    }
+  },
+  
+  "NOTES": {
+    "this_file_covers": "Layer 2 (Resource Rules) - Complete resource economy system",
+    "next_files": [
+      "RULES_ENGINE_LAYER4_GLYPHS.json (Layer 4: Glyph Activation & Keywords)",
+      "RULES_ENGINE_LAYER5-9.json (Layers 5-9: Jyotish, Progression, AI, Edge Cases, Special)"
+    ],
+    "total_rules_in_this_file": "~50 resource rules with sub-rules and conversions",
+    "ai_parseable": true,
+    "human_readable": true,
+    "version": "1.0.0 - Resource System Complete"
+  }
+}

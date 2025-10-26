@@ -1,0 +1,93 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "void",
+  "_description": "Nothingness Engine - Erase, Delete, Unmake",
+  "_source": "Void Engine v4.0 COMPLETE",
+  
+  "skills": [
+    {
+      "id": "SKILL_VOID_001",
+      "name": "Null Touch",
+      "tier": 0,
+      "cost": {"kp": 1, "void_essence": 20},
+      "cooldown": 0,
+      "keywords": ["[Void]", "Erase"],
+      "description": "Remove 1 random buff from target; apply 2 [Void] stacks",
+      "effect": {"remove_buff": 1, "status_apply": [{"type": "[Void]", "stacks": 2}]},
+      "jyotish_hooks": {"Saturn_T1+": "Remove 2 buffs"},
+      "synergy_seeds": ["ACX-VOID-SING-01"],
+      "ai_priority": 7,
+      "flavor_text": "Nothing remains."
+    },
+    {
+      "id": "SKILL_VOID_002",
+      "name": "Erase",
+      "tier": 0,
+      "cost": {"kp": 1, "void_essence": 18},
+      "cooldown": 0,
+      "keywords": ["Direct", "[Void]"],
+      "description": "Deal 35 damage; if target has [Void], deal double damage",
+      "effect": {"damage": 35, "conditional_double": "has_void"},
+      "jyotish_hooks": {"Ketu_T1+": "50 base damage"},
+      "synergy_seeds": [],
+      "ai_priority": 6,
+      "flavor_text": "Unmake."
+    },
+    {
+      "id": "SKILL_VOID_011",
+      "name": "Nullification Field",
+      "tier": 1,
+      "cost": {"kp": 2, "void_essence": 45},
+      "cooldown": 3,
+      "keywords": ["[Void]", "AoE", "Suppress"],
+      "description": "All enemies lose all buffs and can't gain buffs for 2 turns",
+      "effect": {"remove_all_buffs": true, "suppress_buffs": {"duration": 2}},
+      "jyotish_hooks": {"Saturn_T2+": "3 turns"},
+      "synergy_seeds": ["ACX-VOID-CON-01"],
+      "ai_priority": 9,
+      "flavor_text": "Power means nothing here."
+    },
+    {
+      "id": "SKILL_VOID_021",
+      "name": "Existence Deletion",
+      "tier": 2,
+      "cost": {"kp": 3, "void_essence": 75},
+      "cooldown": 6,
+      "keywords": ["[Void]", "[Banish]"],
+      "description": "Remove target from game for 2 turns; they return with 50% HP",
+      "effect": {"banish": {"duration": 2, "return_hp": 0.50}},
+      "jyotish_hooks": {"Ketu_T3+": "Return with 25% HP"},
+      "synergy_seeds": ["ACX-VOID-DIV-01"],
+      "ai_priority": 10,
+      "flavor_text": "You never existed."
+    },
+    {
+      "id": "SKILL_VOID_031",
+      "name": "Concept Erasure",
+      "tier": 3,
+      "cost": {"kp": 4, "void_essence": 100},
+      "cooldown": 8,
+      "keywords": ["[Void]", "[Delete]"],
+      "description": "Delete one skill from target permanently; they can't use it this match",
+      "effect": {"delete_skill": {"random": true, "permanent": true}},
+      "jyotish_hooks": {"Saturn_T4+": "Delete 2 skills"},
+      "synergy_seeds": ["ACX-VOID-SING-02"],
+      "ai_priority": 10,
+      "flavor_text": "This skill never existed."
+    },
+    {
+      "id": "SKILL_VOID_041",
+      "name": "The Great Unmmaking",
+      "tier": 4,
+      "cost": {"kp": 5, "void_essence": 150},
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "[Void]", "Global"],
+      "description": "Remove all buffs, debuffs, status effects globally; reset battlefield to turn 1 state",
+      "effect": {"apocalypse": true, "reset_all": true, "void_field": {"duration": 3}},
+      "jyotish_hooks": {"Ketu_T4+": "Also reset all cooldowns"},
+      "synergy_seeds": ["ACX-VOID-ALL"],
+      "ai_priority": 10,
+      "flavor_text": "Return to nothing."
+    }
+  ]
+}

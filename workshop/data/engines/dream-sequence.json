@@ -1,0 +1,267 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "dream_sequence",
+  "_description": "Reality Manipulation Engine - Blur the Line Between Dream and Wake",
+  "_source": "Dream Sequence Engine v4.0 COMPLETE + Global Balance Schema v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_DREAM_001",
+      "name": "Lucid Shift",
+      "tier": 0,
+      "cost": {"kp": 1, "dream_energy": 15},
+      "cooldown": 0,
+      "keywords": ["[Illusion]", "Dodge"],
+      "description": "Gain 50% dodge chance for 1 turn; apply 1 [Illusion] stack to self",
+      "effect": {
+        "dodge_chance": 0.50,
+        "duration": 1,
+        "status_apply": [{"type": "[Illusion]", "stacks": 1, "target": "self"}]
+      },
+      "jyotish_hooks": {
+        "Moon_T1+": "70% dodge chance",
+        "12th_House_L2+": "2 [Illusion] stacks"
+      },
+      "synergy_seeds": ["ACX-DREAM-DIV-01"],
+      "ai_priority": 7,
+      "ai_conditions": ["incoming_damage_predicted", "evasion_setup"],
+      "flavor_text": "Am I awake or dreaming?"
+    },
+    
+    {
+      "id": "SKILL_DREAM_002",
+      "name": "Nightmare Seed",
+      "tier": 0,
+      "cost": {"kp": 1, "dream_energy": 20},
+      "cooldown": 0,
+      "keywords": ["[Fear]", "DoT"],
+      "description": "Apply 3 [Fear] stacks; target takes 5 damage per turn for 3 turns",
+      "effect": {
+        "status_apply": [{"type": "[Fear]", "stacks": 3, "duration": 3}],
+        "dot": {"damage": 5, "duration": 3}
+      },
+      "jyotish_hooks": {
+        "Saturn_T1+": "8 damage per turn",
+        "8th_House_L3+": "[Fear] spreads on target death"
+      },
+      "synergy_seeds": ["ACX-DREAM-TAN-01"],
+      "ai_priority": 6,
+      "ai_conditions": ["dot_strategy", "psychological_warfare"],
+      "flavor_text": "Your deepest fears given form."
+    },
+    
+    {
+      "id": "SKILL_DREAM_003",
+      "name": "Reality Fragment",
+      "tier": 0,
+      "cost": {"kp": 1, "dream_energy": 18},
+      "cooldown": 0,
+      "keywords": ["Direct", "[Illusion]"],
+      "description": "Deal 30 damage; 30% chance to confuse target (attacks random ally)",
+      "effect": {
+        "damage": 30,
+        "confuse_chance": 0.30,
+        "confuse_duration": 1
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "50% confuse chance",
+        "12th_House_L2+": "40 damage"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 6,
+      "ai_conditions": ["disruption", "chaos_damage"],
+      "flavor_text": "Which reality is real?"
+    },
+    
+    {
+      "id": "SKILL_DREAM_011",
+      "name": "Shared Nightmare",
+      "tier": 1,
+      "cost": {"kp": 2, "dream_energy": 45},
+      "cooldown": 3,
+      "keywords": ["[Fear]", "AoE", "Link"],
+      "description": "Link all enemies with [Fear]; when one takes damage, all linked enemies take 30% of that damage",
+      "effect": {
+        "link": {
+          "condition": "has_fear",
+          "share_damage": 0.30,
+          "duration": 3
+        }
+      },
+      "jyotish_hooks": {
+        "Moon_T2+": "Share 50% damage",
+        "8th_House_L4+": "Also share debuffs"
+      },
+      "synergy_seeds": ["ACX-DREAM-TAN-02"],
+      "ai_priority": 9,
+      "ai_conditions": ["fear_stacked", "aoe_amplification"],
+      "flavor_text": "Your nightmares are connected."
+    },
+    
+    {
+      "id": "SKILL_DREAM_012",
+      "name": "Dream Walker",
+      "tier": 1,
+      "cost": {"kp": 2, "dream_energy": 40},
+      "cooldown": 4,
+      "keywords": ["[Illusion]", "Stealth"],
+      "description": "Become untargetable for 2 turns; can still act normally",
+      "effect": {
+        "untargetable": true,
+        "duration": 2,
+        "can_act": true
+      },
+      "jyotish_hooks": {
+        "Moon_T2+": "3 turns",
+        "12th_House_L5+": "Attacks from stealth deal double damage"
+      },
+      "synergy_seeds": ["ACX-DREAM-SING-01"],
+      "ai_priority": 10,
+      "ai_conditions": ["survival_critical", "setup_combo"],
+      "flavor_text": "I walk between worlds."
+    },
+    
+    {
+      "id": "SKILL_DREAM_013",
+      "name": "False Memory",
+      "tier": 1,
+      "cost": {"kp": 2, "dream_energy": 35},
+      "cooldown": 2,
+      "keywords": ["[Illusion]", "Control"],
+      "description": "Reset target's cooldowns but their next skill targets themselves",
+      "effect": {
+        "reset_cooldowns": true,
+        "redirect_next": "self_target"
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "Next 2 skills redirect",
+        "3rd_House_L4+": "Also confuse for 1 turn"
+      },
+      "synergy_seeds": ["ACX-DREAM-DIV-02"],
+      "ai_priority": 8,
+      "ai_conditions": ["disruption", "enemy_has_strong_skill"],
+      "flavor_text": "Did that really happen?"
+    },
+    
+    {
+      "id": "SKILL_DREAM_021",
+      "name": "Waking Nightmare",
+      "tier": 2,
+      "cost": {"kp": 3, "dream_energy": 70},
+      "cooldown": 5,
+      "keywords": ["[Fear]", "[Consume]", "Burst"],
+      "description": "Consume all [Fear] globally; deal 15 damage per stack consumed to each enemy that had [Fear]",
+      "effect": {
+        "consume": {"type": "[Fear]", "all": true, "global": true},
+        "damage_per_stack": 15,
+        "target": "enemies_with_fear"
+      },
+      "jyotish_hooks": {
+        "Saturn_T3+": "25 damage per stack",
+        "8th_House_L6+": "Also apply 2 [Decay] per 5 stacks consumed"
+      },
+      "synergy_seeds": ["ACX-DREAM-TAN-03"],
+      "ai_priority": 10,
+      "ai_conditions": ["fear_stacks_8+", "burst_window"],
+      "flavor_text": "Wake up screaming."
+    },
+    
+    {
+      "id": "SKILL_DREAM_022",
+      "name": "Dream Eater",
+      "tier": 2,
+      "cost": {"kp": 3, "dream_energy": 65},
+      "cooldown": 6,
+      "keywords": ["[Consume]", "Lifesteal", "[Illusion]"],
+      "description": "Consume all [Illusion] from battlefield; heal 40 Ojas per stack and gain that much Shield",
+      "effect": {
+        "consume": {"type": "[Illusion]", "all": true, "global": true},
+        "heal_per_stack": 40,
+        "shield_per_stack": 40
+      },
+      "jyotish_hooks": {
+        "Moon_T3+": "60 Ojas and Shield per stack",
+        "4th_House_L6+": "Also gain +10% Attack per stack for 2 turns"
+      },
+      "synergy_seeds": ["ACX-DREAM-CON-01"],
+      "ai_priority": 9,
+      "ai_conditions": ["illusion_stacked", "sustain_needed"],
+      "flavor_text": "I feed on dreams."
+    },
+    
+    {
+      "id": "SKILL_DREAM_023",
+      "name": "Inception",
+      "tier": 2,
+      "cost": {"kp": 3, "dream_energy": 60},
+      "cooldown": 4,
+      "keywords": ["[Illusion]", "Recursive"],
+      "description": "Apply 5 [Illusion] to all enemies; each [Illusion] stack has 20% chance to duplicate itself each turn",
+      "effect": {
+        "status_apply": [{"type": "[Illusion]", "stacks": 5, "target": "all_enemies"}],
+        "duplicate_chance": 0.20,
+        "recursive": true
+      },
+      "jyotish_hooks": {
+        "Rahu_T3+": "30% duplicate chance",
+        "12th_House_L7+": "Start with 8 [Illusion] stacks"
+      },
+      "synergy_seeds": ["ACX-DREAM-SING-02"],
+      "ai_priority": 10,
+      "ai_conditions": ["scaling_setup", "long_game"],
+      "flavor_text": "A dream within a dream."
+    },
+    
+    {
+      "id": "SKILL_DREAM_031",
+      "name": "Eternal Slumber",
+      "tier": 3,
+      "cost": {"kp": 4, "dream_energy": 100},
+      "cooldown": 8,
+      "keywords": ["[Sleep]", "Control", "Ultimate"],
+      "description": "Put target to [Sleep] for 3 turns (can't act, invulnerable); wakes with full HP but all debuffs doubled",
+      "effect": {
+        "sleep": {
+          "duration": 3,
+          "invulnerable": true,
+          "wake_effect": {
+            "heal": "full",
+            "double_debuffs": true
+          }
+        }
+      },
+      "jyotish_hooks": {
+        "Saturn_T4+": "5 turn sleep",
+        "12th_House_L8+": "Can affect multiple enemies"
+      },
+      "synergy_seeds": ["ACX-DREAM-DIV-03"],
+      "ai_priority": 10,
+      "ai_conditions": ["key_threat_removal", "debuff_setup"],
+      "flavor_text": "Sleep forever, dream never."
+    },
+    
+    {
+      "id": "SKILL_DREAM_041",
+      "name": "Omniversal Dream",
+      "tier": 4,
+      "cost": {"kp": 5, "dream_energy": 150},
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "Global", "[Illusion]"],
+      "description": "Reality becomes dream; all units gain 10 [Illusion], 50% of all damage becomes healing, 2 turns",
+      "effect": {
+        "global": true,
+        "status_apply": [{"type": "[Illusion]", "stacks": 10, "target": "all"}],
+        "invert_damage": 0.50,
+        "duration": 2
+      },
+      "jyotish_hooks": {
+        "Moon_T4+": "75% damage becomes healing",
+        "12th_House_L9+": "Effect lasts 4 turns"
+      },
+      "synergy_seeds": ["ACX-DREAM-ALL"],
+      "ai_priority": 10,
+      "ai_conditions": ["apocalypse_ready", "reality_break"],
+      "flavor_text": "Wake up. This is a dream."
+    }
+  ]
+}

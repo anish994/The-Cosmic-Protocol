@@ -1,0 +1,112 @@
+{
+  "version": "3.0",
+  "entries": [
+    {"id":"ACX-TAN-DIV-01","engines":["tantra","divination"],"prereq":{"keyword":"Decay","threads":10},"effect":"Anchor 5 [Decay] with Timeline Anchors; reapply anchored stacks later; detonation order may be rearranged after Weave.","rarity":"rare"},
+    {"id":"ACX-TAN-DIV-02","engines":["tantra","divination"],"prereq":{"prophecy":"enemy uses AoE"},"effect":"If prophecy fulfilled, your next Catalysis doubles per-stack scaling.","rarity":"rare"},
+
+    {"id":"ACX-TAN-THER-01","engines":["tantra","therapeutic"],"prereq":{"keyword":"Sunder"},"effect":"[Sunder] vs [Shield] triggers Shield Shatter and applies [Vulnerable] 1 turn; your next [Decay] hit deals +25%.","rarity":"uncommon"},
+    {"id":"ACX-TAN-THER-02","engines":["tantra","therapeutic"],"prereq":{"integrity":90},"effect":"If target has Ojas Integrity ≥90%, [Void] applies Apathy immediately.","rarity":"uncommon"},
+
+    {"id":"ACX-TAN-CON-01","engines":["tantra","consciousness"],"prereq":{"state":"Theta"},"effect":"In [Theta], Catalysis refunds 1 [Prana] per detonation (max 2).","rarity":"uncommon"},
+    {"id":"ACX-TAN-CON-02","engines":["tantra","consciousness"],"prereq":{"state":"Delta"},"effect":"During Delta: Flow, Resonance application +1 stack per hit.","rarity":"uncommon"},
+
+    {"id":"ACX-TAN-CA-01","engines":["tantra","character"],"prereq":{"keyword":"Vulnerable"},"effect":"[Burn] deals +25% vs [Vulnerable].","rarity":"common"},
+    {"id":"ACX-TAN-CA-02","engines":["tantra","character"],"prereq":{"insight":50},"effect":"Spend 50 [Insight]: Detonate [Stasis] also increases target cooldowns by +1 additional turn.","rarity":"rare"},
+
+    {"id":"ACX-TAN-JYO-01","engines":["tantra","jyotish"],"prereq":{"planet":"Mars.Aggressive"},"effect":"Aggro-tagged hits grant +1 [Anarchy] on even turns.","rarity":"common"},
+    {"id":"ACX-TAN-JYO-02","engines":["tantra","jyotish"],"prereq":{"nakshatra":"Krittika"},"effect":"Critical chance of Catalysis +10%.","rarity":"uncommon"},
+
+    {"id":"ACX-TAN-FND-01","engines":["tantra","foundational"],"prereq":{"framework":"Advaita"},"effect":"Catalysis per-stack scaling +50% when ≤6 Glyphs slotted.","rarity":"rare"},
+    {"id":"ACX-TAN-FND-02","engines":["tantra","foundational"],"prereq":{"framework":"Prakriti"},"effect":"First Yantra you summon gains Aura: apply 1 [Discord] to enemies in its row.","rarity":"rare"},
+
+    {"id":"ACX-TAN-INV-01","engines":["tantra","invocation"],"prereq":{"sanctity":10},"effect":"If you spend ≥10 [Sanctity] this turn, your Catalysis ignores [Shield].","rarity":"epic"},
+    {"id":"ACX-TAN-INV-02","engines":["tantra","invocation"],"prereq":{"anarchy":15},"effect":"Spending ≥15 [Anarchy]: Catalysis deals splash damage to adjacent Houses.","rarity":"epic"},
+
+    {"id":"ACX-TAN-SIN-01","engines":["tantra","singularity"],"prereq":{"protocol":"Causal Inversion"},"effect":"For 1 turn, your DoTs heal you and still apply [Decay] stacks.","rarity":"mythic"},
+    {"id":"ACX-TAN-SIN-02","engines":["tantra","singularity"],"prereq":{"threshold":50},"effect":"At ≥50 [Threshold], Detonate [Stasis] also applies [Silence] 1 turn.","rarity":"mythic"},
+
+    {"id":"ACX-THER-CON-01","engines":["therapeutic","consciousness"],"prereq":{"state":"Alpha"},"effect":"[Cleanse] also restores 1 [Coherence].","rarity":"common"},
+    {"id":"ACX-THER-CON-02","engines":["therapeutic","consciousness"],"prereq":{"state":"Theta"},"effect":"[Shield]s decay 10% slower.","rarity":"uncommon"},
+
+    {"id":"ACX-THER-CA-01","engines":["therapeutic","character"],"prereq":{"insight":30},"effect":"Spend 30 [Insight]: next [Cleanse] becomes Targeted Purge (choose debuff).","rarity":"rare"},
+    {"id":"ACX-THER-CA-02","engines":["therapeutic","character"],"prereq":{"trap":"armed"},"effect":"If an enemy Trap is active, your [Heal]s grant +1% Integrity per tick.","rarity":"uncommon"},
+
+    {"id":"ACX-THER-DIV-01","engines":["therapeutic","divination"],"prereq":{"weave":5},"effect":"After Weave, your next [Shield] gains +20% value.","rarity":"common"},
+    {"id":"ACX-THER-DIV-02","engines":["therapeutic","divination"],"prereq":{"prophecy":"healing turn"},"effect":"If prophecy fulfilled, your [Cleanse] also grants Veil 1 turn.","rarity":"rare"},
+
+    {"id":"ACX-THER-JYO-01","engines":["therapeutic","jyotish"],"prereq":{"venus":"Harmonious"},"effect":"[Heal]/[Shield] -1 [Prana] cost.","rarity":"common"},
+    {"id":"ACX-THER-JYO-02","engines":["therapeutic","jyotish"],"prereq":{"house":4},"effect":"Healing +10% in House 4.","rarity":"common"},
+
+    {"id":"ACX-THER-FND-01","engines":["therapeutic","foundational"],"prereq":{"framework":"Dvaita"},"effect":"When two Glyphs share House slots, [Shield] effects are 10% stronger.","rarity":"uncommon"},
+    {"id":"ACX-THER-FND-02","engines":["therapeutic","foundational"],"prereq":{"os":"Coolant Systems"},"effect":"Damage Reduction buffs last +1 turn.","rarity":"uncommon"},
+
+    {"id":"ACX-THER-INV-01","engines":["therapeutic","invocation"],"prereq":{"blessing":"active"},"effect":"Blessing window: [Heal Block] removal also grants Integrity +3%.","rarity":"rare"},
+    {"id":"ACX-THER-INV-02","engines":["therapeutic","invocation"],"prereq":{"angel":"Haniel"},"effect":"Haniel’s Grace: your [Shield] reflects +10% while active.","rarity":"epic"},
+
+    {"id":"ACX-THER-SIN-01","engines":["therapeutic","singularity"],"prereq":{"integrity":95},"effect":"Reality Degradation negative effects are reduced by 50%.","rarity":"mythic"},
+    {"id":"ACX-THER-SIN-02","engines":["therapeutic","singularity"],"prereq":{"protocol":"Defragmentation"},"effect":"After Defragmentation, your next [Cleanse] is global.","rarity":"mythic"},
+
+    {"id":"ACX-CON-CA-01","engines":["consciousness","character"],"prereq":{"state":"Gamma"},"effect":"On reveal window, Reaction glyph costs −50% [Prana].","rarity":"rare"},
+    {"id":"ACX-CON-CA-02","engines":["consciousness","character"],"prereq":{"insight":50},"effect":"Spend 50 [Insight]: enter [Alpha] for 1 turn.","rarity":"rare"},
+
+    {"id":"ACX-CON-DIV-01","engines":["consciousness","divination"],"prereq":{"threads":20},"effect":"Spend 20 [Threads]: immediately gain 10 [Bandwidth].","rarity":"rare"},
+    {"id":"ACX-CON-DIV-02","engines":["consciousness","divination"],"prereq":{"prophecy":"state shift"},"effect":"If prophecy fulfilled, next Neural State duration +1 turn.","rarity":"rare"},
+
+    {"id":"ACX-CON-JYO-01","engines":["consciousness","jyotish"],"prereq":{"mahadasha":"Saturn","state":"Theta"},"effect":"Negate Saturn cooldown penalty while in [Theta].","rarity":"epic"},
+    {"id":"ACX-CON-JYO-02","engines":["consciousness","jyotish"],"prereq":{"mahadasha":"Mercury"},"effect":"Entering [Beta] grants +3 [Threads] once per Mercury Mahadasha.","rarity":"rare"},
+
+    {"id":"ACX-CON-FND-01","engines":["consciousness","foundational"],"prereq":{"framework":"Adaptive Cortex"},"effect":"Neuroplasticity Protocols gain +1 charge.","rarity":"uncommon"},
+    {"id":"ACX-CON-FND-02","engines":["consciousness","foundational"],"prereq":{"os":"Resource Allocator"},"effect":"On Turn 3 bonus, also gain +5 [Bandwidth].","rarity":"uncommon"},
+
+    {"id":"ACX-CON-INV-01","engines":["consciousness","invocation"],"prereq":{"bandwidth":50},"effect":"Convert 50 [Bandwidth] → +10 [Sanctity] (once per duel).","rarity":"epic"},
+    {"id":"ACX-CON-INV-02","engines":["consciousness","invocation"],"prereq":{"state":"Delta"},"effect":"During Delta: Singularity, next Invocation −10 [Sanctity] or −10 [Anarchy] cost.","rarity":"epic"},
+
+    {"id":"ACX-CON-SIN-01","engines":["consciousness","singularity"],"prereq":{"protocol":"Spacetime Dilation"},"effect":"On double-turn, you may transition state without prerequisites.","rarity":"mythic"},
+    {"id":"ACX-CON-SIN-02","engines":["consciousness","singularity"],"prereq":{"threshold":100},"effect":"At 100 [Threshold], enter [Gamma] for 1 turn.","rarity":"mythic"},
+
+    {"id":"ACX-CA-DIV-01","engines":["character","divination"],"prereq":{"stance":"Open Palm","weave":5},"effect":"Correct prediction + Weave: gain +15 [Insight] and 5 [Threads].","rarity":"rare"},
+    {"id":"ACX-CA-DIV-02","engines":["character","divination"],"prereq":{"prophecy":"school use"},"effect":"If prophecy about school is correct, next Exploit costs −25 [Insight].","rarity":"rare"},
+
+    {"id":"ACX-CA-JYO-01","engines":["character","jyotish"],"prereq":{"nakshatra":"Shravana"},"effect":"[Reveal] has 50% chance to also show cooldowns.","rarity":"common"},
+    {"id":"ACX-CA-JYO-02","engines":["character","jyotish"],"prereq":{"ascendant":"Gemini"},"effect":"First [Debuff] costs −1 [Prana].","rarity":"common"},
+
+    {"id":"ACX-CA-FND-01","engines":["character","foundational"],"prereq":{"framework":"Shunya"},"effect":"[Reveal] and [Insight] generation +50%.","rarity":"epic"},
+    {"id":"ACX-CA-FND-02","engines":["character","foundational"],"prereq":{"os":"Coolant Systems"},"effect":"Traps re-arm 1 turn faster.","rarity":"uncommon"},
+
+    {"id":"ACX-CA-INV-01","engines":["character","invocation"],"prereq":{"insight":30},"effect":"Spend 30 [Insight]: Purify 30 Adharma on Dharma Meter.","rarity":"epic"},
+    {"id":"ACX-CA-INV-02","engines":["character","invocation"],"prereq":{"blessing":"active"},"effect":"While Blessed, your [Reveal] also applies [Vulnerable] 1 turn.","rarity":"epic"},
+
+    {"id":"ACX-CA-SIN-01","engines":["character","singularity"],"prereq":{"protocol":"Echoing Paradox"},"effect":"Your next Exploit is added back as a 0-cost Echo.","rarity":"mythic"},
+    {"id":"ACX-CA-SIN-02","engines":["character","singularity"],"prereq":{"threshold":50},"effect":"At ≥50 [Threshold], Stances cannot backfire (penalty suppressed).","rarity":"mythic"},
+
+    {"id":"ACX-DIV-JYO-01","engines":["divination","jyotish"],"prereq":{"mahadasha":"Jupiter"},"effect":"[Threads] generation +1/turn during Jupiter Mahadasha.","rarity":"common"},
+    {"id":"ACX-DIV-JYO-02","engines":["divination","jyotish"],"prereq":{"mercury":"Adaptive"},"effect":"Weave costs −1 [Threads] on Mercury harmonic turns.","rarity":"uncommon"},
+
+    {"id":"ACX-DIV-FND-01","engines":["divination","foundational"],"prereq":{"framework":"Turiya"},"effect":"Every 4th turn, free Weave once.","rarity":"epic"},
+    {"id":"ACX-DIV-FND-02","engines":["divination","foundational"],"prereq":{"os":"Resource Allocator"},"effect":"When gaining bonus [Prana], also gain +2 [Threads].","rarity":"uncommon"},
+
+    {"id":"ACX-DIV-INV-01","engines":["divination","invocation"],"prereq":{"prophecy":"deity"},"effect":"If prophecy fulfilled about Invocation timing, reduce resource cost by 10.","rarity":"epic"},
+    {"id":"ACX-DIV-INV-02","engines":["divination","invocation"],"prereq":{"weave":10},"effect":"After spending ≥10 [Threads] in one turn, gain +5 [Sanctity] or +5 [Anarchy] (choose).","rarity":"epic"},
+
+    {"id":"ACX-DIV-SIN-01","engines":["divination","singularity"],"prereq":{"protocol":"Temporal Lock"},"effect":"Locking modifies Prophecy windows: success rewards doubled.","rarity":"mythic"},
+    {"id":"ACX-DIV-SIN-02","engines":["divination","singularity"],"prereq":{"threshold":75},"effect":"At ≥75 [Threshold], Weave may re-roll a Protocol target once.","rarity":"mythic"},
+
+    {"id":"ACX-JYO-FND-01","engines":["jyotish","foundational"],"prereq":{"framework":"Dvaita"},"effect":"Dual-slot houses gain +5% to contextual influence.","rarity":"uncommon"},
+    {"id":"ACX-JYO-FND-02","engines":["jyotish","foundational"],"prereq":{"framework":"Purusha"},"effect":"Single-Chart portfolio gains +10% to all house influences.","rarity":"epic"},
+
+    {"id":"ACX-JYO-INV-01","engines":["jyotish","invocation"],"prereq":{"mahadasha":"Venus"},"effect":"Blessing durations +1 turn.","rarity":"rare"},
+    {"id":"ACX-JYO-INV-02","engines":["jyotish","invocation"],"prereq":{"mahadasha":"Ketu"},"effect":"Heal Block potency +10% during Ketu Mahadasha.","rarity":"rare"},
+
+    {"id":"ACX-JYO-SIN-01","engines":["jyotish","singularity"],"prereq":{"mahadasha":"Saturn"},"effect":"Reality Degradation critical threshold delayed by 5%.","rarity":"epic"},
+    {"id":"ACX-JYO-SIN-02","engines":["jyotish","singularity"],"prereq":{"house":8},"effect":"Ultimate cost −1 stacks additively with house 8 influence.","rarity":"rare"},
+
+    {"id":"ACX-FND-INV-01","engines":["foundational","invocation"],"prereq":{"framework":"Shunya"},"effect":"[Reveal]/[Insight]/[Threads] generation +25% while forbidding Tantra/Therapeutic.","rarity":"epic"},
+    {"id":"ACX-FND-INV-02","engines":["foundational","invocation"],"prereq":{"framework":"Prakriti"},"effect":"Invoked summons enter with +25% Ojas.","rarity":"epic"},
+
+    {"id":"ACX-FND-SIN-01","engines":["foundational","singularity"],"prereq":{"framework":"Turiya"},"effect":"On Transcend turn, your next Protocol costs −10 [Threshold].","rarity":"mythic"},
+    {"id":"ACX-FND-SIN-02","engines":["foundational","singularity"],"prereq":{"os":"Coolant Systems"},"effect":"Temporal effects (durations) +1 turn.","rarity":"rare"},
+
+    {"id":"ACX-INV-SIN-01","engines":["invocation","singularity"],"prereq":{"protocol":"Resonance Cascade"},"effect":"Ignore Resonance requirements this turn; Invocation costs −5.","rarity":"mythic"},
+    {"id":"ACX-INV-SIN-02","engines":["invocation","singularity"],"prereq":{"threshold":100},"effect":"At 100 [Threshold], first Invocation each round gains +1 turn duration.","rarity":"mythic"}
+  ]
+}

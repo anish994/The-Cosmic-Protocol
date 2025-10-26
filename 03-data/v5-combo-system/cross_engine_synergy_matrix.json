@@ -1,0 +1,704 @@
+{
+  "system_name": "Complete Cross-Engine Synergy Matrix",
+  "version": "5.0_PHASE_0.4",
+  "description": "EVERY ENGINE WITH EVERY ENGINE - All 45 unique engine pairs + recursive 3+ engine interactions",
+  
+  "TOTAL_ENGINE_COMBINATIONS": {
+    "9_engines_total": [
+      "Foundational",
+      "Character Analysis", 
+      "Consciousness",
+      "Tantra",
+      "Invocation",
+      "Jyotish",
+      "Divination",
+      "Therapeutic",
+      "Singularity"
+    ],
+    "2_engine_pairs": "9×8/2 = 45 unique pairs",
+    "3_engine_trios": "9×8×7/6 = 84 unique trios",
+    "4+_engine_combos": "Infinite recursive combinations",
+    "philosophy": "If ANY skill can combine with ANY skill, then ALL engines must synergize in EVERY possible configuration"
+  },
+
+  "SYNERGY_CALCULATION_ALGORITHM": {
+    "base_formula": "Synergy = (Tag_Match_Score × 0.4) + (Resource_Interaction × 0.3) + (Effect_Chain × 0.2) + (Cosmic_Timing × 0.1)",
+    "tag_match_scoring": {
+      "0_matching_tags": "E tier (5-15% bonus) - 'dumb combo' but still works",
+      "1_matching_tag": "D tier (15-30% bonus)",
+      "2_matching_tags": "C tier (30-50% bonus)",
+      "3_matching_tags": "B tier (50-80% bonus)",
+      "4+_matching_tags": "A tier (80-120% bonus)",
+      "complementary_tags": "S tier (120-200% bonus) - opposite tags that synergize (damage+healing, chaos+structure)",
+      "recursive_loops": "S+/SSS tier (200-400%+ bonus) - self-sustaining combos"
+    },
+    "resource_interaction_examples": {
+      "Bandwidth_to_Ojas": "Consciousness skills generate Bandwidth, Tantra skills consume it for Ojas",
+      "Sanctity_to_KP": "Invocation builds Sanctity, Foundational converts overflow to KP",
+      "Shakti_amplification": "Jyotish cosmic timing multiplies all resource generation"
+    },
+    "effect_chain_examples": {
+      "Status_setup": "Character Analysis marks target → Tantra exploits marked status",
+      "Zone_amplification": "Foundational creates structure zone → Invocation casts ritual inside for bonus",
+      "Resource_cascade": "Consciousness generates Bandwidth → Divination spends it to predict → Prediction enables better Consciousness state"
+    }
+  },
+
+  "45_ENGINE_PAIR_SYNERGIES": {
+    "description": "Every unique 2-engine combination with bridge concepts",
+
+    "01_Foundational_x_Character_Analysis": {
+      "bridge_concept": "Structural Defense Meets Tactical Analysis",
+      "key_synergies": [
+        "Structures provide defensive zones → Character Analysis identifies optimal placement",
+        "Shields on key targets identified by personality analysis",
+        "Resource generation structures → Analysis predicts enemy resource drain attempts"
+      ],
+      "example_combo": "Shield Projection (Found) + Vulnerability Scan (CharAnalysis) = Protected Scouting",
+      "power_rating": 7,
+      "use_case": "Tank builds with intelligent threat prioritization"
+    },
+
+    "02_Foundational_x_Consciousness": {
+      "bridge_concept": "Material Structure Meets Mental Architecture",
+      "key_synergies": [
+        "Bandwidth fuels structure creation",
+        "Structures anchor neural states to physical zones",
+        "High Bandwidth unlocks advanced structure blueprints"
+      ],
+      "example_combo": "Bandwidth Surge (Consciousness) + Scaffold Network (Found) = Infinite Structures",
+      "power_rating": 9,
+      "use_case": "Core economy engine for any build",
+      "loop_potential": "Self-sustaining Bandwidth→Structure→Bandwidth loop"
+    },
+
+    "03_Foundational_x_Tantra": {
+      "bridge_concept": "Structure Meets Decay - Creation vs Entropy",
+      "key_synergies": [
+        "Structures persist through Tantra's decay effects (protection)",
+        "Decay weakens enemy structures faster",
+        "Ojas generation from structures enables Tantra rituals"
+      ],
+      "example_combo": "Fortress Blueprint (Found) + Decay Aura (Tantra) = Withering Bastion",
+      "power_rating": 8,
+      "use_case": "Zone control builds that weaken enemies over time"
+    },
+
+    "04_Foundational_x_Invocation": {
+      "bridge_concept": "Material Foundation for Divine Manifestation",
+      "key_synergies": [
+        "Structures become ritual sites (+50% Sanctity generation)",
+        "Angel manifestations require structural anchors in physical realm",
+        "KP from structures accelerates Invocation chant progress"
+      ],
+      "example_combo": "Sacred Geometry Structure (Found) + Invoke Gabriel (Invocation) = Divine Architecture",
+      "power_rating": 10,
+      "use_case": "Late-game angel summoning strategies",
+      "cosmic_requirement": "Venus transit amplifies sacred structure effects"
+    },
+
+    "05_Foundational_x_Jyotish": {
+      "bridge_concept": "Physical Structure Aligned with Cosmic Timing",
+      "key_synergies": [
+        "Structures placed during favorable Nakshatra have permanent bonuses",
+        "Saturn Dasha extends structure duration by 3x",
+        "Planetary transits shift structure resource generation types"
+      ],
+      "example_combo": "Timed Foundation (Found) + Saturn Dasha (Jyotish) = Eternal Structures",
+      "power_rating": 9,
+      "use_case": "Permanent map control strategies",
+      "timing_window": "Build during Saturn Dasha for maximum persistence"
+    },
+
+    "06_Foundational_x_Divination": {
+      "bridge_concept": "Physical Preparation Meets Future Knowledge",
+      "key_synergies": [
+        "Predict enemy positions → Pre-place structures optimally",
+        "Scry enemy deck → Build counter-structures",
+        "Prophetic structures that activate when predicted condition occurs"
+      ],
+      "example_combo": "Future Sight (Divination) + Pre-Built Defenses (Found) = Prophetic Fortress",
+      "power_rating": 8,
+      "use_case": "Defensive builds with perfect positioning"
+    },
+
+    "07_Foundational_x_Therapeutic": {
+      "bridge_concept": "Structures as Healing Zones",
+      "key_synergies": [
+        "Structures amplify healing effects inside (+40%)",
+        "Healing overflow converts to structure durability",
+        "Shield structures combine with healing for immortal frontline"
+      ],
+      "example_combo": "Healing Pavilion (Found) + Regeneration Ritual (Therapeutic) = Immortal Zone",
+      "power_rating": 9,
+      "use_case": "Sustain-focused team compositions",
+      "team_value": "High - enables clutch comebacks"
+    },
+
+    "08_Foundational_x_Singularity": {
+      "bridge_concept": "Stable Structures vs Reality-Bending Chaos",
+      "key_synergies": [
+        "Structures provide stability anchors during singularity events",
+        "Chaos rolls INSIDE structures have controlled outcomes",
+        "Singularity effects can duplicate or merge structures"
+      ],
+      "example_combo": "Anchor Point (Found) + Controlled Singularity (Singularity) = Predictable Chaos",
+      "power_rating": 10,
+      "use_case": "Chaos manipulation with safety nets",
+      "risk_reward": "High variance but massive payoff potential"
+    },
+
+    "09_Character_Analysis_x_Consciousness": {
+      "bridge_concept": "Psychological Profiling Meets Neural States",
+      "key_synergies": [
+        "Analyze enemy personality → Enter optimal neural state to counter",
+        "Consciousness states reveal hidden enemy traits",
+        "Bandwidth expenditure on analysis yields permanent knowledge"
+      ],
+      "example_combo": "Deep Profile (CharAnalysis) + Alpha State (Consciousness) = Perfect Read",
+      "power_rating": 8,
+      "use_case": "Information warfare and counter-strategy",
+      "pvp_focused": true
+    },
+
+    "10_Character_Analysis_x_Tantra": {
+      "bridge_concept": "Exploit Weaknesses with Decay",
+      "key_synergies": [
+        "Identify vulnerable personality traits → Apply targeted Decay stacks",
+        "Aggressive enemies take more Decay damage (exploits impulse)",
+        "Defensive enemies drained of Ojas faster (exploits passivity)"
+      ],
+      "example_combo": "Weakness Scan (CharAnalysis) + Targeted Decay (Tantra) = Personalized Death",
+      "power_rating": 9,
+      "use_case": "Assassination builds that exploit psychology"
+    },
+
+    "11_Character_Analysis_x_Invocation": {
+      "bridge_concept": "Divine Judgment Based on Character",
+      "key_synergies": [
+        "Angels judge enemies more harshly based on analyzed flaws",
+        "Holy entities deal bonus damage to 'corrupted' personality types",
+        "Sanctity generation boosted when facing analyzed 'evil' opponents"
+      ],
+      "example_combo": "Moral Scan (CharAnalysis) + Divine Wrath (Invocation) = Righteous Judgment",
+      "power_rating": 8,
+      "use_case": "Paladin/Crusader archetypes",
+      "thematic_win": "Smite the wicked!"
+    },
+
+    "12_Character_Analysis_x_Jyotish": {
+      "bridge_concept": "Personality vs Cosmic Destiny",
+      "key_synergies": [
+        "Analyze birth chart influence on current behavior",
+        "Predict personality shifts during Dasha transitions",
+        "Cosmic timing reveals hidden character traits"
+      ],
+      "example_combo": "Destiny Reading (CharAnalysis + Jyotish) = Future Personality Prediction",
+      "power_rating": 7,
+      "use_case": "Long-term strategic planning in campaigns",
+      "meta_knowledge": "Know how opponent will evolve over time"
+    },
+
+    "13_Character_Analysis_x_Divination": {
+      "bridge_concept": "Psychological Profiling + Future Prediction = Mind Reading",
+      "key_synergies": [
+        "Know personality + predict actions = 100% accuracy on enemy decisions",
+        "Scry future self based on current psychological state",
+        "Prophesy enemy mental breakdown before it happens"
+      ],
+      "example_combo": "Profile + Predict (CharAnalysis + Divination) = Total Information Dominance",
+      "power_rating": 10,
+      "use_case": "Counter-everything control strategies",
+      "feels_like": "Playing with full enemy hand revealed"
+    },
+
+    "14_Character_Analysis_x_Therapeutic": {
+      "bridge_concept": "Diagnose Psychological Wounds, Then Heal Them",
+      "key_synergies": [
+        "Identify trauma → Therapeutic skills heal mental damage faster",
+        "Personality analysis reveals optimal healing approach",
+        "Healing effects persist longer on understood individuals"
+      ],
+      "example_combo": "Trauma Scan (CharAnalysis) + Targeted Therapy (Therapeutic) = Perfect Healing",
+      "power_rating": 7,
+      "use_case": "Support builds with personalized care",
+      "team_focused": true,
+      "wholesome_rating": "11/10"
+    },
+
+    "15_Character_Analysis_x_Singularity": {
+      "bridge_concept": "Personality Determines Chaos Outcomes",
+      "key_synergies": [
+        "Chaotic players trigger wild Singularity events",
+        "Ordered personalities stabilize Singularity rolls",
+        "Analysis predicts which chaos outcomes are likely"
+      ],
+      "example_combo": "Chaos Tendency Scan (CharAnalysis) + Controlled Chaos (Singularity) = Personality-Weighted RNG",
+      "power_rating": 9,
+      "use_case": "Manipulate opponent's Singularity events against them"
+    },
+
+    "16_Consciousness_x_Tantra": {
+      "bridge_concept": "Mental Energy Fuels Physical Decay - Bandwidth to Ojas Conversion",
+      "key_synergies": [
+        "Spend Bandwidth to apply Decay stacks",
+        "High Bandwidth states amplify Tantra ritual power",
+        "Ojas generation feeds back into Consciousness states"
+      ],
+      "example_combo": "Bandwidth Sacrifice (Consciousness) + Empowered Decay (Tantra) = Mind-Powered Entropy",
+      "power_rating": 9,
+      "use_case": "Core damage-over-time strategy",
+      "loop_potential": "Bandwidth↔Ojas conversion engine"
+    },
+
+    "17_Consciousness_x_Invocation": {
+      "bridge_concept": "Mental Clarity Channels Divine Power",
+      "key_synergies": [
+        "High Bandwidth accelerates Sanctity generation",
+        "Neural states determine which angels can be invoked",
+        "Divine presence alters consciousness frequency"
+      ],
+      "example_combo": "Theta State (Consciousness) + Angelic Contact (Invocation) = Transcendent Communion",
+      "power_rating": 10,
+      "use_case": "Mystic builds channeling higher beings",
+      "flavor_text": "The mind becomes a conduit for the divine"
+    },
+
+    "18_Consciousness_x_Jyotish": {
+      "bridge_concept": "Mental States Resonate with Cosmic Frequencies",
+      "key_synergies": [
+        "Neural frequencies align with planetary vibrations",
+        "Nakshatra timing determines optimal consciousness state",
+        "Planetary transits shift available neural states"
+      ],
+      "example_combo": "Cosmic Attunement (Consciousness + Jyotish) = Planetary Consciousness",
+      "power_rating": 9,
+      "use_case": "Timing-based mental state strategies",
+      "requires": "Knowledge of current cosmic weather"
+    },
+
+    "19_Consciousness_x_Divination": {
+      "bridge_concept": "Precognitive Mental States - See the Future by Entering the Right Frequency",
+      "key_synergies": [
+        "Specific neural states enable future sight",
+        "Bandwidth expenditure extends divination range",
+        "Predicted futures shift available consciousness states"
+      ],
+      "example_combo": "Precog State (Consciousness) + Extended Scry (Divination) = Timeline Awareness",
+      "power_rating": 10,
+      "use_case": "Perfect information builds",
+      "sci_fi_level": "Minority Report precognition"
+    },
+
+    "20_Consciousness_x_Therapeutic": {
+      "bridge_concept": "Mental Healing and Neural Optimization",
+      "key_synergies": [
+        "Therapeutic skills optimize neural states",
+        "Bandwidth overflow heals mental fatigue",
+        "Healing effects grant temporary Bandwidth bonuses"
+      ],
+      "example_combo": "Neural Restoration (Consciousness + Therapeutic) = Mental Regeneration",
+      "power_rating": 7,
+      "use_case": "Sustain strategies with mental resource recovery"
+    },
+
+    "21_Consciousness_x_Singularity": {
+      "bridge_concept": "Consciousness Collapses Quantum Uncertainty",
+      "key_synergies": [
+        "High Bandwidth stabilizes Singularity outcomes",
+        "Specific neural states bias chaos rolls",
+        "Singularity events grant random Bandwidth spikes"
+      ],
+      "example_combo": "Observer Effect (Consciousness + Singularity) = Controlled Quantum Collapse",
+      "power_rating": 10,
+      "use_case": "Manipulate RNG through mental focus",
+      "quantum_mechanics": "Consciousness affects reality!"
+    },
+
+    "22_Tantra_x_Invocation": {
+      "bridge_concept": "Dark Rituals vs Holy Invocations - Decay Meets Divine",
+      "key_synergies": [
+        "Ojas can be converted to Sanctity (at penalty)",
+        "Decay debuffs make enemies more vulnerable to divine judgment",
+        "Angels purify Decay stacks for burst healing"
+      ],
+      "example_combo": "Corrupted Invocation (Tantra + Invocation) = Fallen Angel Summon",
+      "power_rating": 11,
+      "use_case": "Forbidden magic archetypes",
+      "warning": "Some combinations are HERESY but extremely powerful"
+    },
+
+    "23_Tantra_x_Jyotish": {
+      "bridge_concept": "Cosmic Timing Amplifies Decay - Inauspicious Moments Empower Entropy",
+      "key_synergies": [
+        "Saturn Dasha doubles Decay duration",
+        "Rahu/Ketu transits amplify Tantra ritual power",
+        "Inauspicious Nakshatras grant bonus Ojas generation"
+      ],
+      "example_combo": "Timed Decay Burst (Tantra + Jyotish) = Cosmic Entropy Wave",
+      "power_rating": 9,
+      "use_case": "Power spike strategies during dark cosmic phases"
+    },
+
+    "24_Tantra_x_Divination": {
+      "bridge_concept": "Prophesy Death, Then Cause It - Fate and Decay",
+      "key_synergies": [
+        "Predict enemy actions → Apply Decay before they can react",
+        "Scry optimal Decay application timing",
+        "Prophesy 'inevitable death' that Decay guarantees"
+      ],
+      "example_combo": "Fated Decay (Tantra + Divination) = Unavoidable Death",
+      "power_rating": 10,
+      "use_case": "Assassination builds with perfect timing",
+      "flavor_text": "Death was foretold, now made manifest"
+    },
+
+    "25_Tantra_x_Therapeutic": {
+      "bridge_concept": "Decay and Healing - Opposite Energies, Unexpected Synergy",
+      "key_synergies": [
+        "Remove Decay stacks to convert into burst healing",
+        "Heal through Decay (controlled cell death → regeneration)",
+        "Balance Ojas generation with healing overflow"
+      ],
+      "example_combo": "Death and Rebirth Cycle (Tantra + Therapeutic) = Phoenix Restoration",
+      "power_rating": 9,
+      "use_case": "Transformation builds that heal through destruction",
+      "philosophy": "What dies nourishes what lives"
+    },
+
+    "26_Tantra_x_Singularity": {
+      "bridge_concept": "Chaotic Decay - Entropy Meets Randomness",
+      "key_synergies": [
+        "Singularity events randomly apply/remove Decay stacks",
+        "Chaos amplifies Decay spread (contagion effects)",
+        "Ojas generation becomes random but potentially massive"
+      ],
+      "example_combo": "Chaos Decay Bomb (Tantra + Singularity) = Unpredictable Mass Death",
+      "power_rating": 10,
+      "use_case": "High-risk high-reward all-in strategies",
+      "warning": "Can backfire spectacularly"
+    },
+
+    "27_Invocation_x_Jyotish": {
+      "bridge_concept": "Divine Timing - Angels Manifest During Cosmic Alignments",
+      "key_synergies": [
+        "Planetary exaltation grants +200% angel power",
+        "Specific Nakshatras resonate with specific angels",
+        "Dasha phases determine which invocations are possible"
+      ],
+      "example_combo": "Timed Divine Manifestation (Invocation + Jyotish) = Cosmic Angel",
+      "power_rating": 11,
+      "use_case": "Ultimate late-game power spikes",
+      "timing_critical": "MUST be cast during correct cosmic window"
+    },
+
+    "28_Invocation_x_Divination": {
+      "bridge_concept": "Divine Prophecy - Angels Reveal Future",
+      "key_synergies": [
+        "Angels grant enhanced divination range",
+        "Predict optimal invocation timing",
+        "Prophetic visions reveal angelic intervention moments"
+      ],
+      "example_combo": "Prophetic Angel (Invocation + Divination) = Divine Oracle",
+      "power_rating": 9,
+      "use_case": "Information control with divine backing"
+    },
+
+    "29_Invocation_x_Therapeutic": {
+      "bridge_concept": "Divine Healing - Angels as Ultimate Healers",
+      "key_synergies": [
+        "Angelic presence amplifies all healing by 3x",
+        "Sanctity overflow converts to mass healing",
+        "Healing rituals summon minor angel assistants"
+      ],
+      "example_combo": "Angelic Restoration (Invocation + Therapeutic) = Miracle Healing",
+      "power_rating": 10,
+      "use_case": "Ultimate support/healer builds",
+      "team_saver": "Full-team instant resurrection"
+    },
+
+    "30_Invocation_x_Singularity": {
+      "bridge_concept": "Divine Order vs Primordial Chaos",
+      "key_synergies": [
+        "Angels stabilize Singularity events (controlled chaos)",
+        "Chaos inversely empowers dark invocations",
+        "Singularity can summon corrupted/fallen angels"
+      ],
+      "example_combo": "Chaotic Divinity (Invocation + Singularity) = Reality-Bending Angel",
+      "power_rating": 12,
+      "use_case": "God-tier late-game strategies",
+      "warning": "Can cause universe-ending events (flavor only)"
+    },
+
+    "31_Jyotish_x_Divination": {
+      "bridge_concept": "Cosmic Timing + Future Sight = Perfect Prediction",
+      "key_synergies": [
+        "Know planetary transits → Predict macro-level events",
+        "Divination scries specific futures based on cosmic timing",
+        "Dasha phases reveal different timeline branches"
+      ],
+      "example_combo": "Cosmic Prophecy (Jyotish + Divination) = Omniscient Timeline Vision",
+      "power_rating": 10,
+      "use_case": "Perfect information warfare",
+      "feels_like": "Playing Chess with perfect foresight"
+    },
+
+    "32_Jyotish_x_Therapeutic": {
+      "bridge_concept": "Cosmic Timing Optimizes Healing",
+      "key_synergies": [
+        "Healing during Moon exaltation = 2x effectiveness",
+        "Therapeutic rituals during beneficial Nakshatras have permanent effects",
+        "Planetary transits determine healing resource types"
+      ],
+      "example_combo": "Timed Restoration (Jyotish + Therapeutic) = Cosmic Regeneration",
+      "power_rating": 8,
+      "use_case": "Timing-based sustain strategies"
+    },
+
+    "33_Jyotish_x_Singularity": {
+      "bridge_concept": "Cosmic Order vs Quantum Chaos - Destiny vs Randomness",
+      "key_synergies": [
+        "Planetary positions bias Singularity outcomes",
+        "Chaos events can disrupt cosmic timing (anti-Jyotish strategy)",
+        "Specific Nakshatras make Singularity predictable"
+      ],
+      "example_combo": "Deterministic Chaos (Jyotish + Singularity) = Fated Randomness",
+      "power_rating": 10,
+      "use_case": "Control the uncontrollable through cosmic alignment",
+      "philosophy": "Even chaos follows patterns"
+    },
+
+    "34_Divination_x_Therapeutic": {
+      "bridge_concept": "Predict Wounds Before They Happen, Pre-Heal",
+      "key_synergies": [
+        "Scry incoming damage → Pre-cast shields/heals",
+        "Prophetic healing that triggers when predicted event occurs",
+        "Therapeutic skills extend divination duration"
+      ],
+      "example_combo": "Prophylactic Healing (Divination + Therapeutic) = Pre-Emptive Restoration",
+      "power_rating": 9,
+      "use_case": "Perfect damage mitigation strategies"
+    },
+
+    "35_Divination_x_Singularity": {
+      "bridge_concept": "Predict Chaos Outcomes - Scry the Randomness",
+      "key_synergies": [
+        "Divination reveals Singularity roll ranges before they happen",
+        "Chaos events grant bonus divination charges",
+        "Can scry alternate timelines where different chaos outcomes occurred"
+      ],
+      "example_combo": "Chaos Scrying (Divination + Singularity) = Quantum Fortune Telling",
+      "power_rating": 11,
+      "use_case": "See all possible futures, choose the best one",
+      "sci_fi_level": "Doctor Strange seeing 14 million outcomes"
+    },
+
+    "36_Therapeutic_x_Singularity": {
+      "bridge_concept": "Healing Through Chaos - Random Massive Heals",
+      "key_synergies": [
+        "Chaos rolls determine healing potency (1-1000 variance)",
+        "Singularity events can instantly full-heal or instantly kill",
+        "Therapeutic skills stabilize chaos healing outcomes"
+      ],
+      "example_combo": "Chaotic Restoration (Therapeutic + Singularity) = Quantum Healing Roulette",
+      "power_rating": 8,
+      "use_case": "Desperation plays with massive variance",
+      "warning": "Can heal enemy instead of ally if unlucky"
+    }
+  },
+
+  "ADDITIONAL_SYMMETRIC_PAIRS": {
+    "note": "The above 36 pairs cover all unique combinations. These are the remaining 9 'self-pairs' (same engine interactions)",
+    
+    "37_Foundational_x_Foundational": {
+      "bridge_concept": "Recursive Structure Building - Structures Build More Structures",
+      "synergy": "Each structure enables faster construction of next structure",
+      "power_rating": 8,
+      "example": "Structure Network where each node builds the next"
+    },
+
+    "38_Character_Analysis_x_Character_Analysis": {
+      "bridge_concept": "Deep Psychological Recursion - Meta-Analysis",
+      "synergy": "Analyze your own analysis to refine future predictions",
+      "power_rating": 7,
+      "example": "Self-reflective psychological profiling"
+    },
+
+    "39_Consciousness_x_Consciousness": {
+      "bridge_concept": "Nested Neural States - Consciousness of Consciousness",
+      "synergy": "Enter meta-cognitive states that amplify all other states",
+      "power_rating": 9,
+      "example": "Metacognition buffs that enhance all mental processes"
+    },
+
+    "40_Tantra_x_Tantra": {
+      "bridge_concept": "Cascading Decay - Exponential Entropy",
+      "synergy": "Each Decay stack amplifies the next",
+      "power_rating": 10,
+      "example": "Decay Bomb where stacks multiply geometrically"
+    },
+
+    "41_Invocation_x_Invocation": {
+      "bridge_concept": "Angelic Hierarchy - Multiple Angels Working Together",
+      "synergy": "Each angel empowers other angels",
+      "power_rating": 11,
+      "example": "Summon Michael + Gabriel = Divine Army"
+    },
+
+    "42_Jyotish_x_Jyotish": {
+      "bridge_concept": "Nested Cosmic Timing - Alignments Within Alignments",
+      "synergy": "Multiple favorable planetary positions stacking",
+      "power_rating": 10,
+      "example": "Perfect alignment of Sun+Moon+Mars = Triple Power Spike"
+    },
+
+    "43_Divination_x_Divination": {
+      "bridge_concept": "Recursive Prediction - Scry the Scrying",
+      "synergy": "Predict future predictions to see further ahead",
+      "power_rating": 9,
+      "example": "Timeline branching that reveals predictions of predictions"
+    },
+
+    "44_Therapeutic_x_Therapeutic": {
+      "bridge_concept": "Healing Amplification - Each Heal Boosts the Next",
+      "synergy": "Stacking healing over time effects",
+      "power_rating": 8,
+      "example": "Regeneration cascade where each tick heals more"
+    },
+
+    "45_Singularity_x_Singularity": {
+      "bridge_concept": "Chaos Cascade - Randomness Multiplying Randomness",
+      "synergy": "Each chaos event triggers more chaos events",
+      "power_rating": 12,
+      "use_case": "Ultimate high-variance strategies",
+      "warning": "Game may explode"
+    }
+  },
+
+  "3_ENGINE_COMBO_EXAMPLES": {
+    "description": "84 total unique trios - showing 10 most powerful",
+
+    "trio_01_Found_Consciousness_Tantra": {
+      "name": "The Entropy Engine",
+      "engines": ["Foundational", "Consciousness", "Tantra"],
+      "concept": "Build structures → Generate Bandwidth → Convert to Decay → Structures persist while enemies die",
+      "power_rating": 11,
+      "tier": "S+"
+    },
+
+    "trio_02_Invocation_Jyotish_Divination": {
+      "name": "Cosmic Oracle Angel",
+      "engines": ["Invocation", "Jyotish", "Divination"],
+      "concept": "Predict optimal cosmic timing → Invoke angel during peak alignment → Angel reveals all futures",
+      "power_rating": 12,
+      "tier": "SSS"
+    },
+
+    "trio_03_Consciousness_Therapeutic_CharAnalysis": {
+      "name": "Perfect Mind Healer",
+      "engines": ["Consciousness", "Therapeutic", "Character Analysis"],
+      "concept": "Analyze psychology → Enter optimal neural state → Deliver perfect personalized healing",
+      "power_rating": 10,
+      "tier": "S"
+    },
+
+    "trio_04_Tantra_Singularity_Jyotish": {
+      "name": "Fated Chaos Death",
+      "engines": ["Tantra", "Singularity", "Jyotish"],
+      "concept": "Cosmic timing makes chaos predictable → Chaos amplifies Decay → Inevitable death at exact moment",
+      "power_rating": 11,
+      "tier": "S+"
+    },
+
+    "trio_05_Found_Invocation_Therapeutic": {
+      "name": "Divine Hospital",
+      "engines": ["Foundational", "Invocation", "Therapeutic"],
+      "concept": "Build healing structures → Angels manifest inside → Triple healing output forever",
+      "power_rating": 10,
+      "tier": "S"
+    },
+
+    "trio_06_Consciousness_Divination_Singularity": {
+      "name": "Quantum Mind",
+      "engines": ["Consciousness", "Divination", "Singularity"],
+      "concept": "Enter quantum neural state → Scry all timelines → Collapse reality to chosen outcome",
+      "power_rating": 13,
+      "tier": "SSS (Game-breaking)",
+      "warning": "May be banned in competitive"
+    },
+
+    "trio_07_Tantra_Divination_CharAnalysis": {
+      "name": "Prophesied Assassination",
+      "engines": ["Tantra", "Divination", "Character Analysis"],
+      "concept": "Profile target → Predict their actions → Apply Decay at perfect moment for instant kill",
+      "power_rating": 11,
+      "tier": "S+"
+    },
+
+    "trio_08_Jyotish_Found_Invocation": {
+      "name": "Cosmic Temple",
+      "engines": ["Jyotish", "Foundational", "Invocation"],
+      "concept": "Build structure during planetary alignment → Structure becomes permanent angel anchor",
+      "power_rating": 12,
+      "tier": "SSS"
+    },
+
+    "trio_09_Consciousness_Tantra_Invocation": {
+      "name": "Transcendent Destroyer",
+      "engines": ["Consciousness", "Tantra", "Invocation"],
+      "concept": "Bandwidth→Ojas conversion → Ojas→Sanctity conversion → Summon destroying angel",
+      "power_rating": 11,
+      "tier": "S+"
+    },
+
+    "trio_10_All_Therapeutic": {
+      "name": "Omniheal",
+      "engines": ["Therapeutic", "Foundational", "Consciousness", "Invocation"],
+      "concept": "Every healing source at once - structures heal, neural states heal, angels heal",
+      "power_rating": 10,
+      "tier": "S",
+      "team_value": "Infinite"
+    }
+  },
+
+  "RECURSIVE_MEGA_COMBOS": {
+    "4_engine_example": {
+      "name": "Reality Architect",
+      "engines": ["Foundational", "Consciousness", "Jyotish", "Singularity"],
+      "concept": "Build structures during cosmic timing → Consciousness collapses Singularity outcomes → Reality becomes what you will it to be"
+    },
+
+    "5_engine_example": {
+      "name": "God Mode",
+      "engines": ["All engines except Tantra and Singularity"],
+      "concept": "Perfect defense, perfect information, perfect healing, divine power, cosmic timing"
+    },
+
+    "9_engine_ultimate": {
+      "name": "The Infinite Combo",
+      "engines": ["ALL 9 ENGINES SIMULTANEOUSLY"],
+      "concept": "Every system feeding into every other system in perfect synchronization",
+      "power_rating": 100,
+      "tier": "MYTHIC",
+      "achievability": "0.001% of players will ever execute this",
+      "result": "Game automatically concedes opponent due to perfect omnipotence"
+    }
+  },
+
+  "DETECTION_IN_CRUCIBLE": {
+    "how_cross_engine_combos_are_detected": [
+      "Player drags skills from different engines into test grid",
+      "System checks all 45 engine-pair synergies",
+      "Calculates synergy score based on tag algebra + resource interactions",
+      "Auto-generates combo name based on theme",
+      "Assigns tier rating (E to SSS)",
+      "Visual feedback shows which engines are synergizing"
+    ],
+    "UI_elements": {
+      "engine_glow_coding": "Each engine has unique color - glows pulse when synergizing",
+      "synergy_web": "Lines connect skills showing resource/effect flows",
+      "power_meter": "Real-time calculation of combo power rating",
+      "tier_badge": "Prominent display of E/D/C/B/A/S/S+/SSS tier"
+    }
+  }
+}

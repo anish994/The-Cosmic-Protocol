@@ -1,0 +1,851 @@
+{
+  "rules_engine_version": "1.0.0",
+  "game_version": "v4.0",
+  "last_updated": "2025-01-23",
+  "description": "AI Rules Engine - Layer 4 (Glyph Activation & Keywords) - Ultra-detailed validation system",
+  
+  "LAYER_4_GLYPH_ACTIVATION_RULES": {
+    
+    "4.1_GLYPH_ACTIVATION_MECHANICS": {
+      "description": "Core rules for how glyphs are activated and resolve",
+      
+      "4.1.1_activation_requirements": {
+        "rule_id": "R-4.1.1",
+        "description": "Conditions that must be met to activate a glyph",
+        "requirements": [
+          {
+            "requirement": "sufficient_resources",
+            "validation": "player.KP >= glyph.KP_cost AND player.engine_resource >= glyph.engine_cost",
+            "error": "Insufficient resources to activate glyph"
+          },
+          {
+            "requirement": "not_on_cooldown",
+            "validation": "glyph.cooldown_remaining == 0",
+            "error": "Glyph on cooldown ({remaining} turns left)"
+          },
+          {
+            "requirement": "valid_targeting",
+            "validation": "target exists AND target is valid (self/opponent/none as required)",
+            "error": "Invalid target for this glyph"
+          },
+          {
+            "requirement": "not_silenced",
+            "validation": "!player.has_status('silence')",
+            "error": "You are Silenced and cannot activate glyphs"
+          },
+          {
+            "requirement": "state_requirements",
+            "validation": "If glyph requires specific Neural State, player must be in that state",
+            "example": "Gamma-exclusive glyphs require Gamma State active",
+            "error": "Must be in {required_state} to activate this glyph"
+          }
+        ],
+        "sub_rules": {
+          "4.1.1.1_silence_mechanics": {
+            "rule_id": "R-4.1.1.1",
+            "description": "[Silence] status prevents all glyph activation",
+            "duration": "1-3 turns depending on source",
+            "removal": "Can be cleansed by ally or expires naturally",
+            "exception": "Certain ultimate glyphs can 'break through' Silence (marked as [Unsilenceable])"
+          }
+        }
+      },
+      
+      "4.1.2_targeting_rules": {
+        "rule_id": "R-4.1.2",
+        "description": "How targeting works for different glyph types",
+        "targeting_types": [
+          {
+            "type": "self",
+            "description": "Affects only the casting player's card",
+            "validation": "target == player.card",
+            "examples": ["Heal self", "Apply [Shield] to self", "Enter Neural State"]
+          },
+          {
+            "type": "opponent",
+            "description": "Affects only the opponent's card",
+            "validation": "target == opponent.card",
+            "examples": ["Deal damage", "Apply [Burn]", "Steal resources"]
+          },
+          {
+            "type": "no_target",
+            "description": "No targeting required, effect automatic",
+            "validation": "target == null",
+            "examples": ["Generate resources", "Draw prediction", "Trigger global effect"]
+          },
+          {
+            "type": "choice",
+            "description": "Player chooses target (self or opponent)",
+            "validation": "target == player.card OR target == opponent.card",
+            "examples": ["Universal Wildcard effects", "Flexible healing/damage glyphs"],
+            "UI": "Player must click target before confirming glyph"
+          }
+        ],
+        "sub_rules": {
+          "4.1.2.1_targeting_validation": {
+            "rule_id": "R-4.1.2.1",
+            "description": "System validates target before activation",
+            "process": [
+              "Player selects glyph",
+              "If targeting required, highlight valid targets",
+              "Player selects target",
+              "System validates target matches glyph requirements",
+              "If valid, proceed to cost payment"
+            ]
+          },
+          "4.1.2.2_invalid_target_handling": {
+            "rule_id": "R-4.1.2.2",
+            "description": "What happens if target becomes invalid mid-activation",
+            "edge_case": "Rare, but if target state changes between selection and resolution",
+            "resolution": "Glyph fizzles, costs not consumed, no cooldown applied",
+            "example": "Opponent enters Theta State (immune) after you target them → Glyph canceled"
+          }
+        }
+      },
+      
+      "4.1.3_activation_sequence": {
+        "rule_id": "R-4.1.3",
+        "description": "Step-by-step sequence when glyph activates",
+        "sequence": [
+          {
+            "step": 1,
+            "name": "declaration",
+            "description": "Player declares glyph activation and selects target (if required)",
+            "reversible": true,
+            "note": "Player can cancel here without penalty"
+          },
+          {
+            "step": 2,
+            "name": "cost_payment",
+            "description": "Deduct KP and engine resource",
+            "validation": "player.KP -= glyph.KP_cost; player.engine_resource -= glyph.engine_cost",
+            "irreversible": true
+          },
+          {
+            "step": 3,
+            "name": "effect_resolution",
+            "description": "Apply glyph's primary effect (damage, heal, buff, etc.)",
+            "timing": "Immediate, unless specified as delayed",
+            "order": "Primary effect → Secondary effects → Triggered effects"
+          },
+          {
+            "step": 4,
+            "name": "synergy_triggers",
+            "description": "Check for synergy conditions and trigger related effects",
+            "examples": [
+              "Character Analysis: If prediction correct → Bonus effects",
+              "Consciousness: If in Gamma State → Double activation",
+              "Tantra: If [Burn] active → +damage"
+            ]
+          },
+          {
+            "step": 5,
+            "name": "counter_reactions",
+            "description": "Opponent [Counter] glyphs trigger here (if applicable)",
+            "timing": "After primary effect resolves, before turn ends",
+            "interruption": "Opponent can activate reactive glyphs"
+          },
+          {
+            "step": 6,
+            "name": "cooldown_application",
+            "description": "If glyph has cooldown, start counting from this turn",
+            "validation": "glyph.cooldown_remaining = glyph.cooldown_duration"
+          },
+          {
+            "step": 7,
+            "name": "state_update",
+            "description": "Update all game state (HP, resources, status effects, etc.)",
+            "validation": "Ensure all values within valid ranges"
+          }
+        ],
+        "sub_rules": {
+          "4.1.3.1_fizzle_conditions": {
+            "rule_id": "R-4.1.3.1",
+            "description": "Glyph can fizzle (fail to resolve) under certain conditions",
+            "fizzle_reasons": [
+              "Target becomes invalid (enters immunity state)",
+              "Certain [Counter] glyphs negate activation",
+              "Specific environmental effects (rare)"
+            ],
+            "fizzle_result": "Costs still consumed, cooldown still applied, but no effect occurs"
+          }
+        }
+      },
+      
+      "4.1.4_cooldown_mechanics": {
+        "rule_id": "R-4.1.4",
+        "description": "How cooldowns work for glyphs",
+        "cooldown_definition": "Number of turns that must pass before glyph can be used again",
+        "cooldown_ranges": [
+          "No cooldown: Basic glyphs (can spam every turn if resources available)",
+          "Short cooldown (1-2 turns): Common glyphs",
+          "Medium cooldown (3-4 turns): Powerful glyphs",
+          "Long cooldown (5-7 turns): Ultimate glyphs",
+          "Very long cooldown (8-10 turns): Game-changing abilities"
+        ],
+        "cooldown_tracking": {
+          "start": "Cooldown begins after glyph activation (step 6 of activation sequence)",
+          "countdown": "Cooldown reduces by 1 at START_OF_TURN phase",
+          "ready": "When cooldown reaches 0, glyph is available again"
+        },
+        "cooldown_reduction": [
+          {
+            "source": "Mercury Tier 3+",
+            "effect": "-1 turn to all cooldowns (minimum 0)",
+            "global": true
+          },
+          {
+            "source": "Specific glyph synergies",
+            "effect": "Reduce cooldown of another glyph by 1-2 turns",
+            "examples": [
+              "Foundational: Reset (reduces cooldowns of defensive glyphs)",
+              "Consciousness: Neural Acceleration (reduces all cooldowns by 1)"
+            ]
+          },
+          {
+            "source": "Character Analysis prediction bonuses",
+            "effect": "Correct prediction → Reduce random glyph cooldown by 1",
+            "conditional": true
+          }
+        ],
+        "sub_rules": {
+          "4.1.4.1_cooldown_reset_mechanics": {
+            "rule_id": "R-4.1.4.1",
+            "description": "Certain glyphs can reset cooldowns entirely",
+            "glyphs": [
+              "Invocation: Miracle Reset (resets all cooldowns, once per match)",
+              "Singularity: Pattern Reset (resets 1 glyph cooldown when pattern detected)"
+            ],
+            "validation": "glyph.cooldown_remaining = 0"
+          },
+          "4.1.4.2_cooldown_display": {
+            "rule_id": "R-4.1.4.2",
+            "description": "UI shows cooldown remaining visually",
+            "display": "Number badge on glyph icon showing turns remaining",
+            "color_coding": "Red = on cooldown, Green = ready to use",
+            "tooltip": "Hover shows exact turns remaining"
+          }
+        }
+      }
+    },
+    
+    "4.2_KEYWORD_SYSTEM": {
+      "description": "Comprehensive definitions of all glyph keywords",
+      
+      "4.2.1_OFFENSIVE_KEYWORDS": {
+        "category": "damage_and_debuffs",
+        
+        "[Strike]": {
+          "keyword_id": "KW-OFF-001",
+          "description": "Deal physical damage to target",
+          "damage_type": "physical",
+          "reduced_by": "Defense stat, [Shield]",
+          "base_damage_range": "15-60 depending on glyph tier",
+          "scaling": "Scales with Attack Power stat",
+          "examples": ["Tantra: Smash", "Foundational: Impact Strike"],
+          "interaction": "Cannot pierce [Shield], must break shield first"
+        },
+        
+        "[Burn]": {
+          "keyword_id": "KW-OFF-002",
+          "description": "Apply damage-over-time status effect",
+          "damage_per_turn": 3,
+          "stacking": "Yes (max 5 stacks = 15 damage/turn)",
+          "duration": "Indefinite (until cleansed or round ends)",
+          "timing": "Ticks at START_OF_TURN phase",
+          "damage_type": "true (ignores Defense and [Shield])",
+          "examples": ["Tantra: Ignite", "Tantra: Inferno"],
+          "synergies": [
+            "Tantra engine: +1 Prana per turn per [Burn] stack",
+            "Certain glyphs deal bonus damage to burning targets"
+          ],
+          "removal": "[Cleanse] effects, Therapeutic healing can remove 1 stack",
+          "sub_rules": {
+            "burn_stack_cap": {
+              "rule_id": "KW-OFF-002.1",
+              "max_stacks": 5,
+              "validation": "burn_stacks = min(current_stacks + new_stacks, 5)"
+            }
+          }
+        },
+        
+        "[Detonate]": {
+          "keyword_id": "KW-OFF-003",
+          "description": "Consume [Burn] stacks for immediate massive damage",
+          "formula": "Deal damage equal to (burn_stacks * 10) + base_damage",
+          "consumes_burn": true,
+          "example": "3 [Burn] stacks → [Detonate] deals 30 + base damage, [Burn] removed",
+          "damage_type": "true (ignores Defense)",
+          "counterplay": "Cleanse [Burn] before opponent detonates",
+          "examples": ["Tantra: Combustion", "Tantra: Pyroclasm"]
+        },
+        
+        "[Exposed]": {
+          "keyword_id": "KW-OFF-004",
+          "description": "Target takes +50% increased damage from all sources",
+          "duration": "3 turns",
+          "stacking": "No (reapplication refreshes duration)",
+          "amplification": "1.5x damage multiplier",
+          "removal": "[Cleanse] effects",
+          "examples": ["Character Analysis: Exploit Weakness", "Foundational: Shatter"],
+          "synergy": "Combo with high-damage glyphs for burst"
+        },
+        
+        "[Curse]": {
+          "keyword_id": "KW-OFF-005",
+          "description": "Reduce healing received by 50%",
+          "duration": "3-5 turns depending on source",
+          "stacking": "No (reapplication extends duration)",
+          "healing_reduction": "0.5x healing multiplier",
+          "removal": "[Bless] or [Cleanse] effects",
+          "examples": ["Tantra: Corruption", "Singularity: Entropy"],
+          "counterplay": "[Sanctified] state grants [Curse] immunity"
+        },
+        
+        "[Silence]": {
+          "keyword_id": "KW-OFF-006",
+          "description": "Prevent target from activating glyphs",
+          "duration": "1-3 turns",
+          "effect": "Target cannot activate any glyph (automatic pass turn)",
+          "resource_generation": "Still occurs normally",
+          "removal": "Expires naturally or specific cleanse glyphs",
+          "examples": ["Character Analysis: Mind Lock", "Consciousness: Bandwidth Overload"],
+          "powerful": "Extremely strong debuff, rare and expensive"
+        },
+        
+        "[Stun]": {
+          "keyword_id": "KW-OFF-007",
+          "description": "Target skips next turn entirely",
+          "duration": "1 turn only",
+          "effect": "Target loses entire turn (no glyph activation, no resource generation)",
+          "removal": "Cannot be cleansed (must expire naturally)",
+          "examples": ["Tantra: Overwhelm", "Singularity: Temporal Freeze"],
+          "counterplay": "Very rare keyword, extremely powerful"
+        }
+      },
+      
+      "4.2.2_DEFENSIVE_KEYWORDS": {
+        "category": "protection_and_mitigation",
+        
+        "[Shield]": {
+          "keyword_id": "KW-DEF-001",
+          "description": "Absorb damage before HP is lost",
+          "shield_amount": "15-50 depending on glyph tier",
+          "stacking": "Yes (multiple shields add together)",
+          "duration": "Until depleted or round ends",
+          "damage_absorption": "Shield absorbs damage first, excess damage carries to HP",
+          "example": "30 shield, 50 damage incoming → Shield depleted, 20 damage to HP",
+          "examples": ["Foundational: Barrier", "Invocation: Divine Shield"],
+          "synergies": [
+            "Foundational engine: Structure cap overflow → Auto [Shield]",
+            "Saturn planetary influence: +20% shield effectiveness"
+          ],
+          "removal": "Damaged until depleted, or certain glyphs dispel shields"
+        },
+        
+        "[Sanctify]": {
+          "keyword_id": "KW-DEF-002",
+          "description": "Grant holy state with damage reduction and immunity to [Curse]",
+          "duration": "3-5 turns",
+          "damage_reduction": "50% less damage taken",
+          "curse_immunity": true,
+          "healing_bonus": "+20% healing received",
+          "stacking": "No (reapplication refreshes duration)",
+          "examples": ["Invocation: Sanctification", "Invocation: Holy Ground"],
+          "visual": "Golden aura around card",
+          "removal": "Expires naturally or specific dispel effects"
+        },
+        
+        "[Counter]": {
+          "keyword_id": "KW-DEF-003",
+          "description": "Reactive glyph that triggers during opponent's turn",
+          "activation_timing": "After opponent's glyph resolves, before turn ends",
+          "trigger_conditions": [
+            "When you take damage > X",
+            "When opponent uses specific glyph type",
+            "When HP drops below threshold"
+          ],
+          "effect_types": [
+            "Deal retaliatory damage",
+            "Apply debuff to attacker",
+            "Heal self",
+            "Negate attack entirely"
+          ],
+          "cost": "Usually cheaper than normal glyphs (1-2 KP)",
+          "cooldown": "Typically longer (4-6 turns)",
+          "examples": [
+            "Foundational: Retaliate (deal damage when hit)",
+            "Consciousness: Predictive Counter (negate if predicted)",
+            "Invocation: Divine Retribution (holy damage when attacked)"
+          ],
+          "sub_rules": {
+            "counter_activation": {
+              "rule_id": "KW-DEF-003.1",
+              "description": "Player must have [Counter] glyph ready (not on cooldown)",
+              "automatic": "Triggers automatically when conditions met",
+              "resource_check": "Must have sufficient resources to activate counter"
+            }
+          }
+        },
+        
+        "[Heal]": {
+          "keyword_id": "KW-DEF-004",
+          "description": "Restore HP to target",
+          "healing_amount": "10-60 depending on glyph tier",
+          "scaling": [
+            "Moon planetary influence: +50% healing",
+            "Grace Points: +1% per Grace",
+            "Therapeutic engine bonuses: +10-30%"
+          ],
+          "overheal": "No (capped at max HP, unless temporary HP granted)",
+          "blocked_by": "Heal block debuffs",
+          "examples": ["Therapeutic: Minor Heal", "Invocation: Greater Healing"],
+          "synergy": "Generates Grace Points (+1 Grace per 20 HP healed)"
+        },
+        
+        "[Regen]": {
+          "keyword_id": "KW-DEF-005",
+          "description": "Heal-over-time effect",
+          "healing_per_turn": "5-15 depending on glyph",
+          "duration": "3-5 turns",
+          "stacking": "Yes (multiple [Regen] effects add together)",
+          "timing": "Triggers at START_OF_TURN phase",
+          "blocked_by": "Heal block effects",
+          "examples": ["Therapeutic: Vitality", "Invocation: Blessing of Life"],
+          "removal": "Expires naturally or can be dispelled"
+        },
+        
+        "[Immunity]": {
+          "keyword_id": "KW-DEF-006",
+          "description": "Complete immunity to all damage and debuffs",
+          "duration": "1-3 turns (very short due to power)",
+          "effect": "Take 0 damage, immune to all negative status effects",
+          "restriction": "Usually cannot attack while immune (defensive only)",
+          "examples": ["Consciousness: Theta State", "Invocation: Divine Intervention"],
+          "rare": "Extremely powerful, very rare and expensive",
+          "counterplay": "Wait out duration, focus on resource generation"
+        }
+      },
+      
+      "4.2.3_UTILITY_KEYWORDS": {
+        "category": "support_and_manipulation",
+        
+        "[Bless]": {
+          "keyword_id": "KW-UTL-001",
+          "description": "Grant positive buff increasing effectiveness",
+          "duration": "3 turns (base), +2 turns if Jupiter Tier 2+",
+          "effects": [
+            "+20% healing received",
+            "+10% damage dealt",
+            "Removes [Curse] if present"
+          ],
+          "stacking": "No (reapplication refreshes duration)",
+          "examples": ["Invocation: Blessing", "Therapeutic: Sanctify"],
+          "synergy": "Generates +2 Grace when applied",
+          "removal": "Expires naturally or dispelled"
+        },
+        
+        "[Amplify]": {
+          "keyword_id": "KW-UTL-002",
+          "description": "Increase potency of next action",
+          "duration": "1 turn (consumed on next glyph activation)",
+          "amplification": "+50% effect per [Amplify] stack",
+          "stacking": "Yes (max 3 stacks = +150% effect)",
+          "applies_to": "Damage, healing, resource generation",
+          "examples": ["Consciousness: Neural Amplification", "Singularity: Pattern Amplify"],
+          "strategic": "Save for high-impact glyphs"
+        },
+        
+        "[Reveal]": {
+          "keyword_id": "KW-UTL-003",
+          "description": "Gain information about opponent",
+          "reveals": [
+            "Opponent's next glyph choice (Character Analysis)",
+            "Opponent's resource totals",
+            "Opponent's card composition (glyph list)",
+            "Opponent's cooldowns"
+          ],
+          "duration": "1-2 turns of information",
+          "examples": ["Character Analysis: Foresight", "Character Analysis: Mind Read"],
+          "synergy": "Essential for prediction-based strategies"
+        },
+        
+        "[Forecast]": {
+          "keyword_id": "KW-UTL-004",
+          "description": "Make prediction about opponent's next action",
+          "prediction_types": [
+            "Predict glyph category (offensive/defensive/utility)",
+            "Predict specific glyph",
+            "Predict target choice"
+          ],
+          "correct_prediction_rewards": [
+            "Refund KP cost",
+            "Free glyph activation",
+            "Bonus damage/healing",
+            "Gain Insight resource"
+          ],
+          "incorrect_penalty": "Lose 2-5 Insight resource",
+          "examples": ["Character Analysis: Predict Strike", "Character Analysis: Read Intent"],
+          "skill_based": "High-risk, high-reward mechanic"
+        },
+        
+        "[Convert]": {
+          "keyword_id": "KW-UTL-005",
+          "description": "Convert one resource type to another",
+          "conversion_rates": "Specified per glyph (typically 2:1 or 3:1 ratio)",
+          "cooldown": "Usually 3-5 turns to prevent spam",
+          "examples": [
+            "Tantra: Energy Conversion (Prana → KP)",
+            "Invocation: Grace Infusion (Sanctity → Grace)",
+            "Universal Wildcard (any resource → any resource)"
+          ],
+          "efficiency_modifiers": [
+            "Venus Tier 2+: +10% conversion rate",
+            "2nd House: +15% conversion rate"
+          ]
+        },
+        
+        "[Cleanse]": {
+          "keyword_id": "KW-UTL-006",
+          "description": "Remove negative status effects",
+          "removes": "1 debuff per activation (player choice which one)",
+          "upgraded_cleanse": "Some glyphs remove all debuffs (mass cleanse)",
+          "cannot_remove": "[Permanent] or [Sealed] effects",
+          "examples": ["Therapeutic: Purify", "Invocation: Divine Cleansing"],
+          "strategic": "Save for critical debuffs like [Silence] or heal block"
+        },
+        
+        "[Dispel]": {
+          "keyword_id": "KW-UTL-007",
+          "description": "Remove positive buffs from opponent (offensive cleanse)",
+          "removes": "1 buff per activation",
+          "priority_targets": "[Bless], [Shield], [Sanctify], [Amplify]",
+          "rare": "Less common than [Cleanse], more offensive-oriented",
+          "examples": ["Character Analysis: Nullify", "Singularity: Entropy"],
+          "counterplay": "Reapply buffs after dispel"
+        }
+      },
+      
+      "4.2.4_SPECIAL_KEYWORDS": {
+        "category": "unique_mechanics",
+        
+        "[Collapse]": {
+          "keyword_id": "KW-SPC-001",
+          "description": "Singularity engine instant-win condition mechanic",
+          "trigger": "When specific pattern conditions met + Coherence at cap",
+          "effect": "Instant round victory (opponent HP reduced to 0)",
+          "conditions": [
+            "Coherence at 90/90",
+            "Pattern detected for 5+ consecutive turns",
+            "Opponent has predictable behavior"
+          ],
+          "counterplay": "Randomize actions, break patterns, deny Coherence generation",
+          "rare": "Extremely difficult to achieve, game-ending",
+          "examples": ["Singularity: Ultimate Collapse", "Singularity: Event Horizon"]
+        },
+        
+        "[Checkmate]": {
+          "keyword_id": "KW-SPC-002",
+          "description": "Character Analysis instant-win condition",
+          "trigger": "Predict opponent's next 3 actions correctly in a row",
+          "effect": "Instant round victory",
+          "difficulty": "Very high, requires perfect predictions",
+          "counterplay": "Mix up strategy, avoid predictable patterns",
+          "examples": ["Character Analysis: Checkmate", "Character Analysis: Prophet of Certainty"],
+          "achievement": "Rare, skilled-player mechanic"
+        },
+        
+        "[Anchor]": {
+          "keyword_id": "KW-SPC-003",
+          "description": "Foundational keyword preventing stat/resource changes",
+          "duration": "2-4 turns",
+          "effect": "Target's resources and stats cannot be stolen, denied, or reduced",
+          "protection": [
+            "Immune to resource steal",
+            "Immune to KP denial",
+            "Stats cannot be debuffed"
+          ],
+          "examples": ["Foundational: Immovable", "Foundational: Grounding"],
+          "strategic": "Use before opponent's resource disruption turn"
+        },
+        
+        "[Reaction]": {
+          "keyword_id": "KW-SPC-004",
+          "description": "Glyphs that activate during opponent's turn",
+          "activation": "Automatic when trigger condition met",
+          "types": [
+            "When damaged → Retaliate",
+            "When opponent casts specific glyph type → Counter",
+            "When HP threshold crossed → Auto-activate"
+          ],
+          "resource_cost": "Deducted immediately when trigger occurs",
+          "cooldown": "Applied after reaction triggers",
+          "examples": ["Foundational: Retaliate", "Consciousness: Predictive Counter"],
+          "note": "Player must have resources available for reaction to trigger"
+        },
+        
+        "[Neural_State]": {
+          "keyword_id": "KW-SPC-005",
+          "description": "Consciousness engine state transition keyword",
+          "states": ["Alpha", "Beta", "Gamma", "Delta", "Theta"],
+          "effect": "Each state grants different bonuses and restrictions",
+          "state_benefits": {
+            "Alpha": "+3 Bandwidth/turn, -2 Bandwidth costs",
+            "Beta": "+5 Bandwidth/turn, offensive glyphs cost -3 Bandwidth",
+            "Gamma": "+8 Bandwidth/turn, glyphs activate twice (second at 50% potency)",
+            "Delta": "+2 Bandwidth/turn, 50% damage reduction, cannot attack",
+            "Theta": "0 Bandwidth, complete immunity, cannot act"
+          },
+          "transition_cost": "10 Bandwidth per state tier increase",
+          "examples": ["Enter Alpha State", "Escalate to Gamma"],
+          "strategic": "Choose state based on situation (offense vs defense)"
+        },
+        
+        "[Grace_Scaling]": {
+          "keyword_id": "KW-SPC-006",
+          "description": "Effect scales with accumulated Grace Points",
+          "formula": "effect_potency = base_effect * (1 + grace_points * 0.01)",
+          "applies_to": "Invocation glyphs primarily",
+          "threshold_bonuses": [
+            "Grace 20+: +10% all effects",
+            "Grace 40+: +20% all effects, +10% damage",
+            "Grace 60+: +30% all effects",
+            "Grace 100: Free glyph + 50% potency"
+          ],
+          "examples": ["All Invocation healing and damage glyphs"],
+          "strategic": "Accumulate Grace for late-game power spike"
+        }
+      }
+    },
+    
+    "4.3_KEYWORD_INTERACTIONS": {
+      "description": "How keywords interact with each other",
+      
+      "4.3.1_buff_debuff_interactions": {
+        "rule_id": "R-4.3.1",
+        "description": "Priority rules when buffs and debuffs conflict",
+        "priority_rule": "CANNOT beats CAN",
+        "examples": [
+          {
+            "scenario": "[Bless] + [Curse] applied simultaneously",
+            "resolution": "Both exist, [Bless] +20% healing, [Curse] -50% healing → Net -30% healing",
+            "calculation": "1.0 * 1.2 * 0.5 = 0.6 (40% reduction overall)"
+          },
+          {
+            "scenario": "[Immunity] + [Exposed]",
+            "resolution": "[Immunity] blocks [Exposed] from being applied",
+            "priority": "[Immunity] prevents all debuffs"
+          },
+          {
+            "scenario": "[Heal] + heal block",
+            "resolution": "Heal block wins, healing = 0",
+            "priority": "CANNOT heal beats CAN heal"
+          }
+        ]
+      },
+      
+      "4.3.2_damage_shield_interaction": {
+        "rule_id": "R-4.3.2",
+        "description": "How damage interacts with shields",
+        "sequence": "Damage → [Shield] absorption → Remaining damage to HP",
+        "examples": [
+          {
+            "scenario": "50 damage, 30 [Shield]",
+            "resolution": "[Shield] depleted, 20 damage to HP"
+          },
+          {
+            "scenario": "30 damage, 50 [Shield]",
+            "resolution": "[Shield] reduced to 20, 0 damage to HP"
+          },
+          {
+            "scenario": "Multiple [Shield]s (20 + 30 = 50 total)",
+            "resolution": "Shields stack additively, 50 total shield value"
+          }
+        ],
+        "true_damage_interaction": "True damage (from [Burn], certain ultimates) bypasses [Shield] entirely"
+      },
+      
+      "4.3.3_status_cleanse_interaction": {
+        "rule_id": "R-4.3.3",
+        "description": "How [Cleanse] and [Dispel] interact with statuses",
+        "cleanse_priority": [
+          "[Silence] (highest priority - restores ability to act)",
+          "Heal block (restores healing)",
+          "[Curse] (improves healing received)",
+          "[Burn] (removes damage-over-time)",
+          "[Exposed] (reduces incoming damage)"
+        ],
+        "player_choice": "Player chooses which effect to cleanse if multiple present",
+        "cannot_cleanse": "[Permanent] or [Sealed] effects (rare)",
+        "dispel_vs_cleanse": "[Dispel] removes opponent buffs, [Cleanse] removes ally debuffs"
+      },
+      
+      "4.3.4_keyword_synergy_matrix": {
+        "rule_id": "R-4.3.4",
+        "description": "Powerful keyword combinations and synergies",
+        "synergies": [
+          {
+            "combo": "[Burn] + [Detonate]",
+            "effect": "Stack [Burn] then [Detonate] for massive burst damage",
+            "optimal_stacks": "5 [Burn] stacks = 50 extra damage on [Detonate]"
+          },
+          {
+            "combo": "[Exposed] + [Strike]",
+            "effect": "Apply [Exposed] then use high-damage [Strike] for +50% damage",
+            "example": "40 damage [Strike] → 60 damage on [Exposed] target"
+          },
+          {
+            "combo": "[Amplify] + [Heal]",
+            "effect": "Stack [Amplify] then cast massive heal",
+            "example": "3 [Amplify] stacks + 50 heal = 125 HP restored"
+          },
+          {
+            "combo": "[Reveal] + [Forecast]",
+            "effect": "[Reveal] opponent's next glyph, then [Forecast] for guaranteed correct prediction",
+            "bonus": "Free glyph activation from correct prediction"
+          },
+          {
+            "combo": "[Shield] + [Sanctify]",
+            "effect": "Shield absorbs initial damage, [Sanctify] reduces damage to shield → Extended shield duration",
+            "defensive_powerhouse": "Extremely durable combination"
+          },
+          {
+            "combo": "[Bless] + [Grace_Scaling]",
+            "effect": "[Bless] generates Grace, Grace amplifies next Invocation glyphs",
+            "snowball": "Creates escalating power loop"
+          }
+        ]
+      }
+    },
+    
+    "4.4_CHAIN_EFFECTS_AND_TRIGGERS": {
+      "description": "How glyphs trigger additional effects",
+      
+      "4.4.1_synergy_triggers": {
+        "rule_id": "R-4.4.1",
+        "description": "When one glyph triggers bonuses for another",
+        "trigger_types": [
+          {
+            "type": "same_engine_bonus",
+            "description": "Using multiple glyphs from same engine in sequence",
+            "example": "3 Tantra glyphs in a row → 4th Tantra glyph +20% damage",
+            "engines": "All engines have some form of combo bonus"
+          },
+          {
+            "type": "keyword_trigger",
+            "description": "Specific keyword combinations trigger bonuses",
+            "example": "[Burn] active → Next Tantra [Strike] deals +15 damage",
+            "conditional": "Must have status/state active"
+          },
+          {
+            "type": "prediction_trigger",
+            "description": "Character Analysis correct prediction triggers bonuses",
+            "bonuses": [
+              "Next glyph costs -1 KP",
+              "Gain +5 Insight",
+              "Free activation of another glyph"
+            ]
+          },
+          {
+            "type": "threshold_trigger",
+            "description": "Reaching resource/HP threshold triggers effect",
+            "examples": [
+              "HP below 25% → Therapeutic glyphs +30% healing",
+              "Grace reaches 100 → Next Invocation free",
+              "Coherence at 90 → [Collapse] available"
+            ]
+          }
+        ]
+      },
+      
+      "4.4.2_reaction_chains": {
+        "rule_id": "R-4.4.2",
+        "description": "How [Reaction] glyphs create action chains",
+        "sequence": [
+          "Player A attacks with [Strike]",
+          "Player B's [Counter] glyph triggers automatically",
+          "[Counter] deals retaliatory damage back to Player A",
+          "Player A's [Reaction] to taking damage triggers (if they have one)",
+          "Chain continues until no more reactions trigger"
+        ],
+        "max_chain_length": 3,
+        "reason": "Prevents infinite loops",
+        "validation": "reaction_chain_depth <= 3"
+      },
+      
+      "4.4.3_combo_tracking": {
+        "rule_id": "R-4.4.3",
+        "description": "System tracks glyph usage patterns for combo bonuses",
+        "tracked_patterns": [
+          "Same engine used consecutively (2, 3, 4+ in a row)",
+          "Alternating engines (offensive → defensive → offensive)",
+          "Keyword sequences ([Burn] → [Detonate], [Shield] → [Counter])"
+        ],
+        "combo_rewards": [
+          "+5-20% effect potency",
+          "Resource refunds",
+          "Cooldown reductions",
+          "Free activations"
+        ],
+        "combo_break": "Using different pattern breaks combo counter",
+        "UI_indicator": "Combo counter displayed on screen (e.g., '3-Hit Combo!')"
+      }
+    }
+  },
+  
+  "VALIDATION_FRAMEWORK": {
+    "description": "How AI validates glyph and keyword actions",
+    "validation_process": [
+      {
+        "step": 1,
+        "action": "Player attempts glyph activation",
+        "validation": "Check activation requirements (R-4.1.1): resources, cooldown, targeting, silenced"
+      },
+      {
+        "step": 2,
+        "action": "System validates targeting",
+        "validation": "Check targeting type matches glyph requirements (R-4.1.2)"
+      },
+      {
+        "step": 3,
+        "action": "Execute activation sequence",
+        "validation": "Follow 7-step sequence (R-4.1.3): declaration → cost → effect → synergies → counters → cooldown → state"
+      },
+      {
+        "step": 4,
+        "action": "Apply keywords in correct order",
+        "validation": "Resolve keywords per definitions (4.2.1-4.2.4), check interactions (4.3.1-4.3.4)"
+      },
+      {
+        "step": 5,
+        "action": "Trigger chain effects and combos",
+        "validation": "Check synergy triggers (R-4.4.1), reaction chains (R-4.4.2), combo tracking (R-4.4.3)"
+      },
+      {
+        "step": 6,
+        "action": "Update all game state",
+        "validation": "Ensure HP, resources, status effects, cooldowns all within valid ranges"
+      }
+    ],
+    "error_messages": {
+      "insufficient_resources": "Not enough {resource_type}! Need {required}, have {current}",
+      "on_cooldown": "Glyph on cooldown! {remaining} turns remaining",
+      "invalid_target": "Cannot target {target} with this glyph",
+      "silenced": "You are Silenced and cannot activate glyphs!",
+      "state_requirement_not_met": "Must be in {required_state} to use this glyph"
+    }
+  },
+  
+  "NOTES": {
+    "this_file_covers": "Layer 4 (Glyph Activation & Keywords) - Complete glyph and keyword system",
+    "keyword_count": "30+ unique keywords across 4 categories (Offensive, Defensive, Utility, Special)",
+    "interaction_rules": "Comprehensive keyword interaction matrix and priority system",
+    "next_files": [
+      "RULES_ENGINE_LAYER5-9.json (Layers 5-9: Jyotish, Progression, AI, Edge Cases, Special)"
+    ],
+    "total_rules_in_this_file": "~40 glyph rules + 30+ keyword definitions",
+    "ai_parseable": true,
+    "human_readable": true,
+    "version": "1.0.0 - Glyph & Keyword System Complete"
+  }
+}

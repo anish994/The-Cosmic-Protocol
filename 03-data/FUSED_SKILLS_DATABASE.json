@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "totalFusions": 1,
+  "baseSkills": 1037,
+  "fusions": [
+    {
+      "id": "FUSED_SKILL_TANTRA_001_SKILL_INVOCATION_DEMON_DEM_007",
+      "name": "Hybrid Resonant/Amon",
+      "ingredients": [
+        "SKILL_TANTRA_001",
+        "SKILL_INVOCATION_DEMON_DEM_007"
+      ],
+      "engines": [
+        "Tantra",
+        "Invocation"
+      ],
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "gnosis": 60,
+        "kp": 3,
+        "corruption": 5,
+        "mana": 6
+      },
+      "cooldown": 8,
+      "effect": "[HYBRID] Blends effects: ** Consume all *types* of Resonance on a target. For each unique Resonance type consumed (e.g., [Dec... + Draw 2 cards. Target opponent discards 2 cards. Deal 2 damage to any target....",
+      "keywords": [
+        "Decay",
+        "Stasis",
+        "Discord",
+        "Prophecy",
+        "Synergized"
+      ],
+      "themes": [
+        "dot",
+        "offense",
+        "demonic",
+        "anarchy"
+      ],
+      "powerScore": 59,
+      "synergyScore": 42.25,
+      "synergyBreakdown": {
+        "engine": 85,
+        "keywords": 10,
+        "themes": 15,
+        "tier": 20,
+        "total": 42.25
+      },
+      "isFused": true,
+      "fusionDepth": 1,
+      "fusionIngredients": [
+        "SKILL_TANTRA_001",
+        "SKILL_INVOCATION_DEMON_DEM_007"
+      ],
+      "source": "Fusion Algorithm v1.0"
+    }
+  ],
+  "metadata": {
+    "generated": "2025-10-25T16:42:28.200Z",
+    "algorithm": "Fusion Core v1.0"
+  }
+}

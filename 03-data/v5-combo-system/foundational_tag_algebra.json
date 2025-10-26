@@ -1,0 +1,372 @@
+{
+  "engine": "Foundational",
+  "version": "5.0_TAG_ALGEBRA",
+  "total_combo_rules": 28,
+  "rule_type": "automatic_detection",
+  "description": "These rules auto-activate when tag conditions are met in player's chart",
+
+  "TIER_1_BASIC_SYNERGIES": {
+    "description": "Simple 2-tag combinations that activate automatically",
+    
+    "structure_synergy": {
+      "tags_required": ["structure", "structure"],
+      "threshold": 2,
+      "tier": 1,
+      "combo_name": "Foundation Network",
+      "effect": {
+        "description": "+30% to all structure bonuses, structures link zones",
+        "mechanical": {
+          "bonus_multiplier": 1.3,
+          "zone_linking": true,
+          "range_extension": 1
+        }
+      },
+      "scaling": {
+        "type": "linear",
+        "formula": "30% + (10% × additional_structures)",
+        "max_bonus": "80% at 6 structures"
+      },
+      "ui_hint": "Place multiple structures for exponential zone control!",
+      "discovered_by": "Tutorial"
+    },
+
+    "support_chain": {
+      "tags_required": ["support", "support"],
+      "threshold": 2,
+      "tier": 1,
+      "combo_name": "Amplified Support",
+      "effect": {
+        "description": "+40% support effect potency, support effects chain to adjacent allies",
+        "mechanical": {
+          "potency_bonus": 1.4,
+          "chain_range": 1,
+          "chain_efficiency": 0.5
+        }
+      },
+      "scaling": {
+        "type": "diminishing",
+        "formula": "40% + (15% × log(additional_supports))",
+        "max_bonus": "85% at 5 supports"
+      },
+      "ui_hint": "Support skills amplify each other - stack them for team-wide dominance!",
+      "discovered_by": "Tutorial"
+    },
+
+    "shield_fortress": {
+      "tags_required": ["shield", "shield"],
+      "threshold": 3,
+      "tier": 1,
+      "combo_name": "Layered Defense",
+      "effect": {
+        "description": "Shields stack additively, +25% shield strength, shields regenerate 5 per turn",
+        "mechanical": {
+          "stacking_type": "additive",
+          "strength_bonus": 1.25,
+          "regeneration": 5
+        }
+      },
+      "scaling": {
+        "type": "linear",
+        "regen_formula": "5 + (2 × shield_skills)"
+      },
+      "ui_hint": "Multiple shield skills create impenetrable defense!",
+      "discovered_by": "Tutorial"
+    },
+
+    "resource_engine": {
+      "tags_required": ["generation", "economy"],
+      "threshold": 2,
+      "tier": 1,
+      "combo_name": "Resource Multiplier",
+      "effect": {
+        "description": "+50% resource generation, can exceed normal caps by 20%",
+        "mechanical": {
+          "generation_multiplier": 1.5,
+          "cap_extension": 0.2
+        }
+      },
+      "scaling": {
+        "type": "exponential",
+        "formula": "1.5 ^ (economy_skills)"
+      },
+      "ui_hint": "Economy skills compound - the more you have, the faster you scale!",
+      "discovered_by": "Tutorial"
+    },
+
+    "tempo_control": {
+      "tags_required": ["refresh", "cooldown_manipulation"],
+      "threshold": 2,
+      "tier": 1,
+      "combo_name": "Temporal Advantage",
+      "effect": {
+        "description": "All cooldowns tick down 50% faster, refresh effects +1 turn stronger",
+        "mechanical": {
+          "cooldown_speed": 1.5,
+          "refresh_bonus": 1
+        }
+      },
+      "scaling": {
+        "type": "linear",
+        "formula": "50% + (15% × refresh_skills)"
+      },
+      "ui_hint": "Control the pace of battle with cooldown mastery!",
+      "discovered_by": "Tutorial"
+    }
+  },
+
+  "TIER_2_ADVANCED_COMBINATIONS": {
+    "description": "3+ tag combos that create powerful synergies",
+
+    "architect_triad": {
+      "tags_required": ["structure", "zone", "persistent"],
+      "threshold": 3,
+      "tier": 2,
+      "combo_name": "Architect's Dominion",
+      "effect": {
+        "description": "Structures become permanent, create 5×5 zones, grant +10 Bandwidth/turn",
+        "mechanical": {
+          "permanent_structures": true,
+          "zone_size": 5,
+          "bandwidth_generation": 10
+        }
+      },
+      "requirements": {
+        "min_structures": 3,
+        "house_placement": "At least 1 structure in House 4 or House 10"
+      },
+      "ui_hint": "The ultimate structure build - create an unbreakable fortress!",
+      "discovered_by": "Intermediate players",
+      "power_rating": 8
+    },
+
+    "support_matrix": {
+      "tags_required": ["support", "network", "amplification"],
+      "threshold": 3,
+      "tier": 2,
+      "combo_name": "Infinite Support Loop",
+      "effect": {
+        "description": "Support effects create feedback loop - each support amplifies all others by 25%",
+        "mechanical": {
+          "loop_multiplier": 1.25,
+          "affects": "all_allies",
+          "recursive": true
+        }
+      },
+      "requirements": {
+        "min_support_skills": 4,
+        "network_active": true
+      },
+      "ui_hint": "Creates exponential team buffs - breaks scaling limits!",
+      "discovered_by": "Advanced players",
+      "power_rating": 9
+    },
+
+    "economic_singularity": {
+      "tags_required": ["generation", "multiplication", "conversion"],
+      "threshold": 3,
+      "tier": 2,
+      "combo_name": "Infinite Resource Machine",
+      "effect": {
+        "description": "Resource generation exponential, can convert between any resource types freely",
+        "mechanical": {
+          "generation_type": "exponential",
+          "base_multiplier": 2,
+          "free_conversion": true,
+          "no_caps": true
+        }
+      },
+      "requirements": {
+        "min_economy_skills": 5,
+        "bandwidth_threshold": 80
+      },
+      "ui_hint": "Ultimate greed build - infinite scaling potential!",
+      "discovered_by": "Expert players",
+      "power_rating": 10,
+      "warning": "Vulnerable to aggressive disruption"
+    },
+
+    "shield_regeneration_loop": {
+      "tags_required": ["shield", "absorption", "generation"],
+      "threshold": 3,
+      "tier": 2,
+      "combo_name": "Perpetual Aegis",
+      "effect": {
+        "description": "Damage absorbed converts to shields, shields generate resources, resources generate more shields",
+        "mechanical": {
+          "damage_to_shield_ratio": 0.75,
+          "shield_to_resource_ratio": 0.1,
+          "loop_efficiency": 0.8
+        }
+      },
+      "requirements": {
+        "min_shield_skills": 4,
+        "absorption_active": true
+      },
+      "ui_hint": "Self-sustaining defense - the more you're attacked, the stronger you become!",
+      "discovered_by": "Advanced players",
+      "power_rating": 8
+    },
+
+    "temporal_recursion": {
+      "tags_required": ["refresh", "duplication", "scaling"],
+      "threshold": 3,
+      "tier": 2,
+      "combo_name": "Infinite Turn Engine",
+      "effect": {
+        "description": "Refresh effects duplicate, duplicated effects reduce cooldowns, creating infinite loop",
+        "mechanical": {
+          "duplication_rate": 0.5,
+          "refresh_multiplier": 2,
+          "loop_cap": 10
+        }
+      },
+      "requirements": {
+        "min_refresh_skills": 4,
+        "zero_cooldown_state": "at least 1 skill"
+      },
+      "ui_hint": "WARNING: Enables near-infinite actions per turn - prepare for complexity!",
+      "discovered_by": "Expert players",
+      "power_rating": 10,
+      "risk": "High APM required, can lock yourself out"
+    }
+  },
+
+  "TIER_3_CROSS_TAG_HYBRIDS": {
+    "description": "Unexpected tag combinations that create unique playstyles",
+
+    "battle_architect": {
+      "tags_required": ["structure", "tactical", "sacrifice"],
+      "threshold": 3,
+      "tier": 3,
+      "combo_name": "Explosive Architecture",
+      "effect": {
+        "description": "Can sacrifice structures to deal (structure bonus × 20) AoE damage",
+        "mechanical": {
+          "sacrifice_damage_formula": "structure_bonus * 20",
+          "aoe_size": 5,
+          "instant_cast": true
+        }
+      },
+      "requirements": {
+        "min_structures": 3,
+        "tactical_skill_active": true
+      },
+      "ui_hint": "Defensive build with offensive nuclear option!",
+      "discovered_by": "Creative players",
+      "power_rating": 7,
+      "skill_expression": "Very High"
+    },
+
+    "resource_vampire": {
+      "tags_required": ["economy", "absorption", "conversion"],
+      "threshold": 3,
+      "tier": 3,
+      "combo_name": "Parasitic Economy",
+      "effect": {
+        "description": "Absorb enemy resources, convert to your resources, generate bonus resources",
+        "mechanical": {
+          "steal_rate": 0.3,
+          "conversion_efficiency": 1.5,
+          "bonus_generation": 0.2
+        }
+      },
+      "requirements": {
+        "absorption_skill": true,
+        "conversion_skill": true
+      },
+      "ui_hint": "Drain enemies while growing stronger - ruthless economy warfare!",
+      "discovered_by": "PvP specialists",
+      "power_rating": 8
+    },
+
+    "reactive_fortress": {
+      "tags_required": ["shield", "reactive", "tempo"],
+      "threshold": 3,
+      "tier": 3,
+      "combo_name": "Counter-Attack Defense",
+      "effect": {
+        "description": "When shields break, auto-cast defensive skill AND reduce all cooldowns by 2",
+        "mechanical": {
+          "trigger": "shield_break",
+          "auto_cast": "defensive_skill",
+          "cooldown_reduction": 2
+        }
+      },
+      "requirements": {
+        "reactive_skill_active": true,
+        "min_shield_skills": 3
+      },
+      "ui_hint": "Turn defense into tempo advantage - punish aggression!",
+      "discovered_by": "Control players",
+      "power_rating": 7
+    },
+
+    "support_sacrifice_engine": {
+      "tags_required": ["support", "sacrifice", "scaling"],
+      "threshold": 3,
+      "tier": 3,
+      "combo_name": "Martyr's Blessing",
+      "effect": {
+        "description": "Sacrifice Ojas to grant exponentially growing support buffs",
+        "mechanical": {
+          "sacrifice_ratio": 0.2,
+          "buff_multiplier": 2,
+          "scaling_per_sacrifice": 1.3
+        }
+      },
+      "requirements": {
+        "sacrifice_skill_active": true,
+        "min_support_skills": 3
+      },
+      "ui_hint": "High-risk high-reward - turn your health into team dominance!",
+      "discovered_by": "Team players",
+      "power_rating": 8,
+      "warning": "Can kill yourself if not careful"
+    }
+  },
+
+  "ANTI_SYNERGIES": {
+    "description": "Tag combinations that conflict or reduce effectiveness",
+
+    "structure_tempo_conflict": {
+      "tags_involved": ["structure", "refresh", "tempo"],
+      "tier": 1,
+      "conflict_name": "Build vs Speed Paradox",
+      "effect": {
+        "description": "Structure builds are slow, tempo builds need speed - mixing reduces both effectiveness",
+        "mechanical": {
+          "structure_penalty": 0.7,
+          "tempo_penalty": 0.8
+        }
+      },
+      "reason": "Structures need time to set up; tempo needs immediate impact",
+      "solution": "Commit to one strategy or use tactical positioning to separate them",
+      "ui_hint": "This build conflicts with itself - consider choosing a focused strategy"
+    },
+
+    "support_sacrifice_paradox": {
+      "tags_involved": ["support", "sacrifice"],
+      "tier": 1,
+      "conflict_name": "Martyr's Dilemma",
+      "effect": {
+        "description": "Supporting allies while sacrificing yourself creates resource tension",
+        "mechanical": {
+          "efficiency_loss": 0.3
+        }
+      },
+      "reason": "Can't support team if you're dead",
+      "solution": "Balance sacrifice timing or add defensive skills",
+      "ui_hint": "High risk build - add shields or healing to survive your own strategy"
+    }
+  },
+
+  "COMBO_DISCOVERY_METADATA": {
+    "total_possible_2_tag_combos": 45,
+    "documented_2_tag_combos": 5,
+    "total_possible_3_tag_combos": 990,
+    "documented_3_tag_combos": 9,
+    "undiscovered_combos": "976+",
+    "community_discovery_potential": "EXTREME",
+    "expected_meta_evolution": "6-12 months for full exploration"
+  }
+}

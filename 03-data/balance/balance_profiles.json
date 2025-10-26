@@ -1,0 +1,12 @@
+{
+  "cooldownMin": {
+    "[Silence]": 3,
+    "[Banish]": 4,
+    "[Stasis]": 2
+  },
+  "kpFloor": {
+    "[Silence]": 10,
+    "[Banish]": 12,
+    "[Stasis]": 8
+  }
+}

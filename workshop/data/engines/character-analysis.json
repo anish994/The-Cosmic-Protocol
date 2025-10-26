@@ -1,0 +1,65 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "character_analysis",
+  "_description": "Meta-Knowledge Engine - Understanding Through Observation",
+  "_source": "Character Analysis v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_CHAR_001",
+      "name": "Analyze Weakness",
+      "tier": 0,
+      "cost": {"kp": 1, "insight": 15},
+      "cooldown": 0,
+      "keywords": ["Debuff", "Insight"],
+      "description": "Target enemy takes +20% damage for 2 turns",
+      "effect": {"debuff": {"damage_taken": 1.20, "duration": 2}},
+      "jyotish_hooks": {"Mercury_T1+": "+30% damage taken"},
+      "synergy_seeds": [],
+      "ai_priority": 7,
+      "flavor_text": "Know your enemy's flaw."
+    },
+    {
+      "id": "SKILL_CHAR_002",
+      "name": "Read Intent",
+      "tier": 0,
+      "cost": {"kp": 1, "insight": 18},
+      "cooldown": 0,
+      "keywords": ["Reveal", "Counter"],
+      "description": "Reveal enemy's next action; if it's an attack, counter for 35 damage",
+      "effect": {"reveal": "next_action", "counter_damage": 35},
+      "jyotish_hooks": {"Rahu_T1+": "50 counter damage"},
+      "synergy_seeds": [],
+      "ai_priority": 6,
+      "flavor_text": "Predictable."
+    },
+    {
+      "id": "SKILL_CHAR_011",
+      "name": "Exploit Pattern",
+      "tier": 1,
+      "cost": {"kp": 2, "insight": 40},
+      "cooldown": 3,
+      "keywords": ["Mark", "Scaling"],
+      "description": "Mark enemy; each hit against them increases damage by 10% (stacks 5 times)",
+      "effect": {"mark": {"damage_increase_per_hit": 0.10, "max_stacks": 5}},
+      "jyotish_hooks": {"Mercury_T2+": "15% per hit"},
+      "synergy_seeds": ["ACX-CHAR-TAN-01"],
+      "ai_priority": 9,
+      "flavor_text": "I see your patterns."
+    },
+    {
+      "id": "SKILL_CHAR_021",
+      "name": "Total Deconstruction",
+      "tier": 2,
+      "cost": {"kp": 3, "insight": 70},
+      "cooldown": 5,
+      "keywords": ["Debuff", "AoE"],
+      "description": "All enemies lose 30% Defense and Attack for 3 turns",
+      "effect": {"debuff": {"attack": 0.70, "defense": 0.70, "duration": 3, "target": "all_enemies"}},
+      "jyotish_hooks": {"Saturn_T3+": "50% reduction"},
+      "synergy_seeds": ["ACX-CHAR-SING-01"],
+      "ai_priority": 10,
+      "flavor_text": "I see through everything."
+    }
+  ]
+}

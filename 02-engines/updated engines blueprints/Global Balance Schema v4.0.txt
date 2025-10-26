@@ -1,0 +1,832 @@
+# GLOBAL BALANCE SCHEMA v4.0
+## The Rosetta Stone - Master Reference for All 9 Engines
+
+---
+
+## 📋 PURPOSE
+
+This document is the **single source of truth** for balance across all 9 engines. Every stat, cost, keyword, and mechanic references this schema to ensure perfect harmony.
+
+**Usage:** When designing/balancing any skill in any engine, reference the tables below to maintain consistency.
+
+---
+
+## 🎯 CORE BALANCE PHILOSOPHY
+
+**The Three Laws of Balance:**
+1. **Power should scale predictably** - Tier system ensures fair progression
+2. **Every strength has a weakness** - Counterplay always exists
+3. **Timing matters more than raw power** - Jyotish coordination beats brute force
+
+**Design Targets:**
+- **Aggro wins:** Turns 3-5 (fast pressure)
+- **Midrange wins:** Turns 5-7 (balanced power)
+- **Control wins:** Turns 7-10 (reactive dominance)
+- **Ramp wins:** Turns 8-12 (explosive late-game)
+
+---
+
+## 📊 UNIFIED STAT TABLES
+
+### TIER SYSTEM (0-4)
+
+All skills across all 9 engines follow this tier structure:
+
+```
+┌──────────┬──────────────┬───────────────┬──────────────┬──────────────┬──────────┐
+│ TIER     │ DAMAGE       │ HEALING       │ DURATION     │ COST (KP)    │ COOLDOWN │
+├──────────┼──────────────┼───────────────┼──────────────┼──────────────┼──────────┤
+│ 0 Basic  │ 10-30        │ 15-40         │ 1-2 turns    │ 1            │ 0        │
+│ 1 Standard│ 40-80       │ 50-100        │ 2-3 turns    │ 2            │ 0-2      │
+│ 2 Advanced│ 100-150     │ 120-200       │ 3-4 turns    │ 3            │ 2-3      │
+│ 3 Ultimate│ 200-300     │ 250-400       │ 4-5 turns    │ 4            │ 3-5      │
+│ 4 Apocalypse│ 400-600+ │ 500-800+      │ 5+ or ∞      │ 5            │ 5+ or 1/duel│
+└──────────┴──────────────┴───────────────┴──────────────┴──────────────┴──────────┘
+```
+
+### ENGINE RESOURCE COSTS (Secondary Costs)
+
+```
+┌──────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────┐
+│ TIER     │ TIER 0       │ TIER 1       │ TIER 2       │ TIER 3       │ TIER 4   │
+├──────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────┤
+│ Simple   │ 10-20        │ 30-50        │ 60-80        │ 80-100       │ 100-120  │
+│ Conditional│ 15-25      │ 40-60        │ 70-90        │ 90-110       │ 110-130  │
+│ AoE/Multi │ 20-30       │ 50-70        │ 80-100       │ 100-120      │ 120-150  │
+│ Cross-Engine│ 25-35     │ 55-75        │ 85-105       │ 105-125      │ 125-160  │
+│ Reality-Bend│ 30-40     │ 60-80        │ 90-110       │ 110-130      │ 130-180  │
+└──────────┴──────────────┴──────────────┴──────────────┴──────────────┴──────────┘
+```
+
+**Formula:**
+```
+Total Cost = KP Cost + Engine Resource Cost
+Engine Resource = (Tier × 20) + Complexity Modifier
+```
+
+**Complexity Modifiers:**
+- Simple effect (single target, straightforward): +0
+- Conditional effect (requires setup): +10
+- AoE/Multi-target: +20
+- Cross-engine synergy: +15
+- Reality-bending (breaks normal rules): +30
+
+---
+
+## 💰 RESOURCE CONVERSION MATRIX
+
+### Primary Resources (All Engines)
+
+**KP (Knowledge Points):** Universal tactical currency
+- Starting: 3 KP
+- Generation: +1 KP per turn
+- Maximum: 10 KP
+- Purpose: Gating powerful effects
+
+### Engine-Specific Resources
+
+```
+┌─────────────────────┬──────────────┬────────────┬──────────────┬─────────────────┐
+│ ENGINE              │ RESOURCE     │ START      │ GEN/TURN     │ MAXIMUM         │
+├─────────────────────┼──────────────┼────────────┼──────────────┼─────────────────┤
+│ Singularity         │ Threshold    │ 0          │ 5-15/[Charge]│ 150 (breakable)│
+│ Divination          │ Insight      │ 50         │ 15           │ 100             │
+│ Tantra              │ Prana        │ 60         │ 20           │ 100             │
+│ Consciousness       │ Coherence    │ 50         │ 15           │ 100             │
+│ Foundational        │ Foundation   │ 70         │ 25           │ 120             │
+│ Character Analysis  │ Insight      │ 50         │ 15           │ 100             │
+│ Therapeutic         │ Ojas         │ 80         │ 20           │ 100             │
+│ Jyotish             │ Jyoti        │ 50         │ 10 (+bonuses)│ 100             │
+│ Invocation          │ Sanctity/    │ 40/40      │ 15/15        │ 100/100         │
+│                     │ Anarchy      │            │              │                 │
+└─────────────────────┴──────────────┴────────────┴──────────────┴─────────────────┘
+```
+
+### Legacy Resource Mapping (Skill Lists → Schema)
+
+**Singularity Engine:**
+- Ananda (skill list) → **Threshold** (schema)
+- Siddhi (skill list) → **Mastery Levels** (permanent progression, +10% per level)
+- Nirvana (skill list) → **[Transcendent] stacks** (buff system)
+- Gnosis (skill list) → **KP + Threshold** (cost currency)
+
+**Divination Engine:**
+- Darshan → **Insight**
+- Karma → **Karma Points** (permanent tracker)
+- Temporal Threads → **Duration currency** (measured in turns)
+
+**Tantra Engine:**
+- Prana → **Prana** (kept as-is)
+- Kundalini → **Kundalini Level** (0-10 permanent progression)
+- Chakra Balance → **Dual resource** (tracks harmony/imbalance)
+
+**Consciousness Engine:**
+- Coherence → **Coherence** (kept as-is)
+- Bandwidth → **Multi-target capacity** (3-7 max simultaneous effects)
+- States → **Transformation enum** (Dormant/Active/Transcendent)
+
+**All Other Engines:**
+- Use Insight, Ojas, or Foundation as appropriate
+- Secondary currencies map to stacks/counters
+
+---
+
+## 🏷️ CANONICAL KEYWORD LEXICON
+
+### Status Effects (Applied to entities)
+
+```
+┌────────────────┬──────────────────────────────────────────────────────────────┐
+│ KEYWORD        │ DEFINITION                                                   │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Burn]         │ DoT effect; deals X damage/turn for Y turns; stacks increase│
+│                │ damage; Mars +30%; capped at 10 stacks; detonation fuel     │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Decay]        │ Entropy marker; +10% detonation damage per stack; no cap;   │
+│                │ consumed by [Detonate] actions; Jupiter makes AoE           │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Silence]      │ Prevents casting abilities; 1-2 turns max; hard cap: ≤2     │
+│                │ total turns in any 4-turn window; [Cleanse] removes         │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Stasis]       │ Disables actions/increases cooldown; cap 2-5 stacks (engine-│
+│                │ specific); Saturn +duration; [Cleanse] removes 1 stack      │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Banish]       │ Temporarily removes entity/glyph; 1-3 turns; returns with   │
+│                │ summoning sickness (can't act 1 turn); Ketu +effectiveness  │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Transcendent] │ Immune to negative effects; +50% positive effects; duration │
+│                │ 2-5 turns; can stack (+25% per stack); Jupiter extends      │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Seal]         │ Protects next effect from counter/cancel; single-use; can   │
+│                │ stack multiple seals; Divination core mechanic              │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Omen]         │ Tagged draw with conditional bonus; reveals info when drawn;│
+│                │ +30% potency if condition met; Divination core              │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Mark]         │ Debuff stack on enemy; exploited by Character Analysis;     │
+│                │ +20-100% damage per mark; max 10 marks; Mercury -cooldown   │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Shield]       │ Absorbs damage; lasts until depleted or duration ends;      │
+│                │ overflow converts to Insight; Venus +30%; Pushya nakshatra  │
+│                │ regenerates shield per turn                                 │
+└────────────────┴──────────────────────────────────────────────────────────────┘
+```
+
+### Action Keywords (Verbs)
+
+```
+┌────────────────┬──────────────────────────────────────────────────────────────┐
+│ KEYWORD        │ DEFINITION                                                   │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Charge]       │ Increment resource/counter toward threshold; Singularity +5- │
+│                │ 15 Threshold; Tantra +10-30 Prana; can double-charge        │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Threshold]    │ Unlock premium effects at X resource; shows progress; key    │
+│                │ breakpoints: 50, 75, 100, 150; Saturn increases requirement  │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Collapse]     │ Consume threshold to trigger massive effect; AoE if Jupiter; │
+│                │ retain 20% threshold after; Ketu overcharge bonus           │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Invoke]       │ Summon divine entity (Invocation engine); requires Sanctity/ │
+│                │ Anarchy; Moon -1 chant requirement; Venus cleanses on summon │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Chant]        │ Ritual counter increment; breakpoint at 3 (or 2 with Moon);  │
+│                │ unlocks [Invoke] window; Invocation core mechanic           │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Consecrate]   │ Sanctify zone/entity; reduces costs -30%; heals 20/turn;    │
+│                │ lasts 5 turns; Invocation support mechanic                  │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Foretell]     │ Create delayed discounted copy; -30-50% cost; resolves in X │
+│                │ turns; [Seal] compatible; Divination core; Mercury -cost    │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Analyze]      │ Reveal enemy info + apply [Mark]; Character Analysis core;   │
+│                │ Mercury -cooldown; can reveal hand/deck/cooldowns            │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Expose]       │ Amplify vulnerability; next damage +50-200%; Character       │
+│                │ Analysis finisher; works with [Mark] stacks                 │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Field]        │ Create spatial control zone; affects area; Consciousness     │
+│                │ core; Jupiter +radius; duration 3-5 turns                   │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Anchor]       │ Place persistent point; max 3-5 on board; Consciousness     │
+│                │ infrastructure; can be targeted/destroyed                    │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Channel]      │ Create connection between points; transfers effects;         │
+│                │ Consciousness core; Purva Bhadrapada duplicates              │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Support]      │ Boost ally/generate resources; Foundational core; Jupiter   │
+│                │ expands to multiple targets; +10-30 resources               │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Structure]    │ Build persistent entity; 50-200 Ojas; Foundational core;    │
+│                │ provides ongoing benefit; Saturn +duration                   │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Refresh]      │ Restore resource/remove cooldown; Foundational support;      │
+│                │ +20-50 resources or -2 cooldown                             │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Heal]         │ Restore Ojas; Therapeutic core; Venus +30%; overflow →      │
+│                │ Insight; caps per tier                                      │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Cleanse]      │ Remove 1-3 debuffs; Therapeutic core; Venus amplifies;      │
+│                │ cannot infinitely loop (cooldown required)                  │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Purify]       │ Remove all debuffs + grant immunity 1-2 turns; Therapeutic  │
+│                │ premium effect; higher cost than [Cleanse]                  │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Transmute]    │ Convert negative to positive; Therapeutic transformation;    │
+│                │ debuff → buff of equal power; Venus synergy                 │
+├────────────────┼──────────────────────────────────────────────────────────────┤
+│ [Detonate]     │ Consume [Burn]/[Decay] for burst damage; Tantra core;       │
+│                │ +10% per [Decay] stack; Mars +30%; Jupiter AoE; caps 200-400│
+└────────────────┴──────────────────────────────────────────────────────────────┘
+```
+
+### Grammar Operators
+
+```
+┌────────────┬────────────────────────────────────────────────────────────────┐
+│ OPERATOR   │ USAGE                                                          │
+├────────────┼────────────────────────────────────────────────────────────────┤
+│ Apply      │ Add status effect with stacks/duration (e.g., "Apply 3 [Burn]")│
+│ Consume    │ Remove stacks for benefit (e.g., "Consume [Decay] → damage")  │
+│ Detonate   │ Calculate potency from consumed stacks                         │
+│ Bind       │ Attach planetary effect to engine (Jyotish action)             │
+│ Transit    │ Trigger periodic effect (Jyotish timing)                       │
+│ Seal       │ Grant protection to next eligible effect                       │
+│ Chant      │ Increment ritual counter with breakpoints                      │
+│ Charge     │ Increase threshold counters toward collapse                    │
+└────────────┴────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ⚖️ BALANCE CAPS & HARD LIMITS
+
+### Control Effect Caps
+
+```
+┌─────────────┬──────────────────┬─────────────────────────────────────────────┐
+│ EFFECT      │ HARD CAP         │ REASONING                                   │
+├─────────────┼──────────────────┼─────────────────────────────────────────────┤
+│ [Silence]   │ ≤2 turns total   │ Prevents lockout loops; must have           │
+│             │ in 4-turn window │ counterplay windows; [Cleanse] available    │
+├─────────────┼──────────────────┼─────────────────────────────────────────────┤
+│ [Stasis]    │ 2-5 stacks max   │ Engine-specific cap; Saturn can extend      │
+│             │ (varies)         │ duration but not exceed stack cap           │
+├─────────────┼──────────────────┼─────────────────────────────────────────────┤
+│ [Banish]    │ 1-3 turns max    │ Temporary removal only; returns with        │
+│             │                  │ summoning sickness; Ketu extends            │
+├─────────────┼──────────────────┼─────────────────────────────────────────────┤
+│ Turn Theft  │ 2 turns max/duel │ Time manipulation gated; Singularity Tier 4 │
+│             │                  │ only; high cost (100+ Threshold)            │
+└─────────────┴──────────────────┴─────────────────────────────────────────────┘
+```
+
+### Damage & Healing Caps
+
+```
+┌──────────────────┬─────────────┬────────────────────────────────────────────┐
+│ CATEGORY         │ CAP         │ NOTES                                      │
+├──────────────────┼─────────────┼────────────────────────────────────────────┤
+│ Single-Hit Damage│ 300 (normal)│ Tier 3 cap; Tier 4 can exceed (400-600);  │
+│                  │ 600 (ultimate)│ requires setup/conditions                │
+├──────────────────┼─────────────┼────────────────────────────────────────────┤
+│ Detonation Damage│ 200-400     │ [Burn]/[Decay] explosion cap; prevents    │
+│                  │             │ one-shot combos; Mars +30% applies         │
+├──────────────────┼─────────────┼────────────────────────────────────────────┤
+│ DoT per Turn     │ 50 max      │ [Burn] cap per tick; stacks add more ticks │
+│                  │             │ not higher damage/tick                     │
+├──────────────────┼─────────────┼────────────────────────────────────────────┤
+│ Single-Cast Heal │ 400 (normal)│ Tier 3 cap; Tier 4 can exceed (500-800);  │
+│                  │ 800 (ultimate)│ overflow → Insight conversion            │
+├──────────────────┼─────────────┼────────────────────────────────────────────┤
+│ Heal per Turn    │ 100 max     │ Regeneration cap; Venus +30% applies;      │
+│                  │             │ prevents infinite sustain                  │
+└──────────────────┴─────────────┴────────────────────────────────────────────┘
+```
+
+### Resource & Progression Caps
+
+```
+┌─────────────────────┬──────────┬───────────────────────────────────────────┐
+│ RESOURCE            │ CAP      │ EXCEPTIONS                                │
+├─────────────────────┼──────────┼───────────────────────────────────────────┤
+│ KP (Knowledge)      │ 10       │ None; hard cap for gating                 │
+├─────────────────────┼──────────┼───────────────────────────────────────────┤
+│ Engine Resources    │ 100-150  │ Singularity [Threshold] can break cap     │
+│                     │          │ with specific skills; Jupiter removes caps│
+├─────────────────────┼──────────┼───────────────────────────────────────────┤
+│ Stacks ([Mark],     │ 10       │ Soft cap; can exceed but diminishing      │
+│ [Burn], buffs)      │          │ returns after 10                          │
+├─────────────────────┼──────────┼───────────────────────────────────────────┤
+│ Permanent Progression│ 10 levels│ Siddhi, Kundalini, Presence; +10% per    │
+│ (Mastery)           │          │ level = +100% max                         │
+└─────────────────────┴──────────┴───────────────────────────────────────────┘
+```
+
+---
+
+## 🎲 TTK (Time-To-Kill) TARGETS
+
+### Archetype Win Conditions
+
+```
+┌─────────────┬──────────────┬─────────────────────────────────────────────────┐
+│ ARCHETYPE   │ TARGET TTK   │ STRATEGY                                        │
+├─────────────┼──────────────┼─────────────────────────────────────────────────┤
+│ Aggro       │ 3-5 turns    │ Fast pressure; Tantra [Burn], Character         │
+│             │              │ [Debilitate]; Mars Dasha optimal                │
+├─────────────┼──────────────┼─────────────────────────────────────────────────┤
+│ Midrange    │ 5-7 turns    │ Balanced offense/defense; Consciousness [Field],│
+│             │              │ Foundational [Support]; Mercury/Venus Dasha     │
+├─────────────┼──────────────┼─────────────────────────────────────────────────┤
+│ Control     │ 7-10 turns   │ Reactive play; Character [Analyze], Therapeutic │
+│             │              │ [Heal]; Saturn Dasha for grinding               │
+├─────────────┼──────────────┼─────────────────────────────────────────────────┤
+│ Ramp        │ 8-12 turns   │ Explosive late-game; Singularity [Collapse],    │
+│             │              │ Divination [Foretell]; Jupiter Dasha for scaling│
+├─────────────┼──────────────┼─────────────────────────────────────────────────┤
+│ Combo       │ 6-9 turns    │ Setup → execution; Divination [Seal] + cross-   │
+│             │              │ engine synergies; Moon for tempo acceleration   │
+└─────────────┴──────────────┴─────────────────────────────────────────────────┘
+```
+
+### Matchup Matrix (Expected Win Rates)
+
+```
+                 Aggro  Midrange  Control  Ramp  Combo
+Aggro             50%      60%      35%    70%    55%
+Midrange          40%      50%      55%    45%    50%
+Control           65%      45%      50%    30%    60%
+Ramp              30%      55%      70%    50%    40%
+Combo             45%      50%      40%    60%    50%
+```
+
+**Balance Target:** No matchup should exceed 70% win rate (hard counter limit)
+
+---
+
+## 🪐 JYOTISH INTEGRATION FRAMEWORK
+
+### Planetary Modifiers (Applied to ALL Engines)
+
+```
+┌──────────┬──────────────┬────────────────────────────────────────────────────┐
+│ PLANET   │ PRIMARY      │ EFFECT ON ENGINES                                  │
+│          │ DOMAIN       │                                                    │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Sun      │ Authority    │ +25% damage; +leadership effects; Invocation angel │
+│          │              │ summons more effective; 10th House synergy         │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Moon     │ Intuition    │ Chant breakpoint -1 (3→2); +Insight generation;   │
+│          │              │ emotional effects amplified; 4th House synergy     │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Mars     │ Aggression   │ [Burn] +30%; [Mark] +damage; aggro Tier 1-2 skills│
+│          │              │ cost -20%; 6th House synergy (enemies)             │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Mercury  │ Speed        │ All cooldowns -1; [Analyze] -cost; +1 action/turn;│
+│          │              │ cross-engine abilities -30% cost; 3rd House synergy│
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Jupiter  │ Expansion    │ All single-target → 3×3 AoE; [Support] affects all│
+│          │              │ allies; resource caps removed; 9th House synergy   │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Venus    │ Harmony      │ [Heal] +30%; [Cleanse] +1 debuff removed; overflow│
+│          │              │ → permanent +5% max Ojas; 7th House synergy        │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Saturn   │ Time         │ All durations +2 turns; [Stasis] +1 stack cap;    │
+│          │              │ Threshold rewards +50%; 8th House synergy (death)  │
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Rahu     │ Chaos        │ +variance on all RNG; obsession bonuses (choose 1 │
+│          │              │ stat: +100%); [Collapse] overcharge bonus; eclipse│
+├──────────┼──────────────┼────────────────────────────────────────────────────┤
+│ Ketu     │ Liberation   │ [Void]/[Banish] +effectiveness; spiritual damage  │
+│          │              │ ignores defenses; +Darshan generation; 12th House │
+└──────────┴──────────────┴────────────────────────────────────────────────────┘
+```
+
+### House Effects (Key Houses Only)
+
+```
+┌────────┬─────────────────┬─────────────────────────────────────────────────┐
+│ HOUSE  │ DOMAIN          │ EFFECT AT LEVEL 10                              │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 1st    │ Self/Identity   │ Possession duration doubled; retain divine      │
+│        │                 │ powers after entity leaves                      │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 4th    │ Foundation      │ [Structure] durability +500 Ojas; cannot be     │
+│        │                 │ destroyed/dismissed                             │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 6th    │ Enemies         │ [Mark]/[Debilitate] duration +3 turns; enemies  │
+│        │                 │ take +100% exploitation damage                  │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 8th    │ Transformation  │ Ultimate abilities cost -1 KP; [Collapse] cost  │
+│        │                 │ -20 Threshold; instant death threshold 75%      │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 9th    │ Fortune         │ [Seal] auto-applies to critical draws; RNG      │
+│        │                 │ always favorable; ignore prerequisites          │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 10th   │ Authority       │ Rewrite 1 game rule/turn; command all entities; │
+│        │                 │ +300% all effects                               │
+├────────┼─────────────────┼─────────────────────────────────────────────────┤
+│ 12th   │ Liberation      │ [Apocalypse] can rewrite ANY rule; transcend    │
+│        │                 │ pantheon limits; moksha win condition available │
+└────────┴─────────────────┴─────────────────────────────────────────────────┘
+```
+
+### Nakshatra Signatures (Select Examples)
+
+```
+┌─────────────────────┬──────────────────────────────────────────────────────┐
+│ NAKSHATRA           │ SIGNATURE EFFECT                                     │
+├─────────────────────┼──────────────────────────────────────────────────────┤
+│ Krittika (Cutter)   │ All entity attacks are critical; divine damage      │
+│                     │ ignores all defenses                                 │
+├─────────────────────┼──────────────────────────────────────────────────────┤
+│ Pushya (Nourisher)  │ [Shield] regenerates 20/turn; allies gain [Shield]  │
+│                     │ passively                                            │
+├─────────────────────┼──────────────────────────────────────────────────────┤
+│ Purva Bhadrapada    │ [Channel] effects duplicated; all connections       │
+│                     │ (Transcendent) carry double benefits                 │
+├─────────────────────┼──────────────────────────────────────────────────────┤
+│ Uttara Ashadha      │ After turn 15: invincible + 10× damage; [Victory    │
+│                     │ (Victory)           │ Assured] (cannot lose)                              │
+└─────────────────────┴──────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔱 INVOCATION INTEGRATION MAP
+
+### Deity-Engine Connections
+
+```
+┌──────────────────┬───────────┬──────────────────────────────────────────────┐
+│ DEITY            │ PLANET    │ SYNERGY WITH ENGINES                         │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Michael          │ Sun       │ Singularity [Collapse] +authority; [Shield]  │
+│ (Archangel)      │           │ effects +50%; commands obey perfectly        │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Raphael          │ Venus     │ Therapeutic [Heal] +300%; can resurrect;     │
+│ (Archangel)      │           │ allies immortal while manifested             │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Gabriel          │ Moon      │ Divination [Foretell] cost -50%; [Seal]      │
+│ (Archangel)      │           │ auto-applies; perfect information revealed   │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Uriel            │ Jupiter   │ Consciousness [Field] global range; omniscient│
+│ (Archangel)      │           │ insight; copy any 5 abilities from any engine│
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Brahma           │ Jupiter   │ Singularity creation powers; design custom   │
+│ (Trimurti)       │           │ abilities mid-duel; reality is canvas        │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Vishnu           │ Moon      │ Foundational preservation; allies cannot die;│
+│ (Trimurti)       │           │ cosmic balance maintained                    │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Shiva            │ Saturn    │ Tantra destruction; [Detonate] unstoppable;  │
+│ (Trimurti)       │           │ transformation through annihilation          │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Bael (Demon)     │ Rahu      │ Character [Analyze] becomes invisibility;    │
+│                  │           │ untargetable assassinations                  │
+├──────────────────┼───────────┼──────────────────────────────────────────────┤
+│ Paimon (Demon)   │ Mercury   │ Divination command control; enemies obey;    │
+│                  │           │ steal all abilities permanently              │
+└──────────────────┴───────────┴──────────────────────────────────────────────┘
+```
+
+### Ritual Timing Integration
+
+```
+Chant Requirement: 3 (or 2 with Moon Tier 3)
+[Invoke] Window: Opens when chant breakpoint reached
+Presence System: 0-10 per deity (increases with repeated invocation)
+Tier Progression:
+  - Tier 0: Echo (10-20 Sanctity/Anarchy)
+  - Tier 1: Avatar (50-80)
+  - Tier 2: Manifestation (120-180, Presence 5+)
+  - Tier 3: Possession (200+, Presence 8+)
+  - Tier 4: Apocalypse (100 Apocalypse Points + Presence 10)
+```
+
+---
+
+## 🤖 AI DECISION FRAMEWORK INTEGRATION
+
+### Engine-Specific AI Priorities
+
+```
+┌─────────────────────┬──────────────┬──────────────────────────────────────┐
+│ ENGINE              │ AI ARCHETYPE │ DECISION PRIORITY                    │
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Singularity         │ Threshold    │ 1. Build Threshold to 75+            │
+│                     │ Optimizer    │ 2. Protect resources from denial     │
+│                     │              │ 3. Time [Collapse] with Jyotish spike│
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Divination          │ Information  │ 1. [Foretell] key cards early        │
+│                     │ Controller   │ 2. [Seal] critical effects           │
+│                     │              │ 3. Predict opponent win condition    │
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Tantra              │ Burn-        │ 1. Apply [Burn] stacks (8-10 optimal)│
+│                     │ Detonation   │ 2. Add [Decay] markers               │
+│                     │              │ 3. [Detonate] during Mars Dasha      │
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Consciousness       │ Field        │ 1. Establish [Field] control         │
+│                     │ Architect    │ 2. Place 3-5 [Anchor] points         │
+│                     │              │ 3. Create [Channel] networks         │
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Foundational        │ Support      │ 1. Build [Structure] infrastructure  │
+│                     │ Engine       │ 2. [Support] allies with resources   │
+│                     │              │ 3. [Refresh] key cooldowns           │
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Character Analysis  │ Debuff       │ 1. [Analyze] to apply [Mark]         │
+│                     │ Exploiter    │ 2. Stack [Mark] to 8-10              │
+│                     │              │ 3. [Expose] for lethal exploitation  │
+├─────────────────────┼──────────────┼──────────────────────────────────────┤
+│ Therapeutic         │ Survival     │ 1. [Heal] to stabilize (>50% Ojas)   │
+│                     │ Specialist   │ 2. [Cleanse] critical debuffs        │
+│                     │              │ 3. [Shield] to absorb burst damage   │
+└─────────────────────┴──────────────┴──────────────────────────────────────┘
+```
+
+### Threat Assessment Thresholds
+
+```
+Threat Level 0-2:  Safe - Build toward win condition aggressively
+Threat Level 3-5:  Cautious - Balance offense/defense
+Threat Level 6-7:  Defensive - Stabilize, remove threats
+Threat Level 8-9:  Emergency - All resources to survival
+Threat Level 10:   Lethal - Last-ditch measures (Tier 4 abilities)
+```
+
+### Cross-Engine Communication Protocol
+
+```
+When Singularity reaches Threshold 75:
+  → Alert Divination AI: "Prepare [Seal] for [Collapse]"
+  → Alert Consciousness AI: "Create [Field] for protection"
+  → Alert Jyotish AI: "Is Jupiter Dasha active for AoE?"
+
+When Character Analysis stacks [Mark] to 10:
+  → Alert Tantra AI: "Ready [Detonate] for combo"
+  → Alert Foundational AI: "[Support] for resource burst"
+
+When Therapeutic detects lethal threat:
+  → Alert all engines: "PRIORITY: Survival mode"
+  → Singularity: Delay [Collapse], use defensive [Banish]
+  → Consciousness: Emergency [Field] shields
+```
+
+---
+
+## 📐 COST FORMULA CALCULATOR
+
+### Standard Cost Calculation
+
+```python
+def calculate_cost(tier, complexity, is_aoe=False, cross_engine=False, reality_bend=False):
+    """
+    Universal cost calculator for all engines
+    
+    Args:
+        tier: 0-4 (power level)
+        complexity: 'simple', 'conditional', 'aoe', 'cross', 'reality'
+        is_aoe: Boolean (multi-target)
+        cross_engine: Boolean (synergy with other engine)
+        reality_bend: Boolean (breaks normal rules)
+    
+    Returns:
+        dict: {'kp': int, 'engine_resource': int, 'cooldown': int}
+    """
+    
+    # Base KP cost
+    kp_cost = tier
+    
+    # Base engine resource cost
+    base_resource = tier * 20
+    
+    # Complexity modifiers
+    complexity_mod = {
+        'simple': 0,
+        'conditional': 10,
+        'aoe': 20,
+        'cross': 15,
+        'reality': 30
+    }
+    
+    engine_resource = base_resource + complexity_mod.get(complexity, 0)
+    
+    # Additional modifiers
+    if is_aoe:
+        engine_resource += 20
+    if cross_engine:
+        engine_resource += 15
+    if reality_bend:
+        engine_resource += 30
+    
+    # Cooldown (0 for Tier 0, scales with tier)
+    cooldown = max(0, tier - 1) if tier < 3 else tier
+    
+    return {
+        'kp': kp_cost,
+        'engine_resource': engine_resource,
+        'cooldown': cooldown
+    }
+
+# Examples:
+# Tier 1 simple single-target = 2 KP + 40 engine resource, 0-2 CD
+# Tier 2 AoE = 3 KP + 80 engine resource, 2-3 CD
+# Tier 3 reality-bending cross-engine = 4 KP + 125 engine resource, 3-5 CD
+# Tier 4 apocalypse = 5 KP + 150+ engine resource, 5+ CD or 1/duel
+```
+
+---
+
+## 🎭 ARCHITECT'S CODEX SYNERGY PATTERNS
+
+### Synergy Template Structure
+
+```
+ACX-[ENG1]-[ENG2]-[##]: Synergy Name
+Engines: Engine 1 + Engine 2
+Prerequisites: [Keyword1] from Engine 1, [Keyword2] from Engine 2
+Effect: Enhanced interaction description
+Power Level: Tier X equivalent
+Cost Modification: ±X% total cost
+Jyotish Amplification: Which planets enhance this synergy
+Rarity: Common/Uncommon/Rare/Legendary
+```
+
+### Example Synergies (Pattern Reference)
+
+```
+ACX-SING-DIV-01: Inevitable Point
+Engines: Singularity + Divination
+Prerequisites: [Threshold] ≥50, [Foretell] active
+Effect: [Foretell] cards grant +10 Threshold on resolution
+Power Level: Tier 2
+Cost Modification: None
+Jyotish Amplification: Saturn (doubles Threshold gain)
+Rarity: Uncommon
+
+ACX-TAN-THER-02: Integrity Gate
+Engines: Tantra + Therapeutic
+Prerequisites: [Burn] on enemy, [Shield] on self
+Effect: Each [Burn] tick regenerates [Shield] by 50% of damage dealt
+Power Level: Tier 2
+Cost Modification: -20% healing costs
+Jyotish Amplification: Venus (regeneration +30%)
+Rarity: Rare
+
+ACX-CON-SING-01: Event Horizon
+Engines: Consciousness + Singularity
+Prerequisites: [Field] active, [Collapse] triggered
+Effect: [Collapse] converts to [Shield] for all allies in [Field] = 50% damage dealt
+Power Level: Tier 3
+Cost Modification: +15% total cost
+Jyotish Amplification: Jupiter (global range)
+Rarity: Legendary
+```
+
+---
+
+## 📊 BALANCE VALIDATION FORMULAS
+
+### Expected Damage Per Turn (EDPT)
+
+```
+EDPT = (Base Damage × Hit Chance × Crit Multiplier) + (DoT × Duration)
+
+Tier 0: 10-20 EDPT
+Tier 1: 25-45 EDPT
+Tier 2: 55-85 EDPT
+Tier 3: 100-150 EDPT
+Tier 4: 200+ EDPT (burst windows only)
+```
+
+### Resource Efficiency Ratio (RER)
+
+```
+RER = Total Effect Value / Total Cost
+
+Good Value: RER > 1.2
+Balanced: RER = 0.8-1.2
+Overcosted: RER < 0.8
+
+Effect Value = (Damage × 1.0) + (Healing × 0.8) + (Duration × 5) + (Utility × varies)
+Total Cost = (KP × 20) + Engine Resource
+```
+
+### Win Rate Prediction Formula
+
+```
+Win Rate = Base Rate + Matchup Modifier + Skill Modifier + Jyotish Timing Modifier
+
+Base Rate: 50% (mirrors)
+Matchup Modifier: ±10-20% (archetype advantage)
+Skill Modifier: ±5-15% (player expertise)
+Jyotish Timing Modifier: ±5-10% (planetary alignment)
+
+Target: All matchups should be 30-70% win rate (no auto-wins)
+```
+
+---
+
+## 🔗 IMPLEMENTATION HOOKS
+
+### Data Schema References
+
+```json
+{
+  "glyph_id": "string",
+  "name": "string",
+  "engine": "enum[Singularity|Divination|Tantra|Consciousness|Foundational|CharacterAnalysis|Therapeutic|Jyotish|Invocation]",
+  "tier": "int[0-4]",
+  "cost": {
+    "kp": "int[1-5]",
+    "engine_resource": "int[10-180]"
+  },
+  "cooldown": "int[0-5+]",
+  "keywords": ["array of canonical keywords"],
+  "effect": {
+    "damage": "int or null",
+    "healing": "int or null",
+    "duration": "int (turns) or null",
+    "status_apply": ["array of [Keyword]"],
+    "status_consume": ["array of [Keyword]"]
+  },
+  "jyotish_hooks": {
+    "planet_modifiers": {"planet_name": "effect_description"},
+    "house_bonuses": {"house_number": "effect_description"},
+    "nakshatra_synergy": ["nakshatra_name"]
+  },
+  "synergy_seeds": ["array of ACX-XXX-XXX-## codes"],
+  "ai_priority": "int[1-10]",
+  "ai_conditions": ["array of game_state_conditions"]
+}
+```
+
+---
+
+## ✅ VALIDATION CHECKLIST
+
+Before finalizing any skill design, verify:
+
+- [ ] Tier assignment matches power level (use stat tables)
+- [ ] Cost calculated using formula (KP + engine resource)
+- [ ] Cooldown appropriate for tier
+- [ ] Damage/healing within tier caps
+- [ ] Control effects respect hard limits ([Silence] ≤2 turns/4-turn window)
+- [ ] Canonical keywords used (no synonyms)
+- [ ] At least 1 Jyotish hook (planet/house/nakshatra)
+- [ ] At least 1-2 cross-engine synergy seeds identified
+- [ ] AI decision priority assigned (1-10)
+- [ ] Counterplay exists (no unbeatable skills)
+- [ ] TTK contribution calculated (doesn't break archetype targets)
+- [ ] Resource efficiency ratio calculated (RER 0.8-1.2 ideal)
+
+---
+
+## 🎯 QUICK REFERENCE TABLES
+
+### Tier → Stat Conversion (Instant Lookup)
+
+```
+T0: 10-30 dmg, 15-40 heal, 1 KP, 10-30 resource, 0 CD
+T1: 40-80 dmg, 50-100 heal, 2 KP, 30-60 resource, 0-2 CD
+T2: 100-150 dmg, 120-200 heal, 3 KP, 60-100 resource, 2-3 CD
+T3: 200-300 dmg, 250-400 heal, 4 KP, 80-120 resource, 3-5 CD
+T4: 400-600 dmg, 500-800 heal, 5 KP, 100-180 resource, 5+/1x CD
+```
+
+### Planet → Primary Effect (Instant Lookup)
+
+```
+Sun: +25% dmg, authority
+Moon: Chant -1, +Insight
+Mars: [Burn] +30%, aggro
+Mercury: CD -1, +action
+Jupiter: AoE, no caps
+Venus: [Heal] +30%, overflow
+Saturn: Duration +2, rewards
+Rahu: Chaos, obsession
+Ketu: Void, liberation
+```
+
+### Engine → Resource (Instant Lookup)
+
+```
+Singularity: Threshold (0-150)
+Divination: Insight (50-100)
+Tantra: Prana (60-100)
+Consciousness: Coherence (50-100)
+Foundational: Foundation (70-120)
+Character Analysis: Insight (50-100)
+Therapeutic: Ojas (80-100)
+Jyotish: Jyoti (50-100)
+Invocation: Sanctity/Anarchy (40-100 each)
+```
+
+---
+
+**SCHEMA STATUS:** ✅ COMPLETE - READY AS MASTER REFERENCE
+
+**This Global Balance Schema is now the foundation for all Phase 3+ development. All skills across all engines will reference these tables to maintain perfect harmony.** 🌟📊
+
+**Next Phase:** Phase 3 - Trinity Engines (Singularity, Divination, Tantra) using this schema as our Rosetta Stone! 🚀

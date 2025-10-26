@@ -1,0 +1,606 @@
+# Therapeutic Engine — Complete Skills List (v3.1 Expanded)
+## Total Skills: 100 (40 Original + 60 Build-Defining)
+
+---
+
+### **Bioregenerative Medicine (Restoration Path) — 10 Skills**
+
+1. **Glyph: Minor Restoration** (Budget Heal, Gnosis 10)
+    * **Core Function:** [Heal] 8 Ojas, +1% Integrity.
+    * **Evo A (Quick Mend):** 0 cooldown but heals only 6 Ojas.
+    * **Evo B (Integrity Focus):** +3% Integrity instead of +1%.
+
+2. **Glyph: Vital Surge** (Burst Heal, Gnosis 35)
+    * **Core Function:** [Heal] 30 Ojas instantly. If target is below 30% Ojas, heal 45 instead.
+    * **Evo A (Emergency Surge):** Threshold becomes 40% Ojas.
+    * **Evo B (Cascading Surge):** Also [Heal] adjacent ally for 15 Ojas.
+
+3. **Glyph: Regenerative Pulse** (AoE HoT, Gnosis 40)
+    * **Core Function:** Apply HoT to all allies: Restore 4 Ojas per turn for 3 turns.
+    * **Evo A (Extended Pulse):** Duration 4 turns.
+    * **Evo B (Potent Pulse):** 6 Ojas per turn instead of 4.
+
+4. **Glyph: Lifewell Protocol** (HoT Amplification, Gnosis 30)
+    * **Core Function:** For the next 2 turns, all HoT effects you cast have +50% potency.
+    * **Evo A (Deep Lifewell):** Duration 3 turns.
+    * **Evo B (Perfect Lifewell):** HoT effects +100% potency.
+
+5. **Glyph: Overhealing Reservoir** (Overheal Conversion, Gnosis 45)
+    * **Core Function:** For 3 turns, 75% of overhealing converts to temporary Ojas Shield.
+    * **Evo A (Perfect Reservoir):** 100% conversion rate.
+    * **Evo B (Extended Reservoir):** Duration 4 turns.
+
+6. **Glyph: Revitalization Wave** (Mass Heal, Gnosis 50)
+    * **Core Function:** [Heal] all allies for 15 Ojas and grant +2% Integrity.
+    * **Evo A (Tidal Wave):** Heal 25 Ojas instead.
+    * **Evo B (Purifying Wave):** Also [Cleanse] 1 debuff from each ally.
+
+7. **Glyph: Life Transfusion** (Sacrifice, Gnosis 35)
+    * **Core Function:** Sacrifice 15 of your Ojas to [Heal] target ally for 30 Ojas.
+    * **Evo A (Efficient Transfusion):** Sacrifice only 10 Ojas to heal 30.
+    * **Evo B (Double Transfusion):** Heal two allies for 30 each (sacrifice 15 total).
+
+8. **Glyph: Cellular Rewind** (Reset, Gnosis 60)
+    * **Core Function:** Reset target's Ojas to what it was 2 turns ago. Once per duel.
+    * **Evo A (Deep Rewind):** 3 turns ago instead of 2.
+    * **Evo B (Selective Rewind):** Can target ally or enemy.
+
+9. **Glyph: Vitality Echo** (Echo Heal, Gnosis 40)
+    * **Core Function:** For 2 turns, your first [Heal] each turn is automatically repeated at 50% potency.
+    * **Evo A (Perfect Echo):** Repeated heal is at 75% potency.
+    * **Evo B (Sustained Echo):** Duration 3 turns.
+
+10. **Glyph: Phoenix Renewal** (Resurrection, Gnosis 70)
+    * **Core Function:** If an ally Yantra would be destroyed this turn, prevent it and [Heal] it to 30% Ojas instead. Cooldown: 4 turns.
+    * **Evo A (Full Phoenix):** Yantra restored to 50% Ojas.
+    * **Evo B (Cascading Phoenix):** Can save up to 2 Yantras in the same turn.
+
+---
+
+### **Energetic Field Modulation (Prevention Path) — 10 Skills**
+
+11. **Glyph: Barrier Protocol** (Budget Shield, Gnosis 15)
+    * **Core Function:** Grant 10 Shield.
+    * **Evo A (Stacking Ward):** Shield stacks if recast.
+    * **Evo B (Reflective Surface):** 15% damage reflect.
+
+12. **Glyph: Layered Defense** (Multi-Shield, Gnosis 40)
+    * **Core Function:** Grant 3 separate 10-point shields (each must be broken individually).
+    * **Evo A (Fortified Layers):** Each shield is 15 points.
+    * **Evo B (Reactive Layers):** When a layer breaks, [Heal] 5 Ojas.
+
+13. **Glyph: Adaptive Shielding** (Smart Shield, Gnosis 35)
+    * **Core Function:** Grant 20 Shield. Shield gains +5 for each debuff on the target.
+    * **Evo A (Deep Adaptation):** +8 per debuff instead.
+    * **Evo B (Cleansing Adaptation):** When shield breaks, [Cleanse] 1 debuff.
+
+14. **Glyph: Damage Dampener** (Reduction, Gnosis 30)
+    * **Core Function:** For 2 turns, reduce all incoming damage by 25%.
+    * **Evo A (Stone Form):** 40% reduction but only 1 turn.
+    * **Evo B (Extended Dampener):** Duration 3 turns.
+
+15. **Glyph: Ablative Coating** (Decaying Shield, Gnosis 25)
+    * **Core Function:** Grant 30 Shield, but it loses 5 points at the start of each turn.
+    * **Evo A (Hardened Coating):** Loses only 3 points per turn.
+    * **Evo B (Reactive Coating):** When shield fully decays naturally, [Heal] 15 Ojas.
+
+16. **Glyph: Reflective Ward** (Counter Shield, Gnosis 45)
+    * **Core Function:** Grant 15 Shield. Reflect 30% of all absorbed damage back to attacker.
+    * **Evo A (Perfect Reflection):** Reflect 50% instead.
+    * **Evo B (Amplified Ward):** Shield becomes 25 points.
+
+17. **Glyph: Sanctuary Dome** (Zone Shield, Gnosis 50)
+    * **Core Function:** Create a 3x3 zone for 2 turns: All allies inside gain 10 Shield at the start of their turn.
+    * **Evo A (Extended Dome):** Duration 3 turns.
+    * **Evo B (Fortified Dome):** Grant 15 Shield instead of 10.
+
+18. **Glyph: Shield Synthesis** (Shield Fusion, Gnosis 40)
+    * **Core Function:** Merge all active shields on a target into one larger shield (+20% total value).
+    * **Evo A (Perfect Synthesis):** +40% total value.
+    * **Evo B (Cascading Synthesis):** Also grant +3% Integrity.
+
+19. **Glyph: Preemptive Barrier** (Predictive, Gnosis 35)
+    * **Core Function:** At the start of enemy turn, if they would deal damage, automatically grant 15 Shield to the target.
+    * **Evo A (Perfect Timing):** Shield becomes 25 points.
+    * **Evo B (Multi-Barrier):** Can trigger twice per turn.
+
+20. **Glyph: Fortress Protocol** (Ultimate Defense, Gnosis 60)
+    * **Core Function:** Grant 50 Shield and immunity to [Sunder] for 2 turns.
+    * **Evo A (Impenetrable):** Shield becomes 70 points.
+    * **Evo B (Extended Fortress):** Duration 3 turns.
+
+---
+
+### **Healing Protocols (Purification Path) — 10 Skills**
+
+21. **Glyph: Purity Pulse** (Budget Cleanse, Gnosis 20)
+    * **Core Function:** [Cleanse] 1 debuff from self.
+    * **Evo A (Area Cleanse):** Also cleanses adjacent ally.
+    * **Evo B (Preventative Dose):** Grants 1-turn immunity to next debuff.
+
+22. **Glyph: Mass Purification** (AoE Cleanse, Gnosis 45)
+    * **Core Function:** [Cleanse] 1 debuff from all allies.
+    * **Evo A (Deep Purification):** [Cleanse] 2 debuffs instead.
+    * **Evo B (Healing Purification):** Also [Heal] 10 Ojas per debuff removed.
+
+23. **Glyph: Debuff Immunity** (Prevention, Gnosis 50)
+    * **Core Function:** Grant immunity to all [Debuff] effects for 2 turns. Any blocked debuff grants +1% Integrity.
+    * **Evo A (Extended Immunity):** Duration 3 turns.
+    * **Evo B (Offensive Immunity):** Blocked debuffs reflect 10 damage to caster.
+
+24. **Glyph: Purging Light** (Execute Cleanse, Gnosis 40)
+    * **Core Function:** [Cleanse] all debuffs with 1 turn or less remaining duration.
+    * **Evo A (Extended Purge):** [Cleanse] debuffs with 2 turns or less.
+    * **Evo B (Healing Purge):** [Heal] 5 Ojas per debuff removed.
+
+25. **Glyph: Status Lock** (Anti-Debuff, Gnosis 35)
+    * **Core Function:** For 2 turns, the first debuff applied to you is immediately [Cleansed].
+    * **Evo A (Multi-Lock):** Cleanses first 2 debuffs instead.
+    * **Evo B (Perfect Lock):** Duration 3 turns.
+
+26. **Glyph: Dosha Reversal** (Inversion, Gnosis 55)
+    * **Core Function:** Target a negative Dosha. Its effect is inverted into a positive buff for 2 turns.
+    * **Evo A (Sustained Reversal):** Duration 3 turns.
+    * **Evo B (Amplified Reversal):** Positive buff is +50% stronger than original debuff.
+
+27. **Glyph: Cleansing Cascade** (Chain Cleanse, Gnosis 45)
+    * **Core Function:** [Cleanse] 1 debuff from target. If successful, [Cleanse] 1 from an adjacent ally.
+    * **Evo A (Perfect Cascade):** Chains to up to 3 allies total.
+    * **Evo B (Healing Cascade):** Each cleanse also [Heals] 8 Ojas.
+
+28. **Glyph: Purity Aura** (Zone Cleanse, Gnosis 50)
+    * **Core Function:** Create a 3x3 aura for 2 turns: Debuffs cannot be applied to allies inside.
+    * **Evo A (Extended Aura):** Duration 3 turns.
+    * **Evo B (Purging Aura):** On creation, [Cleanse] all debuffs from allies inside.
+
+29. **Glyph: Stabilize** (Emergency, Gnosis 25)
+    * **Core Function:** If target is below 30% Ojas, [Heal] 20 and grant 15 Shield. Once per duel.
+    * **Evo A (Emergency Protocol):** Usable at <40% Ojas.
+    * **Evo B (Defensive Surge):** Also grants +20% damage reduction for 1 turn.
+
+30. **Glyph: Resurrection Rite** (Ultimate Cleanse, Gnosis 70)
+    * **Core Function:** [Cleanse] all debuffs from all allies and grant them immunity to debuffs for 1 turn.
+    * **Evo A (Extended Rite):** Immunity lasts 2 turns.
+    * **Evo B (Healing Rite):** Also [Heal] all allies for 15 Ojas.
+
+---
+
+### **Vitality Weaving (Woven States) — 6 New Sequences**
+
+31. **Woven State: Aegis** (Shield→Shield→Heal)
+    * **Core Function:** +40% Shields, immune to [Sunder] for 3 turns.
+    * **Evo A (Impenetrable):** Duration 4 turns.
+    * **Evo B (Reactive Aegis):** Breaking a shield [Stuns] attacker 1 turn.
+
+32. **Woven State: Renewal** (Heal→Heal→Cleanse)
+    * **Core Function:** Double HoT potency for 3 turns.
+    * **Evo A (Persistent Renewal):** Duration 4 turns.
+    * **Evo B (Cleansing Bloom):** Also [Cleanse] 1 debuff per turn.
+
+33. **Woven State: Symbiosis** (Cleanse→Heal→Shield)
+    * **Core Function:** Healing also applies 50% as Shield for 2 turns.
+    * **Evo A (Full Conversion):** 100% heal→shield conversion.
+    * **Evo B (Aura Symbiosis):** Affects all allies in range.
+
+34. **Woven State: Retribution** (Shield→Cleanse→Shield)
+    * **Core Function:** Shields reflect 25% damage for 3 turns.
+    * **Evo A (Aggressive Defense):** Reflect 40%.
+    * **Evo B (Cleansing Vengeance):** Reflected damage also applies [Vulnerable] to attacker.
+
+35. **Woven State: Tranquility** (Heal→Shield→Cleanse)
+    * **Core Function:** Immune to [Burn]/[Decay] for 3 turns.
+    * **Evo A (Perfect Calm):** Also immune to [Stun].
+    * **Evo B (Serenity Aura):** Affects adjacent allies.
+
+36. **Woven State: Bastion** (Shield→Shield→Shield)
+    * **Core Function:** Triple stacking shields for 2 turns.
+    * **Evo A (Fortress Core):** Stacks up to 5×.
+    * **Evo B (Overloaded Barrier):** Each stack grants +2% Integrity.
+
+---
+
+### **Ojas Integrity Threshold Skills — 4 Skills**
+
+37. **Glyph: Integrity Milestone: 100%** (Passive, Gnosis 40)
+    * **Core Function:** At 100% Integrity, all glyphs cost -1 Prana.
+    * **Evo A (Perfect State):** Cost reduction -2.
+    * **Evo B (Integrity Shield):** Gain permanent 10 Shield while at 100%.
+
+38. **Glyph: Integrity Milestone: 75%+** (Passive, Gnosis 50)
+    * **Core Function:** At 75%+, first [Shield] each turn is doubled.
+    * **Evo A (Sustained Defense):** Threshold lowered to 70%.
+    * **Evo B (Shield Resonance):** Also grants +10% Shield to allies.
+
+39. **Glyph: Integrity Milestone: 50%+** (Passive, Gnosis 55)
+    * **Core Function:** At 50%+, [Cleanse] also [Heals] 5 Ojas.
+    * **Evo A (Restorative Cleanse):** Heal increased to 10.
+    * **Evo B (Cascading Purity):** [Cleanse] 2 debuffs instead of 1.
+
+40. **Glyph: Integrity Overflow** (Conversion, Gnosis 70)
+    * **Core Function:** If Integrity would exceed 100%, convert excess to [Shield] (1% = 5 Shield).
+    * **Evo A (Efficient Overflow):** 1% = 10 Shield.
+    * **Evo B (Cascading Overflow):** Overflow also grants +5 Bandwidth.
+
+---
+
+### **HEALING SPECIALIZATIONS — 15 Skills**
+
+41. **Glyph: Healing Purist** (Build-Defining, Gnosis 45)
+    * **Core Function:** Cannot use [Shield] glyphs. All [Heal] effects +75%. Start duel with +20% max Ojas.
+    * **Evo A (Perfect Purist):** +100% healing instead.
+    * **Evo B (Ascetic Healer):** Also gain +25% Ojas Integrity generation.
+    * **Note:** *Pure healing specialist vs hybrid builds. Vastly different optimization.*
+
+42. **Glyph: Overheal Master** (Scaling, Gnosis 50)
+    * **Core Function:** Overhealing no longer wastes value—converts to permanent max Ojas increase (10 overheal = +1 max Ojas, cap +50).
+    * **Evo A (Perfect Master):** Conversion rate 8:1 instead of 10:1.
+    * **Evo B (Unlimited Master):** No cap on max Ojas increase.
+    * **Note:** *Long-game scaling vs immediate value. Greedy healer build.*
+
+43. **Glyph: Draining Touch** (Lifesteal Heal, Gnosis 40)
+    * **Core Function:** Deal 20 damage to enemy, [Heal] ally for 30. Can target same unit.
+    * **Evo A (Perfect Drain):** Damage 30, Heal 50.
+    * **Evo B (Mass Drain):** Affects 2 enemies and 2 allies.
+    * **Note:** *Offensive healer vs passive support. Completely different playstyle.*
+
+44. **Glyph: Healing Chain** (Chain Reaction, Gnosis 45)
+    * **Core Function:** [Heal] target for 25. Chains to adjacent allies at 50% potency (up to 3 chains).
+    * **Evo A (Perfect Chain):** Chains at 75% potency.
+    * **Evo B (Extended Chain):** Up to 5 chains total.
+    * **Note:** *Position-dependent healing. Rewards tactical placement.*
+
+45. **Glyph: Sacrificial Healer** (Martyr Build, Gnosis 55)
+    * **Core Function:** For 3 turns, lose 10 Ojas per turn but all allies [Heal] 15 per turn.
+    * **Evo A (Perfect Sacrifice):** Allies heal 25 per turn.
+    * **Evo B (Tolerable Sacrifice):** You only lose 7 Ojas per turn.
+    * **Note:** *Self-damage for team gain. Risk/reward specialist.*
+
+46. **Glyph: Burst Heal Protocol** (Spike, Gnosis 50)
+    * **Core Function:** [Heal] target for (current Ojas Integrity × 2). Resets Integrity to 0.
+    * **Evo A (Perfect Burst):** ×3 instead of ×2.
+    * **Evo B (Partial Burst):** Only lose 50% of Integrity.
+    * **Note:** *All-in healing moment vs sustained Integrity management.*
+
+47. **Glyph: Healing Echo Chamber** (Duplication, Gnosis 60)
+    * **Core Function:** For 3 turns, all [Heal] glyphs trigger twice at 60% potency each.
+    * **Evo A (Perfect Echo):** 80% potency each.
+    * **Evo B (Extended Echo):** Duration 4 turns.
+    * **Note:** *Double-casting healer specialist. Combo-focused build.*
+
+48. **Glyph: Proximity Healer** (Zone, Gnosis 45)
+    * **Core Function:** Cannot heal targets more than 2 spaces away. All healing +50% potency.
+    * **Evo A (Perfect Proximity):** +75% potency.
+    * **Evo B (Extended Proximity):** Range 3 spaces.
+    * **Note:** *Positioning restriction for power. Melee healer archetype.*
+
+49. **Glyph: Remote Healer** (Distance, Gnosis 45)
+    * **Core Function:** Cannot heal adjacent targets. Healing +40% potency, range unlimited.
+    * **Evo A (Perfect Remote):** +60% potency.
+    * **Evo B (Efficient Remote):** Cost -2 KP for distant heals.
+    * **Note:** *Opposite of proximity. Backline support specialist.*
+
+50. **Glyph: Healing Amplifier** (Multiplier, Gnosis 55)
+    * **Core Function:** Each consecutive [Heal] on same target gets +15% potency (stacks 5x, resets if target switches).
+    * **Evo A (Perfect Amplifier):** +25% per stack.
+    * **Evo B (Sustained Amplifier):** Stacks up to 8x.
+    * **Note:** *Rewards focus-fire healing vs spreading heals.*
+
+51. **Glyph: Heal-over-Time Master** (DoT Specialist, Gnosis 50)
+    * **Core Function:** Cannot cast instant heals. All HoT effects +100% potency and last +1 turn.
+    * **Evo A (Perfect Master):** +150% potency.
+    * **Evo B (Extended Master):** Last +2 turns instead.
+    * **Note:** *Pure HoT build vs burst healing. Different tempo entirely.*
+
+52. **Glyph: Desperation Heal** (Clutch, Gnosis 40)
+    * **Core Function:** Healing potency increases based on target's missing Ojas (+1% per 1% missing, up to +100%).
+    * **Evo A (Perfect Desperation):** Up to +150% potency.
+    * **Evo B (Safe Desperation):** Bonus starts at 80% missing instead of scaling.
+    * **Note:** *Rewards letting allies get low. High-risk gameplay.*
+
+53. **Glyph: Preventive Healer** (Proactive, Gnosis 45)
+    * **Core Function:** Healing potency decreases based on target's missing Ojas (full health = +50%, low health = +0%).
+    * **Evo A (Perfect Prevention):** Full health bonus +100%.
+    * **Evo B (Extended Prevention):** Bonus applies up to 80% health.
+    * **Note:** *Opposite of desperation. Keep everyone topped off.*
+
+54. **Glyph: Group Therapy** (Mass Heal, Gnosis 60)
+    * **Core Function:** [Heal] all allies for (10 × number of allies). More allies = stronger heals.
+    * **Evo A (Perfect Therapy):** 15 × number instead.
+    * **Evo B (Enhanced Therapy):** Also grant 10 Shield per ally.
+    * **Note:** *Scales with team size. Multiplayer specialist.*
+
+55. **Glyph: Solo Medic** (Lone Wolf, Gnosis 50)
+    * **Core Function:** If you have no allies, healing yourself +150%, immunity to [Stun] and [Silence].
+    * **Evo A (Perfect Solo):** +200% healing.
+    * **Evo B (Survivor):** Also gain +50% max Ojas.
+    * **Note:** *Anti-team build. Solo survival specialist.*
+
+---
+
+### **SHIELDING SPECIALIZATIONS — 15 Skills**
+
+56. **Glyph: Shield Purist** (Build-Defining, Gnosis 45)
+    * **Core Function:** Cannot use [Heal] glyphs. All [Shield] effects +75%. Shields last +2 turns.
+    * **Evo A (Perfect Purist):** +100% shields instead.
+    * **Evo B (Eternal Shields):** Shields never decay naturally.
+    * **Note:** *Pure shielding vs hybrid. Completely different resource management.*
+
+57. **Glyph: Shield Stacker** (Accumulation, Gnosis 50)
+    * **Core Function:** Shields stack infinitely. For each 50 shield points on target, they gain +10% damage.
+    * **Evo A (Perfect Stacker):** Bonus every 40 points.
+    * **Evo B (Enhanced Stacker):** +15% damage per threshold.
+    * **Note:** *Offense through defense. Tank-DPS hybrid.*
+
+58. **Glyph: Reactive Shielder** (Counter, Gnosis 45)
+    * **Core Function:** Cannot proactively shield. When ally takes damage, automatically grant them 25 Shield. Cooldown: 2 turns per ally.
+    * **Evo A (Perfect Reaction):** 40 Shield instead.
+    * **Evo B (Frequent Reaction):** Cooldown 1 turn.
+    * **Note:** *Reactive vs proactive shielding. Different timing skill.*
+
+59. **Glyph: Proactive Shielder** (Prediction, Gnosis 45)
+    * **Core Function:** Shields applied to full-health allies have +50% value. Shields on damaged allies -25% value.
+    * **Evo A (Perfect Proactive):** Full health bonus +75%.
+    * **Evo B (Tolerable Proactive):** No penalty on damaged allies.
+    * **Note:** *Opposite of reactive. Prediction-based gameplay.*
+
+60. **Glyph: Exploding Shields** (Offensive Shield, Gnosis 50)
+    * **Core Function:** When shields break, deal damage to attacker equal to 75% of absorbed damage.
+    * **Evo A (Perfect Explosion):** 125% of absorbed damage.
+    * **Evo B (AoE Explosion):** Damage affects all enemies in 3x3 area.
+    * **Note:** *Offensive shielding. Counter-attack specialist.*
+
+61. **Glyph: Shield Transfer** (Redistribution, Gnosis 40)
+    * **Core Function:** Move shields between allies. Transfer amount +25% (if moving 20, target gets 25).
+    * **Evo A (Perfect Transfer):** +50% bonus.
+    * **Evo B (Mass Transfer):** Can transfer from/to 3 allies simultaneously.
+    * **Note:** *Dynamic shield management. Tactical resource movement.*
+
+62. **Glyph: Shield Sacrifice** (Conversion, Gnosis 45)
+    * **Core Function:** Destroy ally's shield to [Heal] them for 150% of shield value.
+    * **Evo A (Perfect Sacrifice):** 200% conversion.
+    * **Evo B (Mass Sacrifice):** Affects all allies.
+    * **Note:** *Shield-to-heal conversion. Flexible resource adaptation.*
+
+63. **Glyph: Living Shield** (Scaling, Gnosis 55)
+    * **Core Function:** Shields regenerate 10% of their original value per turn.
+    * **Evo A (Perfect Living):** 20% regeneration.
+    * **Evo B (Efficient Living):** Shields cost -30% KP.
+    * **Note:** *Sustainable shielding vs burst shields. Different economy.*
+
+64. **Glyph: Shield Resonance** (Network, Gnosis 50)
+    * **Core Function:** When you shield an ally, adjacent allies gain 25% of that shield.
+    * **Evo A (Perfect Resonance):** 50% instead.
+    * **Evo B (Extended Resonance):** Affects 5x5 area.
+    * **Note:** *AoE shielding through single-target casts. Positioning matters.*
+
+65. **Glyph: Temporary Shields** (Speed, Gnosis 40)
+    * **Core Function:** Shields last only 1 turn but have +100% value and cost -50% KP.
+    * **Evo A (Perfect Temporary):** +150% value.
+    * **Evo B (Extended Temporary):** Last 2 turns.
+    * **Note:** *Fast cycling vs sustained shields. Different tempo.*
+
+66. **Glyph: Eternal Shields** (Permanence, Gnosis 60)
+    * **Core Function:** Shields never decay or expire but cost +50% KP and have -30% value.
+    * **Evo A (Perfect Eternal):** No value penalty.
+    * **Evo B (Efficient Eternal):** Only +25% KP cost.
+    * **Note:** *Permanent resources vs temporary. Long-game investment.*
+
+67. **Glyph: Shield Theft** (Anti-Tank, Gnosis 45)
+    * **Core Function:** Steal 50% of enemy shield and grant it to ally.
+    * **Evo A (Perfect Theft):** Steal 75%.
+    * **Evo B (Mass Theft):** Affects 2 enemies and 2 allies.
+    * **Note:** *Offensive shielding. Anti-tank specialist.*
+
+68. **Glyph: Shield Multiplication** (Scaling, Gnosis 55)
+    * **Core Function:** Each shield you cast this turn increases next shield's value by 25% (stacks).
+    * **Evo A (Perfect Multiplication):** +40% per shield.
+    * **Evo B (Sustained Multiplication):** Bonus persists across turns.
+    * **Note:** *Combo shielding. Rewards chaining casts.*
+
+69. **Glyph: Shield Converter** (Flexibility, Gnosis 50)
+    * **Core Function:** Convert shields to any resource: 20 Shield = 10 Bandwidth OR 3 KP OR 2 Coherence.
+    * **Evo A (Efficient Converter):** Conversion rates improved 50%.
+    * **Evo B (Multi-Converter):** Can convert to multiple resources.
+    * **Note:** *Shields as universal currency. Economic adaptation.*
+
+70. **Glyph: Shield Overload** (Burst, Gnosis 60)
+    * **Core Function:** For 2 turns, all shields +150% value but cost +100% KP.
+    * **Evo A (Perfect Overload):** +200% value.
+    * **Evo B (Efficient Overload):** Only +50% KP cost.
+    * **Note:** *Power spike vs sustained economy. Clutch moment tool.*
+
+---
+
+### **CLEANSING SPECIALIZATIONS — 15 Skills**
+
+71. **Glyph: Cleansing Purist** (Build-Defining, Gnosis 45)
+    * **Core Function:** Cannot use [Heal] or [Shield] glyphs. [Cleanse] also deals 20 damage to enemies and grants 15 Ojas to cleansed ally.
+    * **Evo A (Perfect Purist):** Damage 35, heal 25.
+    * **Evo B (Aggressive Purist):** Also applies [Vulnerable] to enemies.
+    * **Note:** *Pure cleansing specialist. Offensive support.*
+
+72. **Glyph: Debuff Eater** (Conversion, Gnosis 50)
+    * **Core Function:** [Cleanse] debuff and gain resources: +10 Bandwidth and +2 KP per debuff cleansed.
+    * **Evo A (Perfect Eater):** +15 Bandwidth, +3 KP.
+    * **Evo B (Healing Eater):** Also [Heal] 15 Ojas per debuff.
+    * **Note:** *Debuffs as resources. Economic cleansing build.*
+
+73. **Glyph: Preemptive Cleanser** (Prediction, Gnosis 55)
+    * **Core Function:** Grant ally immunity to next debuff for 3 turns. When triggered, [Heal] them 20.
+    * **Evo A (Perfect Preemptive):** Immunity to next 2 debuffs.
+    * **Evo B (Extended Preemptive):** Duration 4 turns.
+    * **Note:** *Preventive vs reactive cleansing. Prediction gameplay.*
+
+74. **Glyph: Reactive Cleanser** (Counter, Gnosis 45)
+    * **Core Function:** When ally receives debuff, automatically [Cleanse] it and grant 15 Shield. Cooldown: 3 turns per ally.
+    * **Evo A (Perfect Reactive):** 25 Shield instead.
+    * **Evo B (Frequent Reactive):** Cooldown 2 turns.
+    * **Note:** *Opposite of preemptive. Automatic counter-play.*
+
+75. **Glyph: Debuff Transfer** (Redirection, Gnosis 50)
+    * **Core Function:** [Cleanse] debuff from ally and apply it to enemy.
+    * **Evo A (Perfect Transfer):** Apply to 2 enemies.
+    * **Evo B (Enhanced Transfer):** Applied debuff +1 turn duration.
+    * **Note:** *Offensive cleansing. Turn weakness into strength.*
+
+76. **Glyph: Cleansing Chain** (AoE, Gnosis 45)
+    * **Core Function:** [Cleanse] 1 debuff from target. Chains to adjacent allies (up to 3 chains).
+    * **Evo A (Perfect Chain):** Up to 5 chains.
+    * **Evo B (Deep Chain):** [Cleanse] 2 debuffs from primary target.
+    * **Note:** *Position-dependent cleansing. Tactical formation play.*
+
+77. **Glyph: Selective Cleanser** (Control, Gnosis 40)
+    * **Core Function:** Choose specific debuff type to cleanse (e.g., only [Burn], only [Stun]). Chosen type cleansed from all allies simultaneously.
+    * **Evo A (Perfect Selection):** Can choose 2 types.
+    * **Evo B (Enhanced Selection):** Also gain +5 Bandwidth per debuff removed.
+    * **Note:** *Surgical cleansing vs blanket removal. Strategic priority.*
+
+78. **Glyph: Cleanse Amplifier** (Power, Gnosis 50)
+    * **Core Function:** For 3 turns, [Cleanse] also grants target +25% all effects for 2 turns.
+    * **Evo A (Perfect Amplifier):** +40% all effects.
+    * **Evo B (Extended Amplifier):** Duration 4 turns.
+    * **Note:** *Cleansing as offensive tool. Buff through purification.*
+
+79. **Glyph: Overcharge Cleanse** (Burst, Gnosis 55)
+    * **Core Function:** [Cleanse] all debuffs from target but they take 10 damage per debuff removed.
+    * **Evo A (Safe Overcharge):** Only 5 damage per debuff.
+    * **Evo B (Healing Overcharge):** After damage, [Heal] for 15 per debuff.
+    * **Note:** *Risk/reward cleansing. High-stakes purification.*
+
+80. **Glyph: Debuff Reflection** (Counter, Gnosis 60)
+    * **Core Function:** When you [Cleanse], apply that debuff to random enemy at 75% duration.
+    * **Evo A (Perfect Reflection):** Full duration.
+    * **Evo B (Controlled Reflection):** Choose target.
+    * **Note:** *Turn defense into offense. Cleansing counter-attacks.*
+
+81. **Glyph: Cleansing Aura** (Passive, Gnosis 55)
+    * **Core Function:** Allies within 3x3 area automatically [Cleanse] 1 debuff per turn.
+    * **Evo A (Perfect Aura):** [Cleanse] 2 debuffs per turn.
+    * **Evo B (Extended Aura):** 5x5 area.
+    * **Note:** *Automatic cleansing zone. Positioning-based support.*
+
+82. **Glyph: Debuff Immunity Lock** (Prevention, Gnosis 60)
+    * **Core Function:** For 3 turns, ally is immune to debuffs but also cannot receive [Heal] or [Shield].
+    * **Evo A (Perfect Lock):** Duration 4 turns.
+    * **Evo B (Partial Lock):** Can still receive [Shield].
+    * **Note:** *Trade-off immunity. Strategic sacrifice.*
+
+83. **Glyph: Cleansing Sacrifice** (Martyr, Gnosis 50)
+    * **Core Function:** [Cleanse] all debuffs from ally. You receive 50% of those debuffs.
+    * **Evo A (Tolerable Sacrifice):** Only receive 25%.
+    * **Evo B (Protected Sacrifice):** Debuffs you receive have -1 turn duration.
+    * **Note:** *Self-sacrifice cleansing. Team player specialist.*
+
+84. **Glyph: Mass Purge** (Ultimate, Gnosis 70)
+    * **Core Function:** [Cleanse] all debuffs from all allies. Grant 20 Shield per debuff removed. Once per duel.
+    * **Evo A (Perfect Purge):** 35 Shield per debuff.
+    * **Evo B (Healing Purge):** Also [Heal] 20 per debuff.
+    * **Note:** *Ultimate cleansing moment. Big reset button.*
+
+85. **Glyph: Perpetual Cleansing** (Sustain, Gnosis 65)
+    * **Core Function:** Passive: Allies automatically [Cleanse] 1 debuff at end of each turn.
+    * **Evo A (Perfect Perpetual):** [Cleanse] 2 debuffs.
+    * **Evo B (Enhanced Perpetual):** Also [Heal] 5 Ojas per cleanse.
+    * **Note:** *Automatic maintenance. Set-and-forget support.*
+
+---
+
+### **HYBRID SPECIALIZATIONS — 10 Skills**
+
+86. **Glyph: Balanced Healer** (Hybrid, Gnosis 50)
+    * **Core Function:** All [Heal] glyphs also grant 50% value as [Shield].
+    * **Evo A (Perfect Balance):** 75% value as shield.
+    * **Evo B (Enhanced Balance):** Also [Cleanse] 1 debuff.
+    * **Note:** *Three-way hybrid. Jack-of-all-trades build.*
+
+87. **Glyph: Aggressive Support** (Offensive, Gnosis 55)
+    * **Core Function:** All [Heal]/[Shield]/[Cleanse] also deal 15 damage to nearest enemy.
+    * **Evo A (Perfect Aggression):** 25 damage instead.
+    * **Evo B (Multi-Aggression):** Affects 2 enemies.
+    * **Note:** *Combat medic. Offensive support specialist.*
+
+88. **Glyph: Transmutation Master** (Conversion, Gnosis 60)
+    * **Core Function:** Convert between effects freely: [Heal] ↔ [Shield] ↔ [Cleanse] at 75% value. Cooldown: 2 turns.
+    * **Evo A (Perfect Transmutation):** 100% value.
+    * **Evo B (Frequent Transmutation):** Cooldown 1 turn.
+    * **Note:** *Ultimate flexibility. Adapt to any situation.*
+
+89. **Glyph: Support Overload** (Burst, Gnosis 65)
+    * **Core Function:** For 2 turns, all support glyphs trigger twice at 75% potency each.
+    * **Evo A (Perfect Overload):** 100% potency each.
+    * **Evo B (Extended Overload):** Duration 3 turns.
+    * **Note:** *Double-casting everything. Explosive support moments.*
+
+90. **Glyph: Martyr Complex** (Sacrifice, Gnosis 60)
+    * **Core Function:** Lose 20% of max Ojas permanently. All support effects +100% for rest of duel.
+    * **Evo A (Tolerable Martyr):** Only lose 15%.
+    * **Evo B (Perfect Martyr):** +150% effects instead.
+    * **Note:** *Permanent sacrifice for power. All-in support build.*
+
+91. **Glyph: Support Network** (Team, Gnosis 55)
+    * **Core Function:** Each ally you support grants you +1 Ojas Integrity and +5 Bandwidth.
+    * **Evo A (Perfect Network):** +2 Integrity, +10 Bandwidth.
+    * **Evo B (Deep Network):** Also reduce cooldown by 1.
+    * **Note:** *Rewarded for spreading support. Team-focused economy.*
+
+92. **Glyph: Solo Healer** (Independence, Gnosis 50)
+    * **Core Function:** Cannot support allies. All self-support +200%. Immune to all debuffs.
+    * **Evo A (Perfect Solo):** +300% self-support.
+    * **Evo B (Survivor Solo):** +100% max Ojas.
+    * **Note:** *Anti-team build. Pure survival specialist.*
+
+93. **Glyph: Shared Fate** (Link, Gnosis 60)
+    * **Core Function:** Link with ally for 3 turns: Share all [Heal]/[Shield]/[Cleanse] effects equally.
+    * **Evo A (Perfect Link):** Duration 4 turns.
+    * **Evo B (Multi-Link):** Can link with 2 allies.
+    * **Note:** *Partnership build. Duo specialist.*
+
+94. **Glyph: Emergency Protocol** (Clutch, Gnosis 65)
+    * **Core Function:** When any ally drops below 20% Ojas, automatically [Heal] 40, grant 30 Shield, [Cleanse] all debuffs. Cooldown: 5 turns.
+    * **Evo A (Perfect Emergency):** [Heal] 60, grant 50 Shield.
+    * **Evo B (Frequent Emergency):** Cooldown 3 turns.
+    * **Note:** *Ultimate save button. Clutch support specialist.*
+
+95. **Glyph: Sustained Support** (Long-game, Gnosis 55)
+    * **Core Function:** Passive: Every 3 turns, permanently increase all support effects by 5% (stacks infinitely).
+    * **Evo A (Rapid Sustained):** Triggers every 2 turns.
+    * **Evo B (Perfect Sustained):** +8% per trigger.
+    * **Note:** *Infinite scaling. Late-game support specialist.*
+
+---
+
+### **UNIQUE BUILD ENABLERS — 5 Skills**
+
+96. **Glyph: Glass Support** (Risk, Gnosis 60)
+    * **Core Function:** -50% max Ojas, but all support effects +150%.
+    * **Evo A (Perfect Glass):** +200% effects.
+    * **Evo B (Tolerable Glass):** Only -30% max Ojas.
+    * **Note:** *Extreme risk/reward. Fragile but powerful.*
+
+97. **Glyph: Tank Support** (Endurance, Gnosis 55)
+    * **Core Function:** +50% max Ojas, but all support effects -30%.
+    * **Evo A (Perfect Tank):** +75% max Ojas.
+    * **Evo B (Tolerable Tank):** Only -15% effect penalty.
+    * **Note:** *Opposite of glass. Survive vs power.*
+
+98. **Glyph: Support Vampire** (Lifesteal, Gnosis 65)
+    * **Core Function:** You [Heal] for 30% of all support value you provide to others.
+    * **Evo A (Perfect Vampire):** 50% instead.
+    * **Evo B (Enhanced Vampire):** Also gain 25% of shields you grant.
+    * **Note:** *Selfish support. Sustain through helping.*
+
+99. **Glyph: Selfless Healer** (Altruist, Gnosis 60)
+    * **Core Function:** Cannot support yourself. All ally support +100%. When ally is at full health, you [Heal] 15.
+    * **Evo A (Perfect Selfless):** +150% ally support.
+    * **Evo B (Rewarded Selfless):** [Heal] 25 when ally full.
+    * **Note:** *Pure altruism. Team-only specialist.*
+
+100. **Glyph: Master Therapist** (Ultimate Passive, Gnosis 80)
+    * **Core Function:** Passive: All support glyphs cost -2 KP. When ally reaches full Ojas, gain +5 Ojas Integrity. [Heal]/[Shield]/[Cleanse] grant +1 Bandwidth each.
+    * **Evo A (Perfect Mastery):** Cost -3 KP, +8 Integrity.
+    * **Evo B (Deep Mastery):** Grant +2 Bandwidth per support action.
+    * **Note:** *Ultimate support synergy. Rewarded for perfection.*
+
+---
+
+**End of Therapeutic Engine Complete Skills List**

@@ -1,0 +1,72 @@
+{
+  "engines": {
+    "tantra": {
+      "control": 0.3466666666666667,
+      "dps": 0.22,
+      "sustain": 0,
+      "aoe": 0.05333333333333334,
+      "efficiency": 0.0417685881370092
+    },
+    "character": {
+      "control": 0.5599999999999999,
+      "dps": 0.2,
+      "sustain": 0,
+      "aoe": 0,
+      "efficiency": 0.07777777777777777
+    },
+    "consciousness": {
+      "control": 0,
+      "dps": 0.3,
+      "sustain": 0.16,
+      "aoe": 0.1,
+      "efficiency": 0.05327272727272727
+    },
+    "divination": {
+      "control": 0,
+      "dps": 0,
+      "sustain": 0,
+      "aoe": 0,
+      "efficiency": 0
+    },
+    "foundational": {
+      "control": 0,
+      "dps": 0,
+      "sustain": 0,
+      "aoe": 0,
+      "efficiency": 0
+    },
+    "invocation": {
+      "control": 0.24,
+      "dps": 0.3,
+      "sustain": 0.27999999999999997,
+      "aoe": 0,
+      "efficiency": 0.08338217338217338
+    },
+    "singularity": {
+      "control": 0.3,
+      "dps": 0.1,
+      "sustain": 0,
+      "aoe": 0.16,
+      "efficiency": 0.03389705882352941
+    },
+    "therapeutic": {
+      "control": 0,
+      "dps": 0,
+      "sustain": 0.8800000000000001,
+      "aoe": 0,
+      "efficiency": 0.10990476190476191
+    },
+    "jyotish": {
+      "control": 0,
+      "dps": 0,
+      "sustain": 0,
+      "aoe": 0,
+      "efficiency": 0
+    }
+  },
+  "notes": [
+    "tantra: low DPS; add 1 finisher glyph",
+    "character: low DPS; add 1 finisher glyph",
+    "singularity: low DPS; add 1 finisher glyph"
+  ]
+}

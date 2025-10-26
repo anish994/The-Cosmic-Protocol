@@ -1,0 +1,65 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "memory_palace",
+  "_description": "Information & Recall Engine - Perfect Memory, Perfect Strategy",
+  "_source": "Memory Palace v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_MEM_001",
+      "name": "Recall Pattern",
+      "tier": 0,
+      "cost": {"kp": 1, "cognition": 15},
+      "cooldown": 0,
+      "keywords": ["Copy", "Memory"],
+      "description": "Copy last skill used by any unit; use it next turn",
+      "effect": {"copy_last_skill": true, "delay": 1},
+      "jyotish_hooks": {"Mercury_T1+": "Use immediately"},
+      "synergy_seeds": [],
+      "ai_priority": 7,
+      "flavor_text": "I remember everything."
+    },
+    {
+      "id": "SKILL_MEM_011",
+      "name": "Perfect Recall",
+      "tier": 1,
+      "cost": {"kp": 2, "cognition": 40},
+      "cooldown": 3,
+      "keywords": ["Copy", "Multi"],
+      "description": "Copy last 3 skills used; cast them all at once",
+      "effect": {"copy_skills": 3, "instant_cast": true},
+      "jyotish_hooks": {"Mercury_T2+": "Last 5 skills"},
+      "synergy_seeds": ["ACX-MEM-CON-01"],
+      "ai_priority": 9,
+      "flavor_text": "History repeats."
+    },
+    {
+      "id": "SKILL_MEM_021",
+      "name": "Infinite Library",
+      "tier": 2,
+      "cost": {"kp": 3, "cognition": 70},
+      "cooldown": 5,
+      "keywords": ["[Archive]", "Global"],
+      "description": "Store all skills used this match; can cast any stored skill once",
+      "effect": {"archive": {"store_all": true, "cast_any": true, "uses": 1}},
+      "jyotish_hooks": {"Jupiter_T3+": "Cast any stored skill twice"},
+      "synergy_seeds": ["ACX-MEM-DIV-01"],
+      "ai_priority": 10,
+      "flavor_text": "All knowledge is preserved."
+    },
+    {
+      "id": "SKILL_MEM_041",
+      "name": "Akashic Records",
+      "tier": 4,
+      "cost": {"kp": 5, "cognition": 150},
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "[Archive]"],
+      "description": "Access all skills ever created; cast 5 random tier 4 skills",
+      "effect": {"apocalypse": true, "cast_random_tier4": 5},
+      "jyotish_hooks": {"Jupiter_T4+": "Cast 8 skills"},
+      "synergy_seeds": ["ACX-MEM-ALL"],
+      "ai_priority": 10,
+      "flavor_text": "The universe remembers."
+    }
+  ]
+}

@@ -1,0 +1,526 @@
+# Foundational Engine — Complete Skills List (v3.1)
+## Total Skills: 100
+
+---
+
+### **ARCHITECT PATH (Structure Focus) — 20 Skills**
+
+1. **Glyph: Basic Scaffold** (Foundation, Gnosis 10)
+    * **Core Function:** Deploy a [Structure] that lasts 3 turns. Allies within 3x3 area gain +10% effect on their next glyph.
+    * **Evo A (Reinforced Scaffold):** Duration 4 turns.
+    * **Evo B (Expanded Scaffold):** Area becomes 5x5.
+
+2. **Glyph: Load-Bearing Pillar** (Core Structure, Gnosis 25)
+    * **Core Function:** Deploy a [Structure] (4 turns). Amplifies incoming [Field] effects by +50% in its area.
+    * **Evo A (Perfect Pillar):** +75% amplification instead.
+    * **Evo B (Fortified Pillar):** Has 30 Ojas shield (must be destroyed separately).
+
+3. **Glyph: Foundation Network** (Multi-Structure, Gnosis 35)
+    * **Core Function:** Deploy 3 small [Structures] simultaneously. Each lasts 2 turns and grants +5% to one stat (damage/healing/shield).
+    * **Evo A (Expanded Network):** Deploy 5 structures.
+    * **Evo B (Sustained Network):** Duration 3 turns each.
+
+4. **Glyph: Anchor Point** (Persistent Structure, Gnosis 40)
+    * **Core Function:** Deploy a [Structure] that lasts until destroyed. When allies pass through it, refresh 1 random cooldown.
+    * **Evo A (Perfect Anchor):** Refresh 2 cooldowns instead.
+    * **Evo B (Fortified Anchor):** Structure has 50 Ojas.
+
+5. **Glyph: Structural Resonance** (Synergy, Gnosis 30)
+    * **Core Function:** For each active [Structure] you control, gain +2 Bandwidth per turn.
+    * **Evo A (Perfect Resonance):** +3 Bandwidth per structure.
+    * **Evo B (Deep Resonance):** Also gain +1 KP per turn.
+
+6. **Glyph: Reinforced Architecture** (Defensive, Gnosis 35)
+    * **Core Function:** All your [Structures] gain +20 Ojas. When a structure is destroyed, grant all allies 15 Shield.
+    * **Evo A (Perfect Architecture):** Structures gain +35 Ojas.
+    * **Evo B (Reactive Architecture):** Shield increased to 25.
+
+7. **Glyph: Lattice Matrix** (Network Bonus, Gnosis 45)
+    * **Core Function:** If you control 3+ [Structures], all allies gain +15% all effects.
+    * **Evo A (Perfect Lattice):** +25% all effects.
+    * **Evo B (Extended Lattice):** Only requires 2 structures.
+
+8. **Glyph: Structural Collapse** (Sacrifice, Gnosis 40)
+    * **Core Function:** Destroy all your [Structures]. For each destroyed, deal 20 damage to all enemies and grant allies 10 Shield.
+    * **Evo A (Perfect Collapse):** Damage increased to 30.
+    * **Evo B (Controlled Collapse):** Shield increased to 20.
+
+9. **Glyph: Mobile Foundation** (Tactical, Gnosis 50)
+    * **Core Function:** Move a [Structure] to a new location. Allies at old and new locations gain 15 Shield.
+    * **Evo A (Perfect Mobility):** Shield increased to 25.
+    * **Evo B (Chain Movement):** Can move 2 structures.
+
+10. **Glyph: Eternal Foundation** (Ultimate, Gnosis 60)
+    * **Core Function:** Deploy a [Structure] that is immune to destruction for 3 turns. Grants all allies +20% max Ojas while active.
+    * **Evo A (Extended Eternity):** Duration 4 turns.
+    * **Evo B (Perfect Foundation):** +30% max Ojas instead.
+
+11. **Glyph: Blueprint Cache** (Economy, Gnosis 30)
+    * **Core Function:** Store 1 [Structure] in reserve. Can deploy it instantly for -50% cost. Max 2 stored.
+    * **Evo A (Deep Cache):** Max 3 stored.
+    * **Evo B (Perfect Storage):** Deployment cost -75%.
+
+12. **Glyph: Structural Echo** (Duplication, Gnosis 55)
+    * **Core Function:** When you deploy a [Structure], 50% chance to create a weaker copy (50% potency) adjacent to it.
+    * **Evo A (Perfect Echo):** Copy has 75% potency.
+    * **Evo B (Guaranteed Echo):** 100% chance instead of 50%.
+
+13. **Glyph: Foundation Weaver** (Passive, Gnosis 25)
+    * **Core Function:** Passive: Gain +1 Bandwidth per turn for each active [Structure].
+    * **Evo A (Perfect Weaver):** +2 Bandwidth per structure.
+    * **Evo B (Deep Weaver):** Also gain +1 KP per structure.
+
+14. **Glyph: Structural Metamorphosis** (Evolution, Gnosis 50)
+    * **Core Function:** Transform a [Structure] into a different type with upgraded effects. Costs 10 Bandwidth.
+    * **Evo A (Efficient Transform):** Cost reduced to 7 Bandwidth.
+    * **Evo B (Perfect Evolution):** New structure has +50% potency.
+
+15. **Glyph: Cascade Architecture** (Chain, Gnosis 45)
+    * **Core Function:** When a [Structure] expires naturally (not destroyed), deploy a weaker version (60% potency, 2 turns) at the same location.
+    * **Evo A (Perfect Cascade):** 80% potency instead.
+    * **Evo B (Extended Cascade):** Duration 3 turns.
+
+16. **Glyph: Fortress Protocol** (Defense, Gnosis 60)
+    * **Core Function:** For 2 turns, all your [Structures] become indestructible and grant allies inside immunity to [Stun] and [Silence].
+    * **Evo A (Extended Fortress):** Duration 3 turns.
+    * **Evo B (Perfect Immunity):** Also immune to [Vulnerable].
+
+17. **Glyph: Structural Harvest** (Resource, Gnosis 40)
+    * **Core Function:** Destroy a [Structure] to gain: +15 Bandwidth, +3 KP, [Heal] 20 Ojas.
+    * **Evo A (Perfect Harvest):** +25 Bandwidth, +5 KP, [Heal] 35.
+    * **Evo B (Multi-Harvest):** Can harvest 2 structures.
+
+18. **Glyph: Adaptive Blueprint** (Flexibility, Gnosis 50)
+    * **Core Function:** Your [Structures] automatically change bonus types based on situation (damage when allies attack, healing when damaged, etc.).
+    * **Evo A (Perfect Adaptation):** Bonuses +50% stronger.
+    * **Evo B (Instant Adaptation):** Changes happen immediately instead of next turn.
+
+19. **Glyph: Foundation Overload** (Burst, Gnosis 55)
+    * **Core Function:** For 2 turns, [Structures] provide double bonuses but have -1 turn duration.
+    * **Evo A (Perfect Overload):** Triple bonuses instead of double.
+    * **Evo B (Sustained Overload):** No duration penalty.
+
+20. **Glyph: Master Architect** (Ultimate Passive, Gnosis 70)
+    * **Core Function:** Passive: [Structures] cost -2 KP and last +1 turn. Can control 2 additional structures beyond normal limit.
+    * **Evo A (Perfect Mastery):** Cost -3 KP and last +2 turns.
+    * **Evo B (Deep Mastery):** Can control 4 additional structures.
+
+---
+
+### **CONDUCTOR PATH (Support Focus) — 20 Skills**
+
+21. **Glyph: Basic Support** (Foundation, Gnosis 10)
+    * **Core Function:** [Support] target ally with +15% damage on their next action.
+    * **Evo A (Enhanced Support):** +25% damage instead.
+    * **Evo B (Multi-Support):** Affects 2 allies.
+
+22. **Glyph: Resource Infusion** (Economy Support, Gnosis 20)
+    * **Core Function:** [Support] ally by granting them +3 KP and +10 Bandwidth immediately.
+    * **Evo A (Perfect Infusion):** +5 KP and +15 Bandwidth.
+    * **Evo B (Mass Infusion):** Affects all allies.
+
+23. **Glyph: Cooldown Gift** (Tempo Support, Gnosis 25)
+    * **Core Function:** [Support] ally by refreshing 1 of their cooldowns.
+    * **Evo A (Perfect Gift):** Refresh 2 cooldowns.
+    * **Evo B (Multi-Gift):** Can target 2 allies.
+
+24. **Glyph: Shield Projection** (Defensive Support, Gnosis 15)
+    * **Core Function:** [Support] ally with 20 Shield.
+    * **Evo A (Perfect Shield):** 35 Shield instead.
+    * **Evo B (Mass Shield):** Affects 3 allies.
+
+25. **Glyph: Amplification Aura** (Power Support, Gnosis 30)
+    * **Core Function:** [Support] ally with +30% effect on their next glyph for 2 turns.
+    * **Evo A (Perfect Amplification):** +50% effect.
+    * **Evo B (Extended Aura):** Duration 3 turns.
+
+26. **Glyph: Bandwidth Sharing** (Resource Support, Gnosis 25)
+    * **Core Function:** [Support] ally by transferring up to 20 of your Bandwidth to them.
+    * **Evo A (Efficient Sharing):** They gain +25% extra (if you give 20, they get 25).
+    * **Evo B (Mass Sharing):** Can distribute among 3 allies.
+
+27. **Glyph: Support Network** (Multi-Target, Gnosis 35)
+    * **Core Function:** [Support] 3 random allies with small bonuses (+10% damage, 10 Shield, refresh 1 cooldown).
+    * **Evo A (Perfect Network):** Affects 5 allies.
+    * **Evo B (Enhanced Network):** Bonuses doubled.
+
+28. **Glyph: Synchronized Strike** (Coordination, Gnosis 40)
+    * **Core Function:** [Support] ally: Their next offensive glyph triggers simultaneously with yours (both at full potency).
+    * **Evo A (Perfect Sync):** Can sync with 2 allies.
+    * **Evo B (Enhanced Sync):** Both glyphs have +25% potency.
+
+29. **Glyph: Restoration Support** (Healing Support, Gnosis 30)
+    * **Core Function:** [Support] ally with [Heal] 30 Ojas and [Cleanse] 1 debuff.
+    * **Evo A (Perfect Restoration):** [Heal] 50 Ojas.
+    * **Evo B (Deep Cleanse):** [Cleanse] 2 debuffs instead.
+
+30. **Glyph: Support Cascade** (Chain Support, Gnosis 45)
+    * **Core Function:** [Support] ally. When they act, they automatically [Support] a random adjacent ally with 50% of the bonus.
+    * **Evo A (Perfect Cascade):** 75% of the bonus.
+    * **Evo B (Extended Cascade):** Chains to 3 allies total.
+
+31. **Glyph: Bandwidth Conduit** (Channeling, Gnosis 35)
+    * **Core Function:** For 3 turns, each time you spend Bandwidth, target ally gains 25% of it.
+    * **Evo A (Perfect Conduit):** They gain 50% instead.
+    * **Evo B (Multi-Conduit):** Affects 2 allies.
+
+32. **Glyph: Support Amplifier** (Multiplier, Gnosis 50)
+    * **Core Function:** For 2 turns, all your [Support] effects have +50% potency.
+    * **Evo A (Perfect Amplifier):** +100% potency.
+    * **Evo B (Extended Amplifier):** Duration 3 turns.
+
+33. **Glyph: Emergency Support** (Reactive, Gnosis 40)
+    * **Core Function:** When ally drops below 30% Ojas, automatically [Support] them with [Heal] 25 and 20 Shield. Once per 3 turns.
+    * **Evo A (Perfect Emergency):** [Heal] 40 and 35 Shield.
+    * **Evo B (Frequent Emergency):** Cooldown reduced to 2 turns.
+
+34. **Glyph: Linked Support** (Persistent, Gnosis 45)
+    * **Core Function:** [Support] ally with a persistent link for 3 turns: 25% of healing/shielding you receive is copied to them.
+    * **Evo A (Perfect Link):** 50% copied instead.
+    * **Evo B (Multi-Link):** Can link 2 allies.
+
+35. **Glyph: Support Echo** (Duplication, Gnosis 55)
+    * **Core Function:** Your next [Support] glyph is automatically repeated at 50% potency. Cooldown: 3 turns.
+    * **Evo A (Perfect Echo):** 75% potency instead.
+    * **Evo B (Frequent Echo):** Cooldown reduced to 2 turns.
+
+36. **Glyph: Conductor's Blessing** (Ultimate Support, Gnosis 60)
+    * **Core Function:** [Support] all allies with: +25% all effects, 25 Shield, refresh 1 cooldown. Costs 40 Bandwidth.
+    * **Evo A (Perfect Blessing):** +40% all effects.
+    * **Evo B (Economic Blessing):** Cost reduced to 30 Bandwidth.
+
+37. **Glyph: Support Sacrifice** (Tactical, Gnosis 50)
+    * **Core Function:** Sacrifice 30 of your Ojas to [Support] ally with: [Heal] 60 Ojas, 40 Shield, +50% damage for 2 turns.
+    * **Evo A (Perfect Sacrifice):** [Heal] 90 Ojas instead.
+    * **Evo B (Efficient Sacrifice):** Only sacrifice 20 Ojas.
+
+38. **Glyph: Support Matrix** (Network, Gnosis 55)
+    * **Core Function:** Create support matrix linking 4 allies: When one receives [Support], 25% of effect copies to others in matrix.
+    * **Evo A (Perfect Matrix):** 50% copy instead.
+    * **Evo B (Extended Matrix):** Links all allies.
+
+39. **Glyph: Overcharge Support** (Power, Gnosis 65)
+    * **Core Function:** [Support] ally with massive boost: +100% next glyph effect, but they take 15 damage after using it.
+    * **Evo A (Perfect Overcharge):** +150% effect.
+    * **Evo B (Safe Overcharge):** Only take 10 damage.
+
+40. **Glyph: Master Conductor** (Ultimate Passive, Gnosis 70)
+    * **Core Function:** Passive: All [Support] glyphs cost -2 KP and affect +1 additional target. Gain +1 Bandwidth per [Support] cast.
+    * **Evo A (Perfect Mastery):** Cost -3 KP and +2 additional targets.
+    * **Evo B (Deep Mastery):** Gain +2 Bandwidth per cast.
+
+---
+
+### **CUSTODIAN PATH (Defense Focus) — 20 Skills**
+
+41. **Glyph: Basic Ward** (Defense, Gnosis 10)
+    * **Core Function:** Grant ally 15 Shield.
+    * **Evo A (Enhanced Ward):** 25 Shield instead.
+    * **Evo B (Multi-Ward):** Affects 2 allies.
+
+42. **Glyph: Protective Barrier** (Zone Defense, Gnosis 25)
+    * **Core Function:** Create 3x3 barrier for 2 turns: Allies inside take -20% damage.
+    * **Evo A (Perfect Barrier):** -35% damage reduction.
+    * **Evo B (Extended Barrier):** Duration 3 turns.
+
+43. **Glyph: Auto-Shield Protocol** (Reactive, Gnosis 30)
+    * **Core Function:** For 3 turns, first time each ally takes damage per turn, automatically grant them 10 Shield.
+    * **Evo A (Perfect Protocol):** 20 Shield instead.
+    * **Evo B (Extended Protocol):** Duration 4 turns.
+
+44. **Glyph: Damage Absorber** (Redirection, Gnosis 35)
+    * **Core Function:** For 2 turns, you absorb 30% of all damage dealt to allies. Gain +2 Bandwidth per 10 damage absorbed.
+    * **Evo A (Perfect Absorber):** Absorb 50% of damage.
+    * **Evo B (Efficient Absorber):** Gain +3 Bandwidth per 10 damage.
+
+45. **Glyph: Fortification** (Shield Boost, Gnosis 25)
+    * **Core Function:** All active shields on allies gain +15 points.
+    * **Evo A (Perfect Fortification):** +25 points instead.
+    * **Evo B (Sustained Fortification):** Also prevent shields from decaying for 1 turn.
+
+46. **Glyph: Shield Synthesis** (Merge, Gnosis 40)
+    * **Core Function:** Merge all shields on target ally into one larger shield (+25% total value).
+    * **Evo A (Perfect Synthesis):** +50% total value.
+    * **Evo B (Multi-Synthesis):** Can target 2 allies.
+
+47. **Glyph: Reactive Defense** (Counter, Gnosis 35)
+    * **Core Function:** When ally is attacked, attacker takes 10 damage. Lasts 3 turns.
+    * **Evo A (Perfect Defense):** 20 damage instead.
+    * **Evo B (Extended Defense):** Duration 4 turns.
+
+48. **Glyph: Emergency Shelter** (Panic Button, Gnosis 45)
+    * **Core Function:** All allies gain 30 Shield and immunity to next attack. Once per duel.
+    * **Evo A (Perfect Shelter):** 50 Shield instead.
+    * **Evo B (Frequent Shelter):** Usable twice per duel.
+
+49. **Glyph: Shield Regeneration** (Healing Shields, Gnosis 40)
+    * **Core Function:** All shields on allies regenerate 5 points per turn for 3 turns.
+    * **Evo A (Perfect Regeneration):** 10 points per turn.
+    * **Evo B (Extended Regeneration):** Duration 4 turns.
+
+50. **Glyph: Layered Defense** (Multi-Shield, Gnosis 50)
+    * **Core Function:** Grant ally 3 separate 15-point shields (each must be broken individually).
+    * **Evo A (Perfect Layers):** Each shield is 25 points.
+    * **Evo B (Multi-Layers):** Can target 2 allies.
+
+51. **Glyph: Shield Link** (Network, Gnosis 45)
+    * **Core Function:** Link 3 allies' shields: When one takes damage, all shields absorb equally.
+    * **Evo A (Perfect Link):** Links all allies.
+    * **Evo B (Reinforced Link):** Linked shields gain +20% total value.
+
+52. **Glyph: Damage Nullification** (Counter, Gnosis 55)
+    * **Core Function:** Next damage instance to ally is completely negated. Cooldown: 3 turns.
+    * **Evo A (Perfect Nullification):** Negates next 2 instances.
+    * **Evo B (Frequent Nullification):** Cooldown reduced to 2 turns.
+
+53. **Glyph: Shield Burst** (Conversion, Gnosis 40)
+    * **Core Function:** Convert all shields on allies to [Heal] at 75% value.
+    * **Evo A (Perfect Burst):** Conversion rate 100%.
+    * **Evo B (Offensive Burst):** Convert to damage dealt to enemies instead.
+
+54. **Glyph: Fortress Mode** (Ultimate Defense, Gnosis 60)
+    * **Core Function:** For 2 turns, all allies take -50% damage and gain 20 Shield per turn. Cannot move.
+    * **Evo A (Perfect Fortress):** -70% damage reduction.
+    * **Evo B (Mobile Fortress):** Can still move.
+
+55. **Glyph: Shield Overflow** (Scaling, Gnosis 50)
+    * **Core Function:** If ally shield exceeds 50 points, convert excess to [Heal] at start of next turn.
+    * **Evo A (Perfect Overflow):** Conversion threshold lowered to 40 points.
+    * **Evo B (Efficient Overflow):** Conversion rate increased by 50%.
+
+56. **Glyph: Guardian Protocol** (Automation, Gnosis 55)
+    * **Core Function:** Passive: Automatically grant 15 Shield to ally when they drop below 50% Ojas. Cooldown: 3 turns per ally.
+    * **Evo A (Perfect Guardian):** 25 Shield instead.
+    * **Evo B (Frequent Guardian):** Cooldown reduced to 2 turns.
+
+57. **Glyph: Protective Sacrifice** (Redirect, Gnosis 45)
+    * **Core Function:** For 2 turns, all damage to target ally is redirected to you. You gain 10 Bandwidth per 20 damage absorbed.
+    * **Evo A (Perfect Sacrifice):** Gain 15 Bandwidth per 20 damage.
+    * **Evo B (Extended Sacrifice):** Duration 3 turns.
+
+58. **Glyph: Shield Mastery** (Passive, Gnosis 50)
+    * **Core Function:** Passive: All shields you grant have +20% value and last +1 turn longer.
+    * **Evo A (Perfect Mastery):** +35% value.
+    * **Evo B (Deep Mastery):** Last +2 turns longer.
+
+59. **Glyph: Aegis Protocol** (Ultimate, Gnosis 70)
+    * **Core Function:** All allies gain 50 Shield and immunity to debuffs for 2 turns. Costs 50 Bandwidth.
+    * **Evo A (Perfect Aegis):** 80 Shield instead.
+    * **Evo B (Extended Aegis):** Duration 3 turns.
+
+60. **Glyph: Master Custodian** (Ultimate Passive, Gnosis 70)
+    * **Core Function:** Passive: Shield glyphs cost -2 KP. When ally shield breaks, automatically grant them 15 Shield. Gain +1 Bandwidth per shield broken.
+    * **Evo A (Perfect Mastery):** Cost -3 KP, auto-grant 25 Shield.
+    * **Evo B (Deep Mastery):** Gain +2 Bandwidth per broken shield.
+
+---
+
+### **RESOURCE ECONOMY SPECIALIZATIONS — 20 Skills**
+
+61. **Glyph: Bandwidth Generator** (Economy, Gnosis 20)
+    * **Core Function:** Gain 15 Bandwidth immediately. Cooldown: 2 turns.
+    * **Evo A (Perfect Generator):** Gain 25 Bandwidth.
+    * **Evo B (Rapid Generator):** Cooldown reduced to 1 turn.
+
+62. **Glyph: KP Surge** (Resource Spike, Gnosis 15)
+    * **Core Function:** Gain 5 KP immediately.
+    * **Evo A (Perfect Surge):** Gain 8 KP.
+    * **Evo B (Mass Surge):** All allies gain 3 KP.
+
+63. **Glyph: Resource Converter** (Exchange, Gnosis 25)
+    * **Core Function:** Convert between resources: 10 Bandwidth ↔ 5 KP ↔ 3 Coherence (choose direction).
+    * **Evo A (Efficient Converter):** Conversion rates improved by 50%.
+    * **Evo B (Multi-Converter):** Can convert twice per turn.
+
+64. **Glyph: Bandwidth Battery** (Storage, Gnosis 30)
+    * **Core Function:** Store up to 30 Bandwidth. Release all to grant allies: +2 KP per 10 stored.
+    * **Evo A (Deep Battery):** Store up to 50 Bandwidth.
+    * **Evo B (Efficient Battery):** Grants +3 KP per 10 instead.
+
+65. **Glyph: Resource Multiplication** (Scaling, Gnosis 40)
+    * **Core Function:** For 2 turns, all resource generation is doubled.
+    * **Evo A (Perfect Multiplication):** Tripled instead of doubled.
+    * **Evo B (Extended Multiplication):** Duration 3 turns.
+
+66. **Glyph: Economic Efficiency** (Passive, Gnosis 35)
+    * **Core Function:** Passive: All glyphs cost -1 KP (minimum 0).
+    * **Evo A (Perfect Efficiency):** Cost -2 KP.
+    * **Evo B (Universal Efficiency):** Also affects Bandwidth costs (-10%).
+
+67. **Glyph: Resource Siphon** (Theft, Gnosis 30)
+    * **Core Function:** Steal 3 KP from target enemy. Also gain 10 Bandwidth.
+    * **Evo A (Perfect Siphon):** Steal 5 KP and gain 15 Bandwidth.
+    * **Evo B (Mass Siphon):** Affects 2 enemies.
+
+68. **Glyph: Compound Interest** (Scaling, Gnosis 45)
+    * **Core Function:** For each 50 Bandwidth you have, gain +1 KP per turn. For each 10 KP, gain +5 Bandwidth per turn.
+    * **Evo A (Perfect Interest):** Thresholds reduced to 40/8.
+    * **Evo B (Deep Interest):** Gains doubled.
+
+69. **Glyph: Resource Pool** (Sharing, Gnosis 35)
+    * **Core Function:** Create shared resource pool with allies for 3 turns: All can draw from combined Bandwidth (max 10 per ally per turn).
+    * **Evo A (Deep Pool):** Max 15 per ally.
+    * **Evo B (Extended Pool):** Duration 4 turns.
+
+70. **Glyph: Emergency Reserves** (Safety, Gnosis 40)
+    * **Core Function:** When you drop below 20 Bandwidth, instantly gain 30 Bandwidth. Once per duel.
+    * **Evo A (Perfect Reserves):** Gain 50 Bandwidth.
+    * **Evo B (Frequent Reserves):** Usable twice per duel.
+
+71. **Glyph: Resource Cascade** (Chain, Gnosis 50)
+    * **Core Function:** When you gain resources, 25% of gain is shared with random ally. When ally gains resources, you gain 15%.
+    * **Evo A (Perfect Cascade):** You share 40%, receive 25%.
+    * **Evo B (Mass Cascade):** Affects all allies.
+
+72. **Glyph: Bandwidth Overflow** (Conversion, Gnosis 35)
+    * **Core Function:** If you end turn with 80+ Bandwidth, convert 30 to: +15 Ojas, +3 KP, +2 Coherence.
+    * **Evo A (Efficient Overflow):** Only requires 60 Bandwidth.
+    * **Evo B (Perfect Overflow):** Conversion values doubled.
+
+73. **Glyph: Resource Momentum** (Scaling, Gnosis 45)
+    * **Core Function:** Each turn, gain +5% more resources than last turn (stacks, resets when spending >50% of pool).
+    * **Evo A (Perfect Momentum):** +8% per turn.
+    * **Evo B (Sustained Momentum):** Doesn't reset when spending.
+
+74. **Glyph: Economic Collapse** (Reset, Gnosis 55)
+    * **Core Function:** All players lose 50% of current resources. You gain 25% of total lost. Once per duel.
+    * **Evo A (Perfect Collapse):** You gain 40% instead.
+    * **Evo B (Selective Collapse):** Only affects enemies.
+
+75. **Glyph: Resource Abundance** (Ultimate, Gnosis 60)
+    * **Core Function:** For 3 turns, all players gain double resources. You gain triple.
+    * **Evo A (Perfect Abundance):** You gain 4x instead.
+    * **Evo B (Extended Abundance):** Duration 4 turns.
+
+76. **Glyph: Bandwidth Mastery** (Passive, Gnosis 50)
+    * **Core Function:** Passive: Start each duel with +30 Bandwidth. Max Bandwidth increased by 20.
+    * **Evo A (Perfect Mastery):** Start with +50, max increased by 35.
+    * **Evo B (Deep Mastery):** Also gain +3 Bandwidth per turn.
+
+77. **Glyph: KP Mastery** (Passive, Gnosis 50)
+    * **Core Function:** Passive: Start each duel with +10 KP. Gain +2 KP per turn.
+    * **Evo A (Perfect Mastery):** Start with +15, gain +3 per turn.
+    * **Evo B (Deep Mastery):** All KP costs reduced by 1 (minimum 0).
+
+78. **Glyph: Resource Synthesis** (Ultimate Conversion, Gnosis 65)
+    * **Core Function:** Convert all your current resources into unified pool. Can spend as any resource type for 2 turns.
+    * **Evo A (Perfect Synthesis):** Duration 3 turns.
+    * **Evo B (Efficient Synthesis):** Conversion rate 1.5x.
+
+79. **Glyph: Infinite Economy** (Ultimate, Gnosis 80)
+    * **Core Function:** For 2 turns, resources don't decrease when spent (infinite resources). Once per duel.
+    * **Evo A (Extended Economy):** Duration 3 turns.
+    * **Evo B (Enhanced Economy):** Also generate +50 Bandwidth per turn.
+
+80. **Glyph: Master Economist** (Ultimate Passive, Gnosis 70)
+    * **Core Function:** Passive: All resource gains +25%. All costs -15%. Can hold 50% more resources than normal cap.
+    * **Evo A (Perfect Mastery):** Gains +40%, costs -25%.
+    * **Evo B (Deep Mastery):** Can hold double normal cap.
+
+---
+
+### **REFRESH & COOLDOWN MANIPULATION — 20 Skills**
+
+81. **Glyph: Basic Refresh** (Cooldown, Gnosis 15)
+    * **Core Function:** [Refresh] 1 random cooldown by 1 turn.
+    * **Evo A (Perfect Refresh):** Refresh by 2 turns.
+    * **Evo B (Multi-Refresh):** Refresh 2 cooldowns.
+
+82. **Glyph: Targeted Refresh** (Selective, Gnosis 20)
+    * **Core Function:** Choose which cooldown to [Refresh] (reduce by 1 turn).
+    * **Evo A (Perfect Refresh):** Reduce by 2 turns.
+    * **Evo B (Multi-Refresh):** Can refresh 2 chosen cooldowns.
+
+83. **Glyph: Mass Refresh** (AoE, Gnosis 35)
+    * **Core Function:** [Refresh] all cooldowns by 1 turn.
+    * **Evo A (Perfect Mass):** Refresh by 2 turns.
+    * **Evo B (Efficient Mass):** Cost -2 KP.
+
+84. **Glyph: Priority Refresh** (Smart, Gnosis 30)
+    * **Core Function:** [Refresh] highest-cost glyph's cooldown by 2 turns.
+    * **Evo A (Perfect Priority):** Refresh by 3 turns.
+    * **Evo B (Multi-Priority):** Also refresh 2nd highest-cost.
+
+85. **Glyph: Cooldown Burst** (Reset, Gnosis 45)
+    * **Core Function:** Reduce all current cooldowns by 3 turns. Once per duel.
+    * **Evo A (Perfect Burst):** Reduce by 5 turns.
+    * **Evo B (Frequent Burst):** Usable twice per duel.
+
+86. **Glyph: Refresh Loop** (Chain, Gnosis 40)
+    * **Core Function:** When you [Refresh] a cooldown, 25% chance to refresh another random cooldown.
+    * **Evo A (Perfect Loop):** 50% chance.
+    * **Evo B (Guaranteed Loop):** Always triggers but second refresh is -1 turn.
+
+87. **Glyph: Cooldown Reduction** (Passive, Gnosis 35)
+    * **Core Function:** Passive: All cooldowns tick down 25% faster.
+    * **Evo A (Perfect Reduction):** 50% faster.
+    * **Evo B (Selective Reduction):** Choose which glyphs get boosted.
+
+88. **Glyph: Refresh Cascade** (Chain, Gnosis 50)
+    * **Core Function:** [Refresh] a cooldown. If fully reset, also refresh another cooldown by 2 turns.
+    * **Evo A (Perfect Cascade):** Refresh by 3 turns.
+    * **Evo B (Multi-Cascade):** Chains to 3 total cooldowns.
+
+89. **Glyph: Zero Cooldown** (Ultimate, Gnosis 60)
+    * **Core Function:** Target glyph has 0 cooldown for 2 turns.
+    * **Evo A (Perfect Zero):** Duration 3 turns.
+    * **Evo B (Multi-Zero):** Affects 2 glyphs.
+
+90. **Glyph: Cooldown Transfer** (Tactical, Gnosis 45)
+    * **Core Function:** Transfer cooldowns from ally to enemy (choose which cooldowns).
+    * **Evo A (Perfect Transfer):** Transferred cooldowns +1 turn for enemy.
+    * **Evo B (Mass Transfer):** Can transfer from 2 allies to 2 enemies.
+
+91. **Glyph: Cooldown Theft** (Aggro, Gnosis 40)
+    * **Core Function:** Steal enemy's lowest cooldown and add it to one of their highest. You gain 10 Bandwidth.
+    * **Evo A (Perfect Theft):** Gain 20 Bandwidth.
+    * **Evo B (Multi-Theft):** Affects 2 enemies.
+
+92. **Glyph: Rapid Cooldown** (Speed, Gnosis 50)
+    * **Core Function:** For 3 turns, your cooldowns tick down twice per turn.
+    * **Evo A (Perfect Rapid):** Tick down 3 times per turn.
+    * **Evo B (Extended Rapid):** Duration 4 turns.
+
+93. **Glyph: Cooldown Freeze** (Control, Gnosis 45)
+    * **Core Function:** Enemy cooldowns don't tick down for 2 turns.
+    * **Evo A (Perfect Freeze):** Duration 3 turns.
+    * **Evo B (Mass Freeze):** Affects all enemies.
+
+94. **Glyph: Refresh Aura** (Zone, Gnosis 55)
+    * **Core Function:** Create 3x3 aura for 3 turns: Allies inside get 1 cooldown refreshed per turn.
+    * **Evo A (Perfect Aura):** Refresh 2 cooldowns per turn.
+    * **Evo B (Extended Aura):** 5x5 area.
+
+95. **Glyph: Emergency Refresh** (Reactive, Gnosis 50)
+    * **Core Function:** When ally uses glyph with 5+ turn cooldown, automatically [Refresh] it by 2 turns. Cooldown: 3 turns.
+    * **Evo A (Perfect Emergency):** Refresh by 3 turns.
+    * **Evo B (Frequent Emergency):** Cooldown reduced to 2 turns.
+
+96. **Glyph: Cooldown Conversion** (Economy, Gnosis 45)
+    * **Core Function:** Reduce a cooldown by 3 turns, gain 15 Bandwidth.
+    * **Evo A (Perfect Conversion):** Gain 25 Bandwidth.
+    * **Evo B (Multi-Conversion):** Can convert 2 cooldowns.
+
+97. **Glyph: Perpetual Motion** (Ultimate, Gnosis 70)
+    * **Core Function:** For 3 turns, every time you cast a glyph, reduce all cooldowns by 1.
+    * **Evo A (Perfect Motion):** Reduce by 2 instead.
+    * **Evo B (Extended Motion):** Duration 4 turns.
+
+98. **Glyph: Cooldown Mastery** (Passive, Gnosis 60)
+    * **Core Function:** Passive: All [Refresh] effects +1 turn stronger. [Refresh] glyphs cost -2 KP.
+    * **Evo A (Perfect Mastery):** +2 turns stronger.
+    * **Evo B (Deep Mastery):** Cost -3 KP.
+
+99. **Glyph: Infinite Refresh** (Ultimate, Gnosis 80)
+    * **Core Function:** For 2 turns, all cooldowns are instantly refreshed as soon as they're used. Once per duel.
+    * **Evo A (Extended Infinity):** Duration 3 turns.
+    * **Evo B (Enhanced Infinity):** Also gain +30 Bandwidth per glyph cast.
+
+100. **Glyph: Master Refresher** (Ultimate Passive, Gnosis 75)
+    * **Core Function:** Passive: [Refresh] highest-cost cooldown by 1 at start of each turn. Gain +2 Bandwidth per [Refresh] triggered.
+    * **Evo A (Perfect Mastery):** Refresh by 2 instead.
+    * **Evo B (Deep Mastery):** Gain +4 Bandwidth per refresh.
+
+---
+
+**End of Foundational Engine Complete Skills List**

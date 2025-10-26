@@ -1,0 +1,249 @@
+{
+  "engine": "Foundational",
+  "version": "5.0_TAXONOMY",
+  "total_unique_tags": 45,
+  "tag_categories": {
+    
+    "STRUCTURAL_TAGS": {
+      "description": "Tags related to building, placement, and persistent constructs",
+      "tags": {
+        "structure": {
+          "definition": "Creates or manipulates physical/energy constructs on battlefield",
+          "skills_with_tag": ["Basic Scaffold", "Load-Bearing Pillar", "Foundation Network", "Anchor Point", "Mobile Foundation"],
+          "count": 20,
+          "combo_potential": "HIGH - structures combo with each other exponentially"
+        },
+        "zone": {
+          "definition": "Creates area-of-effect fields that persist over time",
+          "skills_with_tag": ["Foundation Network", "Lattice Matrix", "Fortress Protocol"],
+          "count": 12,
+          "combo_potential": "HIGH - zones overlap and amplify"
+        },
+        "persistent": {
+          "definition": "Effect lasts until destroyed or conditions met",
+          "skills_with_tag": ["Anchor Point", "Eternal Foundation", "Foundation Weaver"],
+          "count": 15,
+          "combo_potential": "MEDIUM - enables long-term strategies"
+        },
+        "construction": {
+          "definition": "Actively builds or deploys battlefield elements",
+          "skills_with_tag": ["Blueprint Cache", "Structural Echo", "Cascade Architecture"],
+          "count": 10,
+          "combo_potential": "MEDIUM - feeds structure synergies"
+        }
+      }
+    },
+
+    "SUPPORT_TAGS": {
+      "description": "Tags for buffing, enabling, and empowering allies",
+      "tags": {
+        "support": {
+          "definition": "Directly buffs or aids allies",
+          "skills_with_tag": ["Basic Support", "Resource Infusion", "Amplification Aura", "Support Network"],
+          "count": 20,
+          "combo_potential": "HIGH - support chains multiply effectiveness"
+        },
+        "buff": {
+          "definition": "Applies positive status effects",
+          "skills_with_tag": ["Basic Support", "Shield Projection", "Support Amplifier"],
+          "count": 18,
+          "combo_potential": "MEDIUM - stacks with other buffs"
+        },
+        "amplification": {
+          "definition": "Multiplies existing effects",
+          "skills_with_tag": ["Amplification Aura", "Support Amplifier", "Foundation Overload"],
+          "count": 8,
+          "combo_potential": "EXTREME - exponential scaling with right combos"
+        },
+        "network": {
+          "definition": "Connects multiple targets for shared effects",
+          "skills_with_tag": ["Support Network", "Support Matrix", "Bandwidth Sharing"],
+          "count": 7,
+          "combo_potential": "HIGH - creates team-wide synergies"
+        },
+        "blessing": {
+          "definition": "Grants sustained beneficial effects",
+          "skills_with_tag": ["Conductor's Blessing", "Linked Support"],
+          "count": 5,
+          "combo_potential": "MEDIUM - long-term value"
+        }
+      }
+    },
+
+    "DEFENSIVE_TAGS": {
+      "description": "Tags for protection, damage mitigation, and survival",
+      "tags": {
+        "shield": {
+          "definition": "Creates damage-absorbing barriers",
+          "skills_with_tag": ["Basic Ward", "Shield Projection", "Protective Barrier", "Shield Synthesis"],
+          "count": 20,
+          "combo_potential": "HIGH - shields stack and regenerate"
+        },
+        "protection": {
+          "definition": "Reduces incoming damage or prevents harm",
+          "skills_with_tag": ["Protective Barrier", "Damage Absorber", "Fortress Mode"],
+          "count": 15,
+          "combo_potential": "MEDIUM - defensive layering"
+        },
+        "defensive": {
+          "definition": "General defensive utility",
+          "skills_with_tag": ["Reinforced Architecture", "Emergency Shelter", "Aegis Protocol"],
+          "count": 12,
+          "combo_potential": "MEDIUM - survival toolkit"
+        },
+        "immunity": {
+          "definition": "Prevents specific damage/effect types",
+          "skills_with_tag": ["Fortress Protocol", "Aegis Protocol"],
+          "count": 5,
+          "combo_potential": "LOW - situational but powerful"
+        },
+        "absorption": {
+          "definition": "Redirects or absorbs damage",
+          "skills_with_tag": ["Damage Absorber", "Protective Sacrifice"],
+          "count": 4,
+          "combo_potential": "MEDIUM - converts damage to resources"
+        }
+      }
+    },
+
+    "RESOURCE_TAGS": {
+      "description": "Tags for economy, resource generation, and conversion",
+      "tags": {
+        "economy": {
+          "definition": "Generates or manages resources",
+          "skills_with_tag": ["Bandwidth Generator", "KP Surge", "Resource Converter"],
+          "count": 20,
+          "combo_potential": "HIGH - resource loops enable everything"
+        },
+        "generation": {
+          "definition": "Produces resources over time",
+          "skills_with_tag": ["Bandwidth Generator", "Resource Multiplication", "Compound Interest"],
+          "count": 12,
+          "combo_potential": "EXTREME - exponential scaling"
+        },
+        "conversion": {
+          "definition": "Transforms one resource type to another",
+          "skills_with_tag": ["Resource Converter", "Bandwidth Overflow", "Resource Synthesis"],
+          "count": 8,
+          "combo_potential": "HIGH - flexibility and adaptation"
+        },
+        "storage": {
+          "definition": "Holds resources for later use",
+          "skills_with_tag": ["Bandwidth Battery", "Blueprint Cache"],
+          "count": 4,
+          "combo_potential": "MEDIUM - enables burst strategies"
+        },
+        "multiplication": {
+          "definition": "Amplifies resource gains",
+          "skills_with_tag": ["Resource Multiplication", "Compound Interest"],
+          "count": 5,
+          "combo_potential": "EXTREME - exponential growth"
+        }
+      }
+    },
+
+    "TEMPO_TAGS": {
+      "description": "Tags for speed, timing, and action economy",
+      "tags": {
+        "refresh": {
+          "definition": "Reduces or resets cooldowns",
+          "skills_with_tag": ["Basic Refresh", "Cooldown Burst", "Perpetual Motion"],
+          "count": 20,
+          "combo_potential": "EXTREME - enables infinite combos"
+        },
+        "cooldown_manipulation": {
+          "definition": "Alters cooldown tick rates",
+          "skills_with_tag": ["Cooldown Reduction", "Rapid Cooldown", "Cooldown Freeze"],
+          "count": 15,
+          "combo_potential": "HIGH - tempo control"
+        },
+        "tempo": {
+          "definition": "Affects action speed and timing",
+          "skills_with_tag": ["Priority Refresh", "Zero Cooldown", "Emergency Refresh"],
+          "count": 10,
+          "combo_potential": "HIGH - decisive turn advantage"
+        },
+        "acceleration": {
+          "definition": "Speeds up processes",
+          "skills_with_tag": ["Rapid Cooldown", "Refresh Cascade"],
+          "count": 6,
+          "combo_potential": "HIGH - faster combos"
+        }
+      }
+    },
+
+    "UTILITY_TAGS": {
+      "description": "Tags for versatility, adaptation, and special effects",
+      "tags": {
+        "tactical": {
+          "definition": "Requires strategic positioning or timing",
+          "skills_with_tag": ["Mobile Foundation", "Cooldown Transfer", "Tactical Flexibility"],
+          "count": 10,
+          "combo_potential": "MEDIUM - high skill expression"
+        },
+        "reactive": {
+          "definition": "Triggers in response to events",
+          "skills_with_tag": ["Auto-Shield Protocol", "Emergency Support", "Reactive Defense"],
+          "count": 8,
+          "combo_potential": "MEDIUM - safety net effects"
+        },
+        "sacrifice": {
+          "definition": "Costs resources for powerful effects",
+          "skills_with_tag": ["Support Sacrifice", "Protective Sacrifice", "Structural Harvest"],
+          "count": 5,
+          "combo_potential": "MEDIUM - risk/reward plays"
+        },
+        "duplication": {
+          "definition": "Copies or echoes effects",
+          "skills_with_tag": ["Structural Echo", "Support Echo"],
+          "count": 4,
+          "combo_potential": "HIGH - value multiplication"
+        }
+      }
+    },
+
+    "SCALING_TAGS": {
+      "description": "Tags for growth, stacking, and late-game power",
+      "tags": {
+        "scaling": {
+          "definition": "Grows stronger over time or with conditions",
+          "skills_with_tag": ["Resource Momentum", "Abundance Protocol", "Master Architect"],
+          "count": 12,
+          "combo_potential": "EXTREME - late-game win conditions"
+        },
+        "passive": {
+          "definition": "Always-on effects",
+          "skills_with_tag": ["Foundation Weaver", "Economic Efficiency", "Bandwidth Mastery"],
+          "count": 15,
+          "combo_potential": "HIGH - consistent value"
+        },
+        "ultimate": {
+          "definition": "Powerful capstone effects",
+          "skills_with_tag": ["Eternal Foundation", "Infinite Refresh", "Master Architect"],
+          "count": 8,
+          "combo_potential": "EXTREME - game-ending power"
+        },
+        "stacking": {
+          "definition": "Accumulates power over time",
+          "skills_with_tag": ["Resource Momentum", "Master Refresher"],
+          "count": 6,
+          "combo_potential": "HIGH - snowball effects"
+        }
+      }
+    }
+  },
+
+  "tag_interaction_priorities": {
+    "highest_combo_potential": ["refresh", "generation", "multiplication", "amplification", "structure"],
+    "high_combo_potential": ["support", "shield", "economy", "cooldown_manipulation", "scaling"],
+    "medium_combo_potential": ["zone", "network", "conversion", "duplication", "reactive"],
+    "situational": ["immunity", "sacrifice", "tactical"]
+  },
+
+  "foundational_engine_identity": {
+    "primary_themes": ["Building", "Support", "Defense", "Economy", "Tempo"],
+    "playstyle": "Setup-focused with exponential scaling through structure networks and resource generation",
+    "strengths": "Long-term value, team support, zone control, resource advantage",
+    "weaknesses": "Slow early game, vulnerable to structure destruction, needs time to scale"
+  }
+}

@@ -1,0 +1,859 @@
+{
+  "rules_engine_version": "1.0.0",
+  "game_version": "v4.0",
+  "last_updated": "2025-01-23",
+  "description": "AI Rules Engine - Layers 5-9 (Jyotish, Progression, AI, Edge Cases, Special) - Final comprehensive system",
+  
+  "LAYER_5_JYOTISH_INTEGRATION": {
+    "description": "How Vedic astrology chart affects gameplay mechanics",
+    
+    "5.1_PLANETARY_SYSTEM": {
+      "description": "9 planetary influences and their mechanical effects",
+      
+      "5.1.1_planetary_tier_system": {
+        "rule_id": "R-5.1.1",
+        "description": "Planets have 5 tiers, unlocked through progression",
+        "tiers": [
+          {"tier": 0, "description": "Locked (no effect)"},
+          {"tier": 1, "description": "Basic (+5% bonus)"},
+          {"tier": 2, "description": "Enhanced (+15% bonus, unlocks special effect)"},
+          {"tier": 3, "description": "Advanced (+30% bonus, enhanced special effect)"},
+          {"tier": 4, "description": "Mastery (+50% bonus, ultimate effect unlocked)"}
+        ],
+        "unlock_progression": "Tier increases through: XP milestones, specific achievements, or direct upgrade purchase",
+        "validation": "player.planet_tier >= required_tier for effect to activate"
+      },
+      
+      "5.1.2_sun_mechanics": {
+        "planet": "Sun",
+        "association": "Authority, KP, leadership",
+        "tier_effects": {
+          "tier_1": "+5% max KP",
+          "tier_2": "+1 KP generation per turn (doubles base)",
+          "tier_3": "+2 max KP cap (12 total), +10% damage with offensive glyphs",
+          "tier_4": "Ultimate glyphs cost -1 KP, +20% all offensive effects"
+        },
+        "synergy_engines": ["Tantra (aggression)", "Character Analysis (leadership)"],
+        "counterplay": "Strong early game, resource denial counters"
+      },
+      
+      "5.1.3_moon_mechanics": {
+        "planet": "Moon",
+        "association": "Healing, emotions, Restoration",
+        "tier_effects": {
+          "tier_1": "+10% healing effectiveness",
+          "tier_2": "+4 Restoration per turn, +50% all healing",
+          "tier_3": "+20 max Restoration cap (90 total), [Regen] effects last +2 turns",
+          "tier_4": "Healing can grant temporary overheal (up to 120% max HP), +5% HP regeneration per turn below 50% HP"
+        },
+        "synergy_engines": ["Therapeutic (direct synergy)", "Invocation (healing bonuses)"],
+        "strategic": "Best for defensive/sustain builds"
+      },
+      
+      "5.1.4_mars_mechanics": {
+        "planet": "Mars",
+        "association": "War, aggression, Prana",
+        "tier_effects": {
+          "tier_1": "+5% Prana generation",
+          "tier_2": "+3 Prana per turn, +10% Tantra damage",
+          "tier_3": "+10 max Prana cap (60 total), [Burn] stacks grant +2 Prana (instead of +1)",
+          "tier_4": "Tantra glyphs cost -20% Prana, [Burn] damage increased by 1 per stack (4/stack instead of 3/stack)"
+        },
+        "synergy_engines": ["Tantra (perfect match)", "Foundational (aggressive defense)"],
+        "aggressive_playstyle": "Maximizes damage output and resource aggression"
+      },
+      
+      "5.1.5_mercury_mechanics": {
+        "planet": "Mercury",
+        "association": "Communication, speed, Bandwidth",
+        "tier_effects": {
+          "tier_1": "+5% Bandwidth generation",
+          "tier_2": "+5 Bandwidth per turn, -1 KP cost to all glyphs",
+          "tier_3": "+15 max Bandwidth cap (115 total), all cooldowns reduced by 1 turn",
+          "tier_4": "Neural State transitions cost -5 Bandwidth, +10% all Consciousness effects, can skip cooldowns once per match"
+        },
+        "synergy_engines": ["Consciousness (perfect match)", "Character Analysis (speed + prediction)"],
+        "tempo_focused": "Enables faster gameplay, more actions per turn"
+      },
+      
+      "5.1.6_jupiter_mechanics": {
+        "planet": "Jupiter",
+        "association": "Wisdom, expansion, Sanctity/Grace",
+        "tier_effects": {
+          "tier_1": "+5% Sanctity generation",
+          "tier_2": "+5 Sanctity per turn, buff durations +2 turns",
+          "tier_3": "+15 max Sanctity cap (75 total), +2 max KP cap (12 total), +20 max Grace cap (120 total)",
+          "tier_4": "Grace overflow triggers at 80 (instead of 100), all Invocation effects +25%, can activate 2 glyphs per turn (once per match)"
+        },
+        "synergy_engines": ["Invocation (perfect match)", "Therapeutic (buff synergy)"],
+        "scaling_powerhouse": "Late-game dominance through Grace and resource caps"
+      },
+      
+      "5.1.7_venus_mechanics": {
+        "planet": "Venus",
+        "association": "Harmony, conversion, balance",
+        "tier_effects": {
+          "tier_1": "+5% healing received",
+          "tier_2": "+10% resource conversion efficiency, +15% healing",
+          "tier_3": "+20% all resource generation, resource conversions cost -1 turn cooldown",
+          "tier_4": "Can convert resources 2:1 ratio (instead of 3:1), +30% healing, +15% damage, perfect balance bonus"
+        },
+        "synergy_engines": ["All engines (universal support)", "Invocation (healing)", "Foundational (balance)"],
+        "flexible": "Enables hybrid builds and resource flexibility"
+      },
+      
+      "5.1.8_saturn_mechanics": {
+        "planet": "Saturn",
+        "association": "Discipline, structure, defense",
+        "tier_effects": {
+          "tier_1": "+10 max HP",
+          "tier_2": "+5 Structure per turn, +20 HP",
+          "tier_3": "+15 max Structure cap (55 total), +1 Defense stat, [Anchor] duration +2 turns",
+          "tier_4": "[Shield] effects +50%, Structure overflow grants +2 Defense (instead of +1 per 5), immune to first lethal damage per round"
+        },
+        "synergy_engines": ["Foundational (perfect match)", "Consciousness (defensive states)"],
+        "tank_build": "Maximum survivability and defense"
+      },
+      
+      "5.1.9_rahu_ketu_mechanics": {
+        "planet": "Rahu/Ketu",
+        "association": "Patterns, chaos, Coherence",
+        "tier_effects": {
+          "tier_1": "+5% Coherence generation",
+          "tier_2": "+3 Coherence per turn, pattern detection enhanced (+1 Coherence per pattern)",
+          "tier_3": "+20 max Coherence cap (110 total), [Collapse] trigger threshold lowered (85 Coherence instead of 90)",
+          "tier_4": "Detect patterns 1 turn earlier, [Collapse] instant-win becomes easier, +40% Singularity effects"
+        },
+        "synergy_engines": ["Singularity (perfect match)", "Character Analysis (prediction synergy)"],
+        "high_skill_ceiling": "Rewards pattern recognition and adaptability"
+      }
+    },
+    
+    "5.2_HOUSE_SYSTEM": {
+      "description": "12 houses modifying specific gameplay aspects",
+      
+      "5.2.1_house_mechanics": {
+        "rule_id": "R-5.2.1",
+        "description": "Houses provide passive bonuses, unlocked through progression",
+        "houses": [
+          {
+            "house": "1st (Self/Ascendant)",
+            "effect": "+10% max HP, +5% all resource generation, +5% XP gain",
+            "theme": "Personal power and vitality"
+          },
+          {
+            "house": "2nd (Resources/Wealth)",
+            "effect": "+15% resource conversion rates, +10% resource caps, find +20% more loot",
+            "theme": "Material abundance"
+          },
+          {
+            "house": "3rd (Communication/Courage)",
+            "effect": "+10% Speed stat, [Reveal] effects last +1 turn, first action each round costs -1 KP",
+            "theme": "Quick thinking and bravery"
+          },
+          {
+            "house": "4th (Heart/Home)",
+            "effect": "+10% Restoration generation, +20% healing received, +15% [Shield] effectiveness",
+            "theme": "Emotional stability and protection"
+          },
+          {
+            "house": "5th (Creativity/Intelligence)",
+            "effect": "+15% Grace accumulation, +10% Insight generation, predictions reward +2 extra Insight",
+            "theme": "Creative expression"
+          },
+          {
+            "house": "6th (Enemies/Service)",
+            "effect": "+5% max HP, +10% resource steal effectiveness, debuffs last +1 turn on opponents",
+            "theme": "Overcoming obstacles"
+          },
+          {
+            "house": "7th (Partnerships/Balance)",
+            "effect": "+10% all resources when at 50% HP, +15% conversion efficiency, perfect balance bonus",
+            "theme": "Harmony through challenge"
+          },
+          {
+            "house": "8th (Transformation/Occult)",
+            "effect": "[Burn] damage +1 per stack, [Collapse] easier to trigger, transformation effects +20%",
+            "theme": "Death and rebirth"
+          },
+          {
+            "house": "9th (Dharma/Wisdom)",
+            "effect": "+10% Sanctity generation, +15% Grace accumulation, XP +10%, ultimate glyphs +15% potency",
+            "theme": "Higher knowledge"
+          },
+          {
+            "house": "10th (Career/Foundation)",
+            "effect": "+10% Structure generation, +10% Defense stat, [Anchor] duration +1 turn, +15% match rewards",
+            "theme": "Life purpose and stability"
+          },
+          {
+            "house": "11th (Gains/Community)",
+            "effect": "+20% XP from wins, +15% all resources, unlock 1 extra deck slot, +10% social rewards",
+            "theme": "Social prosperity"
+          },
+          {
+            "house": "12th (Liberation/Sacrifice)",
+            "effect": "[Immunity] duration +1 turn, Theta State effects +30%, can activate glyphs at 0 resources once per match",
+            "theme": "Spiritual transcendence"
+          }
+        ],
+        "unlock_system": "Houses unlock progressively through campaign/story milestones",
+        "stacking": "All unlocked house bonuses stack additively"
+      }
+    },
+    
+    "5.3_JYOTISH_BUILD_OPTIMIZATION": {
+      "description": "How players optimize Jyotish charts for specific strategies",
+      
+      "5.3.1_synergy_builds": {
+        "rule_id": "R-5.3.1",
+        "description": "Optimal planetary + house + engine combinations",
+        "example_builds": [
+          {
+            "build_name": "Aggressive Tantra Berserker",
+            "planets": "Mars Tier 4, Sun Tier 3, Rahu/Ketu Tier 2",
+            "houses": "6th (Enemies), 8th (Transformation), 1st (Self)",
+            "engines": "Tantra primary, Foundational secondary",
+            "strategy": "Max [Burn] stacks, [Detonate] for burst, aggressive resource denial",
+            "win_condition": "Overwhelm with damage before opponent stabilizes"
+          },
+          {
+            "build_name": "Divine Healer Support",
+            "planets": "Moon Tier 4, Jupiter Tier 4, Venus Tier 3",
+            "houses": "4th (Heart), 9th (Dharma), 11th (Gains)",
+            "engines": "Invocation primary, Therapeutic secondary",
+            "strategy": "Stack Grace, massive heals, [Sanctify] for tankiness",
+            "win_condition": "Outlast opponent through sustain and attrition"
+          },
+          {
+            "build_name": "Pattern Recognition Master",
+            "planets": "Rahu/Ketu Tier 4, Mercury Tier 3, Saturn Tier 2",
+            "houses": "8th (Transformation), 5th (Intelligence), 10th (Foundation)",
+            "engines": "Singularity primary, Character Analysis secondary",
+            "strategy": "Detect patterns, accumulate Coherence, trigger [Collapse]",
+            "win_condition": "Instant-win through [Collapse] or pattern exploitation"
+          },
+          {
+            "build_name": "Prediction Prodigy",
+            "planets": "Mercury Tier 4, Jupiter Tier 3, Venus Tier 2",
+            "houses": "5th (Intelligence), 3rd (Communication), 9th (Dharma)",
+            "engines": "Character Analysis primary, Consciousness secondary",
+            "strategy": "Perfect predictions, [Reveal] opponent strategy, [Checkmate] win condition",
+            "win_condition": "3 correct predictions in a row → [Checkmate] instant-win"
+          }
+        ]
+      }
+    }
+  },
+  
+  "LAYER_6_PROGRESSION_SYSTEM": {
+    "description": "Player advancement, unlocks, and mastery mechanics",
+    
+    "6.1_PLAYER_LEVELING": {
+      "description": "Experience gain and level progression",
+      
+      "6.1.1_XP_system": {
+        "rule_id": "R-6.1.1",
+        "description": "How players earn experience points",
+        "xp_sources": [
+          {"source": "Win match", "xp": "100 + (50 * match_difficulty)"},
+          {"source": "Lose match", "xp": "25 (participation reward)"},
+          {"source": "Perfect round (no damage taken)", "xp": 30},
+          {"source": "Instant-win achievement ([Collapse]/[Checkmate])", "xp": 100},
+          {"source": "First-time engine mastery", "xp": 200},
+          {"source": "Daily quests", "xp": "50-150 per quest"},
+          {"source": "Tournament participation", "xp": "500-2000 based on placement"}
+        ],
+        "level_formula": "XP_required = 100 * level^1.5",
+        "level_cap": 100,
+        "prestige_system": "At level 100, can prestige for cosmetic rewards and minor permanent bonuses"
+      },
+      
+      "6.1.2_unlock_progression": {
+        "rule_id": "R-6.1.2",
+        "description": "What unlocks at each player level",
+        "unlock_milestones": [
+          {"level": 1, "unlock": "Tutorial complete, basic 100 skills unlocked"},
+          {"level": 5, "unlock": "Ranked mode unlocked"},
+          {"level": 10, "unlock": "Workshop advanced features, 2nd deck slot"},
+          {"level": 15, "unlock": "Jyotish system unlocked (planetary progression begins)"},
+          {"level": 20, "unlock": "Tier 2 skills unlocked (skills 101-200)"},
+          {"level": 25, "unlock": "Tournament mode unlocked"},
+          {"level": 30, "unlock": "3rd deck slot, house system unlocked"},
+          {"level": 40, "unlock": "Tier 3 skills unlocked (skills 201-300)"},
+          {"level": 50, "unlock": "Ultimate skills unlocked, 4th deck slot"},
+          {"level": 60, "unlock": "Advanced Jyotish (planetary Tier 3+ available)"},
+          {"level": 75, "unlock": "Master tier skills, 5th deck slot"},
+          {"level": 100, "unlock": "All skills unlocked, prestige option, legendary cosmetics"}
+        ]
+      }
+    },
+    
+    "6.2_GLYPH_UNLOCKING": {
+      "description": "How players unlock new glyphs/skills",
+      
+      "6.2.1_unlock_methods": {
+        "rule_id": "R-6.2.1",
+        "description": "Multiple ways to unlock glyphs",
+        "methods": [
+          {
+            "method": "Level progression",
+            "description": "Automatic unlocks at specific levels",
+            "examples": "Basic glyphs (1-100) unlock by level 15"
+          },
+          {
+            "method": "Engine mastery",
+            "description": "Use engine glyphs 100+ times to unlock advanced glyphs",
+            "progression": "Novice (0 uses) → Apprentice (25) → Adept (50) → Expert (100) → Master (200)"
+          },
+          {
+            "method": "Achievements",
+            "description": "Specific achievements unlock rare glyphs",
+            "examples": "Win 50 matches with Tantra → Unlock 'Inferno' ultimate"
+          },
+          {
+            "method": "Currency purchase",
+            "description": "Spend in-game currency to unlock glyphs early",
+            "cost": "100-500 currency per glyph depending on tier"
+          },
+          {
+            "method": "Story campaign",
+            "description": "Complete story missions to unlock lore glyphs",
+            "exclusive": "Some glyphs only available through story"
+          }
+        ]
+      },
+      
+      "6.2.2_engine_mastery_system": {
+        "rule_id": "R-6.2.2",
+        "description": "Mastery levels for each of 8 engines",
+        "mastery_tiers": [
+          {"tier": "Novice", "uses_required": 0, "bonus": "None"},
+          {"tier": "Apprentice", "uses_required": 25, "bonus": "+5% engine effects"},
+          {"tier": "Adept", "uses_required": 50, "bonus": "+10% engine effects, unlock 5 advanced glyphs"},
+          {"tier": "Expert", "uses_required": 100, "bonus": "+15% engine effects, unlock 10 expert glyphs"},
+          {"tier": "Master", "uses_required": 200, "bonus": "+20% engine effects, unlock ultimate glyph, +10% resource generation for that engine"}
+        ],
+        "tracking": "System tracks glyph usage per engine, cumulative across all matches",
+        "display": "Mastery progress bar shown in Workshop for each engine"
+      }
+    },
+    
+    "6.3_CURRENCY_AND_REWARDS": {
+      "description": "In-game economy and reward systems",
+      
+      "6.3.1_currency_types": {
+        "rule_id": "R-6.3.1",
+        "description": "Multiple currencies for different purposes",
+        "currencies": [
+          {
+            "name": "Essence",
+            "earn_rate": "50-200 per match (win/loss)",
+            "purpose": "Unlock glyphs, upgrade planetary tiers, purchase cosmetics",
+            "soft_currency": true
+          },
+          {
+            "name": "Crystals",
+            "earn_rate": "5-20 per match, bonus from achievements",
+            "purpose": "Premium currency, unlock exclusive content, speed up progression",
+            "premium_currency": true
+          },
+          {
+            "name": "Glory",
+            "earn_rate": "Ranked wins only, 10-50 per win based on rank",
+            "purpose": "Season rewards, exclusive ranked cosmetics",
+            "seasonal": true
+          }
+        ]
+      },
+      
+      "6.3.2_reward_structure": {
+        "rule_id": "R-6.3.2",
+        "description": "What players earn from different activities",
+        "activity_rewards": [
+          {
+            "activity": "Casual match win",
+            "rewards": "100 XP, 100 Essence, engine mastery progress"
+          },
+          {
+            "activity": "Ranked match win",
+            "rewards": "150 XP, 150 Essence, 20 Glory, rank points"
+          },
+          {
+            "activity": "Daily quest completion",
+            "rewards": "100 XP, 200 Essence, 10 Crystals"
+          },
+          {
+            "activity": "Weekly challenge completion",
+            "rewards": "500 XP, 500 Essence, 50 Crystals, exclusive cosmetic"
+          },
+          {
+            "activity": "Tournament placement (top 8)",
+            "rewards": "1000-5000 XP, 2000-10000 Essence, 100-500 Crystals, tournament-exclusive rewards"
+          },
+          {
+            "activity": "Achievement unlock",
+            "rewards": "Variable XP, Essence, sometimes exclusive glyphs or cosmetics"
+          }
+        ]
+      }
+    }
+  },
+  
+  "LAYER_7_AI_DECISION_LOGIC": {
+    "description": "Rules for AI opponent behavior and decision-making",
+    
+    "7.1_AI_DIFFICULTY_LEVELS": {
+      "description": "Multiple AI difficulty tiers with different behaviors",
+      
+      "7.1.1_difficulty_tiers": {
+        "rule_id": "R-7.1.1",
+        "description": "5 AI difficulty levels from beginner to legendary",
+        "tiers": [
+          {
+            "difficulty": "Beginner",
+            "level_range": "Equivalent to player level 1-10",
+            "behavior": "Random glyph selection, no strategy, frequent misplays",
+            "reaction_time": "Instant (no thinking delay)",
+            "resource_management": "Poor (often wastes resources)",
+            "prediction": "None (cannot predict player)"
+          },
+          {
+            "difficulty": "Intermediate",
+            "level_range": "Equivalent to player level 10-30",
+            "behavior": "Basic strategy, favors damage over defense, simple combos",
+            "reaction_time": "1-2 second thinking delay",
+            "resource_management": "Decent (saves for big glyphs)",
+            "prediction": "Basic (recognizes obvious patterns)"
+          },
+          {
+            "difficulty": "Advanced",
+            "level_range": "Equivalent to player level 30-60",
+            "behavior": "Strategic play, adapts to player strategy, uses synergies",
+            "reaction_time": "2-3 second thinking delay",
+            "resource_management": "Good (optimizes spending)",
+            "prediction": "Moderate (tracks player tendencies)"
+          },
+          {
+            "difficulty": "Expert",
+            "level_range": "Equivalent to player level 60-85",
+            "behavior": "Near-optimal play, complex combos, baits and punishes",
+            "reaction_time": "3-4 second thinking delay",
+            "resource_management": "Excellent (rarely wastes resources)",
+            "prediction": "Advanced (predicts player glyphs 60% accuracy)"
+          },
+          {
+            "difficulty": "Legendary",
+            "level_range": "Equivalent to player level 85-100+",
+            "behavior": "Perfect play, unbeatable without player skill/luck, tournament-level",
+            "reaction_time": "4-5 second thinking delay (simulates human pro player)",
+            "resource_management": "Optimal (perfect economy)",
+            "prediction": "Expert (predicts player glyphs 80% accuracy, counters strategies)"
+          }
+        ]
+      },
+      
+      "7.1.2_AI_decision_priority": {
+        "rule_id": "R-7.1.2",
+        "description": "How AI prioritizes actions based on difficulty",
+        "priority_system": {
+          "beginner": ["Random selection"],
+          "intermediate": ["Deal damage", "Heal if below 50% HP", "Use available glyphs"],
+          "advanced": ["Finish opponent if possible", "Heal critical HP", "Build combo", "Deal damage", "Generate resources"],
+          "expert": ["Check instant-win conditions", "Finish opponent if <20% HP", "Deny opponent resources", "Build optimal combo", "Heal strategically", "Apply debuffs"],
+          "legendary": ["Calculate perfect play", "Predict player response", "Set up multi-turn combos", "Bait player into bad trades", "Optimize resource curves", "Counter opponent strategy"]
+        }
+      }
+    },
+    
+    "7.2_AI_LEARNING_SYSTEM": {
+      "description": "How AI adapts to player behavior (higher difficulties)",
+      
+      "7.2.1_pattern_recognition": {
+        "rule_id": "R-7.2.1",
+        "description": "AI tracks player patterns to predict and counter",
+        "tracked_patterns": [
+          "Most-used glyphs (frequency analysis)",
+          "Glyph usage sequences (combo patterns)",
+          "Resource spending habits (aggressive vs conservative)",
+          "HP threshold behaviors (when player heals/bursts)",
+          "Prediction vs reactive playstyle",
+          "Engine preferences (which engines player favors)"
+        ],
+        "adaptation": "After 3-5 turns, AI adjusts strategy based on detected patterns",
+        "counterplay": "Player must vary strategy to avoid being countered"
+      },
+      
+      "7.2.2_counter_strategy_matrix": {
+        "rule_id": "R-7.2.2",
+        "description": "AI counters specific player strategies",
+        "counter_strategies": [
+          {
+            "player_strategy": "Aggressive burst damage",
+            "ai_counter": "Prioritize [Shield], heal at 60% HP, [Sanctify] for damage reduction"
+          },
+          {
+            "player_strategy": "Defensive sustain/heal",
+            "ai_counter": "Apply heal block, [Curse], resource denial, finish quickly before heals stack"
+          },
+          {
+            "player_strategy": "Resource denial/disruption",
+            "ai_counter": "Use [Anchor], prioritize resource generation glyphs, save KP for counters"
+          },
+          {
+            "player_strategy": "Prediction-based (Character Analysis)",
+            "ai_counter": "Randomize glyph selection, use unpredictable patterns, [Silence] to stop predictions"
+          },
+          {
+            "player_strategy": "Pattern-based (Singularity)",
+            "ai_counter": "Vary actions every turn, avoid repetition, deny Coherence generation"
+          }
+        ]
+      }
+    }
+  },
+  
+  "LAYER_8_EDGE_CASES": {
+    "description": "Handling rare scenarios, bugs, and unusual situations",
+    
+    "8.1_SIMULTANEOUS_EVENTS": {
+      "description": "What happens when multiple events occur at exact same time",
+      
+      "8.1.1_simultaneous_defeat": {
+        "rule_id": "R-8.1.1",
+        "description": "Both cards reach 0 HP on same turn",
+        "resolution": "Round declared draw, rematch with same cards",
+        "examples": [
+          "Both [Burn] ticks kill simultaneously",
+          "Both [Counter] glyphs deal lethal damage",
+          "Mutual destruction from [Reaction] chains"
+        ],
+        "round_score": "No player gets round win, round count doesn't increment",
+        "edge_case_frequency": "Rare (<1% of matches)"
+      },
+      
+      "8.1.2_simultaneous_resource_depletion": {
+        "rule_id": "R-8.1.2",
+        "description": "Both players run out of KP simultaneously",
+        "resolution": "Both pass turn, resources regenerate next turn normally",
+        "note": "Not a draw condition, game continues"
+      },
+      
+      "8.1.3_simultaneous_instant_win_conditions": {
+        "rule_id": "R-8.1.3",
+        "description": "Both [Collapse] and [Checkmate] trigger same turn",
+        "resolution": "Priority to player who achieved condition first (by turn order)",
+        "tiebreaker": "If truly simultaneous, higher Speed stat wins",
+        "ultra_rare": "Theoretically possible but never observed in testing"
+      }
+    },
+    
+    "8.2_DISCONNECTION_HANDLING": {
+      "description": "What happens when player disconnects",
+      
+      "8.2.1_disconnection_policy": {
+        "rule_id": "R-8.2.1",
+        "description": "Reconnection window and forfeit rules",
+        "policy": {
+          "reconnection_window": "60 seconds",
+          "during_window": "Match paused, timer frozen",
+          "reconnection_success": "Match resumes from exact game state",
+          "reconnection_failure": "Automatic forfeit, opponent awarded win",
+          "repeat_disconnections": "3 disconnections in 24 hours → Ranked matchmaking temporarily suspended (30 minutes)"
+        },
+        "casual_vs_ranked": {
+          "casual": "More lenient, 90 second window, no penalties",
+          "ranked": "60 second window, loss of Glory points on forfeit"
+        }
+      }
+    },
+    
+    "8.3_BUG_HANDLING": {
+      "description": "How system handles unexpected errors or bugs",
+      
+      "8.3.1_bug_detection_and_recovery": {
+        "rule_id": "R-8.3.1",
+        "description": "Automatic bug detection and graceful degradation",
+        "detection_methods": [
+          "Invalid game state (HP negative, resources exceed cap)",
+          "Infinite loops (reaction chains exceed depth 3)",
+          "Missing required data (card/glyph definitions not found)",
+          "Calculation errors (NaN, infinity values)"
+        ],
+        "recovery_actions": [
+          "Log error to server for developer review",
+          "Attempt state correction (clamp values to valid ranges)",
+          "If unrecoverable: Declare match draw, refund entry fees/Glory",
+          "Notify player with error ID for support ticket"
+        ],
+        "player_communication": "Friendly error message: 'Something went wrong! Match result nullified, rewards refunded. Error ID: [code]'"
+      }
+    },
+    
+    "8.4_EXPLOIT_PREVENTION": {
+      "description": "Anti-cheat and exploit detection",
+      
+      "8.4.1_cheat_detection": {
+        "rule_id": "R-8.4.1",
+        "description": "Detecting and preventing exploits",
+        "detection_methods": [
+          "Impossible actions (activate glyph without sufficient resources)",
+          "Speed hacking (actions faster than humanly possible)",
+          "Memory manipulation (altered HP/resource values)",
+          "Packet manipulation (forged game state updates)"
+        ],
+        "response": {
+          "first_offense": "Match result nullified, warning issued",
+          "repeat_offense": "Account suspended (24 hours → 7 days → permanent)",
+          "severe_offense": "Immediate permanent ban (e.g., selling hacked accounts)"
+        }
+      }
+    }
+  },
+  
+  "LAYER_9_SPECIAL_MECHANICS": {
+    "description": "Tournament rules, achievements, seasonal events, and special modes",
+    
+    "9.1_TOURNAMENT_SYSTEM": {
+      "description": "Competitive tournament modes and rules",
+      
+      "9.1.1_tournament_formats": {
+        "rule_id": "R-9.1.1",
+        "description": "Different tournament types",
+        "formats": [
+          {
+            "format": "Single Elimination",
+            "description": "Lose once, eliminated",
+            "rounds": "Based on participants (8/16/32/64 player brackets)",
+            "reward_structure": "Top 3 receive rewards (1st: 5000 Essence, 2nd: 2500, 3rd: 1000)"
+          },
+          {
+            "format": "Double Elimination",
+            "description": "Lose twice, eliminated (winners/losers brackets)",
+            "duration": "Longer but fairer",
+            "reward_structure": "Top 4 receive rewards"
+          },
+          {
+            "format": "Swiss Rounds",
+            "description": "Everyone plays 5-7 rounds, ranked by wins",
+            "advantages": "No elimination, all players get multiple matches",
+            "reward_structure": "Top 8 receive rewards based on final standings"
+          },
+          {
+            "format": "Seasonal Championship",
+            "description": "Monthly/quarterly elite tournaments",
+            "entry": "Top 100 ranked players invited",
+            "rewards": "Exclusive cosmetics, titles, massive Essence/Crystal prizes"
+          }
+        ]
+      },
+      
+      "9.1.2_tournament_rules": {
+        "rule_id": "R-9.1.2",
+        "description": "Special rules for tournament play",
+        "rules": [
+          "Deck lock: Cannot change deck between matches in same tournament",
+          "Time limits: 60 second turn timer strictly enforced",
+          "Pause limit: 1 pause per player per match, max 60 seconds",
+          "Disconnection: 30 second window (stricter than casual), then forfeit",
+          "Spectators: Matches can be spectated with 30-second delay (prevents ghosting)",
+          "Prize distribution: Top 50% receive participation rewards minimum"
+        ]
+      }
+    },
+    
+    "9.2_ACHIEVEMENT_SYSTEM": {
+      "description": "Challenges and achievements for completionists",
+      
+      "9.2.1_achievement_categories": {
+        "rule_id": "R-9.2.1",
+        "description": "Types of achievements and rewards",
+        "categories": [
+          {
+            "category": "Mastery",
+            "achievements": [
+              "Engine Master: Reach Master tier in all 8 engines (Reward: 1000 Essence, 'Omniscient' title)",
+              "Planetary Alignment: Unlock all planets to Tier 4 (Reward: 2000 Essence, exclusive card art)",
+              "Perfect Victory: Win without taking damage 10 times (Reward: 500 Essence, 'Untouchable' title)"
+            ]
+          },
+          {
+            "category": "Combat",
+            "achievements": [
+              "Pyromaniac: Apply [Burn] 5 stacks 50 times (Reward: Unlock 'Inferno' glyph)",
+              "Detonator: Execute [Detonate] with 5 stacks 20 times (Reward: 300 Essence)",
+              "Healer: Heal 10,000 HP total (Reward: Unlock 'Greater Heal' glyph)"
+            ]
+          },
+          {
+            "category": "Special Win Conditions",
+            "achievements": [
+              "Checkmate Master: Win via [Checkmate] 5 times (Reward: 1000 Essence, 'Grandmaster' title)",
+              "Singularity Achieved: Win via [Collapse] 3 times (Reward: 1500 Essence, exclusive cosmetic)",
+              "Divine Intervention: Win with Grace at 100 (Reward: 500 Essence)"
+            ]
+          },
+          {
+            "category": "Collection",
+            "achievements": [
+              "Glyph Collector: Unlock 500 unique glyphs (Reward: 2000 Essence, 'Archivist' title)",
+              "Deckbuilder: Create 50 unique decks (Reward: +2 deck slots)",
+              "Completionist: Unlock all 800 glyphs (Reward: 5000 Essence, 'Transcendent' title, exclusive cosmetic set)"
+            ]
+          },
+          {
+            "category": "Ranked",
+            "achievements": [
+              "Ranked Rookie: Reach Bronze rank (Reward: 100 Glory)",
+              "Gold Standard: Reach Gold rank (Reward: 500 Glory, exclusive card back)",
+              "Legendary Warrior: Reach Legendary rank (Reward: 2000 Glory, exclusive animated card back, 'Legend' title)"
+            ]
+          }
+        ]
+      }
+    },
+    
+    "9.3_SEASONAL_EVENTS": {
+      "description": "Limited-time events and seasonal content",
+      
+      "9.3.1_seasonal_calendar": {
+        "rule_id": "R-9.3.1",
+        "description": "Recurring seasonal events throughout year",
+        "seasons": [
+          {
+            "season": "Season of Fire (Summer)",
+            "duration": "June-August",
+            "theme": "Tantra/Mars focus, fire aesthetics",
+            "special_rewards": "Fire-themed cosmetics, +20% Prana generation for duration",
+            "event_modes": "Inferno mode: All [Burn] damage doubled"
+          },
+          {
+            "season": "Season of Wisdom (Autumn)",
+            "duration": "September-November",
+            "theme": "Character Analysis/Jupiter focus",
+            "special_rewards": "Wisdom-themed cosmetics, +20% Insight generation",
+            "event_modes": "Oracle mode: [Reveal] costs -50% resources"
+          },
+          {
+            "season": "Season of Balance (Winter)",
+            "duration": "December-February",
+            "theme": "Foundational/Saturn focus",
+            "special_rewards": "Ice-themed cosmetics, +20% Structure generation",
+            "event_modes": "Fortress mode: All [Shield] values +50%"
+          },
+          {
+            "season": "Season of Transcendence (Spring)",
+            "duration": "March-May",
+            "theme": "Consciousness/Invocation focus",
+            "special_rewards": "Celestial cosmetics, +20% Bandwidth/Sanctity generation",
+            "event_modes": "Ascension mode: Neural States cost -5 Bandwidth to transition"
+          }
+        ]
+      },
+      
+      "9.3.2_limited_time_modes": {
+        "rule_id": "R-9.3.2",
+        "description": "Special game modes available temporarily",
+        "modes": [
+          {
+            "mode": "Chaos Mode",
+            "description": "Random glyphs each turn, unpredictable gameplay",
+            "duration": "Weekend events",
+            "rewards": "Double XP, exclusive chaos-themed cosmetics"
+          },
+          {
+            "mode": "Draft Mode",
+            "description": "Players draft cards from shared pool, build deck on-the-fly",
+            "skill_test": "Tests adaptability and game knowledge",
+            "rewards": "Based on wins (0-5 wins = tiered rewards)"
+          },
+          {
+            "mode": "Boss Raid",
+            "description": "Co-op mode, team of 3 players vs AI boss with 1000 HP",
+            "difficulty_tiers": "Normal, Hard, Legendary",
+            "rewards": "Unique boss-themed cosmetics, high Essence/Crystals"
+          },
+          {
+            "mode": "Mirror Match",
+            "description": "Both players use identical random decks",
+            "pure_skill": "Eliminates deck advantage, tests pure strategy",
+            "rewards": "Ranked Glory + exclusive 'Mirrored' title"
+          }
+        ]
+      }
+    },
+    
+    "9.4_COSMETIC_SYSTEM": {
+      "description": "Visual customization without affecting gameplay",
+      
+      "9.4.1_cosmetic_types": {
+        "rule_id": "R-9.4.1",
+        "description": "Types of cosmetic items available",
+        "cosmetics": [
+          {
+            "type": "Card Backs",
+            "description": "Visual design on back of cards",
+            "unlock": "Achievements, seasonal rewards, purchase"
+          },
+          {
+            "type": "Card Borders",
+            "description": "Frame around card edges",
+            "rarity_tiers": "Common, Rare, Epic, Legendary, Mythic"
+          },
+          {
+            "type": "Animations",
+            "description": "Special effects when glyphs activate",
+            "examples": "Fire trail for [Burn], holy light for [Bless], glitch effect for Singularity"
+          },
+          {
+            "type": "Titles",
+            "description": "Player nameplate prefix/suffix",
+            "examples": "'Grandmaster', 'Pyromaniac', 'Legend', 'Transcendent'"
+          },
+          {
+            "type": "Emotes",
+            "description": "In-match communication (respectful only, toxic ones disabled)",
+            "examples": "'Well Played', 'Good Luck', 'Thank You', 'Incredible!'"
+          },
+          {
+            "type": "Profile Banners",
+            "description": "Background art on player profile",
+            "seasonal": "Each season has exclusive banner set"
+          }
+        ],
+        "no_pay_to_win": "All cosmetics purely visual, zero gameplay impact"
+      }
+    }
+  },
+  
+  "VALIDATION_FRAMEWORK": {
+    "description": "Final validation and cross-layer rule checking",
+    "validation_layers": [
+      "Layer 1-3: Core game mechanics (match flow, resources, combat)",
+      "Layer 4: Glyph activation and keywords",
+      "Layer 5: Jyotish modifiers applied to all previous layers",
+      "Layer 6: Progression unlocks validated against player level",
+      "Layer 7: AI behavior selected based on difficulty + player patterns",
+      "Layer 8: Edge case handling if anomalies detected",
+      "Layer 9: Special mode rules override base rules when active"
+    ],
+    "rule_priority": [
+      "1. Special mode rules (highest priority, override base rules)",
+      "2. Jyotish modifiers (passive bonuses)",
+      "3. Core game mechanics (base rules)",
+      "4. Edge case handlers (safety nets)",
+      "5. Default behavior (when no specific rule applies)"
+    ],
+    "conflict_resolution": "If rules conflict, higher priority wins; log conflict for developer review"
+  },
+  
+  "NOTES": {
+    "this_file_covers": "Layers 5-9 (Jyotish, Progression, AI, Edge Cases, Special) - Complete game systems",
+    "total_rules_in_this_file": "~60 comprehensive rules covering all advanced systems",
+    "system_completeness": "With all 4 rules files (Layers 1-9), AI has complete game knowledge",
+    "future_expansion": "System designed to easily add new planets, houses, modes, and events",
+    "ai_parseable": true,
+    "human_readable": true,
+    "version": "1.0.0 - Complete Rules Engine (Layers 1-9) Finished"
+  }
+}

@@ -1,0 +1,556 @@
+# Character Analysis Engine — Complete Skills List (v3.0)
+## Total Skills: 100 (80 Core + 10 Special + 10 Big Brain)
+
+---
+
+### **INQUISITOR PATH (Control Focus) — 20 Skills**
+
+1. **Glyph: Tactical Scan** (Basic Analyze, Gnosis 10)
+    * **Core Function:** [Analyze] target, gain 2 Insight. Reveal 1 random keyword in their hand.
+    * **Evo A (Deep Scan):** Reveal 2 keywords instead.
+    * **Evo B (Efficient Scan):** Cost reduced by 1 KP.
+
+2. **Glyph: Precision Mark** (Basic Mark, Gnosis 15)
+    * **Core Function:** [Mark] target. Your next [Strike] against them deals +25% damage and applies [Vulnerable] (1 turn).
+    * **Evo A (Lasting Mark):** [Vulnerable] duration 2 turns.
+    * **Evo B (Multi-Mark):** Can mark 2 targets simultaneously.
+
+3. **Glyph: Silence Breach** (Disable, Gnosis 30)
+    * **Core Function:** Apply [Silence] (1 turn). If target has [Shield], convert 1 [Shield] to [Vulnerable].
+    * **Evo A (Extended Silence):** Duration 2 turns.
+    * **Evo B (Cascading Breach):** Also applies to adjacent enemy.
+
+4. **Glyph: Stun Protocol** (Hard CC, Gnosis 40)
+    * **Core Function:** Apply [Stun] (1 turn). Target cannot act.
+    * **Evo A (Extended Stun):** Duration 2 turns but costs +2 KP.
+    * **Evo B (Insight Stun):** Costs 15 Insight instead of KP.
+
+5. **Glyph: Interrogation** (Information Extraction, Gnosis 35)
+    * **Core Function:** [Analyze] target engine. Reveal their next 2 planned actions and gain 3 Insight.
+    * **Evo A (Deep Interrogation):** Reveal 3 actions instead.
+    * **Evo B (Tactical Interrogation):** Also reduce their next action cost by revealing it.
+
+6. **Glyph: Exploit Weakness** (Execute, Gnosis 45)
+    * **Core Function:** If target has [Expose] or [Vulnerable], deal 30 damage and refresh 1 cooldown.
+    * **Evo A (Critical Exploit):** Damage increased to 50.
+    * **Evo B (Chain Exploit):** Can target 2 enemies if both have debuffs.
+
+7. **Glyph: Control Lock** (Lockdown, Gnosis 50)
+    * **Core Function:** Apply [Silence] + [Vulnerable] for 2 turns. Costs 20 Insight.
+    * **Evo A (Perfect Lock):** Duration 3 turns.
+    * **Evo B (Economic Lock):** Cost reduced to 15 Insight.
+
+8. **Glyph: Mind Shackle** (Mental Control, Gnosis 55)
+    * **Core Function:** Target's next glyph costs +3 KP. If they can't pay, apply [Stun] (1 turn).
+    * **Evo A (Heavy Shackle):** Cost increase +5 KP.
+    * **Evo B (Cascading Shackle):** Affects their next 2 glyphs.
+
+9. **Glyph: Vulnerability Cascade** (Debuff Chain, Gnosis 40)
+    * **Core Function:** Apply [Vulnerable] (2 turns). Each debuff on target extends duration by 1 turn.
+    * **Evo A (Amplified Cascade):** Extends by 2 turns per debuff.
+    * **Evo B (Spreading Cascade):** Also applies to adjacent enemies.
+
+10. **Glyph: Truth Extraction** (Forced Reveal, Gnosis 35)
+    * **Core Function:** Target must reveal their entire hand. Gain 5 Insight. Once per duel.
+    * **Evo A (Deep Truth):** Also reveal their next draw.
+    * **Evo B (Painful Truth):** Deal 10 damage per card revealed.
+
+11. **Glyph: Countermeasure** (Reactive Control, Gnosis 30)
+    * **Core Function:** When target uses a glyph, apply [Silence] (1 turn). Cooldown: 3 turns.
+    * **Evo A (Perfect Counter):** Cooldown reduced to 2 turns.
+    * **Evo B (Aggressive Counter):** Also deal 15 damage.
+
+12. **Glyph: Inhibitor Field** (Zone Control, Gnosis 50)
+    * **Core Function:** Create 3x3 zone for 2 turns: Enemies inside have all glyphs cost +2 KP.
+    * **Evo A (Extended Field):** Duration 3 turns.
+    * **Evo B (Punishing Field):** Enemies entering zone take 10 damage.
+
+13. **Glyph: Cognitive Overload** (Mental Damage, Gnosis 45)
+    * **Core Function:** Deal 20 damage. If target has 3+ debuffs, also apply [Stun] (1 turn).
+    * **Evo A (Severe Overload):** Damage increased to 35.
+    * **Evo B (Cascading Overload):** Stun threshold reduced to 2 debuffs.
+
+14. **Glyph: Expose Core** (Deep Analyze, Gnosis 40)
+    * **Core Function:** [Expose] target's primary resource. Consuming it refreshes 2 cooldowns instead of 1.
+    * **Evo A (Perfect Exposure):** Refreshes 3 cooldowns.
+    * **Evo B (Multi-Exposure):** Can expose 2 different resources.
+
+15. **Glyph: Lockdown Protocol** (Ultimate Control, Gnosis 60)
+    * **Core Function:** Apply [Silence] + [Stun] for 1 turn, then [Vulnerable] for 2 turns. Costs 25 Insight.
+    * **Evo A (Extended Protocol):** All durations +1 turn.
+    * **Evo B (Economic Protocol):** Cost reduced to 20 Insight.
+
+16. **Glyph: Pattern Recognition** (Insight Generation, Gnosis 25)
+    * **Core Function:** For 3 turns, each enemy action grants you 1 Insight.
+    * **Evo A (Deep Recognition):** Gain 2 Insight per action.
+    * **Evo B (Extended Recognition):** Duration 4 turns.
+
+17. **Glyph: Disruptor Spike** (Interrupt, Gnosis 35)
+    * **Core Function:** Interrupt target's current action and apply [Silence] (1 turn). Once per 3 turns.
+    * **Evo A (Multi-Disrupt):** Can interrupt 2 targets.
+    * **Evo B (Punishing Disrupt):** Also deal 20 damage.
+
+18. **Glyph: Judicial Verdict** (Execution, Gnosis 55)
+    * **Core Function:** If target has 4+ debuffs, deal 60 damage and [Stun] (1 turn). Once per duel.
+    * **Evo A (Harsh Verdict):** Damage increased to 90.
+    * **Evo B (Merciful Verdict):** Usable at 3 debuffs instead.
+
+19. **Glyph: Control Amplifier** (Debuff Enhancement, Gnosis 40)
+    * **Core Function:** For 2 turns, all [Silence] and [Stun] you apply have +1 turn duration.
+    * **Evo A (Perfect Amplification):** +2 turns duration instead.
+    * **Evo B (Extended Amplifier):** Duration 3 turns.
+
+20. **Glyph: Absolute Authority** (Master Control, Gnosis 70)
+    * **Core Function:** Apply [Silence] + [Vulnerable] + [Stun] to target for 1 turn each. Costs 30 Insight. Once per duel.
+    * **Evo A (Extended Authority):** All effects 2 turns.
+    * **Evo B (Aura Authority):** Affects 3x3 area.
+
+---
+
+### **WATCHER PATH (Tempo Focus) — 20 Skills**
+
+21. **Glyph: Quick Study** (Fast Analyze, Gnosis 15)
+    * **Core Function:** [Analyze] target, gain 1 Insight. 0 cooldown.
+    * **Evo A (Efficient Study):** Gain 2 Insight instead.
+    * **Evo B (Multi-Study):** Can analyze 2 targets.
+
+22. **Glyph: Tempo Mark** (Speed Mark, Gnosis 20)
+    * **Core Function:** [Mark] target. Your next action against them has 0 cooldown.
+    * **Evo A (Double Tempo):** Next 2 actions have 0 cooldown.
+    * **Evo B (Insight Tempo):** Also gain 2 Insight.
+
+23. **Glyph: Rapid Assessment** (Quick Insight, Gnosis 25)
+    * **Core Function:** Gain 3 Insight instantly. Cooldown: 2 turns.
+    * **Evo A (Deep Assessment):** Gain 5 Insight instead.
+    * **Evo B (Frequent Assessment):** Cooldown reduced to 1 turn.
+
+24. **Glyph: Momentum Shift** (Cooldown Refresh, Gnosis 30)
+    * **Core Function:** Refresh 1 cooldown immediately. Costs 10 Insight.
+    * **Evo A (Mass Refresh):** Refresh 2 cooldowns.
+    * **Evo B (Economic Refresh):** Cost reduced to 8 Insight.
+
+25. **Glyph: Prediction Engine** (Forecast, Gnosis 35)
+    * **Core Function:** Predict enemy's next action. If correct, gain 5 Insight and reduce your next glyph cost by 2 KP.
+    * **Evo A (Perfect Prediction):** Gain 8 Insight instead.
+    * **Evo B (Extended Prediction):** Predict their next 2 actions.
+
+26. **Glyph: Tempo Steal** (Resource Drain, Gnosis 40)
+    * **Core Function:** Target loses 2 KP, you gain 2 Insight.
+    * **Evo A (Heavy Steal):** Target loses 4 KP.
+    * **Evo B (Efficient Steal):** You gain 4 Insight.
+
+27. **Glyph: Clockwork Precision** (Timing Optimization, Gnosis 30)
+    * **Core Function:** For 2 turns, your first glyph each turn has -1 cooldown.
+    * **Evo A (Perfect Timing):** -2 cooldown instead.
+    * **Evo B (Extended Timing):** Duration 3 turns.
+
+28. **Glyph: Insight Burst** (Resource Spike, Gnosis 25)
+    * **Core Function:** Convert 3 KP to 6 Insight.
+    * **Evo A (Efficient Burst):** 3 KP → 9 Insight.
+    * **Evo B (Mass Burst):** 5 KP → 12 Insight.
+
+29. **Glyph: Window Detection** (Opportunity Sense, Gnosis 35)
+    * **Core Function:** When target is [Vulnerable], your next [Strike] has 0 cooldown and deals +30% damage.
+    * **Evo A (Extended Window):** +50% damage instead.
+    * **Evo B (Multi-Window):** Can trigger twice per turn.
+
+30. **Glyph: Adaptive Rhythm** (Flow State, Gnosis 45)
+    * **Core Function:** For 3 turns, each [Analyze] you cast reduces all other cooldowns by 1.
+    * **Evo A (Perfect Rhythm):** Reduces by 2 instead.
+    * **Evo B (Extended Rhythm):** Duration 4 turns.
+
+31. **Glyph: Blitz Analysis** (Speed Scan, Gnosis 30)
+    * **Core Function:** [Analyze] all enemies simultaneously. Gain 1 Insight per target.
+    * **Evo A (Deep Blitz):** Gain 2 Insight per target.
+    * **Evo B (Economic Blitz):** Cost -2 KP.
+
+32. **Glyph: Cascade Refresh** (Chain Reset, Gnosis 40)
+    * **Core Function:** When you consume [Expose], also refresh an additional random cooldown.
+    * **Evo A (Perfect Cascade):** Refresh 2 additional cooldowns.
+    * **Evo B (Selective Cascade):** Choose which cooldown to refresh.
+
+33. **Glyph: Velocity Protocol** (Speed Boost, Gnosis 35)
+    * **Core Function:** For 2 turns, all your glyphs have -1 cooldown (minimum 0).
+    * **Evo A (Perfect Velocity):** -2 cooldown instead.
+    * **Evo B (Extended Velocity):** Duration 3 turns.
+
+34. **Glyph: Opportunist Strike** (Combo Damage, Gnosis 30)
+    * **Core Function:** Deal 25 damage. If target is [Marked], deal 40 instead and gain 3 Insight.
+    * **Evo A (Perfect Strike):** Damage 35/60 instead.
+    * **Evo B (Efficient Strike):** Cost -1 KP.
+
+35. **Glyph: Temporal Advantage** (Turn Manipulation, Gnosis 50)
+    * **Core Function:** Take an additional mini-turn immediately (can only use 1 glyph). Costs 15 Insight.
+    * **Evo A (Extended Turn):** Can use 2 glyphs.
+    * **Evo B (Economic Turn):** Cost 12 Insight.
+
+36. **Glyph: Insight Overflow** (Resource Conversion, Gnosis 40)
+    * **Core Function:** If you have 20+ Insight, convert 10 Insight to refresh all cooldowns. Once per 4 turns.
+    * **Evo A (Efficient Overflow):** Cost only 8 Insight.
+    * **Evo B (Frequent Overflow):** Cooldown reduced to 3 turns.
+
+37. **Glyph: Perfect Timing** (Precision Strike, Gnosis 35)
+    * **Core Function:** Deal 30 damage. If used immediately after [Analyze], deal 50 instead.
+    * **Evo A (Massive Timing):** Damage 40/70 instead.
+    * **Evo B (Insight Timing):** Also gain 3 Insight on combo.
+
+38. **Glyph: Momentum Chain** (Combo System, Gnosis 45)
+    * **Core Function:** For 3 turns, each glyph you cast reduces the next glyph's cost by 1 KP (stacks up to 3).
+    * **Evo A (Perfect Chain):** Reduces by 2 KP per cast.
+    * **Evo B (Extended Chain):** Duration 4 turns.
+
+39. **Glyph: Cooldown Mastery** (Ultimate Tempo, Gnosis 55)
+    * **Core Function:** For 2 turns, all your glyphs have 0 cooldown. Costs 25 Insight. Once per duel.
+    * **Evo A (Extended Mastery):** Duration 3 turns.
+    * **Evo B (Economic Mastery):** Cost 20 Insight.
+
+40. **Glyph: Perpetual Motion** (Sustained Flow, Gnosis 60)
+    * **Core Function:** Passive: Each time you cast 3 glyphs in a turn, gain 5 Insight and refresh 1 random cooldown.
+    * **Evo A (Perfect Motion):** Gain 8 Insight instead.
+    * **Evo B (Selective Motion):** Choose which cooldown to refresh.
+
+---
+
+### **SABOTEUR PATH (Disruption Focus) — 20 Skills**
+
+41. **Glyph: Cost Spike** (Economic Warfare, Gnosis 25)
+    * **Core Function:** Target's next glyph costs +2 KP.
+    * **Evo A (Heavy Spike):** +4 KP instead.
+    * **Evo B (Multi-Spike):** Affects their next 2 glyphs.
+
+42. **Glyph: Resource Drain** (KP Theft, Gnosis 30)
+    * **Core Function:** Target loses 3 KP. You gain 2 Insight.
+    * **Evo A (Deep Drain):** Target loses 5 KP.
+    * **Evo B (Efficient Drain):** You gain 4 Insight.
+
+43. **Glyph: Hand Disruption** (Deck Interference, Gnosis 35)
+    * **Core Function:** Target discards 1 random card. Gain 3 Insight.
+    * **Evo A (Mass Disruption):** Discard 2 cards.
+    * **Evo B (Tactical Disruption):** You choose which card to discard.
+
+44. **Glyph: Cooldown Inflation** (Delay, Gnosis 40)
+    * **Core Function:** Increase target's current cooldowns by 1 turn each.
+    * **Evo A (Heavy Inflation):** Increase by 2 turns.
+    * **Evo B (Selective Inflation):** Choose which cooldown to inflate.
+
+45. **Glyph: Engine Sabotage** (Subsystem Damage, Gnosis 45)
+    * **Core Function:** Target's primary engine has all glyphs cost +1 KP for 2 turns.
+    * **Evo A (Deep Sabotage):** +2 KP instead.
+    * **Evo B (Extended Sabotage):** Duration 3 turns.
+
+46. **Glyph: Memory Scramble** (Insight Theft, Gnosis 35)
+    * **Core Function:** Target loses 5 Insight. If they don't have enough, take 10 damage per missing Insight.
+    * **Evo A (Deep Scramble):** Target loses 8 Insight.
+    * **Evo B (Punishing Scramble):** Damage increased to 15 per missing.
+
+47. **Glyph: Draw Denial** (Deck Lock, Gnosis 40)
+    * **Core Function:** Target skips their next draw. You draw 1 additional card.
+    * **Evo A (Extended Denial):** They skip 2 draws.
+    * **Evo B (Insight Denial):** Also gain 4 Insight.
+
+48. **Glyph: Trap Card** (Reactive Sabotage, Gnosis 30)
+    * **Core Function:** Set a trap. When target uses their next glyph, it costs +3 KP and deals 15 damage to them.
+    * **Evo A (Heavy Trap):** Damage increased to 30.
+    * **Evo B (Multi-Trap):** Affects their next 2 glyphs.
+
+49. **Glyph: Economic Collapse** (Mass Drain, Gnosis 50)
+    * **Core Function:** All enemies lose 2 KP. You gain 3 Insight per enemy affected.
+    * **Evo A (Total Collapse):** Enemies lose 4 KP.
+    * **Evo B (Efficient Collapse):** You gain 5 Insight per enemy.
+
+50. **Glyph: Bandwidth Leak** (Resource Corruption, Gnosis 35)
+    * **Core Function:** Target loses 3 Bandwidth. If they don't have enough, apply [Vulnerable] (2 turns).
+    * **Evo A (Deep Leak):** Target loses 5 Bandwidth.
+    * **Evo B (Punishing Leak):** [Vulnerable] duration 3 turns.
+
+51. **Glyph: Plan Disruption** (Strategy Interference, Gnosis 40)
+    * **Core Function:** Target must reveal their next planned action and it costs +2 KP. Gain 3 Insight.
+    * **Evo A (Deep Disruption):** Reveal their next 2 actions.
+    * **Evo B (Heavy Disruption):** Cost increase +4 KP.
+
+52. **Glyph: Cascade Corruption** (Chain Disruption, Gnosis 45)
+    * **Core Function:** Apply [Expose]. While active, each glyph target uses costs +1 KP.
+    * **Evo A (Deep Corruption):** +2 KP instead.
+    * **Evo B (Extended Corruption):** [Expose] lasts 3 turns.
+
+53. **Glyph: Resource Lock** (Anti-Economy, Gnosis 50)
+    * **Core Function:** For 2 turns, target cannot gain KP from any source.
+    * **Evo A (Perfect Lock):** Duration 3 turns.
+    * **Evo B (Multi-Lock):** Affects 2 enemies.
+
+54. **Glyph: Deck Poison** (Long-term Sabotage, Gnosis 40)
+    * **Core Function:** For 3 turns, target's first glyph each turn costs +2 KP.
+    * **Evo A (Deep Poison):** +3 KP instead.
+    * **Evo B (Extended Poison):** Duration 4 turns.
+
+55. **Glyph: Priority Steal** (Turn Order, Gnosis 35)
+    * **Core Function:** You act before target next turn, regardless of initiative.
+    * **Evo A (Mass Steal):** Affects 2 enemies.
+    * **Evo B (Insight Steal):** Also gain 4 Insight.
+
+56. **Glyph: System Overload** (Critical Disruption, Gnosis 55)
+    * **Core Function:** Target's next 3 glyphs each cost +2 KP and have +1 cooldown. Costs 15 Insight.
+    * **Evo A (Perfect Overload):** +3 KP and +2 cooldown.
+    * **Evo B (Extended Overload):** Affects next 4 glyphs.
+
+57. **Glyph: Mana Burn** (Anti-Resource, Gnosis 45)
+    * **Core Function:** Target loses 5 KP and takes 10 damage per KP lost.
+    * **Evo A (Deep Burn):** Damage increased to 15 per KP.
+    * **Evo B (Mass Burn):** Affects all enemies.
+
+58. **Glyph: Denial Field** (Zone Sabotage, Gnosis 50)
+    * **Core Function:** Create 3x3 zone for 2 turns: Enemies inside lose 1 KP at start of their turn.
+    * **Evo A (Heavy Denial):** Lose 2 KP instead.
+    * **Evo B (Extended Denial):** Duration 3 turns.
+
+59. **Glyph: Total Disruption** (Ultimate Sabotage, Gnosis 60)
+    * **Core Function:** Target loses 5 KP, discards 1 card, and all cooldowns increase by 1. Costs 20 Insight. Once per duel.
+    * **Evo A (Perfect Disruption):** Discard 2 cards and cooldowns +2.
+    * **Evo B (Economic Disruption):** Cost 15 Insight.
+
+60. **Glyph: Chaos Protocol** (Mass Interference, Gnosis 65)
+    * **Core Function:** All enemies' next glyph costs +3 KP. You gain 2 Insight per enemy affected. Once per duel.
+    * **Evo A (Perfect Chaos):** +5 KP instead.
+    * **Evo B (Extended Chaos):** Affects their next 2 glyphs.
+
+---
+
+### **ARBITER PATH (Hybrid Focus) — 20 Skills**
+
+61. **Glyph: Defensive Analysis** (Analyze + Shield, Gnosis 20)
+    * **Core Function:** [Analyze] target and gain 2 Insight. Also grant yourself 10 Shield.
+    * **Evo A (Deep Defense):** Shield increased to 15.
+    * **Evo B (Multi-Defense):** Also grant ally 10 Shield.
+
+62. **Glyph: Counter Mark** (Reactive Mark, Gnosis 25)
+    * **Core Function:** When you take damage, automatically [Mark] the attacker. Cooldown: 2 turns.
+    * **Evo A (Perfect Counter):** Cooldown reduced to 1 turn.
+    * **Evo B (Aggressive Counter):** Also deal 10 damage to attacker.
+
+63. **Glyph: Purifying Insight** (Cleanse + Insight, Gnosis 30)
+    * **Core Function:** [Cleanse] 1 debuff from yourself and gain 3 Insight.
+    * **Evo A (Deep Purge):** [Cleanse] 2 debuffs.
+    * **Evo B (Mass Purge):** Also cleanse 1 debuff from ally.
+
+64. **Glyph: Retributive Analysis** (Counter-Attack, Gnosis 35)
+    * **Core Function:** [Analyze] attacker when you take damage. Deal 20 damage back and gain 2 Insight.
+    * **Evo A (Heavy Retaliation):** Damage increased to 35.
+    * **Evo B (Efficient Retaliation):** Gain 4 Insight.
+
+65. **Glyph: Balanced Approach** (Hybrid Action, Gnosis 30)
+    * **Core Function:** Deal 20 damage and grant yourself 15 Shield.
+    * **Evo A (Offensive Balance):** Damage increased to 35.
+    * **Evo B (Defensive Balance):** Shield increased to 25.
+
+66. **Glyph: Protective Exposure** (Expose + Shield, Gnosis 40)
+    * **Core Function:** [Expose] target's weakness. While active, you have +20 Shield.
+    * **Evo A (Perfect Protection):** Shield increased to 35.
+    * **Evo B (Extended Protection):** [Expose] lasts 3 turns.
+
+67. **Glyph: Judgment Strike** (Damage + Control, Gnosis 35)
+    * **Core Function:** Deal 25 damage and apply [Vulnerable] (1 turn).
+    * **Evo A (Harsh Judgment):** Damage increased to 40.
+    * **Evo B (Extended Judgment):** [Vulnerable] duration 2 turns.
+
+68. **Glyph: Tactical Cleanse** (Targeted Purge, Gnosis 35)
+    * **Core Function:** [Cleanse] 1 debuff from target ally. If successful, gain 3 Insight.
+    * **Evo A (Mass Cleanse):** Can cleanse from 2 allies.
+    * **Evo B (Deep Cleanse):** [Cleanse] 2 debuffs instead.
+
+69. **Glyph: Shield Analysis** (Defensive Insight, Gnosis 30)
+    * **Core Function:** Grant 20 Shield to yourself or ally. If they're attacked while shielded, gain 3 Insight.
+    * **Evo A (Heavy Shield):** Shield increased to 30.
+    * **Evo B (Efficient Insight):** Gain 5 Insight per attack.
+
+70. **Glyph: Reactive Expertise** (Adaptive Defense, Gnosis 40)
+    * **Core Function:** For 2 turns, when you [Analyze], also gain 10 Shield.
+    * **Evo A (Perfect Expertise):** Shield increased to 20.
+    * **Evo B (Extended Expertise):** Duration 3 turns.
+
+71. **Glyph: Equilibrium** (Balance State, Gnosis 45)
+    * **Core Function:** For 2 turns, all your offensive glyphs also grant 10 Shield, all defensive glyphs deal 15 damage.
+    * **Evo A (Perfect Balance):** Shield/damage increased to 15/25.
+    * **Evo B (Extended Balance):** Duration 3 turns.
+
+72. **Glyph: Justice Bolt** (Punishment, Gnosis 40)
+    * **Core Function:** Deal 30 damage. If target has 2+ debuffs, deal 50 instead.
+    * **Evo A (Divine Justice):** Damage 45/75 instead.
+    * **Evo B (Efficient Justice):** Cost -1 KP.
+
+73. **Glyph: Protective Mark** (Defensive Tag, Gnosis 30)
+    * **Core Function:** [Mark] ally. Next attack against them is reduced by 50% and grants you 3 Insight.
+    * **Evo A (Perfect Protection):** Reduced by 75%.
+    * **Evo B (Multi-Protection):** Can mark 2 allies.
+
+74. **Glyph: Insight Barrier** (Resource Shield, Gnosis 35)
+    * **Core Function:** Spend 10 Insight to grant 30 Shield to yourself or ally.
+    * **Evo A (Efficient Barrier):** Cost only 8 Insight.
+    * **Evo B (Perfect Barrier):** Shield increased to 45.
+
+75. **Glyph: Righteous Wrath** (Cleanse + Damage, Gnosis 40)
+    * **Core Function:** [Cleanse] all debuffs from yourself. Deal 10 damage per debuff removed.
+    * **Evo A (Explosive Wrath):** Damage increased to 20 per debuff.
+    * **Evo B (Spreading Wrath):** Damage affects all enemies.
+
+76. **Glyph: Tactical Intervention** (Emergency Response, Gnosis 45)
+    * **Core Function:** When ally drops below 30% Ojas, automatically grant them 20 Shield and [Analyze] attacker. Once per 3 turns.
+    * **Evo A (Perfect Intervention):** Shield increased to 35.
+    * **Evo B (Frequent Intervention):** Cooldown reduced to 2 turns.
+
+77. **Glyph: Measured Response** (Scaling Defense, Gnosis 40)
+    * **Core Function:** Deal damage equal to your current Shield (consumes Shield). Gain 2 Insight per 10 Shield consumed.
+    * **Evo A (Efficient Response):** Keep 50% of Shield.
+    * **Evo B (Perfect Response):** Gain 3 Insight per 10 Shield.
+
+78. **Glyph: Arbiter's Decree** (Ultimate Balance, Gnosis 60)
+    * **Core Function:** Grant 40 Shield to all allies and apply [Vulnerable] to all enemies (2 turns). Costs 25 Insight. Once per duel.
+    * **Evo A (Divine Decree):** Shield 60, [Vulnerable] 3 turns.
+    * **Evo B (Economic Decree):** Cost 20 Insight.
+
+79. **Glyph: Sword and Shield** (Perfect Hybrid, Gnosis 50)
+    * **Core Function:** For 3 turns, all your glyphs deal +10 damage and grant +10 Shield simultaneously.
+    * **Evo A (Perfect Harmony):** +20 damage and +20 Shield.
+    * **Evo B (Extended Harmony):** Duration 4 turns.
+
+80. **Glyph: Final Judgment** (Ultimate Execute, Gnosis 65)
+    * **Core Function:** If target has 5+ debuffs, deal 100 damage and [Stun] (2 turns). Otherwise deal 30 damage. Once per duel.
+    * **Evo A (Absolute Judgment):** Threshold reduced to 4 debuffs.
+    * **Evo B (Merciful Judgment):** Base damage increased to 50.
+
+---
+
+### **SPECIAL UTILITY SKILLS — 10 Skills**
+
+81. **Glyph: Memory Archive** (Pattern Storage, Gnosis 30)
+    * **Core Function:** Store current enemy pattern. Next duel against same opponent, start with 10 Insight.
+    * **Evo A (Deep Archive):** Start with 15 Insight.
+    * **Evo B (Multi-Archive):** Can store 3 different patterns.
+
+82. **Glyph: Tactical Retreat** (Defensive Reposition, Gnosis 25)
+    * **Core Function:** Gain 20 Shield and move to a safe position. [Cleanse] 1 debuff.
+    * **Evo A (Perfect Retreat):** Shield increased to 35.
+    * **Evo B (Cleansing Retreat):** [Cleanse] 2 debuffs.
+
+83. **Glyph: Information Broker** (Insight Trading, Gnosis 35)
+    * **Core Function:** Spend 15 Insight to draw 2 cards and gain 2 KP.
+    * **Evo A (Efficient Broker):** Cost only 12 Insight.
+    * **Evo B (Generous Broker):** Draw 3 cards instead.
+
+84. **Glyph: Adaptive Learning** (Evolution, Gnosis 40)
+    * **Core Function:** Passive: Each time enemy uses the same glyph twice, gain 2 Insight and reduce your next glyph cost by 1 KP.
+    * **Evo A (Deep Learning):** Gain 4 Insight.
+    * **Evo B (Perfect Learning):** Cost reduction -2 KP.
+
+85. **Glyph: Field Notes** (Documentation, Gnosis 30)
+    * **Core Function:** At end of duel, gain bonus rewards based on Insight generated (1 reward per 10 Insight).
+    * **Evo A (Detailed Notes):** 1 reward per 8 Insight.
+    * **Evo B (Perfect Notes):** Also gain bonus Gnosis.
+
+86. **Glyph: Quick Thinking** (Emergency Insight, Gnosis 20)
+    * **Core Function:** When you drop below 30% Ojas, instantly gain 8 Insight. Once per duel.
+    * **Evo A (Perfect Thinking):** Gain 12 Insight.
+    * **Evo B (Frequent Thinking):** Usable twice per duel.
+
+87. **Glyph: Tactical Flexibility** (Path Switching, Gnosis 45)
+    * **Core Function:** For 2 turns, you can use glyphs from any Character Analysis path as if you mastered them.
+    * **Evo A (Perfect Flexibility):** Duration 3 turns.
+    * **Evo B (Economic Flexibility):** Cost -2 KP.
+
+88. **Glyph: Mirror Analysis** (Self-Reflection, Gnosis 35)
+    * **Core Function:** [Analyze] yourself. Discover 1 weakness you can fix. Gain 5 Insight.
+    * **Evo A (Deep Reflection):** Gain 8 Insight.
+    * **Evo B (Healing Reflection):** Also [Heal] 15 Ojas.
+
+89. **Glyph: Wisdom Archive** (Knowledge Store, Gnosis 50)
+    * **Core Function:** Convert 20 Insight to permanently increase your Insight cap by 5. Can be used multiple times.
+    * **Evo A (Efficient Archive):** Cost only 15 Insight.
+    * **Evo B (Perfect Archive):** Cap increase +8 instead.
+
+90. **Glyph: Master Analyst** (Ultimate Passive, Gnosis 60)
+    * **Core Function:** Passive: Gain 1 Insight whenever any unit (ally or enemy) uses a glyph.
+    * **Evo A (Deep Analysis):** Gain 2 Insight instead.
+    * **Evo B (Selective Analysis):** Only tracks enemy actions but grants 3 Insight per action.
+
+---
+
+### **BIG BRAIN SKILLS (High Skill Ceiling) — 10 Skills**
+
+91. **Glyph: Predictive Matrix** (Multiverse Analysis, Gnosis 65)
+    * **Core Function:** Predict enemy's next 3 actions. For each correct prediction, gain 10 Insight and reduce their action costs by revealing the pattern. For each wrong prediction, lose 5 Insight.
+    * **Evo A (Perfect Matrix):** Gain 15 Insight per correct prediction.
+    * **Evo B (Safe Matrix):** Wrong predictions only lose 2 Insight.
+    * **Note:** *Rewards pattern recognition and psychological profiling of opponent playstyle.*
+
+92. **Glyph: Conditional Trap Network** (Branching Logic, Gnosis 70)
+    * **Core Function:** Set 3 conditional traps with different triggers (e.g., "if enemy uses healing", "if enemy plays offensive glyph", "if enemy gains resources"). When triggered, apply custom effects you pre-selected. Costs 30 Insight.
+    * **Evo A (Deep Network):** Can set 5 traps.
+    * **Evo B (Reactive Network):** Traps can chain into each other.
+    * **Note:** *Requires planning multiple scenarios ahead. Complexity scales with creativity.*
+
+93. **Glyph: Recursive Analysis Loop** (Self-Improving Scan, Gnosis 60)
+    * **Core Function:** [Analyze] target. Each subsequent [Analyze] on the same target reveals deeper information layers (costs, cooldowns, hand, deck order, future draws) and grants +2 Insight per stack (max 5 stacks). Resets if you target someone else.
+    * **Evo A (Perfect Recursion):** Max stacks increased to 8.
+    * **Evo B (Efficient Recursion):** Each stack costs -1 KP.
+    * **Note:** *Rewards committing to a single target and extracting maximum intelligence.*
+
+94. **Glyph: Quantum Prediction** (Probability Manipulation, Gnosis 75)
+    * **Core Function:** Predict 2 possible enemy actions. Assign probability weights (e.g., 70%/30%). Gain Insight proportional to accuracy. If 90%+ accurate over 3 turns, refresh all cooldowns and gain 20 Insight.
+    * **Evo A (Perfect Quantum):** Accuracy threshold lowered to 80%.
+    * **Evo B (Multi-Quantum):** Can predict for 2 different enemies.
+    * **Note:** *Rewards understanding meta-strategy and opponent tendencies.*
+
+95. **Glyph: Butterfly Effect** (Chaos Theory Warfare, Gnosis 65)
+    * **Core Function:** Make a small change now (spend 5 KP on nothing). After 3 turns, if you correctly predicted what cascading effects it would cause to enemy strategy, deal 50 damage and gain 15 Insight. If wrong, lose 10 Insight.
+    * **Evo A (Perfect Butterfly):** Reward increased to 80 damage + 25 Insight.
+    * **Evo B (Safe Butterfly):** Wrong prediction has no penalty.
+    * **Note:** *Abstract strategic thinking. Requires understanding how small changes ripple through game state.*
+
+96. **Glyph: Memory Palace** (Pattern Database, Gnosis 55)
+    * **Core Function:** Passive: Every 5 enemy actions, automatically catalog their pattern. After 3 patterns cataloged, predict their likely next move with 80% accuracy. Gain 5 Insight per correct auto-prediction.
+    * **Evo A (Perfect Palace):** Accuracy increased to 90%.
+    * **Evo B (Fast Palace):** Catalog every 3 actions instead of 5.
+    * **Note:** *Rewards patient observation and pattern recognition over time.*
+
+97. **Glyph: Meta-Analysis** (Engine Counter-Intelligence, Gnosis 70)
+    * **Core Function:** [Analyze] enemy's entire engine loadout. Discover which engines they prioritize and reveal optimal counter-strategies. Costs 25 Insight. Next 5 glyphs you cast have perfect information (know exact outcome before casting).
+    * **Evo A (Deep Meta):** Next 8 glyphs have perfect information.
+    * **Evo B (Economic Meta):** Cost reduced to 20 Insight.
+    * **Note:** *Rewards understanding game systems and engine interactions at macro level.*
+
+98. **Glyph: Gambit Protocol** (Risk-Reward Mastery, Gnosis 60)
+    * **Core Function:** Sacrifice 20 Insight and 3 KP to set a complex gambit. Declare a specific outcome you want to achieve in 4 turns (e.g., "enemy will have 2+ debuffs and <50% Ojas"). If successful, gain 40 Insight, refresh all cooldowns, and apply [Stun] (2 turns). If failed, lose 15 Insight and take 30 damage.
+    * **Evo A (Perfect Gambit):** Success rewards doubled.
+    * **Evo B (Safe Gambit):** Failure penalty reduced by half.
+    * **Note:** *High-stakes strategic planning. Rewards precise execution of complex plans.*
+
+99. **Glyph: Parallel Processing** (Multi-Target Mastery, Gnosis 65)
+    * **Core Function:** [Analyze] all enemies simultaneously and construct a threat priority matrix. For next 3 turns, your glyphs automatically target optimal enemy based on current game state (you can override). Costs 20 Insight.
+    * **Evo A (Perfect Processing):** Duration 4 turns.
+    * **Evo B (Efficient Processing):** Cost reduced to 15 Insight.
+    * **Note:** *Rewards understanding of threat assessment and resource allocation.*
+
+100. **Glyph: The Grand Design** (Ultimate Strategic Vision, Gnosis 80)
+    * **Core Function:** Once per duel: Map out your next 5 turns in detail before taking them. Lock in this sequence. For each turn that executes exactly as planned (accounting for enemy interference), gain 10 Insight and +50% effect on all glyphs that turn. If plan fails on any turn, lose 20 Insight and skip your next turn.
+    * **Evo A (Flexible Design):** Can adjust 1 action per turn without penalty.
+    * **Evo B (Perfect Design):** Gain 15 Insight per successful turn.
+    * **Note:** *Ultimate test of strategic mastery. Requires planning multiple turns ahead while predicting enemy responses. Highest skill ceiling in the engine.*
+
+---
+
+**Design Philosophy Notes:**
+
+These "Big Brain" skills reward:
+- **Pattern Recognition**: Identifying opponent habits and playstyles
+- **Predictive Modeling**: Forecasting future game states with accuracy
+- **Risk Management**: High-reward plays that punish poor execution
+- **Multi-Step Planning**: Thinking 3-5 turns ahead
+- **Meta-Game Understanding**: Knowledge of engine interactions and optimal counters
+- **Adaptive Strategy**: Adjusting plans based on new information
+- **Information Asymmetry**: Converting knowledge into tactical advantage
+
+Skill Floor: Low (can use basic functions with reduced effectiveness)
+Skill Ceiling: **EXTREME** (mastery requires chess-level strategic thinking)
+
+---
+
+**End of Character Analysis Engine Complete Skills List**

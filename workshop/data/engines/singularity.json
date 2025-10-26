@@ -1,0 +1,298 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "singularity",
+  "_description": "Mutation & Chaos Control Engine - Reality Breaking Power",
+  "_source": "Singularity Engine v4.0 COMPLETE.txt + Global Balance Schema v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_SING_001",
+      "name": "Chaos Spark",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "entropy": 15
+      },
+      "cooldown": 0,
+      "keywords": ["[Discord]", "Random"],
+      "description": "Apply 2 [Discord] stacks to random enemy, deal 10 damage",
+      "effect": {
+        "damage": 10,
+        "status_apply": [{"type": "[Discord]", "stacks": 2, "duration": 2}],
+        "target": "random_enemy"
+      },
+      "jyotish_hooks": {
+        "Rahu_T1+": "3 [Discord] stacks instead of 2",
+        "12th_House_L2+": "Affects 2 random enemies"
+      },
+      "synergy_seeds": ["ACX-SING-DIV-01"],
+      "ai_priority": 6,
+      "ai_conditions": ["chaos_setup", "random_advantage"],
+      "flavor_text": "The first crack in reality."
+    },
+    
+    {
+      "id": "SKILL_SING_002",
+      "name": "Void Seed",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "entropy": 20
+      },
+      "cooldown": 0,
+      "keywords": ["[Void]"],
+      "description": "Apply 2 [Void] stacks to target (reduces healing received)",
+      "effect": {
+        "status_apply": [{"type": "[Void]", "stacks": 2, "duration": "permanent"}]
+      },
+      "jyotish_hooks": {
+        "Saturn_T1+": "3 [Void] stacks",
+        "8th_House_L3+": "Target cannot be healed for 1 turn"
+      },
+      "synergy_seeds": ["ACX-SING-TAN-01"],
+      "ai_priority": 7,
+      "ai_conditions": ["anti_heal_needed", "combo_setup"],
+      "flavor_text": "Nothingness takes root."
+    },
+    
+    {
+      "id": "SKILL_SING_003",
+      "name": "Reality Fracture",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "entropy": 18
+      },
+      "cooldown": 0,
+      "keywords": ["Direct", "[Discord]"],
+      "description": "Deal 22 damage and apply 1 [Discord]",
+      "effect": {
+        "damage": 22,
+        "status_apply": [{"type": "[Discord]", "stacks": 1, "duration": 2}]
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "28 damage",
+        "Ketu_T1+": "Ignore 20% defense"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 5,
+      "ai_conditions": ["direct_damage_needed"],
+      "flavor_text": "Break the illusion of stability."
+    },
+    
+    {
+      "id": "SKILL_SING_011",
+      "name": "Chaotic Cascade",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "entropy": 45
+      },
+      "cooldown": 3,
+      "keywords": ["[Discord]", "[Consume]", "Random"],
+      "description": "Consume all [Discord] on battlefield; deal 8 damage per stack to random targets",
+      "effect": {
+        "consume": {"type": "[Discord]", "all": true, "global": true},
+        "damage_per_stack": 8,
+        "target": "random_distribution"
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "12 damage per stack",
+        "Jupiter_T2+": "Also apply 1 [Burn] per hit"
+      },
+      "synergy_seeds": ["ACX-SING-TAN-02"],
+      "ai_priority": 8,
+      "ai_conditions": ["discord_stacks_6+", "chaos_burst"],
+      "flavor_text": "Order collapses into beautiful chaos."
+    },
+    
+    {
+      "id": "SKILL_SING_012",
+      "name": "Void Expansion",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "entropy": 40
+      },
+      "cooldown": 4,
+      "keywords": ["[Void]", "AoE"],
+      "description": "All enemies with [Void] take 35 damage; spread [Void] to adjacent enemies",
+      "effect": {
+        "damage": 35,
+        "target_condition": "has_void",
+        "spread": {"type": "[Void]", "stacks": 2, "to": "adjacent"}
+      },
+      "jyotish_hooks": {
+        "Saturn_T2+": "50 damage",
+        "8th_House_L4+": "Global spread instead of adjacent"
+      },
+      "synergy_seeds": ["ACX-SING-CON-01"],
+      "ai_priority": 9,
+      "ai_conditions": ["void_setup_complete", "spread_combo"],
+      "flavor_text": "Nothing spreads like emptiness."
+    },
+    
+    {
+      "id": "SKILL_SING_013",
+      "name": "Mutation Strike",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "entropy": 38
+      },
+      "cooldown": 2,
+      "keywords": ["[Transform]", "Direct"],
+      "description": "Deal 30 damage; randomly mutate one enemy stat by ±15%",
+      "effect": {
+        "damage": 30,
+        "mutate": {
+          "stat": "random",
+          "amount": "±15%"
+        }
+      },
+      "jyotish_hooks": {
+        "Rahu_T2+": "±25% mutation range",
+        "12th_House_L5+": "Mutate 2 stats"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 7,
+      "ai_conditions": ["chaos_advantage", "stat_disruption"],
+      "flavor_text": "Evolution at gunpoint."
+    },
+    
+    {
+      "id": "SKILL_SING_021",
+      "name": "Singularity Collapse",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "entropy": 75
+      },
+      "cooldown": 6,
+      "keywords": ["[Detonate]", "AoE", "[Void]"],
+      "description": "Consume all [Void] globally; deal 120 base + 15 per stack consumed in 5×5 AoE around target",
+      "effect": {
+        "base_damage": 120,
+        "consume": {"type": "[Void]", "all": true, "global": true},
+        "damage_per_stack": 15,
+        "aoe": "5x5"
+      },
+      "jyotish_hooks": {
+        "Saturn_T3+": "25 damage per stack",
+        "8th_House_L6+": "Creates permanent Void zone (no healing)"
+      },
+      "synergy_seeds": ["ACX-SING-TAN-03"],
+      "ai_priority": 10,
+      "ai_conditions": ["void_stacks_10+", "ultimate_burst"],
+      "flavor_text": "The center cannot hold."
+    },
+    
+    {
+      "id": "SKILL_SING_022",
+      "name": "Probability Storm",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "entropy": 65
+      },
+      "cooldown": 5,
+      "keywords": ["[Discord]", "Random", "Multi-hit"],
+      "description": "Deal 6 hits of 25 damage to random targets; each hit applies 1 [Discord]",
+      "effect": {
+        "hits": 6,
+        "damage_per_hit": 25,
+        "target": "random",
+        "status_per_hit": [{"type": "[Discord]", "stacks": 1}]
+      },
+      "jyotish_hooks": {
+        "Rahu_T3+": "8 hits",
+        "Jupiter_T2+": "40 damage per hit"
+      },
+      "synergy_seeds": ["ACX-SING-DIV-02"],
+      "ai_priority": 9,
+      "ai_conditions": ["chaos_finale", "multi_target_damage"],
+      "flavor_text": "Causality unravels."
+    },
+    
+    {
+      "id": "SKILL_SING_023",
+      "name": "Entropic Harvest",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "entropy": 60
+      },
+      "cooldown": 4,
+      "keywords": ["[Consume]", "Sustain"],
+      "description": "Consume all resonance types on target; heal 20 Ojas per unique type consumed",
+      "effect": {
+        "consume": {"types": ["all_resonance"], "all_unique": true},
+        "heal_per_type": 20
+      },
+      "jyotish_hooks": {
+        "Moon_T2+": "30 Ojas per type",
+        "4th_House_L5+": "Also gain 10 Entropy per type"
+      },
+      "synergy_seeds": ["ACX-SING-CON-02"],
+      "ai_priority": 8,
+      "ai_conditions": ["sustain_needed", "resonance_available"],
+      "flavor_text": "Feed on the breakdown."
+    },
+    
+    {
+      "id": "SKILL_SING_031",
+      "name": "Paradox Engine",
+      "tier": 3,
+      "cost": {
+        "kp": 4,
+        "entropy": 100
+      },
+      "cooldown": 8,
+      "keywords": ["[Transform]", "Ultimate", "Permanent"],
+      "description": "Permanently reverse target's highest and lowest stats; deal 80 damage",
+      "effect": {
+        "damage": 80,
+        "transform": {
+          "type": "stat_swap",
+          "targets": ["highest", "lowest"],
+          "permanent": true
+        }
+      },
+      "jyotish_hooks": {
+        "Rahu_T4+": "Reverse all stats (not just 2)",
+        "12th_House_L7+": "Affects entire enemy team"
+      },
+      "synergy_seeds": ["ACX-SING-DIV-03"],
+      "ai_priority": 10,
+      "ai_conditions": ["high_stat_enemy", "game_changer"],
+      "flavor_text": "What was strong becomes weak."
+    },
+    
+    {
+      "id": "SKILL_SING_041",
+      "name": "Reality Rewrite",
+      "tier": 4,
+      "cost": {
+        "kp": 5,
+        "entropy": 150
+      },
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "Global", "[Transform]"],
+      "description": "Global effect: All resonance types become [Void]; deal 200 damage to all enemies",
+      "effect": {
+        "global": true,
+        "transform_all_resonance": "[Void]",
+        "damage": 200,
+        "target": "all_enemies"
+      },
+      "jyotish_hooks": {
+        "Saturn_T4+": "300 damage",
+        "8th_House_L8+": "Void stacks double damage taken for 3 turns"
+      },
+      "synergy_seeds": ["ACX-SING-ALL"],
+      "ai_priority": 10,
+      "ai_conditions": ["apocalypse_ready", "game_ender"],
+      "flavor_text": "Nothing is real. Everything is permitted."
+    }
+  ]
+}

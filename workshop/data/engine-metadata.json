@@ -1,0 +1,307 @@
+{
+  "engines": {
+    "tantra": {
+      "name": "Tantra",
+      "color": "#d63031",
+      "icon": "🔥",
+      "resource": "prana",
+      "description": "Pressure & Denial Aggro - Transformation through Energy"
+    },
+    "singularity": {
+      "name": "Singularity",
+      "color": "#6c5ce7",
+      "icon": "🌀",
+      "resource": "entropy",
+      "description": "Mutation & Chaos Control - Reality Breaking Power"
+    },
+    "divination": {
+      "name": "Divination",
+      "color": "#00b894",
+      "icon": "🌟",
+      "resource": "prana",
+      "description": "Support & Control - Cosmic Insight and Manipulation"
+    },
+    "consciousness": {
+      "name": "Consciousness",
+      "color": "#fdcb6e",
+      "icon": "🧠",
+      "resource": "awareness",
+      "description": "Mind & Self-Modification - Transcendence Through Awareness"
+    },
+    "character_analysis": {
+      "name": "Character Analysis",
+      "color": "#74b9ff",
+      "icon": "👁️",
+      "resource": "insight",
+      "description": "Meta-Knowledge - Understanding Through Observation"
+    },
+    "dream_sequence": {
+      "name": "Dream Sequence",
+      "color": "#a29bfe",
+      "icon": "💫",
+      "resource": "dream_energy",
+      "description": "Reality Manipulation - Blur the Line Between Dream and Wake"
+    },
+    "astral_projection": {
+      "name": "Astral Projection",
+      "color": "#fd79a8",
+      "icon": "👻",
+      "resource": "astral_energy",
+      "description": "Out-of-Body Combat - Strike From Beyond"
+    },
+    "memory_palace": {
+      "name": "Memory Palace",
+      "color": "#55efc4",
+      "icon": "📚",
+      "resource": "cognition",
+      "description": "Information & Recall - Perfect Memory, Perfect Strategy"
+    },
+    "void": {
+      "name": "Void",
+      "color": "#2d3436",
+      "icon": "⚫",
+      "resource": "void_essence",
+      "description": "Nothingness - Erase, Delete, Unmake"
+    }
+  },
+  "_schema_version": "4.0",
+  "_description": "Engine metadata from Global Balance Schema v4.0 - resources, generation, caps, visual themes",
+  
+  "engines": {
+    "singularity": {
+      "name": "Singularity",
+      "description": "Reality-Breaking Ramp Engine",
+      "archetype": "Ramp",
+      "ttk_target": "8-12 turns",
+      "color": "#9B59B6",
+      "icon": "🕳️",
+      "primary_resource": {
+        "name": "Threshold",
+        "starting": 0,
+        "generation": "5-15 per [Charge]",
+        "cap": 150,
+        "cap_breakable": true,
+        "overflow_bonus": "Ketu variant"
+      },
+      "secondary_resource": {
+        "name": "Mastery Levels",
+        "type": "permanent_progression",
+        "range": "0-10",
+        "effect": "+10% all effects per level"
+      },
+      "optimal_dasha": ["Jupiter", "Saturn"],
+      "theme": "Inevitability, Transcendence, Critical Mass"
+    },
+    
+    "divination": {
+      "name": "Divination",
+      "description": "Fate Manipulation Combo Engine",
+      "archetype": "Combo",
+      "ttk_target": "6-9 turns",
+      "color": "#3498DB",
+      "icon": "🔮",
+      "primary_resource": {
+        "name": "Insight",
+        "starting": 50,
+        "generation": 15,
+        "cap": 100,
+        "cap_breakable": false
+      },
+      "secondary_resource": {
+        "name": "Darshan Stacks",
+        "type": "accumulation",
+        "range": "0-20",
+        "effect": "+1% effect per stack"
+      },
+      "optimal_dasha": ["Moon", "Mercury", "Jupiter"],
+      "theme": "Fate Control, Perfect Timing, Sealed Combos"
+    },
+    
+    "tantra": {
+      "name": "Tantra",
+      "description": "Pressure & Denial Aggro Engine",
+      "archetype": "Aggro → Control",
+      "ttk_target": "5-7 turns",
+      "color": "#E74C3C",
+      "icon": "🔥",
+      "primary_resource": {
+        "name": "Prana",
+        "starting": 60,
+        "generation": 20,
+        "cap": 100,
+        "cap_breakable": false
+      },
+      "secondary_resource": {
+        "name": "Resonance Stacks",
+        "type": "debuff_accumulation",
+        "range": "0-10 per type",
+        "effect": "Detonation fuel"
+      },
+      "optimal_dasha": ["Mars", "Jupiter"],
+      "theme": "Transformation, Resonance Cascade, Sacred Geometry"
+    },
+    
+    "consciousness": {
+      "name": "Consciousness",
+      "description": "Scaling & Efficiency Specialist",
+      "archetype": "Specialist - Scaling",
+      "ttk_target": "Extends effects +20-30%",
+      "color": "#1ABC9C",
+      "icon": "🧠",
+      "primary_resource": {
+        "name": "Bandwidth",
+        "starting": 30,
+        "generation": 10,
+        "cap": 100,
+        "cap_breakable": true,
+        "overflow_conversion": "80+ converts to Coherence"
+      },
+      "secondary_resource": {
+        "name": "Coherence",
+        "type": "optimization_level",
+        "range": "0-30",
+        "effect": "+1% all effects per point"
+      },
+      "optimal_dasha": ["Jupiter", "Moon", "Saturn"],
+      "theme": "Perfection, Neural States, Protocols"
+    },
+    
+    "foundational": {
+      "name": "Foundational",
+      "description": "Infrastructure & Tempo Support",
+      "archetype": "Defensive Ramp",
+      "ttk_target": "+2-4 turns TTK extension",
+      "color": "#95A5A6",
+      "icon": "🛡️",
+      "primary_resource": {
+        "name": "Foundation",
+        "starting": 70,
+        "generation": 25,
+        "cap": 120,
+        "cap_breakable": false
+      },
+      "secondary_resource": {
+        "name": "Stability %",
+        "type": "uptime_percentage",
+        "range": "0-100%",
+        "effect": "Milestone bonuses at thresholds"
+      },
+      "optimal_dasha": ["Saturn", "Jupiter"],
+      "theme": "Infrastructure, Structures, Support"
+    },
+    
+    "characterAnalysis": {
+      "name": "Character Analysis",
+      "description": "Information & Control Specialist",
+      "archetype": "Specialist - Information",
+      "ttk_target": "Indirect (denies optimal plays)",
+      "color": "#9B59B6",
+      "icon": "👁️",
+      "primary_resource": {
+        "name": "Insight",
+        "starting": 50,
+        "generation": 15,
+        "cap": 100,
+        "cap_breakable": false
+      },
+      "secondary_resource": {
+        "name": "Foresight",
+        "type": "prediction_power",
+        "range": "0-50",
+        "effect": "10 Foresight = predict 1 turn ahead"
+      },
+      "optimal_dasha": ["Mercury", "Jupiter", "Ketu"],
+      "theme": "Omniscience, Prediction, Counter-play"
+    },
+    
+    "therapeutic": {
+      "name": "Therapeutic",
+      "description": "Healing & Cleansing Support",
+      "archetype": "Defensive Support",
+      "ttk_target": "+3-5 turns TTK extension",
+      "color": "#2ECC71",
+      "icon": "💚",
+      "primary_resource": {
+        "name": "Ojas",
+        "starting": 80,
+        "generation": 20,
+        "cap": 100,
+        "cap_breakable": false,
+        "overflow": "Converts to Insight"
+      },
+      "secondary_resource": {
+        "name": "Ojas Integrity %",
+        "type": "health_percentage",
+        "range": "0-100%",
+        "effect": "[Cleanse] +1% per point"
+      },
+      "optimal_dasha": ["Moon", "Venus", "Jupiter"],
+      "theme": "Restoration, Purification, Sustainability"
+    },
+    
+    "jyotish": {
+      "name": "Jyotish",
+      "description": "Planetary Timing & Coordination",
+      "archetype": "Support - Amplification",
+      "ttk_target": "Amplifies all engines +20-50%",
+      "color": "#F39C12",
+      "icon": "⭐",
+      "primary_resource": {
+        "name": "Jyoti",
+        "starting": 50,
+        "generation": "10 + planetary bonuses",
+        "cap": 100,
+        "cap_breakable": false
+      },
+      "secondary_resource": {
+        "name": "Planetary Alignment",
+        "type": "dasha_tracker",
+        "range": "9 planets",
+        "effect": "Active dasha provides bonuses"
+      },
+      "optimal_dasha": ["All planets - engine multiplier"],
+      "theme": "Cosmic Timing, Amplification, Coordination"
+    },
+    
+    "invocation": {
+      "name": "Invocation",
+      "description": "Divine Entity Summoning",
+      "archetype": "Ultimate - Reality Rewrite",
+      "ttk_target": "Instant win conditions possible",
+      "color": "#FFD700",
+      "icon": "✨",
+      "primary_resource": {
+        "name": "Sanctity",
+        "starting": 40,
+        "generation": 15,
+        "cap": 100,
+        "cap_breakable": false
+      },
+      "secondary_resource": {
+        "name": "Anarchy",
+        "starting": 40,
+        "generation": 15,
+        "cap": 100,
+        "effect": "Demon summoning resource"
+      },
+      "tertiary_resource": {
+        "name": "Presence",
+        "type": "per_deity_progression",
+        "range": "0-10 per deity",
+        "effect": "Increases with repeated invocations"
+      },
+      "optimal_dasha": ["Depends on deity - Sun/Moon/etc"],
+      "theme": "Divine Power, Possession, Apocalypse"
+    }
+  },
+  
+  "universal_resource": {
+    "name": "KP",
+    "full_name": "Knowledge Points",
+    "description": "Universal tactical currency for all engines",
+    "starting": 3,
+    "generation": 1,
+    "cap": 10,
+    "purpose": "Gates Tier 2+ abilities"
+  }
+}

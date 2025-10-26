@@ -1,0 +1,496 @@
+{
+  "system_name": "Conditional Chain Pattern Detection",
+  "version": "5.0_LAYER_2",
+  "description": "Detects A→B→C sequences where skills create conditions other skills exploit",
+  "applies_to": "All 9 engines",
+  
+  "CHAIN_DETECTION_LOGIC": {
+    "core_principle": "EVERY SKILL COMBINES WITH EVERY SKILL - NO EXCEPTIONS",
+    "total_combinations": "1000+ skills = 1,000,000+ possible 2-skill combos, 1 BILLION+ 3-skill chains",
+    "how_it_works": [
+      "ANY Skill A + ANY Skill B = Auto-detected combo with algorithmic synergy calculation",
+      "System analyzes ALL tags, resources, effects, timing windows, and cosmic DNA",
+      "Even 'dumb' combos work - just ranked lower (D/E tier)",
+      "Genius combos ranked higher (S/S+/SSS tier)",
+      "NO manual hardcoding - pure tag algebra + pattern matching",
+      "System auto-generates combo name, power rating, tier classification"
+    ],
+    "detection_timing": "Real-time in Crucible as player adds ANY skill to test grid",
+    "visual_feedback": "Arrows showing skill flow + auto-generated tier badge + power rating",
+    "ranking_system": {
+      "E_tier": "Combos with minimal synergy (5-15% bonus)",
+      "D_tier": "Weak synergy (15-30% bonus)",
+      "C_tier": "Moderate synergy (30-50% bonus)",
+      "B_tier": "Strong synergy (50-80% bonus)",
+      "A_tier": "Excellent synergy (80-120% bonus)",
+      "S_tier": "Elite synergy (120-200% bonus)",
+      "S+_tier": "Meta-defining (200-400% bonus)",
+      "SSS_tier": "Game-breaking infinite loops (400%+ bonus, often patched)"
+    }
+  },
+
+  "UNIVERSAL_CONDITION_TYPES": {
+    "description": "Conditions that enable chains across all engines",
+    
+    "STATUS_CONDITIONS": {
+      "Vulnerable": {
+        "created_by_engines": ["Character Analysis", "Tantra", "Foundational"],
+        "exploited_by": "Any damage skill",
+        "bonus": "+50% damage to vulnerable targets",
+        "example_chain": "Mark Target → Strike Vulnerable → Execute Low HP"
+      },
+      "Burning": {
+        "created_by_engines": ["Tantra", "Invocation"],
+        "exploited_by": "Fire skills, detonation skills",
+        "bonus": "Detonate for instant damage = burn stacks × 10",
+        "example_chain": "Apply Burn → Stack More Burn → Detonate All"
+      },
+      "Shielded": {
+        "created_by_engines": ["Foundational", "Therapeutic"],
+        "exploited_by": "Absorption skills, shield conversion skills",
+        "bonus": "Shield overflow converts to healing or damage",
+        "example_chain": "Grant Shield → Overflow Shield → Convert to Heal"
+      },
+      "Stunned": {
+        "created_by_engines": ["Character Analysis", "Singularity", "Consciousness"],
+        "exploited_by": "Execute skills, setup skills",
+        "bonus": "Free setup turn while enemy cannot respond",
+        "example_chain": "Stun Enemy → Apply Debuffs → Execute Combo"
+      },
+      "Marked": {
+        "created_by_engines": ["Character Analysis", "Divination"],
+        "exploited_by": "Precision strike skills",
+        "bonus": "+100% crit chance on marked targets",
+        "example_chain": "Mark Target → Precision Strike → Reveal Weaknesses"
+      }
+    },
+
+    "RESOURCE_CONDITIONS": {
+      "High_Bandwidth": {
+        "threshold": "80+ Bandwidth",
+        "created_by_engines": ["Consciousness", "Foundational"],
+        "exploited_by": "Overflow skills, conversion skills",
+        "bonus": "Unlock powerful effects only available at high resources",
+        "example_chain": "Generate Bandwidth → Exceed 80 → Trigger Overflow Bonus"
+      },
+      "Resource_Depletion": {
+        "condition": "Enemy below 30% resources",
+        "created_by_engines": ["Character Analysis", "Tantra"],
+        "exploited_by": "Drain skills, deny skills",
+        "bonus": "Lock enemy out of expensive skills",
+        "example_chain": "Drain Resources → Force Cheap Skills → Counter Easily"
+      },
+      "Sanctity_Threshold": {
+        "threshold": "150+ Sanctity",
+        "created_by_engines": ["Invocation"],
+        "exploited_by": "Angel manifestation skills",
+        "bonus": "Unlock higher-tier invocations",
+        "example_chain": "Build Sanctity → Cross Threshold → Summon Archangel"
+      }
+    },
+
+    "ZONE_CONDITIONS": {
+      "Active_Structure": {
+        "condition": "Structure zone exists",
+        "created_by_engines": ["Foundational"],
+        "exploited_by": "Zone amplification skills, structure chaining",
+        "bonus": "Effects within structure have +30% potency",
+        "example_chain": "Place Structure → Cast Inside Structure → Amplified Effect"
+      },
+      "Burning_Field": {
+        "condition": "Fire zone active",
+        "created_by_engines": ["Tantra", "Invocation"],
+        "exploited_by": "Spread skills, zone expansion",
+        "bonus": "Fire spreads to adjacent zones automatically",
+        "example_chain": "Create Fire Zone → Zone Spreads → Enemies Take DoT"
+      },
+      "Meditation_Zone": {
+        "condition": "Neural state anchored to location",
+        "created_by_engines": ["Consciousness"],
+        "exploited_by": "State amplification, persistence skills",
+        "bonus": "Neural state effects doubled in zone",
+        "example_chain": "Anchor Alpha State → Zone Grants Buffs → Permanent Uptime"
+      }
+    },
+
+    "TIMING_CONDITIONS": {
+      "Cooldown_Ready": {
+        "condition": "Key skill off cooldown",
+        "created_by_engines": ["Foundational", "All engines"],
+        "exploited_by": "Tempo skills, combo enablers",
+        "bonus": "Can execute full combo sequence",
+        "example_chain": "Refresh Cooldown → Skill Available → Execute Combo"
+      },
+      "Turn_Window": {
+        "condition": "Specific turn number (e.g., Turn 5)",
+        "created_by_engines": ["Divination", "Jyotish"],
+        "exploited_by": "Power spike skills",
+        "bonus": "Predetermined power moment",
+        "example_chain": "Predict Turn 5 → Setup Turn 4 → Power Spike Turn 5"
+      }
+    }
+  },
+
+  "FOUNDATIONAL_ENGINE_CHAINS": {
+    "engine": "Foundational",
+    
+    "structure_cascade": {
+      "chain_id": "FOUND_CHAIN_001",
+      "name": "Structure Multiplication Cascade",
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "name": "Basic Scaffold",
+          "creates": "Structure zone",
+          "tags": ["structure", "zone"]
+        },
+        "skill_B": {
+          "name": "Structural Echo",
+          "exploits": "Structure zone",
+          "effect": "50% chance to duplicate structure",
+          "creates": "2 structure zones"
+        },
+        "skill_C": {
+          "name": "Foundation Network",
+          "exploits": "Multiple structures",
+          "effect": "+10% bonus per structure",
+          "result": "3 structures = +30% all bonuses"
+        }
+      },
+      "power_rating": 7,
+      "discovery_difficulty": "Easy",
+      "synergy_with_jyotish": "Saturn (structure stability) amplifies duration"
+    },
+
+    "shield_regeneration_loop": {
+      "chain_id": "FOUND_CHAIN_002",
+      "name": "Perpetual Shield Loop",
+      "length": 4,
+      "pattern": {
+        "skill_A": {
+          "name": "Shield Projection",
+          "creates": "20 Shield on ally"
+        },
+        "skill_B": {
+          "name": "Shield Regeneration",
+          "exploits": "Active shields",
+          "effect": "Shields regenerate 5 per turn"
+        },
+        "skill_C": {
+          "name": "Damage Absorber",
+          "exploits": "Taking damage while shielded",
+          "effect": "Absorb damage → gain Bandwidth"
+        },
+        "skill_D": {
+          "name": "Shield Projection (again)",
+          "exploits": "High Bandwidth",
+          "effect": "Use Bandwidth to create more shields",
+          "result": "Self-sustaining loop"
+        }
+      },
+      "power_rating": 9,
+      "discovery_difficulty": "Intermediate",
+      "loop_type": "self_sustaining",
+      "counter": "Shield-breaking skills disrupt loop"
+    },
+
+    "resource_explosion": {
+      "chain_id": "FOUND_CHAIN_003",
+      "name": "Exponential Resource Growth",
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "name": "Bandwidth Generator",
+          "creates": "+15 Bandwidth"
+        },
+        "skill_B": {
+          "name": "Resource Multiplication",
+          "exploits": "Active resource generation",
+          "effect": "Double all resource gains for 2 turns"
+        },
+        "skill_C": {
+          "name": "Compound Interest",
+          "exploits": "High Bandwidth (50+)",
+          "effect": "Gain +1 KP per 50 Bandwidth per turn",
+          "result": "Resources feed into more resources"
+        }
+      },
+      "power_rating": 10,
+      "discovery_difficulty": "Advanced",
+      "scaling_type": "exponential",
+      "warning": "Vulnerable to resource drain disruption"
+    },
+
+    "cooldown_infinity": {
+      "chain_id": "FOUND_CHAIN_004",
+      "name": "Infinite Action Loop",
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "name": "Cooldown Burst",
+          "creates": "Reduce all cooldowns by 2 turns"
+        },
+        "skill_B": {
+          "name": "Perpetual Motion",
+          "exploits": "Casting glyphs",
+          "effect": "Every glyph cast reduces cooldowns by 1"
+        },
+        "skill_C": {
+          "name": "Zero Cooldown",
+          "exploits": "Reduced cooldowns",
+          "effect": "Target glyph has 0 cooldown for 2 turns",
+          "result": "Can cast same skill multiple times per turn"
+        }
+      },
+      "power_rating": 10,
+      "discovery_difficulty": "Expert",
+      "risk": "High APM required, complexity can lock you out",
+      "synergy_with_jyotish": "Mercury (speed) doubles effectiveness"
+    },
+
+    "support_amplification_chain": {
+      "chain_id": "FOUND_CHAIN_005",
+      "name": "Recursive Support Amplification",
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "name": "Amplification Aura",
+          "creates": "+30% effect on next glyph"
+        },
+        "skill_B": {
+          "name": "Support Network",
+          "exploits": "Amplification buff",
+          "effect": "Support 3 allies with bonuses (amplified by 30%)"
+        },
+        "skill_C": {
+          "name": "Support Amplifier",
+          "exploits": "Active support effects",
+          "effect": "+50% potency to all support effects for 2 turns",
+          "result": "Support effects compound exponentially"
+        }
+      },
+      "power_rating": 8,
+      "discovery_difficulty": "Intermediate",
+      "team_multiplayer": true,
+      "solo_value": "Medium"
+    }
+  },
+
+  "CROSS_ENGINE_CHAIN_EXAMPLES": {
+    "description": "Chains that span multiple engines",
+
+    "consciousness_foundational_loop": {
+      "chain_id": "CROSS_CHAIN_001",
+      "name": "Bandwidth-Structure Symbiosis",
+      "engines": ["Consciousness", "Foundational"],
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "engine": "Consciousness",
+          "name": "Bandwidth Surge",
+          "creates": "+15 Bandwidth"
+        },
+        "skill_B": {
+          "engine": "Foundational",
+          "name": "Structure with high Bandwidth",
+          "exploits": "80+ Bandwidth",
+          "effect": "Structures grant +10 Bandwidth per turn when player has high Bandwidth"
+        },
+        "skill_C": {
+          "engine": "Consciousness",
+          "name": "Bandwidth Overflow",
+          "exploits": "Excess Bandwidth",
+          "effect": "Convert 30 Bandwidth → +15 Ojas + +3 KP",
+          "result": "Resources convert between systems efficiently"
+        }
+      },
+      "power_rating": 9,
+      "discovery_difficulty": "Advanced",
+      "engine_synergy": "Core cross-engine loop"
+    },
+
+    "tantra_divination_fate": {
+      "chain_id": "CROSS_CHAIN_002",
+      "name": "Fated Decay",
+      "engines": ["Tantra", "Divination"],
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "engine": "Divination",
+          "name": "Future Sight",
+          "creates": "Reveal enemy's next 2 actions"
+        },
+        "skill_B": {
+          "engine": "Tantra",
+          "name": "Apply Decay",
+          "exploits": "Knowledge of enemy actions",
+          "effect": "Apply [Decay] stacks before enemy can respond"
+        },
+        "skill_C": {
+          "engine": "Divination",
+          "name": "Prophetic Strike",
+          "exploits": "High Decay stacks",
+          "effect": "Mark enemy with Prophecy: 'Will take 50 damage in 3 turns'",
+          "result": "Guaranteed damage + DoT = inevitable death"
+        }
+      },
+      "power_rating": 8,
+      "discovery_difficulty": "Intermediate",
+      "counter_play": "Cleanse Decay before Prophecy triggers"
+    },
+
+    "invocation_jyotish_divine_timing": {
+      "chain_id": "CROSS_CHAIN_003",
+      "name": "Cosmic Angel Manifestation",
+      "engines": ["Invocation", "Jyotish"],
+      "length": 3,
+      "pattern": {
+        "skill_A": {
+          "engine": "Jyotish",
+          "name": "Sun Exaltation",
+          "creates": "Sun at maximum power (Shakti 10)"
+        },
+        "skill_B": {
+          "engine": "Invocation",
+          "name": "Chant Michael",
+          "exploits": "Sun Exaltation",
+          "effect": "Building Sanctity is 2x faster during Sun power"
+        },
+        "skill_C": {
+          "engine": "Invocation",
+          "name": "Invoke Michael",
+          "exploits": "150+ Sanctity + Sun Exaltation",
+          "effect": "Manifest Archangel Michael with +200% power",
+          "result": "Divine entity with god-tier abilities"
+        }
+      },
+      "power_rating": 10,
+      "discovery_difficulty": "Expert",
+      "timing_critical": true,
+      "window": "Only works during specific Dasha phases"
+    }
+  },
+
+  "CHAIN_FUSION_MECHANICS": {
+    "description": "How Layer 2 chains combine into Layer 2.5 mega-chains",
+    
+    "fusion_requirements": {
+      "minimum": "2 active Layer 2 chains (3+ skills each)",
+      "shared_elements": "Must have at least 1 common tag or resource type",
+      "timing": "Both chains must be triggerable within same turn window",
+      "player_awareness": "System auto-detects and suggests fusion opportunity"
+    },
+
+    "fusion_example": {
+      "chain_alpha": {
+        "name": "Structure Cascade",
+        "skills": ["Basic Scaffold", "Structural Echo", "Foundation Network"],
+        "output": "3 structures generating Bandwidth"
+      },
+      "chain_beta": {
+        "name": "Resource Explosion",
+        "skills": ["Bandwidth Generator", "Resource Multiplication", "Compound Interest"],
+        "output": "Exponential resource growth"
+      },
+      "fusion_result": {
+        "name": "Architect's Infinite Engine",
+        "combined_skills": 6,
+        "interweaving": [
+          "Scaffold creates structure",
+          "Structure generates Bandwidth",
+          "Bandwidth Generator amplified by Resource Multiplication",
+          "High Bandwidth triggers Echo (more structures)",
+          "More structures = more Bandwidth",
+          "Compound Interest converts Bandwidth to KP",
+          "KP enables more structures",
+          "Loop sustains infinitely"
+        ],
+        "power_rating": 11,
+        "discovery_rate": "0.5% of players",
+        "tier": "S+ (Meta-defining)"
+      }
+    }
+  },
+
+  "DETECTION_ALGORITHM_PSEUDOCODE": {
+    "description": "How The Crucible detects chains in real-time",
+    "code": `
+      function detectChains(skillsInGrid) {
+        const chains = [];
+        
+        // Check all skill triplets (A, B, C)
+        for (let i = 0; i < skillsInGrid.length - 2; i++) {
+          const skillA = skillsInGrid[i];
+          const skillB = skillsInGrid[i + 1];
+          const skillC = skillsInGrid[i + 2];
+          
+          // Check if A creates condition B exploits
+          if (skillA.creates_condition) {
+            if (skillB.exploits_condition === skillA.creates_condition) {
+              // Chain detected! Check if C extends it
+              if (skillC.exploits_condition === skillB.creates_condition) {
+                chains.push({
+                  type: "3-skill chain",
+                  skills: [skillA, skillB, skillC],
+                  power_multiplier: 1.5,
+                  visualization: "A→B→C"
+                });
+              } else {
+                chains.push({
+                  type: "2-skill chain",
+                  skills: [skillA, skillB],
+                  power_multiplier: 1.3,
+                  visualization: "A→B"
+                });
+              }
+            }
+          }
+        }
+        
+        // Check for loop formations
+        for (const chain of chains) {
+          if (chain.skills[chain.skills.length - 1].creates_condition ===
+              chain.skills[0].exploits_condition) {
+            chain.type = "INFINITE LOOP";
+            chain.power_rating = 10;
+            chain.warning = "Self-sustaining combo detected!";
+          }
+        }
+        
+        return chains;
+      }
+    `
+  },
+
+  "UI_VISUALIZATION": {
+    "crucible_display": {
+      "skill_slots": "8 draggable slots",
+      "chain_arrows": "Animated arrows showing A→B→C flow",
+      "power_numbers": "Real-time damage/effect calculations",
+      "combo_name": "Auto-generated or player-named",
+      "power_rating": "1-10 scale with S/S+ for broken combos",
+      "save_button": "Save chain as named combo for Workshop"
+    },
+    "chain_highlight_colors": {
+      "2_skill_chain": "Green glow",
+      "3_skill_chain": "Blue glow",
+      "4+_skill_chain": "Purple glow",
+      "infinite_loop": "Gold glow with warning icon",
+      "fusion_opportunity": "Rainbow glow + 'FUSION AVAILABLE!' notification"
+    }
+  },
+
+  "BALANCE_CONSIDERATIONS": {
+    "chain_caps": {
+      "max_chain_length": "6 skills before diminishing returns",
+      "loop_cap": "10 iterations max before forced cooldown",
+      "fusion_limit": "Can only have 2 active mega-chains per match"
+    },
+    "counter_play": {
+      "disruption_skills": "Interrupt chains by breaking conditions",
+      "silence": "Prevents chain continuation",
+      "resource_drain": "Breaks resource-dependent chains",
+      "zone_destruction": "Breaks zone-dependent chains"
+    }
+  }
+}

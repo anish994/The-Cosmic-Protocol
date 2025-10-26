@@ -1,0 +1,93 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "astral_projection",
+  "_description": "Out-of-Body Combat Engine - Strike From Beyond",
+  "_source": "Astral Projection Engine v4.0 COMPLETE",
+  
+  "skills": [
+    {
+      "id": "SKILL_ASTRAL_001",
+      "name": "Spirit Strike",
+      "tier": 0,
+      "cost": {"kp": 1, "astral_energy": 15},
+      "cooldown": 0,
+      "keywords": ["Direct", "Ethereal"],
+      "description": "Deal 32 damage that ignores 50% of enemy defense",
+      "effect": {"damage": 32, "ignore_defense": 0.50},
+      "jyotish_hooks": {"Ketu_T1+": "Ignore 75% defense"},
+      "synergy_seeds": [],
+      "ai_priority": 7,
+      "flavor_text": "Strike from beyond the veil."
+    },
+    {
+      "id": "SKILL_ASTRAL_002",
+      "name": "Phase Shift",
+      "tier": 0,
+      "cost": {"kp": 1, "astral_energy": 20},
+      "cooldown": 0,
+      "keywords": ["[Ethereal]", "Buff"],
+      "description": "Gain [Ethereal]: next 2 attacks can't be blocked or dodged",
+      "effect": {"buff": {"type": "[Ethereal]", "cannot_block": true, "cannot_dodge": true, "stacks": 2}},
+      "jyotish_hooks": {"Rahu_T1+": "Next 3 attacks"},
+      "synergy_seeds": ["ACX-ASTRAL-CON-01"],
+      "ai_priority": 6,
+      "flavor_text": "I exist between moments."
+    },
+    {
+      "id": "SKILL_ASTRAL_011",
+      "name": "Soul Rend",
+      "tier": 1,
+      "cost": {"kp": 2, "astral_energy": 45},
+      "cooldown": 3,
+      "keywords": ["[Soul Damage]", "Piercing"],
+      "description": "Deal 70 [Soul Damage] that bypasses all defenses and shields",
+      "effect": {"soul_damage": 70, "bypass_all": true},
+      "jyotish_hooks": {"Ketu_T2+": "100 soul damage"},
+      "synergy_seeds": ["ACX-ASTRAL-TAN-01"],
+      "ai_priority": 10,
+      "flavor_text": "Damage the essence directly."
+    },
+    {
+      "id": "SKILL_ASTRAL_021",
+      "name": "Possession",
+      "tier": 2,
+      "cost": {"kp": 3, "astral_energy": 75},
+      "cooldown": 6,
+      "keywords": ["Control", "[Possess]"],
+      "description": "Control target enemy for 2 turns; they act on your behalf",
+      "effect": {"possess": {"duration": 2, "full_control": true}},
+      "jyotish_hooks": {"Rahu_T3+": "3 turns"},
+      "synergy_seeds": ["ACX-ASTRAL-DIV-01"],
+      "ai_priority": 10,
+      "flavor_text": "Your body is mine."
+    },
+    {
+      "id": "SKILL_ASTRAL_031",
+      "name": "Severed Cord",
+      "tier": 3,
+      "cost": {"kp": 4, "astral_energy": 100},
+      "cooldown": 8,
+      "keywords": ["[Death]", "Execute"],
+      "description": "If target below 25% HP, instantly kill; otherwise deal 150 damage",
+      "effect": {"execute_threshold": 0.25, "damage": 150},
+      "jyotish_hooks": {"Ketu_T4+": "35% threshold"},
+      "synergy_seeds": ["ACX-ASTRAL-TAN-02"],
+      "ai_priority": 10,
+      "flavor_text": "Cut the silver thread."
+    },
+    {
+      "id": "SKILL_ASTRAL_041",
+      "name": "Transcendent Form",
+      "tier": 4,
+      "cost": {"kp": 5, "astral_energy": 150},
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "[Ethereal]"],
+      "description": "Become pure spirit for 3 turns: untargetable, all damage ignores everything",
+      "effect": {"ethereal_form": {"duration": 3, "untargetable": true, "bypass_all": true}},
+      "jyotish_hooks": {"Ketu_T4+": "5 turns"},
+      "synergy_seeds": ["ACX-ASTRAL-ALL"],
+      "ai_priority": 10,
+      "flavor_text": "I am beyond physical form."
+    }
+  ]
+}

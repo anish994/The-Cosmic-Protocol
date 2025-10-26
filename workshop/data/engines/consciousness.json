@@ -1,0 +1,317 @@
+{
+  "_schema_version": "4.0",
+  "_engine": "consciousness",
+  "_description": "Mind & Self-Modification Engine - Transcendence Through Awareness",
+  "_source": "Consciousness Engine v4.0 COMPLETE.txt + Global Balance Schema v4.0",
+  
+  "skills": [
+    {
+      "id": "SKILL_CON_001",
+      "name": "Ego Reinforcement",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "awareness": 15
+      },
+      "cooldown": 0,
+      "keywords": ["Buff", "Self"],
+      "description": "Gain +15% Attack and Defense for 2 turns",
+      "effect": {
+        "buff": {
+          "attack": 1.15,
+          "defense": 1.15,
+          "duration": 2
+        },
+        "target": "self"
+      },
+      "jyotish_hooks": {
+        "Sun_T1+": "+20% instead",
+        "1st_House_L2+": "Lasts 3 turns"
+      },
+      "synergy_seeds": ["ACX-CON-DIV-01"],
+      "ai_priority": 7,
+      "ai_conditions": ["self_boost", "preparation"],
+      "flavor_text": "I am the center of my universe."
+    },
+    
+    {
+      "id": "SKILL_CON_002",
+      "name": "Ego Death",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "awareness": 20
+      },
+      "cooldown": 0,
+      "keywords": ["Cleanse", "Transform"],
+      "description": "Remove all debuffs from self; heal 25 Ojas",
+      "effect": {
+        "cleanse": "all_debuffs",
+        "heal": 25,
+        "target": "self"
+      },
+      "jyotish_hooks": {
+        "Moon_T1+": "Heal 40 Ojas",
+        "12th_House_L3+": "Also gain immunity to next debuff"
+      },
+      "synergy_seeds": ["ACX-CON-SING-01"],
+      "ai_priority": 8,
+      "ai_conditions": ["debuffed", "cleanse_needed"],
+      "flavor_text": "Let go of the illusion of self."
+    },
+    
+    {
+      "id": "SKILL_CON_003",
+      "name": "Mindful Strike",
+      "tier": 0,
+      "cost": {
+        "kp": 1,
+        "awareness": 18
+      },
+      "cooldown": 0,
+      "keywords": ["Direct", "Awareness"],
+      "description": "Deal 28 damage; gain insight on target's next action",
+      "effect": {
+        "damage": 28,
+        "insight": {
+          "reveal": "next_action",
+          "duration": 1
+        }
+      },
+      "jyotish_hooks": {
+        "Mercury_T1+": "35 damage",
+        "3rd_House_L2+": "Reveal next 2 actions"
+      },
+      "synergy_seeds": [],
+      "ai_priority": 6,
+      "ai_conditions": ["information_gathering"],
+      "flavor_text": "Know thy enemy."
+    },
+    
+    {
+      "id": "SKILL_CON_011",
+      "name": "Ego Expansion",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "awareness": 40
+      },
+      "cooldown": 3,
+      "keywords": ["Buff", "Scale"],
+      "description": "Gain +5% Attack/Defense per alive ally (max +25%)",
+      "effect": {
+        "buff": {
+          "attack_per_ally": 0.05,
+          "defense_per_ally": 0.05,
+          "max": 0.25,
+          "duration": 3
+        }
+      },
+      "jyotish_hooks": {
+        "Sun_T2+": "+8% per ally",
+        "Jupiter_T2+": "Also affects all allies"
+      },
+      "synergy_seeds": ["ACX-CON-DIV-02"],
+      "ai_priority": 8,
+      "ai_conditions": ["team_alive", "scaling_buff"],
+      "flavor_text": "We are stronger together."
+    },
+    
+    {
+      "id": "SKILL_CON_012",
+      "name": "Shadow Work",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "awareness": 45
+      },
+      "cooldown": 4,
+      "keywords": ["Transform", "Mirror"],
+      "description": "Copy one random debuff from enemy team to their entire team",
+      "effect": {
+        "copy_debuff": {
+          "source": "random_enemy",
+          "target": "all_enemies",
+          "amount": 1
+        }
+      },
+      "jyotish_hooks": {
+        "Saturn_T2+": "Copy 2 debuffs",
+        "8th_House_L4+": "Double the stack count"
+      },
+      "synergy_seeds": ["ACX-CON-TAN-01"],
+      "ai_priority": 9,
+      "ai_conditions": ["enemy_debuffed", "spread_effect"],
+      "flavor_text": "Face your darkness."
+    },
+    
+    {
+      "id": "SKILL_CON_013",
+      "name": "Zen Focus",
+      "tier": 1,
+      "cost": {
+        "kp": 2,
+        "awareness": 35
+      },
+      "cooldown": 2,
+      "keywords": ["Buff", "[Focus]"],
+      "description": "Gain [Focus]: next 2 skills ignore enemy defense and can't miss",
+      "effect": {
+        "buff": {
+          "type": "[Focus]",
+          "ignore_defense": true,
+          "cannot_miss": true,
+          "stacks": 2
+        }
+      },
+      "jyotish_hooks": {
+        "Mercury_T2+": "Next 3 skills",
+        "6th_House_L5+": "Also gain +30% crit chance"
+      },
+      "synergy_seeds": ["ACX-CON-TAN-02"],
+      "ai_priority": 8,
+      "ai_conditions": ["setup_combo", "accuracy_needed"],
+      "flavor_text": "Perfect clarity of mind."
+    },
+    
+    {
+      "id": "SKILL_CON_021",
+      "name": "Collective Unconscious",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "awareness": 70
+      },
+      "cooldown": 5,
+      "keywords": ["AoE", "Link"],
+      "description": "Link all allies; they share 30% of damage taken and healing received",
+      "effect": {
+        "link": {
+          "share_damage": 0.30,
+          "share_healing": 0.30,
+          "duration": 3,
+          "target": "all_allies"
+        }
+      },
+      "jyotish_hooks": {
+        "Moon_T3+": "Share 50%",
+        "4th_House_L6+": "Lasts 5 turns"
+      },
+      "synergy_seeds": ["ACX-CON-DIV-03"],
+      "ai_priority": 9,
+      "ai_conditions": ["team_survival", "distribute_damage"],
+      "flavor_text": "We are one consciousness."
+    },
+    
+    {
+      "id": "SKILL_CON_022",
+      "name": "Reality Anchor",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "awareness": 65
+      },
+      "cooldown": 6,
+      "keywords": ["Shield", "Anti-Control"],
+      "description": "Grant all allies 70 Shield and immunity to [Stasis], [Discord], [Subservience]",
+      "effect": {
+        "shield": 70,
+        "immunity": ["[Stasis]", "[Discord]", "[Subservience]"],
+        "duration": 2,
+        "target": "all_allies"
+      },
+      "jyotish_hooks": {
+        "Venus_T3+": "100 Shield",
+        "1st_House_L7+": "Immunity lasts 4 turns"
+      },
+      "synergy_seeds": ["ACX-CON-SING-02"],
+      "ai_priority": 10,
+      "ai_conditions": ["control_protection", "defensive_stance"],
+      "flavor_text": "Stay grounded in truth."
+    },
+    
+    {
+      "id": "SKILL_CON_023",
+      "name": "Transcendental Surge",
+      "tier": 2,
+      "cost": {
+        "kp": 3,
+        "awareness": 60
+      },
+      "cooldown": 4,
+      "keywords": ["Direct", "Lifesteal"],
+      "description": "Deal 90 damage; heal for 100% of damage dealt",
+      "effect": {
+        "damage": 90,
+        "lifesteal": 1.0
+      },
+      "jyotish_hooks": {
+        "Sun_T3+": "120 damage",
+        "5th_House_L5+": "150% lifesteal"
+      },
+      "synergy_seeds": ["ACX-CON-TAN-03"],
+      "ai_priority": 8,
+      "ai_conditions": ["sustain_needed", "high_damage"],
+      "flavor_text": "Consume to transcend."
+    },
+    
+    {
+      "id": "SKILL_CON_031",
+      "name": "Ego Dissolution",
+      "tier": 3,
+      "cost": {
+        "kp": 4,
+        "awareness": 100
+      },
+      "cooldown": 8,
+      "keywords": ["Transform", "Ultimate"],
+      "description": "Remove self from game; redistribute all stats to allies permanently",
+      "effect": {
+        "sacrifice": {
+          "remove_self": true,
+          "redistribute_stats": {
+            "target": "all_allies",
+            "permanent": true
+          }
+        }
+      },
+      "jyotish_hooks": {
+        "12th_House_L8+": "Can revive next turn with 50% stats",
+        "Ketu_T3+": "Allies gain double stats"
+      },
+      "synergy_seeds": ["ACX-CON-ALL"],
+      "ai_priority": 10,
+      "ai_conditions": ["sacrifice_play", "empower_team"],
+      "flavor_text": "I am nothing. We are everything."
+    },
+    
+    {
+      "id": "SKILL_CON_041",
+      "name": "Singularity of Mind",
+      "tier": 4,
+      "cost": {
+        "kp": 5,
+        "awareness": 150
+      },
+      "cooldown": 10,
+      "keywords": ["[Apocalypse]", "Global", "Control"],
+      "description": "All units become one shared consciousness; control entire battlefield for 1 turn",
+      "effect": {
+        "global": true,
+        "merge_consciousness": {
+          "control_all": true,
+          "duration": 1,
+          "shared_hp": true
+        }
+      },
+      "jyotish_hooks": {
+        "Sun_T4+": "Control for 2 turns",
+        "12th_House_L9+": "Permanent consciousness link"
+      },
+      "synergy_seeds": ["ACX-CON-ALL"],
+      "ai_priority": 10,
+      "ai_conditions": ["apocalypse_ready", "total_control"],
+      "flavor_text": "I am you. You are me. We are."
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "_schema_version": "4.0",
+  "_description": "Canonical keyword lexicon from Global Balance Schema v4.0 - all keywords standardized",
+  
+  "status_effects": {
+    "[Burn]": {
+      "category": "DoT",
+      "definition": "Deals X damage/turn for Y turns; stacks increase damage",
+      "stack_cap": 10,
+      "mars_modifier": "+30% damage",
+      "detonation_fuel": true
+    },
+    "[Decay]": {
+      "category": "Entropy",
+      "definition": "Entropy marker; +10% detonation damage per stack; no cap",
+      "consumed_by": "[Detonate]",
+      "jupiter_effect": "Makes detonation AoE"
+    },
+    "[Silence]": {
+      "category": "Control",
+      "definition": "Prevents casting abilities",
+      "max_duration": "2 turns total in any 4-turn window",
+      "counterplay": "[Cleanse] removes"
+    },
+    "[Stasis]": {
+      "category": "Control",
+      "definition": "Disables actions/increases cooldown",
+      "stack_cap": "2-5 (engine-specific)",
+      "saturn_effect": "+duration",
+      "counterplay": "[Cleanse] removes 1 stack"
+    },
+    "[Banish]": {
+      "category": "Removal",
+      "definition": "Temporarily removes entity/glyph for 1-3 turns",
+      "return_effect": "Summoning sickness (can't act 1 turn)",
+      "ketu_effect": "+effectiveness"
+    },
+    "[Transcendent]": {
+      "category": "Buff",
+      "definition": "Immune to negative effects; +50% positive effects",
+      "duration": "2-5 turns",
+      "stacks": "Yes (+25% per stack)",
+      "jupiter_effect": "Extends duration"
+    },
+    "[Seal]": {
+      "category": "Protection",
+      "definition": "Protects next effect from counter/cancel",
+      "single_use": true,
+      "stackable": true,
+      "engine": "Divination core mechanic"
+    },
+    "[Omen]": {
+      "category": "Tagged Draw",
+      "definition": "Tagged draw with conditional bonus; +30% if condition met",
+      "engine": "Divination core"
+    },
+    "[Mark]": {
+      "category": "Debuff",
+      "definition": "Debuff stack on enemy; +20-100% damage per mark",
+      "stack_cap": 10,
+      "mercury_effect": "-cooldown",
+      "engine": "Character Analysis core"
+    },
+    "[Shield]": {
+      "category": "Defense",
+      "definition": "Absorbs damage until depleted or duration ends",
+      "overflow": "Converts to Insight",
+      "venus_effect": "+30%",
+      "pushya_effect": "Regenerates shield per turn"
+    }
+  },
+  
+  "action_keywords": {
+    "[Charge]": {
+      "category": "Resource",
+      "definition": "Increment resource/counter toward threshold",
+      "singularity": "+5-15 Threshold",
+      "tantra": "+10-30 Prana",
+      "can_double_charge": true
+    },
+    "[Threshold]": {
+      "category": "Gate",
+      "definition": "Unlock premium effects at X resource",
+      "breakpoints": [50, 75, 100, 150],
+      "saturn_effect": "Increases requirement +25%, boosts reward +50%"
+    },
+    "[Collapse]": {
+      "category": "Burst",
+      "definition": "Consume threshold to trigger massive effect",
+      "retention": "20% threshold after",
+      "jupiter_effect": "Converts to AoE",
+      "ketu_effect": "Overcharge bonus +30%"
+    },
+    "[Invoke]": {
+      "category": "Summoning",
+      "definition": "Summon divine entity",
+      "resource": "Sanctity/Anarchy",
+      "moon_effect": "-1 chant requirement",
+      "venus_effect": "Cleanses on summon"
+    },
+    "[Chant]": {
+      "category": "Ritual",
+      "definition": "Ritual counter increment",
+      "breakpoint": "3 (or 2 with Moon)",
+      "unlocks": "[Invoke] window"
+    },
+    "[Consecrate]": {
+      "category": "Zone",
+      "definition": "Sanctify zone/entity",
+      "effect": "Reduces costs -30%, heals 20/turn",
+      "duration": "5 turns"
+    },
+    "[Foretell]": {
+      "category": "Delayed",
+      "definition": "Create delayed discounted copy",
+      "discount": "-30-50% cost",
+      "resolves_in": "X turns",
+      "mercury_effect": "Additional -cost"
+    },
+    "[Analyze]": {
+      "category": "Information",
+      "definition": "Reveal enemy info + apply [Mark]",
+      "mercury_effect": "-cooldown",
+      "reveals": "Hand/deck/cooldowns"
+    },
+    "[Expose]": {
+      "category": "Amplification",
+      "definition": "Amplify vulnerability; next damage +50-200%",
+      "works_with": "[Mark] stacks"
+    },
+    "[Field]": {
+      "category": "Zone",
+      "definition": "Create spatial control zone",
+      "radius": "Affected area",
+      "jupiter_effect": "+radius",
+      "duration": "3-5 turns"
+    },
+    "[Anchor]": {
+      "category": "Persistent",
+      "definition": "Place persistent point",
+      "max_on_board": "3-5",
+      "targetable": true
+    },
+    "[Channel]": {
+      "category": "Connection",
+      "definition": "Create connection between points; transfers effects",
+      "purva_bhadrapada_effect": "Duplicates effect"
+    },
+    "[Support]": {
+      "category": "Boost",
+      "definition": "Boost ally/generate resources",
+      "jupiter_effect": "Expands to multiple targets",
+      "amount": "+10-30 resources"
+    },
+    "[Structure]": {
+      "category": "Build",
+      "definition": "Build persistent entity",
+      "durability": "50-200 Ojas",
+      "saturn_effect": "+duration"
+    },
+    "[Refresh]": {
+      "category": "Restore",
+      "definition": "Restore resource/remove cooldown",
+      "amount": "+20-50 resources or -2 cooldown"
+    },
+    "[Heal]": {
+      "category": "Restoration",
+      "definition": "Restore Ojas",
+      "venus_effect": "+30%",
+      "overflow": "Converts to Insight",
+      "caps_per_tier": true
+    },
+    "[Cleanse]": {
+      "category": "Purification",
+      "definition": "Remove 1-3 debuffs",
+      "venus_effect": "Amplifies",
+      "cannot_infinite_loop": "Cooldown required"
+    },
+    "[Purify]": {
+      "category": "Purification",
+      "definition": "Remove all debuffs + grant immunity 1-2 turns",
+      "cost": "Higher than [Cleanse]"
+    },
+    "[Transmute]": {
+      "category": "Transformation",
+      "definition": "Convert negative to positive",
+      "conversion": "Debuff → buff of equal power",
+      "venus_synergy": true
+    },
+    "[Detonate]": {
+      "category": "Burst",
+      "definition": "Consume [Burn]/[Decay] for burst damage",
+      "multiplier": "+10% per [Decay] stack",
+      "mars_effect": "+30%",
+      "jupiter_effect": "AoE",
+      "caps": "200-400 damage"
+    }
+  },
+  
+  "grammar_operators": {
+    "Apply": "Add status effect with stacks/duration",
+    "Consume": "Remove stacks for benefit",
+    "Detonate": "Calculate potency from consumed stacks",
+    "Bind": "Attach planetary effect to engine",
+    "Transit": "Trigger periodic effect",
+    "Seal": "Grant protection to next eligible effect",
+    "Chant": "Increment ritual counter with breakpoints",
+    "Charge": "Increase threshold counters toward collapse"
+  }
+}

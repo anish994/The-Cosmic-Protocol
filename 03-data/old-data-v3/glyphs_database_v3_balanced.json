@@ -1,0 +1,2016 @@
+{
+  "version": "3.0",
+  "createdBy": "Warp AI",
+  "description": "Complete glyph database for Jyotish Card Game (v3.0 unified keywords & synergies)",
+  "schools": [
+    {
+      "id": "tantra",
+      "name": "Tantra Engine",
+      "icon": "🔥",
+      "glyphs": [
+        {
+          "id": 1,
+          "name": "Astral Lance",
+          "kp": 8,
+          "prana": 3,
+          "cooldown": 1,
+          "description": "Deal 15 damage. Apply 1 [Decay].",
+          "tags": [
+            "decay",
+            "damage",
+            "single-target"
+          ],
+          "keywords": [
+            "[Decay]"
+          ],
+          "applies": [
+            {
+              "keyword": "Decay",
+              "stacks": 1
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Vulnerable",
+              "effect": "+25% damage"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 3,
+            "kp": 8,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mars.Aggressive",
+              "mod": "anarchy_on_aggro",
+              "value": "+1"
+            },
+            {
+              "source": "Krittika",
+              "mod": "crit",
+              "value": "+10%"
+            }
+          ],
+          "school": "tantra",
+          "subschool": "maran",
+          "color": "#ff4444"
+        },
+        {
+          "id": 2,
+          "name": "Pranic Nova",
+          "kp": 12,
+          "prana": 5,
+          "cooldown": 3,
+          "description": "Detonate [Decay] on target. Deal [AoE] damage to adjacent Houses.",
+          "tags": [
+            "decay",
+            "aoe",
+            "consume"
+          ],
+          "keywords": [
+            "[AoE]",
+            "[Consume]"
+          ],
+          "applies": [],
+          "detonates": [
+            {
+              "keyword": "Decay",
+              "perStack": "+10% dmg"
+            }
+          ],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Shield",
+              "effect": "If target has [Shield], also apply [Sunder]"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 5,
+            "kp": 12,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Jupiter.Expansive",
+              "mod": "aoe_radius",
+              "value": "+1 (even turns)"
+            }
+          ],
+          "school": "tantra",
+          "subschool": "maran",
+          "color": "#ff6644"
+        },
+        {
+          "id": 3,
+          "name": "Agni's Kiss",
+          "kp": 10,
+          "prana": 4,
+          "cooldown": 2,
+          "description": "Apply [Burn] for 3 turns. Each tick applies 1 [Decay].",
+          "tags": [
+            "decay",
+            "dot",
+            "burn"
+          ],
+          "keywords": [
+            "[Burn]",
+            "[DoT]"
+          ],
+          "applies": [
+            {
+              "keyword": "Burn",
+              "stacks": 1
+            },
+            {
+              "keyword": "Decay",
+              "stacks": 1
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Vulnerable",
+              "effect": "[Burn] ticks +25%"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 4,
+            "kp": 10,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mars.Aggressive",
+              "mod": "burn_potency_cap",
+              "value": "+10%"
+            }
+          ],
+          "school": "tantra",
+          "subschool": "maran",
+          "color": "#ff8844"
+        },
+        {
+          "id": 4,
+          "name": "Whispers of Command",
+          "kp": 7,
+          "prana": 2,
+          "cooldown": 1,
+          "description": "Increase target Glyph cost +1 [Prana]. Apply 2 [Subservience].",
+          "tags": [
+            "subservience",
+            "control",
+            "debuff"
+          ],
+          "keywords": [
+            "[Debuff]"
+          ],
+          "applies": [
+            {
+              "keyword": "Subservience",
+              "stacks": 2
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Blessing",
+              "effect": "Also [Silence] 1 turn"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 2,
+            "kp": 7,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "vashikaran",
+          "color": "#cc44ff"
+        },
+        {
+          "id": 5,
+          "name": "Enthrallment",
+          "kp": 14,
+          "prana": 6,
+          "cooldown": 4,
+          "description": "Consume [Subservience] on a Yantra to control it for 2 turns.",
+          "tags": [
+            "subservience",
+            "control",
+            "consume"
+          ],
+          "keywords": [
+            "[Consume]",
+            "[Control]"
+          ],
+          "applies": [],
+          "detonates": [
+            {
+              "keyword": "Subservience",
+              "perStack": "Convert to 0.5 turn control"
+            }
+          ],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 6,
+            "kp": 14,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "vashikaran",
+          "color": "#dd44ff"
+        },
+        {
+          "id": 6,
+          "name": "Puppet's Curse",
+          "kp": 11,
+          "prana": 4,
+          "cooldown": 3,
+          "description": "Enemy's next Glyph targets a random friendly target. Apply 2 [Subservience].",
+          "tags": [
+            "subservience",
+            "control",
+            "redirect"
+          ],
+          "keywords": [
+            "[Debuff]"
+          ],
+          "applies": [
+            {
+              "keyword": "Subservience",
+              "stacks": 2
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 4,
+            "kp": 11,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "vashikaran",
+          "color": "#ee44ff"
+        },
+        {
+          "id": 7,
+          "name": "Temporal Lock",
+          "kp": 8,
+          "prana": 3,
+          "cooldown": 2,
+          "description": "Increase Glyph cooldown by 2. Apply 2 [Stasis].",
+          "tags": [
+            "stasis",
+            "slow",
+            "disable"
+          ],
+          "keywords": [
+            "[Debuff]",
+            "[Stasis]"
+          ],
+          "applies": [
+            {
+              "keyword": "Stasis",
+              "stacks": 2
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Vulnerable",
+              "effect": "Apply +1 [Stasis]"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 3,
+            "kp": 8,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "stambhan",
+          "color": "#4488ff"
+        },
+        {
+          "id": 8,
+          "name": "Stasis Field",
+          "kp": 15,
+          "prana": 7,
+          "cooldown": 4,
+          "description": "Consume [Stasis] on a House to disable it for 3 turns.",
+          "tags": [
+            "stasis",
+            "disable",
+            "consume"
+          ],
+          "keywords": [
+            "[Consume]"
+          ],
+          "applies": [],
+          "detonates": [
+            {
+              "keyword": "Stasis",
+              "perStack": "Disable duration +1 (max +2)"
+            }
+          ],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 7,
+            "kp": 15,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "stambhan",
+          "color": "#5588ff"
+        },
+        {
+          "id": 9,
+          "name": "Mantra of Silence",
+          "kp": 13,
+          "prana": 5,
+          "cooldown": 3,
+          "description": "[Chant]. Next turn: [Silence] target Glyph for 2 turns. Apply 3 [Stasis].",
+          "tags": [
+            "stasis",
+            "silence",
+            "chant"
+          ],
+          "keywords": [
+            "[Chant]",
+            "[Silence]"
+          ],
+          "applies": [
+            {
+              "keyword": "Stasis",
+              "stacks": 3
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 5,
+            "kp": 13,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "stambhan",
+          "color": "#6688ff"
+        },
+        {
+          "id": 10,
+          "name": "Karmic Inversion",
+          "kp": 9,
+          "prana": 3,
+          "cooldown": 2,
+          "description": "Reduce buff effectiveness −25%. Apply 2 [Discord].",
+          "tags": [
+            "discord",
+            "debuff",
+            "anti-buff"
+          ],
+          "keywords": [
+            "[Debuff]"
+          ],
+          "applies": [
+            {
+              "keyword": "Discord",
+              "stacks": 2
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 3,
+            "kp": 9,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "vidveshan",
+          "color": "#ff88cc"
+        },
+        {
+          "id": 11,
+          "name": "Aura of Dissonance",
+          "kp": 12,
+          "prana": 5,
+          "cooldown": 3,
+          "description": "Consume [Discord]. Increase random enemy Glyph costs.",
+          "tags": [
+            "discord",
+            "cost-increase",
+            "consume"
+          ],
+          "keywords": [
+            "[Consume]"
+          ],
+          "applies": [],
+          "detonates": [
+            {
+              "keyword": "Discord",
+              "perStack": "Increase 1 random cost by +1"
+            }
+          ],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 5,
+            "kp": 12,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "vidveshan",
+          "color": "#ff99cc"
+        },
+        {
+          "id": 12,
+          "name": "Sympathetic Agony",
+          "kp": 11,
+          "prana": 4,
+          "cooldown": 3,
+          "description": "Curse 3 turns: healing dealt to target also deals 25% damage. Apply 2 [Discord].",
+          "tags": [
+            "discord",
+            "curse",
+            "anti-heal"
+          ],
+          "keywords": [
+            "[Debuff]"
+          ],
+          "applies": [
+            {
+              "keyword": "Discord",
+              "stacks": 2
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 4,
+            "kp": 11,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "vidveshan",
+          "color": "#ffaacc"
+        },
+        {
+          "id": 13,
+          "name": "Prana Burn",
+          "kp": 6,
+          "prana": 2,
+          "cooldown": 1,
+          "description": "Destroy 2 enemy [Prana]. Apply 1 [Void].",
+          "tags": [
+            "void",
+            "mana-burn",
+            "resource-denial"
+          ],
+          "keywords": [
+            "[Debuff]"
+          ],
+          "applies": [
+            {
+              "keyword": "Void",
+              "stacks": 1
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 2,
+            "kp": 6,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "uchatan",
+          "color": "#8844ff"
+        },
+        {
+          "id": 14,
+          "name": "Exile to Void",
+          "kp": 16,
+          "prana": 7,
+          "cooldown": 5,
+          "description": "Consume [Void] on a Glyph to [Banish] it for 4 turns.",
+          "tags": [
+            "void",
+            "banish",
+            "consume"
+          ],
+          "keywords": [
+            "[Consume]",
+            "[Banish]"
+          ],
+          "applies": [],
+          "detonates": [
+            {
+              "keyword": "Void",
+              "perStack": "Extend Banish by +1 turn (max +1)"
+            }
+          ],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 7,
+            "kp": 16,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "uchatan",
+          "color": "#9944ff"
+        },
+        {
+          "id": 15,
+          "name": "Archive Corruption",
+          "kp": 14,
+          "prana": 5,
+          "cooldown": 4,
+          "description": "[Banish] a Glyph. Enemy may pay 3 [Prana] to return it. Apply 3 [Void].",
+          "tags": [
+            "void",
+            "banish",
+            "tax"
+          ],
+          "keywords": [
+            "[Banish]"
+          ],
+          "applies": [
+            {
+              "keyword": "Void",
+              "stacks": 3
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 5,
+            "kp": 14,
+            "bandwidth": 0,
+            "insight": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [],
+          "school": "tantra",
+          "subschool": "uchatan",
+          "color": "#aa44ff"
+        }
+      ]
+    },
+    {
+      "id": "character",
+      "name": "Character Analysis Engine",
+      "icon": "🧠",
+      "glyphs": [
+        {
+          "id": 101,
+          "name": "Cognitive Mark",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "Apply 1 [Mark]. If already [Exposed], also apply 1 [Vulnerable].",
+          "tags": [
+            "intel",
+            "debuff"
+          ],
+          "keywords": [
+            "[Mark]",
+            "[Debuff]"
+          ],
+          "applies": [
+            {
+              "keyword": "Mark",
+              "stacks": 1
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Expose",
+              "effect": "Also apply [Vulnerable] 1"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 0,
+            "kp": 6,
+            "insight": 2,
+            "bandwidth": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mercury.Adaptive",
+              "mod": "cooldown",
+              "value": "-1 (odd)"
+            }
+          ],
+          "school": "character",
+          "subschool": "analysis",
+          "color": "#4ac0ff"
+        },
+        {
+          "id": 102,
+          "name": "Expose Weakness",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Apply 1 [Expose]. Next detonate on target refreshes 1 cooldown.",
+          "tags": [
+            "intel",
+            "setup"
+          ],
+          "keywords": [
+            "[Expose]"
+          ],
+          "applies": [
+            {
+              "keyword": "Expose",
+              "stacks": 1
+            }
+          ],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Detonate",
+              "effect": "Refresh 1 cooldown"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 0,
+            "kp": 7,
+            "insight": 3,
+            "bandwidth": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mrigashira",
+              "mod": "insight_gain",
+              "value": "+5 (first Intel)"
+            }
+          ],
+          "school": "character",
+          "subschool": "analysis",
+          "color": "#35a8ff"
+        },
+        {
+          "id": 103,
+          "name": "Interrogation Silence",
+          "kp": 11,
+          "prana": 0,
+          "cooldown": 3,
+          "description": "[Silence] target for 1 turn. Converts 1 [Shield] into [Vulnerable].",
+          "tags": [
+            "control"
+          ],
+          "keywords": [
+            "[Silence]",
+            "[Debuff]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Shield",
+              "effect": "Convert 1 to [Vulnerable]"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 0,
+            "kp": 11,
+            "insight": 5,
+            "bandwidth": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Saturn.Disciplined",
+              "mod": "cost_floor_kp",
+              "value": "+1"
+            }
+          ],
+          "school": "character",
+          "subschool": "control",
+          "color": "#2f90ff"
+        },
+        {
+          "id": 104,
+          "name": "Cost Audit",
+          "kp": 8,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Increase 2 random enemy Glyph costs by +1 this turn.",
+          "tags": [
+            "tax"
+          ],
+          "keywords": [
+            "[Debuff]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "prana": 0,
+            "kp": 8,
+            "insight": 4,
+            "bandwidth": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "House.3",
+              "mod": "duration",
+              "value": "+1"
+            }
+          ],
+          "school": "character",
+          "subschool": "tax",
+          "color": "#1f78ff"
+        },
+        {
+          "id": 105,
+          "name": "Precision Strike",
+          "kp": 9,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "Deal 12 damage (+25% vs [Vulnerable]). If target [Marked], apply 1 [Vulnerable].",
+          "tags": [
+            "damage"
+          ],
+          "keywords": [
+            "[Damage]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Mark",
+              "effect": "Apply 1 [Vulnerable]"
+            },
+            {
+              "requiresKeyword": "Vulnerable",
+              "effect": "+25% damage"
+            }
+          ],
+          "resourceCosts": {
+            "prana": 0,
+            "kp": 9,
+            "insight": 2,
+            "bandwidth": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0,
+            "coherence": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Krittika",
+              "mod": "crit",
+              "value": "+10%"
+            }
+          ],
+          "school": "character",
+          "subschool": "assault",
+          "color": "#1068ff"
+        }
+      ]
+    },
+    {
+      "id": "consciousness",
+      "name": "Consciousness Engine",
+      "icon": "🌀",
+      "glyphs": [
+        {
+          "id": 201,
+          "name": "Aegis Field",
+          "kp": 8,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Create a [Field] shielding allies in radius 1.",
+          "tags": [
+            "field",
+            "defense"
+          ],
+          "keywords": [
+            "[Field]",
+            "[Shield]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Consecrate",
+              "effect": "+1 [Shield]"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 8,
+            "coherence": 2,
+            "prana": 0,
+            "insight": 0,
+            "bandwidth": 0,
+            "threads": 0,
+            "threshold": 0,
+            "sanctity": 0,
+            "anarchy": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Jupiter.Expansive",
+              "mod": "radius",
+              "value": "+1 (even)"
+            }
+          ],
+          "school": "consciousness",
+          "subschool": "field",
+          "color": "#8b5cf6"
+        },
+        {
+          "id": 202,
+          "name": "Anchor Node",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Place an [Anchor]. Next [Delay] resolves immediately.",
+          "tags": [
+            "anchor",
+            "tempo"
+          ],
+          "keywords": [
+            "[Anchor]",
+            "[Delay]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Delay",
+              "effect": "Resolve immediately"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 7,
+            "coherence": 2
+          },
+          "jyotishGravity": [
+            {
+              "source": "Moon.Reflective",
+              "mod": "shield_on_first",
+              "value": "+1"
+            }
+          ],
+          "school": "consciousness",
+          "subschool": "anchor",
+          "color": "#7c3aed"
+        },
+        {
+          "id": 203,
+          "name": "Channel Burst",
+          "kp": 9,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Fire a [Channel] for 10 damage. If in [Field], duplicate 50%.",
+          "tags": [
+            "channel",
+            "damage"
+          ],
+          "keywords": [
+            "[Channel]",
+            "[Damage]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Field",
+              "effect": "Duplicate 50%"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 9,
+            "coherence": 3
+          },
+          "jyotishGravity": [
+            {
+              "source": "PurvaBhadrapada",
+              "mod": "duplicate",
+              "value": "10%"
+            }
+          ],
+          "school": "consciousness",
+          "subschool": "channel",
+          "color": "#6d28d9"
+        },
+        {
+          "id": 204,
+          "name": "Amplify Resonance",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Amplify] an existing [Field]/[Anchor].",
+          "tags": [
+            "amplify"
+          ],
+          "keywords": [
+            "[Amplify]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "coherence": 2
+          },
+          "jyotishGravity": [
+            {
+              "source": "House.9",
+              "mod": "cleanse",
+              "value": "+1 on amplify"
+            }
+          ],
+          "school": "consciousness",
+          "subschool": "amplify",
+          "color": "#5b21b6"
+        },
+        {
+          "id": 205,
+          "name": "Delay Lock",
+          "kp": 5,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Delay] an effect to next turn; if Anchored, no decay.",
+          "tags": [
+            "tempo"
+          ],
+          "keywords": [
+            "[Delay]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Anchor",
+              "effect": "Prevent decay"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 5,
+            "coherence": 1
+          },
+          "jyotishGravity": [],
+          "school": "consciousness",
+          "subschool": "tempo",
+          "color": "#4c1d95"
+        }
+      ]
+    },
+    {
+      "id": "divination",
+      "name": "Divination Engine",
+      "icon": "🔮",
+      "glyphs": [
+        {
+          "id": 301,
+          "name": "Omen of Fortune",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "Create an [Omen]: next draw gains +10% effect.",
+          "tags": [
+            "omen"
+          ],
+          "keywords": [
+            "[Omen]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "insight": 2
+          },
+          "jyotishGravity": [
+            {
+              "source": "Rahu.Unpredictable",
+              "mod": "mutation",
+              "value": "15%"
+            }
+          ],
+          "school": "divination",
+          "subschool": "omen",
+          "color": "#06b6d4"
+        },
+        {
+          "id": 302,
+          "name": "Scry the Veil",
+          "kp": 5,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Scry] 2. If Moon active, Scry 3 instead.",
+          "tags": [
+            "scry"
+          ],
+          "keywords": [
+            "[Scry]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Moon",
+              "effect": "Depth +1"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 5,
+            "insight": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Moon.Reflective",
+              "mod": "scry_depth",
+              "value": "+1"
+            }
+          ],
+          "school": "divination",
+          "subschool": "scry",
+          "color": "#0891b2"
+        },
+        {
+          "id": 303,
+          "name": "Foretell Echo",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "[Foretell 2]: create delayed discount copy.",
+          "tags": [
+            "foretell"
+          ],
+          "keywords": [
+            "[Foretell]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 7,
+            "insight": 3,
+            "threads": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mercury.Adaptive",
+              "mod": "discount",
+              "value": "-1 once/turn"
+            }
+          ],
+          "school": "divination",
+          "subschool": "foretell",
+          "color": "#0e7490"
+        },
+        {
+          "id": 304,
+          "name": "Seal Fate",
+          "kp": 8,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "[Seal] the next draw/effect.",
+          "tags": [
+            "seal"
+          ],
+          "keywords": [
+            "[Seal]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 8,
+            "insight": 2
+          },
+          "jyotishGravity": [],
+          "school": "divination",
+          "subschool": "seal",
+          "color": "#155e75"
+        },
+        {
+          "id": 305,
+          "name": "Prophetic Weave",
+          "kp": 9,
+          "prana": 0,
+          "cooldown": 3,
+          "description": "Spend 2 Threads: upgrade current Omen.",
+          "tags": [
+            "weave"
+          ],
+          "keywords": [
+            "[Omen]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Omen",
+              "effect": "Upgrade bonus clause"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 9,
+            "threads": 2,
+            "insight": 2
+          },
+          "jyotishGravity": [],
+          "school": "divination",
+          "subschool": "weave",
+          "color": "#164e63"
+        }
+      ]
+    },
+    {
+      "id": "foundational",
+      "name": "Foundational Engine",
+      "icon": "🏗️",
+      "glyphs": [
+        {
+          "id": 401,
+          "name": "Support Lattice",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Support] target. Spend Bandwidth to support +1.",
+          "tags": [
+            "support"
+          ],
+          "keywords": [
+            "[Support]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 7,
+            "bandwidth": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Jupiter.Expansive",
+              "mod": "targets",
+              "value": "+1 (even)"
+            }
+          ],
+          "school": "foundational",
+          "subschool": "support",
+          "color": "#10b981"
+        },
+        {
+          "id": 402,
+          "name": "Structure Pillar",
+          "kp": 8,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Create [Structure] (3 turns). Amplifies incoming [Field].",
+          "tags": [
+            "structure"
+          ],
+          "keywords": [
+            "[Structure]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Field",
+              "effect": "Amplify once/turn"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 8,
+            "bandwidth": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Saturn.Disciplined",
+              "mod": "duration",
+              "value": "+1"
+            }
+          ],
+          "school": "foundational",
+          "subschool": "structure",
+          "color": "#059669"
+        },
+        {
+          "id": 403,
+          "name": "Refresh Cycle",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Refresh] a random allied cooldown by 1.",
+          "tags": [
+            "refresh"
+          ],
+          "keywords": [
+            "[Refresh]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "bandwidth": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mercury.Adaptive",
+              "mod": "priority",
+              "value": "highest KP"
+            }
+          ],
+          "school": "foundational",
+          "subschool": "cooldown",
+          "color": "#047857"
+        },
+        {
+          "id": 404,
+          "name": "Reduce Overhead",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "[Reduce] next ally glyph cost by 1.",
+          "tags": [
+            "reduce"
+          ],
+          "keywords": [
+            "[Reduce]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 7,
+            "bandwidth": 1
+          },
+          "jyotishGravity": [],
+          "school": "foundational",
+          "subschool": "economy",
+          "color": "#065f46"
+        },
+        {
+          "id": 405,
+          "name": "Anchor Scaffold",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "Place minor [Anchor]; first [Field] gains +1 radius.",
+          "tags": [
+            "anchor"
+          ],
+          "keywords": [
+            "[Anchor]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Field",
+              "effect": "+1 radius"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 6,
+            "bandwidth": 1
+          },
+          "jyotishGravity": [],
+          "school": "foundational",
+          "subschool": "anchor",
+          "color": "#064e3b"
+        }
+      ]
+    },
+    {
+      "id": "invocation",
+      "name": "Invocation Engine",
+      "icon": "🕯️",
+      "glyphs": [
+        {
+          "id": 501,
+          "name": "Chant Hymn",
+          "kp": 5,
+          "prana": 2,
+          "cooldown": 0,
+          "description": "Gain 1 [Chant].",
+          "tags": [
+            "chant"
+          ],
+          "keywords": [
+            "[Chant]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 5,
+            "prana": 2,
+            "sanctity": 1
+          },
+          "jyotishGravity": [],
+          "school": "invocation",
+          "subschool": "chant",
+          "color": "#f59e0b"
+        },
+        {
+          "id": 502,
+          "name": "Invoke Radiance",
+          "kp": 8,
+          "prana": 4,
+          "cooldown": 2,
+          "description": "[Invoke]: deal 10 radiant damage (double minor clause if chanted).",
+          "tags": [
+            "invoke",
+            "damage"
+          ],
+          "keywords": [
+            "[Invoke]",
+            "[Damage]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Chant",
+              "effect": "Double minor clause"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 8,
+            "prana": 4,
+            "sanctity": 1
+          },
+          "jyotishGravity": [],
+          "school": "invocation",
+          "subschool": "invoke",
+          "color": "#d97706"
+        },
+        {
+          "id": 503,
+          "name": "Consecrate Ward",
+          "kp": 7,
+          "prana": 3,
+          "cooldown": 2,
+          "description": "[Consecrate]: next defensive glyph gains +1 [Shield].",
+          "tags": [
+            "consecrate",
+            "defense"
+          ],
+          "keywords": [
+            "[Consecrate]",
+            "[Shield]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 7,
+            "prana": 3,
+            "sanctity": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Venus.Harmonious",
+              "mod": "cleanse",
+              "value": "add"
+            }
+          ],
+          "school": "invocation",
+          "subschool": "consecrate",
+          "color": "#b45309"
+        },
+        {
+          "id": 504,
+          "name": "Blessing of Cleansing",
+          "kp": 6,
+          "prana": 3,
+          "cooldown": 1,
+          "description": "Apply [Blessing]: next [Heal] also [Cleanse] 1.",
+          "tags": [
+            "blessing"
+          ],
+          "keywords": [
+            "[Blessing]",
+            "[Cleanse]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Heal",
+              "effect": "Also [Cleanse] 1"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 6,
+            "prana": 3,
+            "sanctity": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Venus.Harmonious",
+              "mod": "cleanse",
+              "value": "add"
+            }
+          ],
+          "school": "invocation",
+          "subschool": "blessing",
+          "color": "#92400e"
+        },
+        {
+          "id": 505,
+          "name": "Vow of Silence",
+          "kp": 10,
+          "prana": 4,
+          "cooldown": 3,
+          "description": "Open a [Silence] window next turn (1 turn).",
+          "tags": [
+            "control"
+          ],
+          "keywords": [
+            "[Silence]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 10,
+            "prana": 4,
+            "sanctity": 1
+          },
+          "jyotishGravity": [],
+          "school": "invocation",
+          "subschool": "control",
+          "color": "#78350f"
+        }
+      ]
+    },
+    {
+      "id": "singularity",
+      "name": "Singularity Engine",
+      "icon": "🕳️",
+      "glyphs": [
+        {
+          "id": 601,
+          "name": "Charge Node",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Charge] threshold by +2.",
+          "tags": [
+            "charge"
+          ],
+          "keywords": [
+            "[Charge]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "threshold": 2
+          },
+          "jyotishGravity": [],
+          "school": "singularity",
+          "subschool": "charge",
+          "color": "#111827"
+        },
+        {
+          "id": 602,
+          "name": "Threshold Mark",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "Gain [Threshold] 3. [Delay] locks progress.",
+          "tags": [
+            "threshold"
+          ],
+          "keywords": [
+            "[Threshold]",
+            "[Delay]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Delay",
+              "effect": "Lock for next turn"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 7,
+            "threshold": 3
+          },
+          "jyotishGravity": [],
+          "school": "singularity",
+          "subschool": "charge",
+          "color": "#0f172a"
+        },
+        {
+          "id": 603,
+          "name": "Collapse Nova",
+          "kp": 12,
+          "prana": 0,
+          "cooldown": 4,
+          "description": "[Collapse] to deal AoE damage based on Threshold.",
+          "tags": [
+            "collapse",
+            "aoe"
+          ],
+          "keywords": [
+            "[Collapse]",
+            "[AoE]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 12,
+            "threshold": 0
+          },
+          "jyotishGravity": [
+            {
+              "source": "Jupiter.Expansive",
+              "mod": "aoe",
+              "value": "add at high threshold"
+            }
+          ],
+          "school": "singularity",
+          "subschool": "collapse",
+          "color": "#0b1220"
+        },
+        {
+          "id": 604,
+          "name": "Delay Lock",
+          "kp": 5,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Delay] current threshold gains.",
+          "tags": [
+            "tempo"
+          ],
+          "keywords": [
+            "[Delay]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 5
+          },
+          "jyotishGravity": [],
+          "school": "singularity",
+          "subschool": "tempo",
+          "color": "#0a0f1a"
+        },
+        {
+          "id": 605,
+          "name": "Banish Singularity",
+          "kp": 13,
+          "prana": 0,
+          "cooldown": 4,
+          "description": "[Banish] a target for 3 turns if Threshold ≥ X.",
+          "tags": [
+            "banish"
+          ],
+          "keywords": [
+            "[Banish]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Threshold",
+              "effect": "Enable banish"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 13
+          },
+          "jyotishGravity": [
+            {
+              "source": "House.12",
+              "mod": "banish_duration",
+              "value": "+1"
+            }
+          ],
+          "school": "singularity",
+          "subschool": "control",
+          "color": "#090c14"
+        }
+      ]
+    },
+    {
+      "id": "therapeutic",
+      "name": "Therapeutic Engine",
+      "icon": "🧪",
+      "glyphs": [
+        {
+          "id": 701,
+          "name": "Heal Pulse",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Heal] 10 (first heal +10% each turn).",
+          "tags": [
+            "heal"
+          ],
+          "keywords": [
+            "[Heal]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "ojas": 1
+          },
+          "jyotishGravity": [
+            {
+              "source": "Moon.Reflective",
+              "mod": "first_heal",
+              "value": "+10%"
+            }
+          ],
+          "school": "therapeutic",
+          "subschool": "heal",
+          "color": "#22c55e"
+        },
+        {
+          "id": 702,
+          "name": "Cleanse Touch",
+          "kp": 5,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "[Cleanse] 1 debuff; gain 1 Ojas.",
+          "tags": [
+            "cleanse"
+          ],
+          "keywords": [
+            "[Cleanse]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 5
+          },
+          "jyotishGravity": [],
+          "school": "therapeutic",
+          "subschool": "cleanse",
+          "color": "#16a34a"
+        },
+        {
+          "id": 703,
+          "name": "Purify Affliction",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "[Purify] converts 1 debuff stack into [Shield].",
+          "tags": [
+            "purify",
+            "shield"
+          ],
+          "keywords": [
+            "[Purify]",
+            "[Shield]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6
+          },
+          "jyotishGravity": [],
+          "school": "therapeutic",
+          "subschool": "purify",
+          "color": "#15803d"
+        },
+        {
+          "id": 704,
+          "name": "Transmute Pain",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "[Transmute]: convert 50% incoming damage into healing next turn.",
+          "tags": [
+            "transmute"
+          ],
+          "keywords": [
+            "[Transmute]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 7
+          },
+          "jyotishGravity": [],
+          "school": "therapeutic",
+          "subschool": "transmute",
+          "color": "#166534"
+        },
+        {
+          "id": 705,
+          "name": "Shield Sanctuary",
+          "kp": 8,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Grant [Shield] 12; if Blessed, also [Cleanse] 1.",
+          "tags": [
+            "shield"
+          ],
+          "keywords": [
+            "[Shield]",
+            "[Cleanse]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [
+            {
+              "requiresKeyword": "Blessing",
+              "effect": "Also [Cleanse] 1"
+            }
+          ],
+          "resourceCosts": {
+            "kp": 8
+          },
+          "jyotishGravity": [
+            {
+              "source": "Pushya",
+              "mod": "ojas_regen",
+              "value": "improve"
+            }
+          ],
+          "school": "therapeutic",
+          "subschool": "shield",
+          "color": "#14532d"
+        }
+      ]
+    },
+    {
+      "id": "jyotish",
+      "name": "Jyotish Engine",
+      "icon": "🜂",
+      "glyphs": [
+        {
+          "id": 801,
+          "name": "Bind Mars",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 3,
+          "description": "[Bind] Mars to an engine for 3 turns (Aggro bonuses).",
+          "tags": [
+            "bind"
+          ],
+          "keywords": [
+            "[Bind]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "threads": 2
+          },
+          "jyotishGravity": [
+            {
+              "source": "Mars.Aggressive",
+              "mod": "bind",
+              "value": "+burn cap"
+            }
+          ],
+          "school": "jyotish",
+          "subschool": "bind",
+          "color": "#f97316"
+        },
+        {
+          "id": 802,
+          "name": "Bind Venus",
+          "kp": 6,
+          "prana": 0,
+          "cooldown": 3,
+          "description": "[Bind] Venus to an engine for 3 turns (healing bonuses).",
+          "tags": [
+            "bind"
+          ],
+          "keywords": [
+            "[Bind]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 6,
+            "threads": 2
+          },
+          "jyotishGravity": [
+            {
+              "source": "Venus.Harmonious",
+              "mod": "bind",
+              "value": "heal cleanse"
+            }
+          ],
+          "school": "jyotish",
+          "subschool": "bind",
+          "color": "#fb923c"
+        },
+        {
+          "id": 803,
+          "name": "Transit Pulse",
+          "kp": 5,
+          "prana": 0,
+          "cooldown": 1,
+          "description": "Trigger a [Transit] tick (all active binds).",
+          "tags": [
+            "transit"
+          ],
+          "keywords": [
+            "[Transit]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 5,
+            "threads": 1
+          },
+          "jyotishGravity": [],
+          "school": "jyotish",
+          "subschool": "transit",
+          "color": "#ea580c"
+        },
+        {
+          "id": 804,
+          "name": "Aspect Convergence",
+          "kp": 8,
+          "prana": 0,
+          "cooldown": 3,
+          "description": "Set an [Aspect] pair (e.g., Mars+Jupiter) for 2 turns.",
+          "tags": [
+            "aspect"
+          ],
+          "keywords": [
+            "[Aspect]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 8,
+            "threads": 2
+          },
+          "jyotishGravity": [],
+          "school": "jyotish",
+          "subschool": "aspect",
+          "color": "#c2410c"
+        },
+        {
+          "id": 805,
+          "name": "Omen Blessing",
+          "kp": 7,
+          "prana": 0,
+          "cooldown": 2,
+          "description": "Next [Omen] gains +1 tier of bonus.",
+          "tags": [
+            "omen",
+            "blessing"
+          ],
+          "keywords": [
+            "[Omen]",
+            "[Blessing]"
+          ],
+          "applies": [],
+          "detonates": [],
+          "synergyTargets": [],
+          "resourceCosts": {
+            "kp": 7,
+            "threads": 1
+          },
+          "jyotishGravity": [],
+          "school": "jyotish",
+          "subschool": "weave",
+          "color": "#9a3412"
+        }
+      ]
+    }
+  ]
+}

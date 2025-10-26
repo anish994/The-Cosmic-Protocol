@@ -1,0 +1,892 @@
+{
+  "rules_engine_version": "1.0.0",
+  "game_version": "v4.0",
+  "last_updated": "2025-01-23",
+  "description": "AI Rules Engine - Layer 1 (Foundational) and Layer 3 (Combat) - Ultra-detailed validation system",
+  
+  "LAYER_1_FOUNDATIONAL_RULES": {
+    
+    "1.1_MATCH_STRUCTURE": {
+      "description": "Rules governing overall match flow and victory conditions",
+      
+      "1.1.1_best_of_5_format": {
+        "rule_id": "R-1.1.1",
+        "category": "match_structure",
+        "priority": "critical",
+        "description": "Match ends when one player wins 3 rounds",
+        "validation_schema": {
+          "type": "object",
+          "properties": {
+            "total_rounds": {"type": "integer", "minimum": 1, "maximum": 5},
+            "rounds_to_win": {"type": "integer", "const": 3},
+            "current_round": {"type": "integer", "minimum": 1, "maximum": 5},
+            "player1_round_wins": {"type": "integer", "minimum": 0, "maximum": 3},
+            "player2_round_wins": {"type": "integer", "minimum": 0, "maximum": 3}
+          },
+          "required": ["total_rounds", "rounds_to_win", "current_round"]
+        },
+        "sub_rules": {
+          "1.1.1.1_match_victory_condition": {
+            "rule_id": "R-1.1.1.1",
+            "description": "Player wins match when they reach 3 round victories",
+            "validation": "player.round_wins >= 3",
+            "priority": "critical"
+          },
+          "1.1.1.2_early_victory": {
+            "rule_id": "R-1.1.1.2",
+            "description": "Match can end before round 5 if player reaches 3 wins",
+            "validation": "if (player.round_wins == 3) { end_match() }",
+            "examples": [
+              "Player wins 3-0: Match ends after round 3",
+              "Player wins 3-1: Match ends after round 4"
+            ]
+          },
+          "1.1.1.3_impossible_comeback": {
+            "rule_id": "R-1.1.1.3",
+            "description": "Match cannot continue if opponent cannot mathematically reach 3 wins",
+            "validation": "(5 - current_round + opponent_wins) < 3",
+            "example": "If score is 3-0 after round 3, match ends (opponent cannot reach 3)"
+          }
+        },
+        "edge_cases": [
+          {
+            "case": "simultaneous_defeat",
+            "description": "Both cards reach 0 HP same turn",
+            "resolution": "Draw declared, round replayed with same cards",
+            "rule_id": "R-1.1.1.EC1"
+          },
+          {
+            "case": "disconnection_during_round_5",
+            "description": "Player disconnects during decisive round",
+            "resolution": "60-second reconnection window, then auto-forfeit",
+            "rule_id": "R-1.1.1.EC2"
+          }
+        ]
+      },
+      
+      "1.1.2_round_victory_conditions": {
+        "rule_id": "R-1.1.2",
+        "description": "Conditions under which a single round is won",
+        "priority": "critical",
+        "victory_conditions": [
+          {
+            "condition_id": "VC-1",
+            "type": "HP_depletion",
+            "description": "Opponent card HP reaches 0",
+            "validation": "opponent_card.HP <= 0",
+            "immediate": true
+          },
+          {
+            "condition_id": "VC-2",
+            "type": "forfeit",
+            "description": "Opponent manually forfeits round",
+            "validation": "opponent.forfeit_action == true",
+            "immediate": true
+          },
+          {
+            "condition_id": "VC-3",
+            "type": "timeout",
+            "description": "Turn timer expires, higher HP wins",
+            "validation": "turn_timer <= 0 && player_HP > opponent_HP",
+            "immediate": false,
+            "tiebreaker": "If HP equal, round is draw and replayed"
+          },
+          {
+            "condition_id": "VC-4",
+            "type": "special_win_condition",
+            "description": "Engine-specific instant win (Checkmate, Prophet of Certainty)",
+            "validation": "special_win_condition.triggered == true",
+            "immediate": true,
+            "examples": [
+              "Character Analysis: Checkmate (Skill 45)",
+              "Character Analysis: Prophet of Certainty (Skill 91)",
+              "Singularity: Collapse with specific conditions"
+            ]
+          }
+        ],
+        "sub_rules": {
+          "1.1.2.1_HP_calculation_timing": {
+            "rule_id": "R-1.1.2.1",
+            "description": "HP is checked after all simultaneous effects resolve",
+            "validation": "check_HP_after_resolution_phase_complete()",
+            "prevents": "Premature round end mid-effect resolution"
+          }
+        }
+      },
+      
+      "1.1.3_timeout_and_stalemate": {
+        "rule_id": "R-1.1.3",
+        "description": "Rules for turn timeouts and stalemate situations",
+        "turn_timer": {
+          "duration_seconds": 60,
+          "warning_at_seconds": 10,
+          "grace_period_seconds": 5,
+          "auto_pass_on_expiry": true
+        },
+        "stalemate_detection": {
+          "trigger": "No HP change for 10 consecutive turns",
+          "resolution": "Sudden death mode: Both players take 10 damage per turn until winner emerges",
+          "validation": "turns_without_HP_change >= 10"
+        },
+        "sub_rules": {
+          "1.1.3.1_auto_pass_behavior": {
+            "rule_id": "R-1.1.3.1",
+            "description": "On timeout, player automatically passes turn (no glyph activated)",
+            "effect": "Turn passes to opponent, resources regenerate normally",
+            "penalty": "None (but loses opportunity to act)"
+          },
+          "1.1.3.2_consecutive_timeouts": {
+            "rule_id": "R-1.1.3.2",
+            "description": "3 consecutive timeouts = automatic round forfeit",
+            "validation": "player.consecutive_timeouts >= 3",
+            "resolution": "Round awarded to opponent"
+          }
+        }
+      }
+    },
+    
+    "1.2_CARD_SYSTEM": {
+      "description": "Rules governing card creation, stats, and properties",
+      
+      "1.2.1_card_creation_rules": {
+        "rule_id": "R-1.2.1",
+        "description": "Rules for creating custom cards in Workshop",
+        "glyph_slots": {
+          "total": 12,
+          "minimum_required": 12,
+          "maximum_allowed": 12,
+          "validation": "card.glyphs.length == 12"
+        },
+        "glyph_selection": {
+          "source": "Player's unlocked glyph library",
+          "restrictions": [
+            "Must own/unlock glyph to use it",
+            "Can use same glyph multiple times (duplicates allowed)",
+            "Can mix glyphs from different engines freely"
+          ],
+          "validation_schema": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^SKILL_[A-Z]+_[0-9]+$"},
+            "minItems": 12,
+            "maxItems": 12
+          }
+        },
+        "sub_rules": {
+          "1.2.1.1_duplicate_glyphs": {
+            "rule_id": "R-1.2.1.1",
+            "description": "Same glyph can be placed multiple times",
+            "example": "12x Minor Heal is valid (suboptimal but legal)",
+            "reason": "Encourages creative deckbuilding experimentation"
+          },
+          "1.2.1.2_glyph_unlock_requirement": {
+            "rule_id": "R-1.2.1.2",
+            "description": "Can only use glyphs that are unlocked in progression",
+            "validation": "glyph_id IN player.unlocked_glyphs",
+            "enforcement": "UI prevents selection of locked glyphs"
+          }
+        }
+      },
+      
+      "1.2.2_card_HP_calculation": {
+        "rule_id": "R-1.2.2",
+        "description": "Formula for calculating card's starting HP based on glyphs",
+        "base_HP": 100,
+        "formula": "base_HP + (defensive_glyphs * 10) + (utility_glyphs * 5) - (offensive_glyphs * 10)",
+        "glyph_categorization": {
+          "offensive": "Glyphs with [Strike], [Burn], [Detonate], primary damage keywords",
+          "defensive": "Glyphs with [Shield], [Heal], [Sanctify], [Structure] keywords",
+          "utility": "Glyphs with [Reveal], [Forecast], [Convert], [Bless] keywords"
+        },
+        "calculation_example": {
+          "glyphs": "4 offensive, 5 defensive, 3 utility",
+          "calculation": "100 + (5 * 10) + (3 * 5) - (4 * 10) = 100 + 50 + 15 - 40 = 125 HP"
+        },
+        "constraints": {
+          "minimum_HP": 50,
+          "maximum_HP": 250,
+          "validation": "50 <= calculated_HP <= 250"
+        },
+        "sub_rules": {
+          "1.2.2.1_jyotish_HP_modifiers": {
+            "rule_id": "R-1.2.2.1",
+            "description": "Jyotish chart can modify final HP",
+            "modifiers": [
+              "1st House (Self): +10% max HP",
+              "6th House (Enemies): +5% max HP",
+              "Saturn Tier 3+: +20 HP flat bonus",
+              "Mars Tier 3+: -10 HP (aggressive builds)"
+            ],
+            "application_order": "Calculate base HP → Apply Jyotish modifiers → Enforce min/max constraints"
+          }
+        }
+      },
+      
+      "1.2.3_card_stats_calculation": {
+        "rule_id": "R-1.2.3",
+        "description": "How Attack, Defense, Speed stats are derived from glyphs",
+        "stat_formulas": {
+          "attack_power": {
+            "base": 10,
+            "formula": "base + (offensive_glyphs * 5) + (tier_2_offensive * 3) + (tier_3_offensive * 5)",
+            "purpose": "Influences damage multipliers",
+            "range": "10-100"
+          },
+          "defense": {
+            "base": 10,
+            "formula": "base + (defensive_glyphs * 5) + (shield_glyphs * 8)",
+            "purpose": "Reduces incoming damage",
+            "range": "10-80"
+          },
+          "speed": {
+            "base": 50,
+            "formula": "base + (mercury_influence * 10) - (heavy_glyphs * 5)",
+            "purpose": "Determines turn order priority",
+            "range": "20-100"
+          }
+        },
+        "note": "Stats are display values for player reference; actual damage/reduction calculated per glyph"
+      },
+      
+      "1.2.4_card_naming_and_identity": {
+        "rule_id": "R-1.2.4",
+        "description": "Rules for naming and identifying custom cards",
+        "naming_rules": {
+          "min_length": 3,
+          "max_length": 30,
+          "allowed_characters": "alphanumeric, spaces, hyphens, apostrophes",
+          "prohibited_words": ["profanity list", "offensive terms"],
+          "validation": "^[a-zA-Z0-9 '-]{3,30}$"
+        },
+        "visual_identity": {
+          "card_art": "Auto-generated based on dominant engine and glyph themes",
+          "color_scheme": "Primary engine determines base color (Tantra=red, Consciousness=blue, etc.)",
+          "icon": "Dominant glyph keyword determines card icon"
+        },
+        "unique_identifier": {
+          "format": "CARD_{player_id}_{timestamp}_{hash}",
+          "example": "CARD_P12345_20250123_A7F3D",
+          "persistence": "Unique ID never changes even if card edited"
+        }
+      }
+    },
+    
+    "1.3_TURN_STRUCTURE": {
+      "description": "Rules governing individual turn flow within a round",
+      
+      "1.3.1_turn_phases": {
+        "rule_id": "R-1.3.1",
+        "description": "Sequential phases that comprise a single turn",
+        "phases": [
+          {
+            "phase_id": 1,
+            "name": "START_OF_TURN",
+            "description": "Resource regeneration and start-of-turn effects trigger",
+            "actions": [
+              "Regenerate base resources (KP +1, Prana +5, Sanctity +5, etc.)",
+              "Trigger start-of-turn effects ([Burn] tick, [Regen] tick, etc.)",
+              "Update cooldowns (reduce all active cooldowns by 1)",
+              "Check persistent state expirations (Neural States, [Bless] duration, etc.)"
+            ],
+            "order": "Resources → Effects → Cooldowns → State checks",
+            "duration": "Automatic, instant"
+          },
+          {
+            "phase_id": 2,
+            "name": "PLANNING",
+            "description": "Player selects glyph to activate (thinking phase)",
+            "actions": [
+              "Player reviews available glyphs (not on cooldown, can afford cost)",
+              "Player selects 1 glyph",
+              "Player confirms target (if targeting required)",
+              "System validates cost and targeting"
+            ],
+            "duration": "60 seconds (turn timer)",
+            "validation": "Selected glyph must pass cost check and targeting check"
+          },
+          {
+            "phase_id": 3,
+            "name": "ACTION",
+            "description": "Selected glyph activates and resolves",
+            "actions": [
+              "Deduct resource costs (KP + engine resource)",
+              "Apply glyph effects (damage, healing, buffs, debuffs)",
+              "Trigger related effects (synergies, [Counter] reactions)",
+              "Update game state (HP, resources, status effects)"
+            ],
+            "duration": "Instant animation",
+            "order": "Cost payment → Primary effect → Triggered effects → State update"
+          },
+          {
+            "phase_id": 4,
+            "name": "RESOLUTION",
+            "description": "After-action effects resolve and state stabilizes",
+            "actions": [
+              "Check for defeated cards (HP <= 0)",
+              "Trigger end-of-turn effects (resource generation, conditional effects)",
+              "Validate game state consistency",
+              "Prepare for opponent's turn or round end"
+            ],
+            "duration": "Automatic, instant",
+            "order": "Defeat check → End-of-turn effects → State validation"
+          },
+          {
+            "phase_id": 5,
+            "name": "CLEANUP",
+            "description": "Turn officially ends, transition to next turn",
+            "actions": [
+              "Increment turn counter",
+              "Log turn history",
+              "Switch active player (if applicable)",
+              "Begin next START_OF_TURN phase"
+            ],
+            "duration": "Automatic, instant"
+          }
+        ],
+        "sub_rules": {
+          "1.3.1.1_phase_interruption": {
+            "rule_id": "R-1.3.1.1",
+            "description": "Only PLANNING phase can be interrupted (timeout)",
+            "validation": "Timeout only during phase 2, other phases atomic",
+            "reason": "Prevents mid-resolution state corruption"
+          },
+          "1.3.1.2_simultaneous_resolution": {
+            "rule_id": "R-1.3.1.2",
+            "description": "If multiple effects trigger same phase, resolve by Speed stat",
+            "order": "Highest Speed resolves first, ties resolved randomly",
+            "example": "Both players' [Burn] ticks simultaneously → Resolve higher Speed card first"
+          }
+        }
+      },
+      
+      "1.3.2_action_economy": {
+        "rule_id": "R-1.3.2",
+        "description": "How many actions a player can take per turn",
+        "baseline": {
+          "actions_per_turn": 1,
+          "description": "Player activates 1 glyph per turn (baseline rule)"
+        },
+        "exceptions": [
+          {
+            "condition": "Delta State active (Consciousness Engine)",
+            "effect": "Glyphs activate twice (second at 50% potency)",
+            "note": "Still only 1 glyph selection, but resolves twice"
+          },
+          {
+            "condition": "Universal Wildcard (Invocation Skill 100) + Jupiter Tier 3",
+            "effect": "Can activate 2 glyphs per turn",
+            "note": "Rare exception, requires specific build"
+          },
+          {
+            "condition": "Certain [Reaction] glyphs",
+            "effect": "Can activate as interrupt during opponent's turn",
+            "note": "Doesn't consume your main action, separate system"
+          }
+        ],
+        "validation": "actions_taken_this_turn <= max_actions_allowed"
+      },
+      
+      "1.3.3_turn_order_determination": {
+        "rule_id": "R-1.3.3",
+        "description": "How turn order is decided (sequential vs simultaneous)",
+        "system": "sequential_turns",
+        "order_priority": [
+          {
+            "priority": 1,
+            "method": "speed_stat_comparison",
+            "description": "Higher Speed stat goes first",
+            "validation": "if (player1.speed > player2.speed) { player1_first } else { player2_first }"
+          },
+          {
+            "priority": 2,
+            "method": "round_starter_alternation",
+            "description": "If Speed equal, alternate who goes first each turn",
+            "validation": "if (turn % 2 == 0) { player1_first } else { player2_first }"
+          },
+          {
+            "priority": 3,
+            "method": "random_tiebreaker",
+            "description": "If all else equal, random determination",
+            "validation": "random(0,1) == 0 ? player1_first : player2_first"
+          }
+        ],
+        "note": "Turn order recalculated if Speed stat changes mid-round (rare)"
+      },
+      
+      "1.3.4_turn_timer": {
+        "rule_id": "R-1.3.4",
+        "description": "Time limit for PLANNING phase",
+        "duration": 60,
+        "unit": "seconds",
+        "warning_threshold": 10,
+        "grace_period": 5,
+        "on_expiry": "auto_pass_turn",
+        "consecutive_timeout_limit": 3,
+        "penalty": "3 consecutive timeouts = round forfeit"
+      }
+    }
+  },
+  
+  "LAYER_3_COMBAT_RULES": {
+    
+    "3.1_DAMAGE_SYSTEM": {
+      "description": "Rules governing damage calculation, types, and application",
+      
+      "3.1.1_damage_calculation_formula": {
+        "rule_id": "R-3.1.1",
+        "description": "Base formula for calculating damage dealt",
+        "formula": "base_damage * (1 + (attack_power / 100)) * (1 - (target_defense / 200)) * type_modifier * status_modifiers",
+        "components": {
+          "base_damage": "Value specified in glyph description (e.g., Smite deals 40 base)",
+          "attack_power": "Card's Attack stat (10-100 range)",
+          "target_defense": "Target card's Defense stat (10-80 range)",
+          "type_modifier": "Damage type advantages (usually 1.0, no types advantage system currently)",
+          "status_modifiers": "Active buffs/debuffs ([Bless], [Curse], [Amplify], etc.)"
+        },
+        "example_calculation": {
+          "glyph": "Smite (40 base damage)",
+          "attacker_attack": 50,
+          "target_defense": 30,
+          "calculation": "40 * (1 + 50/100) * (1 - 30/200) * 1.0 * 1.0 = 40 * 1.5 * 0.85 = 51 damage"
+        },
+        "rounding": "Always round down (floor) to nearest integer",
+        "minimum_damage": 1,
+        "note": "Minimum 1 damage always dealt unless explicitly negated by [Counter] or immunity"
+      },
+      
+      "3.1.2_damage_types": {
+        "rule_id": "R-3.1.2",
+        "description": "Different damage types and their properties",
+        "types": [
+          {
+            "type": "physical",
+            "description": "Standard damage from [Strike] glyphs",
+            "reduced_by": "Defense stat, [Shield]",
+            "examples": "Most Tantra attacks, basic strikes"
+          },
+          {
+            "type": "holy",
+            "description": "Divine damage from Invocation glyphs",
+            "reduced_by": "Defense stat",
+            "special": "Ignores [Curse] effects, enhanced by [Bless]",
+            "examples": "Smite, Wrath of Heaven, Divine Punishment"
+          },
+          {
+            "type": "burn",
+            "description": "Damage-over-time from [Burn] status",
+            "reduced_by": "Nothing (true damage once applied)",
+            "special": "Applied as status, ticks each turn",
+            "examples": "Tantra [Burn] stacks"
+          },
+          {
+            "type": "true",
+            "description": "Unmitigated damage (rare)",
+            "reduced_by": "Nothing",
+            "special": "Ignores Defense, [Shield], and damage reduction",
+            "examples": "Certain Singularity [Collapse] effects, specific ultimate abilities"
+          }
+        ],
+        "note": "Currently no elemental weakness/resistance system (future expansion possible)"
+      },
+      
+      "3.1.3_damage_reduction_and_amplification": {
+        "rule_id": "R-3.1.3",
+        "description": "How damage is modified by buffs/debuffs",
+        "reduction_sources": [
+          {
+            "source": "defense_stat",
+            "formula": "(1 - defense/200)",
+            "max_reduction": "40% at 80 Defense",
+            "stacks": "No (stat is fixed)"
+          },
+          {
+            "source": "[Shield]",
+            "behavior": "Absorbs damage before HP loss",
+            "formula": "damage_to_HP = max(0, damage - shield_amount)",
+            "example": "50 damage vs 30 shield = 20 damage to HP, shield broken",
+            "stacks": "Yes (multiple shields add together)"
+          },
+          {
+            "source": "[Sanctify] armor",
+            "formula": "damage * 0.5 (50% reduction)",
+            "duration": "While [Sanctified] state active",
+            "stacks": "No (specific glyph effect)"
+          },
+          {
+            "source": "Theta State (Consciousness)",
+            "formula": "damage * 0 (immunity)",
+            "duration": "While in Theta State (3 turns)",
+            "note": "Complete immunity, but cannot act offensively"
+          }
+        ],
+        "amplification_sources": [
+          {
+            "source": "[Exposed] status",
+            "formula": "damage * 1.5 (+50%)",
+            "duration": "3 turns",
+            "stacks": "No (status refresh resets duration)"
+          },
+          {
+            "source": "[Amplify] effects",
+            "formula": "damage * (1 + 0.5 * amplify_count)",
+            "example": "2 [Amplify]s = damage * 2.0 (double damage)",
+            "stacks": "Yes (additively)"
+          },
+          {
+            "source": "Grace scaling (Invocation)",
+            "formula": "damage * (1 + grace_points * 0.01)",
+            "example": "20 Grace = damage * 1.20 (+20%)",
+            "stacks": "Linear with Grace accumulation"
+          },
+          {
+            "source": "Coherence scaling (Consciousness)",
+            "formula": "damage * (1 + coherence_points * 0.01)",
+            "example": "15 Coherence = damage * 1.15 (+15%)",
+            "stacks": "Linear with Coherence accumulation"
+          }
+        ],
+        "stacking_order": "Base damage → Defense reduction → Shield absorption → Status amplifications → Final damage to HP"
+      },
+      
+      "3.1.4_overkill_rules": {
+        "rule_id": "R-3.1.4",
+        "description": "What happens when damage exceeds target HP",
+        "behavior": "Excess damage is ignored (does not carry over)",
+        "example": "Target has 10 HP, attack deals 50 damage → Target reduced to 0 HP, 40 excess damage lost",
+        "exception": "Certain glyphs have overkill bonuses (e.g., 'Deal damage equal to overkill to another target')",
+        "validation": "final_HP = max(0, current_HP - damage)"
+      },
+      
+      "3.1.5_lethal_damage_and_defeat": {
+        "rule_id": "R-3.1.5",
+        "description": "Card defeat occurs when HP reaches 0",
+        "trigger_condition": "card.HP <= 0",
+        "timing": "Checked after RESOLUTION phase (all simultaneous effects resolved)",
+        "defeat_effects": [
+          "Card removed from battle (round ends)",
+          "Winner awarded round victory",
+          "Loser must switch to different card next round (if available)",
+          "All persistent effects on defeated card are cleared"
+        ],
+        "sub_rules": {
+          "3.1.5.1_simultaneous_defeat": {
+            "rule_id": "R-3.1.5.1",
+            "description": "Both cards reach 0 HP same turn",
+            "resolution": "Round declared draw, rematch with same cards",
+            "note": "Rare edge case, both [Burn] ticks kill simultaneously"
+          },
+          "3.1.5.2_resurrection_mechanics": {
+            "rule_id": "R-3.1.5.2",
+            "description": "Certain glyphs can resurrect defeated cards",
+            "glyphs": ["Miracle: Resurrection (Invocation Skill 50)"],
+            "timing": "Can only resurrect between rounds, not mid-round",
+            "effect": "Card returns with 50-75% HP (glyph-dependent)",
+            "limitation": "Only works in multi-round format (Best of 5)"
+          }
+        }
+      }
+    },
+    
+    "3.2_HEALING_SYSTEM": {
+      "description": "Rules governing healing calculation and restoration",
+      
+      "3.2.1_healing_calculation_formula": {
+        "rule_id": "R-3.2.1",
+        "description": "Formula for calculating HP restored",
+        "formula": "base_healing * (1 + healing_power_modifiers) * status_modifiers",
+        "components": {
+          "base_healing": "Value in glyph description (e.g., Minor Heal restores 20)",
+          "healing_power_modifiers": [
+            "Moon planetary influence (+50% if Moon Tier 2+)",
+            "Therapeutic engine bonuses",
+            "Grace scaling (+1% per Grace point)",
+            "Specific glyph evolutions"
+          ],
+          "status_modifiers": [
+            "[Blessed] state (+20% healing received)",
+            "[Sanctified] state (+20% healing received)",
+            "Heal block effects (-100% healing received)"
+          ]
+        },
+        "example": {
+          "glyph": "Minor Heal (20 base)",
+          "moon_bonus": 1.5,
+          "grace": 10,
+          "calculation": "20 * 1.5 * 1.10 = 33 HP restored"
+        },
+        "rounding": "Round down (floor) to nearest integer",
+        "minimum_healing": 1
+      },
+      
+      "3.2.2_overheal_rules": {
+        "rule_id": "R-3.2.2",
+        "description": "Can healing exceed maximum HP?",
+        "baseline": "No overheal (healing capped at max HP)",
+        "formula": "final_HP = min(current_HP + healing, max_HP)",
+        "example": "Card at 90/100 HP receives 20 healing → Restored to 100/100, 10 healing wasted",
+        "exceptions": [
+          {
+            "condition": "Specific glyph grants temporary overheal",
+            "example": "Invocation glyph grants +20 temporary HP (becomes 120/100)",
+            "behavior": "Temporary HP degrades first, then normal HP",
+            "duration": "Until depleted or end of round"
+          }
+        ],
+        "validation": "HP <= max_HP (unless temporary overheal active)"
+      },
+      
+      "3.2.3_heal_over_time_mechanics": {
+        "rule_id": "R-3.2.3",
+        "description": "Healing that occurs each turn (HoT)",
+        "application": "HoT effects trigger at START_OF_TURN phase",
+        "stacking": "Multiple HoT effects stack additively",
+        "example": {
+          "effect_1": "Blessing of Vitality (+10 HP/turn)",
+          "effect_2": "Sanctified Ground (+10 HP/turn)",
+          "total": "+20 HP restored each turn"
+        },
+        "duration_tracking": "Each HoT effect has independent duration counter",
+        "sub_rules": {
+          "3.2.3.1_HoT_interaction_with_heal_block": {
+            "rule_id": "R-3.2.3.1",
+            "description": "Heal block prevents HoT ticks",
+            "validation": "if (heal_block_active) { HoT_ticks = 0 }",
+            "duration": "Heal block applies to all healing including HoT"
+          }
+        }
+      },
+      
+      "3.2.4_heal_blocking_effects": {
+        "rule_id": "R-3.2.4",
+        "description": "Effects that prevent healing",
+        "glyphs_that_apply_heal_block": [
+          "Divine Punishment (Invocation Skill 20) - 2-4 turns",
+          "Certain Tantra debuffs",
+          "Specific Singularity effects"
+        ],
+        "behavior": "All healing = 0 while heal block active",
+        "validation": "if (target.heal_block_active) { healing_received = 0 }",
+        "visual_indicator": "Red cross icon over health bar",
+        "duration": "Specified by glyph (typically 2-4 turns)",
+        "removal": "[Cleanse] effects can remove heal block early"
+      }
+    },
+    
+    "3.3_STATUS_EFFECTS": {
+      "description": "Rules for buffs, debuffs, and status effect management",
+      
+      "3.3.1_buff_duration_rules": {
+        "rule_id": "R-3.3.1",
+        "description": "How long positive status effects last",
+        "duration_types": [
+          {
+            "type": "turn_based",
+            "description": "Lasts for X turns",
+            "tracking": "Duration decrements at END_OF_TURN phase",
+            "example": "[Blessed] lasts 3 turns → Turn 1, 2, 3 active, expires before Turn 4"
+          },
+          {
+            "type": "until_consumed",
+            "description": "Lasts until triggered/used",
+            "tracking": "Effect remains until specific condition met",
+            "example": "[Shield] lasts until damage absorbed"
+          },
+          {
+            "type": "permanent",
+            "description": "Lasts entire round unless dispelled",
+            "tracking": "No expiration counter",
+            "example": "Certain [Sanctified] effects with upgrades"
+          }
+        ],
+        "sub_rules": {
+          "3.3.1.1_duration_extension": {
+            "rule_id": "R-3.3.1.1",
+            "description": "Some effects can extend buff durations",
+            "examples": [
+              "Jupiter planetary influence (+2 turns to [Bless] duration)",
+              "Saturn influence (+1 turn to [Anchor] duration)",
+              "Specific glyph evolutions"
+            ],
+            "validation": "final_duration = base_duration + extension_modifiers"
+          },
+          "3.3.1.2_duration_refresh": {
+            "rule_id": "R-3.3.1.2",
+            "description": "Reapplying same buff refreshes duration",
+            "behavior": "Duration resets to full, potency does NOT stack (unless specified)",
+            "example": "[Blessed] with 1 turn left → Reapply [Blessed] → Duration resets to 3 turns"
+          }
+        }
+      },
+      
+      "3.3.2_debuff_duration_rules": {
+        "rule_id": "R-3.3.2",
+        "description": "How long negative status effects last",
+        "same_as_buffs": true,
+        "debuff_specific_rules": [
+          {
+            "rule": "Debuffs can be removed early via [Cleanse]",
+            "priority": "Player choice which debuff to cleanse if multiple present"
+          },
+          {
+            "rule": "Certain states grant debuff immunity",
+            "examples": [
+              "Theta State (Consciousness) - immune to all debuffs",
+              "[Sanctified] state - immune to [Curse]",
+              "Specific glyph effects"
+            ]
+          }
+        ],
+        "common_debuffs": [
+          "[Burn]",
+          "[Exposed]",
+          "[Curse]",
+          "Heal block",
+          "[Silence] (prevents glyph activation)",
+          "[Stun] (skip turn)"
+        ]
+      },
+      
+      "3.3.3_stacking_rules": {
+        "rule_id": "R-3.3.3",
+        "description": "Can same effect apply multiple times?",
+        "stacking_types": [
+          {
+            "type": "stack_intensity",
+            "description": "Multiple applications increase potency",
+            "examples": [
+              "[Burn] - each application adds +3 damage/turn (max 5 stacks = 15 damage/turn)",
+              "[Amplify] - stacks additively (+50% per stack)"
+            ],
+            "validation": "total_effect = base_effect * stack_count (if stacks_additively)",
+            "cap": "Most effects have max stack limit (typically 5-10)"
+          },
+          {
+            "type": "stack_duration",
+            "description": "Multiple applications refresh duration",
+            "examples": [
+              "[Blessed] - reapplication resets duration to full",
+              "[Shield] - adds shield values together"
+            ],
+            "behavior": "Duration resets, potency MAY stack depending on effect"
+          },
+          {
+            "type": "no_stack",
+            "description": "Effect does not stack, reapplication refreshes only",
+            "examples": [
+              "[Sanctified] - reapplication only refreshes duration",
+              "Heal block - reapplication extends duration but not intensity"
+            ]
+          }
+        ],
+        "sub_rules": {
+          "3.3.3.1_different_sources_same_effect": {
+            "rule_id": "R-3.3.3.1",
+            "description": "Same effect from different glyphs",
+            "behavior": "Depends on effect type (see stacking_types above)",
+            "example": "[Burn] from Tantra + [Burn] from Invocation = Both stacks accumulate"
+          }
+        }
+      },
+      
+      "3.3.4_status_priority_and_resolution_order": {
+        "rule_id": "R-3.3.4",
+        "description": "Order in which multiple status effects resolve",
+        "resolution_order": [
+          "Immunity effects check (Theta State, [Sanctified], etc.)",
+          "Damage-over-time effects ([Burn], bleed, etc.)",
+          "Heal-over-time effects (regen, [Sanctified] healing)",
+          "Resource generation effects (Bandwidth, Sanctity, etc.)",
+          "Buff/debuff expirations",
+          "State transition checks (Neural State expiration, etc.)"
+        ],
+        "timing": "START_OF_TURN and END_OF_TURN phases",
+        "simultaneity_resolution": "If multiple effects trigger simultaneously, resolve by Speed stat (higher first)",
+        "sub_rules": {
+          "3.3.4.1_conflicting_effects": {
+            "rule_id": "R-3.3.4.1",
+            "description": "What happens when effects contradict?",
+            "priority_rule": "CANNOT beats CAN",
+            "example": "Heal block (cannot heal) beats HoT effect (can heal) → No healing occurs",
+            "validation": "Check negative effects first, then apply positive effects if allowed"
+          }
+        }
+      },
+      
+      "3.3.5_cleanse_and_dispel_mechanics": {
+        "rule_id": "R-3.3.5",
+        "description": "Removing status effects prematurely",
+        "cleanse_glyphs": [
+          "Therapeutic [Cleanse] glyphs",
+          "Invocation [Miracle] effects",
+          "Certain Foundational [Structure] effects"
+        ],
+        "behavior": {
+          "cleanse_debuffs": "Removes negative effects from ally",
+          "dispel_buffs": "Removes positive effects from enemy (rare)",
+          "target_priority": "Player chooses which effect to remove if multiple present"
+        },
+        "limitations": [
+          "Most [Cleanse] removes 1 effect per activation",
+          "Certain effects immune to cleanse (marked as [Permanent] or [Sealed])",
+          "Upgraded cleanse glyphs can remove multiple effects"
+        ],
+        "sub_rules": {
+          "3.3.5.1_mass_cleanse": {
+            "rule_id": "R-3.3.5.1",
+            "description": "Cleanse that removes all debuffs",
+            "glyphs": "Rare ultimate cleanse effects",
+            "behavior": "Removes ALL debuffs from target simultaneously",
+            "example": "Therapeutic ultimate 'Purify' removes all negative status effects"
+          }
+        }
+      }
+    }
+  },
+  
+  "VALIDATION_FRAMEWORK": {
+    "description": "How AI validates game actions against these rules",
+    "validation_process": [
+      {
+        "step": 1,
+        "action": "Player attempts action (glyph activation, card switch, etc.)",
+        "validation": "Check if action has corresponding rule in this system"
+      },
+      {
+        "step": 2,
+        "action": "AI looks up rule by rule_id or category",
+        "validation": "Retrieve validation_schema and conditions"
+      },
+      {
+        "step": 3,
+        "action": "AI checks all sub_rules and edge_cases",
+        "validation": "Ensure no conflicts or special conditions violated"
+      },
+      {
+        "step": 4,
+        "action": "If validation passes, execute action",
+        "result": "Action proceeds, game state updates"
+      },
+      {
+        "step": 5,
+        "action": "If validation fails, return error",
+        "result": "Player-friendly error message, suggest correction"
+      }
+    ],
+    "error_message_translation": {
+      "technical": "Validation failed: R-1.2.1.2 - Glyph not in player.unlocked_glyphs",
+      "player_friendly": "This glyph is still locked! Unlock it through progression to use it."
+    }
+  },
+  
+  "NOTES": {
+    "this_file_covers": "Layer 1 (Foundational) + Layer 3 (Combat) rules",
+    "next_files": [
+      "RULES_ENGINE_LAYER2_RESOURCES.json (Layer 2: Resource Rules)",
+      "RULES_ENGINE_LAYER4_GLYPHS.json (Layer 4: Glyph Activation)",
+      "RULES_ENGINE_LAYER5-9.json (Layers 5-9: Jyotish, Progression, AI, Edge Cases, Special)"
+    ],
+    "total_rules_in_this_file": "~60 rules with sub-rules and edge cases",
+    "ai_parseable": true,
+    "human_readable": true,
+    "version": "1.0.0 - Foundation & Combat Complete"
+  }
+}

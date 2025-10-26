@@ -1,0 +1,784 @@
+{
+  "system_name": "Cosmic DNA Implementation with Player Birth Chart Integration",
+  "version": "5.0_PHASE_0.6_COMPLETE",
+  "description": "10 Foundational skills with full Cosmic DNA + Player's personal birth chart creates INSANE depth",
+  
+  "PLAYER_BIRTH_CHART_SYSTEM": {
+    "description": "At game start, player creates their CHARACTER'S BIRTH CHART - this becomes their cosmic identity forever",
+    
+    "chart_creation_process": {
+      "step_1_zodiac_selection": {
+        "choose_from": "12 zodiac signs (Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces)",
+        "UI": "Beautiful zodiac wheel with constellations, clicking highlights sign"
+      },
+      
+      "step_2_degree_selection": {
+        "range": "0-30 degrees within chosen zodiac",
+        "precision": "Each degree lands in different Nakshatra pada (quarter)",
+        "example": "Leo 10° = Magha Nakshatra 2nd Pada",
+        "UI": "Sliding degree scale with Nakshatra markers glowing as you slide"
+      },
+      
+      "step_3_ascendant_locking": {
+        "what_it_determines": "Your 1st House placement - defines your entire house structure",
+        "cascading_effect": "Once 1st House is set, all 12 houses lock into position",
+        "example": "Ascendant Leo 10° → 1st House = Leo, 2nd = Virgo, 3rd = Libra, etc."
+      },
+      
+      "step_4_planetary_positions": {
+        "generation": "Game generates planetary positions based on a 'cosmic seed' tied to your chart",
+        "randomization": "Planets distributed across your 12 houses semi-randomly but balanced",
+        "locked_forever": "These positions are YOUR CHARACTER'S permanent natal chart",
+        "display": "Full chart diagram shows all planets in houses with aspects"
+      }
+    },
+    
+    "what_the_chart_contains": {
+      "zodiac_sign": "Primary identity (Leo, Aries, etc.)",
+      "ascendant_degree": "Exact degree (Leo 10°)",
+      "nakshatra": "Lunar mansion based on degree (Magha)",
+      "nakshatra_pada": "Quarter within Nakshatra (1st, 2nd, 3rd, 4th)",
+      "ruling_planet": "Planet that rules your Ascendant sign",
+      "moon_sign": "Where Moon is placed in your chart",
+      "sun_sign": "Where Sun is placed",
+      "all_9_planets": "Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu positions",
+      "house_placements": "Which planets sit in which houses (1st-12th)",
+      "planetary_aspects": "Which planets see/influence each other",
+      "yogas_in_chart": "Natural yogas formed by planetary positions",
+      "strengths": "Which planets are strong in your chart",
+      "weaknesses": "Which planets are debilitated or weak"
+    },
+    
+    "how_it_affects_gameplay": {
+      "skill_affinity": "Skills ruled by YOUR strong planets get permanent bonuses",
+      "house_bonuses": "Skills cast in houses with YOUR planets get huge bonuses",
+      "natural_yogas": "Some Yogas are EASIER for you based on chart",
+      "playstyle_influence": "Chart naturally pushes you toward certain strategies",
+      
+      "example_leo_ascendant": {
+        "sun_ruled": "All Sun-ruled skills (leadership, glory, command) get +20% permanently",
+        "5th_house_strong": "If Sun in 5th House → ALL creation/summoning skills buffed",
+        "magha_nakshatra": "Authority-based skills have special effects for you",
+        "fire_element": "Fire skills feel 'natural', Water skills require more effort"
+      }
+    }
+  },
+  
+  "SKILL_CARD_AS_MINI_CHART": {
+    "description": "Every skill card IS a birth chart showing cosmic relationships",
+    
+    "card_layout": {
+      "center": "Skill name and base effect",
+      "outer_ring": "12-house wheel showing where skill is strongest",
+      "planetary_icons": "Which planets enhance/weaken this skill",
+      "nakshatra_markers": "27 Nakshatras highlighted for optimal timing",
+      "aspect_lines": "Lines showing planetary relationships",
+      "current_power_meter": "Real-time calculation based on cosmic weather + YOUR chart"
+    },
+    
+    "interactive_card": {
+      "hover_houses": "Hover over house sections → see bonus percentages",
+      "click_planet": "Click planet icon → see full influence explanation",
+      "tap_nakshatra": "Tap Nakshatra → see when it's active next",
+      "compare_to_chart": "Button: 'How does this match MY chart?' → shows synergy"
+    },
+    
+    "synergy_visualization": {
+      "green_glow": "Skill's ruling planet matches YOUR strong planet",
+      "golden_glow": "Skill's house matches YOUR planetary placement",
+      "rainbow_glow": "PERFECT SYNERGY - skill was made for your chart",
+      "dim_effect": "Skill conflicts with your chart (harder to use but still works)"
+    }
+  },
+  
+  "10_FOUNDATIONAL_SKILLS_WITH_FULL_COSMIC_DNA": {
+    "description": "Each skill fully defined with all cosmic properties + interaction with player charts",
+    
+    "SKILL_01_SHIELD_PROJECTION": {
+      "skill_name": "Shield Projection",
+      "category": "Defensive Structure",
+      "base_effect": "Grant 20 shields to target ally for 3 turns",
+      "KP_cost": 15,
+      "cooldown": 4,
+      
+      "COSMIC_DNA": {
+        "ruling_planet": {
+          "primary": "Moon",
+          "why": "Moon = protection, nurturing, emotional safety, maternal care",
+          "bonus_when_moon_strong": "+40% shields, +2 turn duration"
+        },
+        
+        "friendly_planets": {
+          "jupiter": {
+            "synergy": "Expansion amplifies protective field",
+            "effect": "Shields last +2 turns when Jupiter strong"
+          },
+          "venus": {
+            "synergy": "Comfort and beauty enhance protection",
+            "effect": "Shields grant +10 HP healing on cast"
+          },
+          "mercury": {
+            "synergy": "Adaptive protection responds to threats",
+            "effect": "Shields gain +5 per enemy targeting ally"
+          }
+        },
+        
+        "enemy_planets": {
+          "mars": {
+            "conflict": "Aggression overwhelms gentle protection",
+            "effect": "-30% shield value during Mars Dasha"
+          },
+          "sun": {
+            "conflict": "Harsh solar energy burns away soft shields",
+            "effect": "Shields last -1 turn during Sun Dasha"
+          }
+        },
+        
+        "house_resonance": {
+          "primary_house": {
+            "house": "4th (Home/Mother/Comfort)",
+            "bonus": "+50% shields, +30% duration, shields also protect structures in zone",
+            "flavor": "Cast in the house of home, shields become unbreakable walls"
+          },
+          "secondary_house": {
+            "house": "6th (Service/Health)",
+            "bonus": "+20% shields, grants Regen 5 HP/turn to shielded ally",
+            "flavor": "Service to others strengthens protection"
+          },
+          "tertiary_house": {
+            "house": "12th (Loss/Transcendence)",
+            "bonus": "Shields absorb 100% damage for 1 turn then disappear",
+            "flavor": "Total sacrifice for one perfect moment"
+          }
+        },
+        
+        "nakshatra_affinity": {
+          "perfect_nakshatra": {
+            "name": "Rohini (Moon's favorite mansion)",
+            "degree_range": "Taurus 10°00' - 23°20'",
+            "special_effect": "Shields grant Regen 10 HP/turn, duration +2 turns",
+            "why": "Rohini = ultimate nourishment and growth"
+          },
+          "excellent_nakshatras": [
+            {
+              "name": "Pushya (Nourishment)",
+              "effect": "Shields grant +15 shields on cast"
+            },
+            {
+              "name": "Hasta (Skillful hands)",
+              "effect": "Can cast shields on 2 allies simultaneously"
+            }
+          ],
+          "bad_nakshatras": [
+            {
+              "name": "Magha (Regal authority)",
+              "effect": "-20% shields (too proud for protection)"
+            },
+            {
+              "name": "Ardra (Storm)",
+              "effect": "Shields randomly fluctuate 10-30 shields"
+            }
+          ]
+        },
+        
+        "elemental_nature": {
+          "elements": ["Earth", "Water"],
+          "earth_aspect": "Grounding, solid, stable protection",
+          "water_aspect": "Flows around allies, adapts to damage type",
+          "combo_potential": {
+            "earth_plus_water": "Shields create 'mud walls' that slow enemies 30%",
+            "earth_zones": "+20% shield value on solid ground",
+            "water_zones": "Shields regenerate 5 per turn near water"
+          }
+        },
+        
+        "guna_quality": {
+          "guna": "Sattva (Harmony)",
+          "effects": {
+            "mental": "Grants 'Calm Mind' buff - +10% mental clarity while shielded",
+            "emotional": "Reduces fear/panic status effects",
+            "team": "Other Sattvic skills near shielded ally get +15% effectiveness",
+            "duration": "Sattvic skills last longer naturally (+20% base duration)"
+          }
+        },
+        
+        "dasha_amplification": {
+          "best_dasha": {
+            "dasha": "Moon Dasha (10 turns)",
+            "effect": "+40% shields, +30% duration, unlock 'Moonshield' - shields reflect 20% damage",
+            "strategy": "Stack all defensive skills during Moon Dasha for immortal team"
+          },
+          "good_dasha": {
+            "dasha": "Jupiter Dasha (16 turns)",
+            "effect": "+25% shields, shields last until broken (no turn limit)",
+            "strategy": "Long-term protection strategies"
+          },
+          "weak_dasha": {
+            "dasha": "Mars Dasha (7 turns)",
+            "effect": "-30% shields, -1 turn duration",
+            "strategy": "Switch to offensive tactics, use shields only as emergency"
+          }
+        },
+        
+        "transit_sensitivity": {
+          "moon_exalted": {
+            "timing": "Moon in Taurus (every 27 turns for 2 turns)",
+            "effect": "+50% shields, unlock 'Exalted Protection' - shields grant immunity to 1 hit"
+          },
+          "moon_debilitated": {
+            "timing": "Moon in Scorpio",
+            "effect": "-30% shields, shields break on critical hits"
+          },
+          "jupiter_conjunction_moon": {
+            "timing": "Rare (2-3 times per match)",
+            "effect": "Shields grant +50 HP healing over duration, shields spread to adjacent allies"
+          },
+          "mars_opposition_moon": {
+            "timing": "Common (every 10 turns)",
+            "effect": "Shields grant 'Rage on Break' - when shield breaks, ally gains +30% attack for 2 turns"
+          }
+        },
+        
+        "yogic_compatibility": {
+          "core_component": [
+            "Bastion of Eternity (primary component)",
+            "Mirror of the Soul (defensive component)",
+            "Divine Hospital (cross-engine with Invocation+Therapeutic)"
+          ],
+          "combo_enabler": [
+            "Enables any defensive Yoga",
+            "Required for 'Immortal Guard' meta-combo",
+            "Synergizes with 15+ other defensive skills"
+          ]
+        }
+      },
+      
+      "PLAYER_CHART_INTERACTIONS": {
+        "if_player_moon_strong": {
+          "conditions": "Moon in 1st/4th/7th/10th house, Moon exalted in natal chart, Moon Ascendant",
+          "permanent_bonus": "+20% shields ALWAYS, -1 KP cost, -1 turn cooldown",
+          "special_unlock": "Can cast 'Greater Shield Projection' at 25 KP for 40 shields"
+        },
+        
+        "if_player_4th_house_occupied": {
+          "conditions": "Player has planet in 4th House (especially Moon/Jupiter)",
+          "effect": "Shield Projection in 4th House gets DOUBLE bonus (+100% shields, +60% duration)",
+          "playstyle": "You naturally want to cast shields in 4th House every time"
+        },
+        
+        "if_player_cancer_ascendant": {
+          "conditions": "Cancer Ascendant (Moon-ruled sign)",
+          "effect": "This skill feels 'natural' - animations smoother, sound more pleasant, +10% all bonuses",
+          "identity": "You ARE the shield master"
+        },
+        
+        "if_player_rohini_nakshatra": {
+          "conditions": "Player's Ascendant in Rohini Nakshatra",
+          "effect": "Shield always gets Rohini bonus regardless of current Nakshatra timing",
+          "broken": "You can cast god-tier shields ANY TIME"
+        }
+      }
+    },
+    
+    "SKILL_02_BANDWIDTH_DYNAMO": {
+      "skill_name": "Bandwidth Dynamo",
+      "category": "Resource Generation",
+      "base_effect": "Generate +15 Bandwidth per turn for 3 turns from target structure",
+      "KP_cost": 10,
+      "cooldown": 3,
+      
+      "COSMIC_DNA": {
+        "ruling_planet": {
+          "primary": "Mercury",
+          "why": "Mercury = communication, neural speed, information flow, mental energy",
+          "bonus_when_mercury_strong": "+10 Bandwidth per turn, duration +1 turn"
+        },
+        
+        "friendly_planets": {
+          "jupiter": {
+            "synergy": "Expansion multiplies bandwidth generation",
+            "effect": "Generate +5 extra Bandwidth per turn"
+          },
+          "moon": {
+            "synergy": "Emotional intuition optimizes bandwidth flow",
+            "effect": "Bandwidth overflow converts to Ojas at 3:1 ratio"
+          },
+          "venus": {
+            "synergy": "Harmonious energy flow",
+            "effect": "Bandwidth generation feels 'smooth', no variance"
+          }
+        },
+        
+        "enemy_planets": {
+          "saturn": {
+            "conflict": "Restriction slows bandwidth flow",
+            "effect": "-5 Bandwidth per turn, +1 turn to activate"
+          },
+          "rahu": {
+            "conflict": "Chaotic interference disrupts signal",
+            "effect": "Bandwidth generation fluctuates 10-20 per turn"
+          }
+        },
+        
+        "house_resonance": {
+          "primary_house": {
+            "house": "2nd (Resources/Wealth)",
+            "bonus": "+100% Bandwidth generation, converts to KP at end",
+            "flavor": "Resource house doubles resource generation"
+          },
+          "secondary_house": {
+            "house": "11th (Gains/Networks)",
+            "bonus": "Bandwidth spreads to adjacent structures, creating network effect",
+            "flavor": "Network house creates exponential growth"
+          }
+        },
+        
+        "nakshatra_affinity": {
+          "perfect_nakshatra": {
+            "name": "Ashwini (Swift action)",
+            "special_effect": "Generate all 3 turns of Bandwidth INSTANTLY (45 Bandwidth burst)"
+          },
+          "excellent_nakshatras": [
+            {
+              "name": "Revati (Abundance)",
+              "effect": "Bandwidth never stops generating (infinite duration)"
+            }
+          ]
+        },
+        
+        "elemental_nature": {
+          "elements": ["Air", "Ether"],
+          "air_aspect": "Quick, flowing, adaptive energy",
+          "ether_aspect": "Pure potential and information",
+          "combo_potential": {
+            "air_zones": "Bandwidth generation +50% on elevated terrain"
+          }
+        },
+        
+        "guna_quality": {
+          "guna": "Rajas (Action)",
+          "effects": {
+            "speed": "Bandwidth generates at start of turn (not end)",
+            "momentum": "Each turn generates +2 more than last (15→17→19)"
+          }
+        },
+        
+        "dasha_amplification": {
+          "best_dasha": {
+            "dasha": "Mercury Dasha (8 turns)",
+            "effect": "+200% Bandwidth generation, 0 cooldown"
+          },
+          "good_dasha": {
+            "dasha": "Jupiter Dasha",
+            "effect": "Bandwidth Dynamo affects 3 structures simultaneously"
+          }
+        },
+        
+        "yogic_compatibility": {
+          "core_component": [
+            "Chains of Prometheus (PRIMARY ENGINE)",
+            "Architect's Infinite Engine",
+            "Bandwidth-Structure Symbiosis"
+          ]
+        }
+      },
+      
+      "PLAYER_CHART_INTERACTIONS": {
+        "if_player_mercury_strong": {
+          "permanent_bonus": "+50% Bandwidth generation ALWAYS",
+          "special_unlock": "Can cast 'Bandwidth Overload' - 100 Bandwidth instant burst for 50 KP"
+        },
+        
+        "if_player_gemini_virgo_ascendant": {
+          "effect": "Mercury-ruled signs get this as 'starter skill' with +1 free upgrade"
+        }
+      }
+    },
+    
+    "SKILL_03_FOUNDATION_STONE": {
+      "skill_name": "Foundation Stone",
+      "category": "Permanent Structure",
+      "base_effect": "Place indestructible 5×5 structure zone that lasts entire match",
+      "KP_cost": 40,
+      "cooldown": "Once per match",
+      
+      "COSMIC_DNA": {
+        "ruling_planet": {
+          "primary": "Saturn",
+          "why": "Saturn = permanence, foundation, karma, time, endurance",
+          "bonus_when_saturn_strong": "Structure becomes 7×7, grants +10 KP per turn passively"
+        },
+        
+        "friendly_planets": {
+          "mars": {
+            "synergy": "Strength fortifies foundation",
+            "effect": "Structure has defensive turrets that attack enemies in range"
+          },
+          "jupiter": {
+            "synergy": "Expansion stabilizes foundation",
+            "effect": "Structure zone slowly expands (1 tile per 5 turns)"
+          }
+        },
+        
+        "enemy_planets": {
+          "mercury": {
+            "conflict": "Speed contradicts permanence",
+            "effect": "Structure takes 2 turns to fully solidify"
+          },
+          "moon": {
+            "conflict": "Change opposes stability",
+            "effect": "Structure appearance shifts (cosmetic only)"
+          }
+        },
+        
+        "house_resonance": {
+          "primary_house": {
+            "house": "4th (Home/Foundation)",
+            "bonus": "Structure CANNOT be destroyed even by Yoga-level effects, grants +50% all bonuses",
+            "flavor": "The eternal home"
+          },
+          "secondary_house": {
+            "house": "10th (Achievement/Career)",
+            "bonus": "Structure grants victory points over time (passive win condition)",
+            "flavor": "Monument to glory"
+          }
+        },
+        
+        "nakshatra_affinity": {
+          "perfect_nakshatra": {
+            "name": "Uttara Bhadrapada (Cosmic foundation)",
+            "special_effect": "Structure exists in ALL matches forever (account-wide permanent structure)"
+          }
+        },
+        
+        "elemental_nature": {
+          "elements": ["Earth"],
+          "earth_aspect": "Absolute stability and permanence"
+        },
+        
+        "guna_quality": {
+          "guna": "Tamas (Inertia)",
+          "effects": {
+            "immovable": "Structure cannot be moved or displaced",
+            "heavy": "Enemies slowed 50% in zone",
+            "enduring": "Outlasts everything else"
+          }
+        },
+        
+        "dasha_amplification": {
+          "best_dasha": {
+            "dasha": "Saturn Dasha (19 turns)",
+            "effect": "Can place 3 Foundation Stones, each grants +15 KP per turn",
+            "strategy": "Economy engine that wins through inevitability"
+          }
+        },
+        
+        "yogic_compatibility": {
+          "core_component": [
+            "Bastion of Eternity (REQUIRED SKILL)",
+            "Cosmic Temple",
+            "Eternal Structures meta-combo"
+          ]
+        }
+      },
+      
+      "PLAYER_CHART_INTERACTIONS": {
+        "if_player_saturn_strong": {
+          "permanent_bonus": "Foundation Stone costs 30 KP instead of 40, cooldown becomes 'twice per match'",
+          "playstyle": "You're the architect who builds unbreakable empires"
+        },
+        
+        "if_player_capricorn_aquarius_ascendant": {
+          "effect": "Saturn-ruled signs start with Foundation Stone already unlocked",
+          "identity": "Born builders"
+        }
+      }
+    },
+    
+    "SKILL_04_CONTROLLED_DEMOLITION": {
+      "skill_name": "Controlled Demolition",
+      "category": "Sacrifice/Transformation",
+      "base_effect": "Destroy target friendly structure, gain 3× its resource value",
+      "KP_cost": 5,
+      "cooldown": 2,
+      
+      "COSMIC_DNA": {
+        "ruling_planet": {
+          "primary": "Mars + Ketu",
+          "why": "Mars = destruction, Ketu = sacrifice/liberation",
+          "bonus_when_mars_strong": "Gain 4× resource value instead"
+        },
+        
+        "friendly_planets": {
+          "sun": {
+            "synergy": "Purifying fire enables transformation",
+            "effect": "Demolished structures leave 'blessed ashes' that buff next structure placed"
+          },
+          "saturn": {
+            "synergy": "Karma teaches through loss",
+            "effect": "Resources gained are permanent (don't decay)"
+          }
+        },
+        
+        "enemy_planets": {
+          "moon": {
+            "conflict": "Nurturing opposes destruction",
+            "effect": "Gain only 2× value, feel guilt (cosmetic)"
+          },
+          "venus": {
+            "conflict": "Beauty hates demolition",
+            "effect": "Cannot demolish structures with allies inside"
+          }
+        },
+        
+        "house_resonance": {
+          "primary_house": {
+            "house": "8th (Death/Transformation)",
+            "bonus": "Demolished structures trigger 'Rebirth Protocol' - auto-rebuild at +100% stats in 2 turns",
+            "flavor": "Death is not the end, but transformation"
+          },
+          "secondary_house": {
+            "house": "12th (Loss/Sacrifice)",
+            "bonus": "Sacrifice grants spiritual power - +50 Sanctity (Invocation resource)",
+            "flavor": "Loss becomes transcendence"
+          }
+        },
+        
+        "nakshatra_affinity": {
+          "perfect_nakshatra": {
+            "name": "Mula (Root destruction)",
+            "special_effect": "Can demolish ENEMY structures, gain 5× their value"
+          }
+        },
+        
+        "elemental_nature": {
+          "elements": ["Fire", "Ether"],
+          "fire_aspect": "Burning away to release energy",
+          "ether_aspect": "Returning to void/potential"
+        },
+        
+        "guna_quality": {
+          "guna": "Rajas (Action)",
+          "effects": {
+            "instant": "Resources gained immediately",
+            "momentum": "Each demolition makes next demolition cheaper (4→3→2→1 KP)"
+          }
+        },
+        
+        "dasha_amplification": {
+          "best_dasha": {
+            "dasha": "Mars Dasha",
+            "effect": "Controlled Demolition costs 0 KP, triggers automatically on low-HP structures"
+          }
+        },
+        
+        "yogic_compatibility": {
+          "core_component": [
+            "Phoenix Crucible (REQUIRED SKILL)",
+            "Death and Rebirth Cycle",
+            "Sacrifice strategies"
+          ]
+        }
+      },
+      
+      "PLAYER_CHART_INTERACTIONS": {
+        "if_player_mars_strong": {
+          "permanent_bonus": "Demolitions grant rage stacks (+5% damage per stack)",
+          "playstyle": "Aggressive controller who sacrifices for power spikes"
+        },
+        
+        "if_player_8th_house_occupied": {
+          "effect": "Transformation is your THEME - all sacrifice skills +30% effectiveness"
+        }
+      }
+    },
+    
+    "SKILL_05_TEMPORAL_ANCHOR": {
+      "skill_name": "Temporal Anchor",
+      "category": "Time Control",
+      "base_effect": "Lock target structure in time - cannot be destroyed or moved for 5 turns",
+      "KP_cost": 25,
+      "cooldown": 6,
+      
+      "COSMIC_DNA": {
+        "ruling_planet": {
+          "primary": "Saturn + Rahu",
+          "why": "Saturn = time, Rahu = illusion/manipulation",
+          "bonus_when_saturn_strong": "Duration extends to 8 turns"
+        },
+        
+        "friendly_planets": {
+          "jupiter": {
+            "synergy": "Wisdom preserves through time",
+            "effect": "Anchored structures gain +50% effectiveness"
+          },
+          "mercury": {
+            "synergy": "Perception of time manipulation",
+            "effect": "Can anchor 2 structures simultaneously"
+          }
+        },
+        
+        "enemy_planets": {
+          "mars": {
+            "conflict": "Aggression breaks temporal locks",
+            "effect": "Duration -2 turns, high damage can break anchor"
+          }
+        },
+        
+        "house_resonance": {
+          "primary_house": {
+            "house": "9th (Time/Philosophy)",
+            "bonus": "Anchored structure exists in 'timeless space' - immune to ALL effects (good and bad)",
+            "flavor": "Beyond causality itself"
+          },
+          "secondary_house": {
+            "house": "8th (Transformation)",
+            "bonus": "Anchor preserves structure even through death - resurrects if destroyed",
+            "flavor": "Karmic protection"
+          }
+        },
+        
+        "nakshatra_affinity": {
+          "perfect_nakshatra": {
+            "name": "Uttara Ashadha (Eternal victory)",
+            "special_effect": "Temporal Anchor becomes permanent - structure locked forever"
+          }
+        },
+        
+        "elemental_nature": {
+          "elements": ["Ether"],
+          "ether_aspect": "Time and space manipulation"
+        },
+        
+        "guna_quality": {
+          "guna": "Tamas (Inertia)",
+          "effects": {
+            "frozen": "Time literally stops for anchored structure",
+            "preservation": "Structure doesn't age or decay"
+          }
+        },
+        
+        "dasha_amplification": {
+          "best_dasha": {
+            "dasha": "Saturn Dasha",
+            "effect": "All structures auto-anchor when placed, 0 KP cost"
+          }
+        },
+        
+        "yogic_compatibility": {
+          "core_component": [
+            "Bastion of Eternity",
+            "Cosmic Clockwork",
+            "Eternal defense strategies"
+          ]
+        }
+      },
+      
+      "PLAYER_CHART_INTERACTIONS": {
+        "if_player_saturn_dominant": {
+          "permanent_bonus": "Temporal Anchor lasts 10 turns instead of 5 ALWAYS"
+        }
+      }
+    }
+  },
+  
+  "REMAINING_5_SKILLS_SUMMARY": {
+    "note": "These follow the same structure - full details available on request",
+    
+    "SKILL_06": {
+      "name": "Prophetic Building",
+      "ruling_planet": "Mercury + Jupiter",
+      "house": "9th (Fate/Philosophy)",
+      "nakshatra": "Pushya (Nourishment)",
+      "yoga": "Cosmic Clockwork component"
+    },
+    
+    "SKILL_07": {
+      "name": "Echo Matrix",
+      "ruling_planet": "Moon + Venus",
+      "house": "7th (Relationships/Mirror)",
+      "nakshatra": "Hasta (Skillful hands)",
+      "yoga": "Mirror of the Soul component"
+    },
+    
+    "SKILL_08": {
+      "name": "Resource Conversion Matrix",
+      "ruling_planet": "Jupiter + Mercury",
+      "house": "2nd + 11th (Wealth/Gains)",
+      "nakshatra": "Revati (Abundance)",
+      "yoga": "Chains of Prometheus component"
+    },
+    
+    "SKILL_09": {
+      "name": "Flame Memory",
+      "ruling_planet": "Sun + Ketu",
+      "house": "5th (Creation) + 8th (Rebirth)",
+      "nakshatra": "Krittika (Fire)",
+      "yoga": "Phoenix Crucible component"
+    },
+    
+    "SKILL_10": {
+      "name": "Amplification Aura",
+      "ruling_planet": "Venus + Jupiter",
+      "house": "11th (Networks)",
+      "nakshatra": "Rohini (Growth)",
+      "yoga": "Support amplification chains"
+    }
+  },
+  
+  "SYNERGY_EXPLOSION": {
+    "description": "With player birth charts + skill cosmic DNA, the depth becomes INSANE",
+    
+    "example_scenario": {
+      "player": "Leo Ascendant 15° (Purva Phalguni Nakshatra), Sun in 5th House, Moon in 4th House, Jupiter in 11th House",
+      
+      "skill_synergies": {
+        "shield_projection": {
+          "base": "20 shields",
+          "moon_in_4th_house": "+100% (player has Moon in 4th) = 40 shields",
+          "cast_in_4th_house": "+50% (house resonance) = 60 shields",
+          "jupiter_in_11th_friendly": "+25% (friendly planet) = 75 shields",
+          "moon_dasha_active": "+40% (current Dasha) = 105 shields",
+          "rohini_nakshatra": "Grants Regen 10 HP/turn",
+          "TOTAL": "105 shields + 10 HP/turn healing for 5 turns (not 3!)"
+        },
+        
+        "foundation_stone": {
+          "base": "5×5 structure",
+          "sun_in_5th_house": "Creation house + Sun = structures spawn faster",
+          "leo_ascendant": "Fire sign = structures have fire aura",
+          "cast_in_5th_house": "Structure becomes 'Creative Monument' - grants +5 KP + Inspiration buff"
+        }
+      }
+    },
+    
+    "why_this_is_insane": {
+      "reason_1": "NO TWO PLAYERS have same chart = completely unique gameplay",
+      "reason_2": "Same skill plays DIFFERENTLY for each player permanently",
+      "reason_3": "Some skills are YOUR DESTINY skills (perfect chart match)",
+      "reason_4": "Other skills require mastery to use effectively (chart conflicts)",
+      "reason_5": "Cosmic weather + Your chart + Skill DNA = INFINITE EMERGENT COMPLEXITY"
+    }
+  },
+  
+  "UI_VISUALIZATION": {
+    "skill_card_display": {
+      "description": "Every skill card is a mini birth chart with YOUR chart overlaid",
+      
+      "layers": {
+        "background": "12-house wheel of skill's cosmic DNA",
+        "overlay": "YOUR planetary positions semi-transparent",
+        "highlights": "Green glow where your chart matches skill",
+        "current_power": "Real-time meter showing effective power RIGHT NOW",
+        "optimal_timing": "Next power spike countdown (e.g., 'Peak in 3 turns during Rohini')"
+      }
+    },
+    
+    "chart_comparison_mode": {
+      "button": "Compare to My Chart",
+      "shows": "Side-by-side: Skill's ideal conditions vs Your permanent bonuses",
+      "synergy_score": "0-100% match rating with explanation",
+      "recommendation": "'This skill is YOUR DESTINY' or 'Requires mastery for you'"
+    }
+  }
+}

@@ -1,0 +1,6519 @@
+{
+  "version": "4.0",
+  "totalEntities": 197,
+  "categories": {
+    "Theurgic Host": 72,
+    "Goetic Legions": 72,
+    "Vedic Pantheon": 27,
+    "Norse Pantheon": 14,
+    "Egyptian Pantheon": 12
+  },
+  "entities": [
+    {
+      "id": "SKILL_INVOCATION_ANGEL_001",
+      "number": 1,
+      "name": "Seraphim 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_002",
+      "number": 2,
+      "name": "Seraphim 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_003",
+      "number": 3,
+      "name": "Seraphim 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_004",
+      "number": 4,
+      "name": "Seraphim 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_005",
+      "number": 5,
+      "name": "Seraphim 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_006",
+      "number": 6,
+      "name": "Seraphim 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_007",
+      "number": 7,
+      "name": "Seraphim 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_008",
+      "number": 8,
+      "name": "Seraphim 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Seraphim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Divine Fire angel. Burn, Bless, Execute effects.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Bless",
+        "Execute"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_009",
+      "number": 9,
+      "name": "Cherubim 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_010",
+      "number": 10,
+      "name": "Cherubim 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_011",
+      "number": 11,
+      "name": "Cherubim 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_012",
+      "number": 12,
+      "name": "Cherubim 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_013",
+      "number": 13,
+      "name": "Cherubim 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_014",
+      "number": 14,
+      "name": "Cherubim 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_015",
+      "number": 15,
+      "name": "Cherubim 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_016",
+      "number": 16,
+      "name": "Cherubim 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Cherubim",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Guardians angel. Shield, Zone, Reflect effects.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Zone",
+        "Reflect"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_017",
+      "number": 17,
+      "name": "Thrones 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_018",
+      "number": 18,
+      "name": "Thrones 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_019",
+      "number": 19,
+      "name": "Thrones 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_020",
+      "number": 20,
+      "name": "Thrones 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_021",
+      "number": 21,
+      "name": "Thrones 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_022",
+      "number": 22,
+      "name": "Thrones 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_023",
+      "number": 23,
+      "name": "Thrones 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_024",
+      "number": 24,
+      "name": "Thrones 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Thrones",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Order angel. Stasis, Time-Lock, Sentencing effects.",
+      "keywords": [
+        "Invoke",
+        "Stasis",
+        "Time-Lock",
+        "Sentencing"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_025",
+      "number": 25,
+      "name": "Dominions 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_026",
+      "number": 26,
+      "name": "Dominions 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_027",
+      "number": 27,
+      "name": "Dominions 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_028",
+      "number": 28,
+      "name": "Dominions 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_029",
+      "number": 29,
+      "name": "Dominions 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_030",
+      "number": 30,
+      "name": "Dominions 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_031",
+      "number": 31,
+      "name": "Dominions 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_032",
+      "number": 32,
+      "name": "Dominions 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Dominions",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Auras angel. Sanctity, Blessing, Uptime effects.",
+      "keywords": [
+        "Invoke",
+        "Sanctity",
+        "Blessing",
+        "Uptime"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_033",
+      "number": 33,
+      "name": "Virtues 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_034",
+      "number": 34,
+      "name": "Virtues 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_035",
+      "number": 35,
+      "name": "Virtues 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_036",
+      "number": 36,
+      "name": "Virtues 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_037",
+      "number": 37,
+      "name": "Virtues 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_038",
+      "number": 38,
+      "name": "Virtues 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_039",
+      "number": 39,
+      "name": "Virtues 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_040",
+      "number": 40,
+      "name": "Virtues 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Virtues",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Miracles angel. Save, Denial, Cleanse effects.",
+      "keywords": [
+        "Invoke",
+        "Save",
+        "Denial",
+        "Cleanse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_041",
+      "number": 41,
+      "name": "Powers 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_042",
+      "number": 42,
+      "name": "Powers 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_043",
+      "number": 43,
+      "name": "Powers 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_044",
+      "number": 44,
+      "name": "Powers 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_045",
+      "number": 45,
+      "name": "Powers 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_046",
+      "number": 46,
+      "name": "Powers 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_047",
+      "number": 47,
+      "name": "Powers 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_048",
+      "number": 48,
+      "name": "Powers 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Powers",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Hunters angel. Banish, Execute, Curse effects.",
+      "keywords": [
+        "Invoke",
+        "Banish",
+        "Execute",
+        "Curse"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_049",
+      "number": 49,
+      "name": "Principalities 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_050",
+      "number": 50,
+      "name": "Principalities 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_051",
+      "number": 51,
+      "name": "Principalities 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_052",
+      "number": 52,
+      "name": "Principalities 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_053",
+      "number": 53,
+      "name": "Principalities 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_054",
+      "number": 54,
+      "name": "Principalities 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_055",
+      "number": 55,
+      "name": "Principalities 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_056",
+      "number": 56,
+      "name": "Principalities 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Principalities",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Diplomacy angel. Seal, Truce, Escrow effects.",
+      "keywords": [
+        "Invoke",
+        "Seal",
+        "Truce",
+        "Escrow"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_057",
+      "number": 57,
+      "name": "Archangels 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_058",
+      "number": 58,
+      "name": "Archangels 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_059",
+      "number": 59,
+      "name": "Archangels 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_060",
+      "number": 60,
+      "name": "Archangels 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_061",
+      "number": 61,
+      "name": "Archangels 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_062",
+      "number": 62,
+      "name": "Archangels 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_063",
+      "number": 63,
+      "name": "Archangels 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_064",
+      "number": 64,
+      "name": "Archangels 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Archangels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Prophets angel. Reveal, Foretell, Rewrite effects.",
+      "keywords": [
+        "Invoke",
+        "Reveal",
+        "Foretell",
+        "Rewrite"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_065",
+      "number": 65,
+      "name": "Angels 1",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_066",
+      "number": 66,
+      "name": "Angels 2",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_067",
+      "number": 67,
+      "name": "Angels 3",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_068",
+      "number": 68,
+      "name": "Angels 4",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_069",
+      "number": 69,
+      "name": "Angels 5",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_070",
+      "number": 70,
+      "name": "Angels 6",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_071",
+      "number": 71,
+      "name": "Angels 7",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_ANGEL_072",
+      "number": 72,
+      "name": "Angels 8",
+      "engine": "Invocation",
+      "category": "Theurgic Host",
+      "pillar": "Theurgy",
+      "rank": "Angels",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Personal Boons angel. Heal, Shield, Advantage effects.",
+      "keywords": [
+        "Invoke",
+        "Heal",
+        "Shield",
+        "Advantage"
+      ],
+      "themes": [
+        "divine",
+        "sanctity",
+        "support"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_001",
+      "number": 73,
+      "name": "King 1",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_002",
+      "number": 74,
+      "name": "King 2",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_003",
+      "number": 75,
+      "name": "King 3",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_004",
+      "number": 76,
+      "name": "King 4",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_005",
+      "number": 77,
+      "name": "King 5",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_006",
+      "number": 78,
+      "name": "King 6",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_007",
+      "number": 79,
+      "name": "King 7",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_008",
+      "number": 80,
+      "name": "King 8",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_009",
+      "number": 81,
+      "name": "King 9",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "King",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 190,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Rulebreaker demon. Chaos, Realm, Dominate effects.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Realm",
+        "Dominate"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 105,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_010",
+      "number": 82,
+      "name": "Duke 1",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_011",
+      "number": 83,
+      "name": "Duke 2",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_012",
+      "number": 84,
+      "name": "Duke 3",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_013",
+      "number": 85,
+      "name": "Duke 4",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_014",
+      "number": 86,
+      "name": "Duke 5",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_015",
+      "number": 87,
+      "name": "Duke 6",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_016",
+      "number": 88,
+      "name": "Duke 7",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_017",
+      "number": 89,
+      "name": "Duke 8",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_018",
+      "number": 90,
+      "name": "Duke 9",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 190,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 105,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_019",
+      "number": 91,
+      "name": "Duke 10",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 200,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_020",
+      "number": 92,
+      "name": "Duke 11",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 210,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 115,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_021",
+      "number": 93,
+      "name": "Duke 12",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 220,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 120,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_022",
+      "number": 94,
+      "name": "Duke 13",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 230,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 125,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_023",
+      "number": 95,
+      "name": "Duke 14",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 240,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 130,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_024",
+      "number": 96,
+      "name": "Duke 15",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 250,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 135,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_025",
+      "number": 97,
+      "name": "Duke 16",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 260,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 140,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_026",
+      "number": 98,
+      "name": "Duke 17",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 270,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 145,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_027",
+      "number": 99,
+      "name": "Duke 18",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 280,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 150,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_028",
+      "number": 100,
+      "name": "Duke 19",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 290,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 155,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_029",
+      "number": 101,
+      "name": "Duke 20",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 300,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 160,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_030",
+      "number": 102,
+      "name": "Duke 21",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 310,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 165,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_031",
+      "number": 103,
+      "name": "Duke 22",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 320,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 170,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_032",
+      "number": 104,
+      "name": "Duke 23",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Duke",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 330,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Siege demon. Storm, Beast, Ambush effects.",
+      "keywords": [
+        "Invoke",
+        "Storm",
+        "Beast",
+        "Ambush"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 175,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_033",
+      "number": 105,
+      "name": "Marquis 1",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_034",
+      "number": 106,
+      "name": "Marquis 2",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_035",
+      "number": 107,
+      "name": "Marquis 3",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_036",
+      "number": 108,
+      "name": "Marquis 4",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_037",
+      "number": 109,
+      "name": "Marquis 5",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_038",
+      "number": 110,
+      "name": "Marquis 6",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_039",
+      "number": 111,
+      "name": "Marquis 7",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_040",
+      "number": 112,
+      "name": "Marquis 8",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_041",
+      "number": 113,
+      "name": "Marquis 9",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 190,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 105,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_042",
+      "number": 114,
+      "name": "Marquis 10",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 200,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_043",
+      "number": 115,
+      "name": "Marquis 11",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 210,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 115,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_044",
+      "number": 116,
+      "name": "Marquis 12",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 220,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 120,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_045",
+      "number": 117,
+      "name": "Marquis 13",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 230,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 125,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_046",
+      "number": 118,
+      "name": "Marquis 14",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 240,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 130,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_047",
+      "number": 119,
+      "name": "Marquis 15",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Marquis",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 250,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Plague demon. Illusion, Spy, Betray effects.",
+      "keywords": [
+        "Invoke",
+        "Illusion",
+        "Spy",
+        "Betray"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 135,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_048",
+      "number": 120,
+      "name": "Prince 1",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_049",
+      "number": 121,
+      "name": "Prince 2",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_050",
+      "number": 122,
+      "name": "Prince 3",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_051",
+      "number": 123,
+      "name": "Prince 4",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_052",
+      "number": 124,
+      "name": "Prince 5",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_053",
+      "number": 125,
+      "name": "Prince 6",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_054",
+      "number": 126,
+      "name": "Prince 7",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Prince",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Corruption demon. Control, Desire, Seduce effects.",
+      "keywords": [
+        "Invoke",
+        "Control",
+        "Desire",
+        "Seduce"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_055",
+      "number": 127,
+      "name": "President 1",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_056",
+      "number": 128,
+      "name": "President 2",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_057",
+      "number": 129,
+      "name": "President 3",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_058",
+      "number": 130,
+      "name": "President 4",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_059",
+      "number": 131,
+      "name": "President 5",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_060",
+      "number": 132,
+      "name": "President 6",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_061",
+      "number": 133,
+      "name": "President 7",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_062",
+      "number": 134,
+      "name": "President 8",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 180,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 100,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_063",
+      "number": 135,
+      "name": "President 9",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 190,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 105,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_064",
+      "number": 136,
+      "name": "President 10",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 200,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_065",
+      "number": 137,
+      "name": "President 11",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "President",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 210,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Contract demon. Extort, Economy, Deal effects.",
+      "keywords": [
+        "Invoke",
+        "Extort",
+        "Economy",
+        "Deal"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 115,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_066",
+      "number": 138,
+      "name": "Earl 1",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 110,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 65,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_067",
+      "number": 139,
+      "name": "Earl 2",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 120,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 70,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_068",
+      "number": 140,
+      "name": "Earl 3",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 130,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 75,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_069",
+      "number": 141,
+      "name": "Earl 4",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 140,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_070",
+      "number": 142,
+      "name": "Earl 5",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 150,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 85,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_071",
+      "number": 143,
+      "name": "Earl 6",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 160,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 90,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_DEMON_072",
+      "number": 144,
+      "name": "Earl 7",
+      "engine": "Invocation",
+      "category": "Goetic Legions",
+      "pillar": "Goetia",
+      "rank": "Earl",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 170,
+        "kp": 3
+      },
+      "cooldown": 6,
+      "effect": "Invoke Assassination demon. Stealth, Execute, Knife effects.",
+      "keywords": [
+        "Invoke",
+        "Stealth",
+        "Execute",
+        "Knife"
+      ],
+      "themes": [
+        "demonic",
+        "anarchy",
+        "offense"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_001",
+      "number": 145,
+      "name": "Brahma",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "dharma": 150,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Brahma, Creation deity. Create, Manifest, Begin.",
+      "keywords": [
+        "Invoke",
+        "Create",
+        "Manifest",
+        "Begin"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_002",
+      "number": 146,
+      "name": "Vishnu",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "dharma": 150,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Vishnu, Preservation deity. Preserve, Balance, Sustain.",
+      "keywords": [
+        "Invoke",
+        "Preserve",
+        "Balance",
+        "Sustain"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_003",
+      "number": 147,
+      "name": "Shiva",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "dharma": 150,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Shiva, Destruction deity. Destroy, Transform, End.",
+      "keywords": [
+        "Invoke",
+        "Destroy",
+        "Transform",
+        "End"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_004",
+      "number": 148,
+      "name": "Saraswati",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Saraswati, Knowledge deity. Wisdom, Arts, Learning.",
+      "keywords": [
+        "Invoke",
+        "Wisdom",
+        "Arts",
+        "Learning"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_005",
+      "number": 149,
+      "name": "Lakshmi",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Lakshmi, Abundance deity. Wealth, Prosperity, Fortune.",
+      "keywords": [
+        "Invoke",
+        "Wealth",
+        "Prosperity",
+        "Fortune"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_006",
+      "number": 150,
+      "name": "Durga",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Durga, Protection deity. Shield, Invincible, Warrior.",
+      "keywords": [
+        "Invoke",
+        "Shield",
+        "Invincible",
+        "Warrior"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_007",
+      "number": 151,
+      "name": "Matsya",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Matsya, Flood deity. Water, Control, Save.",
+      "keywords": [
+        "Invoke",
+        "Water",
+        "Control",
+        "Save"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_008",
+      "number": 152,
+      "name": "Kurma",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Kurma, Support deity. Foundation, Sustain, Bear.",
+      "keywords": [
+        "Invoke",
+        "Foundation",
+        "Sustain",
+        "Bear"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_009",
+      "number": 153,
+      "name": "Varaha",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Varaha, Earth deity. Lift, Rescue, Strength.",
+      "keywords": [
+        "Invoke",
+        "Lift",
+        "Rescue",
+        "Strength"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_010",
+      "number": 154,
+      "name": "Narasimha",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Narasimha, Execution deity. Execute, Fury, Justice.",
+      "keywords": [
+        "Invoke",
+        "Execute",
+        "Fury",
+        "Justice"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_011",
+      "number": 155,
+      "name": "Vamana",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Vamana, Shrink deity. Reduce, Deny, Humble.",
+      "keywords": [
+        "Invoke",
+        "Reduce",
+        "Deny",
+        "Humble"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_012",
+      "number": 156,
+      "name": "Parashurama",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Parashurama, Weapon deity. Purge, Warrior, Axe.",
+      "keywords": [
+        "Invoke",
+        "Purge",
+        "Warrior",
+        "Axe"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_013",
+      "number": 157,
+      "name": "Rama",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Rama, Leadership deity. Dharma, Lead, Honor.",
+      "keywords": [
+        "Invoke",
+        "Dharma",
+        "Lead",
+        "Honor"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_014",
+      "number": 158,
+      "name": "Krishna",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "dharma": 150,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Krishna, Play deity. Leela, Bend-Rules, Divine.",
+      "keywords": [
+        "Invoke",
+        "Leela",
+        "Bend-Rules",
+        "Divine"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_015",
+      "number": 159,
+      "name": "Buddha",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Buddha, Peace deity. Calm, Overwrite, Enlighten.",
+      "keywords": [
+        "Invoke",
+        "Calm",
+        "Overwrite",
+        "Enlighten"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_016",
+      "number": 160,
+      "name": "Kalki",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "dharma": 150,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Kalki, End-Time deity. Apocalypse, Ride, Judge.",
+      "keywords": [
+        "Invoke",
+        "Apocalypse",
+        "Ride",
+        "Judge"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_017",
+      "number": 161,
+      "name": "Indra",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Indra, Storm deity. Thunder, Lightning, Command.",
+      "keywords": [
+        "Invoke",
+        "Thunder",
+        "Lightning",
+        "Command"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_018",
+      "number": 162,
+      "name": "Agni",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Agni, Fire deity. Burn, Consume, Purify.",
+      "keywords": [
+        "Invoke",
+        "Burn",
+        "Consume",
+        "Purify"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_019",
+      "number": 163,
+      "name": "Varuna",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Varuna, Ocean deity. Water, Law, Bind.",
+      "keywords": [
+        "Invoke",
+        "Water",
+        "Law",
+        "Bind"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_020",
+      "number": 164,
+      "name": "Vayu",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Vayu, Wind deity. Haste, Movement, Swift.",
+      "keywords": [
+        "Invoke",
+        "Haste",
+        "Movement",
+        "Swift"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_021",
+      "number": 165,
+      "name": "Surya",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Surya, Sun deity. Light, Power, Life.",
+      "keywords": [
+        "Invoke",
+        "Light",
+        "Power",
+        "Life"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_022",
+      "number": 166,
+      "name": "Chandra",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Chandra, Moon deity. Calm, Cycle, Reflect.",
+      "keywords": [
+        "Invoke",
+        "Calm",
+        "Cycle",
+        "Reflect"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_023",
+      "number": 167,
+      "name": "Ganesha",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "dharma": 100,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Ganesha, Path deity. Remove-Obstacles, Begin, Wisdom.",
+      "keywords": [
+        "Invoke",
+        "Remove-Obstacles",
+        "Begin",
+        "Wisdom"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_024",
+      "number": 168,
+      "name": "Hanuman",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Hanuman, Devotion deity. Strength, Loyal, Leap.",
+      "keywords": [
+        "Invoke",
+        "Strength",
+        "Loyal",
+        "Leap"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_025",
+      "number": 169,
+      "name": "Kali",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "dharma": 150,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Kali, Time-Death deity. Destroy, Time, Fierce.",
+      "keywords": [
+        "Invoke",
+        "Destroy",
+        "Time",
+        "Fierce"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_026",
+      "number": 170,
+      "name": "Tara",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Tara, Protection deity. Guide, Save, Compassion.",
+      "keywords": [
+        "Invoke",
+        "Guide",
+        "Save",
+        "Compassion"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_VEDIC_027",
+      "number": 171,
+      "name": "Chhinnamasta",
+      "engine": "Invocation",
+      "category": "Vedic Pantheon",
+      "pillar": "Vedic",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "dharma": 125,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Chhinnamasta, Self-Sacrifice deity. Power, Sacrifice, Transform.",
+      "keywords": [
+        "Invoke",
+        "Power",
+        "Sacrifice",
+        "Transform"
+      ],
+      "themes": [
+        "vedic",
+        "divine",
+        "dharma"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_001",
+      "number": 175,
+      "name": "Odin",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "anarchy": 155,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Odin, Wisdom-Runes god. Wisdom, Rune, Sacrifice.",
+      "keywords": [
+        "Invoke",
+        "Wisdom",
+        "Rune",
+        "Sacrifice"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_002",
+      "number": 176,
+      "name": "Thor",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Thor, Thunder god. Thunder, Strike, Protect.",
+      "keywords": [
+        "Invoke",
+        "Thunder",
+        "Strike",
+        "Protect"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_003",
+      "number": 177,
+      "name": "Loki",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Loki, Trickster god. Trick, Chaos, Transform.",
+      "keywords": [
+        "Invoke",
+        "Trick",
+        "Chaos",
+        "Transform"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_004",
+      "number": 178,
+      "name": "Tyr",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Tyr, Oath god. Oath, Justice, Sacrifice.",
+      "keywords": [
+        "Invoke",
+        "Oath",
+        "Justice",
+        "Sacrifice"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_005",
+      "number": 179,
+      "name": "Heimdall",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Heimdall, Watch god. Vigilance, Alert, Guard.",
+      "keywords": [
+        "Invoke",
+        "Vigilance",
+        "Alert",
+        "Guard"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_006",
+      "number": 180,
+      "name": "Frigg",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Frigg, Fate god. Fate, Weave, Foresee.",
+      "keywords": [
+        "Invoke",
+        "Fate",
+        "Weave",
+        "Foresee"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_007",
+      "number": 181,
+      "name": "Baldr",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Baldr, Light god. Light, Inviolable, Pure.",
+      "keywords": [
+        "Invoke",
+        "Light",
+        "Inviolable",
+        "Pure"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_008",
+      "number": 182,
+      "name": "Freyja",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Freyja, Seidr-War god. Magic, Love, Battle.",
+      "keywords": [
+        "Invoke",
+        "Magic",
+        "Love",
+        "Battle"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_009",
+      "number": 183,
+      "name": "Freyr",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Freyr, Fertility god. Abundance, Growth, Peace.",
+      "keywords": [
+        "Invoke",
+        "Abundance",
+        "Growth",
+        "Peace"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_010",
+      "number": 184,
+      "name": "Njord",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "anarchy": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Njord, Sea god. Wealth, Sail, Trade.",
+      "keywords": [
+        "Invoke",
+        "Wealth",
+        "Sail",
+        "Trade"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_011",
+      "number": 185,
+      "name": "Ymir",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Ymir, Primordial-Frost god. Frost, Giant, Origin.",
+      "keywords": [
+        "Invoke",
+        "Frost",
+        "Giant",
+        "Origin"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_012",
+      "number": 186,
+      "name": "Surtr",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "anarchy": 155,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Surtr, Worldfire god. Fire, Apocalypse, End.",
+      "keywords": [
+        "Invoke",
+        "Fire",
+        "Apocalypse",
+        "End"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_013",
+      "number": 187,
+      "name": "Jörmungandr",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Jörmungandr, World-Serpent god. Poison, Coil, Sea.",
+      "keywords": [
+        "Invoke",
+        "Poison",
+        "Coil",
+        "Sea"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_NORSE_014",
+      "number": 188,
+      "name": "Fenrir",
+      "engine": "Invocation",
+      "category": "Norse Pantheon",
+      "pillar": "Norse",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "anarchy": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Fenrir, Devour god. Devour, Fate, Beast.",
+      "keywords": [
+        "Invoke",
+        "Devour",
+        "Fate",
+        "Beast"
+      ],
+      "themes": [
+        "norse",
+        "divine",
+        "wild"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_001",
+      "number": 189,
+      "name": "Ra",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 4,
+      "tierValue": 4,
+      "cost": {
+        "sanctity": 155,
+        "kp": 4
+      },
+      "cooldown": 9,
+      "effect": "Invoke Ra, Sun-Absolute god. Sun, Authority, Life.",
+      "keywords": [
+        "Invoke",
+        "Sun",
+        "Authority",
+        "Life"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 110,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_002",
+      "number": 190,
+      "name": "Osiris",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "sanctity": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Osiris, Afterlife god. Death, Rebirth, Judge.",
+      "keywords": [
+        "Invoke",
+        "Death",
+        "Rebirth",
+        "Judge"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_003",
+      "number": 191,
+      "name": "Isis",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "sanctity": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Isis, Magic god. Magic, Heal, Protect.",
+      "keywords": [
+        "Invoke",
+        "Magic",
+        "Heal",
+        "Protect"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_004",
+      "number": 192,
+      "name": "Set",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "sanctity": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Set, Chaos god. Chaos, Storm, Strength.",
+      "keywords": [
+        "Invoke",
+        "Chaos",
+        "Storm",
+        "Strength"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_005",
+      "number": 193,
+      "name": "Horus",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "sanctity": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Horus, Kingship god. Rule, Sky, Vengeance.",
+      "keywords": [
+        "Invoke",
+        "Rule",
+        "Sky",
+        "Vengeance"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_006",
+      "number": 194,
+      "name": "Anubis",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Anubis, Weighing god. Judge, Death, Guide.",
+      "keywords": [
+        "Invoke",
+        "Judge",
+        "Death",
+        "Guide"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_007",
+      "number": 195,
+      "name": "Thoth",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "sanctity": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Thoth, Scribe god. Knowledge, Write, Balance.",
+      "keywords": [
+        "Invoke",
+        "Knowledge",
+        "Write",
+        "Balance"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_008",
+      "number": 196,
+      "name": "Bastet",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Bastet, Joy-Guard god. Joy, Protect, Cat.",
+      "keywords": [
+        "Invoke",
+        "Joy",
+        "Protect",
+        "Cat"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_009",
+      "number": 197,
+      "name": "Sekhmet",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 3,
+      "tierValue": 3,
+      "cost": {
+        "sanctity": 135,
+        "kp": 3
+      },
+      "cooldown": 8,
+      "effect": "Invoke Sekhmet, Plague-Wrath god. Plague, War, Fierce.",
+      "keywords": [
+        "Invoke",
+        "Plague",
+        "War",
+        "Fierce"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 95,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_010",
+      "number": 198,
+      "name": "Sobek",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Sobek, Flood-Teeth god. Flood, Devour, Nile.",
+      "keywords": [
+        "Invoke",
+        "Flood",
+        "Devour",
+        "Nile"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_011",
+      "number": 199,
+      "name": "Ptah",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Ptah, Crafts god. Create, Build, Forge.",
+      "keywords": [
+        "Invoke",
+        "Create",
+        "Build",
+        "Forge"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    },
+    {
+      "id": "SKILL_INVOCATION_EGYPTIAN_012",
+      "number": 200,
+      "name": "Hathor",
+      "engine": "Invocation",
+      "category": "Egyptian Pantheon",
+      "pillar": "Egyptian",
+      "rank": "Deity",
+      "tier": 2,
+      "tierValue": 2,
+      "cost": {
+        "sanctity": 115,
+        "kp": 2
+      },
+      "cooldown": 7,
+      "effect": "Invoke Hathor, Love-Sky god. Love, Music, Joy.",
+      "keywords": [
+        "Invoke",
+        "Love",
+        "Music",
+        "Joy"
+      ],
+      "themes": [
+        "egyptian",
+        "divine",
+        "ancient"
+      ],
+      "powerScore": 80,
+      "isFused": false,
+      "fusionDepth": 0,
+      "fusionIngredients": [],
+      "source": "Invocation v4.0"
+    }
+  ],
+  "metadata": {
+    "parsedDate": "2025-10-25T16:24:12.490Z",
+    "sourceFormat": "Invocation Engine v4.0 MASTER + SUPREME",
+    "fusionReady": true
+  }
+}

@@ -1,0 +1,656 @@
+# Divination Engine — Complete Skills List (v1.0)
+## Total Skills: 100 (Foresight, Fate Manipulation, Knowledge, Temporal Mechanics)
+
+---
+
+### **CORE DIVINATION PATHS — 5 Specializations**
+
+**Jyotish (Astrology)** — Celestial patterns and planetary influence
+**Nadi (Fate Reading)** — Destiny threads and karmic manipulation  
+**Samudrik (Intuition)** — Present awareness and hidden knowledge
+**Kala (Time)** — Temporal manipulation and future sight
+**Akasha (Records)** — Universal knowledge and memory access
+
+---
+
+### **CORE RESOURCES & MECHANICS**
+
+**Drishti (Vision Points):** Primary resource for Divination abilities (Max 100)
+**Darshan (Insight Stacks):** Accumulated knowledge that enhances predictions (0-20 stacks)
+**Sutra (Fate Threads):** Connections to destiny that enable manipulation (3 max active)
+**Kshana (Time Fragments):** Allow rewinding, pausing, or accelerating effects (5 max stored)
+
+**Core Status Effects:**
+- [Foreseen] — Next action revealed, enabling perfect counter
+- [Destiny Bound] — Locked into predetermined outcome
+- [Temporal Echo] — Action repeats next turn automatically
+- [Knowledge Drain] — Enemy abilities revealed and weakened
+- [Prophecy] — Future event guaranteed to occur
+
+---
+
+### **FATE MANIPULATION — 20 Skills**
+
+1. **Glyph: Thread Reader** (Foundation, Gnosis 20)
+   * **Core Function:** Reveal enemy's next 2 actions. Gain +3 Drishti per action revealed.
+   * **Evo A (Deep Reading):** Reveal 3 actions.
+   * **Evo B (Reactive Reading):** Also gain +15% evasion against revealed actions.
+   * **Note:** *Foundation foresight. Information advantage.*
+
+2. **Glyph: Fate Weaver** (Manipulation, Gnosis 30)
+   * **Core Function:** Place [Sutra] on enemy. Their next harmful action targets themselves instead.
+   * **Evo A (Master Weaver):** Affects next 2 actions.
+   * **Evo B (Amplified Weaver):** Redirected actions deal +50% damage.
+   * **Note:** *Turn enemy power against them.*
+
+3. **Glyph: Karmic Reversal** (Counter, Gnosis 35)
+   * **Core Function:** When enemy uses ability, 30% chance to reverse its target/effect.
+   * **Evo A (Perfect Reversal):** 50% chance.
+   * **Evo B (Guaranteed Reversal):** 100% chance but costs 10 Drishti.
+   * **Note:** *Passive counter system. Chaos creation.*
+
+4. **Glyph: Destiny Lock** (Control, Gnosis 40)
+   * **Core Function:** Apply [Destiny Bound] for 3 turns: Enemy must use only basic attacks.
+   * **Evo A (Extended Lock):** Duration 4 turns.
+   * **Evo B (Complete Lock):** Cannot use any abilities.
+   * **Note:** *Hard lockdown. Ability denial.*
+
+5. **Glyph: Future Sight** (Vision, Gnosis 25)
+   * **Core Function:** See entire enemy hand/deck. Lasts until you take damage.
+   * **Evo A (Perfect Sight):** Also see enemy resources and cooldowns.
+   * **Evo B (Persistent Sight):** Doesn't end when damaged.
+   * **Note:** *Perfect information. Strategic dominance.*
+
+6. **Glyph: Probability Shift** (RNG Manipulation, Gnosis 45)
+   * **Core Function:** All random effects in your favor become best outcome, enemy random effects become worst outcome.
+   * **Evo A (Perfect Probability):** Duration 3 turns instead of 2.
+   * **Evo B (Controlled Probability):** Can choose specific outcomes instead of automatic best/worst.
+   * **Note:** *RNG control. Eliminate variance.*
+
+7. **Glyph: Causal Break** (Anti-Combo, Gnosis 50)
+   * **Core Function:** Cancel enemy combo/sequence. They lose 1 action and 10 resources.
+   * **Evo A (Perfect Break):** Lose 2 actions.
+   * **Evo B (Punishing Break):** Also deal 25 damage per action cancelled.
+   * **Note:** *Interrupt specialist. Tempo swing.*
+
+8. **Glyph: Predetermined Victory** (Ultimate, Gnosis 75)
+   * **Core Function:** Once per duel: Next 3 of your actions automatically succeed (cannot miss/be countered).
+   * **Evo A (Extended Victory):** 4 actions guaranteed.
+   * **Evo B (Perfect Victory):** Actions also deal +100% damage/healing.
+   * **Note:** *Guaranteed power spike. Ultimate momentum.*
+
+9. **Glyph: Fate Steal** (Theft, Gnosis 40)
+   * **Core Function:** Copy enemy's next action. You perform it first at +50% potency.
+   * **Evo A (Perfect Theft):** +100% potency.
+   * **Evo B (Double Theft):** Copy 2 actions.
+   * **Note:** *Predict and preempt. Action advantage.*
+
+10. **Glyph: Oracle's Gambit** (Risk/Reward, Gnosis 55)
+    * **Core Function:** Guess enemy's next action type (offense/defense/support). If correct, gain 20 Drishti and [Foreseen] buff. If wrong, lose 15 Drishti.
+    * **Evo A (Safe Gambit):** No penalty for wrong guess.
+    * **Evo B (High Stakes):** Correct guess grants +30 Drishti and full action copy.
+    * **Note:** *High-skill prediction game.*
+
+11. **Glyph: Karmic Echo** (Multiplication, Gnosis 50)
+    * **Core Function:** Enemy's last action repeats automatically next turn at 75% potency (uncontrollable).
+    * **Evo A (Perfect Echo):** 100% potency.
+    * **Evo B (Double Echo):** Repeats for 2 turns.
+    * **Note:** *Force repetition. Predictable exploitation.*
+
+12. **Glyph: Destiny Swap** (Manipulation, Gnosis 60)
+    * **Core Function:** Swap buffs and debuffs between two targets (friend or foe).
+    * **Evo A (Perfect Swap):** Swapped effects have +1 turn duration.
+    * **Evo B (Mass Swap):** Affects all allies and all enemies.
+    * **Note:** *Ultimate redistribution. Chaos control.*
+
+13. **Glyph: Prophetic Strike** (Combo, Gnosis 45)
+    * **Core Function:** Mark enemy with [Prophecy]: "Will take 50 damage in 3 turns." Cannot be prevented except by [Cleanse].
+    * **Evo A (Greater Prophecy):** 75 damage.
+    * **Evo B (Immediate Prophecy):** Triggers in 2 turns.
+    * **Note:** *Unavoidable damage. Countdown threat.*
+
+14. **Glyph: Fate Acceleration** (Tempo, Gnosis 40)
+    * **Core Function:** All active buffs/debuffs tick twice this turn (consume duration 2x faster).
+    * **Evo A (Selective Acceleration):** Only affects chosen effects.
+    * **Evo B (Triple Acceleration):** Tick three times.
+    * **Note:** *Fast-forward time. Expire enemy buffs.*
+
+15. **Glyph: Causality Loop** (Infinite, Gnosis 70)
+    * **Core Function:** Next ability you use will repeat automatically every 3 turns for rest of duel (costs 0 resources to repeat).
+    * **Evo A (Rapid Loop):** Repeats every 2 turns.
+    * **Evo B (Perfect Loop):** Repeated casts have +50% potency.
+    * **Note:** *Infinite value engine. Long game dominance.*
+
+16. **Glyph: Preemptive Counter** (Reaction, Gnosis 55)
+    * **Core Function:** When enemy declares action, you can spend 15 Drishti to act first with perfect counter ability.
+    * **Evo A (Cheap Counter):** Only costs 10 Drishti.
+    * **Evo B (Perfect Counter):** Counter deals +100% damage/effect.
+    * **Note:** *Instant speed interaction. Interrupt power.*
+
+17. **Glyph: Destiny Fracture** (Multi-Path, Gnosis 65)
+    * **Core Function:** Choose one: Create 3 timeline branches. One is real, others are illusions. Enemy must guess correctly or waste actions. Lasts 2 turns.
+    * **Evo A (Extended Fracture):** 3 turns duration.
+    * **Evo B (Perfect Fracture):** Create 4 branches instead.
+    * **Note:** *Mind games. Action economy advantage.*
+
+18. **Glyph: Karmic Debt** (Delayed Punishment, Gnosis 50)
+    * **Core Function:** Every action enemy takes adds 1 [Debt] stack. At 10 stacks, deal (stacks × 5) damage and [Stun] for 1 turn.
+    * **Evo A (Rapid Debt):** Triggers at 7 stacks.
+    * **Evo B (Perfect Debt):** Deal (stacks × 8) damage.
+    * **Note:** *Punishment timer. Pressure buildup.*
+
+19. **Glyph: Quantum State** (Uncertainty, Gnosis 60)
+    * **Core Function:** Enter superposition: Simultaneously in 2 positions. Enemy must target one (50% to hit wrong position and waste action).
+    * **Evo A (Triple State):** 3 positions (33% hit chance).
+    * **Evo B (Perfect State):** Also gain +50% evasion.
+    * **Note:** *Probability defense. Confusion tactic.*
+
+20. **Glyph: Inevitable End** (Finisher, Gnosis 80)
+    * **Core Function:** Mark enemy with [Prophecy]: "Will be reduced to 1 Ojas in 5 turns." Costs 50 Drishti. Can only be prevented by winning duel before then.
+    * **Evo A (Rapid End):** 4 turns.
+    * **Evo B (Merciful End):** Costs only 40 Drishti.
+    * **Note:** *Win condition. Ultimate clock.*
+
+---
+
+### **TEMPORAL MANIPULATION — 20 Skills**
+
+21. **Glyph: Time Rewind** (Undo, Gnosis 40)
+    * **Core Function:** Spend 5 [Kshana]: Undo last enemy action completely.
+    * **Evo A (Efficient Rewind):** Only costs 3 [Kshana].
+    * **Evo B (Extended Rewind):** Can undo last 2 actions.
+    * **Note:** *Ultimate counter. Time control.*
+
+22. **Glyph: Temporal Stasis** (Freeze, Gnosis 35)
+    * **Core Function:** Target cannot act for 2 turns but is also invulnerable during this time.
+    * **Evo A (Extended Stasis):** 3 turns.
+    * **Evo B (Vulnerable Stasis):** Target can be damaged but still cannot act.
+    * **Note:** *Remove threat temporarily. Setup time.*
+
+23. **Glyph: Haste Field** (Acceleration, Gnosis 30)
+    * **Core Function:** Gain +1 action this turn. Costs 2 [Kshana].
+    * **Evo A (Extended Haste):** +2 actions.
+    * **Evo B (Efficient Haste):** Only costs 1 [Kshana].
+    * **Note:** *Action advantage. Tempo boost.*
+
+24. **Glyph: Slow Aura** (Deceleration, Gnosis 35)
+    * **Core Function:** Enemy actions cost +2 resources and have +1 turn cooldown for 3 turns.
+    * **Evo A (Perfect Slow):** Cost +3 resources.
+    * **Evo B (Extended Slow):** Duration 4 turns.
+    * **Note:** *Economic warfare. Resource drain.*
+
+25. **Glyph: Time Skip** (Evasion, Gnosis 25)
+    * **Core Function:** Become untargetable for 1 turn. When you reappear, gain +10 Drishti.
+    * **Evo A (Extended Skip):** 2 turns untargetable.
+    * **Evo B (Profitable Skip):** Gain +20 Drishti.
+    * **Note:** *Safety + value. Defensive economy.*
+
+26. **Glyph: Temporal Loop** (Repetition, Gnosis 50)
+    * **Core Function:** Your last action repeats automatically next turn at no cost.
+    * **Evo A (Perfect Loop):** Repeats at +50% potency.
+    * **Evo B (Extended Loop):** Repeats for 2 additional turns.
+    * **Note:** *Value multiplication. Efficient power.*
+
+27. **Glyph: Age Acceleration** (DoT, Gnosis 45)
+    * **Core Function:** Apply [Decay of Time]: Enemy takes 5 damage per turn, increasing by +5 each turn (5, 10, 15, 20...). Lasts 5 turns.
+    * **Evo A (Perfect Acceleration):** Increases by +8 per turn.
+    * **Evo B (Extended Acceleration):** Lasts 6 turns.
+    * **Note:** *Exponential DoT. Late-game threat.*
+
+28. **Glyph: Chronology Break** (Anti-Effect, Gnosis 55)
+    * **Core Function:** Remove all buffs/debuffs from target and prevent any new effects for 2 turns.
+    * **Evo A (Extended Break):** 3 turns.
+    * **Evo B (Mass Break):** Affects all enemies.
+    * **Note:** *Reset button. Status immunity.*
+
+29. **Glyph: Borrowed Time** (Risk, Gnosis 60)
+    * **Core Function:** Gain 3 extra actions this turn. At end of turn, take 30 damage and lose next turn.
+    * **Evo A (Safe Borrow):** Only take 15 damage.
+    * **Evo B (Perfect Borrow):** Only lose half of next turn.
+    * **Note:** *All-in burst. Decisive moment.*
+
+30. **Glyph: Temporal Anchor** (Restoration, Gnosis 50)
+    * **Core Function:** Set checkpoint. Once per duel, restore yourself to that checkpoint state (Ojas, resources, position).
+    * **Evo A (Perfect Anchor):** Can use twice per duel.
+    * **Evo B (Enhanced Anchor):** Restore at +20% Ojas.
+    * **Note:** *Safety net. Second chance.*
+
+31. **Glyph: Time Dilation** (Duration, Gnosis 40)
+    * **Core Function:** All your active effects last +2 turns. Costs 15 Drishti.
+    * **Evo A (Perfect Dilation):** +3 turns.
+    * **Evo B (Efficient Dilation):** Costs only 10 Drishti.
+    * **Note:** *Extend advantage. Value maximization.*
+
+32. **Glyph: Rapid Aging** (Debuff, Gnosis 45)
+    * **Core Function:** Enemy's next 3 abilities have their cooldowns doubled.
+    * **Evo A (Extended Aging):** Affects next 5 abilities.
+    * **Evo B (Perfect Aging):** Cooldowns tripled.
+    * **Note:** *Tempo destruction. Freeze strategy.*
+
+33. **Glyph: Paradox Creation** (Chaos, Gnosis 65)
+    * **Core Function:** Both you and enemy gain [Temporal Echo]: All actions repeat next turn uncontrollably.
+    * **Evo A (Controlled Paradox):** Only enemy affected.
+    * **Evo B (Perfect Paradox):** Your echoes deal +50% damage/healing.
+    * **Note:** *Mutual chaos. Skill expression.*
+
+34. **Glyph: Time Theft** (Resource, Gnosis 50)
+    * **Core Function:** Reduce all enemy cooldowns by 2 turns. Gain +5 Drishti per cooldown reduced.
+    * **Evo A (Perfect Theft):** Gain +8 Drishti per cooldown.
+    * **Evo B (Enhanced Theft):** Also [Heal] 10 Ojas per cooldown.
+    * **Note:** *Turn disadvantage into advantage.*
+
+35. **Glyph: Future Echo** (Prediction, Gnosis 55)
+    * **Core Function:** Perform action from 3 turns in the future now. That future turn skipped automatically.
+    * **Evo A (Perfect Echo):** Can use 2 future actions.
+    * **Evo B (Efficient Echo):** Future turn only half-skipped.
+    * **Note:** *Borrow future power. Complex timing.*
+
+36. **Glyph: Eternal Moment** (Freeze, Gnosis 70)
+    * **Core Function:** For 1 turn, game state freezes completely except you can act freely (enemy can't respond). Costs 40 Drishti.
+    * **Evo A (Extended Moment):** Can act twice during frozen turn.
+    * **Evo B (Efficient Moment):** Costs only 30 Drishti.
+    * **Note:** *Ultimate control. Free turn.*
+
+37. **Glyph: Timeline Collapse** (Finisher, Gnosis 75)
+    * **Core Function:** Deal damage equal to (total cooldown time on all enemy abilities × 5).
+    * **Evo A (Perfect Collapse):** × 8 instead.
+    * **Evo B (Stunning Collapse):** Also [Stun] for 1 turn.
+    * **Note:** *Punish passive play. Cooldown counter.*
+
+38. **Glyph: Kshana Generator** (Resource, Gnosis 45)
+    * **Core Function:** Passive: Gain 1 [Kshana] every 3 turns (max 5 stored).
+    * **Evo A (Rapid Generation):** Every 2 turns.
+    * **Evo B (Perfect Generation):** Also gain +5 Drishti when generated.
+    * **Note:** *Resource engine. Long-game scaling.*
+
+39. **Glyph: Temporal Mastery** (Build-Defining, Gnosis 80)
+    * **Core Function:** All time-based abilities cost -50%. Start duel with 5 [Kshana].
+    * **Evo A (Perfect Mastery):** Cost -75%.
+    * **Evo B (Enhanced Mastery):** Start with 7 [Kshana] and max capacity +2.
+    * **Note:** *Temporal specialist. Ultimate efficiency.*
+
+40. **Glyph: End of Time** (Ultimate, Gnosis 90)
+    * **Core Function:** Once per duel: Stop time for 3 turns. Only you can act. Costs all [Kshana] and 50 Drishti.
+    * **Evo A (Extended End):** 4 turns duration.
+    * **Evo B (Perfect End):** Actions during stopped time deal +100% damage.
+    * **Note:** *God-mode. Win condition.*
+
+---
+
+### **KNOWLEDGE EXTRACTION — 20 Skills**
+
+41. **Glyph: Mind Read** (Information, Gnosis 25)
+    * **Core Function:** Reveal enemy's entire hand/deck and current resources.
+    * **Evo A (Perfect Reading):** Also reveal their next 2 draw/actions.
+    * **Evo B (Persistent Reading):** Information doesn't expire until end of duel.
+    * **Note:** *Perfect information. Strategic advantage.*
+
+42. **Glyph: Skill Drain** (Debuff, Gnosis 35)
+    * **Core Function:** Apply [Knowledge Drain]: Enemy's next ability deals -50% damage/healing.
+    * **Evo A (Perfect Drain):** -75% potency.
+    * **Evo B (Extended Drain):** Affects next 3 abilities.
+    * **Note:** *Weaken threats. Defensive tool.*
+
+43. **Glyph: Akashic Access** (Universal Knowledge, Gnosis 50)
+    * **Core Function:** Gain +20 [Darshan]. For each [Darshan], +1% all effects (caps at +20%).
+    * **Evo A (Perfect Access):** +2% per [Darshan].
+    * **Evo B (Deep Access):** Max [Darshan] increased to 30.
+    * **Note:** *Scaling engine. Knowledge as power.*
+
+44. **Glyph: Ability Copy** (Theft, Gnosis 45)
+    * **Core Function:** Copy enemy's last used ability. You can use it once this duel.
+    * **Evo A (Perfect Copy):** Can use it 3 times.
+    * **Evo B (Enhanced Copy):** Copied ability has +50% potency.
+    * **Note:** *Flexible toolkit. Adaptation.*
+
+45. **Glyph: Weakness Reveal** (Debuff, Gnosis 30)
+    * **Core Function:** Mark enemy: They take +25% damage from all sources for 3 turns.
+    * **Evo A (Perfect Reveal):** +40% damage taken.
+    * **Evo B (Extended Reveal):** Duration 4 turns.
+    * **Note:** *Amplify damage. Team synergy.*
+
+46. **Glyph: Memory Extraction** (Resource, Gnosis 40)
+    * **Core Function:** Steal 15 resources from enemy and gain +10 [Darshan].
+    * **Evo A (Perfect Extraction):** Steal 25 resources.
+    * **Evo B (Deep Extraction):** Gain +20 [Darshan].
+    * **Note:** *Economic warfare + knowledge gain.*
+
+47. **Glyph: Omniscience** (Vision, Gnosis 60)
+    * **Core Function:** For 3 turns, see all hidden information (enemy hand, cooldowns, deck order, random outcomes).
+    * **Evo A (Extended Omniscience):** Duration 4 turns.
+    * **Evo B (Perfect Omniscience):** Also gain immunity to mind-affecting effects.
+    * **Note:** *Ultimate information. Perfect play.*
+
+48. **Glyph: Knowledge Bomb** (AoE, Gnosis 55)
+    * **Core Function:** Deal 10 damage to all enemies per [Darshan] you have (max 200 damage).
+    * **Evo A (Perfect Bomb):** 15 damage per [Darshan].
+    * **Evo B (Stunning Bomb):** Also [Silence] all hit enemies for 1 turn.
+    * **Note:** *Knowledge as weapon. Scaling burst.*
+
+49. **Glyph: Insight Theft** (Stack Steal, Gnosis 50)
+    * **Core Function:** Steal half of enemy's positive stacks/buffs and convert to [Darshan].
+    * **Evo A (Perfect Theft):** Steal all stacks.
+    * **Evo B (Double Theft):** Gain 2 [Darshan] per stack stolen.
+    * **Note:** *Punish buffs. Turn power against them.*
+
+50. **Glyph: Scholar's Patience** (Scaling, Gnosis 35)
+    * **Core Function:** Passive: Gain +1 [Darshan] every turn you don't attack.
+    * **Evo A (Rapid Scholarship):** +2 [Darshan] per turn.
+    * **Evo B (Perfect Patience):** Also gain +5 Drishti per turn.
+    * **Note:** *Defensive scaling. Long-game.*
+
+51. **Glyph: Forbidden Knowledge** (Risk, Gnosis 65)
+    * **Core Function:** Sacrifice 20 Ojas to gain +10 [Darshan] and reveal all enemy hidden abilities.
+    * **Evo A (Safe Knowledge):** Only sacrifice 10 Ojas.
+    * **Evo B (Perfect Knowledge):** Gain +15 [Darshan] instead.
+    * **Note:** *Pay life for power. Information advantage.*
+
+52. **Glyph: Cognitive Overload** (Control, Gnosis 45)
+    * **Core Function:** Enemy must discard 2 random cards/abilities for 2 turns.
+    * **Evo A (Perfect Overload):** Discard 3 cards.
+    * **Evo B (Extended Overload):** Duration 3 turns.
+    * **Note:** *Hand disruption. Resource denial.*
+
+53. **Glyph: Wisdom Shield** (Defense, Gnosis 40)
+    * **Core Function:** Gain (Darshan × 5) shield. Lasts 3 turns or until broken.
+    * **Evo A (Perfect Shield):** (Darshan × 8) shield.
+    * **Evo B (Persistent Shield):** Lasts 5 turns.
+    * **Note:** *Knowledge as defense. Scaling protection.*
+
+54. **Glyph: Secret Unveiling** (Reveal, Gnosis 55)
+    * **Core Function:** Force enemy to reveal their entire strategy (abilities they plan to use, order, targets). Lasts 2 turns.
+    * **Evo A (Extended Unveiling):** 3 turns.
+    * **Evo B (Perfect Unveiling):** Also prevents them from changing revealed strategy.
+    * **Note:** *Ultimate mind read. Forced transparency.*
+
+55. **Glyph: Knowledge Network** (Synergy, Gnosis 50)
+    * **Core Function:** All allies gain [Darshan] equal to yours. Shared knowledge grants +10% effects to team.
+    * **Evo A (Perfect Network):** +20% effects.
+    * **Evo B (Deep Network):** Also share Drishti resources.
+    * **Note:** *Team buff. Multiplayer synergy.*
+
+56. **Glyph: Memory Wipe** (Control, Gnosis 60)
+    * **Core Function:** Enemy loses access to all abilities used this duel for 3 turns (can only use unused abilities).
+    * **Evo A (Extended Wipe):** Duration 4 turns.
+    * **Evo B (Perfect Wipe):** Also reset all their cooldowns to maximum.
+    * **Note:** *Ultimate disruption. Strategy reset.*
+
+57. **Glyph: Philosopher's Stone** (Transmutation, Gnosis 70)
+    * **Core Function:** Convert 10 [Darshan] into any resource type (Ojas/Drishti/Kshana/etc.) at 2:1 ratio.
+    * **Evo A (Perfect Stone):** 1:1 ratio conversion.
+    * **Evo B (Efficient Stone):** Only costs 5 [Darshan] to activate.
+    * **Note:** *Ultimate flexibility. Resource converter.*
+
+58. **Glyph: Universal Truth** (Permanent, Gnosis 75)
+    * **Core Function:** Passive: Cannot be affected by illusions, lies, or misdirection. Always see true game state.
+    * **Evo A (Perfect Truth):** Also immune to mind control effects.
+    * **Evo B (Shared Truth):** All allies gain this immunity.
+    * **Note:** *Anti-illusion. Clarity eternal.*
+
+59. **Glyph: Darshan Overload** (Burst, Gnosis 80)
+    * **Core Function:** Spend all [Darshan]: For each spent, gain +10% all effects for 3 turns. Max +200%.
+    * **Evo A (Perfect Overload):** +15% per [Darshan].
+    * **Evo B (Extended Overload):** Duration 4 turns.
+    * **Note:** *Cash in knowledge. Massive power spike.*
+
+60. **Glyph: Infinite Library** (Ultimate Passive, Gnosis 85)
+    * **Core Function:** Passive: [Darshan] has no cap. Gain +1 [Darshan] every turn. Start duel with 10 [Darshan].
+    * **Evo A (Perfect Library):** Gain +2 [Darshan] per turn.
+    * **Evo B (Deep Library):** Start with 20 [Darshan].
+    * **Note:** *Infinite scaling. Late-game god.*
+
+---
+
+### **CELESTIAL INFLUENCE (JYOTISH) — 15 Skills**
+
+61. **Glyph: Planetary Alignment** (Buff Cycle, Gnosis 30)
+    * **Core Function:** Every 3 turns, gain rotating buff: Turn 1: +20% damage | Turn 2: +20% healing | Turn 3: +20% defense.
+    * **Evo A (Perfect Alignment):** +35% bonuses.
+    * **Evo B (Rapid Alignment):** Cycles every 2 turns.
+    * **Note:** *Predictable power cycles. Planning reward.*
+
+62. **Glyph: Solar Flare** (Burst, Gnosis 35)
+    * **Core Function:** Deal 40 damage to all enemies. Apply [Burn] (3 damage/turn for 3 turns).
+    * **Evo A (Perfect Flare):** 60 base damage.
+    * **Evo B (Lingering Flare):** [Burn] lasts 5 turns.
+    * **Note:** *AoE damage. Board clear.*
+
+63. **Glyph: Lunar Blessing** (Healing, Gnosis 30)
+    * **Core Function:** [Heal] all allies for 30 Ojas. Gain [Darshan] equal to allies healed.
+    * **Evo A (Perfect Blessing):** 50 Ojas healed.
+    * **Evo B (Knowledge Blessing):** Gain 2 [Darshan] per ally.
+    * **Note:** *Team support + knowledge generation.*
+
+64. **Glyph: Eclipse** (Debuff Field, Gnosis 45)
+    * **Core Function:** Create darkness field for 3 turns: All enemies have -30% accuracy and cannot gain buffs.
+    * **Evo A (Perfect Eclipse):** -50% accuracy.
+    * **Evo B (Extended Eclipse):** Duration 4 turns.
+    * **Note:** *Zone control. Debuff field.*
+
+65. **Glyph: Mercury Trick** (Confusion, Gnosis 40)
+    * **Core Function:** Swap positions of two enemies. Their next action targets wrong enemy.
+    * **Evo A (Perfect Trick):** Affects next 2 actions.
+    * **Evo B (Mass Trick):** Can swap 4 enemies total (2 pairs).
+    * **Note:** *Tactical manipulation. Positioning chaos.*
+
+66. **Glyph: Venus Charm** (Mind Control, Gnosis 50)
+    * **Core Function:** Apply [Subservience]: Enemy's next action targets their ally instead of yours.
+    * **Evo A (Perfect Charm):** Affects next 2 actions.
+    * **Evo B (Mass Charm):** Affects all enemies.
+    * **Note:** *Turn allies against each other.*
+
+67. **Glyph: Mars Wrath** (Damage Boost, Gnosis 35)
+    * **Core Function:** For 3 turns, all damage dealt by anyone increased by 50%.
+    * **Evo A (Perfect Wrath):** +75% damage.
+    * **Evo B (Selective Wrath):** Only your damage increased by +100%.
+    * **Note:** *Double-edged power. Aggression focus.*
+
+68. **Glyph: Jupiter's Luck** (RNG Blessing, Gnosis 45)
+    * **Core Function:** For 3 turns, all your random effects become best possible outcome.
+    * **Evo A (Extended Luck):** Duration 4 turns.
+    * **Evo B (Perfect Luck):** Also gain +20% all effects.
+    * **Note:** *RNG control. Variance elimination.*
+
+69. **Glyph: Saturn's Judgment** (Delayed Doom, Gnosis 55)
+    * **Core Function:** Mark enemy: In 5 turns, they take 100 damage. Cannot be prevented.
+    * **Evo A (Rapid Judgment):** 4 turns.
+    * **Evo B (Perfect Judgment):** 150 damage.
+    * **Note:** *Inevitable threat. Countdown pressure.*
+
+70. **Glyph: Rahu's Shadow** (Silence, Gnosis 40)
+    * **Core Function:** Apply [Silence] to all enemies for 2 turns. They cannot use abilities.
+    * **Evo A (Extended Shadow):** 3 turns.
+    * **Evo B (Perfect Shadow):** Also drain 15 resources from each.
+    * **Note:** *Mass lockdown. Ultimate control.*
+
+71. **Glyph: Ketu's Insight** (Vision, Gnosis 50)
+    * **Core Function:** Reveal all future events for next 3 turns (draws, random effects, enemy actions).
+    * **Evo A (Extended Insight):** 5 turns.
+    * **Evo B (Perfect Insight):** Can change 1 revealed outcome per turn.
+    * **Note:** *Perfect foresight. Strategic planning.*
+
+72. **Glyph: Retrograde Curse** (Reversal, Gnosis 60)
+    * **Core Function:** All enemy buffs become debuffs for 3 turns. All their debuffs become buffs.
+    * **Evo A (Extended Curse):** Duration 4 turns.
+    * **Evo B (Perfect Curse):** Reversed effects have +50% potency.
+    * **Note:** *Inversion field. Turn power against them.*
+
+73. **Glyph: Cosmic Storm** (Chaos, Gnosis 65)
+    * **Core Function:** Random planetary effect triggers each turn for 5 turns (ally and enemy effects).
+    * **Evo A (Controlled Storm):** Only beneficial effects for you, harmful for enemy.
+    * **Evo B (Perfect Storm):** Effects doubled in potency.
+    * **Note:** *Chaos field. High variance.*
+
+74. **Glyph: Zodiac Wheel** (Cycling Power, Gnosis 55)
+    * **Core Function:** Each turn, rotate through 12 zodiac effects (damage, healing, control, etc.). Effects stack if wheel completes.
+    * **Evo A (Rapid Wheel):** Rotates 2 signs per turn.
+    * **Evo B (Perfect Wheel):** Completed wheel grants permanent +20% all effects.
+    * **Note:** *Long-term scaling. Patience reward.*
+
+75. **Glyph: Grand Conjunction** (Ultimate, Gnosis 80)
+    * **Core Function:** Once per duel: All planetary effects trigger simultaneously for 1 turn (massive mixed effects). Costs 50 Drishti.
+    * **Evo A (Extended Conjunction):** Lasts 2 turns.
+    * **Evo B (Perfect Conjunction):** Effects tripled in potency.
+    * **Note:** *Ultimate chaos power. Decisive moment.*
+
+---
+
+### **DIVINATION SPECIALIZATIONS — 15 Skills**
+
+76. **Glyph: Fate Specialist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use Temporal or Celestial paths. All fate manipulation effects +100%. Can have 5 active [Sutra].
+    * **Evo A (Perfect Fate):** +150% effects.
+    * **Evo B (Master Fate):** Can have 7 [Sutra].
+    * **Note:** *Pure fate manipulation. Destiny master.*
+
+77. **Glyph: Time Specialist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use Fate or Celestial paths. All temporal effects +100%. Start with 7 [Kshana].
+    * **Evo A (Perfect Time):** +150% effects.
+    * **Evo B (Master Time):** Max [Kshana] capacity +5.
+    * **Note:** *Pure temporal control. Time lord.*
+
+78. **Glyph: Knowledge Specialist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other paths. All [Darshan] effects +100%. Start with 15 [Darshan], no cap.
+    * **Evo A (Perfect Knowledge):** +150% effects.
+    * **Evo B (Infinite Knowledge):** Gain +3 [Darshan] per turn automatically.
+    * **Note:** *Pure information warfare. Omniscient.*
+
+79. **Glyph: Celestial Specialist** (Build-Defining, Gnosis 50)
+    * **Core Function:** Cannot use other paths. All planetary effects +100%. Can trigger 2 planetary effects per turn.
+    * **Evo A (Perfect Celestial):** +150% effects.
+    * **Evo B (Master Celestial):** Trigger 3 effects per turn.
+    * **Note:** *Pure cosmic power. Astrology master.*
+
+80. **Glyph: Hybrid Prophet** (Dual Path, Gnosis 55)
+    * **Core Function:** Choose 2 Divination paths. Can only use those 2, but all costs -30%.
+    * **Evo A (Perfect Hybrid):** Cost -50%.
+    * **Evo B (Enhanced Hybrid):** Chosen paths have +30% effects.
+    * **Note:** *Two-path master. Focused power.*
+
+81. **Glyph: Chaos Seer** (Anti-Specialization, Gnosis 60)
+    * **Core Function:** Must use different Divination path each turn. Doing so grants +10 Drishti and +2 [Darshan].
+    * **Evo A (Perfect Chaos):** +15 Drishti and +3 [Darshan].
+    * **Evo B (Rewarding Chaos):** Also deal 15 damage to random enemy.
+    * **Note:** *Versatility reward. Anti-specialist.*
+
+82. **Glyph: Resource Converter** (Economy, Gnosis 45)
+    * **Core Function:** Can freely convert between Drishti, [Darshan], and [Kshana] at 2:1 ratio.
+    * **Evo A (Efficient Converter):** 1:1 ratio.
+    * **Evo B (Perfect Converter):** Also gain +10% bonus on conversion.
+    * **Note:** *Ultimate flexibility. Resource mastery.*
+
+83. **Glyph: Vision Amplifier** (Scaling, Gnosis 50)
+    * **Core Function:** Passive: For each revealed enemy secret, gain +5% all Divination effects (stacks infinitely).
+    * **Evo A (Perfect Amplifier):** +8% per secret.
+    * **Evo B (Enhanced Amplifier):** Also gain +5 Drishti per secret.
+    * **Note:** *Information as power. Scaling engine.*
+
+84. **Glyph: Predictive Defense** (Counter, Gnosis 55)
+    * **Core Function:** When you successfully predict enemy action, gain 30 Shield and counter for half their damage.
+    * **Evo A (Perfect Defense):** 50 Shield and full counter.
+    * **Evo B (Lasting Defense):** Shield lasts 2 turns.
+    * **Note:** *Reward prediction skill. Defensive offense.*
+
+85. **Glyph: Inevitable Fate** (Guarantee, Gnosis 65)
+    * **Core Function:** Choose one outcome this turn. It will happen regardless of probability (within game rules).
+    * **Evo A (Extended Fate):** Can guarantee 2 outcomes.
+    * **Evo B (Perfect Fate):** Chosen outcome also has +100% potency.
+    * **Note:** *Cheat probability. Perfect control.*
+
+86. **Glyph: Oracle's Burden** (Risk/Reward, Gnosis 60)
+    * **Core Function:** Reveal your next 3 actions to enemy. If you execute them perfectly, gain +100% effects. If you deviate, lose 30 Ojas.
+    * **Evo A (Safe Burden):** No penalty for deviation.
+    * **Evo B (Perfect Burden):** +150% effects if successful.
+    * **Note:** *High skill ceiling. Commitment reward.*
+
+87. **Glyph: Temporal Recursion** (Loop, Gnosis 70)
+    * **Core Function:** Every 5 turns, repeat all actions from 5 turns ago automatically (free).
+    * **Evo A (Rapid Recursion):** Every 4 turns.
+    * **Evo B (Perfect Recursion):** Repeated actions have +50% potency.
+    * **Note:** *Self-combo machine. Planning reward.*
+
+88. **Glyph: Fate Cascade** (Chain, Gnosis 65)
+    * **Core Function:** When you successfully manipulate fate, 50% chance to manipulate another fate automatically (chain triggers).
+    * **Evo A (Perfect Cascade):** 75% chance.
+    * **Evo B (Guaranteed Cascade):** Always chains but second effect at 75% potency.
+    * **Note:** *Chain reaction fate manipulation.*
+
+89. **Glyph: Omnipotent Vision** (Ultimate Passive, Gnosis 80)
+    * **Core Function:** Passive: See entire duel timeline. All hidden information revealed permanently. Immune to surprises.
+    * **Evo A (Perfect Vision):** Also gain +25% all effects.
+    * **Evo B (Shared Vision):** All allies gain vision benefits.
+    * **Note:** *God-tier information. Ultimate awareness.*
+
+90. **Glyph: Master of Fate** (Ultimate Build-Defining, Gnosis 85)
+    * **Core Function:** Passive: All Divination paths cost -50%. Gain +1 [Sutra], +3 [Kshana], +10 [Darshan] per turn.
+    * **Evo A (Perfect Mastery):** Cost -75%.
+    * **Evo B (Enhanced Mastery):** Triple resource generation.
+    * **Note:** *Ultimate Divination specialist. God of fate.*
+
+---
+
+### **UNIQUE BUILD ENABLERS — 10 Skills**
+
+91. **Glyph: Glass Oracle** (Risk, Gnosis 60)
+    * **Core Function:** -50% max Ojas, but all Divination effects +150%.
+    * **Evo A (Perfect Glass):** +200% effects.
+    * **Evo B (Tolerable Glass):** Only -30% max Ojas.
+    * **Note:** *Extreme offense. Glass cannon seer.*
+
+92. **Glyph: Fortified Seer** (Tank, Gnosis 55)
+    * **Core Function:** +50% max Ojas, but all Divination effects -30%.
+    * **Evo A (Perfect Tank):** +75% max Ojas.
+    * **Evo B (Tolerable Tank):** Only -15% effect penalty.
+    * **Note:** *Defensive divination. Sustained foresight.*
+
+93. **Glyph: Minimalist Seer** (Restriction, Gnosis 55)
+    * **Core Function:** Can only use 5 Divination glyphs total, but they all cost -50% and have +50% effects.
+    * **Evo A (Perfect Minimalism):** +75% effects.
+    * **Evo B (Efficient Minimalism):** Cost -75%.
+    * **Note:** *Focused mastery. Simple power.*
+
+94. **Glyph: Maximalist Prophet** (Complexity, Gnosis 70)
+    * **Core Function:** Can use 20 Divination glyphs. For each over 10, gain +5% all effects.
+    * **Evo A (Perfect Maximalism):** +8% per glyph.
+    * **Evo B (Deep Maximalism):** Can use 25 glyphs.
+    * **Note:** *Infinite toolbox. Versatility master.*
+
+95. **Glyph: Solo Oracle** (Lone Wolf, Gnosis 55)
+    * **Core Function:** If no allies, all Divination effects +150%, immune to fate manipulation.
+    * **Evo A (Perfect Solo):** +200% effects.
+    * **Evo B (Enhanced Solo):** Also +50% max Drishti.
+    * **Note:** *Solo specialist. Independent power.*
+
+96. **Glyph: Team Seer** (Network, Gnosis 60)
+    * **Core Function:** For each ally, gain +25% Divination effects and +10 [Darshan].
+    * **Evo A (Perfect Team):** +40% per ally.
+    * **Evo B (Deep Team):** +20 [Darshan] per ally.
+    * **Note:** *Team specialist. Collective power.*
+
+97. **Glyph: Gambler's Fate** (RNG, Gnosis 65)
+    * **Core Function:** All Divination effects have random potency (50%-200%).
+    * **Evo A (Controlled Gamble):** Range 75%-200%.
+    * **Evo B (Perfect Gamble):** Range 100%-300%.
+    * **Note:** *High variance. Big swings.*
+
+98. **Glyph: Perfect Prediction** (Consistency, Gnosis 60)
+    * **Core Function:** All Divination effects have exactly listed potency—no variance.
+    * **Evo A (Enhanced Prediction):** All effects +20% base.
+    * **Evo B (Stable Prediction):** Immune to anti-Divination.
+    * **Note:** *Reliable power. No surprises.*
+
+99. **Glyph: Reactive Seer** (Counter, Gnosis 65)
+    * **Core Function:** After enemy action, can immediately use Divination ability as reaction (costs +50% resources).
+    * **Evo A (Efficient Reactive):** Only +25% cost.
+    * **Evo B (Perfect Reactive):** Reactive abilities have +50% potency.
+    * **Note:** *Instant speed. Interrupt mastery.*
+
+100. **Glyph: Prophecy Eternal** (Ultimate, Gnosis 90)
+     * **Core Function:** Passive: All your predictions/prophecies cannot be prevented. Fate you declare becomes absolute.
+     * **Evo A (Perfect Prophecy):** Declared fates trigger 1 turn earlier.
+     * **Evo B (Enhanced Prophecy):** Declared effects also +50% potency.
+     * **Note:** *Ultimate fate power. Reality control.*
+
+---
+
+**End of Divination Engine Complete Skills List**

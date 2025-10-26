@@ -1,0 +1,13 @@
+{
+  "name": "astrasynth-tools",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "glyphs:camel": "node scripts/glyphs_camelize.js",
+    "glyphs:validate": "node scripts/glyphs_validate.js",
+    "glyphs:balance": "node scripts/glyphs_balance.js",
+    "glyphs:wave2": "node scripts/glyphs_camelize.js && node scripts/glyphs_validate.js && node scripts/glyphs_balance.js",
+    "wave5:ttk": "node scripts/ttk_analyzer.js",
+    "wave5:all": "npm run glyphs:wave2 && npm run wave5:ttk"
+  }
+}

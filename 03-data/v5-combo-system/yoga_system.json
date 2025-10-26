@@ -1,0 +1,673 @@
+{
+  "system_name": "Yoga Meta-Combo System",
+  "version": "5.0_PHASE_0.5",
+  "description": "DEEP cosmic combos that feel AMAZING to execute - easy to understand, hard to master, impossible to forget",
+  
+  "WHAT_IS_A_YOGA": {
+    "definition": "A YOGA is a meta-combo that transcends normal skill combinations - it's when skills, timing, and cosmic forces align perfectly to create something legendary",
+    "philosophy": "Yogas aren't just combos - they're MOMENTS. When you pull off a Yoga, the game KNOWS and celebrates it",
+    "requirements": {
+      "minimum_skills": "3-5 specific skills from Foundational Engine",
+      "cosmic_timing": "Must be cast during specific Nakshatra, Dasha, or planetary transit",
+      "positioning": "Often requires specific house placement or structure geometry",
+      "resource_threshold": "Must have sufficient KP, Bandwidth, or other resources"
+    },
+    "rewards": {
+      "instant_feedback": "Screen effect, epic sound, slow-motion moment",
+      "massive_power_spike": "Yogas grant 3-5x normal combo power",
+      "permanent_effects": "Some Yogas leave lasting changes to the battlefield",
+      "achievement_tracking": "Game tracks which Yogas you've executed",
+      "community_sharing": "Yoga replays auto-upload to community highlights"
+    }
+  },
+
+  "DESIGN_PRINCIPLES": {
+    "deep_yet_easy": [
+      "Requirements are simple to understand (e.g., 'Cast during Full Moon')",
+      "Execution is intuitive (drag skills to formation pattern)",
+      "Mastery comes from TIMING, not complexity",
+      "Visual feedback makes cosmic alignment obvious"
+    ],
+    "amazing_feeling": [
+      "Every Yoga has a unique screen effect when triggered",
+      "Cosmic alignment feels like 'the stars are with you'",
+      "Power spike is IMMEDIATE and OBVIOUS",
+      "Opponent sees it coming but can't stop it (creates tension)"
+    ],
+    "strategic_depth": [
+      "Telegraphing - opponent sees you building the Yoga",
+      "Counter-play window - they can disrupt if they're smart",
+      "Risk-reward - investing in Yoga setup makes you vulnerable",
+      "Meta-gaming - knowing when opponent has Yoga available"
+    ]
+  },
+
+  "THE_5_FOUNDATIONAL_YOGAS": {
+    "description": "Each Yoga represents a fundamental strategic archetype",
+
+    "YOGA_01_BASTION_OF_ETERNITY": {
+      "name": "Bastion of Eternity",
+      "archetype": "Immortal Defense",
+      "tier": "S+",
+      "power_rating": 11,
+      
+      "flavor_text": "When Saturn blesses your foundation, nothing can move you. You become the immovable object, the eternal fortress, the mountain that outlasts civilizations.",
+      
+      "REQUIREMENTS": {
+        "skills_needed": [
+          {
+            "skill": "Foundation Stone",
+            "role": "Core structure that anchors everything",
+            "effect": "Creates indestructible 5×5 structure zone"
+          },
+          {
+            "skill": "Shield Lattice",
+            "role": "Interconnects all shields",
+            "effect": "All shields in zone share damage equally"
+          },
+          {
+            "skill": "Regeneration Matrix",
+            "role": "Sustains the bastion forever",
+            "effect": "Structures regenerate 10% HP per turn"
+          },
+          {
+            "skill": "Temporal Anchor",
+            "role": "Locks the formation in time",
+            "effect": "Structures cannot be destroyed or moved"
+          }
+        ],
+        
+        "cosmic_timing": {
+          "required": "Saturn Dasha (stability period)",
+          "duration": "Lasts 8-12 turns depending on match length",
+          "check": "Game UI shows 'SATURN DASHA ACTIVE' with planet icon",
+          "why_this_timing": "Saturn = permanence, structure, endurance"
+        },
+        
+        "positioning": {
+          "formation": "2×2 square pattern on battlefield",
+          "house_bonus": "If cast in 4th House (home/foundation), duration +50%",
+          "visualization": "Skills form literal square when dragged into Crucible"
+        },
+        
+        "resource_cost": {
+          "KP": 30,
+          "Bandwidth": 20,
+          "note": "Expensive but worth it - this wins games"
+        }
+      },
+      
+      "EXECUTION": {
+        "step_1": "Wait for Saturn Dasha to begin (UI notification appears)",
+        "step_2": "Arrange 4 skills in 2×2 square formation in Crucible",
+        "step_3": "System detects Yoga pattern + cosmic timing alignment",
+        "step_4": "YOGA READY notification + golden glow on skills",
+        "step_5": "Drag complete Yoga to battlefield position",
+        "step_6": "BASTION OF ETERNITY screen effect triggers",
+        "execution_time": "~5 seconds once conditions are met"
+      },
+      
+      "EFFECTS": {
+        "immediate": {
+          "structure_invulnerability": "All 4 structures become immune to damage for 3 turns",
+          "shield_mega_buff": "+200 shields split across all allies",
+          "zone_control": "5×5 area becomes 'Eternal Ground' - enemies slowed 50% inside"
+        },
+        "sustained": {
+          "regeneration": "Structures heal 10% per turn automatically",
+          "resource_generation": "Generates +5 KP per turn passively",
+          "damage_reflect": "20% of incoming damage reflected to attacker"
+        },
+        "permanent": {
+          "battlefield_scar": "Even after structures fall, 'Eternal Ground' effect persists",
+          "achievement": "First Yoga executed unlocks 'Cosmic Architect' title"
+        }
+      },
+      
+      "SCREEN_EFFECT": {
+        "visual": "Saturn symbol glows above battlefield, stone walls rise from ground, golden forcefield shimmers",
+        "audio": "Deep gong sound + ethereal chanting + stone grinding",
+        "camera": "Slow-motion zoom on structures as they crystallize into eternity",
+        "duration": "3-second cinematic moment"
+      },
+      
+      "COUNTER_PLAY": {
+        "prevention": [
+          "Disrupt formation before Saturn Dasha ends",
+          "Resource drain to prevent 30 KP accumulation",
+          "Zone denial - occupy the 4th House so they can't cast there"
+        ],
+        "response": [
+          "Shield-breaking skills bypass invulnerability after 3 turns",
+          "Mobility skills to avoid 5×5 zone entirely",
+          "Wait it out - Bastion is defensive, doesn't win alone"
+        ],
+        "difficulty": "Hard to counter once setup - prevention is key"
+      },
+      
+      "MASTERY_TIPS": {
+        "beginner": "Just survive until Saturn Dasha, then setup and win",
+        "intermediate": "Bait enemy into committing resources, THEN drop Bastion",
+        "advanced": "Setup in 4th House for +50% duration, control 2/3 of map",
+        "expert": "Combine with Bandwidth generation for permanent KP engine",
+        "note": "This Yoga teaches defensive patience and cosmic timing"
+      }
+    },
+
+    "YOGA_02_CHAINS_OF_PROMETHEUS": {
+      "name": "Chains of Prometheus",
+      "archetype": "Infinite Resource Loop",
+      "tier": "SSS",
+      "power_rating": 13,
+      
+      "flavor_text": "Steal fire from the gods and never give it back. Your resources become infinite, your actions unlimited. You are the engine that never stops.",
+      
+      "REQUIREMENTS": {
+        "skills_needed": [
+          {
+            "skill": "Bandwidth Dynamo",
+            "role": "Generates Bandwidth from structures",
+            "effect": "+15 Bandwidth per structure per turn"
+          },
+          {
+            "skill": "Structure Recursion",
+            "role": "Structures build more structures",
+            "effect": "Each structure generates 1 new structure every 3 turns"
+          },
+          {
+            "skill": "Resource Conversion Matrix",
+            "role": "Converts between all resource types",
+            "effect": "Bandwidth ↔ KP ↔ Ojas at 2:1 ratio"
+          },
+          {
+            "skill": "Perpetual Motion",
+            "role": "Removes cooldowns from the loop",
+            "effect": "Skills in this Yoga have 0 cooldown"
+          },
+          {
+            "skill": "Overflow Protocol",
+            "role": "Converts excess resources to power",
+            "effect": "Every 50 excess Bandwidth = +10% all effects"
+          }
+        ],
+        
+        "cosmic_timing": {
+          "required": "Mercury + Jupiter conjunction",
+          "frequency": "Happens ~2-3 times per match (every 15-20 turns)",
+          "check": "Game shows 'COSMIC ABUNDANCE WINDOW' notification",
+          "why_this_timing": "Mercury = speed/communication, Jupiter = expansion/abundance"
+        },
+        
+        "positioning": {
+          "formation": "Pentagon (5-point star) pattern",
+          "house_bonus": "11th House (gains/networks) doubles resource generation",
+          "visualization": "Skills pulse in sequence showing the resource flow loop"
+        },
+        
+        "resource_cost": {
+          "KP": 50,
+          "Bandwidth": 80,
+          "Ojas": 30,
+          "note": "VERY expensive to start, but pays back infinitely"
+        }
+      },
+      
+      "EXECUTION": {
+        "step_1": "Build up 50 KP + 80 Bandwidth + 30 Ojas (hard part!)",
+        "step_2": "Wait for Mercury-Jupiter conjunction alert",
+        "step_3": "Arrange 5 skills in star formation in Crucible",
+        "step_4": "System detects PROMETHEUS YOGA + shows resource flow animation",
+        "step_5": "Cast during conjunction window (you have 2-turn window)",
+        "step_6": "CHAINS OF PROMETHEUS ignites - screen turns gold",
+        "execution_time": "~8 seconds, must be precise timing"
+      },
+      
+      "EFFECTS": {
+        "immediate": {
+          "infinite_engine_activation": "The loop begins - resources start cascading",
+          "first_cycle": "Generate 45 Bandwidth + 15 KP + 10 Ojas instantly",
+          "structure_burst": "Spawn 3 structures immediately"
+        },
+        "loop_mechanics": {
+          "turn_1": "Structures generate Bandwidth",
+          "turn_2": "Bandwidth converts to KP and Ojas",
+          "turn_3": "Resources spawn more structures",
+          "turn_4": "More structures = more Bandwidth = LOOP ACCELERATES",
+          "scaling": "Each cycle generates 20% more than the last",
+          "cap": "Caps at 500% after 10 cycles (to prevent game break)"
+        },
+        "sustained": {
+          "resource_overflow": "You always have maximum resources available",
+          "zero_cooldowns": "Skills in the loop never go on cooldown",
+          "unstoppable_scaling": "Every turn you get stronger exponentially"
+        },
+        "win_condition": {
+          "timing": "If loop runs for 8 turns uninterrupted, you basically win",
+          "counterplay_window": "Enemy has 3-4 turns to disrupt or they lose",
+          "feeling": "You become an unstoppable god-machine"
+        }
+      },
+      
+      "SCREEN_EFFECT": {
+        "visual": "Golden chains of light connect all 5 skills, spinning faster and faster, Bandwidth numbers flying everywhere",
+        "audio": "Accelerating heartbeat + mechanical whirring + triumphant orchestra",
+        "camera": "Zooms out to show entire loop structure, then back to your glowing avatar",
+        "duration": "5-second cinematic showing the first loop cycle"
+      },
+      
+      "COUNTER_PLAY": {
+        "prevention": [
+          "Resource denial - drain them before they hit thresholds",
+          "Deny Mercury-Jupiter timing - pressure them during conjunction windows",
+          "Make them choose: setup Prometheus or defend themselves"
+        ],
+        "response": [
+          "IMMEDIATE structure destruction - break the loop before it accelerates",
+          "Silence effects to disable skill casting",
+          "All-in aggression - kill them before loop pays off",
+          "Resource drain to starve the conversion matrix"
+        ],
+        "difficulty": "EXTREMELY hard to counter once running - must prevent setup"
+      },
+      
+      "MASTERY_TIPS": {
+        "beginner": "This Yoga is TOO HARD for beginners - try Bastion first",
+        "intermediate": "Practice resource management - hit thresholds consistently",
+        "advanced": "Bait enemy cooldowns, THEN setup during their weakness",
+        "expert": "Setup in 11th House for double generation = instant victory",
+        "god_tier": "Chain Prometheus into ANOTHER Yoga on turn 6 for 'Prometheus Unbound' achievement",
+        "note": "This is the hardest Yoga to execute but the most rewarding"
+      }
+    },
+
+    "YOGA_03_MIRROR_OF_THE_SOUL": {
+      "name": "Mirror of the Soul",
+      "archetype": "Perfect Counter/Reflection",
+      "tier": "S",
+      "power_rating": 10,
+      
+      "flavor_text": "Become your enemy. Learn their thoughts, mimic their power, reflect their attacks. The perfect counter is to become them, then surpass them.",
+      
+      "REQUIREMENTS": {
+        "skills_needed": [
+          {
+            "skill": "Adaptive Foundation",
+            "role": "Structures copy enemy properties",
+            "effect": "Your structures gain tags matching enemy's strongest skills"
+          },
+          {
+            "skill": "Reflective Shell",
+            "role": "Shields mirror damage back",
+            "effect": "100% damage reflection for 2 turns"
+          },
+          {
+            "skill": "Echo Matrix",
+            "role": "Copies enemy skill patterns",
+            "effect": "You can cast enemy's last skill at 80% power"
+          }
+        ],
+        
+        "cosmic_timing": {
+          "required": "Full Moon in opponent's birth Nakshatra",
+          "frequency": "Once per match against each opponent",
+          "check": "Game analyzes opponent's deck and shows 'SOUL MIRROR AVAILABLE' when timing is right",
+          "why_this_timing": "Full Moon = revelation, opponent's Nakshatra = personal to them"
+        },
+        
+        "positioning": {
+          "formation": "Triangle pointing at opponent",
+          "house_bonus": "7th House (partnerships/enemies) grants +50% reflection",
+          "visualization": "Skills form mirror image of opponent's formation"
+        },
+        
+        "resource_cost": {
+          "KP": 25,
+          "Bandwidth": 30,
+          "note": "Moderate cost, but timing requirement is the real challenge"
+        }
+      },
+      
+      "EXECUTION": {
+        "step_1": "Observe enemy's strategy for first 5-7 turns",
+        "step_2": "Wait for Full Moon notification in opponent's Nakshatra",
+        "step_3": "Arrange 3 skills in triangle formation pointing at enemy",
+        "step_4": "MIRROR YOGA detected - UI shows ghostly copy of enemy",
+        "step_5": "Cast yoga - becomes reactive to opponent's actions",
+        "step_6": "MIRROR OF THE SOUL - screen splits showing you and enemy as reflections",
+        "execution_time": "Quick setup, but requires match-reading skill"
+      },
+      
+      "EFFECTS": {
+        "immediate": {
+          "property_copy": "Your structures gain all enemy structure properties",
+          "skill_access": "Gain temporary access to opponent's 3 most-used skills",
+          "damage_reflection": "Next 3 enemy attacks hit themselves instead"
+        },
+        "duration": {
+          "mirror_phase": "Lasts 4 turns",
+          "reflection_window": "First 2 turns = 100% reflection, next 2 turns = 50%",
+          "learning": "You permanently learn opponent's strategy patterns"
+        },
+        "psychological": {
+          "intimidation": "Opponent realizes you know their gameplan",
+          "adaptation": "You can now counter their future moves",
+          "mind_games": "They have to completely change strategy or get countered"
+        }
+      },
+      
+      "SCREEN_EFFECT": {
+        "visual": "Screen splits vertically - you on left, enemy on right, mirror line between showing energy exchange",
+        "audio": "Glass chiming + whispered echo of enemy voice lines + ethereal mirror sounds",
+        "camera": "Alternates between showing your reflection and enemy's surprised face",
+        "duration": "4-second sequence showing skill copy process"
+      },
+      
+      "COUNTER_PLAY": {
+        "prevention": [
+          "Play unpredictably to prevent pattern recognition",
+          "Force opponent to use resources before Full Moon timing",
+          "Switch strategies mid-match to invalidate their observation"
+        ],
+        "response": [
+          "STOP ATTACKING during mirror phase - reflection hurts you",
+          "Switch to healing/buffing - can't be reflected",
+          "Complete strategy pivot - use skills you haven't shown yet"
+        ],
+        "difficulty": "Medium - skilled players can adapt, but requires quick thinking"
+      },
+      
+      "MASTERY_TIPS": {
+        "beginner": "Easy to execute - just wait for Full Moon and copy enemy",
+        "intermediate": "Use Mirror as psychological warfare - make them doubt themselves",
+        "advanced": "Copy enemy's BEST combo, improve it with your own twist",
+        "expert": "Bait enemy into revealing their strategy, then Mirror + counter",
+        "mind_game": "Sometimes THREATEN Mirror without using it - they'll play scared",
+        "note": "This Yoga teaches match reading and adaptation"
+      }
+    },
+
+    "YOGA_04_PHOENIX_CRUCIBLE": {
+      "name": "Phoenix Crucible",
+      "archetype": "Death and Rebirth",
+      "tier": "S+",
+      "power_rating": 12,
+      
+      "flavor_text": "Burn everything to ashes, then rise stronger from the flames. Destruction is transformation. Death is evolution. You are the phoenix.",
+      
+      "REQUIREMENTS": {
+        "skills_needed": [
+          {
+            "skill": "Controlled Demolition",
+            "role": "Destroys your own structures for resources",
+            "effect": "Sacrifice structures → gain 3× their value in resources"
+          },
+          {
+            "skill": "From Ashes",
+            "role": "Rebuilds stronger after destruction",
+            "effect": "New structures have +100% stats after sacrifice"
+          },
+          {
+            "skill": "Rebirth Protocol",
+            "role": "Prevents actual death",
+            "effect": "If you would lose, revive at 50% instead (once per match)"
+          },
+          {
+            "skill": "Flame Memory",
+            "role": "Structures remember previous incarnations",
+            "effect": "Each rebuild adds +25% permanent stats"
+          }
+        ],
+        
+        "cosmic_timing": {
+          "required": "Sun in Aries (new beginnings) OR Solar Eclipse",
+          "frequency": "Sun in Aries = predictable window, Eclipse = rare power spike",
+          "check": "Game shows 'REBIRTH WINDOW OPEN' with phoenix icon",
+          "why_this_timing": "Aries = birth/initiation, Eclipse = death/transformation"
+        },
+        
+        "positioning": {
+          "formation": "Diamond with center point (5 skills total)",
+          "house_bonus": "8th House (death/transformation) grants extra rebirth",
+          "visualization": "Skills glow ember-orange, smoke effects rising"
+        },
+        
+        "resource_cost": {
+          "special": "Must sacrifice ALL current structures (minimum 3)",
+          "KP": 40,
+          "note": "You must be WILLING TO DIE to execute this Yoga"
+        }
+      },
+      
+      "EXECUTION": {
+        "step_1": "Build at least 3 structures during match",
+        "step_2": "Wait until you're losing OR Sun enters Aries/Eclipse",
+        "step_3": "Arrange 4-5 skills in diamond formation",
+        "step_4": "PHOENIX YOGA detected - shows current structures turning to ash",
+        "step_5": "Confirm sacrifice - ALL your structures die",
+        "step_6": "PHOENIX CRUCIBLE ignites - you rise from ashes STRONGER",
+        "execution_time": "~6 seconds, dramatic sacrifice moment"
+      },
+      
+      "EFFECTS": {
+        "sacrifice_phase": {
+          "destruction": "ALL your structures are destroyed",
+          "resource_gain": "Gain 3× their total value in resources",
+          "vulnerability": "You're exposed for 1 turn - enemy can attack",
+          "tension": "This moment feels SCARY - you look like you're losing"
+        },
+        "rebirth_phase": {
+          "resurrection": "Structures rebuild automatically in better positions",
+          "stat_boost": "+100% HP, +100% effects on all new structures",
+          "permanent_growth": "+25% stats carry forward to NEXT rebuild",
+          "invulnerability": "Immune to damage for 2 turns during rebirth"
+        },
+        "evolution": {
+          "first_rebirth": "Structures at 200% power",
+          "second_rebirth": "Structures at 250% power (if you rebuild again)",
+          "infinite_scaling": "Each death makes you stronger forever",
+          "late_game": "By turn 20, you're unkillable"
+        }
+      },
+      
+      "SCREEN_EFFECT": {
+        "visual": "Everything burns to ash (black screen), then phoenix made of light rises, structures reform with flame trails",
+        "audio": "Crackling fire → silence → phoenix cry → triumphant rebirth theme",
+        "camera": "Slow-motion collapse, darkness, then explosive resurrection zoom",
+        "duration": "7-second emotional journey from death to glory"
+      },
+      
+      "COUNTER_PLAY": {
+        "prevention": [
+          "Pressure early before they can setup 3+ structures",
+          "Resource denial to prevent 40 KP accumulation",
+          "Force them to use Phoenix defensively (weaker)"
+        ],
+        "response": [
+          "ALL-IN during 1-turn vulnerability window after sacrifice",
+          "Don't kill structures - let them keep weak ones instead of rebuilding strong",
+          "If they rebirth once, prevent second rebirth or they become unstoppable"
+        ],
+        "difficulty": "Very hard - Phoenix usually wins after first rebirth"
+      },
+      
+      "MASTERY_TIPS": {
+        "beginner": "Use Phoenix as comeback mechanic when losing",
+        "intermediate": "Sacrifice STRATEGICALLY - bait enemy into overcommitting",
+        "advanced": "FAKE being weak, let enemy feel confident, then Phoenix",
+        "expert": "Multiple rebirths in one match = exponential scaling",
+        "psychological": "Enemy despair when they think they won, then you rise",
+        "note": "This Yoga teaches comeback mechanics and emotional warfare"
+      }
+    },
+
+    "YOGA_05_COSMIC_CLOCKWORK": {
+      "name": "Cosmic Clockwork",
+      "archetype": "Perfect Timing/Tempo Control",
+      "tier": "S",
+      "power_rating": 10,
+      
+      "flavor_text": "Time is your weapon. The cosmos moves in rhythms only you can hear. Strike at the perfect moment, never too early, never too late. You are the conductor of fate.",
+      
+      "REQUIREMENTS": {
+        "skills_needed": [
+          {
+            "skill": "Temporal Foundation",
+            "role": "Structures exist across time",
+            "effect": "Structures activate effects on future turns automatically"
+          },
+          {
+            "skill": "Cooldown Mastery",
+            "role": "Control all cooldown timings",
+            "effect": "Reduce OR increase any skill cooldown by 2 turns"
+          },
+          {
+            "skill": "Prophetic Building",
+            "role": "Pre-place structures in future",
+            "effect": "Place structure now, it appears 3 turns later at perfect moment"
+          }
+        ],
+        
+        "cosmic_timing": {
+          "required": "Any planetary hour that matches your turn count",
+          "example": "Turn 7 = Venus hour, Turn 9 = Mars hour",
+          "frequency": "Happens naturally multiple times per match",
+          "check": "Game shows 'COSMIC HOUR ALIGNMENT' when conditions met",
+          "why_this_timing": "Synchronicity between match time and cosmic time"
+        },
+        
+        "positioning": {
+          "formation": "Line formation (3 skills in sequence)",
+          "house_bonus": "9th House (time/fate) extends effects +2 turns",
+          "visualization": "Skills pulse in sequence like a clock ticking"
+        },
+        
+        "resource_cost": {
+          "KP": 20,
+          "Bandwidth": 25,
+          "note": "Cheap cost, but requires patient timing to maximize"
+        }
+      },
+      
+      "EXECUTION": {
+        "step_1": "Play first 5-7 turns normally, observe cosmic hour changes",
+        "step_2": "When your turn count matches planetary hour, setup is ready",
+        "step_3": "Arrange 3 skills in line formation (past→present→future visual)",
+        "step_4": "CLOCKWORK YOGA detected - UI shows timeline with marked events",
+        "step_5": "Cast yoga - all your future actions are now pre-planned",
+        "step_6": "COSMIC CLOCKWORK - clock imagery appears showing next 5 turns",
+        "execution_time": "Quick execution, long-term payoff"
+      },
+      
+      "EFFECTS": {
+        "immediate": {
+          "timeline_vision": "See next 5 turns with predicted events",
+          "cooldown_control": "All your skills come off cooldown simultaneously next turn",
+          "tempo_lock": "Enemy actions feel slow compared to your perfect timing"
+        },
+        "sustained": {
+          "automated_actions": "Pre-planned structures activate automatically",
+          "turn_3": "Defensive structure appears",
+          "turn_5": "Offensive burst ready",
+          "turn_7": "Resource spike occurs",
+          "predictability": "You know EXACTLY what will happen and when"
+        },
+        "tempo_advantage": {
+          "you_act_first": "All your actions resolve before enemy's",
+          "response_window": "You can react to enemy AFTER seeing their move",
+          "time_compression": "Feels like you're playing at 2× speed",
+          "inevitability": "Enemy realizes they're always one step behind"
+        }
+      },
+      
+      "SCREEN_EFFECT": {
+        "visual": "Giant clockface overlays battlefield, gears turning, future positions marked with ghostly structures",
+        "audio": "Clock ticking + cosmic chimes + gear mechanisms + time acceleration sounds",
+        "camera": "Time-lapse showing next 5 turns in fast-forward",
+        "duration": "5-second sequence showing the timeline you control"
+      },
+      
+      "COUNTER_PLAY": {
+        "prevention": [
+          "Disrupt their timing - force them to act off-rhythm",
+          "Pressure constantly - don't let them wait for perfect moment",
+          "Deny cosmic hour alignment by forcing early actions"
+        ],
+        "response": [
+          "Chaos/randomness - unpredictable actions break tempo",
+          "Speed burst - act faster than their predictions",
+          "Destroy prophetic structures before they activate"
+        ],
+        "difficulty": "Medium - requires disrupting careful planning"
+      },
+      
+      "MASTERY_TIPS": {
+        "beginner": "Easy to execute - just match turn to planetary hour",
+        "intermediate": "Plan 5 turns ahead - know your win condition",
+        "advanced": "Use Clockwork to setup OTHER Yogas at perfect moments",
+        "expert": "Combine with Divination engine for PERFECT future control",
+        "meta_strategy": "Force enemy to play reactive while you play proactive",
+        "note": "This Yoga teaches strategic planning and tempo control"
+      }
+    }
+  },
+
+  "YOGA_UI_SYSTEM": {
+    "detection": {
+      "real_time_checking": "Crucible continuously checks if Yoga conditions are met",
+      "skill_highlighting": "When you drag Yoga-component skills, they glow with Yoga aura",
+      "formation_guide": "Ghost images show correct positioning for Yoga patterns",
+      "cosmic_alerts": "Notifications when timing windows open"
+    },
+    
+    "visual_feedback": {
+      "yoga_ready": "Golden glow + 'YOGA AVAILABLE' badge",
+      "partial_ready": "Skills glow blue if formation correct but timing wrong",
+      "cosmic_window": "Planetary symbols pulse when timing is right",
+      "formation_snap": "Skills snap into Yoga pattern automatically"
+    },
+    
+    "execution_moment": {
+      "confirmation": "Dramatic button appears: 'EXECUTE YOGA'",
+      "cost_display": "Shows all resource costs clearly",
+      "point_of_no_return": "Requires double-confirm for sacrifice Yogas",
+      "cinematic_trigger": "Casts slow-motion spell sequence"
+    },
+    
+    "achievement_tracking": {
+      "yoga_library": "Shows all 5 Yogas with unlock status",
+      "mastery_levels": "Track executions: Bronze (1), Silver (5), Gold (15), Platinum (50)",
+      "perfect_execution": "Bonus achievement for Yoga in 8th House during Eclipse",
+      "combo_achievements": "Chain 2 Yogas in one match = 'Cosmic Master' title"
+    }
+  },
+
+  "TEACHING_PROGRESSION": {
+    "tutorial_order": [
+      "1. Mirror of the Soul - easiest to understand, teaches observation",
+      "2. Cosmic Clockwork - teaches timing and planning",
+      "3. Bastion of Eternity - defensive safety net for learning",
+      "4. Phoenix Crucible - high-risk high-reward, teaches comebacks",
+      "5. Chains of Prometheus - expert-level execution, teaches mastery"
+    ],
+    
+    "practice_mode": {
+      "yoga_trainer": "Dedicated mode with AI that helps you practice Yoga timing",
+      "cosmic_simulator": "Speeds up cosmic cycles so you can practice timing",
+      "formation_practice": "Drag skills to learn patterns without resource costs"
+    }
+  },
+
+  "META_STRATEGY": {
+    "build_around_yogas": {
+      "yoga_focused_deck": "Build entire strategy around executing 1 Yoga perfectly",
+      "multi_yoga_deck": "Include components for 2-3 Yogas, adapt to situation",
+      "anti_yoga_deck": "Disruption-focused to prevent enemy Yogas"
+    },
+    
+    "timing_mind_games": {
+      "fake_yoga": "Partially setup Yoga to bait enemy cooldowns",
+      "hidden_yoga": "Build Yoga components without enemy noticing",
+      "yoga_trading": "Execute your Yoga knowing enemy will respond with theirs"
+    }
+  }
+}

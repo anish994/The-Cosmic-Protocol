@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Workshop Mini Prototype - Mobile Landscape</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            overflow: hidden;
+            touch-action: none;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        /* Main Layout - 3 Columns for Landscape */
+        .workshop {
+            display: grid;
+            grid-template-columns: 250px 1fr 280px;
+            gap: 12px;
+            padding: 12px;
+            height: 100vh;
+            max-width: 100vw;
+        }
+        
+        /* Mobile Landscape Optimization */
+        @media (max-width: 1024px) and (orientation: landscape) {
+            .workshop {
+                grid-template-columns: 200px 1fr 220px;
+                gap: 8px;
+                padding: 8px;
+            }
+        }
+        
+        /* Panels */
+        .panel {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .panel-header {
+            background: rgba(139,92,246,0.2);
+            padding: 12px;
+            border-bottom: 1px solid rgba(139,92,246,0.3);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        /* LEFT: Glyph Library */
+        .glyph-library {
+            overflow-y: auto;
+            padding: 8px;
+            flex: 1;
+        }
+        
+        .glyph-card {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(139,92,246,0.3);
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        
+        .glyph-card:hover, .glyph-card:active {
+            background: rgba(139,92,246,0.2);
+            border-color: rgba(139,92,246,0.6);
+            transform: scale(1.02);
+        }
+        
+        .glyph-card.selected {
+            background: rgba(139,92,246,0.4);
+            border-color: rgba(139,92,246,0.8);
+            box-shadow: 0 0 12px rgba(139,92,246,0.6);
+        }
+        
+        .glyph-name {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        
+        .glyph-stats {
+            display: flex;
+            gap: 8px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+        
+        /* CENTER: 12-House Chart */
+        .vedic-chart {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 8px;
+            padding: 12px;
+            flex: 1;
+        }
+        
+        .house {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(0,195,255,0.3);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            position: relative;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            min-height: 80px;
+        }
+        
+        .house.drag-over {
+            background: rgba(0,195,255,0.2);
+            border-color: rgba(0,195,255,0.8);
+            transform: scale(1.05);
+        }
+        
+        .house.filled {
+            background: rgba(139,92,246,0.15);
+            border-color: rgba(139,92,246,0.6);
+        }
+        
+        .house-label {
+            font-size: 10px;
+            opacity: 0.6;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        
+        .house-slot {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .slotted-glyph {
+            background: rgba(139,92,246,0.3);
+            border: 1px solid rgba(139,92,246,0.5);
+            border-radius: 6px;
+            padding: 6px;
+            font-size: 11px;
+            position: relative;
+        }
+        
+        .slotted-glyph .remove-btn {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: rgba(255,80,80,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* RIGHT: Card Preview */
+        .card-preview {
+            padding: 12px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .card-stats {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .stat-label {
+            opacity: 0.7;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #8b5cf6;
+        }
+        
+        .kp-budget {
+            background: rgba(139,92,246,0.2);
+            border: 1px solid rgba(139,92,246,0.4);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        
+        .kp-budget.over {
+            background: rgba(255,80,80,0.2);
+            border-color: rgba(255,80,80,0.6);
+        }
+        
+        .synergies {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 12px;
+        }
+        
+        .synergies h4 {
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #00e3d6;
+        }
+        
+        .synergy-item {
+            background: rgba(0,227,214,0.1);
+            border-left: 3px solid rgba(0,227,214,0.6);
+            padding: 6px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+        }
+        
+        .dosha-item {
+            background: rgba(255,80,80,0.1);
+            border-left: 3px solid rgba(255,80,80,0.6);
+            padding: 6px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+        }
+        
+        /* Mobile Touch Optimization */
+        @media (hover: none) {
+            .glyph-card:active {
+                transform: scale(0.98);
+            }
+            
+            .house:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.5);
+            border-radius: 3px;
+        }
+        
+        .placeholder {
+            opacity: 0.5;
+            font-size: 11px;
+            font-style: italic;
+        }
+        
+        .skill-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        
+        .skill-section h4 {
+            margin: 0 0 6px 0;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Smooth stat changes */
+        #stat-power, #stat-defense, #stat-speed, #slots-filled {
+            transition: all 0.3s ease;
+        }
+        
+        /* Pulsing animation for active stats */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        #stat-power:not(:empty) { animation: pulse 2s infinite; }
+        
+        /* Keyword hover effect */
+        #keywords-list span {
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+        
+        #keywords-list span:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        
+        /* Info Tooltip System */
+        .info-tooltip {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: linear-gradient(135deg, rgba(20,20,40,0.98), rgba(30,30,60,0.98));
+            border: 2px solid;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 350px;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        .info-tooltip.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+        
+        .info-tooltip.attack-theme { border-color: #ff6464; }
+        .info-tooltip.defense-theme { border-color: #6496ff; }
+        .info-tooltip.speed-theme { border-color: #64ff96; }
+        .info-tooltip.active-theme { border-color: #ff6464; }
+        .info-tooltip.passive-theme { border-color: #64ff96; }
+        .info-tooltip.keyword-theme { border-color: #6496ff; }
+        .info-tooltip.yoga-theme { border-color: #00e3d6; }
+        .info-tooltip.dosha-theme { border-color: #ff5050; }
+        
+        .info-tooltip-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .info-tooltip-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .info-tooltip-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,80,80,0.3);
+            border: 1px solid rgba(255,80,80,0.5);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ff5050;
+            font-weight: 700;
+        }
+        
+        /* Animated font effects */
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 5px currentColor; }
+            50% { text-shadow: 0 0 15px currentColor; }
+        }
+        
+        .attack-theme .info-tooltip-title {
+            color: #ff6464;
+            animation: textGlow 2s infinite;
+        }
+        
+        .defense-theme .info-tooltip-title {
+            color: #6496ff;
+            animation: textGlow 2.5s infinite;
+        }
+        
+        .speed-theme .info-tooltip-title {
+            color: #64ff96;
+            animation: textGlow 1.5s infinite;
+        }
+        
+        .active-theme .info-tooltip-title {
+            color: #ff6464;
+            animation: textGlow 2s infinite;
+        }
+        
+        .passive-theme .info-tooltip-title {
+            color: #64ff96;
+            animation: textGlow 2s infinite;
+        }
+        
+        .keyword-theme .info-tooltip-title {
+            color: #6496ff;
+            animation: textGlow 2s infinite;
+        }
+        
+        .yoga-theme .info-tooltip-title {
+            color: #00e3d6;
+            animation: textGlow 2s infinite;
+        }
+        
+        .dosha-theme .info-tooltip-title {
+            color: #ff5050;
+            animation: textGlow 2s infinite;
+        }
+        
+        
+        /* Clickable heading style */
+        .clickable-heading {
+            cursor: help;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .clickable-heading::after {
+            content: 'ⓘ';
+            font-size: 10px;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+        
+        .clickable-heading:hover::after {
+            opacity: 1;
+        }
+        
+        /* Modal for Load Menu */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid rgba(139,92,246,0.5);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 400px;
+            width: 90%;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .modal-close {
+            background: rgba(255,80,80,0.3);
+            border: 1px solid rgba(255,80,80,0.5);
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+            color: #ff5050;
+        }
+        
+        .saved-card-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .saved-card-item:hover {
+            background: rgba(139,92,246,0.2);
+            border-color: rgba(139,92,246,0.6);
+            transform: scale(1.02);
+        }
+        
+        .card-name-input {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(139,92,246,0.5);
+            border-radius: 6px;
+            color: white;
+            font-family: inherit;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- SkillSystem Bridge -->
+    <script src="../shared/skillSystem.js"></script>
+    <div class="workshop">
+        <!-- LEFT PANEL: Glyph Library -->
+        <div class="panel">
+            <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                <span>📚 Owned Skills</span>
+                <div style="display: flex; gap: 4px;">
+                    <button onclick="refreshSkills()" style="padding: 4px 8px; background: rgba(0,227,214,0.2); color: #00e3d6; border: 1px solid rgba(0,227,214,0.4); border-radius: 4px; cursor: pointer; font-size: 11px;" title="Refresh skill library">🔄</button>
+                    <button onclick="window.location.href='../05-fusion/demo/index.html'" style="padding: 4px 8px; background: rgba(139,92,246,0.3); color: #b894ff; border: 1px solid rgba(139,92,246,0.5); border-radius: 4px; cursor: pointer; font-size: 11px;">⚡ Fusion</button>
+                </div>
+            </div>
+            <div class="glyph-library" id="glyph-library">
+                <!-- Glyphs populated by JS -->
+            </div>
+        </div>
+        
+        <!-- CENTER PANEL: 12-House Chart -->
+        <div class="panel">
+            <div class="panel-header">🌟 12-House Vedic Chart</div>
+            <div class="vedic-chart" id="vedic-chart">
+                <!-- 12 houses in 4x3 grid -->
+            </div>
+            
+            <!-- Invoke Card Button -->
+            <div style="padding: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <button id="invoke-card-btn" onclick="invokeCard()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(0,227,214,0.3)); color: #fff; border: 2px solid rgba(139,92,246,0.6); border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 700; transition: all 0.3s ease;" disabled>
+                    🎴 Invoke Card (Fill at least 1 slot)
+                </button>
+            </div>
+        </div>
+        
+        <!-- RIGHT PANEL: Card Preview -->
+        <div class="panel">
+            <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                <span>🎴 Card Stats</span>
+                <div style="display: flex; gap: 4px;">
+                    <button onclick="saveCard()" style="padding: 4px 8px; background: rgba(0,227,214,0.2); color: #00e3d6; border: 1px solid rgba(0,227,214,0.4); border-radius: 4px; cursor: pointer; font-size: 11px;" title="Save current card">💾</button>
+                    <button onclick="openLoadMenu()" style="padding: 4px 8px; background: rgba(139,92,246,0.3); color: #b894ff; border: 1px solid rgba(139,92,246,0.5); border-radius: 4px; cursor: pointer; font-size: 11px;" title="Load saved card">📂</button>
+                </div>
+            </div>
+            <div class="card-preview">
+                <!-- Card Name -->
+                <div style="text-align: center; padding: 10px; background: rgba(139,92,246,0.1); border-radius: 8px; margin-bottom: 12px;">
+                    <div style="font-size: 18px; font-weight: 700; color: #8b5cf6;" id="card-name-display">Unnamed Card</div>
+                    <div style="font-size: 10px; opacity: 0.6;" id="card-subtitle">Build your legend</div>
+                </div>
+                
+                <!-- KP Budget Bar -->
+                <div class="kp-budget" id="kp-budget">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                        <span style="font-size: 11px; opacity: 0.7;">KP Cost</span>
+                        <span style="font-size: 13px; font-weight: 700;"><span id="kp-used">0</span>/<span id="kp-max">30</span></span>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; overflow: hidden;">
+                        <div id="kp-bar" style="background: linear-gradient(90deg, #8b5cf6, #00e3d6); height: 100%; width: 0%; transition: all 0.3s ease;"></div>
+                    </div>
+                </div>
+                
+                <!-- Core Stats Grid -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px;">
+                    <div class="clickable-heading" onclick="showInfo('power')" style="background: rgba(255,100,100,0.1); border: 1px solid rgba(255,100,100,0.3); border-radius: 6px; padding: 8px; text-align: center; cursor: help;">
+                        <div style="font-size: 10px; opacity: 0.7;">🔥 Power Score</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #ff6464;" id="stat-power">0</div>
+                    </div>
+                    <div class="clickable-heading" onclick="showInfo('cooldown')" style="background: rgba(100,150,255,0.1); border: 1px solid rgba(100,150,255,0.3); border-radius: 6px; padding: 8px; text-align: center; cursor: help;">
+                        <div style="font-size: 10px; opacity: 0.7;">⏱️ Avg Cooldown</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #6496ff;" id="stat-defense">0</div>
+                    </div>
+                    <div class="clickable-heading" onclick="showInfo('versatility')" style="background: rgba(100,255,150,0.1); border: 1px solid rgba(100,255,150,0.3); border-radius: 6px; padding: 8px; text-align: center; cursor: help;">
+                        <div style="font-size: 10px; opacity: 0.7;">✨ Versatility</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #64ff96;" id="stat-speed">0</div>
+                    </div>
+                    <div class="clickable-heading" onclick="showInfo('density')" style="background: rgba(255,200,100,0.1); border: 1px solid rgba(255,200,100,0.3); border-radius: 6px; padding: 8px; text-align: center; cursor: help;">
+                        <div style="font-size: 10px; opacity: 0.7;">🎯 Density</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #ffc864;"><span id="slots-filled">0</span>/12</div>
+                    </div>
+                </div>
+                
+                <!-- Active Skills -->
+                <div class="skill-section">
+                    <h4 class="clickable-heading" onclick="showInfo('active')" style="font-size: 12px; margin-bottom: 6px; color: #ff6464;">⚔️ Active Skills</h4>
+                    <div id="active-skills-list" style="max-height: 120px; overflow-y: auto;">
+                        <div class="placeholder" style="font-size: 10px;">No active skills yet</div>
+                    </div>
+                </div>
+                
+                <!-- Passive Abilities -->
+                <div class="skill-section" style="margin-top: 10px;">
+                    <h4 class="clickable-heading" onclick="showInfo('passive')" style="font-size: 12px; margin-bottom: 6px; color: #64ff96;">🌟 Passive Abilities</h4>
+                    <div id="passive-skills-list" style="max-height: 80px; overflow-y: auto;">
+                        <div class="placeholder" style="font-size: 10px;">No passives yet</div>
+                    </div>
+                </div>
+                
+                <!-- Keywords/Tags -->
+                <div class="skill-section" style="margin-top: 10px;">
+                    <h4 class="clickable-heading" onclick="showInfo('keyword')" style="font-size: 12px; margin-bottom: 6px; color: #6496ff;">🏷️ Keywords</h4>
+                    <div id="keywords-list" style="display: flex; flex-wrap: wrap; gap: 4px;">
+                        <div class="placeholder" style="font-size: 10px;">No keywords</div>
+                    </div>
+                </div>
+                
+                <div class="synergies">
+                    <h4 class="clickable-heading" onclick="showInfo('yoga')" style="cursor: help;">✨ Yogas (Bonuses)</h4>
+                    <div id="synergy-list">
+                        <div class="placeholder">No yogas yet - slot skills!</div>
+                    </div>
+                </div>
+                
+                <div class="synergies" style="margin-top: 12px;">
+                    <h4 class="clickable-heading" onclick="showInfo('dosha')" style="color: #ff5050; cursor: help;">⚠️ Doshas (Warnings)</h4>
+                    <div id="dosha-list">
+                        <div class="placeholder">No conflicts detected</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Info Tooltip -->
+    <div class="info-tooltip" id="info-tooltip">
+        <div class="info-tooltip-close" onclick="closeInfo()">×</div>
+        <div class="info-tooltip-title" id="info-title">Title</div>
+        <div class="info-tooltip-desc" id="info-desc">Description</div>
+    </div>
+    
+    <!-- Load Modal -->
+    <div class="modal-overlay" id="load-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="margin: 0;">📂 Saved Cards</h3>
+                <button class="modal-close" onclick="closeLoadMenu()">×</button>
+            </div>
+            <div id="saved-cards-list">
+                <div class="placeholder">No saved cards yet</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // === MINI PROTOTYPE LOGIC ===
+        
+        // Load Skills from SkillSystem (real fusion data!)
+        let AVAILABLE_SKILLS = [];
+        
+        function loadSkillsFromSystem() {
+            const useFallback = () => {
+                console.warn('⚠️ Using fallback sample skills');
+                AVAILABLE_SKILLS = [
+                    { id: 1, name: 'Fireball', power: 50, kp: 5, cooldown: 3, keywords: ['fire', 'damage'], unlocked: true },
+                    { id: 2, name: 'Ice Shield', power: 30, kp: 4, cooldown: 5, keywords: ['ice', 'defense'], unlocked: true },
+                    { id: 3, name: 'Lightning Bolt', power: 70, kp: 7, cooldown: 4, keywords: ['lightning', 'damage'], unlocked: true },
+                    { id: 4, name: 'Heal', power: 20, kp: 3, cooldown: 6, keywords: ['heal', 'support'], unlocked: true },
+                    { id: 5, name: 'Speed Boost', power: 10, kp: 2, cooldown: 2, keywords: ['buff', 'speed'], unlocked: true },
+                    { id: 6, name: 'Earthquake', power: 90, kp: 10, cooldown: 8, keywords: ['earth', 'damage'], unlocked: true },
+                ];
+            };
+            
+            try {
+                if (window.SkillSystem && typeof SkillSystem.getAllSkills === 'function') {
+                    const allSkills = SkillSystem.getAllSkills() || [];
+                    if (!Array.isArray(allSkills) || allSkills.length === 0) {
+                        console.warn('⚠️ SkillSystem returned no skills');
+                        useFallback();
+                        return;
+                    }
+                    
+                    // Convert to workshop format
+                    AVAILABLE_SKILLS = allSkills.map(skill => ({
+                        id: skill.id,
+                        name: skill.name,
+                        power: skill.powerScore || skill.power || 0,
+                        kp: skill.cost?.kp || 0,
+                        cooldown: skill.cooldown || 1,
+                        keywords: skill.keywords || [],
+                        engine: skill.engine || 'unknown',
+                        tier: skill.tier || 0,
+                        isFused: !!skill.fusionIngredients,
+                        unlocked: skill.unlocked !== false // default to true if undefined
+                    }));
+                    
+                    console.log(`🔗 Loaded ${AVAILABLE_SKILLS.length} skills from SkillSystem`);
+                } else {
+                    console.warn('⚠️ SkillSystem missing or invalid');
+                    useFallback();
+                }
+            } catch (err) {
+                console.error('❌ Error loading skills from SkillSystem:', err);
+                useFallback();
+            }
+            
+            // Final safety: ensure we always have skills to render
+            if (!Array.isArray(AVAILABLE_SKILLS) || AVAILABLE_SKILLS.length === 0) {
+                useFallback();
+            }
+        }
+        
+        const HOUSES = [
+            { id: 1, name: 'Self', bonus: 1.2 },
+            { id: 2, name: 'Resources', bonus: 1.0 },
+            { id: 3, name: 'Communication', bonus: 1.0 },
+            { id: 4, name: 'Foundation', bonus: 1.1 },
+            { id: 5, name: 'Creativity', bonus: 1.15 },
+            { id: 6, name: 'Enemies', bonus: 1.0 },
+            { id: 7, name: 'Partnerships', bonus: 1.0 },
+            { id: 8, name: 'Transformation', bonus: 1.1 },
+            { id: 9, name: 'Fortune', bonus: 1.2 },
+            { id: 10, name: 'Authority', bonus: 1.0 },
+            { id: 11, name: 'Gains', bonus: 1.0 },
+            { id: 12, name: 'Liberation', bonus: 1.3 }
+        ];
+        
+        // State
+        let selectedGlyph = null;
+        let slottedGlyphs = new Array(12).fill(null);
+        let invokedCard = null; // Current invoked card state
+        
+        // === INITIALIZATION ===
+        function init() {
+            try {
+                loadSkillsFromSystem(); // Load real skills first!
+            } catch (e) {
+                console.error('❌ init(): loadSkillsFromSystem failed', e);
+            }
+            try { renderGlyphLibrary(); } catch (e) { console.error('❌ renderGlyphLibrary failed', e); }
+            try { renderVedicChart(); } catch (e) { console.error('❌ renderVedicChart failed', e); }
+            try { setupEventListeners(); } catch (e) { console.error('❌ setupEventListeners failed', e); }
+            try { updateCardPreview(); } catch (e) { console.error('❌ updateCardPreview failed', e); }
+        }
+        
+        // === RENDER GLYPH LIBRARY ===
+        function renderGlyphLibrary() {
+            const container = document.getElementById('glyph-library');
+            container.innerHTML = '';
+            
+            // Filter: Only show OWNED (unlocked) skills - makes sense for deck building!
+            const ownedSkills = AVAILABLE_SKILLS.filter(s => s.unlocked);
+            
+            if (ownedSkills.length === 0) {
+                container.innerHTML = '<div class="placeholder" style="padding: 20px; text-align: center;">🔒 No skills owned yet!<br><br>Visit the <a href="../05-fusion/demo/index.html" style="color: #8b5cf6; text-decoration: underline;">⚡ Fusion System</a> to unlock and fuse skills first!</div>';
+                return;
+            }
+            
+            console.log(`✅ Showing ${ownedSkills.length} owned skills in workshop`);
+            
+            ownedSkills.forEach(skill => {
+                const card = document.createElement('div');
+                card.className = 'glyph-card';
+                card.dataset.skillId = skill.id;
+                card.draggable = true;
+                
+                card.innerHTML = `
+                    <div class="glyph-name">${skill.name}${skill.isFused ? ' ✨' : ''}</div>
+                    <div class="glyph-stats">
+                        <span>⚡${skill.power}</span>
+                        <span>💰${skill.kp}</span>
+                        <span>🕐${skill.cooldown}s</span>
+                    </div>
+                    ${skill.isFused ? '<div style="font-size: 9px; opacity: 0.6; margin-top: 2px;">🔥 Fused Skill</div>' : ''}
+                `;
+                
+                // Click to select
+                card.addEventListener('click', () => selectGlyph(skill));
+                
+                // Drag events
+                card.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.effectAllowed = 'copy';
+                    e.dataTransfer.setData('text/plain', skill.id);
+                    selectedGlyph = skill;
+                });
+                
+                container.appendChild(card);
+            });
+        }
+        
+        // === RENDER 12-HOUSE CHART ===
+        function renderVedicChart() {
+            const container = document.getElementById('vedic-chart');
+            if (!container) {
+                console.error('❌ vedic-chart container not found!');
+                return;
+            }
+            container.innerHTML = '';
+            console.log('🏛️ Rendering', HOUSES.length, 'houses...');
+            
+            HOUSES.forEach((house, index) => {
+                const houseEl = document.createElement('div');
+                houseEl.className = 'house';
+                houseEl.dataset.houseIndex = index;
+                
+                houseEl.innerHTML = `
+                    <div class="house-label">H${house.id}: ${house.name}</div>
+                    <div class="house-slot" id="slot-${index}">
+                        <div class="placeholder">Empty</div>
+                    </div>
+                `;
+                
+                // Click to place selected glyph
+                houseEl.addEventListener('click', () => placeGlyph(index));
+                
+                // Drag and drop
+                houseEl.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    houseEl.classList.add('drag-over');
+                });
+                
+                houseEl.addEventListener('dragleave', () => {
+                    houseEl.classList.remove('drag-over');
+                });
+                
+                houseEl.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    houseEl.classList.remove('drag-over');
+                    placeGlyph(index);
+                });
+                
+                container.appendChild(houseEl);
+            });
+        }
+        
+        // === SELECT GLYPH ===
+        function selectGlyph(skill) {
+            selectedGlyph = skill;
+            
+            // Visual feedback
+            document.querySelectorAll('.glyph-card').forEach(card => {
+                card.classList.toggle('selected', card.dataset.skillId == skill.id);
+            });
+        }
+        
+        // === PLACE GLYPH ===
+        function placeGlyph(houseIndex) {
+            if (!selectedGlyph) return;
+            
+            // Slot the glyph
+            slottedGlyphs[houseIndex] = { ...selectedGlyph };
+            
+            // Update UI
+            const slot = document.getElementById(`slot-${houseIndex}`);
+            const house = HOUSES[houseIndex];
+            const adjustedPower = Math.round(selectedGlyph.power * house.bonus);
+            
+            slot.innerHTML = `
+                <div class="slotted-glyph">
+                    <button class="remove-btn" onclick="removeGlyph(${houseIndex})">×</button>
+                    <div style="font-weight: 600;">${selectedGlyph.name}</div>
+                    <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower} (×${house.bonus})</div>
+                </div>
+            `;
+            
+            // Mark house as filled
+            document.querySelector(`[data-house-index="${houseIndex}"]`).classList.add('filled');
+            
+            // Clear selection
+            selectedGlyph = null;
+            document.querySelectorAll('.glyph-card').forEach(card => card.classList.remove('selected'));
+            
+            // Update preview
+            updateCardPreview();
+        }
+        
+        // === REMOVE GLYPH ===
+        function removeGlyph(houseIndex) {
+            slottedGlyphs[houseIndex] = null;
+            
+            const slot = document.getElementById(`slot-${houseIndex}`);
+            slot.innerHTML = '<div class="placeholder">Empty</div>';
+            
+            document.querySelector(`[data-house-index="${houseIndex}"]`).classList.remove('filled');
+            
+            updateCardPreview();
+        }
+        
+        // === INVOKE CARD (RITUAL) ===
+        function invokeCard() {
+            const filledCount = slottedGlyphs.filter(g => g !== null).length;
+            if (filledCount === 0) {
+                alert('❌ Fill at least one house to invoke a card!');
+                return;
+            }
+            
+            // Prompt for card name
+            const cardName = prompt('🎴 Name your card:', `Card_${Date.now()}`);
+            if (!cardName) return;
+            
+            // Calculate final stats
+            let totalPower = 0;
+            let totalKP = 0;
+            
+            slottedGlyphs.forEach((glyph, index) => {
+                if (glyph) {
+                    const house = HOUSES[index];
+                    totalPower += Math.round(glyph.power * house.bonus);
+                    totalKP += glyph.kp;
+                }
+            });
+            
+            // Create invoked card
+            invokedCard = {
+                id: Date.now(),
+                name: cardName,
+                glyphs: slottedGlyphs.map(g => g ? {...g} : null),
+                stats: {
+                    power: totalPower,
+                    defense: Math.round(totalPower * 0.3),
+                    speed: filledCount * 5,
+                    kp: totalKP
+                },
+                slotsFilled: filledCount,
+                invokedAt: new Date().toLocaleString()
+            };
+            
+            // Update card name display
+            document.getElementById('card-name-display').textContent = cardName;
+            document.getElementById('card-subtitle').textContent = `Invoked: ${new Date().toLocaleTimeString()}`;
+            
+            // Animation: Flash the chart
+            const chart = document.getElementById('vedic-chart');
+            chart.style.transition = 'all 0.5s ease';
+            chart.style.transform = 'scale(1.05)';
+            chart.style.filter = 'brightness(1.5)';
+            
+            setTimeout(() => {
+                chart.style.transform = 'scale(1)';
+                chart.style.filter = 'brightness(1)';
+            }, 500);
+            
+            // Light up the card preview
+            const cardPreview = document.querySelector('.card-preview');
+            cardPreview.style.transition = 'all 0.5s ease';
+            cardPreview.style.background = 'rgba(139,92,246,0.2)';
+            cardPreview.style.boxShadow = '0 0 20px rgba(139,92,246,0.6)';
+            
+            setTimeout(() => {
+                cardPreview.style.background = '';
+                cardPreview.style.boxShadow = '';
+            }, 1000);
+            
+            // Update preview with invoked card
+            updateCardPreview();
+            
+            // Enable save/load buttons
+            document.querySelector('button[onclick="saveCard()"]').disabled = false;
+            
+            console.log('✨ Card invoked:', invokedCard);
+            alert(`✅ "${cardName}" invoked!\n\n⚡ Power: ${totalPower}\n🔒 ${filledCount}/12 slots\n💰 ${totalKP} KP`);
+        }
+        
+        // === UPDATE CARD PREVIEW ===
+        function updateCardPreview() {
+            let totalPower = 0;
+            let totalKP = 0;
+            let slotsFilled = 0;
+            
+            slottedGlyphs.forEach((glyph, index) => {
+                if (glyph) {
+                    const house = HOUSES[index];
+                    totalPower += Math.round(glyph.power * house.bonus);
+                    totalKP += glyph.kp;
+                    slotsFilled++;
+                }
+            });
+            
+            // Calculate average cooldown
+            let totalCooldown = 0;
+            let skillCount = 0;
+            slottedGlyphs.forEach(glyph => {
+                if (glyph) {
+                    totalCooldown += glyph.cooldown || 0;
+                    skillCount++;
+                }
+            });
+            const avgCooldown = skillCount > 0 ? (totalCooldown / skillCount).toFixed(1) : 0;
+            
+            // Update stats (use invoked card if exists, otherwise live preview)
+            const displayStats = invokedCard || {
+                stats: {
+                    power: totalPower,
+                    cooldown: avgCooldown,
+                    versatility: slotsFilled * 5,
+                    kp: totalKP
+                },
+                slotsFilled: slotsFilled
+            };
+            
+            document.getElementById('stat-power').textContent = displayStats.stats.power;
+            document.getElementById('stat-defense').textContent = displayStats.stats.cooldown || avgCooldown;
+            document.getElementById('stat-speed').textContent = displayStats.stats.versatility || (slotsFilled * 5);
+            document.getElementById('slots-filled').textContent = displayStats.slotsFilled || slotsFilled;
+            
+            // Update invoke button state
+            const invokeBtn = document.getElementById('invoke-card-btn');
+            if (slotsFilled > 0) {
+                invokeBtn.disabled = false;
+                invokeBtn.style.background = 'linear-gradient(135deg, rgba(139,92,246,0.5), rgba(0,227,214,0.5))';
+                invokeBtn.style.borderColor = 'rgba(139,92,246,0.8)';
+                invokeBtn.textContent = `🎴 Invoke Card (${slotsFilled}/12 ready)`;
+            } else {
+                invokeBtn.disabled = true;
+                invokeBtn.style.background = 'linear-gradient(135deg, rgba(139,92,246,0.3), rgba(0,227,214,0.3))';
+                invokeBtn.style.borderColor = 'rgba(139,92,246,0.6)';
+                invokeBtn.textContent = '🎴 Invoke Card (Fill at least 1 slot)';
+            }
+            
+            // Update KP budget with animated bar
+            document.getElementById('kp-used').textContent = totalKP;
+            const budgetEl = document.getElementById('kp-budget');
+            budgetEl.classList.toggle('over', totalKP > 30);
+            
+            const kpBar = document.getElementById('kp-bar');
+            const kpPercent = Math.min((totalKP / 30) * 100, 100);
+            kpBar.style.width = `${kpPercent}%`;
+            if (totalKP > 30) {
+                kpBar.style.background = 'linear-gradient(90deg, #ff5050, #ff8080)';
+            } else {
+                kpBar.style.background = 'linear-gradient(90deg, #8b5cf6, #00e3d6)';
+            }
+            
+            // === BUILD SKILL LISTS ===
+            const activeSkills = [];
+            const passiveSkills = [];
+            const allKeywords = new Set();
+            
+            slottedGlyphs.forEach((glyph, index) => {
+                if (!glyph) return;
+                
+                const house = HOUSES[index];
+                const adjustedPower = Math.round(glyph.power * house.bonus);
+                
+                // Categorize skills (you can enhance this logic)
+                const skillData = {
+                    name: glyph.name,
+                    power: adjustedPower,
+                    cooldown: glyph.cooldown,
+                    house: house.name,
+                    keywords: glyph.keywords || []
+                };
+                
+                // Skills with cooldown > 3s are "active", others are "passive"
+                if (glyph.cooldown >= 3) {
+                    activeSkills.push(skillData);
+                } else {
+                    passiveSkills.push(skillData);
+                }
+                
+                // Collect keywords
+                (glyph.keywords || []).forEach(kw => allKeywords.add(kw));
+            });
+            
+            // === DISPLAY ACTIVE SKILLS ===
+            const activeContainer = document.getElementById('active-skills-list');
+            if (activeSkills.length === 0) {
+                activeContainer.innerHTML = '<div class="placeholder" style="font-size: 10px;">No active skills yet</div>';
+            } else {
+                activeContainer.innerHTML = activeSkills.map(skill => `
+                    <div style="background: rgba(255,100,100,0.1); border-left: 3px solid #ff6464; padding: 6px; margin-bottom: 4px; border-radius: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 11px;">${skill.name}</span>
+                            <span style="font-size: 9px; opacity: 0.7;">${skill.cooldown}s CD</span>
+                        </div>
+                        <div style="font-size: 9px; opacity: 0.7; margin-top: 2px;">⚡ ${skill.power} • ${skill.house}</div>
+                    </div>
+                `).join('');
+            }
+            
+            // === DISPLAY PASSIVE SKILLS ===
+            const passiveContainer = document.getElementById('passive-skills-list');
+            if (passiveSkills.length === 0) {
+                passiveContainer.innerHTML = '<div class="placeholder" style="font-size: 10px;">No passives yet</div>';
+            } else {
+                passiveContainer.innerHTML = passiveSkills.map(skill => `
+                    <div style="background: rgba(100,255,150,0.1); border-left: 3px solid #64ff96; padding: 6px; margin-bottom: 4px; border-radius: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: 600; font-size: 11px;">${skill.name}</span>
+                            <span style="font-size: 9px; opacity: 0.7;">Passive</span>
+                        </div>
+                        <div style="font-size: 9px; opacity: 0.7; margin-top: 2px;">⚡ ${skill.power} • ${skill.house}</div>
+                    </div>
+                `).join('');
+            }
+            
+            // === DISPLAY KEYWORDS ===
+            const keywordContainer = document.getElementById('keywords-list');
+            if (allKeywords.size === 0) {
+                keywordContainer.innerHTML = '<div class="placeholder" style="font-size: 10px;">No keywords</div>';
+            } else {
+                const keywordColors = {
+                    fire: '#ff6464', ice: '#64b4ff', lightning: '#ffeb64',
+                    water: '#64c8ff', earth: '#96c864', dark: '#9664c8',
+                    light: '#ffe664', heal: '#64ff96', damage: '#ff6496',
+                    buff: '#c896ff', debuff: '#ff9664', support: '#96ffeb'
+                };
+                
+                keywordContainer.innerHTML = Array.from(allKeywords).map(kw => {
+                    const color = keywordColors[kw] || '#8b5cf6';
+                    return `<span style="background: ${color}33; border: 1px solid ${color}80; color: ${color}; padding: 3px 6px; border-radius: 4px; font-size: 9px; font-weight: 600;">${kw.toUpperCase()}</span>`;
+                }).join('');
+            }
+            
+            // Detect synergies
+            detectSynergies();
+        }
+        
+        // === DETECT YOGAS (SYNERGIES) ===
+        function detectSynergies() {
+            const yogas = [];
+            const doshas = [];
+            
+            // Count keywords across all houses
+            const keywordCounts = {};
+            const keywordHouses = {}; // Track which houses have which keywords
+            
+            slottedGlyphs.forEach((glyph, index) => {
+                if (glyph && glyph.keywords) {
+                    glyph.keywords.forEach(kw => {
+                        keywordCounts[kw] = (keywordCounts[kw] || 0) + 1;
+                        if (!keywordHouses[kw]) keywordHouses[kw] = [];
+                        keywordHouses[kw].push(index + 1); // House numbers (1-12)
+                    });
+                }
+            });
+            
+            // === YOGAS (BENEFICIAL PATTERNS) ===
+            
+            // 1. Trinity Yogas (3+ same keyword)
+            Object.entries(keywordCounts).forEach(([keyword, count]) => {
+                if (count >= 3) {
+                    const bonus = count * 10;
+                    yogas.push({
+                        name: `${keyword.toUpperCase()} Trinity`,
+                        bonus: `+${bonus}% power`,
+                        houses: keywordHouses[keyword]
+                    });
+                }
+            });
+            
+            // 2. Trine Yogas (Houses 1-5-9, 2-6-10, 3-7-11, 4-8-12 - Fire/Earth/Air/Water triangles)
+            const trines = [
+                { houses: [0, 4, 8], name: 'Fire Trine', element: 'fire' },    // H1, H5, H9
+                { houses: [1, 5, 9], name: 'Earth Trine', element: 'earth' },   // H2, H6, H10
+                { houses: [2, 6, 10], name: 'Air Trine', element: 'air' },      // H3, H7, H11
+                { houses: [3, 7, 11], name: 'Water Trine', element: 'water' }   // H4, H8, H12
+            ];
+            
+            trines.forEach(trine => {
+                const filled = trine.houses.filter(i => slottedGlyphs[i] !== null);
+                if (filled.length === 3) {
+                    yogas.push({
+                        name: trine.name,
+                        bonus: '+25% elemental power',
+                        houses: trine.houses.map(i => i + 1)
+                    });
+                }
+            });
+            
+            // 3. House 1 Power Yoga (House 1 filled = core identity)
+            if (slottedGlyphs[0]) {
+                yogas.push({
+                    name: 'Core Identity',
+                    bonus: 'Base stats locked in',
+                    houses: [1]
+                });
+            }
+            
+            // 4. Adjacent Pair Yogas (neighboring houses with matching keywords)
+            for (let i = 0; i < 12; i++) {
+                const next = (i + 1) % 12;
+                if (slottedGlyphs[i] && slottedGlyphs[next]) {
+                    const shared = slottedGlyphs[i].keywords.filter(k => 
+                        slottedGlyphs[next].keywords.includes(k)
+                    );
+                    if (shared.length > 0) {
+                        yogas.push({
+                            name: `${shared[0].toUpperCase()} Flow`,
+                            bonus: '+5% efficiency',
+                            houses: [i + 1, next + 1]
+                        });
+                    }
+                }
+            }
+            
+            // 5. Full Chart Yoga (all 12 houses filled)
+            const filledCount = slottedGlyphs.filter(g => g !== null).length;
+            if (filledCount === 12) {
+                yogas.push({
+                    name: 'Perfect Mandala',
+                    bonus: '+20% all stats',
+                    houses: 'All'
+                });
+            }
+            
+            // === DOSHAS (CONFLICTS & WARNINGS) ===
+            
+            // 1. Over Budget Dosha
+            let totalKP = 0;
+            slottedGlyphs.forEach(glyph => {
+                if (glyph) totalKP += glyph.kp;
+            });
+            if (totalKP > 30) {
+                doshas.push({
+                    name: 'Over Budget',
+                    penalty: `${totalKP - 30} KP over limit`,
+                    severity: 'critical'
+                });
+            }
+            
+            // 2. Empty Core Dosha (House 1 empty)
+            if (!slottedGlyphs[0] && filledCount > 0) {
+                doshas.push({
+                    name: 'Hollow Identity',
+                    penalty: '-15% power (no core)',
+                    severity: 'high'
+                });
+            }
+            
+            // 3. Elemental Chaos (conflicting elements)
+            const conflictPairs = [
+                ['fire', 'water'],
+                ['ice', 'fire'],
+                ['light', 'dark'],
+                ['chaos', 'order']
+            ];
+            
+            const presentElements = new Set();
+            slottedGlyphs.forEach(glyph => {
+                if (glyph && glyph.keywords) {
+                    glyph.keywords.forEach(kw => presentElements.add(kw));
+                }
+            });
+            
+            conflictPairs.forEach(([elem1, elem2]) => {
+                if (presentElements.has(elem1) && presentElements.has(elem2)) {
+                    doshas.push({
+                        name: 'Elemental Conflict',
+                        penalty: `${elem1} vs ${elem2}: -10% both`,
+                        severity: 'medium'
+                    });
+                }
+            });
+            
+            // 4. Scattered Focus (no adjacent synergies, 6+ skills slotted)
+            if (filledCount >= 6) {
+                let hasAdjacent = false;
+                for (let i = 0; i < 12; i++) {
+                    const next = (i + 1) % 12;
+                    if (slottedGlyphs[i] && slottedGlyphs[next]) {
+                        hasAdjacent = true;
+                        break;
+                    }
+                }
+                if (!hasAdjacent) {
+                    doshas.push({
+                        name: 'Scattered Focus',
+                        penalty: '-5% efficiency',
+                        severity: 'low'
+                    });
+                }
+            }
+            
+            // === DISPLAY YOGAS ===
+            const yogaContainer = document.getElementById('synergy-list');
+            if (yogas.length === 0) {
+                yogaContainer.innerHTML = '<div class="placeholder">No yogas yet - slot skills!</div>';
+            } else {
+                yogaContainer.innerHTML = yogas.map(y => `
+                    <div class="synergy-item">
+                        <div style="font-weight: 600;">${y.name}</div>
+                        <div style="font-size: 10px; opacity: 0.8;">${y.bonus}</div>
+                        <div style="font-size: 9px; opacity: 0.6;">Houses: ${Array.isArray(y.houses) ? y.houses.join(', ') : y.houses}</div>
+                    </div>
+                `).join('');
+            }
+            
+            // === DISPLAY DOSHAS ===
+            const doshaContainer = document.getElementById('dosha-list');
+            if (doshas.length === 0) {
+                doshaContainer.innerHTML = '<div class="placeholder">No conflicts detected</div>';
+            } else {
+                doshaContainer.innerHTML = doshas.map(d => `
+                    <div class="dosha-item">
+                        <div style="font-weight: 600;">${d.name}</div>
+                        <div style="font-size: 10px; opacity: 0.8;">${d.penalty}</div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        // === SAVE/LOAD SYSTEM ===
+        const STORAGE_KEY = 'workshop_saved_cards';
+        
+        function saveCard() {
+            if (!invokedCard) {
+                alert('❌ Please invoke a card first!');
+                return;
+            }
+            
+            let savedCards = [];
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) savedCards = JSON.parse(stored);
+            } catch (e) {}
+            
+            savedCards.push(invokedCard);
+            
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(savedCards));
+                console.log(`💾 Card saved: ${invokedCard.name}`);
+                alert(`✅ "${invokedCard.name}" saved to collection!`);
+            } catch (e) {
+                alert('❌ Failed to save card');
+            }
+        }
+        
+        function openLoadMenu() {
+            let savedCards = [];
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) savedCards = JSON.parse(stored);
+            } catch (e) {}
+            
+            const container = document.getElementById('saved-cards-list');
+            
+            if (savedCards.length === 0) {
+                container.innerHTML = '<div class="placeholder">🔒 No saved cards yet<br><br>Invoke and save cards to build your collection!</div>';
+            } else {
+                container.innerHTML = savedCards.map(card => `
+                    <div class="saved-card-item" onclick="loadCard(${card.id})">
+                        <div style="font-weight: 600; margin-bottom: 4px;">${card.name}</div>
+                        <div style="font-size: 11px; opacity: 0.7;">⚡ ${card.stats.power} | 🔒 ${card.slotsFilled}/12 slots</div>
+                        <div style="font-size: 10px; opacity: 0.5; margin-top: 4px;">${card.invokedAt}</div>
+                        <button onclick="event.stopPropagation(); deleteCard(${card.id})" style="margin-top: 8px; padding: 4px 8px; background: rgba(255,80,80,0.2); color: #ff5050; border: 1px solid rgba(255,80,80,0.4); border-radius: 4px; cursor: pointer; font-size: 10px;">🗑️ Delete</button>
+                    </div>
+                `).join('');
+            }
+            
+            // Show modal
+            const modal = document.getElementById('load-modal');
+            if (modal) modal.classList.add('active');
+        }
+        
+        function closeLoadMenu() {
+            const modal = document.getElementById('load-modal');
+            if (modal) modal.classList.remove('active');
+        }
+        
+        function loadCard(cardId) {
+            let savedCards = [];
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) savedCards = JSON.parse(stored);
+            } catch (e) {}
+            
+            const card = savedCards.find(c => c.id === cardId);
+            if (!card) {
+                alert('❌ Card not found');
+                return;
+            }
+            
+            // Restore slotted glyphs
+            slottedGlyphs = card.glyphs.map(g => g ? {...g} : null);
+            
+            // Update UI for all houses
+            HOUSES.forEach((house, index) => {
+                const slot = document.getElementById(`slot-${index}`);
+                const houseEl = document.querySelector(`[data-house-index="${index}"]`);
+                
+                if (slottedGlyphs[index]) {
+                    const glyph = slottedGlyphs[index];
+                    const adjustedPower = Math.round(glyph.power * house.bonus);
+                    
+                    slot.innerHTML = `
+                        <div class="slotted-glyph">
+                            <button class="remove-btn" onclick="removeGlyph(${index})">×</button>
+                            <div style="font-weight: 600;">${glyph.name}</div>
+                            <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower} (×${house.bonus})</div>
+                        </div>
+                    `;
+                    houseEl.classList.add('filled');
+                } else {
+                    slot.innerHTML = '<div class="placeholder">Empty</div>';
+                    houseEl.classList.remove('filled');
+                }
+            });
+            
+            // Set as invoked card
+            invokedCard = card;
+            
+            // Update preview
+            updateCardPreview();
+            
+            // Close modal
+            closeLoadMenu();
+            
+            console.log(`📂 Loaded card: ${card.name}`);
+            alert(`✅ Loaded "${card.name}"!`);
+        }
+        
+        function deleteCard(cardId) {
+            if (!confirm('🗑️ Delete this card permanently?')) return;
+            
+            let savedCards = [];
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) savedCards = JSON.parse(stored);
+            } catch (e) {}
+            
+            savedCards = savedCards.filter(c => c.id !== cardId);
+            
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(savedCards));
+                console.log(`🗑️ Card deleted`);
+                openLoadMenu(); // Refresh list
+            } catch (e) {
+                alert('❌ Failed to delete card');
+            }
+        }
+        
+        // Close modal on overlay click
+        setTimeout(() => {
+            const modal = document.getElementById('load-modal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target.id === 'load-modal') closeLoadMenu();
+                });
+            }
+        }, 100);
+        
+        // === MANUAL REFRESH FUNCTION ===
+        function refreshSkills() {
+            const btn = event.target;
+            const previousCount = AVAILABLE_SKILLS.length;
+            
+            // Visual feedback - spin the button
+            btn.style.transform = 'rotate(360deg)';
+            btn.style.transition = 'transform 0.5s ease';
+            
+            // Reload skills
+            loadSkillsFromSystem();
+            const newCount = AVAILABLE_SKILLS.length;
+            
+            // Update UI
+            renderGlyphLibrary();
+            
+            // Feedback
+            if (newCount !== previousCount) {
+                console.log(`✨ Skills refreshed! ${previousCount} → ${newCount}`);
+                btn.textContent = '✔️';
+                setTimeout(() => {
+                    btn.textContent = '🔄';
+                    btn.style.transform = 'rotate(0deg)';
+                }, 1000);
+            } else {
+                console.log('✅ No new skills - already up to date!');
+                btn.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // === SETUP EVENT LISTENERS ===
+        function setupEventListeners() {
+            // Prevent default drag behavior
+            document.addEventListener('dragover', (e) => e.preventDefault());
+        }
+        
+        // === INFO TOOLTIP SYSTEM ===
+        const INFO_DATA = {
+            power: {
+                title: '🔥 Power Score',
+                desc: 'The raw OOMPH of your card! \n\nThis is the total combined power of all your skills, boosted by their house positions. House 1 gives 1.2×, House 12 gives 1.3×! \n\nThink of it like... if your skills were muscles, this is how much they can lift! 💪 Higher = More impact in everything you do!',
+                theme: 'active-theme'
+            },
+            cooldown: {
+                title: '⏱️ Average Cooldown',
+                desc: 'How fast can you spam your moves? \n\nLower cooldowns = More action! This shows the average wait time between your skill activations. \n\nIt\'s like... how quickly you can throw punches in a fight! 🥊 Fast cooldowns mean you\'re a skill-slinging machine!',
+                theme: 'defense-theme'
+            },
+            versatility: {
+                title: '✨ Versatility',
+                desc: 'How adaptable is your card? \n\nMore slots filled = More options in combat! This measures your tactical flexibility. \n\nImagine having a Swiss Army knife vs a butter knife 🔪 The more tools (skills) you have, the more situations you can handle! Jack of all trades? Master of awesome!',
+                theme: 'speed-theme'
+            },
+            density: {
+                title: '🎯 Skill Density',
+                desc: 'How PACKED is your card with abilities? \n\nThis shows how many of the 12 houses you\'ve filled. More skills = More combos = More fun! \n\nThink of it like... loading up a pizza with toppings 🍕 Empty slots are wasted potential! Fill \'em up!',
+                theme: 'attack-theme'
+            },
+            active: {
+                title: '⚔️ Active Skills',
+                desc: 'Your BIG GUNS! 💥 \n\nThese are skills with 3+ second cooldowns - your heavy hitters and game-changers. They pack a punch but need time to recharge. \n\nLike special moves in a fighting game! Save them for the right moment, then UNLEASH THE PAIN! Each one shows its power (boosted by house position), cooldown, and which house it calls home.',
+                theme: 'active-theme'
+            },
+            passive: {
+                title: '🌟 Passive Abilities',
+                desc: 'Your secret sauce! ✨ \n\nFast-cycling skills (under 3s cooldown) that constantly boost you. They work in the background like a good playlist - always there, always helping! \n\nThink of them as your "always-on" superpowers. No activation needed, just pure continuous awesome! The faster the cooldown, the more often they kick in!',
+                theme: 'passive-theme'
+            },
+            keyword: {
+                title: '🏷️ Keywords',
+                desc: 'The DNA of your skills! 🧬 \n\nEach keyword (Fire, Ice, Heal, etc.) is like a personality trait. Match them up and BOOM - synergies (Yogas)! Mix wrong ones and... yikes, conflicts (Doshas). \n\nIt\'s like building a band 🎸 - get the right mix and you make beautiful music. Get it wrong and it\'s just noise! Hover over any keyword to see it glow with elemental power!',
+                theme: 'keyword-theme'
+            },
+            yoga: {
+                title: '✨ Yogas = COMBO BONUSES!',
+                desc: '🎉 When your skills vibe together, magic happens! \n\n🔥 FIRE TRINITY: Stack 3 fire skills anywhere? +30% power! \n🔺 ELEMENTAL TRINE: Fill houses 1-5-9? +25% elemental damage! \n🌊 FLOW COMBO: Put matching skills side-by-side? +5% smooth! \n🌟 PERFECT MANDALA: Fill ALL 12 houses? +20% to EVERYTHING! \n\nMore yogas = More power! It\'s like getting bonus loot for smart deck building! 🎰',
+                theme: 'yoga-theme'
+            },
+            dosha: {
+                title: '⚠️ Doshas = OOPS MOMENTS!',
+                desc: '😅 Even legends make mistakes! Here\'s how to avoid them: \n\n💸 BUDGET DISASTER: Spent more than 30 KP? Card\'s too expensive! \n👻 IDENTITY CRISIS: House 1 empty? -15% power! (That\'s your CORE!) \n🔥💧 ELEMENTAL BEEF: Fire + Water in same deck? They\'re fighting! -10% \n🎲 SCATTERED BRAIN: Skills all over with no flow? -5% efficiency! \n\nFix these and watch your card go from "meh" to LEGENDARY! 🏆',
+                theme: 'dosha-theme'
+            }
+        };
+        
+        function showInfo(type) {
+            const data = INFO_DATA[type];
+            if (!data) return;
+            
+            const tooltip = document.getElementById('info-tooltip');
+            document.getElementById('info-title').textContent = data.title;
+            document.getElementById('info-desc').textContent = data.desc;
+            
+            // Remove all theme classes
+            tooltip.className = 'info-tooltip';
+            // Add specific theme
+            tooltip.classList.add(data.theme, 'active');
+        }
+        
+        function closeInfo() {
+            document.getElementById('info-tooltip').classList.remove('active');
+        }
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeInfo();
+        });
+        
+        // === START ===
+        init();
+    </script>
+</body>
+</html>
+< ! - -   L o a d   M o d a l   H T M L   - - >  
+ 

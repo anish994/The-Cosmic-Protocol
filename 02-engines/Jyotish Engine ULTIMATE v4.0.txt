@@ -1,0 +1,779 @@
+# Jyotish Engine ULTIMATE — v4.0 "Celestial Dominance"
+## Total Skills: 120+ (Planets, Houses, Nakshatras, Doshas, Transits, Yogas)
+
+---
+
+### **🌟 CORE PHILOSOPHY: THE COSMIC ARCHITECT**
+
+**The Problem with v3.0:** Modifiers were too subtle (+5% here, -1 cooldown there). They felt like **seasoning** when they should be **main courses**.
+
+**The Solution:** Make Jyotish effects so powerful they **define entire strategies**, create **unavoidable power spikes**, and force opponents to **respect the cosmic calendar**.
+
+---
+
+### **⚡ NEW POWER LEVEL PHILOSOPHY**
+
+**Planets are not modifiers - they are GODS**
+**Houses are not bonuses - they are DOMAINS** 
+**Nakshatras are not procs - they are DIVINE SIGNATURES**
+**Doshas are not penalties - they are LEGENDARY CURSES**
+**Transits are not ticks - they are APOCALYPTIC EVENTS**
+
+---
+
+### **CORE RESOURCES & MECHANICS**
+
+**Jyoti (Celestial Energy):** Primary resource (Max 100, regenerates 10/turn)
+**Graha Shakti (Planetary Power):** Each planet has 0-10 power levels
+**Bhava Dominion (House Control):** Control houses to gain territorial bonuses
+**Nakshatra Blessings:** Divine signature effects (27 unique)
+**Yoga Formations:** Planetary combinations that break reality
+**Dasha Cycles:** Macro-phases that rewrite game rules periodically
+
+**Status Effects:**
+- [Exalted] — Planet at maximum power, +200% effects
+- [Debilitated] — Planet weakened, enemy gains control
+- [Retrograde] — Reverse effects, chaos mechanics
+- [Combusted] — Absorbed by Sun, explosive potential
+- [Eclipsed] — Hidden power, surprise mechanics
+- [Yogakaraka] — Perfect planetary alignment, god-tier bonuses
+
+---
+
+### **PLANETARY DOMINANCE — 9 GAME-CHANGERS**
+
+Each planet now has **THREE TIERS** of power based on Graha Shakti level:
+
+#### **1. SURYA (SUN) — The Emperor**
+**Domain:** Authority, Ego, Vitality, Leadership
+
+**Tier 1 (Shakti 1-3): Solar Radiance**
+- All your effects have +30% potency
+- Enemies within 3 spaces take 10 [Burn]/turn
+- You cannot be [Silenced] or [Controlled]
+
+**Tier 2 (Shakti 4-7): Solar Sovereignty**
+- +60% potency, 20 [Burn]/turn
+- Immune to all debuffs
+- Your [Burn] effects spread to adjacent enemies automatically
+- Once per Dasha: Trigger "Solar Eclipse" — all enemies [Stunned] for 1 turn, take 100 damage
+
+**Tier 3 (Shakti 8-10): SOLAR GODHOOD**
+- +100% ALL effects (stacks with everything)
+- 40 [Burn]/turn in 5×5 area around you
+- Complete immunity to negative effects
+- Permanent [Exalted] status
+- **Solar Supernova:** Once per duel, deal 300 damage to all enemies and apply [Combusted] (they explode for 50% their max Ojas when they die)
+
+**Exaltation Bonus (in Aries):** All Surya effects tripled
+
+---
+
+#### **2. CHANDRA (MOON) — The Mother**
+**Domain:** Mind, Emotions, Memory, Intuition
+
+**Tier 1 (Shakti 1-3): Lunar Blessing**
+- Heal 30 Ojas to all allies per turn
+- +50% [Heal] effectiveness for all sources
+- Gain +10 [Darshan] per turn (knowledge stacks)
+
+**Tier 2 (Shakti 4-7): Tidal Authority**
+- Heal 60 Ojas/turn to all allies
+- +100% [Heal] effectiveness
+- **Waxing Phase:** +30% damage dealt (turns 1-5 of Dasha)
+- **Waning Phase:** +30% damage reduction (turns 6-10 of Dasha)
+- Cleanse 1 debuff from all allies per turn
+
+**Tier 3 (Shakti 8-10): LUNAR TRANSCENDENCE**
+- Heal 100 Ojas/turn + remove ALL debuffs
+- +200% [Heal] effectiveness
+- **Full Moon Blessing:** All allies gain [Transcendent] for 3 turns (immune to debuffs, +50% all effects)
+- **New Moon Shadow:** All enemies lose 50% accuracy and deal -50% damage
+- **Eclipse Power:** When Surya and Chandra both at Tier 3, trigger automatic [Reality Warp] every 3 turns
+
+**Exaltation Bonus (in Taurus):** Healing also grants permanent +5% max Ojas (stacks infinitely)
+
+---
+
+#### **3. MANGALA (MARS) — The Warrior**
+**Domain:** Aggression, Combat, Courage, Destruction
+
+**Tier 1 (Shakti 1-3): Martial Fury**
+- +50% damage on all attacks
+- Apply [Bleed] (15 damage/turn for 3 turns) on every attack
+- Cannot be [Stunned]
+
+**Tier 2 (Shakti 4-7): War God's Blessing**
+- +100% damage on all attacks
+- [Bleed] increased to 30 damage/turn
+- All attacks are [Critical] (ignore armor, +100% damage)
+- **Mangalik Dosha Transfer:** Your attacks also curse enemies with [Mars Curse] (-50% healing received)
+
+**Tier 3 (Shakti 8-10): BATTLEFIELD DOMINANCE**
+- +200% damage on ALL attacks
+- Every attack deals triple [Bleed] (90 damage/turn)
+- All attacks hit all enemies within 3 spaces (automatic AoE)
+- **Kuja Dosha Apocalypse:** Enemies cannot heal, [Regen] effects become [Decay] instead
+- **Ares Protocol:** Once per duel, your next attack deals (Target's missing Ojas × 5) bonus damage
+
+**Exaltation Bonus (in Capricorn):** Every kill permanently increases your damage by +20% (no cap)
+
+---
+
+#### **4. BUDHA (MERCURY) — The Messenger**
+**Domain:** Speed, Intelligence, Adaptation, Communication
+
+**Tier 1 (Shakti 1-3): Swift Mind**
+- All abilities cost -30% resources
+- All cooldowns reduced by 2 turns
+- +1 action per turn
+
+**Tier 2 (Shakti 4-7): Mercurial Mastery**
+- Abilities cost -60% resources
+- Cooldowns reduced by 4 turns
+- +2 actions per turn
+- **Instant Adaptation:** Can use any ability from any engine once per turn (cross-engine access)
+
+**Tier 3 (Shakti 8-10): TIMELESS VELOCITY**
+- ALL abilities cost 0 resources
+- ALL cooldowns are 0
+- +3 actions per turn
+- **Quicksilver State:** Act twice for every enemy action (you get 2 turns for their 1)
+- **Mercury Retrograde Exploit:** Once per Dasha, reverse any enemy action (they damage themselves, heal you, etc.)
+
+**Exaltation Bonus (in Virgo):** Can copy and use any enemy ability at +50% potency
+
+---
+
+#### **5. GURU (JUPITER) — The Teacher**
+**Domain:** Expansion, Wisdom, Growth, Abundance
+
+**Tier 1 (Shakti 1-3): Benevolent Growth**
+- All single-target effects become AoE (3×3)
+- +50% to all stacking effects (buffs, debuffs, DoTs)
+- Gain +2 of all resources per turn
+
+**Tier 2 (Shakti 4-7): Expansive Mastery**
+- All AoE increased to 5×5
+- +100% to all stacking effects
+- +5 of all resources per turn
+- **Guru's Blessing:** All allies gain +50% stats permanently (stacks each Dasha)
+
+**Tier 3 (Shakti 8-10): UNIVERSAL ABUNDANCE**
+- All effects are now GLOBAL (affect entire battlefield)
+- +200% to all stacking effects
+- +10 of all resources per turn (including special resources like [Kshana], [Darshan], [Siddhi])
+- **Brihaspati's Boon:** Every effect you trigger activates twice automatically
+- **Jupiter Yoga:** Form automatic [Yogas] with any two other planets for free
+
+**Exaltation Bonus (in Cancer):** All resource caps removed, infinite scaling enabled
+
+---
+
+#### **6. SHUKRA (VENUS) — The Lover**
+**Domain:** Beauty, Pleasure, Harmony, Luxury
+
+**Tier 1 (Shakti 1-3): Graceful Restoration**
+- Heal 40 Ojas per turn automatically
+- All [Heal] effects +50% potency
+- Apply [Regeneration] (20 Ojas/turn) to all allies
+
+**Tier 2 (Shakti 4-7): Divine Harmony**
+- Heal 80 Ojas/turn automatically
+- All [Heal] effects +100% potency
+- [Regeneration] increased to 40 Ojas/turn
+- **Shukra's Protection:** Allies gain [Shield] equal to 50% damage prevented
+- Can convert any debuff into buff of equal power
+
+**Tier 3 (Shakti 8-10): IMMORTAL GRACE**
+- Heal 150 Ojas/turn to ALL allies
+- All [Heal] effects +300% potency
+- [Regeneration] 80 Ojas/turn + cleanse all debuffs
+- **Nectar of Immortality:** Allies cannot be reduced below 1 Ojas (death immunity)
+- **Shukracharya's Blessing:** When ally would die, instead fully restore them and grant [Transcendent] for 3 turns
+- Once per duel: Make all allies invulnerable for 2 turns
+
+**Exaltation Bonus (in Pisces):** Healing overflow converts to permanent max Ojas increase
+
+---
+
+#### **7. SHANI (SATURN) — The Judge**
+**Domain:** Time, Discipline, Karma, Restriction
+
+**Tier 1 (Shakti 1-3): Karmic Weight**
+- All enemies have +50% cooldowns
+- Apply [Slow] (enemies act 50% slower)
+- Enemy buffs last -2 turns
+
+**Tier 2 (Shakti 4-7): Temporal Prison**
+- All enemies have +100% cooldowns (double duration)
+- [Slow] upgraded to [Stasis] (cannot gain buffs)
+- Enemy buffs last -4 turns, your buffs last +4 turns
+- **Sade Sati Curse:** One target loses a turn completely every 3 turns
+
+**Tier 3 (Shakti 8-10): CHRONOS DOMINION**
+- Enemy cooldowns are PERMANENT (never tick down)
+- [Stasis] upgraded to [Time Lock] (frozen in time, cannot act)
+- Your buffs never expire
+- **Saturn's Judgment:** All enemies age rapidly (take 50 damage per turn that increases by 10 each turn: 50, 60, 70...)
+- **Karma Destruction:** Enemy positive effects become negative effects automatically
+- Once per duel: Stop time for 3 turns (only you can act)
+
+**Exaltation Bonus (in Libra):** Your debuffs cannot be cleansed or removed by any means
+
+---
+
+#### **8. RAHU (NORTH NODE) — The Chaos Dragon**
+**Domain:** Desire, Obsession, Innovation, Chaos
+
+**Tier 1 (Shakti 1-3): Chaotic Variance**
+- All random effects have 50% chance to trigger twice
+- Gain random buff each turn (from pool of 20 powerful effects)
+- Your abilities have random potency (50%-200%)
+
+**Tier 2 (Shakti 4-7): Controlled Chaos**
+- Random effects trigger 3 times when they proc
+- Gain 2 random powerful buffs per turn
+- You choose the outcome of all random effects
+- **Rahu's Gambit:** Once per turn, reroll any result and keep the better outcome
+
+**Tier 3 (Shakti 8-10): CHAOS INCARNATE**
+- All random effects trigger 5 times
+- Gain 5 random god-tier buffs per turn
+- ALL outcomes are best possible for you, worst possible for enemies
+- **Eclipse Power:** When Rahu eclipses enemy planet, steal all their planetary power
+- **Dragon's Wish:** Once per Dasha, declare any effect you want - it happens (within game rules)
+- **Madness Aura:** Enemies' abilities have completely random targets and effects
+
+**Exaltation Bonus (in Gemini/Virgo):** Can steal enemy skills permanently
+
+---
+
+#### **9. KETU (SOUTH NODE) — The Liberation Dragon**
+**Domain:** Detachment, Spirituality, Loss, Transcendence
+
+**Tier 1 (Shakti 1-3): Spiritual Void**
+- Remove 1 buff from all enemies per turn
+- Gain [Void Touch] (attacks ignore all defenses)
+- Enemy resources drain by 10 per turn
+
+**Tier 2 (Shakti 4-7): Ascetic Transcendence**
+- Remove 3 buffs from all enemies per turn
+- [Void Touch] also prevents healing
+- Enemy resources drain by 30 per turn
+- **Moksha Protocol:** Cannot be affected by material effects (physical damage reduced by 75%)
+
+**Tier 3 (Shakti 8-10): ABSOLUTE LIBERATION**
+- Remove ALL buffs from all enemies every turn
+- [Void Touch] erases enemies from existence at 20% Ojas
+- Enemy resources drain by 100 per turn (all types)
+- **Ketu's Blessing:** You are immune to ALL effects (positive and negative) - pure existence
+- **Dragon Tail:** Enemy abilities cost triple resources
+- **Final Liberation:** Once per duel, remove one enemy from the game entirely (instant win against that target)
+
+**Exaltation Bonus (in Sagittarius/Pisces):** Gain Ojas equal to resources drained from enemies
+
+---
+
+### **HOUSE SYSTEM — 12 DOMINION ZONES**
+
+**Houses are now TERRITORIES you conquer and control**
+
+Each house grants escalating bonuses based on your **Bhava Dominion** level (0-10):
+
+#### **1st House (Lagna) — SELF**
+- **Level 1-3:** +50% max Ojas, +30% all personal stats
+- **Level 4-7:** +100% max Ojas, +60% stats, immunity to [Identity] effects
+- **Level 8-10:** +200% max Ojas, +100% stats, [Kshatriya Form] (warrior mode: triple damage, cannot die)
+
+#### **2nd House (Dhana) — WEALTH**
+- **Level 1-3:** +50% resource generation, +3 of all resources per turn
+- **Level 4-7:** +100% resources, +7 per turn, can store 2x normal capacity
+- **Level 8-10:** +200% resources, +15 per turn, INFINITE resource caps
+
+#### **3rd House (Sahaja) — COURAGE**
+- **Level 1-3:** +1 action per turn, abilities cost -30%
+- **Level 4-7:** +2 actions, costs -60%, can act on enemy turns (interrupts)
+- **Level 8-10:** +3 actions, all abilities FREE, act unlimited times per turn
+
+#### **4th House (Sukha) — FOUNDATION**
+- **Level 1-3:** +100 Shield per turn, +50% defense
+- **Level 4-7:** +250 Shield, +100% defense, reflect 50% damage
+- **Level 8-10:** +500 Shield, +200% defense, reflect 100% damage, [Fortress Form]
+
+#### **5th House (Putra) — CREATIVITY**
+- **Level 1-3:** All effects +50% potency, can combine 2 abilities
+- **Level 4-7:** +100% potency, combine 3 abilities, create new abilities
+- **Level 8-10:** +200% potency, combine ANY abilities, [Genesis Mode] (create permanent new skills)
+
+#### **6th House (Ripu) — ENEMIES**
+- **Level 1-3:** Enemies take +50% damage from all sources, apply [Weakness]
+- **Level 4-7:** +100% damage, [Weakness] upgraded to [Vulnerability] (all defenses -75%)
+- **Level 8-10:** Enemies take +200% damage, [Death Mark] (execute at 30% Ojas), [Shatruta Curse]
+
+#### **7th House (Kalatra) — PARTNERSHIP**
+- **Level 1-3:** Allies gain +50% your stats, shared resource pool
+- **Level 4-7:** +100% stats, shared abilities, heal each other for 50% damage dealt
+- **Level 8-10:** +200% stats, [Unity Consciousness] (act as one entity), shared invulnerability
+
+#### **8th House (Ayu) — TRANSFORMATION**
+- **Level 1-3:** Can sacrifice 25% Ojas for +100% effects for 2 turns
+- **Level 4-7:** Can enter [Death State] (0 Ojas, invulnerable, +300% effects for 3 turns)
+- **Level 8-10:** [Phoenix Protocol] (die and revive at 100% Ojas with +500% effects)
+
+#### **9th House (Bhagya) — FORTUNE**
+- **Level 1-3:** +100% luck, all random outcomes favor you
+- **Level 4-7:** +200% luck, guaranteed critical hits, auto-dodge attacks
+- **Level 8-10:** [Destiny Control] (rewrite probability, choose all outcomes, cannot miss, cannot be hit)
+
+#### **10th House (Karma) — AUTHORITY**
+- **Level 1-3:** Command 1 enemy to perform action of your choice per turn
+- **Level 4-7:** Command 3 enemies, steal their abilities permanently
+- **Level 8-10:** [Divine Authority] (all entities obey you, enemy resources become yours)
+
+#### **11th House (Labha) — GAINS**
+- **Level 1-3:** Double all gains (damage dealt = healing, resources gained × 2)
+- **Level 4-7:** Triple all gains, convert enemy losses into your gains
+- **Level 8-10:** [Infinite Multiplication] (every effect triggers 10 times, exponential scaling)
+
+#### **12th House (Vyaya) — LIBERATION**
+- **Level 1-3:** Can [Banish] 1 effect per turn, gain +50% from lost effects
+- **Level 4-7:** [Banish] 5 effects, gain +100%, apply [Moksha] (transcend restrictions)
+- **Level 8-10:** [Universal Dissolution] (erase entire concepts, reality becomes fluid, you exist beyond game rules)
+
+---
+
+### **NAKSHATRA SIGNATURES — 27 DIVINE BLESSINGS**
+
+**Nakshatras are now PERMANENT character traits that define your playstyle**
+
+Choose 3 Nakshatras at deck construction. Each provides unique god-tier effects:
+
+**1. Ashwini (The Horsemen)** — Ultra Speed
+- Act first every turn, +50% speed, abilities cost -50%, instant cast everything
+
+**2. Bharani (The Bearer)** — Sacrifice Mastery
+- Convert Ojas to power: 10 Ojas = +50% effects for 2 turns, can sacrifice allies for exponential power
+
+**3. Krittika (The Cutter)** — Critical Dominance
+- All attacks are guaranteed crits (+200% damage), ignore armor, [Sever] (prevent healing)
+
+**4. Rohini (The Red One)** — Growth Infinite
+- +20% ALL stats per turn (no cap), exponential scaling, becomes god after turn 10
+
+**5. Mrigashira (The Deer)** — Perfect Evasion
+- 75% dodge all attacks, when dodged gain +100% damage next attack, untargetable by spells
+
+**6. Ardra (The Storm)** — Chaos Tempest
+- Every ability triggers 3 random additional effects, [Storm Aura] (10 damage/turn to all enemies)
+
+**7. Punarvasu (The Renewal)** — Immortality
+- Automatically revive at 50% Ojas when killed, heal 100 Ojas per turn, cannot be executed
+
+**8. Pushya (The Nourisher)** — Ultimate Support
+- Allies heal 50% your healing, share buffs automatically, team gains your immunities
+
+**9. Ashlesha (The Serpent)** — Poison Master
+- All damage becomes [Poison] (deals damage over 5 turns), poison spreads on death, amplifies exponentially
+
+**10. Magha (The Mighty)** — Royal Authority
+- Command all entities, steal enemy turns, [Emperor Mode] (+200% all effects, aura kills weak enemies)
+
+**11. Purva Phalguni (The Swing)** — Momentum
+- Each action +20% stronger than last (stacks infinitely this turn), [Cascade] (chains never end)
+
+**12. Uttara Phalguni (The Bed)** — Restoration
+- Heal 200 Ojas to all per turn, cleanse all debuffs, grant [Sanctuary] (safe zone 5×5)
+
+**13. Hasta (The Hand)** — Perfect Control
+- Can manipulate any game element, move entities, change targets mid-action, reality manipulation
+
+**14. Chitra (The Bright)** — Blinding Power
+- +300% critical damage, enemies [Blinded] (50% miss chance), [Radiance] (passive 30 damage aura)
+
+**15. Swati (The Sword)** — Cutting Truth
+- Ignore all defenses and immunities, dispel everything, [True Damage] (cannot be reduced)
+
+**16. Vishakha (The Forked)** — Dual Nature
+- All abilities trigger twice automatically, exist in two states simultaneously, act twice per turn
+
+**17. Anuradha (The Following)** — Devotion Power
+- Allies gain +100% your power, [Unity Field] (team acts as single entity), shared effects × number of allies
+
+**18. Jyeshtha (The Eldest)** — Dominance
+- Cannot be debuffed, immune to control, enemies deal -50% damage to you, [Alpha Aura]
+
+**19. Mula (The Root)** — Destruction Core
+- Destroy foundations: reduce enemy max Ojas by 10% per turn, [Unraveling] (delete buffs), reality erosion
+
+**20. Purva Ashadha (The Invincible)** — Unstoppable
+- Cannot be killed, [Immortal Frame] (always 1 Ojas minimum), +500% effects below 25% Ojas
+
+**21. Uttara Ashadha (The Final Victory)** — Endgame God
+- After 15 turns, become invincible and deal 10× damage, [Victory Assured] (cannot lose)
+
+**22. Shravana (The Listener)** — Perfect Knowledge
+- Know all enemy actions before they happen, see entire deck, [Omniscience] (perfect counter)
+
+**23. Dhanishta (The Wealthy)** — Infinite Resources
+- Generate 50 of all resources per turn, no resource caps, [Abundance] (never run out)
+
+**24. Shatabhisha (The Healer)** — Medical Miracle
+- Heal any amount instantly, revive dead allies, [Necromancy] (control defeated enemies)
+
+**25. Purva Bhadrapada (The Burning)** — Apocalypse
+- [Burn] deals triple damage, spreads infinitely, [Inferno] (entire battlefield burns for 100 damage/turn)
+
+**26. Uttara Bhadrapada (The Serpent)** — Deep Wisdom
+- All stacks × 3 effectiveness, gain [Siddhi] automatically, [Enlightenment] (unlock hidden mechanics)
+
+**27. Revati (The Wealthy)** — Final Blessing
+- All allies immortal, share all effects, [Divine Grace] (team cannot lose), [Cosmic Protection]
+
+---
+
+### **DOSHA SYSTEM — LEGENDARY CURSES & BLESSINGS**
+
+**Doshas are now DOUBLE-EDGED LEGENDARY POWERS**
+
+#### **Mangal Dosha (Mars Affliction)**
+**The Warrior's Curse**
+- **Curse:** Take +50% damage from all sources
+- **Blessing:** Deal +300% damage on all attacks
+- **Mastery:** When you kill an enemy, fully heal and gain +100% damage permanently
+
+#### **Kala Sarpa Dosha (Serpent Time)**
+**The Dragon's Prison**
+- **Curse:** All cooldowns +5 turns
+- **Blessing:** When ability finally triggers, effect × 10 potency
+- **Mastery:** Can charge abilities infinitely (each turn charging = +100% power)
+
+#### **Pitra Dosha (Ancestor Debt)**
+**The Karmic Weight**
+- **Curse:** Start duel at 50% resources
+- **Blessing:** Every resource spent returns as +200%
+- **Mastery:** Sacrifice becomes power - convert Ojas to unstoppable effects (10 Ojas = 1 god-tier action)
+
+#### **Nadi Dosha (Genetic Conflict)**
+**The Twin Paradox**
+- **Curse:** Cannot use same ability twice in a row
+- **Blessing:** Every new ability used is +100% stronger than last
+- **Mastery:** Unlock [Infinity Combo] - chain 10 different abilities for reality-breaking finisher
+
+#### **Graha Dosha (Planetary Affliction)**
+**The Cosmic Curse**
+- **Curse:** Random planet debilitated each Dasha
+- **Blessing:** Other planets gain triple power to compensate
+- **Mastery:** Can forcibly eclipse any planet to absorb its power permanently
+
+---
+
+### **YOGA FORMATIONS — DIVINE COMBINATIONS**
+
+**When specific planets align, reality breaks**
+
+#### **Raj Yoga (Royal Union)**
+**Formation:** Jupiter + Venus + Sun all at Tier 3
+**Effect:** Become god-emperor for rest of duel - all effects +1000%, immortal, command all entities
+
+#### **Neecha Bhanga Raj Yoga (Curse Reversal)**
+**Formation:** Have 3 Doshas active simultaneously
+**Effect:** All curses become blessings at triple power, [Transcendent Curse Bearer]
+
+#### **Gaja Kesari Yoga (Elephant-Lion)**
+**Formation:** Jupiter + Moon both at Tier 2+
+**Effect:** Infinite resources, team immortality, wisdom grants material power
+
+#### **Pancha Mahapurusha Yoga (Five Great Souls)**
+**Formation:** All five classical planets (Mars/Mercury/Jupiter/Venus/Saturn) at Tier 2+
+**Effect:** [Avatar State] - choose any 5 abilities from any engine and use them simultaneously
+
+#### **Amala Yoga (Spotless)**
+**Formation:** 10th House Level 10 + Jupiter Tier 3
+**Effect:** [Divine Authority] - rewrite any game rule once per turn
+
+#### **Vimala Yoga (Pure Liberation)**
+**Formation:** 12th House Level 10 + Ketu Tier 3
+**Effect:** [Moksha State] - exist outside game, manipulate reality freely
+
+#### **Chandra Mangala Yoga (Moon-Mars)**
+**Formation:** Moon + Mars both Tier 3
+**Effect:** [Eternal Warrior] - infinite stamina, never-ending combos, death only makes you stronger
+
+---
+
+### **DASHA SYSTEM — COSMIC AGES**
+
+**Dashas are now RULE-CHANGING EPOCHS**
+
+Each Dasha lasts 5-10 turns and fundamentally changes how the game works:
+
+#### **Sun Mahadasha — Age of Fire**
+- All damage +100%
+- [Burn] effects permanent
+- Darkness effects disabled
+- Final turn: [Solar Apocalypse] (everyone takes 500 damage except Sun-aligned)
+
+#### **Moon Mahadasha — Age of Water**
+- All healing +200%
+- Emotions affect gameplay (fear = paralysis, love = ally bonding)
+- Tides: Turn 1-5 offensive, Turn 6-10 defensive
+- Final turn: [Lunar Tide] (full heal all allies, drown all enemies)
+
+#### **Mars Mahadasha — Age of War**
+- Combat only (no healing, no control, pure damage)
+- Every kill grants +50% permanent damage
+- Bloodlust mechanic: Higher kills = god mode
+- Final turn: [Ragnarok] (battlefield explodes for 1000 damage)
+
+#### **Mercury Mahadasha — Age of Change**
+- Reality becomes fluid: abilities change effects randomly
+- +5 actions per turn for everyone
+- Time accelerates (2 turns pass each turn)
+- Final turn: [Quantum Collapse] (multiple timelines merge, choose best outcome)
+
+#### **Jupiter Mahadasha — Age of Growth**
+- All effects trigger twice
+- Everything expands (AoE +500%, stacks +300%)
+- Knowledge grants power (+10% per [Darshan])
+- Final turn: [Universal Expansion] (everything infinite for 1 turn)
+
+#### **Venus Mahadasha — Age of Harmony**
+- Damage becomes healing, combat becomes negotiation
+- Beauty is power (aesthetic choices grant bonuses)
+- Love conquers all (allies merge into super-entity)
+- Final turn: [Cosmic Marriage] (perfect unity, team becomes invincible)
+
+#### **Saturn Mahadasha — Age of Judgment**
+- Time slows (1 turn = 3 normal turns)
+- Karma matters (every action has delayed consequence)
+- Suffering breeds power (+10% per debuff)
+- Final turn: [Cosmic Justice] (all karma debts paid, balance restored by force)
+
+#### **Rahu Mahadasha — Age of Chaos**
+- Complete randomness in all mechanics
+- Reality glitches (impossible things happen)
+- Dragon eclipses: steal enemy powers
+- Final turn: [Chaos Singularity] (game rules cease to exist)
+
+#### **Ketu Mahadasha — Age of Liberation**
+- Material world fades (physical damage reduced 90%)
+- Spiritual power matters (meditation > combat)
+- Enlightenment win condition available
+- Final turn: [Moksha Event] (all who survive transcend and win)
+
+---
+
+### **TRANSIT MECHANICS — APOCALYPTIC EVENTS**
+
+**Transits are now WORLD-CHANGING CATACLYSMS**
+
+#### **Solar Eclipse**
+- All [Burn] effects × 10
+- Sun and Moon merge: Light/Dark abilities fuse
+- Shadow realm opens: +50% damage from darkness
+- Lasts 2 turns, happens once per duel
+
+#### **Lunar Eclipse**
+- All [Heal] becomes [Damage]
+- Moon and Rahu merge: Madness spreads
+- Tides reverse: Reality inverts
+- Lasts 2 turns, happens once per duel
+
+#### **Saturn Return**
+- All entities age 7 turns instantly
+- Karma debts paid immediately
+- Time prison: Slowest planet gains absolute power
+- Triggers at turn 15, resets all Dashas
+
+#### **Rahu-Ketu Axis Shift**
+- Dragon nodes swap positions
+- Chaos/Order invert
+- Eclipse season: Both dragons gain Tier 3 power
+- Happens every 7 turns
+
+#### **Retrograde Storm**
+- 3+ planets go retrograde simultaneously
+- All effects reverse (damage heals, healing damages)
+- Time flows backward (undo last 3 turns)
+- Rare event: 10% chance per Dasha
+
+#### **Planetary Conjunction**
+- 3+ planets at same degree
+- Combined effects trigger simultaneously
+- Yoga formations auto-complete
+- Reality breaks: Choose any effect you want
+- Very rare: 5% chance per duel
+
+---
+
+### **ULTIMATE JYOTISH SKILLS — 40 COSMIC POWERS**
+
+#### **PLANETARY ASCENSION SKILLS (9)**
+
+**1. Grahacharya (Planet Master)**
+- Passive: Gain Graha Shakti 2× faster, start with all planets at Shakti 3
+
+**2. Exaltation Ritual**
+- Force any planet into exaltation for 3 turns (god-tier effects)
+
+**3. Debilitation Weapon**
+- Curse enemy planet, transfer its power to your corresponding planet
+
+**4. Vimshottari Unlock**
+- Access all Dasha effects simultaneously for 5 turns
+
+**5. Navagraha Invocation**
+- Summon all 9 planets at once, combine their effects
+
+**6. Planetary Eclipse**
+- Choose two planets: merge them into hybrid super-planet
+
+**7. Retrograde Control**
+- Force any planet retrograde or end retrograde at will
+
+**8. Combustion Engine**
+- When planets combust, trigger explosion for massive damage
+
+**9. Graha Eternal**
+- One chosen planet stays at Tier 3 for entire duel
+
+---
+
+#### **HOUSE DOMINATION SKILLS (12)**
+
+**10. Bhava Conquest**
+- Capture enemy house, gain its benefits
+
+**11. Lagna Lock**
+- 1st House becomes invulnerable fortress
+
+**12. Dhana Infinite**
+- 2nd House grants unlimited resources permanently
+
+**13. Courage Absolute**
+- 3rd House: infinite actions, no costs
+
+**14. Foundation Eternal**
+- 4th House: indestructible defense
+
+**15. Creation God**
+- 5th House: create permanent new mechanics
+
+**16. Enemy Annihilator**
+- 6th House: enemies take 10× damage
+
+**17. Unity Consciousness**
+- 7th House: team acts as hive mind
+
+**18. Death Rebirth**
+- 8th House: die and revive stronger infinitely
+
+**19. Fate Weaver**
+- 9th House: control all probability
+
+**20. Divine Authority**
+- 10th House: command reality itself
+
+**21. Multiplication God**
+- 11th House: everything × 100
+
+**22. Liberation Protocol**
+- 12th House: transcend all rules
+
+---
+
+#### **NAKSHATRA MASTERY SKILLS (7)**
+
+**23. Stellar Alignment**
+- Activate all 27 Nakshatra effects simultaneously
+
+**24. Constellation Power**
+- Form custom Nakshatra: combine 3 signatures
+
+**25. Star Birth**
+- Create new Nakshatra with chosen effects
+
+**26. Nakshatra Fusion**
+- Merge your 3 Nakshatras into god-form
+
+**27. Cosmic Pattern**
+- Rearrange stars: change Nakshatra meanings
+
+**28. Stellar Evolution**
+- Nakshatras evolve each turn (get stronger)
+
+**29. Star God**
+- Embody all 27 Nakshatras, reality bends to you
+
+---
+
+#### **DOSHA TRANSCENDENCE SKILLS (5)**
+
+**30. Curse Embrace**
+- Convert all Doshas to pure power (+500% per Dosha)
+
+**31. Karmic Liberation**
+- Remove all Doshas, gain permanent god status
+
+**32. Dosha Weapon**
+- Transfer your Doshas to enemies (they suffer, you benefit)
+
+**33. Affliction Mastery**
+- Doshas grant triple blessing, zero curse
+
+**34. Cosmic Balance**
+- Perfect Dosha harmony: become unstoppable
+
+---
+
+#### **YOGA FORMATION SKILLS (5)**
+
+**35. Instant Yoga**
+- Force any Yoga formation regardless of planets
+
+**36. Yoga Chain**
+- Activate 5 Yogas simultaneously
+
+**37. Royal Ascension**
+- Permanent Raj Yoga state
+
+**38. Mahapurusha Form**
+- Embody all 5 great soul Yogas
+
+**39. Yoga Eternal**
+- All Yogas stay active permanently
+
+---
+
+#### **ULTIMATE TRANSCENDENCE SKILL (1)**
+
+**40. JYOTISH SINGULARITY**
+- **Gnosis Requirement:** 100
+- **Cost:** All Jyoti, all Graha Shakti, all Bhava Dominion
+- **Effect:** Become the cosmos itself
+  - All planetary effects at maximum simultaneously
+  - All houses at Level 10
+  - All Nakshatras active
+  - All Yogas formed
+  - All Doshas transcended
+  - All Dashas running at once
+  - Control time, space, fate, reality
+  - **Duration:** Until end of duel
+  - **Note:** *You become the living Jyotish chart. Victory inevitable.*
+
+---
+
+### **🌟 SYNERGY WITH OTHER ENGINES**
+
+**Jyotish × Tantra:** Mars amplifies [Burn]/[Decay] to apocalyptic levels
+**Jyotish × Divination:** Jupiter + Mercury = omniscient time control
+**Jyotish × Singularity:** All planets at Tier 3 = godhood automatic
+**Jyotish × Therapeutic:** Venus + Moon = immortal healing team
+**Jyotish × Character Analysis:** Houses map to personality aspects
+
+---
+
+**End of Jyotish Engine ULTIMATE v4.0**
+
+**Now Jyotish doesn't just modify - it DOMINATES.** 🌟✨🔱

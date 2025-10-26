@@ -1,0 +1,662 @@
+# Singularity Engine — Complete Skills List (v1.0)
+## Total Skills: 100 (Transcendence, Reality Warping, Godhood, Rule Breaking)
+
+---
+
+### **CORE SINGULARITY CONCEPT**
+
+The Singularity Engine represents **transcendence beyond normal game mechanics** — breaking limits, rewriting rules, achieving godhood, and manipulating the fundamental fabric of reality itself.
+
+---
+
+### **CORE SINGULARITY PATHS — 5 Specializations**
+
+**Brahman (Unity)** — Merge with universal consciousness, erase boundaries
+**Moksha (Liberation)** — Transcend limitations, break free from constraints
+**Shakti (Power)** — Ultimate raw power, exponential scaling
+**Maya (Illusion)** — Reality manipulation, perception control
+**Shunya (Void)** — Annihilation of concepts, erasure of existence
+
+---
+
+### **CORE RESOURCES & MECHANICS**
+
+**Ananda (Bliss Points):** Transcendence energy (Max 100, regenerates slowly)
+**Siddhi (Mastery Levels):** Permanent power levels (0-10, never decrease)
+**Nirvana (Awakening Stacks):** Each stack grants +10% ALL effects (caps at 10 = +100%)
+**Avatara (God Forms):** Transformation states that rewrite rules (3 max unlockable)
+
+**Core Status Effects:**
+- [Transcendent] — Immune to negative effects, +50% all positive effects
+- [Reality Warped] — Game rules don't apply to affected entity
+- [Godhood] — Can rewrite one game rule per turn
+- [Singularity] — All opposing forces collapse into this entity
+- [Erasure] — Targeted concept/entity ceases to exist
+
+---
+
+### **LIMIT BREAKING — 20 Skills**
+
+1. **Glyph: Shatter Ceiling** (Foundation, Gnosis 25)
+   * **Core Function:** Remove all caps on your resources (Ojas, Prana, etc.) for 3 turns.
+   * **Evo A (Extended Shatter):** Duration 5 turns.
+   * **Evo B (Permanent Shatter):** One chosen resource has no cap for rest of duel.
+   * **Note:** *Break resource limits. Infinite potential.*
+
+2. **Glyph: Overflow** (Exponential, Gnosis 30)
+   * **Core Function:** When your resource exceeds maximum, gain bonus effects equal to overflow amount.
+   * **Evo A (Perfect Overflow):** Bonus doubled.
+   * **Evo B (Cascading Overflow):** Overflow applies to all resources simultaneously.
+   * **Note:** *Turn excess into power. No waste.*
+
+3. **Glyph: Limit Removal** (Permanent, Gnosis 40)
+   * **Core Function:** Choose one restriction on your build. It no longer applies this duel.
+   * **Evo A (Multiple Removal):** Remove 2 restrictions.
+   * **Evo B (Perfect Removal):** Removed restriction also grants +25% related effects.
+   * **Note:** *Erase constraints. Pure freedom.*
+
+4. **Glyph: Infinite Stack** (Scaling, Gnosis 35)
+   * **Core Function:** All your stacking effects have no cap and decay 50% slower.
+   * **Evo A (Perfect Stack):** Never decay.
+   * **Evo B (Accelerated Stack):** Gain stacks 2x faster.
+   * **Note:** *Unbounded growth. Exponential power.*
+
+5. **Glyph: Cooldown Annihilation** (Freedom, Gnosis 45)
+   * **Core Function:** For 3 turns, all your abilities have 0 cooldown.
+   * **Evo A (Extended Annihilation):** Duration 5 turns.
+   * **Evo B (Perfect Annihilation):** Abilities also cost -50% resources during this time.
+   * **Note:** *Spam everything. Ultimate freedom.*
+
+6. **Glyph: Cost Negation** (Economy, Gnosis 40)
+   * **Core Function:** Next 5 abilities cost 0 resources.
+   * **Evo A (Extended Negation):** 8 abilities.
+   * **Evo B (Perfect Negation):** Also gain +20 Ananda per free cast.
+   * **Note:** *Free power. Resource transcendence.*
+
+7. **Glyph: Action Multiplication** (Tempo, Gnosis 50)
+   * **Core Function:** This turn, perform each action twice automatically (costs counted once).
+   * **Evo A (Perfect Multiplication):** Actions performed three times.
+   * **Evo B (Sustained Multiplication):** Lasts 2 turns.
+   * **Note:** *Double everything. Ultimate value.*
+
+8. **Glyph: Damage Ceiling Removal** (Offense, Gnosis 55)
+   * **Core Function:** Remove all damage caps. Your attacks can deal unlimited damage.
+   * **Evo A (Perfect Damage):** Also +50% base damage.
+   * **Evo B (Overkill):** Excess damage converts to healing for you.
+   * **Note:** *One-shot potential. No limits.*
+
+9. **Glyph: Duration Extension** (Time, Gnosis 45)
+   * **Core Function:** All your active effects gain +10 turns duration.
+   * **Evo A (Perfect Extension):** +20 turns.
+   * **Evo B (Permanent Extension):** Chosen effect becomes permanent this duel.
+   * **Note:** *Eternal buffs. Time transcendence.*
+
+10. **Glyph: Turn Theft** (Tempo, Gnosis 60)
+    * **Core Function:** Steal enemy's next turn. You act twice in a row.
+    * **Evo A (Perfect Theft):** Steal 2 turns.
+    * **Evo B (Brutal Theft):** Enemy loses turn AND takes 50 damage.
+    * **Note:** *Time manipulation. Decisive advantage.*
+
+11. **Glyph: Stat Multiplication** (Power, Gnosis 55)
+    * **Core Function:** All your stats (damage, healing, defense) multiplied by 2 for 3 turns.
+    * **Evo A (Perfect Multiplication):** Multiplied by 3.
+    * **Evo B (Extended Multiplication):** Duration 5 turns.
+    * **Note:** *Exponential scaling. God mode.*
+
+12. **Glyph: Resource Loop** (Infinite, Gnosis 65)
+    * **Core Function:** Resources spent return to you at end of turn. Effectively infinite resources for 3 turns.
+    * **Evo A (Extended Loop):** Duration 4 turns.
+    * **Evo B (Perfect Loop):** Resources return with +20% bonus.
+    * **Note:** *Closed system. Perpetual motion.*
+
+13. **Glyph: Boundary Erasure** (Freedom, Gnosis 70)
+    * **Core Function:** You can use abilities from ANY engine (Tantra/Divination/etc.) for 3 turns.
+    * **Evo A (Extended Erasure):** Duration 5 turns.
+    * **Evo B (Perfect Erasure):** Cross-engine abilities have +50% potency.
+    * **Note:** *Transcend categories. Ultimate flexibility.*
+
+14. **Glyph: Ascending Scale** (Exponential, Gnosis 60)
+    * **Core Function:** Each action this turn is 20% stronger than the previous one (stacks infinitely this turn).
+    * **Evo A (Perfect Ascending):** 30% stronger per action.
+    * **Evo B (Sustained Ascending):** Carries over to next turn at 50% strength.
+    * **Note:** *Momentum builder. Snowball effect.*
+
+15. **Glyph: Limit Transcendence** (Ultimate, Gnosis 75)
+    * **Core Function:** Once per duel: For 5 turns, all your abilities operate at 500% potency with no costs, cooldowns, or restrictions.
+    * **Evo A (Extended Transcendence):** Duration 7 turns.
+    * **Evo B (Perfect Transcendence):** 1000% potency instead.
+    * **Note:** *Ultimate god mode. Win button.*
+
+16. **Glyph: Stack Fusion** (Combination, Gnosis 50)
+    * **Core Function:** Combine all your different stack types into one super-stack. Each combined stack = +15% all effects.
+    * **Evo A (Perfect Fusion):** +25% per stack.
+    * **Evo B (Persistent Fusion):** Fused stacks never decay.
+    * **Note:** *Unified power. Simplified scaling.*
+
+17. **Glyph: Immunity Cascade** (Defense, Gnosis 65)
+    * **Core Function:** Become immune to 3 chosen damage/effect types permanently this duel.
+    * **Evo A (Extended Immunity):** 5 types.
+    * **Evo B (Perfect Immunity):** Immune to everything except direct damage for 3 turns.
+    * **Note:** *Selective invulnerability. Tailored defense.*
+
+18. **Glyph: Perpetual Motion** (Economy, Gnosis 60)
+    * **Core Function:** Passive: Gain +10 of all resources every turn automatically.
+    * **Evo A (Perfect Motion):** +20 per turn.
+    * **Evo B (Accelerating Motion):** Amount increases by +5 each turn (10, 15, 20...).
+    * **Note:** *Infinite generator. Self-sustaining.*
+
+19. **Glyph: Reality Break** (Meta, Gnosis 80)
+    * **Core Function:** Once per duel: Break one game rule for 1 turn (example: attack during enemy turn, use 10 actions, etc.).
+    * **Evo A (Extended Break):** 2 turns.
+    * **Evo B (Perfect Break):** Break 2 rules simultaneously.
+    * **Note:** *Cheat the game. Meta power.*
+
+20. **Glyph: Ascension** (Transformation, Gnosis 85)
+    * **Core Function:** Permanently gain +1 [Siddhi]. Each [Siddhi] grants +10% ALL effects permanently.
+    * **Evo A (Rapid Ascension):** Gain +2 [Siddhi].
+    * **Evo B (Perfect Ascension):** +15% per [Siddhi] instead.
+    * **Note:** *Permanent power growth. Unstoppable scaling.*
+
+---
+
+### **REALITY WARPING — 20 Skills**
+
+21. **Glyph: Rewrite Reality** (Fundamental, Gnosis 50)
+    * **Core Function:** Change one active effect's parameters (damage amount, duration, target, etc.).
+    * **Evo A (Perfect Rewrite):** Change 3 effects.
+    * **Evo B (Enhanced Rewrite):** Rewritten effects have +50% potency.
+    * **Note:** *Edit the game. Reality hacking.*
+
+22. **Glyph: Causality Reversal** (Time, Gnosis 55)
+    * **Core Function:** Effect happens before cause. Gain benefits of action before executing it.
+    * **Evo A (Perfect Reversal):** Applies to next 3 actions.
+    * **Evo B (Cascading Reversal):** If action fails, benefits remain anyway.
+    * **Note:** *Backwards time. Guaranteed value.*
+
+23. **Glyph: Probability Rewrite** (RNG Control, Gnosis 60)
+    * **Core Function:** Set any random outcome to desired result. Works once per turn.
+    * **Evo A (Extended Rewrite):** 3 times per turn.
+    * **Evo B (Perfect Rewrite):** Rewritten outcomes also grant +50% benefits.
+    * **Note:** *Control luck. Eliminate chance.*
+
+24. **Glyph: Clone Reality** (Duplication, Gnosis 65)
+    * **Core Function:** Copy entire game state. If you would lose, revert to copied state instead.
+    * **Evo A (Multiple Clones):** Can store 2 states.
+    * **Evo B (Perfect Clone):** Cloned state has +25% resources.
+    * **Note:** *Save point. Undo death.*
+
+25. **Glyph: Pocket Dimension** (Isolation, Gnosis 55)
+    * **Core Function:** Remove yourself from battlefield for 2 turns. Can still act but cannot be affected.
+    * **Evo A (Extended Dimension):** 3 turns.
+    * **Evo B (Perfect Dimension):** Actions from dimension have +100% potency.
+    * **Note:** *Untouchable offense. Safe power.*
+
+26. **Glyph: Target Swap** (Manipulation, Gnosis 50)
+    * **Core Function:** Any effect targeting you targets enemy instead. Lasts 2 turns.
+    * **Evo A (Extended Swap):** 3 turns.
+    * **Evo B (Perfect Swap):** Swapped effects have +50% potency.
+    * **Note:** *Redirect everything. No defense needed.*
+
+27. **Glyph: Mirror Universe** (Inversion, Gnosis 70)
+    * **Core Function:** For 3 turns, all effects have opposite results (damage heals, healing damages, buffs become debuffs).
+    * **Evo A (Controlled Mirror):** Only affects enemies.
+    * **Evo B (Perfect Mirror):** Inverted effects have +50% potency.
+    * **Note:** *Chaos field. Strategic inversion.*
+
+28. **Glyph: Existence Denial** (Nullification, Gnosis 65)
+    * **Core Function:** Declare one effect "never happened." It's erased from game history.
+    * **Evo A (Multiple Denial):** 3 effects erased.
+    * **Evo B (Perfect Denial):** Gain resources equal to erased effect's cost.
+    * **Note:** *Retcon reality. Ultimate undo.*
+
+29. **Glyph: Law Rewrite** (Meta, Gnosis 75)
+    * **Core Function:** Change one game rule for 3 turns (examples: "abilities cost Ojas instead of Prana," "effects last double duration").
+    * **Evo A (Extended Law):** Duration 5 turns.
+    * **Evo B (Perfect Law):** Change 2 rules simultaneously.
+    * **Note:** *Custom rules. Reality dictator.*
+
+30. **Glyph: Superposition** (Quantum, Gnosis 60)
+    * **Core Function:** Exist in 2 states simultaneously. Take 2 different actions, both happen.
+    * **Evo A (Perfect Position):** 3 states/actions.
+    * **Evo B (Sustained Position):** Lasts 2 turns.
+    * **Note:** *Quantum power. Multiple realities.*
+
+31. **Glyph: Timeline Split** (Multi-Reality, Gnosis 70)
+    * **Core Function:** Create alternate timeline where different action was taken. Choose best outcome from both.
+    * **Evo A (Multiple Splits):** 3 timelines.
+    * **Evo B (Perfect Split):** Combine benefits from all timelines.
+    * **Note:** *Try everything. Keep best result.*
+
+32. **Glyph: Reality Anchor** (Stability, Gnosis 55)
+    * **Core Function:** Your game state cannot be altered by external effects for 3 turns.
+    * **Evo A (Extended Anchor):** Duration 5 turns.
+    * **Evo B (Perfect Anchor):** Also immune to all debuffs.
+    * **Note:** *Immutable self. Perfect stability.*
+
+33. **Glyph: Concept Erasure** (Deletion, Gnosis 80)
+    * **Core Function:** Remove one concept from duel (example: "damage," "healing," "resources"). Lasts 3 turns.
+    * **Evo A (Extended Erasure):** Duration 5 turns.
+    * **Evo B (Perfect Erasure):** Remove 2 concepts.
+    * **Note:** *Delete mechanics. Game breaker.*
+
+34. **Glyph: Reality Storm** (Chaos, Gnosis 65)
+    * **Core Function:** For 5 turns, random reality warps occur each turn affecting everyone.
+    * **Evo A (Controlled Storm):** You choose which warps occur.
+    * **Evo B (Perfect Storm):** Warps are always beneficial for you, harmful for enemies.
+    * **Note:** *Controlled chaos. Advantage from madness.*
+
+35. **Glyph: Dimensional Shift** (Movement, Gnosis 55)
+    * **Core Function:** Swap positions with enemy. Their buffs/debuffs transfer, yours stay.
+    * **Evo A (Perfect Shift):** Also steal one buff from them.
+    * **Evo B (Mass Shift):** Affects all enemies simultaneously.
+    * **Note:** *Position manipulation. Battlefield control.*
+
+36. **Glyph: Physics Break** (Meta, Gnosis 75)
+    * **Core Function:** Actions no longer require targets, costs, or logical prerequisites for 3 turns.
+    * **Evo A (Extended Break):** Duration 5 turns.
+    * **Evo B (Perfect Break):** Actions also have +100% potency.
+    * **Note:** *Ignore logic. Pure chaos.*
+
+37. **Glyph: Paradox Creation** (Impossibility, Gnosis 80)
+    * **Core Function:** Create impossible state (example: "Have 0 Ojas but still alive"). Game resolves in your favor.
+    * **Evo A (Multiple Paradox):** Create 2 paradoxes.
+    * **Evo B (Perfect Paradox):** Paradoxes grant +100% all effects while active.
+    * **Note:** *Break logic. Impossible is possible.*
+
+38. **Glyph: Reality Backup** (Insurance, Gnosis 60)
+    * **Core Function:** Any negative effect that would affect you affects enemy instead (automatic redirect).
+    * **Evo A (Perfect Backup):** Redirected effects have +50% potency.
+    * **Evo B (Sustained Backup):** Lasts entire duel.
+    * **Note:** *Permanent redirect. Immunity through reversal.*
+
+39. **Glyph: Universal Reset** (Restoration, Gnosis 85)
+    * **Core Function:** Once per duel: Reset entire game state to turn 1, but you keep all current resources/buffs.
+    * **Evo A (Partial Reset):** Only reset enemy state, keep all game progress.
+    * **Evo B (Perfect Reset):** Also gain +100 all resources after reset.
+    * **Note:** *Ultimate do-over. Fresh start with advantage.*
+
+40. **Glyph: Singularity Point** (Ultimate, Gnosis 90)
+    * **Core Function:** All reality warps center on you. For 3 turns, you dictate all game rules. Costs 80 Ananda.
+    * **Evo A (Extended Singularity):** Duration 5 turns.
+    * **Evo B (Perfect Singularity):** Only costs 60 Ananda.
+    * **Note:** *God mode. Complete reality control.*
+
+---
+
+### **GODHOOD MECHANICS — 20 Skills**
+
+41. **Glyph: Divine Spark** (Foundation, Gnosis 30)
+    * **Core Function:** Gain [Transcendent] status for 3 turns: Immune to negative effects, +50% all positive effects.
+    * **Evo A (Extended Spark):** Duration 5 turns.
+    * **Evo B (Perfect Spark):** +100% positive effects instead.
+    * **Note:** *Taste of godhood. Powerful state.*
+
+42. **Glyph: Avatara Form** (Transformation, Gnosis 50)
+    * **Core Function:** Transform into god form: +100% all stats, new unique ability unlocked.
+    * **Evo A (Perfect Form):** +150% stats.
+    * **Evo B (Sustained Form):** Transformation lasts entire duel.
+    * **Note:** *God transformation. Ultimate power.*
+
+43. **Glyph: Omnipotence** (Power, Gnosis 75)
+    * **Core Function:** For 3 turns, all your actions automatically succeed at maximum potency.
+    * **Evo A (Extended Omnipotence):** Duration 5 turns.
+    * **Evo B (Perfect Omnipotence):** Actions also have +100% bonus effects.
+    * **Note:** *Perfect power. Cannot fail.*
+
+44. **Glyph: Omniscience** (Knowledge, Gnosis 70)
+    * **Core Function:** See all possible futures for next 5 turns. Choose which one occurs.
+    * **Evo A (Extended Omniscience):** See 8 turns ahead.
+    * **Evo B (Perfect Omniscience):** Can combine elements from multiple futures.
+    * **Note:** *Perfect foresight. Control destiny.*
+
+45. **Glyph: Omnipresence** (Existence, Gnosis 65)
+    * **Core Function:** Exist everywhere simultaneously. Can target any entity anywhere, cannot be targeted.
+    * **Evo A (Perfect Presence):** Also act 3 times per turn.
+    * **Evo B (Sustained Presence):** Lasts 5 turns instead of 3.
+    * **Note:** *Everywhere and nowhere. God positioning.*
+
+46. **Glyph: Divine Judgment** (Execution, Gnosis 60)
+    * **Core Function:** Declare target "judged." They take 100 damage, ignoring all defenses.
+    * **Evo A (Perfect Judgment):** 200 damage.
+    * **Evo B (Mass Judgment):** Affects all enemies.
+    * **Note:** *Unavoidable execution. God's wrath.*
+
+47. **Glyph: Creation** (Generation, Gnosis 55)
+    * **Core Function:** Create anything that doesn't exist yet (buff, resource, ally). Lasts 5 turns.
+    * **Evo A (Perfect Creation):** Created entity has +50% potency.
+    * **Evo B (Permanent Creation):** Lasts entire duel.
+    * **Note:** *Ex nihilo. Create from nothing.*
+
+48. **Glyph: Destruction** (Annihilation, Gnosis 55)
+    * **Core Function:** Destroy any one thing completely (buff, debuff, resource, entity). Cannot be recovered.
+    * **Evo A (Perfect Destruction):** Destroy 3 things.
+    * **Evo B (Mass Destruction):** Affects all enemies' entities.
+    * **Note:** *Total erasure. God's deletion.*
+
+49. **Glyph: Divine Grace** (Blessing, Gnosis 50)
+    * **Core Function:** Grant yourself or ally complete invulnerability for 2 turns.
+    * **Evo A (Extended Grace):** 3 turns.
+    * **Evo B (Perfect Grace):** Also heal to full Ojas and remove all debuffs.
+    * **Note:** *Complete protection. God's shield.*
+
+50. **Glyph: Divine Wrath** (Punishment, Gnosis 60)
+    * **Core Function:** Enemy takes damage equal to all their current buffs × 10. Then remove all buffs.
+    * **Evo A (Perfect Wrath):** ×20 instead.
+    * **Evo B (Spreading Wrath):** Affects all enemies.
+    * **Note:** *Punish power. God's retribution.*
+
+51. **Glyph: Ascended State** (Permanent, Gnosis 80)
+    * **Core Function:** Permanently gain +1 [Siddhi] and +10 [Nirvana]. Can be used multiple times per duel.
+    * **Evo A (Rapid Ascension):** Gain +2 [Siddhi], +20 [Nirvana].
+    * **Evo B (Perfect Ascension):** Also permanently gain +25% max resources.
+    * **Note:** *Permanent evolution. Stackable godhood.*
+
+52. **Glyph: Cosmic Authority** (Command, Gnosis 70)
+    * **Core Function:** Command any entity to perform any action (friend or foe). They must obey.
+    * **Evo A (Perfect Authority):** Command 3 entities simultaneously.
+    * **Evo B (Sustained Authority):** Can command every turn for 3 turns.
+    * **Note:** *Absolute control. God's will.*
+
+53. **Glyph: Reality Sovereignty** (Domain, Gnosis 75)
+    * **Core Function:** Create 5×5 zone: You write all rules inside it for 4 turns.
+    * **Evo A (Perfect Sovereignty):** 7×7 zone.
+    * **Evo B (Extended Sovereignty):** Duration 6 turns.
+    * **Note:** *Personal reality. God's domain.*
+
+54. **Glyph: Miracle** (Impossible, Gnosis 65)
+    * **Core Function:** Perform one impossible action (examples: "Have infinite resources for 1 turn," "Act 10 times in one turn").
+    * **Evo A (Perfect Miracle):** Perform 2 miracles.
+    * **Evo B (Sustained Miracle):** Miracle lasts 2 turns instead of 1.
+    * **Note:** *Break reality. God's exception.*
+
+55. **Glyph: Divine Intervention** (Save, Gnosis 60)
+    * **Core Function:** When ally would die, prevent it and fully restore them instead.
+    * **Evo A (Perfect Intervention):** Restore at 150% max Ojas.
+    * **Evo B (Mass Intervention):** Affects all allies.
+    * **Note:** *Defy death. God's mercy.*
+
+56. **Glyph: Apotheosis** (Ultimate Transformation, Gnosis 85)
+    * **Core Function:** Become true god for 5 turns: All abilities cost 0, have 0 cooldown, deal triple effects.
+    * **Evo A (Extended Apotheosis):** Duration 7 turns.
+    * **Evo B (Perfect Apotheosis):** Quintuple effects instead of triple.
+    * **Note:** *True godhood. Ultimate state.*
+
+57. **Glyph: Eternal Throne** (Supremacy, Gnosis 80)
+    * **Core Function:** Passive: Cannot lose [Siddhi] or [Nirvana]. Gain +1 [Siddhi] every 10 turns.
+    * **Evo A (Rapid Throne):** Gain every 7 turns.
+    * **Evo B (Perfect Throne):** Also gain +5 [Nirvana] per turn passively.
+    * **Note:** *Permanent growth. Unstoppable rise.*
+
+58. **Glyph: God's Mandate** (Decree, Gnosis 75)
+    * **Core Function:** Declare one absolute rule for rest of duel (example: "I cannot take damage," "Enemy cannot use abilities").
+    * **Evo A (Perfect Mandate):** Declare 2 rules.
+    * **Evo B (Enhanced Mandate):** Rules apply only to enemies, not you.
+    * **Note:** *Absolute law. God's decree.*
+
+59. **Glyph: Transcendent Will** (Authority, Gnosis 85)
+    * **Core Function:** Your will overwrites all other effects. Any conflict resolves in your favor automatically.
+    * **Evo A (Perfect Will):** Also gain +100% all effects when will activates.
+    * **Evo B (Sustained Will):** Lasts entire duel.
+    * **Note:** *Ultimate authority. Your word is law.*
+
+60. **Glyph: Brahman Merge** (Unity, Gnosis 90)
+    * **Core Function:** Merge with universal consciousness: All entities share your buffs, you're immune to all debuffs. Lasts 5 turns.
+    * **Evo A (Extended Merge):** Duration 8 turns.
+    * **Evo B (Perfect Merge):** Shared buffs have +100% potency.
+    * **Note:** *Ultimate unity. Collective godhood.*
+
+---
+
+### **VOID & ANNIHILATION — 20 Skills**
+
+61. **Glyph: Void Touch** (Erasure, Gnosis 35)
+    * **Core Function:** Apply [Erasure]: Target loses 25% of all current resources.
+    * **Evo A (Perfect Touch):** 50% loss.
+    * **Evo B (Spreading Touch):** Affects all enemies.
+    * **Note:** *Drain everything. Void hunger.*
+
+62. **Glyph: Null Field** (Zone, Gnosis 40)
+    * **Core Function:** Create 3×3 field for 3 turns: No abilities can be used inside.
+    * **Evo A (Perfect Field):** 5×5 field.
+    * **Evo B (Extended Field):** Duration 5 turns.
+    * **Note:** *Dead zone. Silence area.*
+
+63. **Glyph: Concept Deletion** (Fundamental, Gnosis 50)
+    * **Core Function:** Delete one concept for 3 turns (example: "damage," "healing," "buffs").
+    * **Evo A (Extended Deletion):** Duration 5 turns.
+    * **Evo B (Perfect Deletion):** Delete 2 concepts.
+    * **Note:** *Remove mechanics. Selective void.*
+
+64. **Glyph: Existence Drain** (Life Steal, Gnosis 45)
+    * **Core Function:** Drain 50 Ojas from target. You gain half as [Heal].
+    * **Evo A (Perfect Drain):** Drain 100, gain full amount.
+    * **Evo B (Mass Drain):** Affects all enemies.
+    * **Note:** *Vampire void. Steal life.*
+
+65. **Glyph: Unmaking** (Reversal, Gnosis 55)
+    * **Core Function:** Undo target's last 3 actions completely.
+    * **Evo A (Perfect Unmaking):** Last 5 actions.
+    * **Evo B (Mass Unmaking):** Affects all enemies.
+    * **Note:** *Reverse time. Erase progress.*
+
+66. **Glyph: Entropy Wave** (AoE, Gnosis 60)
+    * **Core Function:** All entities lose 20% max Ojas permanently this duel. Deal 40 damage to all.
+    * **Evo A (Perfect Entropy):** 30% max Ojas loss.
+    * **Evo B (Selective Entropy):** Only affects enemies.
+    * **Note:** *Universal decay. Weaken all.*
+
+67. **Glyph: Oblivion** (Ultimate Erase, Gnosis 70)
+    * **Core Function:** Target entity ceases to exist. Removed from game entirely, cannot be revived.
+    * **Evo A (Perfect Oblivion):** Remove 2 entities.
+    * **Evo B (Mass Oblivion):** Affects all enemies below 25% Ojas.
+    * **Note:** *Total deletion. True death.*
+
+68. **Glyph: Void Cascade** (Chain Deletion, Gnosis 65)
+    * **Core Function:** Remove one buff. For each buff removed, remove another (chain effect).
+    * **Evo A (Perfect Cascade):** Also damages for 20 per buff removed.
+    * **Evo B (Mass Cascade):** Affects all enemies simultaneously.
+    * **Note:** *Chain erasure. Cleanse all.*
+
+69. **Glyph: Nihility** (Anti-Existence, Gnosis 75)
+    * **Core Function:** For 3 turns, nothing can be created (no buffs, healing, resources, entities).
+    * **Evo A (Extended Nihility):** Duration 5 turns.
+    * **Evo B (Selective Nihility):** Only prevents enemy creation.
+    * **Note:** *Freeze creation. Stasis field.*
+
+70. **Glyph: Memory Void** (Amnesia, Gnosis 55)
+    * **Core Function:** Enemy forgets all abilities used this duel. Can only use base abilities.
+    * **Evo A (Perfect Void):** Also reset all progress/stacks to 0.
+    * **Evo B (Mass Void):** Affects all enemies.
+    * **Note:** *Erase knowledge. Reset state.*
+
+71. **Glyph: Vacuum** (Removal, Gnosis 50)
+    * **Core Function:** Remove all active effects from battlefield (buffs, debuffs, zones, everything).
+    * **Evo A (Selective Vacuum):** Only remove enemy effects.
+    * **Evo B (Perfect Vacuum):** Removed effects deal 10 damage each to enemies.
+    * **Note:** *Clean slate. Total reset.*
+
+72. **Glyph: Absorption** (Consumption, Gnosis 60)
+    * **Core Function:** Absorb defeated enemy's power. Gain +25% their max stats permanently.
+    * **Evo A (Perfect Absorption):** +50% stats.
+    * **Evo B (Complete Absorption):** Also gain their abilities for rest of duel.
+    * **Note:** *Grow from kills. Snowball power.*
+
+73. **Glyph: Anti-Magic** (Cancellation, Gnosis 65)
+    * **Core Function:** Create anti-magic zone: No magical/energy abilities work for anyone for 3 turns.
+    * **Evo A (Extended Anti-Magic):** Duration 5 turns.
+    * **Evo B (Selective Anti-Magic):** Only affects enemies.
+    * **Note:** *Magic denial. Pure physical.*
+
+74. **Glyph: Silence of Void** (Control, Gnosis 55)
+    * **Core Function:** Apply [Silence] that cannot be cleansed. Lasts 3 turns.
+    * **Evo A (Extended Silence):** 5 turns.
+    * **Evo B (Perfect Silence):** Also drain 10 resources per turn.
+    * **Note:** *Uncleansable lockdown. Perfect silence.*
+
+75. **Glyph: Dimensional Collapse** (Annihilation, Gnosis 70)
+    * **Core Function:** Collapse pocket dimension. All entities inside take 150 damage.
+    * **Evo A (Perfect Collapse):** 250 damage.
+    * **Evo B (Selective Collapse):** Only damages enemies.
+    * **Note:** *Implode reality. Massive burst.*
+
+76. **Glyph: Unmake Reality** (Meta Deletion, Gnosis 80)
+    * **Core Function:** Choose one aspect of game (example: "All healing," "All damage"). It no longer exists for 5 turns.
+    * **Evo A (Extended Unmake):** Duration 8 turns.
+    * **Evo B (Perfect Unmake):** Remove 2 aspects.
+    * **Note:** *Delete game mechanics. Rule erasure.*
+
+77. **Glyph: Black Hole** (Gravity, Gnosis 75)
+    * **Core Function:** Create singularity: All entities pulled to center, take 50 damage per turn, cannot escape for 3 turns.
+    * **Evo A (Perfect Hole):** 80 damage per turn.
+    * **Evo B (Selective Hole):** Only affects enemies.
+    * **Note:** *Inescapable void. Gravity trap.*
+
+78. **Glyph: Final Void** (Ultimate Annihilation, Gnosis 85)
+    * **Core Function:** Once per duel: Reduce all enemies to 1 Ojas. They cannot heal for 3 turns.
+    * **Evo A (Perfect Void):** Also [Silence] them for duration.
+    * **Evo B (Extended Void):** Duration 5 turns.
+    * **Note:** *Near-death. Ultimate setup.*
+
+79. **Glyph: Entropy God** (Passive, Gnosis 80)
+    * **Core Function:** Passive: All enemy effects decay 50% faster. Yours decay 50% slower.
+    * **Evo A (Perfect Entropy):** Enemy 75% faster, yours 75% slower.
+    * **Evo B (Complete Entropy):** Enemy effects decay immediately after activation.
+    * **Note:** *Time manipulation. Decay master.*
+
+80. **Glyph: Omega Point** (Endgame, Gnosis 90)
+    * **Core Function:** After 20 turns, automatically win duel if you're still alive.
+    * **Evo A (Rapid Omega):** Trigger at 15 turns.
+    * **Evo B (Perfect Omega):** Trigger at 10 turns.
+    * **Note:** *Inevitable victory. Time win condition.*
+
+---
+
+### **SINGULARITY SPECIALIZATIONS — 10 Skills**
+
+81. **Glyph: Unity Specialist** (Brahman Path, Gnosis 60)
+    * **Core Function:** Cannot use Void abilities. All Unity/merge abilities +150%. Share all benefits with allies automatically.
+    * **Evo A (Perfect Unity):** +200% effects.
+    * **Evo B (Deep Unity):** Allies gain +50% your stats.
+    * **Note:** *Collective power. Team godhood.*
+
+82. **Glyph: Void Specialist** (Shunya Path, Gnosis 60)
+    * **Core Function:** Cannot use Creation abilities. All deletion/erasure effects +150%. Immune to healing.
+    * **Evo A (Perfect Void):** +200% effects.
+    * **Evo B (Master Void):** Gain Ojas from destroying things instead of healing.
+    * **Note:** *Pure annihilation. Entropy incarnate.*
+
+83. **Glyph: Power Specialist** (Shakti Path, Gnosis 60)
+    * **Core Function:** Cannot use control abilities. All damage/power effects +150%. Gain [Siddhi] 2x faster.
+    * **Evo A (Perfect Power):** +200% effects.
+    * **Evo B (Master Power):** Each attack grants +5% permanent damage boost.
+    * **Note:** *Pure offense. Unstoppable force.*
+
+84. **Glyph: Illusion Specialist** (Maya Path, Gnosis 60)
+    * **Core Function:** Cannot use direct damage. All reality warps +150%. Can create 3 illusions of yourself.
+    * **Evo A (Perfect Illusion):** +200% effects.
+    * **Evo B (Master Illusion):** Illusions have 75% your stats and act independently.
+    * **Note:** *Reality bender. Perception master.*
+
+85. **Glyph: Liberation Specialist** (Moksha Path, Gnosis 60)
+    * **Core Function:** Cannot use limiting abilities. All transcendence effects +150%. Start with 5 [Siddhi].
+    * **Evo A (Perfect Liberation):** +200% effects.
+    * **Evo B (Complete Liberation):** No ability costs or cooldowns ever.
+    * **Note:** *Ultimate freedom. Constraint breaker.*
+
+86. **Glyph: Ascended Master** (Meta, Gnosis 75)
+    * **Core Function:** Can use ALL Singularity paths simultaneously but at -30% potency each.
+    * **Evo A (Balanced Master):** No penalty.
+    * **Evo B (Perfect Master):** All paths +25% potency instead.
+    * **Note:** *Jack of all trades. Transcendent versatility.*
+
+87. **Glyph: Ananda Generator** (Resource Engine, Gnosis 55)
+    * **Core Function:** Passive: Gain +5 Ananda per turn. Max Ananda increased to 150.
+    * **Evo A (Perfect Generator):** +10 Ananda per turn.
+    * **Evo B (Infinite Generator):** No Ananda cap.
+    * **Note:** *Resource machine. Infinite fuel.*
+
+88. **Glyph: Siddhi Accumulator** (Permanent Growth, Gnosis 70)
+    * **Core Function:** Passive: Gain +1 [Siddhi] every 8 turns automatically.
+    * **Evo A (Rapid Accumulator):** Every 5 turns.
+    * **Evo B (Perfect Accumulator):** Every 3 turns.
+    * **Note:** *Inevitable god. Automatic ascension.*
+
+89. **Glyph: Nirvana Overflow** (Buff Engine, Gnosis 65)
+    * **Core Function:** When [Nirvana] reaches 10 stacks, trigger explosion: +500% all effects for 1 turn, reset to 5 stacks.
+    * **Evo A (Perfect Overflow):** +1000% effects.
+    * **Evo B (Sustained Overflow):** Lasts 2 turns.
+    * **Note:** *Explosive power. Cycling nuke.*
+
+90. **Glyph: Transcendent Existence** (Ultimate Passive, Gnosis 90)
+    * **Core Function:** Passive: All singularity abilities cost -50%. Gain +1 [Siddhi], +5 [Nirvana], +20 Ananda every turn.
+    * **Evo A (Perfect Existence):** Cost -75%.
+    * **Evo B (Divine Existence):** Triple resource generation.
+    * **Note:** *God incarnate. Automatic transcendence.*
+
+---
+
+### **ULTIMATE BUILD ENABLERS — 10 Skills**
+
+91. **Glyph: Glass Singularity** (Risk, Gnosis 70)
+    * **Core Function:** Max Ojas reduced to 50. All Singularity effects +300%.
+    * **Evo A (Perfect Glass):** +500% effects.
+    * **Evo B (Tolerable Glass):** Max Ojas only reduced to 100.
+    * **Note:** *Nuclear glass cannon. Die or dominate.*
+
+92. **Glyph: Tank Singularity** (Defense, Gnosis 65)
+    * **Core Function:** +200% max Ojas, but Singularity effects -40%.
+    * **Evo A (Perfect Tank):** +300% Ojas.
+    * **Evo B (Tolerable Tank):** Only -20% effect penalty.
+    * **Note:** *Immortal god. Sustained power.*
+
+93. **Glyph: Solo Singularity** (Lone Wolf, Gnosis 70)
+    * **Core Function:** If no allies, all Singularity effects +200%, start with 8 [Siddhi].
+    * **Evo A (Perfect Solo):** +300% effects.
+    * **Evo B (Master Solo):** Start with 10 [Siddhi] (god tier immediately).
+    * **Note:** *Lone god. Ultimate individualism.*
+
+94. **Glyph: Team Singularity** (Network, Gnosis 70)
+    * **Core Function:** For each ally, gain +50% Singularity effects and +2 [Siddhi].
+    * **Evo A (Perfect Team):** +100% per ally.
+    * **Evo B (Master Team):** +4 [Siddhi] per ally.
+    * **Note:** *Collective god. Team transcendence.*
+
+95. **Glyph: Random Singularity** (Chaos, Gnosis 75)
+    * **Core Function:** All Singularity effects have random potency (0%-500%).
+    * **Evo A (Controlled Random):** Range 100%-500%.
+    * **Evo B (Perfect Random):** Range 200%-1000%.
+    * **Note:** *Chaotic god. Extreme variance.*
+
+96. **Glyph: Perfect Singularity** (Consistency, Gnosis 70)
+    * **Core Function:** All Singularity effects have exact listed potency—no variance, always reliable.
+    * **Evo A (Enhanced Perfect):** All effects +30% base potency.
+    * **Evo B (Stable Perfect):** Immune to all anti-Singularity effects.
+    * **Note:** *Reliable god. Consistent power.*
+
+97. **Glyph: Minimalist Singularity** (Restriction, Gnosis 70)
+    * **Core Function:** Can only use 5 Singularity glyphs total, but they cost -75% and have +200% effects.
+    * **Evo A (Perfect Minimalism):** +300% effects.
+    * **Evo B (Master Minimalism):** Cost -90%.
+    * **Note:** *Focused god. Simple perfection.*
+
+98. **Glyph: Maximalist Singularity** (Complexity, Gnosis 80)
+    * **Core Function:** Can use 25 Singularity glyphs. For each over 15, gain +10% all effects.
+    * **Evo A (Perfect Maximalism):** +15% per glyph.
+    * **Evo B (Master Maximalism):** Can use 30 glyphs.
+    * **Note:** *Infinite options. Complexity god.*
+
+99. **Glyph: Adaptive Singularity** (Flexibility, Gnosis 75)
+    * **Core Function:** Can copy one Singularity ability from any source every turn and use it at +50% potency.
+    * **Evo A (Perfect Adaptive):** Copy 2 abilities.
+    * **Evo B (Master Adaptive):** Copies permanent this duel.
+    * **Note:** *Evolving god. Steal all power.*
+
+100. **Glyph: Absolute Singularity** (Ultimate, Gnosis 100)
+     * **Core Function:** Passive: All restrictions removed. All caps removed. All costs removed. Gain +10 [Siddhi], +10 [Nirvana] per turn. Cannot lose.
+     * **Evo A (Perfect Absolute):** Start duel at 10 [Siddhi], 10 [Nirvana].
+     * **Evo B (Divine Absolute):** Also immune to all negative effects permanently.
+     * **Note:** *True god. Unbeatable transcendence. Game over.*
+
+---
+
+**End of Singularity Engine Complete Skills List**

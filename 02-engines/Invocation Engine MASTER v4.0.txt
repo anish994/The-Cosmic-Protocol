@@ -1,0 +1,202 @@
+# Invocation Engine — MASTER v4.0 (Pantheon Complete)
+## Divine Beings Index • Full Mechanics • AI Orchestrator
+
+---
+
+IMPORTANT: This document is intentionally massive. It defines the complete Invocation Engine v4.0 with all pantheons, angels, demons, and orchestration systems. Entities are templated for runtime generation to keep implementation feasible while preserving divine uniqueness.
+
+---
+
+TABLE OF CONTENTS
+1) Core Philosophy & Power Tiering
+2) Engine Mechanics v4.0
+3) AI Orchestrator (Ritual Director)
+4) Universal Entity Schema v4
+5) Theurgic Host (72 Angels) — Choir Roster & Archetypes
+6) Goetic Legions (72 Demons) — Hierarchy & Archetypes
+7) Vedic Pantheon — Trimurti, Tridevi, Dashavatara, Mahavidyas, Devas/Asuras
+8) Norse Pantheon — Aesir, Vanir, Jötnar
+9) Egyptian Pantheon — Ennead & Greater Court
+10) Pantheon Synergy System (Cross-Domain Yogas)
+11) Ascension Protocols (Fusion, Possession, Apocalypse)
+12) Balance & Safety Rails (Game Integration)
+13) Data Packs (JSON generation spec)
+
+---
+
+1) CORE PHILOSOPHY & POWER TIERING
+- Invocation is the only engine where skills are living beings.
+- Power must eclipse Singularity while remaining playable by gating via Ritual Windows and Presence Levels.
+
+Divine Power Tiers (per entity)
+T0: Echo (omen/omen+) → lightweight blessing/curse
+T1: Lesser Manifest (Avatar) → battlefield unit + 1 signature
+T2: Full Manifest (Presence 5) → multi-signature kit + aura + immunity theme
+T3: Possession (Presence 8) → player becomes avatar; reality rewrite permissions
+T4: Apocalypse (Presence 10 + Apocalypse Points) → world-rule authority (endgame)
+
+---
+
+2) ENGINE MECHANICS v4.0
+Resources
+- Sanctity (0–999), Anarchy (0–999), Dharma (-100…+100), Presence (0–10), Apocalypse (0–100)
+
+Core Actions
+- [Chant X]: add X stacks (tempo). Breakpoint: open Rite Window.
+- [Consecrate]: fortify defenses or sanctify battlefield zones.
+- [Invoke <EntityID>]: summon/possess/manifest based on Presence & resources.
+- [Bind Pact]: convert upkeep cost types (e.g., Sanctity→Dharma).
+
+Windows & Gates
+- Rite Window: opened by 3 chants (modded by Jyotish/Mercury/Moon). Lowers costs, grants safety.
+- Oath Chain: consecutive turns with successful rites build Presence faster (+2/turn).
+- Sacrificial Tiering: pay Ojas/resources to jump a tier once per duel.
+
+Upkeep
+- Manifest/Locus cost per turn; replaced by Presence lock at Tier ≥2.
+
+---
+
+3) AI ORCHESTRATOR (RITUAL DIRECTOR)
+Goals
+- Choose which patron(s) to court based on matchup and board state.
+- Manage chants to sync with Dashas/Transits and enemy cooldown valleys.
+- Allocate resources to reach key tiers at decisive turns (T2/T3 spikes).
+
+Heuristics
+- If opponent has lethal next ≤2 turns → prioritize Theurgy shields (Michael/Raphael)
+- If opponent is resource-snowball → Paimon/Set drain lines
+- If DoT/attrition → Raphael/Zadkiel cleanse loops, Durga invulnerability
+- If stall → Odin/Thor pressure into Ragnarok; Kali/Shiva enders
+
+---
+
+4) UNIVERSAL ENTITY SCHEMA v4 (for JSON packs)
+{
+  "entityID": "INV_THE_ARCH_MICHAEL",
+  "pillar": "Theurgy|Goetia|Vedic|Norse|Egyptian",
+  "rank": "Archangel|King|Trimurti|Aesir|Ennead|...",
+  "alignment": "Sanctity|Anarchy|Balanced|Wild",
+  "presenceCap": 10,
+  "resourceCosts": {"invoke": 150, "upkeep": 25, "type": "Sanctity"},
+  "prereq": {"resonance": ["Blessing>=5"], "dharma": ">=0"},
+  "cooldown": 6,
+  "states": {
+    "echo": {...},
+    "manifest": {"ojas": 1500, "immunities": ["control","debuffs"], "aura": {...}},
+    "possess": {"playerMods": {"effectsMult": 5.0, "immunity": "all"}},
+    "apocalypse": {"ruleEdits": ["rewrite","freeze","erase"], "winCon": "conditional|absolute"}
+  },
+  "jyotishHooks": ["Sun: +authority", "House.4: +shield"],
+  "signatureAbilities": [
+    {"id": "holy_smite", "type": "AoE", "value": 300, "tags": ["true"]},
+    {"id": "final_judgment", "type": "execute", "threshold": 0.6 }
+  ]
+}
+
+---
+
+5) THEURGIC HOST — 72 ANGELS (Choirs)
+Choirs & Archetype Kits (8 angels/choir → 72 total)
+- Seraphim (8): Divine Fire — global Burn+Bless; burn converts anarchy to sanctity; execute under confession
+- Cherubim (8): Guardians — zone anchors; house/yantra sanctifiers; reflect harm
+- Thrones (8): Order — stasis, time-lock, sentencing; karmic mirrors
+- Dominions (8): Auras — global sanctity generation, blessing fields, uptime engines
+- Virtues (8): Miracles — improbable saves, death-denial, retroactive cleanses
+- Powers (8): Hunters — banish demons, execute corrupted entities, backlash curses
+- Principalities (8): Diplomacy — seals, truces, ceasefires, resource escrow
+- Archangels(Choir) (8): Prophets/Messengers — reveal, foretell, rewrite draws, timeline peeks
+- Angels (8): Personal boons — direct heals, shields, skill advantages
+
+Named Archangels (capstones) — fully specified (see SUPREME v4):
+- Michael, Raphael, Gabriel, Uriel, Samael, Zadkiel, Haniel, + Metatron (scribe, rule scribe)
+
+Implementation Strategy
+- Generate 8 per choir from templates with unique epithets, small parameter deltas, and 1 signature twist each.
+
+---
+
+6) GOETIC LEGIONS — 72 DEMONS (Hierarchy)
+Ranks & Archetype Kits
+- 9 Kings (global rulebreakers, realm-makers)
+- 23 Dukes (siege, storms, beasts, ambush)
+- 15 Marquises (plague, illusions, spies, betrayals)
+- 7 Princes (nobility of corruption, control of desire)
+- 11 Presidents (contractors, extorters, economists of anarchy)
+- 7 Earls (assassination, stealth, knives-in-the-dark)
+
+Named Kings (capstones) — fully specified:
+- Bael, Paimon, Beleth, Purson, Asmodeus, Vine, Balam, Zagan, Belial
+
+Template Examples
+- Duke_Agares: earthquakes, pathing disruption, movement bleed
+- Marquis_Shabnock: plague walls, damage over steps, armor rot
+- President_Shax: resource theft, reversed payments, escrow traps
+
+---
+
+7) VEDIC PANTHEON — COMPLETE
+Top Tier
+- Trimurti: Brahma, Vishnu, Shiva (apocalypse forms)
+- Tridevi: Saraswati (knowledge engine), Lakshmi (abundance engine), Parvati/Durga (invincible protection)
+- Dashavatara (10): Matsya (flood control), Kurma (support/foundation), Varaha (earth lift), Narasimha (execute demon forms), Vamana (shrink/deny), Parashurama (weapon purge), Rama (dharmic leadership), Krishna (leela — rule-bending play), Buddha (peace overwrite), Kalki (end-time rider)
+- Mahavidyas (10): Kali, Tara, Tripura Sundari, Bhuvaneshwari, Bhairavi, Chhinnamasta, Dhumavati, Bagalamukhi, Matangi, Kamala — each with a reality domain (speech stop, headless power, cosmic womb, etc.)
+
+Middle Tier
+- Devas: Indra (storm command), Agni (fire sovereignty), Varuna (ocean law), Vayu (wind haste), Surya/Chandra (celestial), Ganesha (path opener), Hanuman (devotion strength), Kartikeya (war general)
+- Asuras: Ravana (boon chains), Vritra (drought), Hiranyakashipu (near-immortal condition), Mahishasur (form-shift siege)
+
+---
+
+8) NORSE PANTHEON — FULL
+- Aesir: Odin (wisdom+runes), Thor (thunder), Loki (trickster), Tyr (oath), Heimdall (watch), Frigg (fate weaver), Baldr (light inviolable)
+- Vanir: Freyja (seidr, love/war), Freyr (fertility abundance), Njord (sea wealth)
+- Jötnar: Ymir (prime frost), Surtr (worldfire), Jörmungandr (world-serpent poison), Fenrir (devour fate)
+- Ragnarok Protocols: countdown events, side-picks influence final battle modifiers
+
+---
+
+9) EGYPTIAN PANTHEON — ENNEAD & COURT
+- Ennead: Ra (sun absolute), Shu (air), Tefnut (moisture), Geb (earth), Nut (sky), Osiris (afterlife), Isis (magic), Set (chaos), Nephthys (protection of dead)
+- Greater Court: Anubis (weighing of heart), Thoth (scribe of laws), Horus (kingship), Bastet (joy/guard), Sekhmet (plague/lioness wrath), Sobek (flood/teeth)
+
+---
+
+10) PANTHEON SYNERGY SYSTEM (CROSS-DOMAIN YOGAS)
+- Choir×King Seal: Theurgy entity can bind Goetic King with a vow; flips target’s alignment temporarily
+- Trimurti×Aesir: Brahma+Odin — runic creation; Vishnu+Tyr — unbreakable oaths; Shiva+Thor — storm-dance annihilation
+- Ennead×Mahavidya: Isis+Matangi — spell rewrite; Ra+Kali — solar-time collapse
+- Global Unity Rite: 3 distinct pantheons attuned → unlock Divine Fusion state
+
+---
+
+11) ASCENSION PROTOCOLS
+- Dual Possession: host two beings (split actions; cross-ability weaving)
+- Fusion: merge deities of compatible domains → hybrid statblocks and rule-edits
+- Apocalypse Trigger: spend 100 Apocalypse + Presence 10 → entity-specific worldrule
+
+---
+
+12) BALANCE & SAFETY RAILS
+- Invocation Windows: require prep; counterable by disruption (but partial progress persists)
+- Upkeep Pressure: outside Rite Windows, upkeep quickly drains Sanctity/Anarchy
+- Single Apocalypse Rule: only one T4 can be active per side
+- Counter-Gods: Pantheons include natural checks (e.g., Vishnu vs Asuras, Isis vs Set)
+
+---
+
+13) DATA PACKS (GENERATION SPEC)
+- angels_72.json: generated from choir templates with epithets, icon refs, parameter seeds
+- demons_72.json: generated from rank templates with vice tags and specialties
+- vedic_full.json | norse_full.json | egypt_full.json: curated named rosters with signatures
+- orchestrator_rules.json: matchup heuristics and ritual plans
+
+---
+
+IMPLEMENTATION NOTES
+- Start with capstones (Archangels 7+1, Demon Kings 9, Trimurti 3, Tridevi 3, Ennead 9, Aesir core 7) fully written.
+- Auto-generate long-tail (72+72) via templating ensuring uniqueness (1 twist each).
+- Hook into Jyotish for gravity windows and house bonuses.
+- Integrate with Singularity guardrails: Invocation outranks but gated by ritual prep.
+
+END — Invocation Engine MASTER v4.0

@@ -1,0 +1,610 @@
+# Consciousness Engine — Complete Skills List (v3.1 Expanded)
+## Total Skills: 100 (40 Original + 60 Build-Defining)
+
+---
+
+### **Mind Architecture Engineering (Builder Path) — 6 Skills**
+
+1. **Glyph: Cognitive Fortress** (Passive, Gnosis 25)
+    * **Core Function:** +5% max Bandwidth. Whenever you enter a new Neural State, gain 5 Coherence.
+    * **Evo A (Reinforced Citadel):** +8% max Bandwidth instead.
+    * **Evo B (Coherence Fountain):** Gain 8 Coherence instead of 5.
+
+2. **Glyph: Synaptic Cache** (Resource, Gnosis 30)
+    * **Core Function:** Store up to 10 Bandwidth. Once per duel, instantly restore all stored Bandwidth.
+    * **Evo A (Deep Cache):** Store up to 15 Bandwidth.
+    * **Evo B (Dual Cache):** Can be used twice per duel instead of once.
+
+3. **Glyph: Bandwidth Surge** (Active, Gnosis 20)
+    * **Core Function:** Gain 15 Bandwidth immediately. Cooldown: 3 turns.
+    * **Evo A (Tidal Surge):** Gain 25 Bandwidth but also take 10 damage.
+    * **Evo B (Efficient Surge):** Gain 15 Bandwidth and reduce the cooldown to 2 turns.
+
+4. **Glyph: Prana Router** (Passive, Gnosis 15)
+    * **Core Function:** At the start of your turn, convert up to 2 Prana into 5 Bandwidth (or vice versa).
+    * **Evo A (Optimal Exchange):** Conversion rate improves to 2 Prana ↔ 8 Bandwidth.
+    * **Evo B (Dual Flow):** Can convert in both directions on the same turn.
+
+5. **Glyph: Coherence Conduit** (Passive, Gnosis 20)
+    * **Core Function:** Whenever you spend 10+ Coherence in a single turn, gain 5 Bandwidth.
+    * **Evo A (Efficient Conduit):** Spending threshold reduced to 7 Coherence.
+    * **Evo B (Cascading Conduit):** Also reduces the cooldown of one random glyph by 1.
+
+6. **Glyph: Mind Palace Protocol** (Defensive, Gnosis 35)
+    * **Core Function:** Gain a 20-point shield. While the shield persists, Bandwidth generation is doubled.
+    * **Evo A (Fortified Palace):** Shield becomes 30 points.
+    * **Evo B (Recursive Palace):** When shield breaks, generate 10 Bandwidth.
+
+---
+
+### **Meditation Technologies (State-Shifter Path) — 8 Skills**
+
+7. **Glyph: Beta State Meditation** (State Entry, Gnosis 15)
+    * **Core Function:** Enter Beta State for 2 turns. Effect: "+15% Insight generation; first [Debuff] costs -1 Prana."
+    * **Evo A (Analytical Edge):** Beta State lasts 3 turns.
+    * **Evo B (Synaptic Firewall):** Beta State also grants immunity to [Silence].
+
+8. **Glyph: Gamma State Meditation** (State Entry, Gnosis 40)
+    * **Core Function:** Enter Gamma State for 2 turns. Effect: "Critical hit chance +25% on [Strike] glyphs."
+    * **Evo A (Precognitive Strike):** Gamma also reveals enemy cooldowns.
+    * **Evo B (Bullet Time):** Gamma grants a reaction window to enemy attacks.
+
+9. **Glyph: Epsilon State Meditation** (State Entry, Gnosis 50)
+    * **Core Function:** Enter Epsilon State for 2 turns. Effect: "Passively generate 5 Bandwidth per turn; prepare for rule inversions."
+    * **Evo A (Reality Flickering):** Epsilon generates 8 Bandwidth per turn.
+    * **Evo B (Ontological Anchor):** Epsilon makes you immune to [Banish].
+
+10. **Glyph: State Fusion** (Advanced State, Gnosis 60)
+    * **Core Function:** Merge two currently active Neural States for 1 turn (combine their effects).
+    * **Evo A (Harmonic Lock):** Fusion lasts 2 turns.
+    * **Evo B (Cascade Fusion):** Can merge 3 states at -50% potency each.
+
+11. **Glyph: Neural Shift** (State Manipulation, Gnosis 25)
+    * **Core Function:** Immediately exit your current Neural State and enter any other state (ignores prerequisites). Cooldown: 3 turns.
+    * **Evo A (Rapid Shift):** Cooldown reduced to 2 turns.
+    * **Evo B (Resonant Shift):** Gain 10 Bandwidth on shift.
+
+12. **Glyph: State Anchor** (State Preservation, Gnosis 35)
+    * **Core Function:** Your current Neural State persists for 1 extra turn after its normal duration.
+    * **Evo A (Deep Anchor):** Persists for 2 extra turns.
+    * **Evo B (Stabilizing Anchor):** While anchored, you are immune to [Stun].
+
+13. **Glyph: Meditative Recovery** (Healing, Gnosis 30)
+    * **Core Function:** While in any Neural State, gain 5 Ojas at the start of your turn.
+    * **Evo A (Deep Recovery):** Gain 10 Ojas instead.
+    * **Evo B (Purifying Meditation):** Also [Cleanse] 1 debuff per turn.
+
+14. **Glyph: Consciousness Cascade** (State Chaining, Gnosis 45)
+    * **Core Function:** For the next 3 turns, transitioning to a new Neural State costs -10 Bandwidth.
+    * **Evo A (Infinite Cascade):** Duration becomes 4 turns.
+    * **Evo B (Free Flow):** Transitions cost -20 Bandwidth instead.
+
+---
+
+### **Neuroplasticity Protocols (Adapter Path) — 8 Skills**
+
+15. **Glyph: Protocol: Keyword Fusion** (Imprint, Gnosis 55)
+    * **Core Function:** Target one of your glyphs. For 2 activations, it gains two keywords simultaneously: [AoE] + [Lifesteal].
+    * **Evo A (Triple Fusion):** Gains three keywords: [AoE] + [Lifesteal] + [Execute].
+    * **Evo B (Sustained Fusion):** Lasts for 3 activations.
+
+16. **Glyph: Protocol: Glyph Cloning** (Duplication, Gnosis 60)
+    * **Core Function:** Target a glyph in your chart. For 1 turn, you can activate it twice without it going on cooldown.
+    * **Evo A (Perfect Clone):** The second activation costs -50% Prana.
+    * **Evo B (Echo Clone):** The second activation is free but deals 75% effectiveness.
+
+17. **Glyph: Protocol: Cooldown Burst** (Tempo, Gnosis 40)
+    * **Core Function:** Reduce all current cooldowns by 2 turns. Once per duel.
+    * **Evo A (Full Burst):** Reduce by 3 turns instead.
+    * **Evo B (Sustained Burst):** Can be used twice per duel.
+
+18. **Glyph: Neural Imprinting** (Permanent Buff, Gnosis 30)
+    * **Core Function:** Choose a glyph. Permanently increase its damage/healing by 5%.
+    * **Evo A (Deep Imprint):** +10% instead.
+    * **Evo B (Multi-Imprint):** Affects two glyphs simultaneously.
+
+19. **Glyph: Protocol: Synaptic Overload** (Burst, Gnosis 50)
+    * **Core Function:** For your next turn only, all glyphs cost 0 Prana but have doubled cooldowns afterward.
+    * **Evo A (Controlled Overload):** Cooldown penalty is only +50% instead of doubled.
+    * **Evo B (Extended Overload):** Effect lasts 2 turns.
+
+20. **Glyph: Adaptive Resonance** (Reactive, Gnosis 35)
+    * **Core Function:** Whenever an enemy uses a glyph from a specific school, one of your glyphs from that school gets -1 Prana cost for 1 turn.
+    * **Evo A (School Mastery):** The discount lasts 2 turns.
+    * **Evo B (Cross-Resonance):** Affects all glyphs from that school, not just one.
+
+21. **Glyph: Memory Override** (Reset, Gnosis 45)
+    * **Core Function:** Choose a glyph. Reset its evolution path, allowing you to re-select a different evolution branch.
+    * **Evo A (Flexible Override):** Can be used twice per duel.
+    * **Evo B (Instant Override):** The newly chosen evolution applies immediately without needing Gnosis cost again.
+
+22. **Glyph: Protocol: Cost Redistribution** (Economic, Gnosis 40)
+    * **Core Function:** For 2 turns, your most expensive glyph costs -3 Prana, but your cheapest glyph costs +2 Prana.
+    * **Evo A (Weighted Redistribution):** Most expensive glyph costs -5 Prana.
+    * **Evo B (Sustained Redistribution):** Effect lasts 3 turns.
+
+---
+
+### **Peak Performance States (Transcendent Path) — 10 Skills**
+
+23. **Glyph: Delta State: Overdrive** (Ultimate, Gnosis 70)
+    * **Core Function:** 80 Bandwidth. For 2 turns, all glyphs activate twice when cast (second activation is free).
+    * **Evo A (Extended Overdrive):** Duration 3 turns.
+    * **Evo B (Perfect Overdrive):** Second activation is at full potency.
+
+24. **Glyph: Gamma State: Perfect Timing** (Tactical, Gnosis 65)
+    * **Core Function:** 60 Bandwidth. For 2 turns, you gain a "pause" button: freeze the turn timer once per turn to analyze options.
+    * **Evo A (Extended Timing):** Duration 3 turns.
+    * **Evo B (Multiple Pauses):** Can pause twice per turn.
+
+25. **Glyph: Epsilon State: Lucid Dream** (Reality Bend, Gnosis 75)
+    * **Core Function:** 90 Bandwidth. For 2 turns, one fundamental rule is inverted (choose: "Highest Ojas loses" OR "Spending Prana heals").
+    * **Evo A (Double Inversion):** Invert two rules instead of one.
+    * **Evo B (Extended Dream):** Duration 3 turns.
+
+26. **Glyph: Omega State** (Transcendence, Gnosis 90)
+    * **Core Function:** 150 Bandwidth. Enter all 6 Neural States simultaneously for 2 turns.
+    * **Evo A (God-Mode):** Duration 3 turns.
+    * **Evo B (Singularity Convergence):** Omega also resets all cooldowns to 0.
+
+27. **Glyph: Harmonic Catalyst: Alpha→Theta→Delta** (Resonance, Gnosis 70)
+    * **Core Function:** If you successfully transition through this sequence, your next Neural State has +50% duration.
+    * **Evo A (Perfect Resonance):** Also refund 25 Bandwidth.
+    * **Evo B (Cascading Harmony):** The state after Delta is free.
+
+28. **Glyph: Harmonic Catalyst: Alpha→Beta→Gamma** (Foresight, Gnosis 75)
+    * **Core Function:** If sequence met, Gamma State grants [Foretell] effect (see enemy's next 2 actions).
+    * **Evo A (Temporal Vision):** [Foretell] shows 3 actions.
+    * **Evo B (Cognitive Burst):** Gamma also +50% Insight generation.
+
+29. **Glyph: Harmonic Catalyst: Beta→Delta→Epsilon** (Reality Weave, Gnosis 80)
+    * **Core Function:** If sequence met, Epsilon State costs -50 Bandwidth.
+    * **Evo A (Reality Weaver):** Epsilon duration +1 turn.
+    * **Evo B (Ontological Shortcut):** Can skip Beta requirement.
+
+30. **Glyph: Consciousness Overwrite** (Hostile, Gnosis 95)
+    * **Core Function:** 80 Bandwidth. Force enemy to enter a Neural State of your choice for 1 turn.
+    * **Evo A (Hostile Takeover):** Enemy state lasts 2 turns.
+    * **Evo B (Cognitive Virus):** Enemy cannot exit that state early.
+
+31. **Glyph: Apotheosis** (Ultimate Transcendence, Gnosis 120)
+    * **Core Function:** 150 Bandwidth. For 3 turns, exist in all Neural States + ignore all Bandwidth costs.
+    * **Evo A (Eternal Consciousness):** Duration 4 turns.
+    * **Evo B (Universal Mind):** All allies also enter Alpha State.
+
+32. **Glyph: Infinity State** (Endgame, Gnosis 100)
+    * **Core Function:** 100 Bandwidth. For 2 turns, Bandwidth does not decrease when spent (infinite Bandwidth).
+    * **Evo A (Extended Infinity):** Duration 3 turns.
+    * **Evo B (Cascading Infinity):** Also generates +20 Bandwidth per turn during effect.
+
+---
+
+### **B.O.S. (Brain Operating Systems) — 4 Skills**
+
+33. **B.O.S: Neural Surge Processor** (KP 20)
+    * **Effect:** Start each duel with 30 Bandwidth. All Peak Performance States cost -20 Bandwidth.
+    * **Drawback:** Your maximum Ojas is reduced by 15%.
+
+34. **B.O.S: Harmonic Optimizer** (KP 25)
+    * **Effect:** All Harmonic Resonance sequences grant double bonuses.
+    * **Drawback:** Entering states that break harmonic sequences costs +10 Bandwidth.
+
+35. **B.O.S: Synaptic Accelerator** (KP 20)
+    * **Effect:** All Neuroplasticity Protocols can hold +1 charge and cost -1 Prana.
+    * **Drawback:** You cannot enter Theta or Delta states.
+
+36. **B.O.S: Zen Processor** (KP 15)
+    * **Effect:** While in any single Neural State for 3+ consecutive turns, gain +10% to all glyph effectiveness.
+    * **Drawback:** Switching states costs +5 Bandwidth.
+
+---
+
+### **Cross-Engine Synergies — 4 Skills**
+
+37. **Glyph: Sanctified Ramp** (Invocation Link, Gnosis 50)
+    * **Core Function:** Convert 20 Bandwidth → 15 Sanctity (or vice versa). Cooldown: 2 turns.
+    * **Evo A (Holy Bandwidth):** Conversion rate improves to 20 ↔ 20.
+    * **Evo B (Bidirectional Flow):** Can convert back at 50% rate on the same turn.
+
+38. **Glyph: Temporal Ramp** (Singularity Link, Gnosis 70)
+    * **Core Function:** At 80+ Bandwidth, next [Protocol] costs -25 Threshold.
+    * **Evo A (Event Horizon):** Discount increases to -40 Threshold.
+    * **Evo B (Recursive Collapse):** [Protocol] also generates 30 Bandwidth.
+
+39. **Glyph: Saturn's Patience** (Jyotish Link, Gnosis 60)
+    * **Core Function:** Saturn.Disciplined negates cooldown penalties while in Theta State.
+    * **Evo A (Immovable Mind):** Saturn also increases Coherence cap by 5.
+    * **Evo B (Karmic Boost):** Saturn turns apply +10 Bandwidth.
+
+40. **Glyph: Field Resonance** (Foundational Link, Gnosis 55)
+    * **Core Function:** Foundational [Structure] glyphs grant +1 Bandwidth generation per turn while active.
+    * **Evo A (Amplified Resonance):** Grant +2 Bandwidth per turn instead.
+    * **Evo B (Coherence Resonance):** Also generate +2 Coherence per turn.
+
+---
+
+### **State Mastery Specializations — 10 Skills**
+
+41. **Glyph: Alpha Purist** (Build-Defining, Gnosis 45)
+    * **Core Function:** While in Alpha State only, gain +50% Bandwidth generation but cannot enter any other state this duel.
+    * **Evo A (Alpha Supremacy):** +75% generation instead.
+    * **Evo B (Alpha Stability):** Also gain +20% max Ojas.
+    * **Note:** *Mono-state build archetype. Vastly different from multi-state cycling builds.*
+
+42. **Glyph: State Anarchist** (Chaos Build, Gnosis 50)
+    * **Core Function:** Each time you change states, deal 15 damage to all enemies and gain 10 Bandwidth. Your states last -1 turn.
+    * **Evo A (Perfect Chaos):** Damage increased to 25.
+    * **Evo B (Sustained Anarchy):** States have normal duration.
+    * **Note:** *Hyper-aggressive state-switching playstyle vs patient state holders.*
+
+43. **Glyph: Theta Ascetic** (Endurance Build, Gnosis 55)
+    * **Core Function:** In Theta State, become immune to all damage but cannot deal damage. Generate 15 Bandwidth per turn.
+    * **Evo A (Perfect Zen):** Generate 25 Bandwidth instead.
+    * **Evo B (Meditation Master):** Also [Heal] 20 Ojas per turn.
+    * **Note:** *Extreme defensive/stalling playstyle. Build around surviving vs aggression.*
+
+44. **Glyph: Dual-State Harmony** (Hybrid Build, Gnosis 60)
+    * **Core Function:** Choose 2 states at start of duel. You can only use these 2 states, but transitions between them are free and instant.
+    * **Evo A (Perfect Duality):** Both states have +1 turn duration.
+    * **Evo B (Resonant Duality):** Each transition [Heals] 15 Ojas.
+    * **Note:** *Restricts options but perfects two-state dance. Different state pairs = different builds.*
+
+45. **Glyph: State Parasite** (Theft Build, Gnosis 65)
+    * **Core Function:** You cannot enter states naturally. Instead, steal enemy's current state for 2 turns. Cooldown: 3 turns.
+    * **Evo A (Perfect Theft):** Duration 3 turns.
+    * **Evo B (Adaptive Theft):** Also copy one of their active buffs.
+    * **Note:** *Reactive playstyle dependent on enemy composition. High skill ceiling.*
+
+46. **Glyph: Rapid Cycle Protocol** (Speed Build, Gnosis 50)
+    * **Core Function:** All states last exactly 1 turn but cost -50% Bandwidth. Transitioning grants +5 Coherence.
+    * **Evo A (Instant Cycle):** Cost reduction -75%.
+    * **Evo B (Coherence Fountain):** Gain +8 Coherence per transition.
+    * **Note:** *Blitz cycling for Coherence stacking vs long-duration state strategies.*
+
+47. **Glyph: Epsilon Anarchist** (Reality Warper, Gnosis 70)
+    * **Core Function:** In Epsilon State, your glyphs target random enemies/allies but have +100% effect. Cannot control targeting.
+    * **Evo A (Controlled Chaos):** +150% effect instead.
+    * **Evo B (Chaos Surge):** Also double Bandwidth generation.
+    * **Note:** *High-risk high-reward chaos build. Completely different feel from precision builds.*
+
+48. **Glyph: State Memory Bank** (Long-term Build, Gnosis 55)
+    * **Core Function:** Each state you enter is cataloged. After entering 5 different states, permanently gain +10 max Bandwidth.
+    * **Evo A (Deep Memory):** Only requires 4 states.
+    * **Evo B (Perfect Memory):** Gain +15 Bandwidth instead.
+    * **Note:** *Rewards diverse exploration vs specialization. Long-game scaling.*
+
+49. **Glyph: Forbidden State: Void** (Risk Build, Gnosis 80)
+    * **Core Function:** 100 Bandwidth. Enter Void State (2 turns): All costs become 0 but you take 20 damage per glyph cast.
+    * **Evo A (Tolerable Void):** Damage reduced to 15 per cast.
+    * **Evo B (Extended Void):** Duration 3 turns.
+    * **Note:** *Extreme glass cannon build. High skill expression managing health/aggression.*
+
+50. **Glyph: Metamorphosis** (Evolution Build, Gnosis 75)
+    * **Core Function:** Each time you spend 50+ Bandwidth in one turn, permanently evolve your current state (+20% potency, +1 duration).
+    * **Evo A (Rapid Evolution):** Only requires 40 Bandwidth.
+    * **Evo B (Perfect Evolution):** +30% potency instead.
+    * **Note:** *Investment/scaling build. Rewards committing resources to single state.*
+
+---
+
+### **Resource Manipulation Paths — 12 Skills**
+
+51. **Glyph: Bandwidth Vampire** (Theft Build, Gnosis 40)
+    * **Core Function:** Steal 10 Bandwidth from target enemy. If they don't have enough, deal 15 damage per missing point.
+    * **Evo A (Deep Drain):** Steal 15 Bandwidth.
+    * **Evo B (Punishing Drain):** Damage increased to 25 per missing.
+    * **Note:** *Anti-Consciousness build. Disrupts mirror matches completely.*
+
+52. **Glyph: Prana Fasting** (Ascetic Build, Gnosis 45)
+    * **Core Function:** For 3 turns, cannot spend Prana but generate +20 Bandwidth per turn and +3 Coherence per turn.
+    * **Evo A (Extended Fast):** Duration 4 turns.
+    * **Evo B (Perfect Abstinence):** Generate +30 Bandwidth per turn.
+    * **Note:** *Trade combat power for ramping. Defensive setup phase.*
+
+53. **Glyph: Coherence Bomb** (Burst Build, Gnosis 50)
+    * **Core Function:** Detonate all your Coherence. Deal 10 damage per Coherence spent to all enemies.
+    * **Evo A (Perfect Detonation):** 15 damage per Coherence.
+    * **Evo B (Surgical Bomb):** Target single enemy for 20 damage per Coherence.
+    * **Note:** *All-in finisher vs gradual scaling builds. Completely different curve.*
+
+54. **Glyph: Bandwidth Overflow** (Economy Build, Gnosis 35)
+    * **Core Function:** If you end turn with 80+ Bandwidth, convert 30 Bandwidth to: +15 Ojas, +3 Coherence, +2 KP.
+    * **Evo A (Efficient Overflow):** Conversion costs only 25 Bandwidth.
+    * **Evo B (Perfect Overflow):** Rewards increased by 50%.
+    * **Note:** *Rewards banking resources vs spending immediately. Different pacing.*
+
+55. **Glyph: Coherence Weaver** (Stacking Build, Gnosis 40)
+    * **Core Function:** Passive: Gain +1 Coherence per turn. Cannot spend Coherence below 10 (acts as floor).
+    * **Evo A (Rapid Weaving):** Gain +2 per turn.
+    * **Evo B (Deep Reserves):** Floor increased to 15.
+    * **Note:** *Safe scaling vs explosive spending. Conservative playstyle.*
+
+56. **Glyph: Resource Juggler** (Skill Build, Gnosis 55)
+    * **Core Function:** At end of turn, convert: 10 Bandwidth ↔ 5 Coherence ↔ 3 KP (choose direction). Max once per resource per turn.
+    * **Evo A (Perfect Juggling):** Can convert twice per resource.
+    * **Evo B (Efficient Juggling):** Conversion rates improved by 50%.
+    * **Note:** *High APM/complexity build. Rewards optimization vs simple strategies.*
+
+57. **Glyph: Prana Battery** (Hybrid Build, Gnosis 45)
+    * **Core Function:** Store up to 20 Prana. While stored, generate +5 Bandwidth per turn. Release all to deal 15 damage per stored Prana.
+    * **Evo A (Deep Battery):** Store up to 30 Prana.
+    * **Evo B (Efficient Storage):** Generate +8 Bandwidth per turn.
+    * **Note:** *Trading immediate casting for delayed power spike. Tempo trade-off.*
+
+58. **Glyph: Bandwidth Furnace** (Conversion Build, Gnosis 50)
+    * **Core Function:** For 3 turns, all Bandwidth spent is converted to damage dealt to random enemy (2 damage per Bandwidth).
+    * **Evo A (Perfect Furnace):** 3 damage per Bandwidth.
+    * **Evo B (Controlled Furnace):** Choose target instead of random.
+    * **Note:** *Turn utility resource into direct damage. Aggro vs control builds.*
+
+59. **Glyph: Infinity Loop** (Combo Build, Gnosis 70)
+    * **Core Function:** If you spend exactly 50 Bandwidth + 10 Coherence + 5 KP in one turn, refund all costs and gain +20 to each resource.
+    * **Evo A (Perfect Loop):** Requirements reduced to 40/8/4.
+    * **Evo B (Cascading Loop):** Rewards doubled.
+    * **Note:** *Puzzle/combo build. Requires precise sequencing vs flexible play.*
+
+60. **Glyph: Resource Singularity** (Ultimate Economy, Gnosis 65)
+    * **Core Function:** Once per duel: Convert all current resources to a unified pool (1 point each). Spend unified points as any resource.
+    * **Evo A (Extended Singularity):** Effect lasts 3 turns.
+    * **Evo B (Perfect Conversion):** Pool conversion rate 1.5x.
+    * **Note:** *Ultimate flexibility vs specialized resource paths. Emergency adaptation.*
+
+61. **Glyph: Scarcity Mastery** (Restriction Build, Gnosis 60)
+    * **Core Function:** Your max Bandwidth is halved, but all Bandwidth spent has double effect.
+    * **Evo A (Perfect Scarcity):** Triple effect instead of double.
+    * **Evo B (Tolerable Scarcity):** Max Bandwidth reduced by only 33%.
+    * **Note:** *Efficiency challenge build. Forces careful spending vs liberal use.*
+
+62. **Glyph: Abundance Protocol** (Scaling Build, Gnosis 55)
+    * **Core Function:** Passive: Every 3 turns, permanently increase max Bandwidth by 5 (no cap).
+    * **Evo A (Rapid Abundance):** Triggers every 2 turns.
+    * **Evo B (Perfect Abundance):** Increase by 8 instead of 5.
+    * **Note:** *Late-game scaling vs early tempo. Greedy build archetype.*
+
+---
+
+### **Coherence Specializations — 10 Skills**
+
+63. **Glyph: Coherence Shield** (Defensive Build, Gnosis 40)
+    * **Core Function:** Gain Shield equal to (Coherence × 5). Shield lasts until broken.
+    * **Evo A (Perfect Shield):** Coherence × 8 instead.
+    * **Evo B (Regenerating Shield):** Shield regains 10 points per turn.
+    * **Note:** *Defensive Coherence stacking vs offensive applications.*
+
+64. **Glyph: Coherence Strike** (Offensive Build, Gnosis 45)
+    * **Core Function:** Deal damage equal to (Coherence × 8). Consumes all Coherence.
+    * **Evo A (Perfect Strike):** Coherence × 12 instead.
+    * **Evo B (Retained Strike):** Only consumes 50% of Coherence.
+    * **Note:** *Offensive finisher vs gradual utility. All-in vs sustained.*
+
+65. **Glyph: Coherence Aura** (Support Build, Gnosis 50)
+    * **Core Function:** Allies in 3x3 area gain buffs equal to your Coherence: +1% damage per point, +1% healing per point.
+    * **Evo A (Perfect Aura):** +2% per point instead.
+    * **Evo B (Extended Aura):** 5x5 area instead of 3x3.
+    * **Note:** *Team support build vs solo carry. Multiplayer synergy.*
+
+66. **Glyph: Unstable Coherence** (Risk Build, Gnosis 55)
+    * **Core Function:** Gain +10 Coherence per turn but at 30+ Coherence, take 15 damage per turn.
+    * **Evo A (Controlled Instability):** Damage threshold increased to 40 Coherence.
+    * **Evo B (Reduced Damage):** Take only 10 damage per turn.
+    * **Note:** *Risk/reward stacking. Forces spending vs pure hoarding.*
+
+67. **Glyph: Coherence Theft** (Aggro Build, Gnosis 45)
+    * **Core Function:** Steal 5 Coherence from target. If they have less than 5, they take 20 damage.
+    * **Evo A (Perfect Theft):** Steal 8 Coherence.
+    * **Evo B (Punishing Theft):** Damage increased to 35.
+    * **Note:** *Disrupt enemy scaling. Aggressive anti-ramp strategy.*
+
+68. **Glyph: Coherence Catalyst** (Amplifier Build, Gnosis 50)
+    * **Core Function:** For 2 turns, all effects that scale with Coherence have +50% scaling.
+    * **Evo A (Perfect Catalyst):** +100% scaling instead.
+    * **Evo B (Extended Catalyst):** Duration 3 turns.
+    * **Note:** *Multiplier for Coherence-focused builds. Rewards specialization.*
+
+69. **Glyph: Coherence Lock** (Control Build, Gnosis 60)
+    * **Core Function:** Target enemy cannot gain Coherence for 3 turns.
+    * **Evo A (Perfect Lock):** Duration 4 turns.
+    * **Evo B (Mass Lock):** Affects all enemies.
+    * **Note:** *Mirror match control tool. Anti-synergy disruptor.*
+
+70. **Glyph: Coherence Echo** (Sustain Build, Gnosis 55)
+    * **Core Function:** Whenever you spend Coherence, gain back 30% of it next turn.
+    * **Evo A (Perfect Echo):** Regain 50% instead.
+    * **Evo B (Instant Echo):** Regain immediately instead of next turn.
+    * **Note:** *Sustained spending vs one-time bursts. Resource loop build.*
+
+71. **Glyph: Coherence Mirror** (Reactive Build, Gnosis 50)
+    * **Core Function:** Your Coherence is always equal to highest enemy Coherence (min 0).
+    * **Evo A (Superior Mirror):** Your Coherence = highest enemy + 5.
+    * **Evo B (Multi Mirror):** Average of all enemy Coherence values.
+    * **Note:** *Completely reactive scaling. Zero control vs active generation.*
+
+72. **Glyph: Coherence Sacrifice** (Burst Build, Gnosis 65)
+    * **Core Function:** Sacrifice 15 Coherence to: Refresh all cooldowns, gain 50 Bandwidth, deal 30 damage to all enemies.
+    * **Evo A (Perfect Sacrifice):** Only costs 12 Coherence.
+    * **Evo B (Enhanced Sacrifice):** All effects increased by 50%.
+    * **Note:** *Big conversion moment. Setup vs explosive turn.*
+
+---
+
+### **Advanced State Interactions — 10 Skills**
+
+73. **Glyph: State Residue** (Hybrid Build, Gnosis 50)
+    * **Core Function:** When exiting a state, retain 30% of its effects for 1 turn.
+    * **Evo A (Deep Residue):** Retain 50% instead.
+    * **Evo B (Extended Residue):** Lasts 2 turns.
+    * **Note:** *Smooths transitions vs sharp state boundaries. Different tempo feel.*
+
+74. **Glyph: State Corruption** (Aggro Build, Gnosis 55)
+    * **Core Function:** Force enemy into random harmful state for 1 turn (they take 10 damage per action while corrupted).
+    * **Evo A (Perfect Corruption):** Duration 2 turns.
+    * **Evo B (Controlled Corruption):** Choose which state to force.
+    * **Note:** *Offensive state manipulation vs self-buffing strategies.*
+
+75. **Glyph: State Immunity** (Tank Build, Gnosis 60)
+    * **Core Function:** Choose one state at start of duel. You are permanently immune to being forced into that state.
+    * **Evo A (Multi-Immunity):** Immune to 2 states.
+    * **Evo B (Adaptive Immunity):** Can change immunity once per duel.
+    * **Note:** *Defensive specialization vs flexibility. Counter-play tool.*
+
+76. **Glyph: State Overcharge** (Power Build, Gnosis 65)
+    * **Core Function:** Your current state has +100% potency but drains 10 Bandwidth per turn.
+    * **Evo A (Efficient Overcharge):** Drain only 7 per turn.
+    * **Evo B (Perfect Overcharge):** +150% potency instead.
+    * **Note:** *Power at cost of sustainability. Short burst vs long game.*
+
+77. **Glyph: State Fragmentation** (Multi-target Build, Gnosis 70)
+    * **Core Function:** Split your current state across 3 allies (each gets 50% potency).
+    * **Evo A (Perfect Fragment):** Each gets 75% potency.
+    * **Evo B (Mass Fragment):** Affects all allies.
+    * **Note:** *Team buff vs solo power. Multiplayer specialist build.*
+
+78. **Glyph: State Compression** (Efficiency Build, Gnosis 55)
+    * **Core Function:** All states last -1 turn but have +50% potency.
+    * **Evo A (Perfect Compression):** +75% potency instead.
+    * **Evo B (Tolerable Compression):** No duration penalty.
+    * **Note:** *Quality over quantity. Fast cycling vs long holds.*
+
+79. **Glyph: State Expansion** (Duration Build, Gnosis 60)
+    * **Core Function:** All states last +2 turns but have -30% potency.
+    * **Evo A (Perfect Expansion):** +3 turns instead.
+    * **Evo B (Tolerable Expansion):** Only -15% potency penalty.
+    * **Note:** *Opposite of compression. Patience vs aggression builds.*
+
+80. **Glyph: State Reverberation** (Chain Build, Gnosis 65)
+    * **Core Function:** When you exit a state, it automatically reactivates on a random ally for 1 turn at 50% potency.
+    * **Evo A (Perfect Reverb):** 75% potency instead.
+    * **Evo B (Controlled Reverb):** Choose target instead of random.
+    * **Note:** *Cascading team effects vs focused self-buffing.*
+
+81. **Glyph: Forbidden Combination** (Risk Build, Gnosis 80)
+    * **Core Function:** You can be in 2 states simultaneously, but take 15 damage per turn.
+    * **Evo A (Tolerable Risk):** Take only 10 damage per turn.
+    * **Evo B (Triple Combination):** Can be in 3 states but damage increases to 25 per turn.
+    * **Note:** *Extreme power vs health trade. Glass cannon specialist.*
+
+82. **Glyph: State Nullification** (Anti-Build, Gnosis 70)
+    * **Core Function:** Prevent all enemies from entering states for 2 turns. You also cannot enter states.
+    * **Evo A (Asymmetric Null):** You can still enter states.
+    * **Evo B (Extended Null):** Duration 3 turns.
+    * **Note:** *Hard counter to state-dependent builds. Meta call.*
+
+---
+
+### **Transcendent Mechanics — 10 Skills**
+
+83. **Glyph: Consciousness Fragments** (Summon Build, Gnosis 75)
+    * **Core Function:** 60 Bandwidth. Summon 3 consciousness fragments (10 Ojas each) that copy your current state.
+    * **Evo A (Perfect Fragments):** Fragments have 20 Ojas each.
+    * **Evo B (Persistent Fragments):** Fragments last until destroyed.
+    * **Note:** *Summon archetype. Completely different from direct-damage builds.*
+
+84. **Glyph: Mental Fortress** (Defense Build, Gnosis 65)
+    * **Core Function:** 50 Bandwidth. Become immune to all damage for 2 turns but cannot act.
+    * **Evo A (Active Fortress):** Can still use non-offensive glyphs.
+    * **Evo B (Extended Fortress):** Duration 3 turns.
+    * **Note:** *Ultimate defense vs offense. Stalling specialist tool.*
+
+85. **Glyph: Cognitive Overload** (Burst Build, Gnosis 70)
+    * **Core Function:** 80 Bandwidth. Cast all glyphs in your chart simultaneously at 50% potency. Once per duel.
+    * **Evo A (Perfect Overload):** 75% potency instead.
+    * **Evo B (Sustained Overload):** Can be used twice per duel.
+    * **Note:** *Ultimate combo turn. Setup vs execution moment.*
+
+86. **Glyph: Reality Anchor** (Control Build, Gnosis 80)
+    * **Core Function:** 100 Bandwidth. Lock the current game state for 2 turns (no resources, Ojas, or states can change).
+    * **Evo A (Perfect Anchor):** Duration 3 turns.
+    * **Evo B (Selective Anchor):** Enemies locked, you can still act.
+    * **Note:** *Ultimate control tool. Freeze vs flow strategies.*
+
+87. **Glyph: Bandwidth Singularity** (Ultimate Ramp, Gnosis 85)
+    * **Core Function:** 150 Bandwidth. For 3 turns, Bandwidth generation +200%.
+    * **Evo A (Perfect Singularity):** +300% generation.
+    * **Evo B (Extended Singularity):** Duration 4 turns.
+    * **Note:** *Exponential scaling. Greedy late-game build.*
+
+88. **Glyph: Consciousness Merge** (Team Build, Gnosis 75)
+    * **Core Function:** 70 Bandwidth. Merge with ally—share Ojas pool, resources, and states for 3 turns.
+    * **Evo A (Perfect Merge):** Duration 4 turns.
+    * **Evo B (Multi-Merge):** Can merge with 2 allies.
+    * **Note:** *Ultimate team synergy. Multiplayer specialist.*
+
+89. **Glyph: Temporal Dilation** (Tempo Build, Gnosis 90)
+    * **Core Function:** 120 Bandwidth. Take 2 consecutive turns immediately. Once per duel.
+    * **Evo A (Extended Dilation):** Take 3 turns instead.
+    * **Evo B (Efficient Dilation):** Cost reduced to 100 Bandwidth.
+    * **Note:** *Ultimate tempo swing. Setup for massive combos.*
+
+90. **Glyph: Ego Death** (Sacrifice Build, Gnosis 100)
+    * **Core Function:** 200 Bandwidth. Sacrifice all current Ojas and resources. Next 3 glyphs have +500% effect and cost 0.
+    * **Evo A (Perfect Death):** +800% effect instead.
+    * **Evo B (Controlled Death):** Affects next 5 glyphs.
+    * **Note:** *Ultimate all-in. Risk everything for massive finish.*
+
+91. **Glyph: Infinite Consciousness** (Endgame Build, Gnosis 110)
+    * **Core Function:** 250 Bandwidth. Enter permanent transcendent state: +50% all effects, +10 Bandwidth per turn, immune to state manipulation.
+    * **Evo A (Perfect Transcendence):** +75% all effects.
+    * **Evo B (Resource Transcendence):** +20 Bandwidth per turn.
+    * **Note:** *Ultimate endgame power spike. Win condition itself.*
+
+92. **Glyph: Consciousness Collapse** (Reset Build, Gnosis 95)
+    * **Core Function:** 180 Bandwidth. Reset entire duel state to turn 1 (both players). Keep your current Bandwidth.
+    * **Evo A (Perfect Collapse):** Also keep Coherence.
+    * **Evo B (Controlled Collapse):** Choose which turn to reset to (1-5).
+    * **Note:** *Ultimate comeback tool. Reset vs commit strategies.*
+
+---
+
+### **Unique Build Enablers — 8 Skills**
+
+93. **Glyph: Hermit Mode** (Solo Build, Gnosis 60)
+    * **Core Function:** If you have no allies, +50% all effects but -30% max Ojas.
+    * **Evo A (Perfect Hermit):** +75% all effects.
+    * **Evo B (Tolerable Hermit):** Only -15% max Ojas penalty.
+    * **Note:** *Anti-synergy with team builds. Pure solo specialist.*
+
+94. **Glyph: Hive Mind** (Team Build, Gnosis 65)
+    * **Core Function:** For each ally, gain +10% Bandwidth generation and +2 Coherence per turn.
+    * **Evo A (Perfect Hive):** +15% and +3 instead.
+    * **Evo B (Deep Hive):** Also share 25% of your Bandwidth with allies.
+    * **Note:** *Scales with team size. Multiplayer specialist.*
+
+95. **Glyph: Minimalist Protocol** (Restriction Build, Gnosis 55)
+    * **Core Function:** Can only have 5 glyphs in your chart, but they all have -50% costs and +50% effects.
+    * **Evo A (Perfect Minimalism):** +75% effects instead.
+    * **Evo B (Efficient Minimalism):** -75% costs instead.
+    * **Note:** *Extreme simplicity vs complexity. Totally different deckbuilding.*
+
+96. **Glyph: Maximalist Protocol** (Complexity Build, Gnosis 70)
+    * **Core Function:** Can have 20 glyphs in your chart. For each glyph over 10, gain +5% Bandwidth generation.
+    * **Evo A (Perfect Maximalism):** +8% per glyph instead.
+    * **Evo B (Deep Maximalism):** Can have 25 glyphs.
+    * **Note:** *Opposite of minimalism. Toolbox vs focused builds.*
+
+97. **Glyph: Glass Cannon Mind** (Aggro Build, Gnosis 65)
+    * **Core Function:** -50% max Ojas, but +100% damage dealt and +50% Bandwidth generation.
+    * **Evo A (Perfect Cannon):** +150% damage instead.
+    * **Evo B (Tolerable Glass):** Only -30% max Ojas penalty.
+    * **Note:** *Extreme offense vs tank builds. Race vs sustain.*
+
+98. **Glyph: Immovable Mind** (Tank Build, Gnosis 60)
+    * **Core Function:** +50% max Ojas and +30% healing received, but -50% damage dealt.
+    * **Evo A (Perfect Fortress):** +75% max Ojas.
+    * **Evo B (Tolerable Immobility):** Only -30% damage penalty.
+    * **Note:** *Opposite of glass cannon. Attrition vs burst.*
+
+99. **Glyph: Volatile Mind** (High-Roll Build, Gnosis 75)
+    * **Core Function:** All effects you generate have random potency between 0% and 200% (rolled each time).
+    * **Evo A (Controlled Volatility):** Range improved to 50%-200%.
+    * **Evo B (Perfect Variance):** Range improved to 100%-300%.
+    * **Note:** *RNG build vs consistency. High-variance vs stable strategies.*
+
+100. **Glyph: Perfect Mind** (Consistency Build, Gnosis 80)
+    * **Core Function:** All your effects have exactly their listed potency—no scaling, crits, or variance possible.
+    * **Evo A (Predictable Power):** All effects +20% base potency.
+    * **Evo B (Enhanced Stability):** Also immune to debuffs that reduce your effectiveness.
+    * **Note:** *Anti-variance vs scaling builds. Different optimization puzzle.*
+
+---
+
+**End of Consciousness Engine Complete Skills List**
