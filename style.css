@@ -872,6 +872,37 @@ background: linear-gradient(var(--bg-angle, 135deg), var(--card-bg-a), var(--car
     100% { transform: scale(1); }
 }
 
+/* Fusion Animation Sequence */
+#fusion-sequence-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px) saturate(120%);
+    z-index: 2000;
+    display: none; /* Activated by JS */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+#fusion-sequence-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+#fusion-vortex {
+    width: 300px;
+    height: 300px;
+    transform: scale(1.2);
+}
+.fusion-slot.gathering {
+    animation: slot-gather-pulse 400ms ease-out;
+}
+@keyframes slot-gather-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 24px rgba(0, 184, 148, 0.25); }
+    50% { transform: scale(1.05); box-shadow: 0 0 45px rgba(0, 227, 214, 0.6); border-color: rgba(0, 227, 214, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 24px rgba(0, 184, 148, 0.25); }
+}
+
 .fusion-slot:hover {
     border-color: var(--accent-cosmic);
     background: rgba(108, 92, 231, 0.05);
@@ -930,6 +961,107 @@ background: linear-gradient(var(--bg-angle, 135deg), var(--card-bg-a), var(--car
     background: rgba(0, 0, 0, 0.05);
     border: 1px solid var(--glass-border);
     border-radius: 10px;
+}
+
+/* Fusion FX Overlay (panel-local, no data logic touched) */
+.panel-center { position: relative; }
+#fusion-fx {
+    position: absolute;
+    inset: 0;
+    display: none;
+    pointer-events: none;
+    z-index: 999;
+}
+#fusion-fx.show { display: block; }
+#fusion-fx::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0.2), rgba(0,0,0,0.38));
+}
+#fusion-fx .swirl {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 220px; height: 220px; border-radius: 50%;
+    background: conic-gradient(from 0deg, rgba(0,225,178,0.4), rgba(0,195,255,0.35), transparent 60%);
+    filter: blur(0.4px);
+    animation: fx-spin 1.2s linear infinite;
+}
+#fusion-fx .ring {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 240px; height: 240px; border-radius: 50%;
+    border: 2px solid rgba(0, 227, 214, 0.35);
+    box-shadow: 0 0 24px rgba(0,227,214,0.25);
+    animation: fx-pulse 900ms ease-out;
+}
+@keyframes fx-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes fx-pulse {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0; }
+}
+/* Advanced 2D beam + halo + bloom (CSS-only) */
+#fusion-fx .beam {
+  position: absolute;
+  height: 6px;
+  width: 0px; /* expanded inline via JS */
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(0,225,178,0.0), rgba(0,225,178,0.9), rgba(0,195,255,0.0));
+  filter: drop-shadow(0 0 10px rgba(0,225,178,0.6));
+  transform-origin: left center;
+  opacity: 0.95;
+  overflow: hidden;
+}
+#fusion-fx .beam>.flow {
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55) 35%, transparent 70%);
+  animation: beam-flow 700ms linear infinite;
+}
+@keyframes beam-flow {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+#fusion-fx .halo {
+  position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);
+  width: 300px; height:300px; border-radius:50%;
+  background:
+    radial-gradient(40% 40% at 50% 50%, rgba(255,255,255,0.15), transparent 60%),
+    conic-gradient(from 0deg, rgba(0,225,178,0.22), rgba(0,195,255,0.22), transparent 70%);
+  mix-blend-mode: screen;
+  animation: halo-rot 2200ms linear infinite;
+}
+@keyframes halo-rot { to { transform: translate(-50%,-50%) rotate(360deg); } }
+#fusion-fx .bloom {
+  position:absolute; left:50%; top:50%; transform: translate(-50%,-50%) scale(0.8);
+  width: 180px; height:180px; border-radius:50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(0,225,178,0.35) 35%, transparent 70%);
+  opacity: 0;
+  animation: bloom-pop 700ms ease-out forwards;
+}
+@keyframes bloom-pop {
+  0% { opacity: 0; transform: translate(-50%,-50%) scale(0.7); }
+  60% { opacity: 1; transform: translate(-50%,-50%) scale(1.05); }
+  100% { opacity: 0.9; transform: translate(-50%,-50%) scale(1); }
+}
+#fusion-fx .vignette {
+  position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(60% 45% at 50% 45%, rgba(0,0,0,0.0), rgba(0,0,0,0.22) 65%, rgba(0,0,0,0.32));
+}
+#fusion-fx .lottie {
+  position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);
+  width: 260px; height: 260px; pointer-events:none;
+  mix-blend-mode: screen; opacity: 0.95;
+}
+#fusion-fx .ghost-slot {
+  position:absolute;
+  border: 2px solid rgba(0,227,214,0.6);
+  background: rgba(0,227,214,0.08);
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,227,214,0.25);
+  animation: ghost-glow 600ms ease-in-out 4;
+  transition: transform 700ms cubic-bezier(.2,.8,.2,1), box-shadow 300ms ease;
+}
+@keyframes ghost-glow {
+  0% { box-shadow: 0 0 14px rgba(0,227,214,0.22); }
+  50% { box-shadow: 0 0 28px rgba(0,227,214,0.45); }
+  100% { box-shadow: 0 0 14px rgba(0,227,214,0.22); }
 }
 
 #fusion-preview h3 {

@@ -290,7 +290,97 @@ initializeOwnedSkills(); // Initialize base skills with proper lock state (40 ow
     try { updateStats(); } catch (e) { console.error('Stats update failed:', e); }
 
     if (window.Effects) { try { Effects.init(); } catch (e) { console.warn('Effects init failed', e); } }
+    // Initialize non-invasive fusion FX (does not touch skill data/cards)
+    try { initFusionFXOverlay(); } catch(_){}
 });
+
+function initFusionFXOverlay(){
+  const panel = document.querySelector('.panel-center');
+  const originalBtn = document.getElementById('create-fusion');
+  if (!panel || !originalBtn) return;
+  // Create overlay once
+  let fx = document.getElementById('fusion-fx');
+  if (!fx){
+    fx = document.createElement('div');
+    fx.id = 'fusion-fx';
+    panel.appendChild(fx);
+  }
+  // Replace button to prevent double handlers; wrap createFusion with FX
+  const btn = originalBtn.cloneNode(true);
+  originalBtn.parentNode.replaceChild(btn, originalBtn);
+  btn.addEventListener('click', (ev)=>{
+    ev.preventDefault(); ev.stopPropagation();
+    // Clear and show overlay (panel-local)
+    fx.innerHTML = '';
+    fx.classList.add('show');
+    const panelRect = panel.getBoundingClientRect();
+    const center = { x: panelRect.width/2, y: panelRect.height/2 };
+    const filled = Array.from(document.querySelectorAll('.fusion-slot.filled'));
+    const ghosts = [];
+
+    // Vignette background
+    const vig = document.createElement('div'); vig.className='vignette'; fx.appendChild(vig);
+
+    // Swirl Lottie (amped)
+    if (window.lottie){
+      const l = document.createElement('div'); l.className='lottie'; fx.appendChild(l);
+      try {
+        const anim = lottie.loadAnimation({ container: l, renderer:'svg', loop:true, autoplay:true,
+          path:'https://assets6.lottiefiles.com/packages/lf20_iGv8Jm.json' });
+        anim.setSpeed(1.4);
+        setTimeout(()=> { try{ anim.destroy(); l.remove(); }catch(_){} }, 2200);
+      } catch(_){ }
+    }
+
+    // Create glowing ghost boxes at slot positions
+    filled.forEach(el=>{
+      const r = el.getBoundingClientRect();
+      const g = document.createElement('div'); g.className='ghost-slot';
+      g.style.width = r.width+'px'; g.style.height = r.height+'px';
+      g.style.left = (r.left - panelRect.left)+'px'; g.style.top = (r.top - panelRect.top)+'px';
+      fx.appendChild(g); ghosts.push({g,r});
+      // pulse the real slot too
+      el.classList.add('gathering'); setTimeout(()=> el.classList.remove('gathering'), 2600);
+    });
+    if (window.Effects){ try{ Effects.sfx('tick'); }catch(_){} }
+
+    // After ~2.6s, merge ghosts to center and flash + burst lottie
+    setTimeout(()=>{
+      if (ghosts.length === 0){
+        // fallback center flash
+        const flash = document.createElement('div'); flash.className='flash';
+        flash.style.position='absolute'; flash.style.inset='0';
+        flash.style.background='radial-gradient(circle at 50% 50%, rgba(255,255,255,0.95), transparent 60%)';
+        flash.style.opacity='0'; fx.appendChild(flash);
+        flash.animate([{opacity:0},{opacity:1, offset:0.5},{opacity:0}], {duration:300, easing:'ease-out'});
+      }
+      ghosts.forEach(({g,r})=>{
+        const gx = r.left - panelRect.left + r.width/2;
+        const gy = r.top - panelRect.top + r.height/2;
+        const dx = center.x - gx; const dy = center.y - gy;
+        g.style.transform = `translate(${dx}px, ${dy}px) scale(0.9)`;
+        g.style.boxShadow = '0 0 40px rgba(0,227,214,0.6), 0 0 80px rgba(0,195,255,0.45)';
+      });
+      if (window.Effects){ try{ Effects.sfx('success'); }catch(_){} }
+      // burst lottie
+      if (window.lottie){
+        const burst = document.createElement('div'); burst.className='lottie'; fx.appendChild(burst);
+        try {
+          const anim2 = lottie.loadAnimation({ container: burst, renderer:'svg', loop:false, autoplay:true,
+            path:'https://assets10.lottiefiles.com/packages/lf20_qp1q7mct.json' });
+          anim2.setSpeed(1.2);
+          anim2.addEventListener('complete', ()=>{ try{ anim2.destroy(); burst.remove(); }catch(_){} });
+        } catch(_){ }
+      }
+    }, 2600);
+
+    // After full 3s, clear FX then actually create fusion
+    setTimeout(()=> {
+      fx.classList.remove('show'); fx.innerHTML='';
+      try { createFusion(); } catch(e){ console.error('createFusion failed', e); }
+    }, 3000);
+  });
+}
 
 // === PROGRESSION (Save/Load/KP) ===
 function saveProgress() {
