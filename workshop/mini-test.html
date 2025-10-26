@@ -119,12 +119,34 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 8px;
+            justify-content: flex-start;
+            padding: 6px;
             position: relative;
             transition: all 0.2s ease;
             cursor: pointer;
-            min-height: 80px;
+            min-height: 100px;
+            gap: 4px;
+        }
+        
+        /* Element-based glow effects */
+        .house[data-element="fire"] {
+            border-color: rgba(255,140,0,0.4);
+            box-shadow: 0 0 8px rgba(255,140,0,0.3);
+        }
+        
+        .house[data-element="earth"] {
+            border-color: rgba(107,142,35,0.4);
+            box-shadow: 0 0 8px rgba(107,142,35,0.3);
+        }
+        
+        .house[data-element="air"] {
+            border-color: rgba(135,206,250,0.4);
+            box-shadow: 0 0 8px rgba(135,206,250,0.3);
+        }
+        
+        .house[data-element="water"] {
+            border-color: rgba(70,130,180,0.4);
+            box-shadow: 0 0 8px rgba(70,130,180,0.3);
         }
         
         .house.drag-over {
@@ -138,18 +160,54 @@
             border-color: rgba(139,92,246,0.6);
         }
         
+        .house.synergy-active {
+            background: rgba(0,227,214,0.15);
+            border-color: rgba(0,227,214,0.7);
+            box-shadow: 0 0 12px rgba(0,227,214,0.5);
+        }
+        
+        .house-header {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
         .house-label {
-            font-size: 10px;
+            font-size: 9px;
             opacity: 0.6;
             text-align: center;
-            margin-bottom: 4px;
             position: relative;
             cursor: help;
             transition: opacity 0.2s;
+            font-weight: 600;
         }
         
         .house-label:hover {
             opacity: 1;
+        }
+        
+        .house-nakshatra {
+            font-size: 8px;
+            color: #00e3d6;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        
+        .house-planet {
+            font-size: 14px;
+            margin: 2px 0;
+            filter: drop-shadow(0 0 4px currentColor);
+        }
+        
+        .house-bonus {
+            font-size: 13px;
+            font-weight: 700;
+            color: #00e3d6;
+            margin: 2px 0;
+            padding: 2px 6px;
+            background: rgba(0,227,214,0.1);
+            border-radius: 4px;
         }
         
         .house-slot {
@@ -161,9 +219,51 @@
             background: rgba(139,92,246,0.3);
             border: 1px solid rgba(139,92,246,0.5);
             border-radius: 6px;
-            padding: 6px;
-            font-size: 11px;
+            padding: 4px 6px;
+            font-size: 10px;
             position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        
+        .slotted-glyph.planet-synergy {
+            border: 2px solid;
+            box-shadow: 0 0 8px currentColor;
+            animation: synergyPulse 2s infinite;
+        }
+        
+        .slotted-glyph.house-synergy {
+            background: rgba(0,227,214,0.2);
+            border-color: rgba(0,227,214,0.6);
+        }
+        
+        @keyframes synergyPulse {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+        
+        .slot-state-badge {
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            font-size: 10px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .synergy-indicator {
+            font-size: 9px;
+            opacity: 0.8;
+            color: #00e3d6;
+            font-weight: 600;
         }
         
         .slotted-glyph .remove-btn {
@@ -1451,6 +1551,7 @@
                         kp: skill.cost?.kp || 0,
                         cooldown: skill.cooldown || 1,
                         keywords: skill.keywords || [],
+                        tags: skill.tags || skill.keywords || [], // Use tags for synergy, fallback to keywords
                         engine: skill.engine || 'unknown',
                         tier: skill.tier || 0,
                         isFused: !!skill.fusionIngredients,
@@ -1474,19 +1575,193 @@
         }
         
         const HOUSES = [
-            { id: 1, name: 'Self', bonus: 1.2 },
-            { id: 2, name: 'Resources', bonus: 1.0 },
-            { id: 3, name: 'Communication', bonus: 1.0 },
-            { id: 4, name: 'Foundation', bonus: 1.1 },
-            { id: 5, name: 'Creativity', bonus: 1.15 },
-            { id: 6, name: 'Enemies', bonus: 1.0 },
-            { id: 7, name: 'Partnerships', bonus: 1.0 },
-            { id: 8, name: 'Transformation', bonus: 1.1 },
-            { id: 9, name: 'Fortune', bonus: 1.2 },
-            { id: 10, name: 'Authority', bonus: 1.0 },
-            { id: 11, name: 'Gains', bonus: 1.0 },
-            { id: 12, name: 'Liberation', bonus: 1.3 }
+            { 
+                id: 1, name: 'Self', bonus: 1.2, 
+                planet: 'Mars', planetIcon: '🔴',
+                desc: 'Identity & Vitality', 
+                optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative'],
+                synergies: ['Physical', 'Bleed', 'First Strike']
+            },
+            { 
+                id: 2, name: 'Resources', bonus: 1.0, 
+                planet: 'Venus', planetIcon: '💖',
+                desc: 'Wealth & Possessions',
+                optimal: ['Gold Generation', 'Loot Skills', 'Resource Gain'],
+                synergies: ['Gold', 'Loot', 'Material']
+            },
+            { 
+                id: 3, name: 'Communication', bonus: 1.0, 
+                planet: 'Mercury', planetIcon: '🟢',
+                desc: 'Speed & Versatility',
+                optimal: ['Quick-Cast', 'Multi-Hit', 'Chain Skills'],
+                synergies: ['Speed', 'Versatile', 'Combo']
+            },
+            { 
+                id: 4, name: 'Foundation', bonus: 1.1, 
+                planet: 'Moon', planetIcon: '🌙',
+                desc: 'Roots & Stability',
+                optimal: ['Healing', 'Shield', 'Sustain'],
+                synergies: ['Heal', 'Shield', 'Regen']
+            },
+            { 
+                id: 5, name: 'Creativity', bonus: 1.15, 
+                planet: 'Sun', planetIcon: '☀️',
+                desc: 'Expression & Power',
+                optimal: ['High Power', 'AoE', 'Signature Moves'],
+                synergies: ['Power', 'AoE', 'Crit']
+            },
+            { 
+                id: 6, name: 'Enemies', bonus: 1.0, 
+                planet: 'Mercury', planetIcon: '🟢',
+                desc: 'Combat & Competition',
+                optimal: ['Anti-Enemy', 'Debuffs', 'Execute'],
+                synergies: ['Execute', 'Debuff', 'Counter']
+            },
+            { 
+                id: 7, name: 'Partnerships', bonus: 1.0, 
+                planet: 'Venus', planetIcon: '💖',
+                desc: 'Balance & Allies',
+                optimal: ['Team Buffs', 'Support', 'Reflect'],
+                synergies: ['Support', 'Ally', 'Balanced']
+            },
+            { 
+                id: 8, name: 'Transformation', bonus: 1.1, 
+                planet: 'Mars', planetIcon: '🔴',
+                desc: 'Change & Rebirth',
+                optimal: ['DoT', 'Transform', 'Revive'],
+                synergies: ['DoT', 'Transform', 'Phoenix']
+            },
+            { 
+                id: 9, name: 'Fortune', bonus: 1.2, 
+                planet: 'Jupiter', planetIcon: '🟣',
+                desc: 'Luck & Expansion',
+                optimal: ['XP Gain', 'Luck', 'Wisdom'],
+                synergies: ['XP', 'Rare Drop', 'Wisdom']
+            },
+            { 
+                id: 10, name: 'Authority', bonus: 1.0, 
+                planet: 'Saturn', planetIcon: '🔵',
+                desc: 'Discipline & Control',
+                optimal: ['Defense', 'CC', 'Slow'],
+                synergies: ['Defense', 'CC', 'Slow']
+            },
+            { 
+                id: 11, name: 'Gains', bonus: 1.0, 
+                planet: 'Saturn', planetIcon: '🔵',
+                desc: 'Achievement & Network',
+                optimal: ['Reward Skills', 'Chain Effects', 'Multipliers'],
+                synergies: ['Reward', 'Chain', 'Stack']
+            },
+            { 
+                id: 12, name: 'Liberation', bonus: 1.3, 
+                planet: 'Jupiter', planetIcon: '🟣',
+                desc: 'Transcendence & Spirit',
+                optimal: ['Ultimate Skills', 'Spiritual', 'Cleanse'],
+                synergies: ['Ultimate', 'Mystic', 'Transcend']
+            }
         ];
+        
+        // === PLANETARY SYNERGY SYSTEM ===
+        const PLANET_SYNERGIES = {
+            'Sun': {
+                color: '#ffd700',
+                keywords: ['Power', 'Leadership', 'Crit', 'AoE', 'Fire', 'Signature'],
+                bonus: { power: 15, crit: 10 },
+                desc: 'Amplifies raw power and critical strikes'
+            },
+            'Moon': {
+                color: '#c0c0c0',
+                keywords: ['Heal', 'Shield', 'Regen', 'Support', 'Sustain', 'Water'],
+                bonus: { healing: 20, cooldown: 15 },
+                desc: 'Enhances healing and defensive abilities'
+            },
+            'Mars': {
+                color: '#ff4444',
+                keywords: ['Physical', 'Attack', 'Bleed', 'Aggressive', 'Fire', 'Strike'],
+                bonus: { attackSpeed: 20, bleed: 10 },
+                desc: 'Boosts physical damage and attack speed'
+            },
+            'Mercury': {
+                color: '#00ff88',
+                keywords: ['Speed', 'Versatile', 'Quick-Cast', 'Combo', 'Multi-Hit', 'Air'],
+                bonus: { cooldown: -15, versatility: 15 },
+                desc: 'Reduces cooldowns and increases skill variety'
+            },
+            'Jupiter': {
+                color: '#9966ff',
+                keywords: ['XP', 'Wisdom', 'Luck', 'Rare Drop', 'Ultimate', 'Expansion'],
+                bonus: { xp: 25, rewards: 10 },
+                desc: 'Increases experience gain and rare rewards'
+            },
+            'Venus': {
+                color: '#ff69b4',
+                keywords: ['Gold', 'Loot', 'Charm', 'Support', 'Balanced', 'Material'],
+                bonus: { gold: 20, charm: 15 },
+                desc: 'Boosts resource gain and control effects'
+            },
+            'Saturn': {
+                color: '#4169e1',
+                keywords: ['Defense', 'CC', 'Slow', 'DoT', 'Discipline', 'Counter'],
+                bonus: { defense: 20, dotResist: 15 },
+                desc: 'Enhances defense and control abilities'
+            },
+            'Rahu': {
+                color: '#8b008b',
+                keywords: ['Chaos', 'Shadow', 'Stealth', 'Unorthodox', 'Transform'],
+                bonus: { chaos: 25, stealth: 10 },
+                desc: 'Amplifies unconventional and shadow tactics'
+            },
+            'Ketu': {
+                color: '#f0f0f0',
+                keywords: ['Mystic', 'Spiritual', 'Transcend', 'Cleanse', 'Phoenix'],
+                bonus: { spiritual: 20, immunity: 15 },
+                desc: 'Strengthens spiritual and transcendent abilities'
+            }
+        };
+        
+        // Check if skill synergizes with house planet
+        function checkPlanetSynergy(skill, house) {
+            const planet = PLANET_SYNERGIES[house.planet];
+            if (!planet || !skill.tags) return null;
+            
+            // Check if any skill tags match planet keywords
+            const matches = skill.tags.filter(tag => 
+                planet.keywords.some(keyword => 
+                    tag.toLowerCase().includes(keyword.toLowerCase())
+                )
+            );
+            
+            if (matches.length > 0) {
+                return {
+                    planet: house.planet,
+                    planetColor: planet.color,
+                    matches: matches,
+                    bonusMultiplier: 1.1 + (matches.length * 0.05) // 1.15 for 1 match, 1.2 for 2, etc.
+                };
+            }
+            
+            return null;
+        }
+        
+        // Check if skill synergizes with house theme
+        function checkHouseSynergy(skill, house) {
+            if (!skill.tags || !house.synergies) return null;
+            
+            const matches = skill.tags.filter(tag =>
+                house.synergies.some(syn =>
+                    tag.toLowerCase().includes(syn.toLowerCase())
+                )
+            );
+            
+            if (matches.length > 0) {
+                return {
+                    matches: matches,
+                    bonusMultiplier: 1.05 + (matches.length * 0.03) // 1.08 for 1, 1.11 for 2
+                };
+            }
+            
+            return null;
+        }
         
         // State
         let selectedGlyph = null;
@@ -2353,17 +2628,18 @@
                 houseEl.dataset.houseIndex = index;
                 houseEl.dataset.houseId = house.id; // Store house number
                 houseEl.dataset.signId = sign.id; // Store sign occupying this house
+                houseEl.dataset.element = sign.element.toLowerCase(); // For element glow
                 
-                // Display: House number + name + sign + nakshatra + bonus
+                // Display: Enhanced house header with planet, nakshatra, and bonus
                 houseEl.innerHTML = `
-                    <div class="house-label" onclick="showInfo('house${house.id}')" style="line-height: 1.2;">
-                        <div style="font-weight: 600;">${house.name}</div>
-                        <div style="font-size: 9px; opacity: 0.9; margin-top: 1px;">${sign.sign}</div>
-                        <div style="font-size: 8px; opacity: 0.7; color: #00e3d6;">${nakshatraInfo.nakshatra.name} (${padaNames[nakshatraInfo.pada - 1]})</div>
-                        <div style="font-size: 8px; opacity: 0.6; margin-top: 1px;">×${house.bonus}</div>
+                    <div class="house-header">
+                        <div class="house-label" onclick="showInfo('house${house.id}')">${house.name}</div>
+                        <div class="house-planet" style="color: ${PLANET_SYNERGIES[house.planet]?.color || '#fff'};" title="Ruled by ${house.planet}">${house.planetIcon}</div>
+                        <div class="house-nakshatra" title="${nakshatraInfo.nakshatra.name} - ${nakshatraInfo.nakshatra.quality}">${nakshatraInfo.nakshatra.name} (${padaNames[nakshatraInfo.pada - 1]})</div>
+                        <div class="house-bonus">×${house.bonus}</div>
                     </div>
                     <div class="house-slot" id="slot-${index}">
-                        <div class="placeholder">Empty</div>
+                        <div class="placeholder" style="font-size: 10px; opacity: 0.5;">Empty</div>
                     </div>
                 `;
                 
@@ -2397,18 +2673,51 @@
                     const sign = getSignForHouse(house.id);
                     const adjustedPower = Math.round(glyph.power * house.bonus);
                     
+                    // Check for synergies
+                    const planetSynergy = checkPlanetSynergy(glyph, house);
+                    const houseSynergy = checkHouseSynergy(glyph, house);
+                    const hasSynergy = planetSynergy || houseSynergy;
+                    
                     if (slot) {
+                        let synergyClasses = 'slotted-glyph';
+                        let synergyStyle = '';
+                        let synergyIndicator = '';
+                        
+                        if (planetSynergy) {
+                            synergyClasses += ' planet-synergy';
+                            synergyStyle = `border-color: ${planetSynergy.planetColor};`;
+                            synergyIndicator = `<div class="synergy-indicator" title="Planet Synergy: ${planetSynergy.matches.join(', ')}">
+                                ${house.planetIcon} +${Math.round((planetSynergy.bonusMultiplier - 1) * 100)}%
+                            </div>`;
+                        }
+                        
+                        if (houseSynergy) {
+                            synergyClasses += ' house-synergy';
+                            if (!synergyIndicator) {
+                                synergyIndicator = `<div class="synergy-indicator" title="House Synergy: ${houseSynergy.matches.join(', ')}">
+                                    ⭐ +${Math.round((houseSynergy.bonusMultiplier - 1) * 100)}%
+                                </div>`;
+                            }
+                        }
+                        
                         slot.innerHTML = `
-                            <div class="slotted-glyph">
+                            <div class="${synergyClasses}" style="${synergyStyle}">
+                                <div class="slot-state-badge" title="Filled & Active">✓</div>
                                 <button class="remove-btn" onclick="removeGlyph(${index})">×</button>
-                                <div style="font-weight: 600;">${glyph.name}</div>
-                                <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower} (×${house.bonus})</div>
+                                <div style="font-weight: 600; font-size: 11px;">${glyph.name}</div>
+                                <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
+                                ${synergyIndicator}
                             </div>
                         `;
                         
-                        // Mark house as filled
+                        // Mark house as filled and add synergy class if applicable
                         const houseEl = document.querySelector(`[data-house-index="${index}"]`);
-                        if (houseEl) houseEl.classList.add('filled');
+                        if (houseEl) {
+                            houseEl.classList.add('filled');
+                            if (hasSynergy) {
+                                houseEl.classList.add('synergy-active');
+                            }
+                        }
                     }
                 }
             });
@@ -2431,21 +2740,55 @@
             // Slot the glyph
             slottedGlyphs[houseIndex] = { ...selectedGlyph };
             
-            // Update UI
+            // Update UI with synergy detection
             const slot = document.getElementById(`slot-${houseIndex}`);
             const house = HOUSES[houseIndex];
             const adjustedPower = Math.round(selectedGlyph.power * house.bonus);
             
+            // Check for synergies
+            const planetSynergy = checkPlanetSynergy(selectedGlyph, house);
+            const houseSynergy = checkHouseSynergy(selectedGlyph, house);
+            const hasSynergy = planetSynergy || houseSynergy;
+            
+            let synergyClasses = 'slotted-glyph';
+            let synergyStyle = '';
+            let synergyIndicator = '';
+            
+            if (planetSynergy) {
+                synergyClasses += ' planet-synergy';
+                synergyStyle = `border-color: ${planetSynergy.planetColor};`;
+                synergyIndicator = `<div class="synergy-indicator" title="Planet Synergy: ${planetSynergy.matches.join(', ')}">
+                    ${house.planetIcon} +${Math.round((planetSynergy.bonusMultiplier - 1) * 100)}%
+                </div>`;
+            }
+            
+            if (houseSynergy) {
+                synergyClasses += ' house-synergy';
+                if (!synergyIndicator) {
+                    synergyIndicator = `<div class="synergy-indicator" title="House Synergy: ${houseSynergy.matches.join(', ')}">
+                        ⭐ +${Math.round((houseSynergy.bonusMultiplier - 1) * 100)}%
+                    </div>`;
+                }
+            }
+            
             slot.innerHTML = `
-                <div class="slotted-glyph">
+                <div class="${synergyClasses}" style="${synergyStyle}">
+                    <div class="slot-state-badge" title="Filled & Active">✓</div>
                     <button class="remove-btn" onclick="removeGlyph(${houseIndex})">×</button>
-                    <div style="font-weight: 600;">${selectedGlyph.name}</div>
-                    <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower} (×${house.bonus})</div>
+                    <div style="font-weight: 600; font-size: 11px;">${selectedGlyph.name}</div>
+                    <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
+                    ${synergyIndicator}
                 </div>
             `;
             
-            // Mark house as filled
-            document.querySelector(`[data-house-index="${houseIndex}"]`).classList.add('filled');
+            // Mark house as filled and add synergy class
+            const houseEl = document.querySelector(`[data-house-index="${houseIndex}"]`);
+            if (houseEl) {
+                houseEl.classList.add('filled');
+                if (hasSynergy) {
+                    houseEl.classList.add('synergy-active');
+                }
+            }
             
             // Clear selection
             selectedGlyph = null;
