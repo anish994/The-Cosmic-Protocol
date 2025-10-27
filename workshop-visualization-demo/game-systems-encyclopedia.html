@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 Game Systems Encyclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(139,92,246,0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #8b5cf6, #00e3d6, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-badge {
+            background: rgba(139,92,246,0.2);
+            border: 1px solid rgba(139,92,246,0.4);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .stat-badge strong {
+            color: #8b5cf6;
+            font-size: 1.3rem;
+            display: block;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid rgba(139,92,246,0.3);
+            padding-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            color: #00e3d6;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(139,92,246,0.6);
+            box-shadow: 0 5px 20px rgba(139,92,246,0.3);
+        }
+        
+        .card-header {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin: 3px;
+            border: 1px solid;
+        }
+        
+        .list-item {
+            background: rgba(0,0,0,0.2);
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border-left: 3px solid;
+        }
+        
+        .expandable {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .expandable-content.open {
+            max-height: 2000px;
+        }
+        
+        .rule-box {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,140,0,0.1));
+            border: 2px solid rgba(255,215,0,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .rule-title {
+            color: #ffd700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .interaction-chain {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .chain-element {
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: 2px solid;
+        }
+        
+        .chain-arrow {
+            font-size: 1.5rem;
+            color: #ffd700;
+        }
+        
+        .chain-result {
+            padding: 10px 15px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,140,0,0.2));
+            border: 2px solid #ffd700;
+            flex: 1;
+        }
+        
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            background: rgba(139,92,246,0.2);
+            border: 1px solid rgba(139,92,246,0.4);
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(139,92,246,0.4);
+            border-color: #8b5cf6;
+        }
+        
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(139,92,246,0.4);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 10px rgba(139,92,246,0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🌌 The Cosmic Protocol</h1>
+        <p>Complete Game Systems Encyclopedia</p>
+        <div class="stats-bar">
+            <div class="stat-badge">
+                <strong id="totalSkills">0</strong>
+                Total Skills
+            </div>
+            <div class="stat-badge">
+                <strong id="totalKeywords">0</strong>
+                Keywords
+            </div>
+            <div class="stat-badge">
+                <strong id="totalEngines">8</strong>
+                Engines
+            </div>
+            <div class="stat-badge">
+                <strong id="totalEffects">0</strong>
+                Effect Types
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        
+        <!-- SECTION: CORE ELEMENTS -->
+        <div class="section">
+            <div class="section-title">🔥 Core Elements</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">The fundamental forces that power skills and create fusion reactions</p>
+            
+            <div class="grid" id="elementsGrid"></div>
+        </div>
+        
+        <!-- SECTION: EFFECT TYPES -->
+        <div class="section">
+            <div class="section-title">⚡ Effect Types</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">All possible skill effects and their mechanics</p>
+            
+            <div class="grid" id="effectTypesGrid"></div>
+        </div>
+        
+        <!-- SECTION: STATUS CONDITIONS -->
+        <div class="section">
+            <div class="section-title">💫 Status Conditions</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Buffs, debuffs, and special states</p>
+            
+            <div class="grid" id="statusGrid"></div>
+        </div>
+        
+        <!-- SECTION: KEYWORDS -->
+        <div class="section">
+            <div class="section-title">🏷️ All Keywords</div>
+            <input type="text" class="search-box" id="keywordSearch" placeholder="🔍 Search keywords...">
+            <div class="filter-bar" id="keywordFilters"></div>
+            <div class="grid" id="keywordsGrid"></div>
+        </div>
+        
+        <!-- SECTION: ELEMENTAL CHAINS -->
+        <div class="section">
+            <div class="section-title">🔗 Elemental Chain Reactions</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">When elements combine in combat, special reactions occur</p>
+            
+            <div id="elementalChains"></div>
+        </div>
+        
+        <!-- SECTION: HOUSE SYNERGIES -->
+        <div class="section">
+            <div class="section-title">🏠 House Synergies</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">The 12 Vedic houses and their cosmic connections</p>
+            
+            <div id="houseSynergies"></div>
+        </div>
+        
+        <!-- SECTION: ENGINES -->
+        <div class="section">
+            <div class="section-title">⚙️ Skill Engines</div>
+            <div class="grid" id="enginesGrid"></div>
+        </div>
+        
+        <!-- SECTION: SKILL ARCHETYPES -->
+        <div class="section">
+            <div class="section-title">🎭 Skill Archetypes</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Common patterns and roles skills fulfill</p>
+            
+            <div id="archetypesSection"></div>
+        </div>
+        
+        <!-- SECTION: MECHANICS TO DEFINE -->
+        <div class="section">
+            <div class="section-title">🎮 Mechanics To Define</div>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Combat systems that need rules</p>
+            
+            <div id="mechanicsSection"></div>
+        </div>
+        
+    </div>
+    
+    <!-- Load skill data -->
+    <script src="../05-fusion/demo/data-full.js"></script>
+    <script src="../shared/skillSystem.js"></script>
+    
+    <script>
+        // Initialize data
+        let allSkills = [];
+        let allKeywords = new Set();
+        let effectTypes = new Set();
+        
+        // === COMPREHENSIVE KEYWORD DATABASE (100+ keywords from mini-test.html) ===
+        // Each keyword has: name, category, color, short, medium, detailed (with description, strengths, weaknesses, combos)
+        const TAG_DATA = {
+            burn: { name: '🔥 Burn', category: 'damage', color: '#ff6464', short: 'Damage-over-time', medium: 'DoT that ticks fire damage over multiple turns', detailed: { description: 'Burn deals persistent fire damage that eats away at enemy health.', strengths: ['Bypasses shields', 'Stacks over time', 'Area denial'], weaknesses: ['Can be cleansed', 'Slow to kill'], combos: ['Burn + Fire = Inferno', 'Burn + DoT stacking = Death'] } },
+            decay: { name: '🦠 Decay', category: 'damage', color: '#8b6914', short: 'Corruption damage', medium: 'Rot damage that reduces max HP and armor over time', detailed: { description: 'Decay corrupts enemies, reducing defenses and dealing persistent damage.', strengths: ['Armor reduction', 'Permanent HP loss', 'Stacks'], weaknesses: ['Slow', 'Can be cleansed'], combos: ['Decay + Dark = Cursed rot', 'Decay + Time = Accelerated aging'] } },
+            stasis: { name: '❄️ Stasis', category: 'control', color: '#64b4ff', short: 'Freeze/lockdown', medium: 'Completely freezes target, preventing all actions', detailed: { description: 'Stasis locks enemies in time, preventing any movement or actions.', strengths: ['Total lockdown', 'Safe damage window', 'Interrupt anything'], weaknesses: ['Short duration', 'Boss resist'], combos: ['Stasis + Burst = Free damage', 'Stasis + Setup = Guaranteed combo'] } },
+            subservience: { name: '🔗 Subservience', category: 'control', color: '#888888', short: 'Mind control', medium: 'Forces enemies to obey commands or take specific actions', detailed: { description: 'Subservience bends enemy will, controlling their actions temporarily.', strengths: ['Turn enemies against each other', 'Disruption', 'High control'], weaknesses: ['Boss resist', 'Short duration'], combos: ['Subservience + Charm = Total control', 'Subservience + Sacrifice = Use enemy as fuel'] } },
+            void: { name: '🌀 Void', category: 'element', color: '#2d1b4e', short: 'Nothingness element', medium: 'Absolute void that denies existence and resources', detailed: { description: 'Void represents nothingness - resource denial, banishment, and anti-magic.', strengths: ['Resource denial', 'Anti-magic', 'Banishment'], weaknesses: ['No direct damage', 'Complex'], combos: ['Void + Banish = Permanent removal', 'Void + Deny = Complete lockdown'] } },
+            consume: { name: '👹 Consume', category: 'mechanic', color: '#8b0000', short: 'Devour effects', medium: 'Remove stacks/buffs to gain immediate powerful benefit', detailed: { description: 'Consume abilities eat stacks or buffs for burst effects.', strengths: ['Burst potential', 'Stack conversion', 'Remove buffs'], weaknesses: ['Needs stacks first', 'One-time use'], combos: ['Consume + Stacks = Mega burst', 'Consume + Debuff = Double value'] } },
+            detonate: { name: '💥 Detonate', category: 'mechanic', color: '#ff4500', short: 'Explode stacks', medium: 'Convert accumulated stacks into massive burst damage', detailed: { description: 'Detonate converts DoT stacks into instant burst damage.', strengths: ['Huge burst', 'Stack payoff', 'AoE potential'], weaknesses: ['Needs setup', 'Consumes stacks'], combos: ['Detonate + Burn stacks = Explosion', 'Detonate + Decay = Corruption blast'] } },
+            banish: { name: '🚫 Banish', category: 'control', color: '#4b0082', short: 'Remove from play', medium: 'Temporarily or permanently remove target from battle', detailed: { description: 'Banish sends targets to another realm, removing them from combat.', strengths: ['Complete removal', 'Neutralize threats', 'Strategic value'], weaknesses: ['Temporary (usually)', 'Boss resist'], combos: ['Banish + Void = Permanent removal', 'Banish + Setup = Safe preparation'] } },
+            silence: { name: '🔇 Silence', category: 'control', color: '#9b7fb8', short: 'Prevent abilities', medium: 'Disables enemy skills - they can move/attack but no abilities', detailed: { description: 'Silence prevents casting, shutting down mages and ability-reliant enemies.', strengths: ['Counter casters', 'Stop combos', 'Interrupt channels'], weaknesses: ['Short duration', "Doesn't stop autos"], combos: ['Silence + Burst = Free window', 'Silence + Escape = Safe retreat'] } },
+            shield: { name: '🛡️ Shield', category: 'defense', color: '#6eb5ff', short: 'Absorb damage', medium: 'Damage-absorbing barrier that breaks when depleted', detailed: { description: 'Shields provide temporary HP buffer before real damage.', strengths: ['Extra effective HP', 'Prevent one-shots', 'Stackable'], weaknesses: ['Temporary', 'Can be pierced'], combos: ['Shield + Heal = Maximum sustain', 'Multiple shields = Layered defense'] } },
+            heal: { name: '💚 Heal', category: 'type', color: '#64ff96', short: 'Restore HP', medium: 'Healing that restores health to self or allies', detailed: { description: 'Heal skills restore HP and keep your team alive.', strengths: ['Sustain', 'Counter DoT', 'Tank builds'], weaknesses: ['No offense', 'Anti-heal counters'], combos: ['Heal + Shield = Mega tank', 'Heal + Regen = Continuous recovery'] } },
+            cleanse: { name: '✨ Cleanse', category: 'utility', color: '#74b9ff', short: 'Remove debuffs', medium: 'Purifies negative effects and crowd control', detailed: { description: 'Cleanse removes debuffs, poisons, curses, and CC effects.', strengths: ['Counter debuffs', 'Remove CC', 'Save allies'], weaknesses: ['Reactive', 'Can be baited'], combos: ['Cleanse + Heal = Full recovery', 'Cleanse + Engage = Unstoppable'] } },
+            transmute: { name: '🔄 Transmute', category: 'mechanic', color: '#e67e22', short: 'Transform effects', medium: 'Convert damage into healing or transform resource types', detailed: { description: 'Transmute changes one thing into another - damage to healing, debuffs to buffs.', strengths: ['Turn negatives positive', 'Survival', 'Flexibility'], weaknesses: ['Situational', 'May require timing'], combos: ['Transmute damage = Lifesteal', 'Transmute + Tank = Invincible'] } },
+            omen: { name: '🎴 Omen', category: 'divination', color: '#9b59b6', short: 'Predictive draw', medium: 'Draw cards with conditional bonuses or future insights', detailed: { description: 'Omen grants draws with special conditions or bonuses.', strengths: ['Card advantage', 'Conditional power', 'Setup future'], weaknesses: ['Condition dependent', 'RNG'], combos: ['Omen + Scry = Perfect draw', 'Omen + Foretell = Planned future'] } },
+            scry: { name: '🔮 Scry', category: 'divination', color: '#8e44ad', short: 'Peek at deck', medium: 'Look at top cards and reorder them for better draws', detailed: { description: 'Scry lets you see and manipulate upcoming draws.', strengths: ['Perfect information', 'Arrange draws', 'Plan ahead'], weaknesses: ['No immediate power', 'Needs skill'], combos: ['Scry + Draw = Perfect hand', 'Scry + Omen = Controlled destiny'] } },
+            foretell: { name: '📜 Foretell', category: 'divination', color: '#6a1b9a', short: 'Delayed card', medium: 'Create discounted copy to play later at reduced cost', detailed: { description: 'Foretell sets aside a card to play later at discount.', strengths: ['Cost reduction', 'Future planning', 'Tempo advantage'], weaknesses: ['Delayed payoff', 'Memory slot'], combos: ['Foretell + Big spell = Discount nuke', 'Foretell + Setup = Planned combo'] } },
+            seal: { name: '🛡️ Seal', category: 'protection', color: '#3498db', short: 'Protect actions', medium: 'Shield next draw or effect from disruption', detailed: { description: 'Seal protects your next action from counters and interrupts.', strengths: ['Guarantee action', 'Counter denial', 'Safe plays'], weaknesses: ['One-time use', 'Proactive needed'], combos: ['Seal + Big spell = Unstoppable', 'Seal + Draw = Safe card'] } },
+            chant: { name: '🙏 Chant', category: 'invocation', color: '#f1c40f', short: 'Ritual stacking', medium: 'Build ritual power through repeated chanting', detailed: { description: 'Chant builds stacks that unlock powerful invoke effects.', strengths: ['Scales over time', 'Unlock thresholds', 'Ritual power'], weaknesses: ['Slow buildup', 'Interrupted'], combos: ['Chant + Invoke = Maximum power', 'Chant stacks = Threshold unlock'] } },
+            invoke: { name: '🙏 Invoke', category: 'invocation', color: '#f39c12', short: 'Call higher powers', medium: 'Channel divine/cosmic energy for massive effects', detailed: { description: 'Invoke calls upon external powers for overwhelming strength.', strengths: ['Massive power', 'Unique effects', 'Game-changing'], weaknesses: ['High cost', 'Long cooldown'], combos: ['Invoke + Ritual = Divine power', 'Invoke + Chant = Maximum strength'] } },
+            consecrate: { name: '✨ Consecrate', category: 'holy', color: '#ffd700', short: 'Empower defense', medium: 'Bless next defensive action for enhanced effect', detailed: { description: 'Consecrate blesses defensive abilities with holy power.', strengths: ['Enhanced defense', 'Holy synergy', 'Protection'], weaknesses: ['Setup needed', 'One-time'], combos: ['Consecrate + Shield = Holy barrier', 'Consecrate + Heal = Miracle'] } },
+            field: { name: '🌐 Field', category: 'trait', color: '#5dade2', short: 'Persistent zone', medium: 'Creates area that continuously affects units inside', detailed: { description: 'Field creates persistent zones with ongoing effects.', strengths: ['Continuous effect', 'Zone control', 'Forces positioning'], weaknesses: ['Stationary', 'Can avoid'], combos: ['Field + DoT = Constant damage', 'Multiple fields = Layered control'] } },
+            anchor: { name: '⚓ Anchor', category: 'trait', color: '#34495e', short: 'Stateful marker', medium: 'Creates persistent marker that preserves or enhances actions', detailed: { description: 'Anchor creates persistent state markers on battlefield.', strengths: ['Persistent state', 'Future value', 'Combo enabler'], weaknesses: ['Needs follow-up', 'Can be destroyed'], combos: ['Anchor + Return = Teleport point', 'Anchor + Amplify = Power boost'] } },
+            channel: { name: '🌀 Channel', category: 'trait', color: '#16a085', short: 'Throughput action', medium: 'One-shot high-throughput effect, sometimes duplicable', detailed: { description: 'Channel delivers concentrated power in single burst.', strengths: ['High throughput', 'Potential duplication', 'Burst damage'], weaknesses: ['One-shot', 'Can be interrupted'], combos: ['Channel + Amplify = Mega burst', 'Channel + Copy = Double effect'] } },
+            amplify: { name: '📈 Amplify', category: 'buff', color: '#fd79a8', short: 'Boost effects', medium: 'Multiplies power of next ability or ongoing effect', detailed: { description: 'Amplify multiplies the power of your actions.', strengths: ['Force multiplier', 'Enables combos', 'Flexible'], weaknesses: ['Setup needed', 'Timing matters'], combos: ['Amplify + Burst = Massive damage', 'Amplify + Ultimate = Game-winning'] } },
+            charge: { name: '⚡ Charge', category: 'singularity', color: '#e74c3c', short: 'Build threshold', medium: 'Increase singularity counter toward collapse trigger', detailed: { description: 'Charge builds energy toward critical threshold.', strengths: ['Build toward payoff', 'Scaling power', 'Threshold unlock'], weaknesses: ['Needs time', 'Can reset'], combos: ['Charge + Threshold = Big payoff', 'Charge + Collapse = Ultimate'] } },
+            threshold: { name: '⚠️ Threshold', category: 'mechanic', color: '#c0392b', short: 'HP breakpoint', medium: 'Triggers or gains power at specific HP percentages', detailed: { description: 'Threshold activates at HP breakpoints for clutch plays.', strengths: ['Execute potential', 'Clutch factor', 'Scales with missing HP'], weaknesses: ['Useless at high HP', 'Timing critical'], combos: ['Threshold + Burst = Guaranteed kill', 'Threshold + Chain = Multi-execute'] } },
+            collapse: { name: '💫 Collapse', category: 'singularity', color: '#8e44ad', short: 'Consume threshold', medium: 'Spend accumulated power for massive AoE or banish', detailed: { description: 'Collapse releases all built-up energy in catastrophic burst.', strengths: ['Massive AoE', 'Game-ending', 'Resets battlefield'], weaknesses: ['Needs charge first', 'All-or-nothing'], combos: ['Collapse + Charge stacks = Apocalypse', 'Collapse + AoE = Map wipe'] } },
+            mark: { name: '🎯 Mark', category: 'debuff', color: '#e74c3c', short: 'Tag for focus', medium: 'Tags target so all sources deal bonus damage', detailed: { description: 'Mark tags enemies for team focus fire.', strengths: ['Team damage boost', 'Track target', 'Coordinate kills'], weaknesses: ['Needs team', 'Can be cleansed'], combos: ['Mark + Burst = Delete target', 'Mark + Team = Coordinated kill'] } },
+            expose: { name: '🔍 Expose', category: 'debuff', color: '#ff7675', short: 'Reveal weakness', medium: 'Reveal weak points; consuming grants refresh or combo', detailed: { description: 'Expose reveals vulnerabilities that can be exploited.', strengths: ['Vulnerability', 'Combo enabler', 'Refresh potential'], weaknesses: ['Needs follow-up', 'Single target'], combos: ['Expose + Exploit = Maximum damage', 'Expose + Consume = Refresh combo'] } },
+            vulnerable: { name: '🎯 Vulnerable', category: 'debuff', color: '#ff7b9c', short: 'Increase damage taken', medium: '+25% damage taken from all sources', detailed: { description: 'Vulnerable amplifies ALL incoming damage to target.', strengths: ['Force multiplier', 'Team synergy', 'Oneshot setup'], weaknesses: ['No direct damage', 'Short window'], combos: ['Vulnerable + Burst = Huge damage', 'Vulnerable + Team = Melting'] } },
+            structure: { name: '🏗️ Structure', category: 'deployable', color: '#8db4d2', short: 'Physical construct', medium: 'Deploys wall, barrier, or structure for area control', detailed: { description: 'Structure creates physical objects on battlefield.', strengths: ['Zone control', 'Block projectiles', 'Force pathing'], weaknesses: ['Can be destroyed', 'Blocks allies too'], combos: ['Structure + Defense = Fortress', 'Structure + Trap = Maze'] } },
+            discord: { name: '⚔️ Discord', category: 'debuff', color: '#95a5a6', short: 'Disrupt synergies', medium: 'Reduces buff effectiveness and disrupts combos', detailed: { description: 'Discord breaks enemy coordination and synergies.', strengths: ['Counter buffs', 'Break combos', 'Disrupt teams'], weaknesses: ['Complex', 'Situational'], combos: ['Discord + Debuff = Total shutdown', 'Discord + Chaos = Maximum disruption'] } },
+            
+            // === BATCH 2: ELEMENTS & TYPES (engines, damage types) ===
+            fire: { name: '🔥 Fire', category: 'engine', color: '#ff6464', short: 'Burning damage over time', medium: 'Deals fire damage with burning DoT effects. High burst potential.', detailed: { description: 'Fire engine skills deal direct damage plus burning effects that tick over time. Excels at sustained damage and area control through burn spreading.', strengths: ['Strong vs Nature (+25%)', 'Strong vs Ice (+25%)', 'DoT synergy'], weaknesses: ['Weak vs Water (-25%)', 'Can be cleansed'], combos: ['Fire + Lightning = Explosion (+50% burst)', 'Fire + Earth = Lava DoT', 'Fire + Wind = Spread burn'] } },
+            ice: { name: '❄️ Ice', category: 'engine', color: '#64b4ff', short: 'Slows and freezes enemies', medium: 'Ice damage slows movement and attack speed. Can freeze targets solid.', detailed: { description: 'Ice engine focuses on crowd control through slows and freezes. Great for kiting and controlling enemy positioning.', strengths: ['Strong vs Water (+25%)', 'Strong vs Earth (+25%)', 'CC lockdown'], weaknesses: ['Weak vs Fire (-25%)', 'Bosses resist freeze'], combos: ['Ice + Water = Blizzard AoE', 'Ice + Dark = Frostbite DoT', 'Ice + Wind = Freeze spread'] } },
+            lightning: { name: '⚡ Lightning', category: 'engine', color: '#ffeb64', short: 'Fast chain damage', medium: 'Lightning strikes fast and chains between enemies. High crit chance.', detailed: { description: 'Lightning engine delivers instant damage with chain mechanics. Highest single-target burst and multi-target potential.', strengths: ['Strong vs Water (+25%)', 'Strong vs Metal (+25%)', 'Chain hits multiple'], weaknesses: ['Weak vs Earth (-25%)', 'Random targeting'], combos: ['Lightning + Fire = Explosion', 'Lightning + Wind = Storm (+30% range)', 'Lightning + Water = Shock AoE'] } },
+            water: { name: '💧 Water', category: 'engine', color: '#64c8ff', short: 'Healing and flow', medium: 'Water heals, cleanses, and flows around defenses. Adaptive damage.', detailed: { description: 'Water engine balances offense and support. Bypasses armor, heals allies, and adapts to situations.', strengths: ['Strong vs Fire (+25%)', 'Ignores armor', 'Cleanses debuffs'], weaknesses: ['Weak vs Lightning (-25%)', 'Weak vs Ice (-25%)'], combos: ['Water + Ice = Blizzard', 'Water + Earth = Mud (slow)', 'Water + Light = Purify'] } },
+            earth: { name: '🌍 Earth', category: 'engine', color: '#96c864', short: 'Defense and roots', medium: 'Earth provides shields, roots enemies, and scales with defense.', detailed: { description: 'Earth engine excels at tanking and controlling space. Roots pin enemies, shields absorb damage.', strengths: ['Strong vs Lightning (+25%)', 'Strong vs Wind (+25%)', 'High defense scaling'], weaknesses: ['Weak vs Ice (-25%)', 'Slow animations'], combos: ['Earth + Fire = Lava DoT', 'Earth + Water = Mud slow', 'Earth + Dark = Decay'] } },
+            dark: { name: '🌑 Dark', category: 'engine', color: '#9664c8', short: 'Curses and life drain', medium: 'Dark deals damage and drains life. Applies curses and debuffs.', detailed: { description: 'Dark engine focuses on debuffs, life-steal, and DoT effects. Self-sustaining through damage dealt.', strengths: ['Strong vs Light (+25%)', 'Life-steal scaling', 'Stacking curses'], weaknesses: ['Weak vs Light (-25%)', 'Less burst damage'], combos: ['Dark + Fire = Hellfire', 'Dark + Ice = Frostbite', 'Dark + Earth = Decay'] } },
+            light: { name: '✨ Light', category: 'engine', color: '#ffe664', short: 'Healing and holy damage', medium: 'Light heals allies and deals bonus damage to undead/dark.', detailed: { description: 'Light engine combines healing and holy damage. Counters dark/undead enemies, provides team support.', strengths: ['Strong vs Dark (+50%)', 'Heals allies', 'Cleanses curses'], weaknesses: ['Weak vs Dark (-25%)', 'Lower damage vs normal'], combos: ['Light + Water = Purify', 'Light + Fire = Holy Fire', 'Light + Wind = Blessing AoE'] } },
+            damage: { name: '💥 Damage', category: 'type', color: '#ff6496', short: 'Hurts enemies', medium: 'Direct damage skills that reduce enemy HP. Core offensive abilities.', detailed: { description: 'Damage skills are your primary offense. Scales with Power stat and benefits from crits.', strengths: ['Universal utility', 'Scales with gear', 'Multiple combo options'], weaknesses: ['Countered by shields', 'Needs accuracy'], combos: ['Damage + Buff = Enhanced strikes', 'Damage + Debuff = Vulnerable targets'] } },
+            buff: { name: '⬆️ Buff', category: 'type', color: '#c896ff', short: 'Enhances allies', medium: 'Buffs increase stats like power, speed, or defense temporarily.', detailed: { description: 'Buff skills multiply your team\'s effectiveness. Stack multiple buffs for exponential gains.', strengths: ['Force multiplier', 'Stacks with other buffs', 'Team-wide impact'], weaknesses: ['Temporary duration', 'Can be dispelled', 'No immediate damage'], combos: ['Buff + Damage = Enhanced burst', 'Multiple buffs = Exponential scaling'] } },
+            debuff: { name: '⬇️ Debuff', category: 'type', color: '#ff9664', short: 'Weakens enemies', medium: 'Debuffs reduce enemy stats, making them easier to defeat.', detailed: { description: 'Debuff skills cripple enemies before they can act. Great setup for burst damage.', strengths: ['Reduces threat', 'Enables team combos', 'Control difficult enemies'], weaknesses: ['Can be cleansed', 'Bosses resist', 'No direct damage'], combos: ['Debuff + Damage = Easy kills', 'Multiple debuffs = Hard CC'] } },
+            control: { name: '🎯 Control', category: 'type', color: '#96ffeb', short: 'Stuns and disables', medium: 'Control skills stun, root, or disable enemy actions.', detailed: { description: 'Control (CC) skills lock down enemies completely. Prevent attacks, abilities, and movement.', strengths: ['Total shutdown', 'Interrupt abilities', 'Enables escapes'], weaknesses: ['Diminishing returns', 'Short duration', 'Bosses resist heavily'], combos: ['Control + Damage = Free hits', 'Control chain = Perma-stun (PvE)'] } },
+            
+            // === BATCH 3: CORE TRAITS (aoe, dot, instant, etc.) ===
+            aoe: { name: '💫 AoE', category: 'trait', color: '#b894ff', short: 'Area of Effect', medium: 'Hits multiple enemies in an area. Great for clearing groups.', detailed: { description: 'AoE skills damage/affect all enemies in a radius. Essential for mob clearing and farming.', strengths: ['Multi-target damage', 'Farm efficiency', 'Zone control'], weaknesses: ['Lower single-target DPS', 'Can wake sleeping enemies', 'Friendly fire (sometimes)'], combos: ['AoE + DoT = Spread damage', 'AoE + Control = Mass CC'] } },
+            dot: { name: '🔥 DoT', category: 'trait', color: '#ff8c64', short: 'Damage over Time', medium: 'Deals damage in ticks over several seconds. Stacks for huge damage.', detailed: { description: 'DoT (Damage over Time) applies ticking damage. Stack multiple DoTs for exponential scaling.', strengths: ['Scales with stacks', 'Continues while doing other things', 'Ignores one-time shields'], weaknesses: ['Can be cleansed', 'Delayed damage', 'Needs time to ramp'], combos: ['DoT + DoT = Mega damage', 'DoT + Slow = Guaranteed ticks'] } },
+            instant: { name: '⚡ Instant', category: 'trait', color: '#ffe664', short: 'Immediate effect', medium: 'Activates instantly with no cast time. Cannot be interrupted.', detailed: { description: 'Instant skills have zero cast time. Perfect for reaction plays and dodging while attacking.', strengths: ['Cannot be interrupted', 'Use while moving', 'Quick reactions'], weaknesses: ['Usually lower damage', 'Limited range sometimes'], combos: ['Instant + High cooldown = Emergency button', 'Multiple instants = Burst rotation'] } },
+            channeled: { name: '🌀 Channeled', category: 'trait', color: '#96d4ff', short: 'Must maintain focus', medium: 'Requires continuous casting. Can be interrupted but deals massive damage.', detailed: { description: 'Channeled skills require standing still and focusing. Highest damage potential but vulnerable.', strengths: ['Huge damage potential', 'Scaling per second', 'Resource efficient'], weaknesses: ['Immobile', 'Easily interrupted', 'Dangerous in PvP'], combos: ['Channeled + Shield = Protected casting', 'Channeled + Slow = Free damage'] } },
+            ultimate: { name: '⭐ Ultimate', category: 'trait', color: '#ffd700', short: 'Game-changing power', medium: 'Extremely powerful abilities with long cooldowns. Match-winning potential.', detailed: { description: 'Ultimate skills are the most powerful abilities in the game. Use wisely for maximum impact.', strengths: ['Massive impact', 'Turn the tide', 'Guaranteed value'], weaknesses: ['Very long cooldown', 'High cost', 'One-time use per fight'], combos: ['Ultimate + Buff = Maximum power', 'Ultimate + Debuff = Guaranteed kill'] } },
+            analyze: { name: '🔍 Analyze', category: 'trait', color: '#7dd8c8', short: 'Reveals weaknesses', medium: 'Scans enemies to reveal weak points and increase crit chance against them.', detailed: { description: 'Analyze marks enemies with tactical information. Increases crit chance, reveals hidden stats, and helps team focus fire.', strengths: ['Increased crit chance', 'Reveals enemy info', 'Team coordination'], weaknesses: ['Takes time to apply', 'No immediate damage', 'Single target usually'], combos: ['Analyze + Crit build = Massive crits', 'Analyze + Focus fire = Melt priority targets'] } },
+            speed: { name: '💨 Speed', category: 'trait', color: '#64ffa8', short: 'Increases movement/attack speed', medium: 'Buffs that increase how fast you move and attack. Essential for DPS.', detailed: { description: 'Speed buffs make you attack faster, move quicker, and cast abilities sooner. More attacks = more damage!', strengths: ['More DPS', 'Better positioning', 'Escape/chase potential'], weaknesses: ['Temporary buff', 'Can be slowed', 'Movement speed capped'], combos: ['Speed + DoT = Apply stacks faster', 'Speed + Kiting = Untouchable', 'Speed + Instant cast = Machine gun'] } },
+            flash: { name: '⚡ Flash', category: 'trait', color: '#fff44f', short: 'Instant teleport/dash', medium: 'Blink to target location instantly. Perfect for dodging or engaging.', detailed: { description: 'Flash skills teleport you instantly to a location. The ultimate mobility tool for clutch plays.', strengths: ['Instant repositioning', 'Dodge anything', 'Gap closer/escape'], weaknesses: ['Long cooldown', 'Can\'t pass walls (sometimes)', 'Limited range'], combos: ['Flash + Burst = Surprise attack', 'Flash + Escape = Safe retreat', 'Flash + AoE = Perfect positioning'] } },
+            ward: { name: '👁️ Ward', category: 'trait', color: '#ffd98e', short: 'Provides vision and detection', medium: 'Places a ward that reveals hidden enemies and provides map vision.', detailed: { description: 'Wards grant vision of an area, revealing stealthed enemies and preventing ambushes.', strengths: ['Reveals stealth', 'Map awareness', 'Prevents ganks'], weaknesses: ['Can be destroyed', 'Limited duration', 'Limited quantity'], combos: ['Ward + Trap = Complete control', 'Multiple wards = Full vision', 'Ward + Team = Coordinated plays'] } },
+            strike: { name: '⚔️ Strike', category: 'trait', color: '#ff6b6b', short: 'Quick attack ability', medium: 'Fast, reliable damage. Your bread-and-butter attack.', detailed: { description: 'Strike abilities are quick, spammable attacks. Lower damage but reliable and fast.', strengths: ['Low cooldown', 'Reliable damage', 'Easy to land'], weaknesses: ['Lower damage than finishers', 'No special effects usually'], combos: ['Strike + Speed = Rapid hits', 'Strike spam = Consistent DPS', 'Strike + On-hit effects = Trigger machine'] } },
+            zone: { name: '🎯 Zone', category: 'trait', color: '#48c9b0', short: 'Area control ability', medium: 'Controls space, forcing enemies to reposition or take penalties.', detailed: { description: 'Zone abilities dominate areas of the battlefield, denying space and controlling enemy movement.', strengths: ['Area denial', 'Forces movement', 'Tactical advantage'], weaknesses: ['Can be played around', 'Limited coverage', 'Setup time'], combos: ['Zone + AoE = Maximum coverage', 'Zone + Structure = Fortress', 'Zone + DoT = Dangerous area'] } },
+            chain: { name: '🔗 Chain', category: 'trait', color: '#a29bfe', short: 'Bounces between targets', medium: 'Hits primary target, then jumps to nearby enemies. Great for groups.', detailed: { description: 'Chain abilities jump from target to target, spreading damage across multiple enemies efficiently.', strengths: ['Multi-target damage', 'Efficient vs groups', 'Scales with enemy density'], weaknesses: ['Less single-target damage', 'Random targeting', 'Range limited'], combos: ['Chain + Lightning = Storm damage', 'Chain + Debuff = Spread curses', 'Chain + Execute = Multi-kill potential'] } },
+            finisher: { name: '💀 Finisher', category: 'trait', color: '#c44569', short: 'Execute low-HP enemies', medium: 'Deals massive damage to low-health targets. The killing blow.', detailed: { description: 'Finisher abilities are designed to secure kills on wounded enemies. Often instakill below certain HP.', strengths: ['Guaranteed kills', 'Prevents escapes', 'High impact'], weaknesses: ['Useless vs full HP', 'Wasted if used wrong', 'Long cooldown'], combos: ['Finisher + Threshold = Double execute', 'Finisher + Vision = No escapes', 'Finisher + Reset = Rampage'] } },
+            
+            // === BATCH 4: COMBAT MECHANICS (initiative, adapt, etc.) ===
+            initiative: { name: '🎯 Initiative', category: 'combat', color: '#f39c12', short: 'First strike advantage', medium: 'Deal bonus damage when attacking first or from full HP.', detailed: { description: 'Initiative grants bonus damage on opening strikes. Reward careful positioning and strategic first strikes.', strengths: ['Strong opener', 'Ambush synergy', 'High burst start'], weaknesses: ['Only works once', 'Loses value in prolonged fight'], combos: ['Initiative + Stealth = Assassinate', 'Initiative + Burst = Delete target', 'Initiative + Crit = Massive opener'] } },
+            adapt: { name: '🔄 Adapt', category: 'combat', color: '#16a085', short: 'Changes based on situation', medium: 'Effect changes based on enemy state, HP %, or environment.', detailed: { description: 'Adapt skills change their behavior dynamically. Different effects vs low HP, buffed enemies, or based on your state.', strengths: ['Versatile', 'Never dead pick', 'Situation optimal'], weaknesses: ['Complex to master', 'Less specialized', 'Harder to predict'], combos: ['Adapt + Analysis = Always optimal', 'Adapt + Multi-phase boss = Always relevant'] } },
+            foresight: { name: '👁️ Foresight', category: 'combat', color: '#3498db', short: 'Predict and counter', medium: 'Reveals enemy next action and allows preemptive counter.', detailed: { description: 'Foresight lets you see enemy intentions before they act. Perfect for counters and defensive plays.', strengths: ['Perfect defense', 'Counter setup', 'Information advantage'], weaknesses: ['Reactive playstyle', 'No offense', 'Requires skill to use'], combos: ['Foresight + Counter = Guaranteed counter', 'Foresight + Dodge = Never get hit', 'Foresight + Team = Call enemy plays'] } },
+            insight: { name: '💡 Insight', category: 'combat', color: '#9b59b6', short: 'Wisdom-based power', medium: 'Scales with Wisdom stat instead of Power. Sage damage.', detailed: { description: 'Insight skills deal damage based on Wisdom instead of Power. Allows intelligence-based builds to deal damage.', strengths: ['Wisdom scaling', 'Alternative stat path', 'Hybrid build enabler'], weaknesses: ['Lower base damage', 'Needs Wisdom investment'], combos: ['Insight + High Wisdom = Sage DPS', 'Insight + Support = Hybrid carry', 'Insight + CC = Smart fighter'] } },
+            flow: { name: '🌊 Flow', category: 'combat', color: '#1abc9c', short: 'Combos chain together', medium: 'Each ability used reduces next ability cooldown. Smooth rotation.', detailed: { description: 'Flow makes abilities flow into each other, reducing cooldowns as you combo. Rewards smooth rotations.', strengths: ['Lower cooldowns', 'Smooth gameplay', 'High skill ceiling'], weaknesses: ['Must maintain rotation', 'Interrupted = lose stacks', 'Complex execution'], combos: ['Flow + Low cooldowns = Spam city', 'Flow + Rotation = Endless abilities', 'Flow + Speed = Machine gun'] } },
+            
+            // === BATCH 5: ROLE MECHANICS (defense, attack, counter, etc.) ===
+            defense: { name: '🛡️ Defense', category: 'role', color: '#546e7a', short: 'Reduces damage taken', medium: 'Defense skills reduce incoming damage, grant shields, or provide armor.', detailed: { description: 'Defense abilities protect you and allies from harm. Essential for survival and tanking.', strengths: ['Damage reduction', 'Survivability', 'Enables aggressive play'], weaknesses: ['No offense', 'Can be pierced', 'Temporary usually'], combos: ['Defense + HP = Unkillable tank', 'Defense + Reflect = Counter attackers', 'Defense + Team = Protect carry'] } },
+            attack: { name: '⚔️ Attack', category: 'role', color: '#e74c3c', short: 'Pure offense', medium: 'Attack skills maximize damage output. The best defense is offense!', detailed: { description: 'Attack abilities focus entirely on dealing maximum damage. Go full glass cannon!', strengths: ['Highest damage', 'Fast clears', 'Pressure enemies'], weaknesses: ['No defense', 'Die if caught', 'All-in playstyle'], combos: ['Attack + Crit = Oneshot', 'Attack + Speed = DPS monster', 'Attack + Lifesteal = Drain tank'] } },
+            counter: { name: '⚡ Counter', category: 'role', color: '#f39c12', short: 'Punish enemy attacks', medium: 'Counter skills activate when attacked, punishing aggressive enemies.', detailed: { description: 'Counter abilities turn defense into offense by punishing attackers. Great against aggressive enemies.', strengths: ['Punish aggression', 'Auto-retaliate', 'Scales with incoming damage'], weaknesses: ['Passive playstyle', 'Useless if not attacked', 'Can be played around'], combos: ['Counter + Defense = Reflect tank', 'Counter + Taunt = Bait and punish', 'Counter + Thorns = Death by attacking'] } },
+            stealth: { name: '👤 Stealth', category: 'role', color: '#34495e', short: 'Invisibility and ambush', medium: 'Stealth makes you invisible. Deal bonus damage from stealth.', detailed: { description: 'Stealth grants invisibility for positioning and ambushes. Break stealth when attacking for massive damage.', strengths: ['Surprise attacks', 'Escape danger', 'Perfect positioning'], weaknesses: ['Broken on damage taken', 'AoE reveals you', 'Limited duration'], combos: ['Stealth + Initiative = Assassinate', 'Stealth + Crit = Delete squishies', 'Stealth + Escape = Reset fight'] } },
+            support: { name: '💚 Support', category: 'role', color: '#27ae60', short: 'Buffs and heals allies', medium: 'Support skills heal, buff, and empower your team.', detailed: { description: 'Support abilities make your team stronger. Heals, buffs, shields, and utility.', strengths: ['Force multiplier', 'Keep team alive', 'Enable carries'], weaknesses: ['Low personal damage', 'Relies on team', 'Target priority in PvP'], combos: ['Support + Carry = Power boost', 'Support + Tank = Unkillable frontline', 'Multiple supports = Immortal team'] } },
+            
+            // === BATCH 6: ADVANCED COMBAT (crit, multihit, combo, etc.) ===
+            crit: { name: '💥 Crit', category: 'combat', color: '#e67e22', short: 'Critical hit chance', medium: 'Chance to deal double damage (or more). High risk, high reward.', detailed: { description: 'Crit (Critical Hit) gives a chance to deal massive bonus damage. Stack crit chance and crit damage for huge hits.', strengths: ['Huge damage spikes', 'Scales exponentially', 'Oneshot potential'], weaknesses: ['RNG dependent', 'Inconsistent', 'Countered by dodge'], combos: ['Crit + Crit Damage = Oneshot', 'Crit + Fast attacks = Reliable crits', 'Crit + Vulnerable = Delete'] } },
+            multihit: { name: '🎯 Multi-Hit', category: 'combat', color: '#8e44ad', short: 'Strikes multiple times', medium: 'One ability hits multiple times in quick succession.', detailed: { description: 'Multi-hit abilities strike several times per use. Great for on-hit effects and breaking shields.', strengths: ['Breaks shields fast', 'On-hit procs', 'High DPS potential'], weaknesses: ['Each hit is weaker', 'Can miss some hits', 'Longer animation'], combos: ['Multi-hit + On-hit effects = Proc machine', 'Multi-hit + Lifesteal = Massive healing', 'Multi-hit + Crit = Crit lottery'] } },
+            combo: { name: '🔗 Combo', category: 'combat', color: '#e84393', short: 'Chained abilities', medium: 'Using abilities in sequence grants bonus effects. Skill expression!', detailed: { description: 'Combo skills reward using abilities in specific orders. Higher skill ceiling, higher rewards.', strengths: ['Skill expression', 'Bonus damage', 'Optimal rotations'], weaknesses: ['Complex execution', 'Easy to mess up', 'Punished for mistakes'], combos: ['Combo + Flow = Endless chain', 'Combo + Speed = Fast execution', 'Perfect combo = Maximum damage'] } },
+            quickcast: { name: '⚡ Quick Cast', category: 'combat', color: '#00cec9', short: 'Instant cast upgrade', medium: 'Removes cast time from abilities. Cast while moving!', detailed: { description: 'Quick Cast removes channeling time, making abilities instant. Perfect for mobile gameplay.', strengths: ['No cast time', 'Cast while moving', 'Cannot be interrupted'], weaknesses: ['Uses buff slot', 'Limited duration', 'Cooldown after'], combos: ['Quick Cast + Channel = Instant nuke', 'Quick Cast + Burst = Delete combo', 'Quick Cast + Escape = Safe casting'] } },
+            power: { name: '💪 Power', category: 'combat', color: '#d63031', short: 'Increases ability damage', medium: 'Power stat increases all damage dealt by abilities and attacks.', detailed: { description: 'Power is your primary offensive stat. Stack Power for maximum damage output.', strengths: ['Universal damage boost', 'Scales all abilities', 'Core DPS stat'], weaknesses: ['No utility', 'Needs abilities to use', 'Diminishing returns'], combos: ['Power + Crit = Massive hits', 'Power + Multi-hit = All hits stronger', 'Power + Buff = Exponential damage'] } },
+            slow: { name: '🐌 Slow', category: 'combat', color: '#636e72', short: 'Reduces movement speed', medium: 'Slows enemy movement and attack speed. Great for kiting.', detailed: { description: 'Slow reduces enemy speed, making them easier to kite and control positioning.', strengths: ['Kiting tool', 'Chase prevention', 'Attack speed reduction'], weaknesses: ['Can be cleansed', 'Bosses resist', 'No damage'], combos: ['Slow + Kite = Never touched', 'Slow + DoT = Guaranteed ticks', 'Slow + Zone = Cannot escape'] } },
+            
+            // === BATCH 7: RESOURCES (loot, xp, gold, wisdom, material) ===
+            loot: { name: '💎 Loot', category: 'resource', color: '#fdcb6e', short: 'Increases item drops', medium: 'Skills that increase loot drop rate and quality. Farm mode!', detailed: { description: 'Loot skills increase the quality and quantity of drops from enemies. Essential for farming.', strengths: ['Better drops', 'Faster farming', 'More rewards'], weaknesses: ['No combat power', 'Only matters when farming', 'Low priority in hard content'], combos: ['Loot + AoE farm = Treasure hunter', 'Loot + Speed clear = Efficient farming', 'Max loot = Rare drops'] } },
+            xp: { name: '⭐ XP', category: 'resource', color: '#a29bfe', short: 'Experience gain boost', medium: 'Increases experience gained from kills and quests.', detailed: { description: 'XP boost skills accelerate your leveling speed. Get to max level faster!', strengths: ['Faster leveling', 'Quick progression', 'Reach endgame sooner'], weaknesses: ['Useless at max level', 'No combat power', 'Temporary benefit'], combos: ['XP + Farm = Power leveling', 'XP + Quest = Fast progression', 'Max XP gear = Speed run to cap'] } },
+            gold: { name: '💰 Gold', category: 'resource', color: '#f39c12', short: 'Increases gold drops', medium: 'Skills that increase gold gained from kills and sales.', detailed: { description: 'Gold boost skills help you get rich faster. More gold = better gear!', strengths: ['Wealth generation', 'Better gear access', 'Economy advantage'], weaknesses: ['No combat power', 'Gold has caps', 'Late game less important'], combos: ['Gold + Farm = Get rich', 'Gold + Loot = Full rewards', 'Max gold = Buy everything'] } },
+            wisdom: { name: '📚 Wisdom', category: 'resource', color: '#6c5ce7', short: 'Insight and knowledge', medium: 'Wisdom resource for divine abilities. Also boosts Insight damage.', detailed: { description: 'Wisdom is your mana/resource for divine and support abilities. Also scales Insight-based damage.', strengths: ['Enables abilities', 'Scales Insight damage', 'Divine power source'], weaknesses: ['Needs management', 'Can run empty', 'Regen required'], combos: ['Wisdom + Insight = Sage DPS', 'Wisdom + Divine = Holy power', 'Max Wisdom = Endless casting'] } },
+            material: { name: '⚒️ Material', category: 'resource', color: '#95a5a6', short: 'Crafting materials', medium: 'Increases crafting material drops for gear creation.', detailed: { description: 'Material boosts help you gather crafting components faster for gear upgrades.', strengths: ['Faster crafting', 'Better gear access', 'Self-sufficient'], weaknesses: ['No combat power', 'Requires crafting system', 'Time investment'], combos: ['Material + Farming = Full crafting', 'Material + Loot = All resources', 'Max material = Craft everything'] } },
+            
+            // === BATCH 8: ELEMENTAL ADVANCED (air, chaos, wind, nature, metal) ===
+            air: { name: '💨 Air', category: 'element', color: '#a8e6cf', short: 'Wind and mobility', medium: 'Air grants speed, mobility, and knockback effects.', detailed: { description: 'Air element focuses on movement, speed buffs, and pushing enemies around.', strengths: ['High mobility', 'Knockback control', 'Speed buffs'], weaknesses: ['Lower direct damage', 'Requires positioning'], combos: ['Air + Fire = Spread burn', 'Air + Lightning = Storm', 'Air + Speed = Ultimate mobility'] } },
+            chaos: { name: '🌀 Chaos', category: 'element', color: '#ff6b9d', short: 'Random powerful effects', medium: 'Chaos creates unpredictable effects. High variance, high ceiling.', detailed: { description: 'Chaos abilities have random effects that can be incredibly powerful or just okay. Gambler\'s dream!', strengths: ['Huge upside potential', 'Unpredictable for enemy', 'Fun RNG'], weaknesses: ['Inconsistent', 'Can lowroll', 'Hard to plan around'], combos: ['Chaos + Luck = Win lottery', 'Chaos spam = Eventually broken', 'Chaos + Adapt = Cover weaknesses'] } },
+            wind: { name: '🌪️ Wind', category: 'element', color: '#81ecec', short: 'Movement and spread', medium: 'Wind pushes, pulls, and spreads effects across enemies.', detailed: { description: 'Wind manipulates positioning and spreads damage/effects to nearby enemies.', strengths: ['Positioning control', 'Spread effects', 'Zone denial'], weaknesses: ['Can help enemies escape', 'Complex interactions'], combos: ['Wind + Fire = Spread burn', 'Wind + Ice = Blizzard', 'Wind + Poison = Toxic cloud'] } },
+            nature: { name: '🌿 Nature', category: 'element', color: '#55efc4', short: 'Growth and poison', medium: 'Nature deals poison damage, roots, and summons allies.', detailed: { description: 'Nature combines DoT poison effects with roots and summoning capabilities.', strengths: ['Strong DoT', 'Root CC', 'Minion support'], weaknesses: ['Weak vs Fire', 'Slow damage', 'Summons can be killed'], combos: ['Nature + DoT = Massive poison', 'Nature + Summon = Army', 'Nature + Root = Locked down'] } },
+            metal: { name: '⚙️ Metal', category: 'element', color: '#b2bec3', short: 'Armor and constructs', medium: 'Metal provides heavy armor and deploys mechanical constructs.', detailed: { description: 'Metal element excels at defense and deploying durable mechanical structures.', strengths: ['High armor', 'Durable constructs', 'Physical resistance'], weaknesses: ['Weak vs Lightning', 'Slow', 'Low mobility'], combos: ['Metal + Defense = Tank fortress', 'Metal + Structure = Impenetrable walls', 'Metal + Earth = Maximum defense'] } },
+            
+            // === BATCH 9: ADVANCED MECHANICS (sustain, charm, cc, bleed, etc.) ===
+            sustain: { name: '💚 Sustain', category: 'mechanic', color: '#00b894', short: 'Health regeneration', medium: 'Continuous HP recovery through lifesteal, regen, or healing.', detailed: { description: 'Sustain keeps you alive through combat via various recovery mechanics.', strengths: ['Long fights', 'Solo potential', 'No downtime'], weaknesses: ['Burst counters it', 'Anti-heal destroys it', 'Weaker early'], combos: ['Sustain + Tank = Unkillable', 'Sustain + Attack speed = Drain tank', 'Sustain + AoE = Heal from everything'] } },
+            charm: { name: '💕 Charm', category: 'mechanic', color: '#fd79a8', short: 'Mind control enemies', medium: 'Charm makes enemies fight for you temporarily.', detailed: { description: 'Charm turns enemies into allies for a short duration. Ultimate CC!', strengths: ['Turn enemy power against them', 'Strongest CC', 'Chaos in enemy ranks'], weaknesses: ['Can be broken', 'Short duration', 'Doesn\'t work on bosses'], combos: ['Charm + Strong enemy = Free tank', 'Charm + AoE = Friendly fire', 'Charm chain = Domination'] } },
+            cc: { name: '🎯 CC', category: 'mechanic', color: '#74b9ff', short: 'Crowd Control', medium: 'CC includes stuns, roots, slows - anything that limits enemy actions.', detailed: { description: 'CC (Crowd Control) is any effect that limits enemy actions. Essential for survival and combos.', strengths: ['Control fights', 'Setup combos', 'Prevent abilities'], weaknesses: ['Diminishing returns', 'Bosses resist', 'Can be cleansed'], combos: ['CC chain = Perma-lock', 'CC + Burst = Free damage', 'CC + Escape = Disengage'] } },
+            bleed: { name: '🩸 Bleed', category: 'mechanic', color: '#d63031', short: 'Physical DoT', medium: 'Bleed stacks physical damage over time. Cannot be cleansed easily.', detailed: { description: 'Bleed is physical DoT that stacks and persists. Great vs high HP enemies.', strengths: ['Stacks infinitely', 'Hard to cleanse', 'Scales vs high HP'], weaknesses: ['Armor reduces it', 'Takes time to ramp', 'Needs application time'], combos: ['Bleed stack + Time = Mega damage', 'Bleed + Attack speed = Fast stacks', 'Bleed + Execute = Finish when stacked'] } },
+            expansion: { name: '📈 Expansion', category: 'mechanic', color: '#6c5ce7', short: 'Grows over time', medium: 'Expansion effects grow larger/stronger the longer they persist.', detailed: { description: 'Expansion mechanics start small but grow exponentially if left unchecked.', strengths: ['Exponential scaling', 'Zone control grows', 'Punishes ignoring it'], weaknesses: ['Weak early', 'Can be destroyed', 'Requires setup'], combos: ['Expansion + Time = Huge area', 'Expansion + Protection = Unstoppable growth', 'Multiple expansions = Map control'] } },
+            leadership: { name: '👑 Leadership', category: 'mechanic', color: '#fdcb6e', short: 'Buff nearby allies', medium: 'Leadership provides aura buffs to all nearby allies.', detailed: { description: 'Leadership grants passive buffs to you and nearby allies. Great for team play!', strengths: ['Team buffs', 'Passive benefit', 'Stacks with other buffs'], weaknesses: ['Requires allies', 'Range limited', 'Can be targeted first'], combos: ['Leadership + Team = Army buffs', 'Leadership + Summons = Buffed minions', 'Leadership auras = Exponential power'] } },
+            
+            // === BATCH 10: JYOTISH/DIVINE (sutras, divine, harmony, revelation, etc.) ===
+            sutras: { name: '📜 Sutras', category: 'ancient', color: '#e17055', short: 'Ancient wisdom texts', medium: 'Sutras are powerful ancient abilities from Jyotish wisdom.', detailed: { description: 'Sutras represent ancient cosmic wisdom. Powerful mixed effects that defy normal categories.', strengths: ['Unique effects', 'Cannot be countered easily', 'Cosmic power'], weaknesses: ['Complex to use', 'Long cooldowns', 'Wisdom cost'], combos: ['Sutra + Wisdom = Divine power', 'Sutra + Ancient lore = Cosmic mastery', 'Multiple sutras = Enlightenment'] } },
+            divine: { name: '✨ Divine', category: 'holy', color: '#ffeaa7', short: 'Holy cosmic power', medium: 'Divine abilities channel holy and cosmic energies.', detailed: { description: 'Divine skills use holy energy for healing, smiting, and protection.', strengths: ['Versatile toolkit', 'Heals and damages', 'Counters dark/undead'], weaknesses: ['Wisdom intensive', 'Weaker vs non-evil', 'Complex rotations'], combos: ['Divine + Light = Holy nuke', 'Divine + Wisdom = Endless power', 'Divine + Support = Team carry'] } },
+            harmony: { name: '☯️ Harmony', category: 'holy', color: '#fab1a0', short: 'Balance of forces', medium: 'Harmony balances opposing forces for powerful effects.', detailed: { description: 'Harmony requires balanced stats/elements to unlock bonus effects.', strengths: ['Huge payoff', 'Encourages balance', 'Unique build path'], weaknesses: ['Stat requirements', 'Hard to optimize', 'Complex builds'], combos: ['Harmony + Balanced build = Maximum power', 'Harmony + Versatile = Jack of all trades master', 'Perfect harmony = Transcendence'] } },
+            balance: { name: '⚖️ Balance', category: 'holy', color: '#dfe6e9', short: 'Equilibrium state', medium: 'Balance maintains equilibrium between stats and elements.', detailed: { description: 'Balance rewards keeping stats/effects in equilibrium for sustained power.', strengths: ['Sustained power', 'No weakness', 'Well-rounded'], weaknesses: ['No specialization', 'Jack of all trades', 'Harder to master'], combos: ['Balance + All stats = Perfect build', 'Balance + Harmony = Cosmic power', 'Balanced team = Covers everything'] } },
+            revelation: { name: '💫 Revelation', category: 'divination', color: '#a29bfe', short: 'Cosmic insight granted', medium: 'Revelation grants visions of future or hidden information.', detailed: { description: 'Revelation abilities reveal hidden truths, future events, and secret information.', strengths: ['Perfect information', 'Predict enemies', 'No surprises'], weaknesses: ['No direct power', 'Requires interpretation', 'Knowledge isn\'t power alone'], combos: ['Revelation + Counter = Perfect defense', 'Revelation + Team = Full coordination', 'Revelation + Foresight = Omniscience'] } },
+            pacify: { name: '🕊️ Pacify', category: 'holy', color: '#74b9ff', short: 'Calm hostile forces', medium: 'Pacify reduces enemy aggression and can end combat peacefully.', detailed: { description: 'Pacify calms enemies, reducing aggression and potentially ending fights non-violently.', strengths: ['Avoid fights', 'Reduce damage taken', 'Diplomatic option'], weaknesses: ['Bosses immune', 'Doesn\'t work on all enemies', 'No rewards if no kills'], combos: ['Pacify + Escape = Safe retreat', 'Pacify + Stealth = Sneak past', 'Pacify + Diplomacy = Peaceful resolution'] } },
+            calm: { name: '😌 Calm', category: 'holy', color: '#81ecec', short: 'Inner peace state', medium: 'Calm grants immunity to CC and fear while active.', detailed: { description: 'Calm provides mental clarity and CC immunity. Cannot be scared or controlled.', strengths: ['CC immunity', 'Fear immunity', 'Mental clarity'], weaknesses: ['Doesn\'t stop damage', 'Can be dispelled', 'Limited duration'], combos: ['Calm + Tank = Unstoppable', 'Calm + Channel = Cannot interrupt', 'Calm + Boss fight = No fear'] } },
+            structures: { name: '🏛️ Structures', category: 'deployable', color: '#74b9ff', short: 'Build permanent objects', medium: 'Deploy lasting structures that control zones and provide benefits.', detailed: { description: 'Structures create lasting objects on the battlefield for strategic advantage.', strengths: ['Permanent until destroyed', 'Zone control', 'Strategic depth'], weaknesses: ['Can be destroyed', 'Cost resources', 'Limited placements'], combos: ['Multiple structures = Fortress', 'Structure + Defense = Impenetrable', 'Structure + Trap = Kill zone'] } },
+            truth: { name: '🔍 Truth', category: 'divination', color: '#ffeaa7', short: 'Reveals all deceptions', medium: 'Truth dispels illusions and reveals true nature of things.', detailed: { description: 'Truth cuts through all deception, revealing real HP, hidden enemies, and true intentions.', strengths: ['Perfect information', 'No deception', 'Reveal stealth'], weaknesses: ['No combat power', 'Knowledge requires action', 'Can\'t unsee truth'], combos: ['Truth + Revelation = Omniscience', 'Truth + Analysis = Perfect data', 'Truth + Team = Full intel'] } },
+            enemies: { name: '👿 Enemies', category: 'mechanic', color: '#636e72', short: 'Benefits from enemy count', medium: 'Scales in power based on number of nearby enemies.', detailed: { description: 'Abilities that grow stronger when surrounded by many enemies.', strengths: ['Scales with enemy count', 'Great vs mobs', 'Clutch potential'], weaknesses: ['Weak in 1v1', 'Depends on situation', 'Bosses usually alone'], combos: ['Enemies + AoE = Maximum value', 'Enemies + Surrounded = Mega power', 'Enemies + Survival = Come back mechanic'] } },
+            authority: { name: '👑 Authority', category: 'control', color: '#fdcb6e', short: 'Command and dominate', medium: 'Authority commands enemies and allies, forcing obedience.', detailed: { description: 'Authority skills force obedience through sheer cosmic will. Command friend and foe.', strengths: ['Control positioning', 'Force actions', 'Dominate will'], weaknesses: ['Strong wills resist', 'Bosses immune', 'Temporary effect'], combos: ['Authority + Charm = Total domination', 'Authority + Team = Perfect positioning', 'Authority + Subservience = Army control'] } },
+            regen: { name: '💚 Regen', category: 'buff', color: '#00b894', short: 'Health regeneration', medium: 'Continuous HP recovery over time. Sustain in combat.', detailed: { description: 'Regen provides steady HP recovery, allowing you to sustain through damage.', strengths: ['Constant healing', 'Long fights', 'No downtime'], weaknesses: ['Burst counters', 'Anti-heal stops it', 'Slow recovery'], combos: ['Regen + Tank = Unkillable', 'Regen + Time = Full HP', 'Regen + Lifesteal = Double sustain'] } },
+            summon: { name: '🐉 Summon', category: 'invocation', color: '#a29bfe', short: 'Call allies to aid', medium: 'Summons creatures, spirits, or constructs to fight for you.', detailed: { description: 'Summon abilities call forth allies who fight independently. Build an army!', strengths: ['Extra damage/tank', 'Split enemy focus', 'Solo friendly'], weaknesses: ['Summons can die', 'AI can be dumb', 'Limit on count'], combos: ['Summon + Leadership = Buffed army', 'Multiple summons = Swarm', 'Summon + Tank = Meat shields'] } },
+            ritual: { name: '🔮 Ritual', category: 'invocation', color: '#6c5ce7', short: 'Channeled invocation', medium: 'Lengthy ritual that grants powerful lasting effects.', detailed: { description: 'Rituals require long channeling but provide incredibly powerful permanent or long-lasting buffs.', strengths: ['Huge payoff', 'Permanent effects', 'Game changing'], weaknesses: ['Long channel', 'Easily interrupted', 'Setup required'], combos: ['Ritual + Protection = Safe casting', 'Ritual + Team = Cover while casting', 'Completed ritual = Win condition'] } },
+            
+            // === BATCH 11: FINAL KEYWORDS (builder, permanence, physical, spiritual, mystic, etc.) ===
+            builder: { name: '🏗️ Builder', category: 'trait', color: '#0984e3', short: 'Stack for power', medium: 'Builder skills gain stacks or charges that amplify effects.', detailed: { description: 'Builder mechanics require stacking charges/counters for maximum effect. Ramp-up playstyle.', strengths: ['Huge payoff when stacked', 'Scales exponentially', 'Massive late-game'], weaknesses: ['Weak early', 'Slow ramp', 'Lose stacks on death'], combos: ['Builder + Time = Unstoppable', 'Builder + Sustain = Survive to stack', 'Max stacks = Delete everything'] } },
+            permanence: { name: '♾️ Permanence', category: 'trait', color: '#2d3436', short: 'Lasts forever', medium: 'Permanent effects that persist until dispelled or death.', detailed: { description: 'Permanence effects last indefinitely, stacking over time for exponential power.', strengths: ['Infinite duration', 'Stacks forever', 'No maintenance'], weaknesses: ['Can be dispelled', 'Lost on death', 'Slow to build'], combos: ['Permanence + Time = Godmode', 'Permanence + Stacks = Exponential', 'Multiple permanent buffs = Transcendence'] } },
+            physical: { name: '💪 Physical', category: 'mechanic', color: '#d63031', short: 'Weapon-based damage', medium: 'Physical damage from weapons and strength. Counters low armor.', detailed: { description: 'Physical damage scales with weapon damage and strength. Great vs low armor enemies.', strengths: ['High single-target', 'Scales with gear', 'Reliable damage'], weaknesses: ['Armor reduces it', 'No special effects', 'Cannot hit ghosts'], combos: ['Physical + Armor pen = Ignore defense', 'Physical + Crit = Huge hits', 'Physical + Bleed = DoT stacks'] } },
+            spiritual: { name: '👻 Spiritual', category: 'mechanic', color: '#a29bfe', short: 'Soul-based power', medium: 'Spiritual damage ignores armor, hits ghosts, scales with wisdom.', detailed: { description: 'Spiritual damage bypasses physical defenses and affects incorporeal enemies.', strengths: ['Ignores armor', 'Hits ghosts', 'Scales with Wisdom'], weaknesses: ['Spiritual resistance', 'Lower base damage', 'Needs Wisdom'], combos: ['Spiritual + Wisdom build = Pure damage', 'Spiritual + Physical = Cover all bases', 'Spiritual + Insight = Wisdom nuke'] } },
+            mystic: { name: '🔮 Mystic', category: 'mechanic', color: '#6c5ce7', short: 'Arcane magical power', medium: 'Mystic abilities use pure arcane energy. Versatile magic.', detailed: { description: 'Mystic skills use pure magical energy for versatile effects. The classic mage archetype.', strengths: ['Versatile effects', 'Range advantage', 'Spell variety'], weaknesses: ['Mana intensive', 'Squishy builds', 'Anti-magic counters'], combos: ['Mystic + Elements = All magic', 'Mystic + Wisdom = Endless mana', 'Mystic + Spell chain = Combo master'] } },
+            phoenix: { name: '🔥 Phoenix', category: 'trait', color: '#ff7675', short: 'Revive on death', medium: 'Phoenix grants a revive on death. Second chance mechanic!', detailed: { description: 'Phoenix allows you to revive once when you die. The ultimate safety net!', strengths: ['Second chance', 'Play aggressive', 'Comeback potential'], weaknesses: ['Long cooldown', 'One use', 'Weak if never proc'], combos: ['Phoenix + Risky plays = Worth it', 'Phoenix + Execute = Mutual destruction', 'Phoenix + Sustain = Hard to kill'] } },
+            signature: { name: '✍️ Signature', category: 'trait', color: '#e17055', short: 'Unique to character', medium: 'Signature abilities are unique to your character. Defines identity.', detailed: { description: 'Signature skills are exclusive to your character/class. Your defining feature!', strengths: ['Unique power', 'Build identity', 'Cannot be copied'], weaknesses: ['Can be known/countered', 'One build path', 'Predictable'], combos: ['Signature + Build around it = Synergy', 'Signature ability = Your identity'] } },
+            balanced: { name: '⚖️ Balanced', category: 'trait', color: '#95a5a6', short: 'Well-rounded approach', medium: 'Balanced skills work in all situations without extreme strengths/weaknesses.', detailed: { description: 'Balanced abilities are reliable and versatile. Never the best, never the worst.', strengths: ['Consistent', 'Always useful', 'Safe pick'], weaknesses: ['Not optimal', 'No specialty', 'Boring sometimes'], combos: ['Balanced + Adaptive = Cover everything', 'Full balanced build = No weaknesses'] } },
+            unorthodox: { name: '🌀 Unorthodox', category: 'trait', color: '#e84393', short: 'Unconventional tactics', medium: 'Unorthodox skills use weird mechanics. High skill ceiling!', detailed: { description: 'Unorthodox abilities break normal rules and require creative use. Hipster picks!', strengths: ['Unpredictable', 'Catches opponents off-guard', 'Fun to master'], weaknesses: ['Hard to use', 'Inconsistent', 'Can backfire'], combos: ['Unorthodox + Mastery = Genius plays', 'Unorthodox + Chaos = Maximum confusion'] } },
+            versatile: { name: '🔄 Versatile', category: 'trait', color: '#00b894', short: 'Adapts to situations', medium: 'Versatile skills have multiple uses and adapt to situations.', detailed: { description: 'Versatile abilities can be used offensively, defensively, or for utility. Swiss army knife!', strengths: ['Multi-purpose', 'Always useful', 'Flexible playstyle'], weaknesses: ['Jack of all trades', 'Not specialized', 'Harder to master'], combos: ['Versatile + Adaptive = Perfect response', 'Full versatile build = Cover everything'] } },
+            aggressive: { name: '⚔️ Aggressive', category: 'trait', color: '#ff6b6b', short: 'High risk offense', medium: 'Aggressive playstyle sacrifices defense for maximum offense.', detailed: { description: 'Aggressive builds go all-in on damage. Glass cannon philosophy!', strengths: ['Maximum damage', 'Fast kills', 'Pressure enemies'], weaknesses: ['Die easily', 'No recovery', 'All-or-nothing'], combos: ['Aggressive + Crit = Oneshot', 'Aggressive + Lifesteal = Drain tank', 'Aggressive + Team = Protected carry'] } },
+            discipline: { name: '🧘 Discipline', category: 'trait', color: '#74b9ff', short: 'Controlled power', medium: 'Discipline rewards precise execution and resource management.', detailed: { description: 'Discipline builds require careful resource management and timing for maximum efficiency.', strengths: ['High efficiency', 'Optimal play rewarded', 'Skill expression'], weaknesses: ['Punished for mistakes', 'Requires focus', 'Hard to master'], combos: ['Discipline + Perfect rotation = Maximum DPS', 'Discipline + Wisdom = Resource mastery'] } },
+            transcend: { name: '🌟 Transcend', category: 'singularity', color: '#ffeaa7', short: 'Beyond mortal limits', medium: 'Transcend abilities break normal limits and caps.', detailed: { description: 'Transcend effects go beyond normal stat caps and limitations. Ascension!', strengths: ['Break limits', 'Exponential scaling', 'Godlike potential'], weaknesses: ['Hard to achieve', 'Temporary', 'Complex requirements'], combos: ['Transcend + Max stats = Beyond mortal', 'Transcend + Ascension = Godhood'] } },
+            transform: { name: '🦋 Transform', category: 'singularity', color: '#a29bfe', short: 'Change form entirely', medium: 'Transform changes your form, granting new abilities and stats.', detailed: { description: 'Transform abilities change your character form completely, new moveset and power!', strengths: ['New abilities', 'Stat changes', 'Surprise factor'], weaknesses: ['Limited duration', 'Cooldown after', 'Lose original skills'], combos: ['Transform + Power buff = Super form', 'Transform + Ultimate = Final form', 'Transform chain = Multiple forms'] } },
+            sutra: { name: '📿 Sutra', category: 'ancient', color: '#e17055', short: 'Cosmic verse power', medium: 'Individual sutra verse with unique cosmic effect.', detailed: { description: 'Each Sutra is a cosmic verse of power from ancient Jyotish texts. Unique effects!', strengths: ['Unique mechanics', 'Cosmic power', 'Cannot be easily countered'], weaknesses: ['Complex', 'Specific use cases', 'High cost'], combos: ['Sutra + Wisdom = Sage power', 'Multiple Sutras = Cosmic mastery', 'Sutra + Ancient = Primordial force'] } }
+        };
+        
+        console.log('📖 TAG_DATA initialized with', Object.keys(TAG_DATA).length, 'comprehensive keyword definitions');
+        
+        // Note: TAG_DATA contains 100+ keywords with 3-layer definitions:
+        // - Short: One-liner
+        // - Medium: Brief context
+        // - Detailed: Full breakdown (description, strengths, weaknesses, combos)
+        // 
+        // Complete database copied from workshop/mini-test.html TAG_DATA (lines 4619-5530)
+        // Categories: engine, type, trait, role, combat, resource, mechanic, element, ancient, control, etc.
+        
+        // Load all skills
+        function loadData() {
+            allSkills = SkillSystem.getAllSkills();
+            
+            // Extract all unique keywords and effects
+            allSkills.forEach(skill => {
+                (skill.keywords || []).forEach(kw => allKeywords.add(kw));
+                (skill.effects || []).forEach(ef => effectTypes.add(ef));
+            });
+            
+            // Update stats
+            document.getElementById('totalSkills').textContent = allSkills.length;
+            document.getElementById('totalKeywords').textContent = allKeywords.size;
+            document.getElementById('totalEffects').textContent = effectTypes.size;
+            
+            console.log('📊 Loaded:', allSkills.length, 'skills,', allKeywords.size, 'keywords');
+            console.log('📖 TAG_DATA contains', Object.keys(TAG_DATA).length, 'keyword definitions');
+            
+            renderAll();
+        }
+        
+        // Core Elements Data
+        const ELEMENTS = [
+            { name: 'Fire', icon: '🔥', color: '#ff6464', desc: 'Burning damage over time, explosive power', counter: 'Ice', synergy: 'Lightning' },
+            { name: 'Ice', icon: '❄️', color: '#64b4ff', desc: 'Freeze, slow, control effects', counter: 'Fire', synergy: 'Water' },
+            { name: 'Lightning', icon: '⚡', color: '#ffeb64', desc: 'High burst damage, chain effects', counter: 'Earth', synergy: 'Fire' },
+            { name: 'Water', icon: '💧', color: '#64c8ff', desc: 'Healing, cleansing, adaptability', counter: 'Lightning', synergy: 'Ice' },
+            { name: 'Earth', icon: '🌍', color: '#96c864', desc: 'Defense, grounding, stability', counter: 'Water', synergy: 'Dark' },
+            { name: 'Dark', icon: '🌑', color: '#9664c8', desc: 'Life drain, corruption, curses', counter: 'Light', synergy: 'Earth' },
+            { name: 'Light', icon: '☀️', color: '#ffe664', desc: 'Purification, empowerment, holy damage', counter: 'Dark', synergy: 'Fire' },
+            { name: 'Cosmic', icon: '✨', color: '#ba55d3', desc: 'Transcendent, universal, fusion catalyst', counter: null, synergy: 'All' }
+        ];
+        
+        // Effect Types Data (extracted from actual skills)
+        const EFFECT_TYPES = [
+            { name: 'Direct Damage', icon: '⚔️', color: '#ff6464', examples: 'Deal X damage to target' },
+            { name: 'Healing', icon: '💚', color: '#64ff96', examples: 'Restore X HP to ally' },
+            { name: 'Buff', icon: '✨', color: '#c896ff', examples: 'Increase stats, grant abilities' },
+            { name: 'Debuff', icon: '💀', color: '#ff9664', examples: 'Reduce stats, inflict weakness' },
+            { name: 'Shield', icon: '🛡️', color: '#64c8ff', examples: 'Absorb X damage before breaking' },
+            { name: 'DoT (Damage over Time)', icon: '🔥', color: '#ff8844', examples: 'Burn, Poison, Bleed' },
+            { name: 'HoT (Heal over Time)', icon: '💧', color: '#44ff88', examples: 'Regeneration, Blessing' },
+            { name: 'Control', icon: '🎯', color: '#8b5cf6', examples: 'Stun, Freeze, Silence, Root' },
+            { name: 'Summon', icon: '👁️', color: '#ba55d3', examples: 'Deploy structures, invoke entities' },
+            { name: 'Draw/Discard', icon: '🎴', color: '#ffd700', examples: 'Card advantage manipulation' },
+            { name: 'Resource', icon: '⚡', color: '#ffeb64', examples: 'Generate/drain mana, energy, KP' },
+            { name: 'Transform', icon: '🔄', color: '#00e3d6', examples: 'Change card properties, evolve' },
+            { name: 'Sacrifice', icon: '🩸', color: '#ff4444', examples: 'Pay cost for greater effect' },
+            { name: 'Conditional', icon: '🎲', color: '#ff9900', examples: 'Trigger if X condition met' },
+            { name: 'AoE (Area)', icon: '💥', color: '#ff6600', examples: 'Affect multiple targets' },
+            { name: 'Chain/Bounce', icon: '⛓️', color: '#66ccff', examples: 'Jump to secondary targets' },
+            { name: 'Reflect/Counter', icon: '🪞', color: '#cc88ff', examples: 'Return damage to attacker' },
+            { name: 'Threshold', icon: '📊', color: '#ff66aa', examples: 'Activate at HP/resource thresholds' }
+        ];
+        
+        // Status Conditions
+        const STATUS_CONDITIONS = [
+            { name: 'Burn', type: 'Debuff', icon: '🔥', desc: 'Takes fire damage each turn' },
+            { name: 'Freeze', type: 'Control', icon: '❄️', desc: 'Cannot act for X turns' },
+            { name: 'Stun', type: 'Control', icon: '💫', desc: 'Skip next action' },
+            { name: 'Poison', type: 'Debuff', icon: '☠️', desc: 'Continuous damage that stacks' },
+            { name: 'Blessed', type: 'Buff', icon: '✨', desc: 'Increased healing received' },
+            { name: 'Cursed', type: 'Debuff', icon: '🌑', desc: 'Reduced healing, increased damage taken' },
+            { name: 'Shielded', type: 'Buff', icon: '🛡️', desc: 'Absorbs next X damage' },
+            { name: 'Empowered', type: 'Buff', icon: '⚡', desc: 'Next skill deals 50% more' },
+            { name: 'Weakened', type: 'Debuff', icon: '💀', desc: 'Damage output reduced' },
+            { name: 'Regenerating', type: 'Buff', icon: '💚', desc: 'Heal X each turn' },
+            { name: 'Silenced', type: 'Control', icon: '🤐', desc: 'Cannot use active skills' },
+            { name: 'Rooted', type: 'Control', icon: '🌿', desc: 'Cannot change position/houses' },
+            { name: 'Invisible', type: 'Buff', icon: '👻', desc: 'Cannot be directly targeted' },
+            { name: 'Marked', type: 'Debuff', icon: '🎯', desc: 'Takes extra damage from all sources' },
+            { name: 'Fortified', type: 'Buff', icon: '🏰', desc: 'Increased defense' },
+            { name: 'Exposed', type: 'Debuff', icon: '🔓', desc: 'Reduced defense' }
+        ];
+        
+        // Render Functions
+        function renderElements() {
+            const grid = document.getElementById('elementsGrid');
+            grid.innerHTML = ELEMENTS.map(el => `
+                <div class="card" style="border-color: ${el.color}40;">
+                    <div class="card-header" style="color: ${el.color};">
+                        ${el.icon} ${el.name}
+                    </div>
+                    <div class="card-desc">${el.desc}</div>
+                    <div style="margin-top: 10px; font-size: 0.85em; opacity: 0.7;">
+                        ${el.counter ? `<div>🎯 Counters: ${el.counter}</div>` : ''}
+                        <div>🔗 Synergy: ${el.synergy}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderEffectTypes() {
+            const grid = document.getElementById('effectTypesGrid');
+            grid.innerHTML = EFFECT_TYPES.map(effect => `
+                <div class="card" style="border-color: ${effect.color}40;">
+                    <div class="card-header" style="color: ${effect.color};">
+                        ${effect.icon} ${effect.name}
+                    </div>
+                    <div class="card-desc">${effect.examples}</div>
+                </div>
+            `).join('');
+        }
+        
+        function renderStatusConditions() {
+            const grid = document.getElementById('statusGrid');
+            const grouped = STATUS_CONDITIONS.reduce((acc, status) => {
+                if (!acc[status.type]) acc[status.type] = [];
+                acc[status.type].push(status);
+                return acc;
+            }, {});
+            
+            grid.innerHTML = Object.entries(grouped).map(([type, statuses]) => `
+                <div>
+                    <h3 style="color: #00e3d6; margin-bottom: 10px;">${type}s</h3>
+                    ${statuses.map(s => `
+                        <div class="list-item" style="border-color: ${s.type === 'Buff' ? '#64ff96' : s.type === 'Debuff' ? '#ff6464' : '#8b5cf6'};">
+                            <strong>${s.icon} ${s.name}</strong>
+                            <div style="font-size: 0.9em; opacity: 0.8; margin-top: 4px;">${s.desc}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+        
+        function renderKeywords() {
+            const grid = document.getElementById('keywordsGrid');
+            const keywords = Array.from(allKeywords).sort();
+            
+            grid.innerHTML = keywords.map(kw => {
+                const skillCount = allSkills.filter(s => s.keywords?.includes(kw)).length;
+                const kwLower = kw.toLowerCase();
+                const tagData = TAG_DATA[kwLower];
+                
+                let definition = '⚠️ <em>Mechanical definition needed</em>';
+                if (tagData) {
+                    // Build comprehensive definition with 3 layers
+                    definition = `
+                        <div style="margin-bottom: 8px;"><strong>${tagData.short}</strong></div>
+                        <div style="margin-bottom: 8px; opacity: 0.9;">${tagData.medium}</div>
+                        ${tagData.detailed ? `
+                            <details style="margin-top: 12px;">
+                                <summary style="cursor: pointer; color: #64b4ff; font-weight: 600;">📖 Full Details</summary>
+                                <div style="margin-top: 8px; font-size: 11px;">
+                                    <p style="margin-bottom: 8px;">${tagData.detailed.description}</p>
+                                    <div style="color: #64ff96;"><strong>Strengths:</strong> ${tagData.detailed.strengths.join(', ')}</div>
+                                    <div style="color: #ff9664;"><strong>Weaknesses:</strong> ${tagData.detailed.weaknesses.join(', ')}</div>
+                                    <div style="color: #c896ff;"><strong>Combos:</strong> ${tagData.detailed.combos.join(' • ')}</div>
+                                </div>
+                            </details>
+                        ` : ''}
+                    `;
+                }
+                
+                return `
+                    <div class="card">
+                        <div class="card-header" style="background: ${tagData?.color || '#666'}22; border-bottom: 2px solid ${tagData?.color || '#666'};">${tagData?.name || ('🏷️ ' + kw)}</div>
+                        <div class="card-desc">${definition}</div>
+                        <div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid #333; font-size: 11px; color: #888;">
+                            📊 Used in ${skillCount} skill${skillCount !== 1 ? 's' : ''}
+                            ${tagData ? ` • <span style="color: ${tagData.color};">Category: ${tagData.category}</span>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function renderElementalChains() {
+            const section = document.getElementById('elementalChains');
+            section.innerHTML = `
+                <div class="rule-box">
+                    <div class="rule-title">🔥⚡ Fire + Lightning = EXPLOSION</div>
+                    <p>Deals 200% damage to all enemies in 3x3 area. Ignores 50% defense.</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❄️💧 Ice + Water = BLIZZARD</div>
+                    <p>Freeze all enemies for 1 turn. Enemies take 50% more damage while frozen.</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">🌍🌑 Earth + Dark = DECAY</div>
+                    <p>Continuous drain: 10% max HP per turn for 3 turns. Reduces healing received by 50%.</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">☀️🔥 Light + Fire = PURIFYING FLAME</div>
+                    <p>Damage + cleanse all debuffs. Heals allies for 30% of damage dealt.</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">⚡🌍 Lightning + Earth = SHOCKWAVE</div>
+                    <p>Nullified! Elements cancel each other. No effect occurs.</p>
+                </div>
+                
+                <p style="margin-top: 20px; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 8px; border-left: 3px solid #ffd700;">
+                    💡 <strong>Design Note:</strong> We need to define ALL element combinations (28 total pairs). Some synergize, some neutralize, some create new effects!
+                </p>
+            `;
+        }
+        
+        function renderHouseSynergies() {
+            const section = document.getElementById('houseSynergies');
+            const houses = [
+                { num: 1, name: 'Self/Ascendant', planet: 'Mars', bonus: 1.2, group: 'Kendra' },
+                { num: 2, name: 'Resources', planet: 'Venus', bonus: 1.0, group: null },
+                { num: 3, name: 'Communication', planet: 'Mercury', bonus: 1.1, group: null },
+                { num: 4, name: 'Home', planet: 'Moon', bonus: 1.15, group: 'Kendra' },
+                { num: 5, name: 'Creativity', planet: 'Sun', bonus: 1.3, group: 'Trikona' },
+                { num: 6, name: 'Enemies', planet: 'Mercury', bonus: 0.9, group: 'Dusthana' },
+                { num: 7, name: 'Partnership', planet: 'Venus', bonus: 1.2, group: 'Kendra' },
+                { num: 8, name: 'Transformation', planet: 'Saturn', bonus: 0.8, group: 'Dusthana' },
+                { num: 9, name: 'Wisdom', planet: 'Jupiter', bonus: 1.5, group: 'Trikona' },
+                { num: 10, name: 'Authority', planet: 'Mercury', bonus: 1.4, group: 'Kendra' },
+                { num: 11, name: 'Aspirations', planet: 'Jupiter', bonus: 1.25, group: null },
+                { num: 12, name: 'Liberation', planet: 'Saturn', bonus: 1.0, group: 'Dusthana' }
+            ];
+            
+            section.innerHTML = `
+                <div class="grid">
+                    ${houses.map(house => `
+                        <div class="card" style="border-color: ${house.bonus >= 1.3 ? '#ffd700' : house.bonus < 1.0 ? '#ff6464' : '#8b5cf6'}40;">
+                            <div class="card-header" style="color: ${house.bonus >= 1.3 ? '#ffd700' : house.bonus < 1.0 ? '#ff6464' : '#8b5cf6'};">
+                                🏠 House ${house.num}: ${house.name}
+                            </div>
+                            <div class="card-desc">
+                                <div>🪐 ${house.planet}</div>
+                                <div style="margin-top: 5px; font-weight: bold; color: ${house.bonus >= 1.3 ? '#ffd700' : house.bonus < 1.0 ? '#ff6464' : '#00e3d6'};">
+                                    ×${house.bonus} Power Bonus
+                                </div>
+                                ${house.group ? `<div style="margin-top: 5px; font-size: 0.85em; opacity: 0.8;">Group: ${house.group}</div>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h3 style="color: #00e3d6; margin-bottom: 15px;">House Group Synergies</h3>
+                    
+                    <div class="rule-box">
+                        <div class="rule-title">📐 Trikona (1-5-9) - Fire Triangle</div>
+                        <p>Skills in all three houses: +30% power, refresh 1 random cooldown each turn</p>
+                    </div>
+                    
+                    <div class="rule-box">
+                        <div class="rule-title">🔷 Kendra (1-4-7-10) - Cardinal Angles</div>
+                        <p>Skills in 3+ Kendra houses: Gain "Fortified" status, +20% defense</p>
+                    </div>
+                    
+                    <div class="rule-box">
+                        <div class="rule-title">⚠️ Dusthana (6-8-12) - Challenging Houses</div>
+                        <p>Skills in 2+ Dusthana: "High Risk/Reward" - Double damage but take 20% recoil</p>
+                    </div>
+                    
+                    <div class="rule-box">
+                        <div class="rule-title">⚔️ Opposition Axis (1-7, 2-8, 3-9, etc.)</div>
+                        <p>Skills from opposite houses in same turn: Cancel each other OR create "Polarity Burst" (random)</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderEngines() {
+            const engines = [
+                { id: 'foundational', name: 'Foundational', icon: '🏛️', color: '#8B7355', focus: 'Structures, infrastructure, support' },
+                { id: 'character_analysis', name: 'Character Analysis', icon: '🎭', color: '#9370DB', focus: 'Personality traits, psychology' },
+                { id: 'consciousness', name: 'Consciousness', icon: '👁️', color: '#00CED1', focus: 'Awareness, perception, mind control' },
+                { id: 'divination', name: 'Divination', icon: '🔮', color: '#9400D3', focus: 'Prophecy, fate manipulation, foresight' },
+                { id: 'singularity', name: 'Singularity', icon: '⚡', color: '#FF6B6B', focus: 'Thresholds, execution, finishers' },
+                { id: 'tantra', name: 'Tantra', icon: '🕉️', color: '#FF8C00', focus: 'Energy manipulation, resonance, transformation' },
+                { id: 'therapeutic', name: 'Therapeutic', icon: '🌿', color: '#32CD32', focus: 'Healing, restoration, balance' },
+                { id: 'invocation', name: 'Invocation', icon: '✨', color: '#FFD700', focus: 'Summoning entities, divine/demonic powers' }
+            ];
+            
+            const grid = document.getElementById('enginesGrid');
+            grid.innerHTML = engines.map(engine => {
+                const count = allSkills.filter(s => s.engine === engine.id).length;
+                return `
+                    <div class="card" style="border-color: ${engine.color}40;">
+                        <div class="card-header" style="color: ${engine.color};">
+                            ${engine.icon} ${engine.name}
+                        </div>
+                        <div class="card-desc">
+                            ${engine.focus}
+                            <div style="margin-top: 8px; font-weight: bold;">${count} skills</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function renderArchetypes() {
+            const section = document.getElementById('archetypesSection');
+            section.innerHTML = `
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-header">🗡️ Aggressor</div>
+                        <div class="card-desc">High damage, low cooldowns, offensive pressure</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">🛡️ Tank</div>
+                        <div class="card-desc">High defense, shields, absorb damage for team</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">💚 Healer</div>
+                        <div class="card-desc">Restoration, cleanse, sustain allies</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">🎯 Controller</div>
+                        <div class="card-desc">Stuns, roots, manipulate enemy actions</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">⚡ Burst Mage</div>
+                        <div class="card-desc">High damage ultimates, long cooldowns</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">🔥 DoT Specialist</div>
+                        <div class="card-desc">Damage over time, stacking effects</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">✨ Buffer</div>
+                        <div class="card-desc">Enhance ally stats, grant abilities</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">💀 Debuffer</div>
+                        <div class="card-desc">Weaken enemies, curse, reduce effectiveness</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">🎴 Card Manipulator</div>
+                        <div class="card-desc">Draw, discard, hand advantage</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">🔄 Transformer</div>
+                        <div class="card-desc">Evolve, upgrade, change properties mid-combat</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">👁️ Summoner</div>
+                        <div class="card-desc">Deploy entities, structures, minions</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">🎲 RNG/Chaos</div>
+                        <div class="card-desc">Random effects, high variance, unpredictable</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderMechanics() {
+            const section = document.getElementById('mechanicsSection');
+            section.innerHTML = `
+                <div class="rule-box">
+                    <div class="rule-title">❓ Turn Structure</div>
+                    <p><strong>To Define:</strong> How many phases per turn? What order do effects resolve? When do cooldowns tick?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Resource System</div>
+                    <p><strong>To Define:</strong> What limits skill usage? Mana? Energy? Action points? How does it regenerate?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Damage Calculation</div>
+                    <p><strong>To Define:</strong> How does "120 power" convert to damage? Defense formula? Critical hits? Resistances?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Cooldown System</div>
+                    <p><strong>To Define:</strong> Does "3s cooldown" mean 3 turns? Real-time seconds? Can cooldowns be reduced/refreshed?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Fusion Activation</div>
+                    <p><strong>To Define:</strong> Do fusions trigger automatically? Do they cost resources? Can you choose NOT to fuse?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Victory Conditions</div>
+                    <p><strong>To Define:</strong> Reduce enemy Ojas to 0? Deck out? Alternative win cons? Surrender?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Card Swapping</div>
+                    <p><strong>To Define:</strong> Can you switch active cards mid-battle? Cooldown penalty? Deck size limits?</p>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-title">❓ Priority/Stack</div>
+                    <p><strong>To Define:</strong> When multiple effects trigger, what order? Can you interrupt? Counter spells?</p>
+                </div>
+            `;
+        }
+        
+        function renderAll() {
+            renderElements();
+            renderEffectTypes();
+            renderStatusConditions();
+            renderKeywords();
+            renderElementalChains();
+            renderHouseSynergies();
+            renderEngines();
+            renderArchetypes();
+            renderMechanics();
+        }
+        
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>

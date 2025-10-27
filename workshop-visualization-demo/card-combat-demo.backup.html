@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎴 Card Library - Read-Only Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #8b5cf6, #00e3d6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+        
+        .subtitle {
+            text-align: center;
+            opacity: 0.7;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* 3-Column Layout */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr 350px;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 1200px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .panel-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #8b5cf6;
+            border-bottom: 2px solid rgba(139,92,246,0.3);
+            padding-bottom: 10px;
+        }
+        
+        /* Tag System Demo */
+        .tag-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid;
+        }
+        
+        .tag:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px currentColor;
+        }
+        
+        /* Element colors */
+        .tag-fire { background: #ff646433; border-color: #ff6464; color: #ff6464; }
+        .tag-ice { background: #64b4ff33; border-color: #64b4ff; color: #64b4ff; }
+        .tag-lightning { background: #ffeb6433; border-color: #ffeb64; color: #ffeb64; }
+        .tag-water { background: #64c8ff33; border-color: #64c8ff; color: #64c8ff; }
+        .tag-earth { background: #96c86433; border-color: #96c864; color: #96c864; }
+        .tag-dark { background: #9664c833; border-color: #9664c8; color: #9664c8; }
+        .tag-light { background: #ffe66433; border-color: #ffe664; color: #ffe664; }
+        
+        /* Tier Badge */
+        .tier-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 2px solid;
+            margin-left: 8px;
+        }
+        
+        .tier-S { 
+            background: linear-gradient(135deg, #ff6464, #ff8800);
+            border-color: #ff6464;
+            box-shadow: 0 0 10px rgba(255,100,100,0.5);
+        }
+        
+        .tier-A { 
+            background: linear-gradient(135deg, #8b5cf6, #9664c8);
+            border-color: #8b5cf6;
+            box-shadow: 0 0 8px rgba(139,92,246,0.4);
+        }
+        
+        .tier-B { 
+            background: linear-gradient(135deg, #64b4ff, #64c8ff);
+            border-color: #64b4ff;
+            box-shadow: 0 0 6px rgba(100,180,255,0.3);
+        }
+        
+        .tier-C { 
+            background: linear-gradient(135deg, #96c864, #64c896);
+            border-color: #96c864;
+        }
+        
+        /* Card Display */
+        .card-display {
+            background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(0,227,214,0.15));
+            border: 2px solid rgba(139,92,246,0.4);
+            border-radius: 16px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-display::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* House Chart Display (Read-Only) */
+        .house-chart {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .house-slot {
+            background: rgba(0,0,0,0.3);
+            border: 2px solid rgba(139,92,246,0.3);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .house-slot.occupied {
+            border-color: #8b5cf6;
+            background: rgba(139,92,246,0.15);
+            box-shadow: 0 0 12px rgba(139,92,246,0.3);
+        }
+        
+        .house-slot.occupied::before {
+            content: '✓';
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            color: #00e3d6;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .house-number {
+            font-size: 10px;
+            opacity: 0.6;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .house-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #8b5cf6;
+            margin-bottom: 6px;
+            min-height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .house-skill {
+            font-size: 10px;
+            opacity: 0.85;
+            color: #00e3d6;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        
+        .house-slot.occupied:hover {
+            transform: translateY(-2px);
+            border-color: #00e3d6;
+        }
+        
+        .card-header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(139,92,246,0.3);
+        }
+        
+        .card-name {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #fff, #8b5cf6, #00e3d6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        
+        .card-type-tier {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .card-stats {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-box {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 10px;
+            padding: 14px 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-box:hover {
+            border-color: #00e3d6;
+            background: rgba(0,227,214,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .stat-label {
+            font-size: 10px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #00e3d6;
+        }
+        
+        /* Section Containers */
+        .detail-section {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 25px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 18px;
+            border: 1px solid rgba(139,92,246,0.2);
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-item {
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .skill-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .skill-item.active { 
+            border-color: #ff6464; 
+            background: rgba(255,100,100,0.08);
+        }
+        .skill-item.passive { 
+            border-color: #64ff96; 
+            background: rgba(100,255,150,0.08);
+        }
+        .skill-item.triggered { 
+            border-color: #ffeb64; 
+            background: rgba(255,235,100,0.08);
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        
+        .skill-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        
+        .skill-type-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .skill-desc {
+            font-size: 12px;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+        
+        
+        /* Fusion Display */
+        .fusion-ability {
+            background: linear-gradient(135deg, rgba(255,136,0,0.15), rgba(139,92,246,0.15));
+            border: 2px solid #ff8800;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fusion-ability::before {
+            content: '✨';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 2rem;
+            opacity: 0.25;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.25; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        
+        .fusion-ability::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff8800, transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        
+        .fusion-name {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #ff8800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .fusion-desc {
+            font-size: 13px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        /* Interactive Buttons */
+        .action-bar {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6, #00e3d6);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139,92,246,0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Explanation Text */
+        .explanation {
+            background: rgba(255,200,100,0.1);
+            border-left: 4px solid #ffc864;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+        
+        .explanation h3 {
+            color: #ffc864;
+            margin-bottom: 10px;
+        }
+        
+        .explanation p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        /* Section headers */
+        h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #8b5cf6;
+        }
+        
+        /* Filter Chips */
+        .filter-chip {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(139,92,246,0.3);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .filter-chip:hover {
+            background: rgba(139,92,246,0.2);
+            border-color: #8b5cf6;
+            color: #fff;
+        }
+        
+        .filter-chip.active {
+            background: linear-gradient(135deg, #8b5cf6, #00e3d6);
+            border-color: transparent;
+            color: #fff;
+        }
+        
+        /* Card List Item */
+        .card-list-item {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(139,92,246,0.05) 0%, rgba(0,227,214,0.05) 100%);
+            border: 2px solid rgba(255,255,255,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card-list-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139,92,246,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .card-list-item:hover::before {
+            left: 100%;
+        }
+        
+        .card-list-item:hover {
+            background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(0,227,214,0.15) 100%);
+            border-color: rgba(139,92,246,0.5);
+            transform: translateX(6px) scale(1.02);
+            box-shadow: 0 4px 16px rgba(139,92,246,0.3);
+        }
+        
+        .card-list-item.selected {
+            background: linear-gradient(135deg, rgba(139,92,246,0.25) 0%, rgba(0,227,214,0.2) 100%);
+            border-color: #8b5cf6;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.5), inset 0 0 20px rgba(139,92,246,0.1);
+        }
+        
+        .card-list-item.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        /* Card Icon */
+        .card-icon {
+            width: 52px;
+            height: 68px;
+            background: linear-gradient(135deg, #8b5cf6 40%, #00e3d6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .card-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: iconShine 3s ease-in-out infinite;
+        }
+        
+        @keyframes iconShine {
+            0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+            50% { transform: translate(20px, 20px); opacity: 0.6; }
+        }
+        
+        .card-list-item:hover .card-icon {
+            transform: scale(1.1) rotateY(10deg);
+        }
+        
+        /* Scroll Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card-list-item {
+            animation: fadeInUp 0.4s ease-out;
+        }
+        
+        .card-list-item:nth-child(1) { animation-delay: 0.05s; }
+        .card-list-item:nth-child(2) { animation-delay: 0.1s; }
+        .card-list-item:nth-child(3) { animation-delay: 0.15s; }
+        .card-list-item:nth-child(4) { animation-delay: 0.2s; }
+        .card-list-item:nth-child(5) { animation-delay: 0.25s; }
+        
+        /* Smooth scroll */
+        #cardGallery {
+            scroll-behavior: smooth;
+        }
+        
+        /* Scrollbar styling */
+        #cardGallery::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        #cardGallery::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        
+        #cardGallery::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #00e3d6);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        
+        #cardGallery::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #00e3d6, #8b5cf6);
+        }
+        
+        /* Card name hover effect */
+        .card-name-text {
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        
+        .card-list-item:hover .card-name-text {
+            color: #00e3d6;
+            text-shadow: 0 0 10px rgba(0,227,214,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎴 Card Library</h1>
+        <p class="subtitle">Browse your created cards • Inspect stats, abilities & fusion results</p>
+
+        <div class="demo-grid">
+            <!-- LEFT: Card Library with Search & Filters -->
+            <div class="panel" style="min-width:280px;">
+                <div class="panel-title">🗂️ My Collection</div>
+                
+                <!-- Search Bar -->
+                <input type="text" id="searchInput" placeholder="🔍 Search cards..." 
+                    style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(139,92,246,0.3);background:rgba(0,0,0,0.3);color:#fff;margin-bottom:12px;font-size:14px;">
+                
+                <!-- Filter Chips -->
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+                    <div class="filter-chip active" data-type="all" onclick="filterCards('all')">All</div>
+                    <div class="filter-chip" data-type="Aggro" onclick="filterCards('Aggro')">⚔️ Aggro</div>
+                    <div class="filter-chip" data-type="Control" onclick="filterCards('Control')">🛡️ Control</div>
+                    <div class="filter-chip" data-type="Combo" onclick="filterCards('Combo')">⚡ Combo</div>
+                    <div class="filter-chip" data-type="Support" onclick="filterCards('Support')">✨ Support</div>
+                    <div class="filter-chip" data-type="Tank" onclick="filterCards('Tank')">🏰 Tank</div>
+                </div>
+                
+                <!-- Card Count -->
+                <div style="font-size:12px;opacity:0.7;margin-bottom:10px;padding:8px;background:rgba(139,92,246,0.1);border-radius:6px;text-align:center;">
+                    📊 Showing <span id="cardCount" style="color:#00e3d6;font-weight:700;">0</span> cards
+                </div>
+                
+                <!-- Card Gallery -->
+                <div id="cardGallery" style="display:grid;grid-template-columns:1fr;gap:10px;max-height:550px;overflow-y:auto;padding-right:4px;"></div>
+            </div>
+
+            <!-- RIGHT: Card Details -->
+            <div class="panel" style="grid-column:2/4;">
+                <div class="panel-title">🔎 Card Inspector</div>
+                <div id="cardDetails" style="min-height:400px;">
+                    <div style="opacity:0.5;text-align:center;padding:60px 20px;">
+                        <div style="font-size:4rem;margin-bottom:20px;">🎴</div>
+                        <div style="font-size:1.2rem;margin-bottom:10px;">No card selected</div>
+                        <div style="font-size:0.95rem;opacity:0.7;">Click a card from your library to inspect details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3 style="margin-bottom:10px;">📚 Card Library Guide:</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:12px;">
+                <div><strong style="color:#00e3d6;">🔍 Search & Filter:</strong> Find cards by name, type, or tags</div>
+                <div><strong style="color:#00e3d6;">📊 View Stats:</strong> See power, cooldown, KP cost, and tier</div>
+                <div><strong style="color:#00e3d6;">🏠 House Slots:</strong> Read-only view of 12-house configuration</div>
+                <div><strong style="color:#00e3d6;">✨ Fusion Results:</strong> All detected fusion abilities displayed</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    // 12 Vedic Houses Reference
+    const HOUSES = [
+        { id: 1, name: "Self", element: "fire" },
+        { id: 2, name: "Resources", element: "earth" },
+        { id: 3, name: "Communication", element: "air" },
+        { id: 4, name: "Home", element: "water" },
+        { id: 5, name: "Creativity", element: "fire" },
+        { id: 6, name: "Enemies", element: "earth" },
+        { id: 7, name: "Partnership", element: "air" },
+        { id: 8, name: "Transformation", element: "water" },
+        { id: 9, name: "Wisdom", element: "fire" },
+        { id: 10, name: "Authority", element: "earth" },
+        { id: 11, name: "Aspirations", element: "air" },
+        { id: 12, name: "Liberation", element: "water" }
+    ];
+    
+    // Sample card data with house configurations
+    const sampleCards = [
+        {
+            name: "Solar Phoenix",
+            type: "Aggro",
+            tier: "S",
+            power: 420,
+            cooldown: "2s",
+            kp: 28,
+            houses: [
+                { houseId: 12, skillName: "Solar Flare" },
+                { houseId: 5, skillName: "Phoenix Flight" },
+                { houseId: 1, skillName: "Rebirth" }
+            ],
+            tags: ["fire", "damage", "aoe", "ultimate"],
+            fusions: [
+                { name: "🔥 Fire Trinity", desc: "3+ Fire tags detected: +30% fire damage, burns chain to 2 enemies", type: "elemental" },
+                { name: "💥 Explosion", desc: "Fire + Lightning combo: AoE burst damage +50%", type: "cross-element" }
+            ],
+            skills: [
+                { name: "Solar Flare", type: "active", desc: "Deal 250 fire damage in 10m radius, applies burning DoT" },
+                { name: "Phoenix Flight", type: "passive", desc: "+20% attack speed, immune to CC while airborne" },
+                { name: "Rebirth", type: "triggered", desc: "On death, revive with 50% HP (once per battle)" }
+            ],
+            lore: "Born from the eternal flames of the cosmic sun, this legendary phoenix embodies the cycle of destruction and renewal. Its wings spread solar fire across the battlefield, reducing enemies to ash before rising anew from their remains."
+        },
+        {
+            name: "Frost Monarch",
+            type: "Control",
+            tier: "A",
+            power: 320,
+            cooldown: "3s",
+            kp: 22,
+            houses: [
+                { houseId: 5, skillName: "Frost Armor" },
+                { houseId: 8, skillName: "Blizzard" },
+                { houseId: 4, skillName: "Shatter" }
+            ],
+            tags: ["ice", "water", "control", "dot"],
+            fusions: [
+                { name: "❄️ Blizzard Domain", desc: "Ice + Water: Creates persistent 15m freeze zone, -70% enemy speed", type: "cross-element" }
+            ],
+            skills: [
+                { name: "Frost Armor", type: "passive", desc: "+30% defense for 10s, reflects 15% damage as ice" },
+                { name: "Blizzard", type: "active", desc: "AoE slow field, -50% enemy speed for 8s" },
+                { name: "Shatter", type: "triggered", desc: "On freeze break, deal 100 bonus true damage" }
+            ],
+            lore: "Ruler of the frozen north, the Frost Monarch commands absolute zero temperatures. Every step leaves trails of ice, and enemies who dare approach find their movements slowed to crawl before shattering like glass."
+        },
+        {
+            name: "Stormcaller",
+            type: "Combo",
+            tier: "A",
+            power: 350,
+            cooldown: "2s",
+            kp: 25,
+            houses: [
+                { houseId: 6, skillName: "Chain Lightning" },
+                { houseId: 9, skillName: "Storm Surge" },
+                { houseId: 3, skillName: "Overload" }
+            ],
+            tags: ["lightning", "chain", "damage", "buff"],
+            fusions: [
+                { name: "⚡ Storm King", desc: "Lightning Trinity: Chain lightning targets +2 enemies, damage +25%", type: "elemental" },
+                { name: "💥 Explosion", desc: "Fire + Lightning: AoE burst damage +50%", type: "cross-element" }
+            ],
+            skills: [
+                { name: "Chain Lightning", type: "active", desc: "Hits 3 enemies for 120 damage each, bounces reduce by 10%" },
+                { name: "Storm Surge", type: "passive", desc: "+15% crit chance, +30% crit damage during storms" },
+                { name: "Overload", type: "triggered", desc: "On critical hit, next attack is instant cast" }
+            ],
+            lore: "Master of the tempest, the Stormcaller draws power from raging skies. Lightning arcs between foes in devastating chains while thunder announces each critical strike that tears through enemy defenses."
+        },
+        {
+            name: "Sanctum Healer",
+            type: "Support",
+            tier: "B",
+            power: 210,
+            cooldown: "1s",
+            kp: 18,
+            houses: [
+                { houseId: 2, skillName: "Heal Wave" },
+                { houseId: 11, skillName: "Sanctuary" },
+                { houseId: 7, skillName: "Divine Shield" }
+            ],
+            tags: ["heal", "buff", "shield", "light"],
+            fusions: [
+                { name: "✨ Immortality Field", desc: "Heal + Shield + Regen: Target cannot die for 5s, heals 10% HP/sec", type: "ultimate" }
+            ],
+            skills: [
+                { name: "Heal Wave", type: "active", desc: "Restore 150 HP to all allies in 12m radius" },
+                { name: "Sanctuary", type: "passive", desc: "+10% healing received by all allies, removes 1 debuff/3s" },
+                { name: "Divine Shield", type: "triggered", desc: "When healing critical HP (<30%), grant 50 shield" }
+            ],
+            lore: "Blessed by celestial light, the Sanctum Healer channels divine energy to mend wounds and protect allies. In their presence, hope persists even in the darkest battles, and death itself hesitates."
+        },
+        {
+            name: "Iron Guardian",
+            type: "Tank",
+            tier: "B",
+            power: 260,
+            cooldown: "2s",
+            kp: 20,
+            houses: [
+                { houseId: 10, skillName: "Iron Wall" },
+                { houseId: 1, skillName: "Fortify" },
+                { houseId: 4, skillName: "Counterstrike" }
+            ],
+            tags: ["earth", "shield", "defense", "buff"],
+            fusions: [
+                { name: "🏰 Kendra Dominance", desc: "Houses 1+4+7+10 (Kendras): +15% all stats, immovable stance", type: "house-pattern" }
+            ],
+            skills: [
+                { name: "Iron Wall", type: "active", desc: "Gain 200 shield for 8s, absorbs all damage types" },
+                { name: "Fortify", type: "passive", desc: "+20% defense, cannot be knocked back or stunned" },
+                { name: "Counterstrike", type: "triggered", desc: "When shield breaks, deal 80 damage to attacker" }
+            ],
+            lore: "Forged in the heart of mountains, the Iron Guardian is an unbreakable bulwark. Every blow absorbed feeds their strength, turning defense into devastating counterattacks that punish aggression."
+        }
+    ];
+
+    let selectedCard = null;
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function getCardIcon(tags) {
+        if (tags.includes('fire')) return '🔥';
+        if (tags.includes('ice')) return '❄️';
+        if (tags.includes('lightning')) return '⚡';
+        if (tags.includes('water')) return '💧';
+        if (tags.includes('earth')) return '🌍';
+        if (tags.includes('dark')) return '🌑';
+        if (tags.includes('light')) return '✨';
+        return '🎴';
+    }
+
+    function filterCards(type) {
+        currentFilter = type;
+        
+        // Update active chip
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.classList.remove('active');
+        });
+        document.querySelector(`[data-type="${type}"]`).classList.add('active');
+        
+        renderGallery();
+    }
+
+    function renderGallery() {
+        const gallery = document.getElementById('cardGallery');
+        
+        // Filter cards
+        let filteredCards = sampleCards.filter(card => {
+            const matchesType = currentFilter === 'all' || card.type === currentFilter;
+            const matchesSearch = currentSearch === '' || 
+                card.name.toLowerCase().includes(currentSearch) ||
+                card.tags.some(tag => tag.toLowerCase().includes(currentSearch));
+            return matchesType && matchesSearch;
+        });
+        
+        // Update count
+        document.getElementById('cardCount').textContent = filteredCards.length;
+        
+        // Render cards
+        gallery.innerHTML = filteredCards.map((card, idx) => {
+            const actualIdx = sampleCards.indexOf(card);
+            const isSelected = selectedCard && selectedCard.name === card.name;
+            return `
+                <div class="card-list-item ${isSelected ? 'selected' : ''}" onclick="selectCard(${actualIdx})">
+                    <div style="display:flex;align-items:center;gap:12px;position:relative;z-index:1;">
+                        <div class="card-icon">
+                            ${getCardIcon(card.tags)}
+                        </div>
+                        <div style="flex:1;min-width:0;">
+                            <div class="card-name-text" style="font-weight:700;font-size:1.05rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${card.name}</div>
+                            <div style="font-size:11px;opacity:0.8;margin-top:2px;">${card.type} • Tier ${card.tier}</div>
+                            <div style="font-size:10px;opacity:0.6;margin-top:3px;display:flex;gap:8px;">
+                                <span>⚡ ${card.power}</span>
+                                <span>⏱️ ${card.cooldown}</span>
+                                <span>💰 ${card.kp}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        // Show empty state if no cards
+        if (filteredCards.length === 0) {
+            gallery.innerHTML = '<div style="text-align:center;opacity:0.5;padding:40px;">No cards found</div>';
+        }
+    }
+
+    function selectCard(idx) {
+        selectedCard = sampleCards[idx];
+        renderGallery(); // Re-render to update selected state
+        renderDetails();
+    }
+
+    function renderDetails() {
+        const card = selectedCard;
+        const details = document.getElementById('cardDetails');
+        if (!card) {
+            details.innerHTML = `
+                <div style="opacity:0.5;text-align:center;padding:60px 20px;">
+                    <div style="font-size:4rem;margin-bottom:20px;">🎴</div>
+                    <div style="font-size:1.2rem;margin-bottom:10px;">No card selected</div>
+                    <div style="font-size:0.95rem;opacity:0.7;">Click a card from your library to inspect details</div>
+                </div>
+            `;
+            return;
+        }
+        
+        // Build house chart HTML
+        const houseChartHTML = HOUSES.map(house => {
+            const occupiedHouse = card.houses.find(h => h.houseId === house.id);
+            const isOccupied = !!occupiedHouse;
+            return `
+                <div class="house-slot ${isOccupied ? 'occupied' : ''}">
+                    <div class="house-number">H${house.id}</div>
+                    <div class="house-name">${house.name}</div>
+                    ${isOccupied ? `<div class="house-skill">${occupiedHouse.skillName}</div>` : '<div style="opacity:0.3;font-size:10px;">Empty</div>'}
+                </div>
+            `;
+        }).join('');
+        
+        details.innerHTML = `
+            <div class="card-display">
+                <div class="card-header">
+                    <div class="card-name">${card.name}</div>
+                    <div class="card-type-tier">
+                        <span>${card.type}</span>
+                        <span class="tier-badge tier-${card.tier}">Tier ${card.tier}</span>
+                    </div>
+                </div>
+                
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">⚡ Power</div>
+                        <div class="stat-value">${card.power}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">⏱️ Cooldown</div>
+                        <div class="stat-value">${card.cooldown}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">💰 KP Cost</div>
+                        <div class="stat-value">${card.kp}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">🏠 Slots</div>
+                        <div class="stat-value">${card.houses.length}/12</div>
+                    </div>
+                </div>
+                
+                <!-- House Chart (Read-Only) -->
+                <div class="detail-section">
+                    <div class="section-title">🏠 House Configuration (Read-Only)</div>
+                    <div class="house-chart">
+                        ${houseChartHTML}
+                    </div>
+                </div>
+                
+                <!-- Tags -->
+                <div class="detail-section" style="padding:15px;">
+                    <div class="section-title">🏷️ Element Tags</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+                        ${card.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <!-- Fusion Abilities -->
+                <div class="detail-section">
+                    <div class="section-title">✨ Fusion Abilities Detected</div>
+                    ${card.fusions.length > 0 ? card.fusions.map(f => `
+                        <div class="fusion-ability">
+                            <div class="fusion-name">${f.name}</div>
+                            <div class="fusion-desc">${f.desc}</div>
+                            <div style="font-size:10px;opacity:0.6;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px;">Type: ${f.type}</div>
+                        </div>
+                    `).join('') : '<div style="opacity:0.5;text-align:center;padding:20px;">No fusion abilities detected</div>'}
+                </div>
+                
+                <!-- Skills -->
+                <div class="detail-section">
+                    <div class="section-title">⚔️ Base Abilities</div>
+                    ${card.skills.map(s => {
+                        const typeColor = s.type === 'active' ? '#ff6464' : s.type === 'passive' ? '#64ff96' : '#ffeb64';
+                        return `
+                            <div class="skill-item ${s.type}">
+                                <div class="skill-header">
+                                    <span class="skill-name">${s.name}</span>
+                                    <span class="skill-type-badge" style="background:${typeColor}22;color:${typeColor};border:1px solid ${typeColor};">${s.type}</span>
+                                </div>
+                                <div class="skill-desc">${s.desc}</div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                
+                <!-- Lore -->
+                <div style="padding:16px;background:linear-gradient(135deg,rgba(255,200,100,0.08),rgba(139,92,246,0.08));border-left:4px solid #ffc864;border-radius:8px;position:relative;z-index:1;">
+                    <div style="font-weight:700;color:#ffc864;margin-bottom:8px;font-size:1.05rem;">📖 Lore</div>
+                    <div style="font-size:13px;opacity:0.9;line-height:1.7;font-style:italic;">${card.lore}</div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase();
+        renderGallery();
+    });
+
+    // Initialize
+    renderGallery();
+    renderDetails();
+    </script>
+</body>
+</html>

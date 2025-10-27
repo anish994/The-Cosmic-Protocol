@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎴 Card Collection Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 2px solid rgba(139,92,246,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #8b5cf6, #00e3d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+        
+        .sync-status {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(0,227,214,0.1);
+            border: 1px solid rgba(0,227,214,0.3);
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .sync-status.empty {
+            background: rgba(255,100,100,0.1);
+            border-color: rgba(255,100,100,0.3);
+        }
+        
+        /* Main Layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+            height: calc(100vh - 200px);
+        }
+        
+        /* Card List Panel */
+        .card-list-panel {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .card-list-panel h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #8b5cf6;
+        }
+        
+        .card-list-item {
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .card-list-item:hover {
+            background: rgba(139,92,246,0.2);
+            border-color: rgba(139,92,246,0.5);
+            transform: translateX(5px);
+        }
+        
+        .card-list-item.active {
+            background: rgba(0,227,214,0.2);
+            border-color: rgba(0,227,214,0.6);
+            box-shadow: 0 0 20px rgba(0,227,214,0.3);
+        }
+        
+        .card-list-item-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        
+        .card-list-item-stats {
+            display: flex;
+            gap: 10px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        .card-list-item-date {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            margin-top: 6px;
+        }
+        
+        /* Card Display Panel */
+        .card-display-panel {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            opacity: 0.5;
+        }
+        
+        .empty-state-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state-text {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        /* Card Header */
+        .card-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(139,92,246,0.3);
+        }
+        
+        .card-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #8b5cf6, #00e3d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .card-tier-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-invoke-date {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #8b5cf6, #00e3d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-count {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+        
+        /* Skills */
+        .skill-item {
+            background: rgba(0,0,0,0.3);
+            border-left: 4px solid;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        
+        .skill-item.active {
+            border-left-color: #ff6464;
+            background: rgba(255,100,100,0.1);
+        }
+        
+        .skill-item.passive {
+            border-left-color: #64ff96;
+            background: rgba(100,255,150,0.1);
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        
+        .skill-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .skill-cooldown {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            padding: 4px 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        .skill-details {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .skill-house {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 4px;
+        }
+        
+        /* Fusion Abilities */
+        .fusion-item {
+            background: rgba(0,0,0,0.3);
+            border-left: 4px solid;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fusion-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05));
+            pointer-events: none;
+        }
+        
+        .fusion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .fusion-name {
+            font-weight: 700;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .fusion-tier-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .fusion-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+        
+        .fusion-pattern {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+        
+        /* Keywords/Tags */
+        .keywords-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .keyword-badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .keyword-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #00e3d6);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #9d6eff, #00f5e0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .card-list-panel {
+                max-height: 300px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card-display-panel > * {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Dosha & Yoga Sections */
+        .dosha-yoga-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .dosha-section, .yoga-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dosha-section {
+            border-left: 4px solid #ff4444;
+        }
+
+        .yoga-section {
+            border-left: 4px solid #44ff44;
+        }
+
+        .dosha-section .section-title, .yoga-section .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .dosha-section .section-title {
+            color: #ff6b6b;
+        }
+
+        .yoga-section .section-title {
+            color: #51cf66;
+        }
+
+        .dosha-item, .yoga-item {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dosha-item {
+            border-left-color: #ff4444;
+        }
+
+        .yoga-item {
+            border-left-color: #44ff44;
+        }
+
+        .dosha-item:hover, .yoga-item:hover {
+            transform: translateX(5px);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .dosha-name, .yoga-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .dosha-desc, .yoga-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .empty-state {
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Clickable Terms */
+        .clickable-term {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .clickable-term:hover {
+            color: #ffd700;
+            text-decoration-color: #ffd700;
+            transform: scale(1.05);
+        }
+
+        /* Tooltip Modal */
+        .tooltip-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 550px;
+            width: 90%;
+            z-index: 10000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .tooltip-modal.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: all;
+        }
+
+        .tooltip-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .tooltip-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .tooltip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .tooltip-title {
+            color: #ffd700;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tooltip-close {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff4444;
+            color: #ff6b6b;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3em;
+            line-height: 33px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .tooltip-close:hover {
+            background: rgba(255, 0, 0, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .tooltip-content {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .tooltip-category {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+
+        /* Card Insights Section */
+        .card-insights {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.15), rgba(138, 43, 226, 0.15));
+            border: 2px solid rgba(100, 149, 237, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .card-insights .section-title {
+            color: #6495ed;
+            margin-bottom: 15px;
+        }
+
+        .insight-tip {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.95rem;
+            border-left: 4px solid #6495ed;
+            line-height: 1.6;
+        }
+
+        .insight-tip strong {
+            color: #87ceeb;
+            font-weight: 700;
+        }
+
+        .insight-tip::before {
+            content: "💡 ";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🎴 Card Collection Viewer</h1>
+        <p>Browse and inspect cards created in the Workshop</p>
+        <div class="sync-status" id="syncStatus">
+            🔄 Loading cards from workshop...
+        </div>
+        <button onclick="debugDatabase()" style="margin-top: 10px; padding: 8px 16px; background: rgba(255,100,100,0.2); border: 1px solid #ff6464; color: #ff6464; border-radius: 6px; cursor: pointer; font-size: 0.9em;">
+            🐛 Debug Database
+        </button>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Card List Panel -->
+        <div class="card-list-panel">
+            <h2>📚 Saved Cards (<span id="cardCount">0</span>)</h2>
+            <div id="cardList"></div>
+        </div>
+        
+        <!-- Card Display Panel -->
+        <div class="card-display-panel" id="cardDisplay">
+            <div class="empty-state">
+                <div class="empty-state-icon">🎴</div>
+                <div class="empty-state-text">Select a card to view details</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Load skill data from fusion demo -->
+    <script src="../05-fusion/demo/data-full.js"></script>
+    
+    <!-- Load shared skill system (same as workshop uses) -->
+    <script src="../shared/skillSystem.js"></script>
+    
+    <script>
+        const STORAGE_KEY = 'workshop_saved_cards';
+        let savedCards = [];
+        let currentCard = null;
+        let currentSkillData = {}; // Store skills for tooltip access
+        let SKILL_DATABASE = {}; // Full skill database from fusion demo
+        
+        // Comprehensive keyword tooltips (from 05-ui/keywords_tooltips.json + additions)
+        const KEYWORD_TOOLTIPS = {
+            // Combat Mechanics
+            "Burn": "Damage-over-time. Some effects convert Burn ticks into Decay stacks.",
+            "Decay": "Entropy marker that amplifies detonation effects (+10% per stack baseline).",
+            "Subservience": "Obedience debuff that can be consumed to gain temporary control.",
+            "Stasis": "Freezes actions or increases cooldown; short, high-impact lockdown.",
+            "Discord": "Reduces buff effectiveness and disrupts synergies.",
+            "Void": "Resource denial state enabling Banish interactions.",
+            "Consume": "Remove stacks to gain an immediate benefit.",
+            "Detonate": "Convert stacks into burst effects based on per-stack math.",
+            "Banish": "Temporarily remove a unit/glyph from play; returns by timer or tax.",
+            "Silence": "Prevents casting for a short window; cleansed by some effects.",
+            "Shield": "Absorbs incoming damage; some interactions can sunder.",
+            "Heal": "Restore Ojas/HP; may also cleanse under Venus or Blessing.",
+            "Cleanse": "Remove one or more negative effects from a target.",
+            "Transmute": "Transform incoming damage into healing or resources.",
+            "Omen": "Tagged draw with a conditional bonus clause.",
+            "Scry": "Peek/reorder the top of the deck to improve draw quality.",
+            "Foretell": "Create a delayed discounted copy to play later.",
+            "Seal": "Protect the next draw/effect from disruption.",
+            "Chant": "Stackable ritual counter; breakpoints unlock windows.",
+            "Invoke": "Primary Invocation payload; often enhanced by chanting.",
+            "Consecrate": "Empower the next defensive action (shield/cleanse).",
+            "Field": "Area effect zone; provides passive or defensive benefits.",
+            "Anchor": "Stateful marker that preserves or augments future actions.",
+            "Channel": "One-shot throughput action, sometimes duplicable.",
+            "Amplify": "Boost an existing Field/Anchor instead of stacking a new one.",
+            "Charge": "Increase Singularity Threshold toward collapse.",
+            "Threshold": "Milestone for unlocking premium effects.",
+            "Collapse": "Consume threshold for powerful AoE or banish effects.",
+            "Mark": "Target tag enabling precision bonuses and vulnerability pivots.",
+            "Expose": "Reveal a weakness; consuming yields refresh or combo hooks.",
+            "Vulnerable": "+25% damage taken from sources that check this state.",
+            
+            // Structures & Zones
+            "Structure": "Deployable object that lasts for a duration, providing zone control or passive benefits.",
+            "Structures": "Multiple deployable objects working together for combo effects.",
+            "Zone": "Area-of-effect region that modifies combat within its boundaries.",
+            "Barrier": "Defensive structure that blocks movement or projectiles.",
+            "Trap": "Hidden trigger that activates when enemies enter its zone.",
+            "Aura": "Continuous area effect emanating from a source.",
+            
+            // Elements
+            "Fire": "🔥 Burning damage over time. Strong vs Ice, weak vs Water. Creates explosive combos with Lightning.",
+            "Ice": "❄️ Slows and freezes targets. Strong vs Water, weak vs Fire. Synergizes with Water for blizzards.",
+            "Lightning": "⚡ Instant high damage with chain potential. Nullified by Earth. Pairs with Fire for storms.",
+            "Water": "💧 Healing and cleansing. Strong vs Fire, weak vs Ice. Flows with any strategy.",
+            "Earth": "🌍 Defense and armor. Nullifies Lightning, weak vs Water. Stable foundation element.",
+            "Dark": "🌑 Life drain and curses. Opposes Light. Amplifies death effects.",
+            "Light": "☀️ Purification and holy damage. Opposes Dark. Empowers allies.",
+            
+            // Effect Types
+            "Damage": "Direct harm dealt to targets. Primary offensive stat.",
+            "Healing": "Restoration of health/Ojas. Critical for survival strategies.",
+            "Buff": "Positive enhancements to stats or abilities. Stack for maximum power.",
+            "Debuff": "Negative afflictions reducing enemy effectiveness. Layer for control.",
+            "Support": "Utility effects enabling teammates. Essential for group play.",
+            "Control": "Effects that restrict enemy actions. Dominates the battlefield.",
+            "Finisher": "Ultimate ability designed to secure kills below health threshold.",
+            "Execute": "Instant kill effect when conditions are met.",
+            
+            // Combat Roles
+            "Tank": "High defense, absorbs damage for team.",
+            "DPS": "Damage dealer, focuses on maximum output.",
+            "Healer": "Keeps allies alive through restoration.",
+            "Utility": "Provides various support functions.",
+            "Burst": "Massive damage in short window.",
+            "Sustained": "Consistent ongoing effects.",
+            
+            // Advanced Mechanics
+            "Fusion": "Combination of multiple skills creating enhanced effects.",
+            "Synergy": "Skills that work together for bonus power.",
+            "Combo": "Chained abilities that amplify each other.",
+            "Evolution": "Upgraded version of a skill with enhanced effects.",
+            "Metamorphosis": "Complete transformation of skill properties."
+        };
+        
+        // Load invocation entities from JSON
+        async function loadAdditionalSkills() {
+            try {
+                console.log('🔄 Loading invocation entities...');
+                const invocationResponse = await fetch('../03-data/invocation_entities_v4.json');
+                const invocationData = await invocationResponse.json();
+                
+                // Add invocation entities to database
+                invocationData.entities.forEach(skill => {
+                    SKILL_DATABASE[skill.name] = skill;
+                    const normalizedName = skill.name.trim().toLowerCase();
+                    SKILL_DATABASE[normalizedName] = skill;
+                });
+                
+                console.log(`✅ Loaded ${invocationData.totalEntities} invocation entities`);
+                return true;
+            } catch (e) {
+                console.error('❌ Failed to load invocation entities:', e);
+                return false;
+            }
+        }
+        
+        // Build skill database from SAMPLE_SKILLS (loaded from data-full.js)
+        async function buildSkillDatabase() {
+            console.log('🔄 Building skill database using shared SkillSystem...');
+            
+            SKILL_DATABASE = {};
+            
+            // Use the SAME skill system that the workshop uses!
+            const allSkills = SkillSystem.getAllSkills();
+            console.log(`📦 Got ${allSkills.length} skills from SkillSystem`);
+            
+            // Add all skills to database
+            allSkills.forEach(skill => {
+                SKILL_DATABASE[skill.name] = skill;
+                // Also add with normalized name for better matching
+                const normalizedName = skill.name.trim().toLowerCase();
+                SKILL_DATABASE[normalizedName] = skill;
+            });
+            
+            console.log(`✅ Loaded ${allSkills.length} skills into database (including fused skills from localStorage)`);
+            
+            // Still load additional invocation entities
+            await loadAdditionalSkills();
+            
+            console.log(`✅ Total skills in database: ${Object.keys(SKILL_DATABASE).length / 2}`); // Divide by 2 because we store both normal and normalized names
+            console.log('📋 Database ready!');
+            return true;
+        }
+        
+        // Tag Data (same as workshop)
+        const TAG_DATA = {
+            fire: { color: '#ff6464', icon: '🔥' },
+            ice: { color: '#64b4ff', icon: '❄️' },
+            lightning: { color: '#ffeb64', icon: '⚡' },
+            water: { color: '#64c8ff', icon: '💧' },
+            earth: { color: '#96c864', icon: '🌍' },
+            dark: { color: '#9664c8', icon: '🌑' },
+            light: { color: '#ffe664', icon: '☀️' },
+            heal: { color: '#64ff96', icon: '💚' },
+            damage: { color: '#ff6496', icon: '⚔️' },
+            buff: { color: '#c896ff', icon: '✨' },
+            debuff: { color: '#ff9664', icon: '💀' },
+            support: { color: '#96ffeb', icon: '🛡️' }
+        };
+        
+        // Tier Colors
+        const TIER_COLORS = {
+            Common: { color: '#8b5cf6', icon: '⚪', bg: 'rgba(139,92,246,0.2)', border: 'rgba(139,92,246,0.6)' },
+            Uncommon: { color: '#64b4ff', icon: '🔵', bg: 'rgba(100,180,255,0.2)', border: 'rgba(100,180,255,0.6)' },
+            Rare: { color: '#ffe664', icon: '🟡', bg: 'rgba(255,230,100,0.2)', border: 'rgba(255,230,100,0.6)' },
+            Epic: { color: '#ff6496', icon: '🟣', bg: 'rgba(255,100,150,0.2)', border: 'rgba(255,100,150,0.6)' },
+            Legendary: { color: '#ff8800', icon: '🟠', bg: 'rgba(255,136,0,0.2)', border: 'rgba(255,136,0,0.6)' }
+        };
+        
+        // Load cards from localStorage
+        function loadCards() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (stored) {
+                    savedCards = JSON.parse(stored);
+                }
+            } catch (e) {
+                console.error('Failed to load cards:', e);
+            }
+            
+            updateSyncStatus();
+            renderCardList();
+        }
+        
+        // Update sync status
+        function updateSyncStatus() {
+            const statusEl = document.getElementById('syncStatus');
+            const countEl = document.getElementById('cardCount');
+            
+            countEl.textContent = savedCards.length;
+            
+            if (savedCards.length === 0) {
+                statusEl.textContent = '🔒 No saved cards found';
+                statusEl.classList.add('empty');
+            } else {
+                statusEl.textContent = `✅ Synced ${savedCards.length} card${savedCards.length > 1 ? 's' : ''} from workshop`;
+                statusEl.classList.remove('empty');
+            }
+        }
+        
+        // Render card list
+        function renderCardList() {
+            const listEl = document.getElementById('cardList');
+            
+            if (savedCards.length === 0) {
+                listEl.innerHTML = '<div style="text-align: center; opacity: 0.5; padding: 40px 20px;">No cards created yet.<br><br>Build cards in the workshop to see them here!</div>';
+                return;
+            }
+            
+            listEl.innerHTML = savedCards.map((card, index) => `
+                <div class="card-list-item ${currentCard && currentCard.id === card.id ? 'active' : ''}" 
+                     onclick="selectCard(${index})">
+                    <div class="card-list-item-name">${card.name}</div>
+                    <div class="card-list-item-stats">
+                        <span>⚡ ${card.stats.power}</span>
+                        <span>🎯 ${card.slotsFilled}/12 slots</span>
+                        <span>${card.synergies?.length || 0} fusions</span>
+                    </div>
+                    <div class="card-list-item-date">${card.invokedAt}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Select card
+        function selectCard(index) {
+            currentCard = savedCards[index];
+            renderCardList();
+            renderCardDisplay();
+        }
+        
+        // Render card display
+        function renderCardDisplay() {
+            const displayEl = document.getElementById('cardDisplay');
+            
+            if (!currentCard) {
+                displayEl.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🎴</div>
+                        <div class="empty-state-text">Select a card to view details</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            const card = currentCard;
+            const tierData = TIER_COLORS[card.tier?.tier || 'Common'];
+            
+            // Categorize skills
+            const activeSkills = [];
+            const passiveSkills = [];
+            const allKeywords = new Set();
+            currentSkillData = {}; // Reset skill data
+            
+            card.glyphs.forEach((glyph, index) => {
+                if (!glyph) return;
+                
+                const house = card.houses?.[index] || { name: `House ${index + 1}`, bonus: 1.0 };
+                const adjustedPower = Math.round(glyph.power * house.bonus);
+                
+                const skillData = {
+                    name: glyph.name,
+                    power: adjustedPower,
+                    originalPower: glyph.power,
+                    cooldown: glyph.cooldown || 0,
+                    house: house.name,
+                    houseBonus: house.bonus,
+                    keywords: glyph.keywords || [],
+                    description: glyph.description || '',
+                    effect: glyph.effect || '',
+                    kpCost: glyph.kp || 0
+                };
+                
+                // Store skill data for tooltip access
+                currentSkillData[glyph.name] = skillData;
+                
+                if (glyph.cooldown >= 3) {
+                    activeSkills.push(skillData);
+                } else {
+                    passiveSkills.push(skillData);
+                }
+                
+                (glyph.keywords || []).forEach(kw => allKeywords.add(kw));
+            });
+            
+            displayEl.innerHTML = `
+                <!-- Card Header -->
+                <div class="card-header">
+                    <div class="card-name">${card.name}</div>
+                    <div class="card-tier-badge" style="background: ${tierData.bg}; color: ${tierData.color}; border: 2px solid ${tierData.border};">
+                        ${tierData.icon} ${card.tier?.tier || 'Common'} Card
+                    </div>
+                    <div class="card-invoke-date">Invoked: ${card.invokedAt}</div>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-label">⚡ Power</div>
+                        <div class="stat-value">${card.stats.power}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">⏱️ Avg Cooldown</div>
+                        <div class="stat-value">${card.stats.cooldown}s</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">🎯 Versatility</div>
+                        <div class="stat-value">${card.stats.versatility}</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">🔮 KP Used</div>
+                        <div class="stat-value">${card.stats.kp}/30</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">🏠 Slots Filled</div>
+                        <div class="stat-value">${card.slotsFilled}/12</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">⚗️ Fusions</div>
+                        <div class="stat-value">${card.synergies?.length || 0}</div>
+                    </div>
+                </div>
+                
+                <!-- Active Skills -->
+                <div class="section">
+                    <div class="section-title">
+                        🔥 Active Skills
+                        <span class="section-count">(${activeSkills.length})</span>
+                    </div>
+                    ${activeSkills.length === 0 ? '<div style="opacity: 0.5; padding: 20px; text-align: center;">No active skills</div>' : 
+                        activeSkills.map(skill => {
+                            // Get real skill data for description preview
+                            const fullSkillData = SKILL_DATABASE[skill.name] || SKILL_DATABASE[skill.name.toLowerCase()];
+                            const shortDesc = fullSkillData?.description ? 
+                                fullSkillData.description.split('\\n')[0].substring(0, 120).replace(/\*\*/g, '') + '...' : 
+                                `Active ability with ${skill.power} power and ${skill.cooldown}s cooldown`;
+                            
+                            return `
+                            <div class="skill-item active clickable-term" onclick="showTooltip('skill', '${skill.name.replace(/'/g, "\\'")}')">
+                                <div class="skill-header">
+                                    <div class="skill-name">${skill.name}</div>
+                                    <div class="skill-cooldown">${skill.cooldown}s CD</div>
+                                </div>
+                                <div class="skill-details" style="opacity: 0.85; font-size: 0.9em; margin-top: 6px; line-height: 1.4;">
+                                    ${shortDesc}
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                    <div class="skill-house" style="opacity: 0.7;">🏠 ${skill.house}</div>
+                                    <div style="color: #ff6464; font-weight: bold;">⚡ ${skill.power}${skill.houseBonus !== 1.0 ? ` (×${skill.houseBonus})` : ''}</div>
+                                </div>
+                                ${skill.keywords.length > 0 ? `
+                                <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px;">
+                                    ${skill.keywords.map(kw => {
+                                        const tagData = TAG_DATA[kw.toLowerCase()] || { icon: '🔖', color: '#8b5cf6' };
+                                        return `<span style="background: ${tagData.color}22; color: ${tagData.color}; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; border: 1px solid ${tagData.color}40;">${tagData.icon} ${kw}</span>`;
+                                    }).join('')}
+                                </div>` : ''}
+                            </div>
+                        `;
+                        }).join('')
+                    }
+                </div>
+                
+                <!-- Passive Skills -->
+                <div class="section">
+                    <div class="section-title">
+                        💎 Passive Skills
+                        <span class="section-count">(${passiveSkills.length})</span>
+                    </div>
+                    ${passiveSkills.length === 0 ? '<div style="opacity: 0.5; padding: 20px; text-align: center;">No passive skills</div>' : 
+                        passiveSkills.map(skill => {
+                            // Get real skill data for description preview
+                            const fullSkillData = SKILL_DATABASE[skill.name] || SKILL_DATABASE[skill.name.toLowerCase()];
+                            const shortDesc = fullSkillData?.description ? 
+                                fullSkillData.description.split('\\n')[0].substring(0, 120).replace(/\*\*/g, '') + '...' : 
+                                `Passive effect with ${skill.power} power`;
+                            
+                            return `
+                            <div class="skill-item passive clickable-term" onclick="showTooltip('skill', '${skill.name.replace(/'/g, "\\'")}')">
+                                <div class="skill-header">
+                                    <div class="skill-name">${skill.name}</div>
+                                    <div class="skill-cooldown">Passive</div>
+                                </div>
+                                <div class="skill-details" style="opacity: 0.85; font-size: 0.9em; margin-top: 6px; line-height: 1.4;">
+                                    ${shortDesc}
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+                                    <div class="skill-house" style="opacity: 0.7;">🏠 ${skill.house}</div>
+                                    <div style="color: #64ff96; font-weight: bold;">⚡ ${skill.power}${skill.houseBonus !== 1.0 ? ` (×${skill.houseBonus})` : ''}</div>
+                                </div>
+                                ${skill.keywords.length > 0 ? `
+                                <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px;">
+                                    ${skill.keywords.map(kw => {
+                                        const tagData = TAG_DATA[kw.toLowerCase()] || { icon: '🔖', color: '#8b5cf6' };
+                                        return `<span style="background: ${tagData.color}22; color: ${tagData.color}; padding: 2px 6px; border-radius: 4px; font-size: 0.75em; border: 1px solid ${tagData.color}40;">${tagData.icon} ${kw}</span>`;
+                                    }).join('')}
+                                </div>` : ''}
+                            </div>
+                        `;
+                        }).join('')
+                    }
+                </div>
+                
+                <!-- Fusion Abilities -->
+                <div class="section">
+                    <div class="section-title">
+                        ⚗️ Fusion Abilities
+                        <span class="section-count">(${card.synergies?.length || 0})</span>
+                    </div>
+                    ${!card.synergies || card.synergies.length === 0 ? 
+                        '<div style="opacity: 0.5; padding: 20px; text-align: center;">No fusion abilities unlocked</div>' : 
+                        card.synergies.map((fusion, idx) => {
+                            const fusionTier = TIER_COLORS[fusion.tier] || TIER_COLORS.Common;
+                            return `
+                                <div class="fusion-item clickable-term" onclick="showTooltip('fusion', ${idx})" style="border-left-color: ${fusionTier.color}; background: ${fusionTier.bg};">
+                                    <div class="fusion-header">
+                                        <div class="fusion-name" style="color: ${fusionTier.color};">
+                                            ${fusion.icon} ${fusion.name}
+                                        </div>
+                                        <div class="fusion-tier-badge" style="background: ${fusionTier.color}33; color: ${fusionTier.color}; border: 1px solid ${fusionTier.color}80;">
+                                            ${fusion.tier}
+                                        </div>
+                                    </div>
+                                    <div class="fusion-description">${fusion.description}</div>
+                                    <div class="fusion-pattern">
+                                        ${fusion.pattern ? `Pattern: ${fusion.pattern}` : ''}
+                                        ${fusion.multiplier > 1 ? ` • <span style="color: ${fusionTier.color};">×${fusion.multiplier}</span> bonus` : ''}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')
+                    }
+                </div>
+                
+                <!-- Keywords -->
+                <div class="section">
+                    <div class="section-title">
+                        🏷️ Keywords
+                        <span class="section-count">(${allKeywords.size})</span>
+                    </div>
+                    <div class="keywords-container">
+                        ${allKeywords.size === 0 ? '<div style="opacity: 0.5; padding: 20px; text-align: center; width: 100%;">No keywords</div>' : 
+                            Array.from(allKeywords).map(kw => {
+                                const tagData = TAG_DATA[kw.toLowerCase()] || { color: '#8b5cf6', icon: '🔖' };
+                                return `
+                                    <div class="keyword-badge clickable-term" onclick="showTooltip('keyword', '${kw}')" 
+                                         style="background: ${tagData.color}33; color: ${tagData.color}; border-color: ${tagData.color}80;">
+                                        ${tagData.icon} ${kw.toUpperCase()}
+                                    </div>
+                                `;
+                            }).join('')
+                        }
+                    </div>
+                </div>
+                
+                <!-- Dosha & Yoga -->
+                <div class="dosha-yoga-container">
+                    <!-- Doshas (Imbalances) -->
+                    <div class="dosha-section">
+                        <div class="section-title">⚠️ Doshas (Imbalances)</div>
+                        ${renderDoshas(card)}
+                    </div>
+                    
+                    <!-- Yogas (Synergies) -->
+                    <div class="yoga-section">
+                        <div class="section-title">✨ Yogas (Harmonies)</div>
+                        ${renderYogas(card)}
+                    </div>
+                </div>
+                
+                <!-- Card Insights -->
+                <div class="card-insights">
+                    <div class="section-title">💡 Strategic Insights</div>
+                    ${renderInsights(card, activeSkills, passiveSkills)}
+                </div>
+            `;
+        }
+        
+        // Render Doshas (imbalances/weaknesses)
+        function renderDoshas(card) {
+            const doshas = [];
+            
+            // Check for empty slots
+            const emptySlots = 12 - card.slotsFilled;
+            if (emptySlots > 3) {
+                doshas.push({
+                    name: 'Weak Foundation',
+                    desc: `${emptySlots} empty house slots reduce overall card stability and power potential.`
+                });
+            }
+            
+            // Check for keyword imbalance
+            const keywords = new Set();
+            card.glyphs.forEach(g => g && (g.keywords || []).forEach(k => keywords.add(k)));
+            if (keywords.size > 0 && keywords.size < 3) {
+                doshas.push({
+                    name: 'Limited Diversity',
+                    desc: `Only ${keywords.size} keyword type${keywords.size > 1 ? 's' : ''} - consider adding more variety for combo potential.`
+                });
+            }
+            
+            // Check for high cooldown imbalance
+            const avgCD = card.stats.cooldown;
+            if (avgCD > 6) {
+                doshas.push({
+                    name: 'Slow Activation',
+                    desc: `Average ${avgCD}s cooldown limits combat responsiveness. Balance with faster skills.`
+                });
+            }
+            
+            // Check for low KP usage
+            if (card.stats.kp < 15) {
+                doshas.push({
+                    name: 'Underutilized Potential',
+                    desc: `Only ${card.stats.kp}/30 KP used. Add more skills to maximize card strength.`
+                });
+            }
+            
+            if (doshas.length === 0) {
+                return '<div class="empty-state">No significant imbalances detected! Well-balanced card.</div>';
+            }
+            
+            return doshas.map(dosha => `
+                <div class="dosha-item" onclick="showTooltip('dosha', '${dosha.name}')">
+                    <div class="dosha-name">${dosha.name}</div>
+                    <div class="dosha-desc">${dosha.desc}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Render Yogas (synergies/strengths)
+        function renderYogas(card) {
+            const yogas = [];
+            
+            // Check for fusion synergies
+            if (card.synergies && card.synergies.length > 0) {
+                yogas.push({
+                    name: 'Fusion Harmony',
+                    desc: `${card.synergies.length} active fusion${card.synergies.length > 1 ? 's' : ''} create powerful combo effects.`
+                });
+            }
+            
+            // Check for high versatility
+            if (card.stats.versatility >= 8) {
+                yogas.push({
+                    name: 'Tactical Flexibility',
+                    desc: `Versatility score of ${card.stats.versatility} enables adaptive strategies in varied combat scenarios.`
+                });
+            }
+            
+            // Check for efficient KP usage
+            if (card.stats.kp >= 25 && card.slotsFilled === 12) {
+                yogas.push({
+                    name: 'Maximum Efficiency',
+                    desc: `All 12 slots filled with ${card.stats.kp} KP demonstrates optimal resource utilization.`
+                });
+            }
+            
+            // Check for power concentration
+            if (card.stats.power >= 1000) {
+                yogas.push({
+                    name: 'Overwhelming Force',
+                    desc: `Total power of ${card.stats.power} provides dominant offensive capability.`
+                });
+            }
+            
+            // Check for balanced cooldowns
+            if (card.stats.cooldown >= 3 && card.stats.cooldown <= 5) {
+                yogas.push({
+                    name: 'Tempo Mastery',
+                    desc: `Balanced ${card.stats.cooldown}s average cooldown enables consistent combat rhythm.`
+                });
+            }
+            
+            if (yogas.length === 0) {
+                return '<div class="empty-state">Build more synergies to unlock yogas!</div>';
+            }
+            
+            return yogas.map(yoga => `
+                <div class="yoga-item" onclick="showTooltip('yoga', '${yoga.name}')">
+                    <div class="yoga-name">${yoga.name}</div>
+                    <div class="yoga-desc">${yoga.desc}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Render Strategic Insights
+        function renderInsights(card, activeSkills, passiveSkills) {
+            const insights = [];
+            
+            // Skill distribution insight
+            if (activeSkills.length > passiveSkills.length) {
+                insights.push(`<strong>Offensive Focus:</strong> Your ${activeSkills.length} active skills favor aggressive playstyles. Use burst damage to overwhelm opponents.`);
+            } else if (passiveSkills.length > activeSkills.length) {
+                insights.push(`<strong>Defensive Stance:</strong> Your ${passiveSkills.length} passive skills provide sustained benefits. Excel in endurance battles.`);
+            } else {
+                insights.push(`<strong>Balanced Approach:</strong> Equal active and passive skills offer tactical flexibility for any situation.`);
+            }
+            
+            // Fusion insight
+            if (card.synergies && card.synergies.length >= 3) {
+                insights.push(`<strong>Fusion Specialist:</strong> ${card.synergies.length} fusion abilities create unpredictable combo chains. Experiment with different activation orders.`);
+            }
+            
+            // House coverage
+            if (card.slotsFilled >= 10) {
+                insights.push(`<strong>Cosmic Alignment:</strong> ${card.slotsFilled}/12 houses activated provides comprehensive astrological coverage and diverse bonuses.`);
+            }
+            
+            // Power threshold
+            if (card.stats.power >= 1500) {
+                insights.push(`<strong>Elite Tier:</strong> ${card.stats.power} total power places this card among the strongest. Use it as your deck's cornerstone.`);
+            }
+            
+            // Recommended usage
+            insights.push(`<strong>Best Used:</strong> ${getBestUsage(card, activeSkills, passiveSkills)}`);
+            
+            return insights.map(tip => `<div class="insight-tip">${tip}</div>`).join('');
+        }
+        
+        // Get best usage recommendation
+        function getBestUsage(card, activeSkills, passiveSkills) {
+            const power = card.stats.power;
+            const fusionCount = card.synergies?.length || 0;
+            const avgCD = card.stats.cooldown;
+            
+            if (power > 1500 && fusionCount >= 3) {
+                return 'Primary deck finisher. Deploy when opponent is weakened for maximum fusion impact.';
+            } else if (avgCD < 4 && activeSkills.length > 6) {
+                return 'Fast-paced aggressor. Maintain pressure with rapid skill rotations.';
+            } else if (passiveSkills.length > 7) {
+                return 'Defensive anchor. Place early to build sustainable advantage over time.';
+            } else if (fusionCount >= 2) {
+                return 'Combo enabler. Combine with complementary cards to trigger powerful fusion chains.';
+            } else {
+                return 'Flexible utility card. Adapt playstyle based on opponent\'s strategy.';
+            }
+        }
+        
+        // Tooltip system
+        const TOOLTIP_DATA = {
+            keyword: {
+                fire: { category: 'Element', desc: 'Fire element skills deal burning damage over time and excel against ice-based defenses. Creates explosive fusion combinations with lightning and light.' },
+                ice: { category: 'Element', desc: 'Ice element skills slow enemy actions and freeze targets. Strong against water, but vulnerable to fire. Pairs with water for devastating blizzard effects.' },
+                lightning: { category: 'Element', desc: 'Lightning element delivers instant high damage with chain potential. Amplified in storm conditions. Fuses powerfully with fire and light.' },
+                water: { category: 'Element', desc: 'Water element provides healing and cleansing effects. Adaptable element that flows with any strategy. Combines with ice for control or earth for stability.' },
+                earth: { category: 'Element', desc: 'Earth element grants defensive bonuses and grounding effects. Nullifies lightning. Synergizes with dark for decay or water for growth.' },
+                dark: { category: 'Element', desc: 'Dark element corrupts enemies and drains vitality. Opposes light but amplifies death effects. Fuses with earth or ice for devastating curses.' },
+                light: { category: 'Element', desc: 'Light element purifies debuffs and empowers allies. Counters dark forces. Combines with fire or lightning for radiant destruction.' },
+                heal: { category: 'Effect', desc: 'Restoration effects recover HP and remove negative status. Stack with water or light elements for enhanced healing potency.' },
+                damage: { category: 'Effect', desc: 'Direct harm dealt to targets. Amplified by offensive fusions and elemental advantages.' },
+                buff: { category: 'Effect', desc: 'Positive enhancements to stats or abilities. Duration and strength scale with skill power and house bonuses.' },
+                debuff: { category: 'Effect', desc: 'Negative afflictions reducing enemy effectiveness. Stackable for cumulative weakening.' },
+                support: { category: 'Effect', desc: 'Utility effects enabling teammates or disrupting enemies. Versatile tactical advantage.' }
+            },
+            dosha: {
+                'Weak Foundation': { category: 'Imbalance', desc: 'Empty house slots represent missed opportunities for power and synergy. Fill remaining slots to eliminate this dosha and unlock hidden potential.' },
+                'Limited Diversity': { category: 'Imbalance', desc: 'Narrow keyword selection restricts fusion possibilities. Diversify your skill pool to create more combo opportunities and tactical options.' },
+                'Slow Activation': { category: 'Imbalance', desc: 'High average cooldowns reduce combat responsiveness. Balance long-cooldown skills with instant or low-cooldown abilities for consistent pressure.' },
+                'Underutilized Potential': { category: 'Imbalance', desc: 'Low KP usage indicates incomplete card development. Add more skills to maximize your 30 KP budget and strengthen your arsenal.' }
+            },
+            yoga: {
+                'Fusion Harmony': { category: 'Synergy', desc: 'Multiple fusion abilities activate simultaneously, creating cascading effects that multiply your power beyond the sum of individual skills.' },
+                'Tactical Flexibility': { category: 'Synergy', desc: 'High versatility enables adaptive combat strategies. This card excels in unpredictable battles where situational awareness determines victory.' },
+                'Maximum Efficiency': { category: 'Synergy', desc: 'Perfect resource optimization demonstrates mastery of card construction. Every KP point and house slot contributes to a harmonious whole.' },
+                'Overwhelming Force': { category: 'Synergy', desc: 'Exceptional power concentration creates decisive combat moments. This card can single-handedly turn battles with properly timed deployment.' },
+                'Tempo Mastery': { category: 'Synergy', desc: 'Balanced cooldowns maintain consistent combat rhythm. Neither too slow to respond nor too fast to sustain, achieving perfect tactical flow.' }
+            }
+        };
+        
+        // Show tooltip modal
+        function showTooltip(type, term) {
+            let title, category, content;
+            
+            if (type === 'skill') {
+                // Handle skill tooltips
+                const skill = currentSkillData[term];
+                if (!skill) {
+                    console.log('Skill not found:', term);
+                    return;
+                }
+                
+                title = skill.name;
+                category = `${skill.cooldown >= 3 ? '🔥 Active' : '💎 Passive'} Skill • ${skill.cooldown}s Cooldown`;
+                
+                // Build combat explanation
+                const powerLevel = skill.power < 100 ? 'Low' : skill.power < 200 ? 'Medium' : skill.power < 300 ? 'High' : 'Extreme';
+                const combatUse = skill.cooldown === 0 ? 'Instant' : 
+                                 skill.cooldown <= 2 ? 'Fast Rotation' : 
+                                 skill.cooldown <= 4 ? 'Regular Combat' : 'Ultimate Ability';
+                
+                content = `
+                    <div style="background: rgba(139,92,246,0.2); padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #8b5cf6;">
+                        <strong style="font-size: 1.15em; color: #00e3d6;">💫 What This Skill Does In Combat:</strong><br>
+                        <div style="margin-top: 10px; line-height: 1.7; font-size: 1.05em;">
+                            ${getSkillCombatEffect(skill)}
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                        <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px;">
+                            <div style="opacity: 0.7; font-size: 0.85em;">⚡ Power</div>
+                            <div style="font-size: 1.3em; font-weight: bold; color: #ffd700;">${skill.power}</div>
+                            <div style="opacity: 0.7; font-size: 0.8em; margin-top: 2px;">${powerLevel} Impact</div>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px;">
+                            <div style="opacity: 0.7; font-size: 0.85em;">⏱️ Type</div>
+                            <div style="font-size: 1.1em; font-weight: bold; color: #00e3d6;">${combatUse}</div>
+                            <div style="opacity: 0.7; font-size: 0.8em; margin-top: 2px;">${skill.cooldown}s wait</div>
+                        </div>
+                    </div>
+                    
+                    ${skill.houseBonus !== 1.0 ? `
+                    <div style="background: rgba(255,215,0,0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,215,0,0.3); margin-bottom: 15px;">
+                        <strong>🏠 House Bonus Applied:</strong><br>
+                        <div style="margin-top: 5px;">Base ${skill.originalPower} power → <span style="color: #ffd700; font-weight: bold;">${skill.power}</span> (×${skill.houseBonus} from ${skill.house})</div>
+                    </div>` : `
+                    <div style="background: rgba(0,227,214,0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(0,227,214,0.3); margin-bottom: 15px;">
+                        <strong>🏠 Slotted In:</strong> ${skill.house}
+                    </div>`}
+                    
+                    <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; margin-bottom: 15px;">
+                        <strong>🏷️ Keywords:</strong><br>
+                        <div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;">
+                            ${skill.keywords.map(kw => {
+                                const tagData = TAG_DATA[kw.toLowerCase()] || { icon: '🔖', color: '#8b5cf6' };
+                                return `<span style="background: ${tagData.color}33; color: ${tagData.color}; padding: 4px 10px; border-radius: 4px; border: 1px solid ${tagData.color}80; font-size: 0.9em;">${tagData.icon} ${kw}</span>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 15px; padding: 15px; background: linear-gradient(135deg, rgba(100,149,237,0.15), rgba(138,43,226,0.15)); border-radius: 8px; border-left: 4px solid #6495ed;">
+                        <strong style="color: #87ceeb; font-size: 1.1em;">💡 How To Use This In Battle:</strong><br>
+                        <div style="margin-top: 8px; line-height: 1.6;">
+                            ${getSkillUsageTip(skill)}
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'fusion') {
+                // Handle fusion tooltips
+                const fusion = currentCard?.synergies?.[term];
+                if (!fusion) {
+                    console.log('Fusion not found:', term);
+                    return;
+                }
+                
+                title = `${fusion.icon} ${fusion.name}`;
+                category = `${fusion.tier} Tier Fusion Synergy`;
+                
+                const tierColor = TIER_COLORS[fusion.tier]?.color || '#8b5cf6';
+                
+                content = `
+                    <div style="background: linear-gradient(135deg, rgba(138,43,226,0.2), rgba(75,0,130,0.2)); padding: 18px; border-radius: 10px; margin-bottom: 15px; border: 2px solid ${tierColor};">
+                        <strong style="font-size: 1.2em; color: ${tierColor};">⚗️ Fusion Combat Effect:</strong><br>
+                        <div style="margin-top: 12px; font-size: 1.05em; line-height: 1.8;">
+                            ${fusion.description}
+                        </div>
+                    </div>
+                    
+                    ${fusion.pattern ? `
+                    <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+                        <strong>🔮 How To Trigger:</strong><br>
+                        <div style="margin-top: 6px; color: #ffd700; font-size: 1.05em;">${fusion.pattern}</div>
+                        <div style="margin-top: 6px; opacity: 0.8; font-size: 0.9em;">This fusion activates automatically when the pattern is met in your card</div>
+                    </div>` : ''}
+                    
+                    ${fusion.multiplier > 1 ? `
+                    <div style="background: rgba(255,215,0,0.15); padding: 15px; border-radius: 8px; border: 2px solid rgba(255,215,0,0.4); margin-bottom: 15px;">
+                        <strong style="color: #ffd700; font-size: 1.1em;">✨ Power Multiplier:</strong><br>
+                        <div style="font-size: 1.5em; font-weight: bold; color: #ffd700; margin-top: 8px;">×${fusion.multiplier} EFFECT BOOST!</div>
+                        <div style="margin-top: 8px; opacity: 0.95; font-size: 1.05em;">All skills involved in this fusion deal <strong style="color: #ffd700;">${fusion.multiplier}× their normal damage/healing/effects</strong>. This is HUGE!</div>
+                    </div>` : ''}
+                    
+                    <div style="margin-top: 15px; padding: 15px; background: linear-gradient(135deg, rgba(100,149,237,0.15), rgba(138,43,226,0.15)); border-radius: 8px; border-left: 4px solid #6495ed;">
+                        <strong style="color: #87ceeb; font-size: 1.1em;">💡 Strategic Battle Use:</strong><br>
+                        <div style="margin-top: 8px; line-height: 1.6;">
+                            ${getFusionUsageTip(fusion)}
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'keyword') {
+                // Handle keyword tooltips using comprehensive KEYWORD_TOOLTIPS
+                const normalizedTerm = term.charAt(0).toUpperCase() + term.slice(1).toLowerCase();
+                const tooltipText = KEYWORD_TOOLTIPS[normalizedTerm] || KEYWORD_TOOLTIPS[term] || KEYWORD_TOOLTIPS[term.toUpperCase()];
+                
+                title = term.toUpperCase();
+                category = 'Keyword';
+                
+                if (tooltipText) {
+                    // We have a defined tooltip
+                    content = `
+                        <div style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(100,180,255,0.2)); padding: 18px; border-radius: 10px; margin-bottom: 15px; border: 2px solid #8b5cf6;">
+                            <strong style="font-size: 1.2em; color: #ba55d3;">📖 What This Keyword Means:</strong><br>
+                            <div style="margin-top: 12px; font-size: 1.1em; line-height: 1.8;">
+                                ${tooltipText}
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(100,149,237,0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #6495ed; margin-bottom: 15px;">
+                            <strong style="color: #87ceeb; font-size: 1.1em;">💡 How It's Used In This Card:</strong><br>
+                            <div style="margin-top: 10px; line-height: 1.6;">
+                                ${getKeywordUsageInCard(term)}
+                            </div>
+                        </div>
+                        
+                        ${getKeywordCombatTips(term)}
+                    `;
+                } else {
+                    // Fallback for undefined keywords
+                    const tagData = TAG_DATA[term.toLowerCase()] || { icon: '🔖', color: '#8b5cf6' };
+                    content = `
+                        <div style="background: rgba(139,92,246,0.15); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            <div style="font-size: 1.05em; line-height: 1.7; margin-bottom: 10px;">
+                                <strong>${term.toUpperCase()}</strong> is a keyword that appears in your card's skills. Keywords determine fusion potential, tactical advantages, and combo opportunities.
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(100,149,237,0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #6495ed;">
+                            <strong style="color: #87ceeb; font-size: 1.1em;">💡 In This Card:</strong><br>
+                            <div style="margin-top: 10px;">
+                                ${getKeywordUsageInCard(term)}
+                            </div>
+                        </div>
+                    `;
+                }
+            } else if (type === 'dosha' || type === 'yoga') {
+                // Handle dosha/yoga tooltips
+                const data = TOOLTIP_DATA[type]?.[term];
+                if (!data) {
+                    console.log('No tooltip data for:', type, term);
+                    return;
+                }
+                title = term;
+                category = data.category;
+                content = data.desc;
+            } else {
+                console.log('Unknown tooltip type:', type);
+                return;
+            }
+            
+            const overlay = document.getElementById('tooltipOverlay') || createTooltipElements();
+            const modal = document.getElementById('tooltipModal');
+            
+            document.getElementById('tooltipTitle').innerHTML = title;
+            document.getElementById('tooltipCategory').textContent = category;
+            document.getElementById('tooltipContent').innerHTML = content;
+            
+            overlay.classList.add('active');
+            modal.classList.add('active');
+        }
+        
+        // Hide tooltip
+        function hideTooltip() {
+            document.getElementById('tooltipOverlay')?.classList.remove('active');
+            document.getElementById('tooltipModal')?.classList.remove('active');
+        }
+        
+        // Create tooltip elements
+        function createTooltipElements() {
+            const overlay = document.createElement('div');
+            overlay.id = 'tooltipOverlay';
+            overlay.className = 'tooltip-overlay';
+            overlay.onclick = hideTooltip;
+            
+            const modal = document.createElement('div');
+            modal.id = 'tooltipModal';
+            modal.className = 'tooltip-modal';
+            modal.innerHTML = `
+                <div class="tooltip-header">
+                    <div class="tooltip-title" id="tooltipTitle"></div>
+                    <div class="tooltip-close" onclick="hideTooltip()">×</div>
+                </div>
+                <div class="tooltip-category" id="tooltipCategory"></div>
+                <div class="tooltip-content" id="tooltipContent"></div>
+            `;
+            
+            document.body.appendChild(overlay);
+            document.body.appendChild(modal);
+            
+            return overlay;
+        }
+        
+        // Generate skill combat effect description
+        function getSkillCombatEffect(skill) {
+            // First try to get the actual effect from the skill database
+            let fullSkillData = SKILL_DATABASE[skill.name];
+            
+            // Try normalized name if exact match fails
+            if (!fullSkillData) {
+                const normalizedName = skill.name.trim().toLowerCase();
+                fullSkillData = SKILL_DATABASE[normalizedName];
+            }
+            
+            // If still not found, check if the skill object itself has effect/description data from the workshop
+            if (!fullSkillData && skill.effect) {
+                console.log(`💡 Using skill data from card itself: ${skill.name}`);
+                fullSkillData = skill; // Use the skill data that was saved with the card
+            }
+            
+            // Debug logging
+            if (!fullSkillData) {
+                console.warn(`⚠️ Skill "${skill.name}" not found in database or card data`);
+            } else {
+                console.log(`✅ Found skill data for "${skill.name}"`);
+            }
+            
+            if (fullSkillData) {
+                // Use description field (full effect) or effects array or effect field
+                const effectText = fullSkillData.description || 
+                                 fullSkillData.effect || 
+                                 (fullSkillData.effects ? fullSkillData.effects.join('<br>') : null);
+                
+                if (effectText) {
+                    console.log('📜 Using real effect from database/card for:', skill.name);
+                    // Clean up the text and format it nicely
+                    let formattedEffect = effectText
+                        .replace(/\*\*/g, '<strong>')
+                        .replace(/\r\n/g, '<br>')
+                        .replace(/\n/g, '<br>')
+                        .replace(/\[HYBRID\]/g, '<span style="color: #ba55d3; font-weight: bold;">[HYBRID FUSION]</span>')
+                        .replace(/\[Structure\]/g, '<span style="color: #8b5cf6;">[Structure]</span>')
+                        .replace(/\[Field\]/g, '<span style="color: #64b4ff;">[Field]</span>');
+                    
+                    return `<div style="margin-left: 10px; line-height: 1.8; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; border-left: 3px solid #00e3d6;">${formattedEffect}</div>`;
+                }
+            }
+            
+            console.warn('⚠️ Falling back to generated effect for:', skill.name);
+            
+            // Fallback: generate effect from keywords (if database not loaded or skill not found)
+            const keywords = skill.keywords.map(k => k.toLowerCase());
+            const power = skill.power;
+            
+            let effects = [];
+            
+            // Determine primary effect based on keywords
+            if (keywords.includes('damage')) {
+                effects.push(`<strong style="color: #ff6464;">Deals ${power} damage</strong> to target enemy`);
+            }
+            if (keywords.includes('heal')) {
+                effects.push(`<strong style="color: #64ff96;">Restores ${Math.round(power * 0.8)} HP</strong> to ally or self`);
+            }
+            if (keywords.includes('buff')) {
+                effects.push(`<strong style="color: #c896ff;">Grants +${Math.round(power * 0.15)}% stat boost</strong> for ${Math.ceil(skill.cooldown * 0.5) || 2} turns`);
+            }
+            if (keywords.includes('debuff')) {
+                effects.push(`<strong style="color: #ff9664;">Inflicts -${Math.round(power * 0.15)}% penalty</strong> on enemy for ${Math.ceil(skill.cooldown * 0.5) || 2} turns`);
+            }
+            if (keywords.includes('support')) {
+                effects.push(`<strong style="color: #96ffeb;">Provides ${Math.round(power * 0.1)} shield</strong> or utility effect to allies`);
+            }
+            
+            // Element-specific additional effects
+            if (keywords.includes('fire')) {
+                effects.push(`🔥 Burns target for <strong style="color: #ff6464;">${Math.round(power * 0.25)} damage per turn</strong> (3 turns)`);
+            }
+            if (keywords.includes('ice')) {
+                effects.push(`❄️ <strong style="color: #64b4ff;">Slows target by 35%</strong>, may freeze for 1 turn`);
+            }
+            if (keywords.includes('lightning')) {
+                effects.push(`⚡ Can <strong style="color: #ffeb64;">chain to 2 nearby enemies</strong> for 50% damage each`);
+            }
+            if (keywords.includes('water')) {
+                effects.push(`💧 Cleanses 1 debuff and <strong style="color: #64c8ff;">heals ${Math.round(power * 0.35)} extra</strong>`);
+            }
+            if (keywords.includes('earth')) {
+                effects.push(`🌍 Grants <strong style="color: #96c864;">+${Math.round(power * 0.2)} armor</strong> for 2 turns, blocks status effects`);
+            }
+            if (keywords.includes('dark')) {
+                effects.push(`🌑 <strong style="color: #9664c8;">Drains ${Math.round(power * 0.35)} life</strong>, curses target (-10% healing received)`);
+            }
+            if (keywords.includes('light')) {
+                effects.push(`☀️ Purifies all allies and deals <strong style="color: #ffe664;">+50% bonus damage to cursed/dark enemies</strong>`);
+            }
+            
+            // If no specific effects detected, provide generic power-based description
+            if (effects.length === 0) {
+                effects.push(`Activates with <strong style="color: #ffd700;">${power} power</strong> based on house position and card synergies. Effect scales with fusion bonuses.`);
+            }
+            
+            return '<div style="margin-left: 10px;">• ' + effects.join('<br>• ') + '</div>';
+        }
+        
+        // Generate usage tip for skill
+        function getSkillUsageTip(skill) {
+            const cd = skill.cooldown;
+            const keywords = skill.keywords.map(k => k.toLowerCase());
+            const power = skill.power;
+            
+            let tip = '';
+            
+            if (cd === 0) {
+                tip = `This skill is <strong style="color: #00e3d6;">always active</strong> or has instant cast. No waiting! Use it freely to maintain pressure.`;
+            } else if (cd <= 2) {
+                tip = `<strong style="color: #00e3d6;">Fast cooldown</strong> allows frequent use every ${cd} second${cd > 1 ? 's' : ''}. Perfect for maintaining combo chains and consistent damage output.`;
+            } else if (cd <= 4) {
+                tip = `<strong style="color: #ffeb64;">Moderate cooldown</strong> (${cd}s) requires tactical timing. `;
+                if (keywords.includes('damage')) tip += 'Save for when enemy defenses are down or to secure kills.';
+                else if (keywords.includes('heal')) tip += 'Reserve for critical moments when allies need emergency recovery.';
+                else tip += 'Deploy when maximum impact is guaranteed.';
+            } else {
+                tip = `<strong style="color: #ff6464;">Long cooldown</strong> (${cd}s) makes this an <strong>ULTIMATE ABILITY</strong>. Only use at game-changing moments: `;
+                if (keywords.includes('damage') && power >= 200) tip += 'finishing blows on weakened enemies or boss battles.';
+                else if (keywords.includes('heal')) tip += 'desperate team saves or turning the tide when losing.';
+                else tip += 'critical turning points that decide victory or defeat.';
+            }
+            
+            // Add tactical context based on keywords
+            if (keywords.includes('fire') || keywords.includes('damage')) {
+                tip += `<br><br><strong>⚔️ Offensive Use:</strong> Combine with other damage dealers for burst combos. ${keywords.includes('fire') ? 'DoT (Damage over Time) stacks with repeated applications!' : ''}`;
+            }
+            if (keywords.includes('heal') || keywords.includes('support')) {
+                tip += `<br><br><strong>🛡️ Defensive Use:</strong> Keep allies healthy to sustain long battles. Don't wait until it's too late - heal proactively!`;
+            }
+            if (keywords.includes('buff')) {
+                tip += `<br><br><strong>✨ Enhancement Use:</strong> Apply before major attacks to amplify damage. Stack multiple buffs for exponential power gains!`;
+            }
+            
+            return tip;
+        }
+        
+        // Generate fusion usage tip
+        function getFusionUsageTip(fusion) {
+            const tier = fusion.tier;
+            const mult = fusion.multiplier || 1;
+            
+            let tip = '';
+            
+            if (tier === 'Legendary') {
+                tip = `This is a <strong style="color: #ff8800;">GAME-CHANGING</strong> fusion! `;
+                if (mult >= 3) tip += `With <strong>×${mult} multiplier</strong>, it can OBLITERATE enemies or save entire battles. `;
+                tip += `Activates automatically when pattern requirements are met. Can single-handedly turn impossible situations into victories. `;
+                tip += `<br><br><strong>🎯 Pro Strategy:</strong> Build your entire deck strategy around reliably triggering this fusion. It's worth it!`;
+            } else if (tier === 'Epic') {
+                tip = `<strong style="color: #ff6496;">Powerful synergy</strong> that significantly amplifies your combat effectiveness. `;
+                if (mult >= 2) tip += `The ×${mult} multiplier makes this incredibly impactful - `;
+                tip += `Plan your card construction to consistently trigger this pattern. `;
+                tip += `<br><br><strong>🎯 Usage:</strong> This fusion gives you a major edge. Opponents won't expect the sudden power spike!`;
+            } else if (tier === 'Rare') {
+                tip = `Solid fusion providing <strong style="color: #ffe664;">noticeable advantage</strong> when active. `;
+                tip += `Worth positioning your skills to trigger, but don't sacrifice overall card balance. `;
+                tip += `<br><br><strong>🎯 Tip:</strong> Combine with other fusions for cascading synergy effects!`;
+            } else {
+                tip = `Basic synergy giving you a <strong>minor but reliable boost</strong>. `;
+                tip += `Triggers naturally during normal play as bonus effect. Don't rely on it, but appreciate it when it procs!`;
+            }
+            
+            return tip;
+        }
+        
+        // Get keyword usage in current card
+        function getKeywordUsageInCard(keyword) {
+            if (!currentCard) return 'No card selected.';
+            
+            const key = keyword.toLowerCase();
+            const skills = currentCard.glyphs.filter(g => g && g.keywords?.map(k => k.toLowerCase()).includes(key));
+            
+            if (skills.length === 0) {
+                return `No skills with <strong style="color: #ff6464;">${keyword.toUpperCase()}</strong> keyword in current card.`;
+            }
+            
+            const count = skills.length;
+            const totalPower = skills.reduce((sum, s) => sum + (s.power || 0), 0);
+            
+            let usage = `<strong style="color: #00e3d6;">${count} skill${count > 1 ? 's' : ''}</strong> in this card use ${keyword.toUpperCase()}, combining for <strong style="color: #ffd700;">${totalPower} total ${keyword.toUpperCase()} power</strong>. `;
+            
+            if (count >= 4) {
+                usage += `<br><br><strong style="color: #ff8800;">🔥 MASTERY LEVEL!</strong> Extreme concentration enables devastating fusion combos and specialty builds. You're a ${keyword} specialist!`;
+            } else if (count >= 3) {
+                usage += `<br><br><strong style="color: #ffe664;">⚗️ High concentration</strong> creates powerful fusion potential. Look for synergy bonuses!`;
+            } else if (count >= 2) {
+                usage += `<br><br>Multiple uses create <strong>synergy potential</strong>. May trigger fusion effects.`;
+            } else {
+                usage += `<br><br>Single focused application - pure and direct effect.`;
+            }
+            
+            return usage;
+        }
+        
+        // Get combat tips for specific keywords
+        function getKeywordCombatTips(keyword) {
+            const key = keyword.toLowerCase();
+            
+            // Strategic combat tips for different keyword types
+            const tips = {
+                // Elements
+                fire: 'Pairs with Lightning for chain explosions. Counter with Water or Ice. Stack Burn effects for DoT mastery.',
+                ice: 'Slows enable precision strikes. Combine with Water for Blizzard effects. Vulnerable to Fire melting.',
+                lightning: 'Instant burst damage. Chains between grouped enemies. Earth negates - reposition first.',
+                water: 'Adaptive element. Heals + cleanses in defense. Amplifies Ice control. Douses Fire threats.',
+                earth: 'Tank foundation. Blocks Lightning completely. Combine with Dark for decay synergy.',
+                dark: 'Life drain sustains. Curse stacking weakens over time. Light purifies - use preemptively.',
+                light: 'Purify before buffing allies. Massive damage vs cursed enemies. Counters Dark strategies.',
+                
+                // Mechanics
+                burn: 'DoT stacks multiplicatively. Pairs with Detonate for burst. Some skills convert to Decay.',
+                shield: 'Absorb before heal for efficiency. Stack before big hits. Some attacks can sunder.',
+                heal: 'Time after enemy burst. Venus/Blessing enhance. Cleanse synergy increases value.',
+                damage: 'Maximize with vulnerability. Burst when shields down. Chain for combos.',
+                buff: 'Stack before major plays. Duration-extend with Anchor. Discord counters - cleanse first.',
+                debuff: 'Layer multiple for lockdown. Consume for instant value. Cleanse is the counter.',
+                
+                // Advanced
+                structure: 'Deploy for zone control. Amplifies Field effects. Lasts until destroyed - protect it.',
+                field: 'Area denial tool. Stacks with Amplify. Structures enhance Field power.',
+                invoke: 'Enhanced by Chant stacks. Primary power spike. Save for critical moments.',
+                threshold: 'Build charge methodically. Collapse for AoE devastation. Track carefully.'
+            };
+            
+            if (tips[key]) {
+                return `
+                    <div style="margin-top: 15px; padding: 15px; background: linear-gradient(135deg, rgba(255,136,0,0.15), rgba(255,100,100,0.15)); border-radius: 8px; border-left: 4px solid #ff8800;">
+                        <strong style="color: #ff8800; font-size: 1.1em;">⚔️ Combat Strategy Tips:</strong><br>
+                        <div style="margin-top: 10px; line-height: 1.7; font-size: 1.05em;">
+                            ${tips[key]}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            return ''; // No specific tips for this keyword
+        }
+        
+        // Debug function to check database
+        function debugDatabase() {
+            console.log('=== DATABASE DEBUG ===');
+            console.log('Total entries:', Object.keys(SKILL_DATABASE).length);
+            console.log('Actual skills (÷2 for normalized names):', Object.keys(SKILL_DATABASE).length / 2);
+            
+            // Count by type
+            const skills = Object.values(SKILL_DATABASE);
+            const uniqueSkills = skills.filter((skill, index, self) => 
+                index === self.findIndex(s => s.id === skill.id)
+            );
+            
+            console.log('Unique skills:', uniqueSkills.length);
+            console.log('Engines breakdown:', uniqueSkills.reduce((acc, skill) => {
+                acc[skill.engine] = (acc[skill.engine] || 0) + 1;
+                return acc;
+            }, {}));
+            
+            // Test specific lookups
+            console.log('\n=== Testing Lookups ===');
+            console.log('Mahasiah:', SKILL_DATABASE['Mahasiah']);
+            console.log('Fused Foundation Scan:', SKILL_DATABASE['Fused Foundation Scan']);
+            console.log('Basic Scaffold:', SKILL_DATABASE['Basic Scaffold']);
+            
+            // List all skill names containing "fused"
+            const fusedSkills = Object.keys(SKILL_DATABASE).filter(name => 
+                name.toLowerCase().includes('fused') && !name.includes(' ')
+            );
+            console.log('\nFused skills found:', fusedSkills.length);
+            console.log('Sample fused skills:', fusedSkills.slice(0, 10));
+            
+            alert(`Database loaded: ${uniqueSkills.length} unique skills\nCheck console for details`);
+        }
+        
+        // Initialize
+        async function init() {
+            await buildSkillDatabase(); // Build database from loaded data-full.js + invocation + fused skills
+            loadCards(); // Then load cards
+        }
+        
+        init(); // Start initialization
+        
+        // Auto-refresh every 2 seconds to sync with workshop
+        setInterval(() => {
+            const oldCount = savedCards.length;
+            loadCards();
+            if (savedCards.length !== oldCount) {
+                console.log('🔄 Card collection updated!');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
