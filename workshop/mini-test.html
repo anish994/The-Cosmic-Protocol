@@ -49,6 +49,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            max-height: 95vh;
         }
         
         .panel-header {
@@ -59,47 +60,274 @@
             font-size: 14px;
         }
         
-        /* LEFT: Glyph Library */
+        /* LEFT: Glyph Library - Premium Card Collection */
         .glyph-library {
             overflow-y: auto;
-            padding: 8px;
+            overflow-x: hidden;
+            padding: 10px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            overscroll-behavior: contain;
+        }
+        
+        /* Smooth scrollbar styling */
+        .glyph-library::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .glyph-library::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 3px;
+        }
+        
+        .glyph-library::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.4);
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        
+        .glyph-library::-webkit-scrollbar-thumb:hover {
+            background: rgba(139,92,246,0.6);
         }
         
         .glyph-card {
-            background: rgba(255,255,255,0.08);
-            border: 2px solid rgba(139,92,246,0.3);
-            border-radius: 8px;
-            padding: 8px;
-            margin-bottom: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            background: linear-gradient(to bottom, rgba(20,20,35,0.95), rgba(15,15,25,0.98));
+            border-left: 4px solid;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.4);
+            border-radius: 6px;
+            padding: 12px;
+            cursor: grab;
+            transition: all 0.25s ease;
             user-select: none;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
         }
         
-        .glyph-card:hover, .glyph-card:active {
-            background: rgba(139,92,246,0.2);
-            border-color: rgba(139,92,246,0.6);
-            transform: scale(1.02);
+        /* Tier colors for left border */
+        .glyph-card[data-tier="0"] { border-left-color: #8b5cf6; }
+        .glyph-card[data-tier="1"] { border-left-color: #64b4ff; }
+        .glyph-card[data-tier="2"] { border-left-color: #ffe664; }
+        .glyph-card[data-tier="3"] { border-left-color: #ff6496; }
+        .glyph-card[data-tier="4"] { border-left-color: #ff8800; }
+        
+        .glyph-card:hover {
+            background: linear-gradient(to bottom, rgba(25,25,45,0.98), rgba(18,18,30,1));
+            border-left-width: 5px;
+            transform: translateX(2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+        
+        .glyph-card:active {
+            cursor: grabbing;
+            transform: translateX(0) scale(0.99);
         }
         
         .glyph-card.selected {
-            background: rgba(139,92,246,0.4);
-            border-color: rgba(139,92,246,0.8);
-            box-shadow: 0 0 12px rgba(139,92,246,0.6);
+            background: linear-gradient(to bottom, rgba(35,25,55,1), rgba(25,20,40,1));
+            border-left-width: 6px;
+            box-shadow: 0 6px 20px rgba(139,92,246,0.5), inset 0 0 12px rgba(139,92,246,0.15);
+        }
+        
+        .glyph-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            gap: 8px;
+        }
+        
+        .glyph-header-left {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .glyph-header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 3px;
         }
         
         .glyph-name {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 13px;
+            line-height: 1.3;
+            letter-spacing: 0.3px;
+            color: #fff;
+        }
+        
+        .glyph-tier-badge {
+            font-size: 7px;
+            padding: 3px 7px;
+            border-radius: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            white-space: nowrap;
+        }
+        
+        .glyph-engine-badge {
+            font-size: 8px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.7);
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
             margin-bottom: 4px;
         }
         
+        .glyph-category {
+            font-size: 9px;
+            color: rgba(255,255,255,0.8);
+            text-align: right;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+        
+        .glyph-card[data-tier="0"] .glyph-tier-badge { color: #b894ff; border-color: #8b5cf6; }
+        .glyph-card[data-tier="1"] .glyph-tier-badge { color: #64b4ff; border-color: #64b4ff; }
+        .glyph-card[data-tier="2"] .glyph-tier-badge { color: #ffe664; border-color: #ffe664; }
+        .glyph-card[data-tier="3"] .glyph-tier-badge { color: #ff6496; border-color: #ff6496; }
+        .glyph-card[data-tier="4"] .glyph-tier-badge { color: #ff8800; border-color: #ff8800; }
+        
         .glyph-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .glyph-stat-item {
             display: flex;
-            gap: 8px;
-            font-size: 11px;
-            opacity: 0.8;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            padding: 6px 4px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.06);
+            font-size: 10px;
+        }
+        
+        .glyph-stat-item .stat-value {
+            font-weight: 700;
+            font-size: 13px;
+            color: #fff;
+        }
+        
+        .glyph-stat-item .stat-label {
+            font-size: 8px;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .glyph-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .glyph-keyword-badge {
+            font-size: 8px;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid;
+        }
+        
+        /* Owned Skills Filter Tabs */
+        .skill-filter-tabs {
+            display: flex;
+            gap: 4px;
+            padding: 8px 8px 0 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 8px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            overscroll-behavior-x: contain;
+        }
+        
+        .skill-filter-tabs::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .skill-filter-tabs::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.4);
+            border-radius: 2px;
+        }
+        
+        .filter-tab {
+            padding: 6px 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px 6px 0 0;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.6);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            user-select: none;
+        }
+        
+        .filter-tab:hover {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.9);
+            border-color: rgba(139,92,246,0.3);
+        }
+        
+        .filter-tab.active {
+            background: linear-gradient(to bottom, rgba(139,92,246,0.2), rgba(139,92,246,0.1));
+            border-color: rgba(139,92,246,0.6);
+            border-bottom-color: transparent;
+            color: #b894ff;
+            position: relative;
+        }
+        
+        .filter-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(139,92,246,0.8), transparent);
+        }
+        
+        .filter-tab .count-badge {
+            display: inline-block;
+            margin-left: 4px;
+            padding: 1px 5px;
+            background: rgba(139,92,246,0.3);
+            border-radius: 10px;
+            font-size: 8px;
+            font-weight: 700;
+            opacity: 0.7;
+        }
+        
+        .filter-tab.active .count-badge {
+            background: rgba(139,92,246,0.5);
+            opacity: 1;
         }
         
         /* CENTER: 12-House Chart */
@@ -505,6 +733,29 @@
             padding: 12px;
             flex: 1;
             overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            overscroll-behavior: contain;
+        }
+        
+        .card-preview::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .card-preview::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 3px;
+        }
+        
+        .card-preview::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.4);
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        
+        .card-preview::-webkit-scrollbar-thumb:hover {
+            background: rgba(139,92,246,0.6);
         }
         
         .card-stats {
@@ -1508,6 +1759,18 @@
                     <button onclick="window.location.href='../05-fusion/demo/index.html'" style="padding: 4px 8px; background: rgba(139,92,246,0.3); color: #b894ff; border: 1px solid rgba(139,92,246,0.5); border-radius: 4px; cursor: pointer; font-size: 11px;">⚡ Fusion</button>
                 </div>
             </div>
+            <!-- Skill Engine Filter Tabs -->
+            <div class="skill-filter-tabs">
+                <div class="filter-tab active" onclick="filterSkills('all')" data-filter="all">🌟 All</div>
+                <div class="filter-tab" onclick="filterSkills('foundational')" data-filter="foundational">🏛️ Foundational</div>
+                <div class="filter-tab" onclick="filterSkills('character_analysis')" data-filter="character_analysis">🎭 Character</div>
+                <div class="filter-tab" onclick="filterSkills('consciousness')" data-filter="consciousness">👁️ Consciousness</div>
+                <div class="filter-tab" onclick="filterSkills('divination')" data-filter="divination">🔮 Divination</div>
+                <div class="filter-tab" onclick="filterSkills('singularity')" data-filter="singularity">⚡ Singularity</div>
+                <div class="filter-tab" onclick="filterSkills('tantra')" data-filter="tantra">🕉️ Tantra</div>
+                <div class="filter-tab" onclick="filterSkills('therapeutic')" data-filter="therapeutic">🌿 Therapeutic</div>
+                <div class="filter-tab" onclick="filterSkills('invocation')" data-filter="invocation">✨ Invocation</div>
+            </div>
             <div class="glyph-library" id="glyph-library">
                 <!-- Glyphs populated by JS -->
             </div>
@@ -1520,6 +1783,7 @@
                 <button onclick="resetChart()" style="padding: 4px 8px; background: rgba(255,80,80,0.2); color: #ff5050; border: 1px solid rgba(255,80,80,0.4); border-radius: 4px; cursor: pointer; font-size: 11px;" title="Clear all skills and reset Lagna">🔄 Reset</button>
             </div>
             
+            <div style="overflow-y: auto; overflow-x: hidden; flex: 1; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; overscroll-behavior: contain;">
             <!-- Lagna Selector -->
             <div class="lagna-selector">
                 <label for="lagna-select">🌅 Lagna (Ascendant):</label>
@@ -1621,6 +1885,7 @@
                 <button id="invoke-card-btn" onclick="invokeCard()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(0,227,214,0.3)); color: #fff; border: 2px solid rgba(139,92,246,0.6); border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 700; transition: all 0.3s ease;" disabled>
                     🎴 Invoke Card (Fill at least 1 slot)
                 </button>
+            </div>
             </div>
         </div>
         
@@ -1811,6 +2076,7 @@
                         tags: skill.tags || skill.keywords || [], // Use tags for synergy, fallback to keywords
                         engine: skill.engine || 'unknown',
                         tier: skill.tier || 0,
+                        category: skill.category || 'Unknown',
                         isFused: !!skill.fusionIngredients,
                         unlocked: skill.unlocked !== false // default to true if undefined
                     }));
@@ -3080,9 +3346,55 @@
                 console.error('❌ init(): loadSkillsFromSystem failed', e);
             }
             try { renderGlyphLibrary(); } catch (e) { console.error('❌ renderGlyphLibrary failed', e); }
+            try { updateFilterCounts(); } catch (e) { console.error('❌ updateFilterCounts failed', e); }
             try { renderVedicChart(); } catch (e) { console.error('❌ renderVedicChart failed', e); }
             try { setupEventListeners(); } catch (e) { console.error('❌ setupEventListeners failed', e); }
             try { updateCardPreview(); } catch (e) { console.error('❌ updateCardPreview failed', e); }
+        }
+        
+        // Current filter state
+        let currentSkillFilter = 'all';
+        
+        // === UPDATE FILTER TAB COUNTS ===
+        function updateFilterCounts() {
+            const ownedSkills = AVAILABLE_SKILLS.filter(s => s.unlocked);
+            const engines = ['foundational', 'character_analysis', 'consciousness', 'divination', 'singularity', 'tantra', 'therapeutic', 'invocation'];
+            
+            // Update All count
+            const allTab = document.querySelector('.filter-tab[data-filter="all"]');
+            if (allTab) {
+                const existingBadge = allTab.querySelector('.count-badge');
+                if (existingBadge) existingBadge.remove();
+                allTab.innerHTML += `<span class="count-badge">${ownedSkills.length}</span>`;
+            }
+            
+            // Update individual engine counts
+            engines.forEach(engine => {
+                const count = ownedSkills.filter(s => s.engine === engine).length;
+                const tab = document.querySelector(`.filter-tab[data-filter="${engine}"]`);
+                if (tab) {
+                    const existingBadge = tab.querySelector('.count-badge');
+                    if (existingBadge) existingBadge.remove();
+                    tab.innerHTML += `<span class="count-badge">${count}</span>`;
+                }
+            });
+        }
+        
+        // === FILTER SKILLS BY TYPE ===
+        function filterSkills(filterType) {
+            currentSkillFilter = filterType;
+            
+            // Update active tab
+            document.querySelectorAll('.filter-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.filter === filterType) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Re-render library with filter
+            renderGlyphLibrary();
+            console.log(`🔍 Filtered skills by: ${filterType}`);
         }
         
         // === RENDER GLYPH LIBRARY ===
@@ -3091,7 +3403,12 @@
             container.innerHTML = '';
             
             // Filter: Only show OWNED (unlocked) skills - makes sense for deck building!
-            const ownedSkills = AVAILABLE_SKILLS.filter(s => s.unlocked);
+            let ownedSkills = AVAILABLE_SKILLS.filter(s => s.unlocked);
+            
+            // Apply engine filter if not 'all'
+            if (currentSkillFilter !== 'all') {
+                ownedSkills = ownedSkills.filter(skill => skill.engine === currentSkillFilter);
+            }
             
             if (ownedSkills.length === 0) {
                 container.innerHTML = '<div class="placeholder" style="padding: 20px; text-align: center;">🔒 No skills owned yet!<br><br>Visit the <a href="../05-fusion/demo/index.html" style="color: #8b5cf6; text-decoration: underline;">⚡ Fusion System</a> to unlock and fuse skills first!</div>';
@@ -3100,20 +3417,86 @@
             
             console.log(`✅ Showing ${ownedSkills.length} owned skills in workshop`);
             
+            const tierNames = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'];
+            const engineIcons = {
+                'foundational': '🏛️',
+                'character_analysis': '🎭',
+                'consciousness': '👁️',
+                'divination': '🔮',
+                'singularity': '⚡',
+                'tantra': '🕉️',
+                'therapeutic': '🌿',
+                'invocation': '✨'
+            };
+            const engineNames = {
+                'foundational': 'Foundational',
+                'character_analysis': 'Character',
+                'consciousness': 'Consciousness',
+                'divination': 'Divination',
+                'singularity': 'Singularity',
+                'tantra': 'Tantra',
+                'therapeutic': 'Therapeutic',
+                'invocation': 'Invocation'
+            };
+            
             ownedSkills.forEach(skill => {
                 const card = document.createElement('div');
                 card.className = 'glyph-card';
                 card.dataset.skillId = skill.id;
+                card.dataset.tier = skill.tier || 0;
                 card.draggable = true;
                 
+                // Get primary keyword color for card accent
+                const primaryKeyword = (skill.keywords || [])[0];
+                const primaryTagData = primaryKeyword ? TAG_DATA[primaryKeyword.toLowerCase()] : null;
+                const accentColor = primaryTagData ? primaryTagData.color : '#8b5cf6';
+                
+                // Get keyword colors from TAG_DATA
+                const keywordBadges = (skill.keywords || []).slice(0, 3).map(kw => {
+                    const tagData = TAG_DATA[kw.toLowerCase()];
+                    const color = tagData ? tagData.color : '#8b5cf6';
+                    return `<span class="glyph-keyword-badge" style="background: ${color}33; border: 1px solid ${color}80; color: ${color};">${kw}</span>`;
+                }).join('');
+                
+                const engineIcon = engineIcons[skill.engine] || '🏛️';
+                const engineName = engineNames[skill.engine] || skill.engine;
+                const powerScore = skill.powerScore || skill.power || 0;
+                
+                // Apply color accent as left border and subtle background glow
+                card.style.borderLeft = `4px solid ${accentColor}`;
+                card.style.background = `linear-gradient(135deg, ${accentColor}08, rgba(24,24,32,0.95))`;
+                card.style.boxShadow = `0 2px 8px ${accentColor}20, inset 0 0 30px ${accentColor}05`;
+                
                 card.innerHTML = `
-                    <div class="glyph-name">${skill.name}${skill.isFused ? ' ✨' : ''}</div>
-                    <div class="glyph-stats">
-                        <span>⚡${skill.power}</span>
-                        <span>💰${skill.kp}</span>
-                        <span>🕐${skill.cooldown}s</span>
+                    <div class="glyph-header">
+                        <div class="glyph-header-left">
+                            <div class="glyph-name" style="color: ${accentColor};">${skill.name}${skill.isFused ? ' ✨' : ''}</div>
+                            <div class="glyph-engine-badge">
+                                <span>${engineIcon}</span>
+                                <span>${engineName}</span>
+                            </div>
+                        </div>
+                        <div class="glyph-header-right">
+                            <div class="glyph-tier-badge">${tierNames[skill.tier || 0]}</div>
+                            <div class="glyph-category">${skill.category || 'No Category'}</div>
+                        </div>
                     </div>
-                    ${skill.isFused ? '<div style="font-size: 9px; opacity: 0.6; margin-top: 2px;">🔥 Fused Skill</div>' : ''}
+                    <div class="glyph-stats">
+                        <div class="glyph-stat-item">
+                            <div class="stat-value" style="color: ${accentColor};">${powerScore}</div>
+                            <div class="stat-label">Power</div>
+                        </div>
+                        <div class="glyph-stat-item">
+                            <div class="stat-value">${skill.cooldown || 0}s</div>
+                            <div class="stat-label">Cooldown</div>
+                        </div>
+                        <div class="glyph-stat-item">
+                            <div class="stat-value">${skill.cost?.kp || skill.kp || 0}</div>
+                            <div class="stat-label">KP Cost</div>
+                        </div>
+                    </div>
+                    <div class="glyph-keywords">${keywordBadges}</div>
+                    ${skill.isFused ? '<div style="font-size: 9px; opacity: 0.7; margin-top: 4px; color: #ff8800;">🔥 Fused Skill</div>' : ''}
                 `;
                 
                 // Click to select
@@ -4894,7 +5277,10 @@
             air: { name: '🌬️ Air', category: 'element', color: '#87ceeb', short: 'Wind element', medium: 'Air abilities use wind and storms for mobility and AoE.', detailed: { description: 'Air element focuses on mobility, speed, and area control.', strengths: ['Fast', 'Mobile', 'AoE spread'], weaknesses: ['Lower damage'], combos: ['Air + Lightning = Storm'] } },
             chaos: { name: '🌀 Chaos', category: 'element', color: '#9400d3', short: 'Chaotic and random', medium: 'Chaos abilities have unpredictable and random effects.', detailed: { description: 'Chaos skills embrace randomness for wild swings of power.', strengths: ['High variance', 'Surprising'], weaknesses: ['Unreliable', 'RNG dependent'], combos: ['Chaos + Crit = RNG extreme'] } },
             expansion: { name: '🌌 Expansion', category: 'mechanic', color: '#ffa500', short: 'Growing effects', medium: 'Expansion abilities grow stronger over time or area.', detailed: { description: 'Expansion skills scale up the longer they persist or the more they spread.', strengths: ['Snowball power', 'Area control'], weaknesses: ['Slow start'], combos: ['Expansion + AoE = Map control'] } },
-            leadership: { name: '👑 Leadership', category: 'mechanic', color: '#ffd700', short: 'Empowers allies', medium: 'Leadership skills buff and inspire your team.', detailed: { description: 'Leadership abilities make everyone around you stronger.', strengths: ['Team multiplier', 'Force multiplier'], weaknesses: ['Needs allies'], combos: ['Leadership + Support = Unstoppable team'] } }
+            leadership: { name: '👑 Leadership', category: 'mechanic', color: '#ffd700', short: 'Empowers allies', medium: 'Leadership skills buff and inspire your team.', detailed: { description: 'Leadership abilities make everyone around you stronger.', strengths: ['Team multiplier', 'Force multiplier'], weaknesses: ['Needs allies'], combos: ['Leadership + Support = Unstoppable team'] } },
+            
+            // === SINGULAR/PLURAL ALIASES ===
+            sutra: { name: '📜 Sutra', category: 'ancient', color: '#ffd700', short: 'Ancient and powerful ability', medium: 'Ancient and powerful skill derived from sacred texts.', detailed: { description: 'Sutra skills are ancient, powerful abilities learned from sacred texts.', strengths: ['High impact', 'Unique effects', 'Profound power'], weaknesses: ['High cost', 'Long cooldowns', 'Situational'], combos: ['Sutra + Ritual = Divine power', 'Sutra + Meditation = Enlightened state'] } }
         };
         
         // Log tag database on init for testing
