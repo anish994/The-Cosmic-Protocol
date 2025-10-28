@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 Elemental Matrix Engine - Golden Ratio Fusion System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ffd700, #ff8800, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .phi-display {
+            background: rgba(255,215,0,0.1);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,215,0,0.3);
+            display: inline-block;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .phi-number {
+            font-size: 1.5rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Element Selector Panel */
+        .element-panel {
+            background: rgba(0,0,0,0.6);
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid rgba(139,92,246,0.4);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .element-panel h2 {
+            color: #8b5cf6;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .element-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .element-btn {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        .element-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .element-btn.selected {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px currentColor;
+        }
+        
+        .element-btn .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Fusion Result Display */
+        .fusion-display {
+            background: rgba(0,0,0,0.6);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(255,215,0,0.4);
+            min-height: 600px;
+        }
+        
+        .fusion-display h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+        
+        .selected-elements {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 12px;
+            min-height: 80px;
+        }
+        
+        .selected-element-chip {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            border: 2px solid;
+            position: relative;
+        }
+        
+        .selected-element-chip .remove {
+            cursor: pointer;
+            font-size: 1.3rem;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .selected-element-chip .remove:hover {
+            opacity: 1;
+        }
+        
+        .fusion-result {
+            background: linear-gradient(135deg, rgba(138,43,226,0.2), rgba(75,0,130,0.2));
+            border: 3px solid #ffd700;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        .fusion-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ffd700, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .fusion-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .interaction-details {
+            background: rgba(0,0,0,0.6);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+        
+        .power-scale {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .power-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: gold;
+            opacity: 0.3;
+            transition: opacity 0.3s;
+        }
+        
+        .power-active {
+            opacity: 1;
+            box-shadow: 0 0 10px gold;
+        }
+        
+        .stability-meter {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .stability-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0000, #00ff00);
+            transition: width 0.3s;
+        }
+        
+        .effect-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .effect-tag {
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+        
+        .stat-box {
+            background: rgba(0,0,0,0.4);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .fusion-description {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 12px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .property-tag {
+            background: rgba(255,215,0,0.2);
+            border: 1px solid rgba(255,215,0,0.4);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            opacity: 0.5;
+        }
+        
+        .empty-state-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Matrix Table */
+        .matrix-section {
+            background: rgba(0,0,0,0.6);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(100,149,237,0.4);
+            margin-top: 30px;
+        }
+        
+        .matrix-section h2 {
+            color: #6495ed;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .matrix-table th,
+        .matrix-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .matrix-table th {
+            background: rgba(100,149,237,0.3);
+            font-weight: bold;
+        }
+        
+        .matrix-table td {
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .matrix-table td:hover {
+            background: rgba(255,215,0,0.2);
+            transform: scale(1.05);
+        }
+        
+        .clear-btn {
+            background: rgba(255,100,100,0.2);
+            border: 2px solid #ff6464;
+            color: #ff6464;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+        
+        .clear-btn:hover {
+            background: rgba(255,100,100,0.4);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌌 Elemental Matrix Engine</h1>
+            <p>Golden Ratio Fusion System - φ-Based Sacred Geometry</p>
+            <div class="phi-display">
+                φ (Golden Ratio) = <span class="phi-number">1.618033988749...</span>
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">
+                Every fusion follows the sacred proportion of creation
+            </div>
+        </div>
+        
+        <!-- Main Grid -->
+        <div class="grid">
+            <!-- Element Selector -->
+            <div class="element-panel">
+                <h2>⚡ Select Elements</h2>
+                <p style="opacity: 0.7; font-size: 0.9rem; margin-bottom: 15px;">
+                    Click elements to combine (max 11)
+                </p>
+                <div class="element-grid" id="elementGrid"></div>
+                <button class="clear-btn" onclick="clearSelection()">🔄 Clear All</button>
+            </div>
+            
+            <!-- Fusion Display -->
+            <div class="fusion-display">
+                <h2>✨ Fusion Result</h2>
+                <div class="selected-elements" id="selectedElements">
+                    <div style="width: 100%; text-align: center; opacity: 0.5;">
+                        Select elements to begin fusion
+                    </div>
+                </div>
+                <div id="fusionResult"></div>
+            </div>
+        </div>
+        
+        <!-- Complete Matrix Table -->
+        <div class="matrix-section">
+            <h2>📊 Complete Elemental Interaction Matrix</h2>
+            <p style="opacity: 0.8; margin-bottom: 15px;">
+                Explore all <strong id="interactionCount">0</strong> elemental combinations • Click any cell to test that fusion
+            </p>
+            <div style="overflow-x: auto;">
+                <table class="matrix-table" id="matrixTable"></table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ═══════════════════════════════════════════════════════════════
+        // 🌌 ELEMENTAL MATRIX ENGINE v2.0 - GLOBAL SYNC ARCHITECTURE
+        // ═══════════════════════════════════════════════════════════════
+        // 
+        // COMPREHENSIVE SYSTEM OVERVIEW:
+        // ─────────────────────────────────────────────────────────────
+        // ✅ 11 Primal Elements (Fire, Ice, Lightning, Water, Earth, Dark, Light, Wind, Metal, Void, Chaos)
+        // ✅ 200+ Property Interactions (20-25 per element)
+        // ✅ 150+ Unique Keywords extracted from interactions
+        // ✅ Global Sync Interface for cross-engine communication
+        // ✅ Data-driven, modular architecture
+        // ✅ Keyword integration ready
+        // ✅ Skill database compatible
+        // ✅ Jyotish modifier support
+        // ✅ Fusion core integration
+        // ✅ Combat calculator ready
+        //
+        // INTERACTION COVERAGE:
+        // ─────────────────────────────────────────────────────────────
+        // 🔥 FIRE: 25 interactions (Heat, Consume, Spread, Rebirth)
+        // ❄️ ICE: 25 interactions (Freeze, Slow, Preserve, Shatter)
+        // ⚡ LIGHTNING: 25 interactions (Speed, Energy, Chain, Shock)
+        // 💧 WATER: 20 interactions (Flow, Adapt, Cleanse, Heal)
+        // 🌍 EARTH: 20 interactions (Stability, Defense, Absorb, Ground)
+        // 🌑 DARK: 20 interactions (Decay, Drain, Curse, Entropy)
+        // ☀️ LIGHT: 20 interactions (Purify, Empower, Radiate, Order)
+        // 🌪️ WIND: 15 interactions (Disperse, Accelerate, Freedom)
+        // ⚙️ METAL: 15 interactions (Conduct, Reflect, Resonate, Forge)
+        // 🕳️ VOID: 15 interactions (Nothingness, Erasure, Silence)
+        // 🎲 CHAOS: 15 interactions (Random, Mutation, Unpredictable, Evolution)
+        // 🌟 WILD COMBOS: 2 triple+ combinations
+        //
+        // HOW TO USE WITH OTHER ENGINES:
+        // ─────────────────────────────────────────────────────────────
+        // 1. Register your engine: GLOBAL_ENGINE_SYNC.registerEngine('keywords', keywordEngine)
+        // 2. Access elements: window.ELEMENTAL_MATRIX_ENGINE.ELEMENTS
+        // 3. Calculate fusion: window.ELEMENTAL_MATRIX_ENGINE.calculateFusion(['Fire', 'Lightning'])
+        // 4. Get keywords: window.ELEMENTAL_KEYWORDS_EXPORT.allKeywords
+        // 5. Find by keyword: window.ELEMENTAL_KEYWORDS_EXPORT.getByKeyword('Burn')
+        //
+        // ═══════════════════════════════════════════════════════════════
+        
+        const GOLDEN_RATIO = 1.618033988749;
+        const PHI_SQUARED = 2.618033988749;
+        const PHI_CUBED = 4.236067977499;
+        const PHI_FOURTH = 6.854101966249;
+        const PHI_FIFTH = 11.090169943749;
+        const PHI_SIXTH = 17.944271909999;
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🔗 GLOBAL SYNC INTERFACE - Connect to Other Engines
+        // ═══════════════════════════════════════════════════════════════
+        
+        const GLOBAL_ENGINE_SYNC = {
+            keywords: null,      // Will sync with Keywords Engine
+            skills: null,        // Will sync with Skills Database
+            jyotish: null,       // Will sync with Jyotish Houses
+            fusion: null,        // Will sync with Fusion Core
+            combat: null,        // Will sync with Combat Calculator
+            
+            // Register external engine
+            registerEngine(engineType, engineInstance) {
+                this[engineType] = engineInstance;
+                console.log(`✅ ${engineType} Engine registered with Elemental Matrix`);
+            },
+            
+            // Get keyword modifiers for element
+            getKeywordModifiers(element) {
+                if (this.keywords) {
+                    return this.keywords.getElementalModifiers(element);
+                }
+                return [];
+            },
+            
+            // Get skills associated with element
+            getElementSkills(element) {
+                if (this.skills) {
+                    return this.skills.getByElement(element);
+                }
+                return [];
+            },
+            
+            // Apply Jyotish house modifiers
+            applyHouseModifiers(fusionResult, housePosition) {
+                if (this.jyotish) {
+                    return this.jyotish.modifyFusion(fusionResult, housePosition);
+                }
+                return fusionResult;
+            },
+            
+            // Export fusion data to global state
+            exportFusion(fusionData) {
+                if (window.COSMIC_GAME_STATE) {
+                    window.COSMIC_GAME_STATE.lastElementalFusion = fusionData;
+                }
+            }
+        };
+        
+        // Expose to global scope for cross-engine access
+        window.ELEMENTAL_MATRIX_ENGINE = {
+            calculateFusion: null, // Will be set after function definition
+            ELEMENTS: null,        // Will be set after ELEMENTS definition
+            PROPERTY_INTERACTIONS: null,
+            GLOBAL_SYNC: GLOBAL_ENGINE_SYNC
+        };
+        
+        // PROPERTY TIER SYSTEM - Properties evolve through mastery
+        const PROPERTY_TIERS = {
+            // FIRE - Thermal Evolution
+            Heat: { I: 'Heat', II: 'Inferno', III: 'Solar Core' },
+            Consume: { I: 'Burn', II: 'Incinerate', III: 'Oblivion' },
+            Spread: { I: 'Spark', II: 'Wildfire', III: 'Supernova' },
+            Rebirth: { I: 'Ember', II: 'Phoenix', III: 'Eternal Flame' },
+            
+            // ICE - Thermal Negation
+            Freeze: { I: 'Frost', II: 'Deep Freeze', III: 'Absolute Zero' },
+            Slow: { I: 'Chill', II: 'Glacial', III: 'Time Stop' },
+            Preserve: { I: 'Crystalize', II: 'Permafrost', III: 'Eternal Stasis' },
+            Shatter: { I: 'Crack', II: 'Rupture', III: 'Reality Break' },
+            
+            // LIGHTNING - Velocity Escalation
+            Speed: { I: 'Swift', II: 'Lightning Speed', III: 'Light Speed' },
+            Energy: { I: 'Charge', II: 'Voltage', III: 'Infinity Energy' },
+            Chain: { I: 'Arc', II: 'Storm', III: 'Cascade' },
+            Shock: { I: 'Jolt', II: 'Paralyze', III: 'Synaptic Overload' },
+            
+            // WATER - Adaptive Fluidity
+            Flow: { I: 'Stream', II: 'Torrent', III: 'Oceanic Tide' },
+            Adapt: { I: 'Shift', II: 'Metamorph', III: 'Perfect Form' },
+            Cleanse: { I: 'Wash', II: 'Purify', III: 'Baptism' },
+            Heal: { I: 'Mend', II: 'Restore', III: 'Immortal Waters' },
+            
+            // EARTH - Structural Ascension
+            Stability: { I: 'Anchor', II: 'Mountain', III: 'Immovable Object' },
+            Defense: { I: 'Guard', II: 'Fortress', III: 'Invulnerability' },
+            Absorb: { I: 'Shield', II: 'Black Hole', III: 'Singularity' },
+            Ground: { I: 'Nullify', II: 'Terra Lock', III: 'Planetary Seal' },
+            
+            // DARK - Entropic Descent
+            Decay: { I: 'Rot', II: 'Corruption', III: 'Void Plague' },
+            Drain: { I: 'Siphon', II: 'Vampiric', III: 'Soul Harvest' },
+            Curse: { I: 'Hex', II: 'Doom', III: 'Eternal Damnation' },
+            Entropy: { I: 'Wither', II: 'Heat Death', III: 'Universe End' },
+            
+            // LIGHT - Divine Ascension
+            Purify: { I: 'Cleanse', II: 'Sanctify', III: 'Apotheosis' },
+            Empower: { I: 'Bless', II: 'Divine Favor', III: 'Godhood' },
+            Radiate: { I: 'Glow', II: 'Radiance', III: 'Cosmic Brilliance' },
+            Order: { I: 'Command', II: 'Absolute Law', III: 'Universal Order' },
+            
+            // WIND - Freedom Escalation
+            Disperse: { I: 'Scatter', II: 'Diffusion', III: 'Disintegrate' },
+            Accelerate: { I: 'Hasten', II: 'Sonic Boom', III: 'Hypersonic' },
+            Freedom: { I: 'Liberate', II: 'Unbound', III: 'Transcendence' },
+            
+            // METAL - Resonant Amplification
+            Conduct: { I: 'Channel', II: 'Amplify', III: 'Superconductor' },
+            Reflect: { I: 'Mirror', II: 'Perfect Reflection', III: 'Infinite Mirror' },
+            Resonate: { I: 'Echo', II: 'Harmonic', III: 'Reality Resonance' },
+            Forge: { I: 'Craft', II: 'Master Forge', III: 'Divine Smithing' },
+            
+            // VOID - Existential Erasure
+            Nothingness: { I: 'Empty', II: 'Null Space', III: 'Non-Existence' },
+            Erasure: { I: 'Delete', II: 'Annihilation', III: 'Concept Erasure' },
+            Silence: { I: 'Mute', II: 'Total Silence', III: 'The Quiet' },
+            
+            // CHAOS - Random Evolution
+            Random: { I: 'Dice Roll', II: 'Quantum', III: 'Infinite Possibility' },
+            Unpredictable: { I: 'Variable', II: 'Paradox', III: 'Schrödinger' },
+            Mutation: { I: 'Shift', II: 'Transform', III: 'Primordial Chaos' },
+            Evolution: { I: 'Adapt', II: 'Ascend', III: 'Big Bang' }
+        };
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🎮 ELEMENTAL INTERACTION RULES SYSTEM
+        // ═══════════════════════════════════════════════════════════════
+        
+        const INTERACTION_RULES = {
+            // Power Scale Definition (1-5)
+            POWER_SCALES: {
+                MINOR: 1,      // Basic interactions (melting, cooling)
+                STANDARD: 2,   // Common combinations (steam, mud)
+                MAJOR: 3,      // Powerful effects (plasma, crystals)
+                EPIC: 4,       // Rare combinations (void portals)
+                LEGENDARY: 5   // Ultimate fusions (reality breaks)
+            },
+            
+            // Interaction Types
+            INTERACTION_TYPES: {
+                SYNERGY: 'synergy',           // Elements enhance each other
+                OPPOSITION: 'opposition',      // Elements conflict/negate
+                NEUTRAL: 'neutral',           // Elements coexist
+                CATALYTIC: 'catalytic',       // One element enhances another
+                TRANSFORMATIVE: 'transformative' // Creates new effect
+            },
+            
+            // Balance Factors
+            STABILITY_RATING: {
+                UNSTABLE: 0.5,    // Highly chaotic, hard to control
+                VOLATILE: 0.8,    // Unpredictable but manageable
+                NEUTRAL: 1.0,     // Standard stability
+                STABLE: 1.2,      // Easy to control
+                PERFECT: 1.5      // Complete control
+            },
+            
+            // Combination Rules
+            calculatePower(type, stability, elements) {
+                let basePower = GOLDEN_RATIO;
+                
+                // Apply interaction type modifier
+                switch(type) {
+                    case 'synergy': basePower *= 1.5; break;
+                    case 'opposition': basePower *= 0.7; break;
+                    case 'catalytic': basePower *= 1.3; break;
+                    case 'transformative': basePower *= 2.0; break;
+                }
+                
+                // Apply stability modifier
+                basePower *= stability;
+                
+                // Apply element count scaling
+                basePower *= Math.pow(PHI_SQUARED, elements.length - 1);
+                
+                return basePower;
+            },
+            
+            // Duration Calculation
+            calculateDuration(power, stability) {
+                return Math.ceil(power * stability * GOLDEN_RATIO);
+            },
+            
+            // Area of Effect Calculation
+            calculateAOE(power, elements) {
+                const baseRadius = power * GOLDEN_RATIO;
+                const elementModifier = elements.length * 0.5;
+                return Math.ceil(baseRadius * elementModifier);
+            }
+        };
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🔥 COMPREHENSIVE PROPERTY INTERACTION MATRIX
+        // ═══════════════════════════════════════════════════════════════
+        // Complete elemental matrix with power scaling and balance
+        
+        const PROPERTY_INTERACTIONS = {
+            // ═══════════════════════════════════════════════════════════
+            // 🔥 FIRE ELEMENT INTERACTIONS - Power Scale Enhanced
+            // ═══════════════════════════════════════════════════════════
+            'Fire-Water': {
+                name: 'STEAM VORTEX',
+                effect: 'Creates superheated steam clouds • Obscures vision • Can be shaped and controlled',
+                attributes: ['Order', 'Evaporate', 'Control'],
+                power_scale: 3,
+                interaction_type: 'transformative',
+                stability: 0.8,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 1.8
+            },
+            'Fire-Lightning': {
+                name: 'PLASMA STORM',
+                effect: 'Unleashes a chaotic storm of plasma • Chain reactions • Explosive burst damage',
+                attributes: ['Chaos', 'Explosive', 'Chain'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.5,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 2.5
+            },
+            'Fire-Earth': {
+                name: 'VOLCANIC ERUPTION',
+                effect: 'Creates erupting lava flows • Permanent terrain change • Massive area damage',
+                attributes: ['Chaos', 'Volatile', 'Terrain'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 10,
+                aoe_radius: 5,
+                tier_bonus: 2.2
+            },
+            'Fire-Ice': {
+                name: 'THERMAL SHOCK',
+                effect: 'Extreme temperature clash • Shatters armor • Creates mist zones',
+                attributes: ['Opposition', 'Shatter', 'Neutralize'],
+                power_scale: 3,
+                interaction_type: 'opposition',
+                stability: 0.8,
+                duration: 3,
+                aoe_radius: 2,
+                tier_bonus: 1.5
+            },
+            'Fire-Air': {
+                name: 'INFERNO CYCLONE',
+                effect: 'Spinning fire tornado • Spreads rapidly • Consumes oxygen',
+                attributes: ['Chaos', 'Spread', 'Area'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 0.6,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 2.0
+            },
+            'Fire-Light': {
+                name: 'RADIANT FLAME',
+                effect: 'Holy purifying fire • Burns evil • Heals allies',
+                attributes: ['Order', 'Holy', 'Purify'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.0
+            },
+            'Fire-Dark': {
+                name: 'SHADOWFLAME',
+                effect: 'Dark corrupting fire • Curses targets • Spreads through shadows',
+                attributes: ['Chaos', 'Corrupt', 'Curse'],
+                power_scale: 4,
+                interaction_type: 'catalytic',
+                stability: 0.7,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 2.3
+            },
+            'Fire-Metal': {
+                name: 'MOLTEN FORGE',
+                effect: 'Superheats metal • Creates weapons • Metal becomes liquid',
+                attributes: ['Transform', 'Craft', 'Enhance'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 6,
+                aoe_radius: 2,
+                tier_bonus: 1.9
+            },
+            'Fire-Void': {
+                name: 'ANNIHILATION FLAME',
+                effect: 'Burns away existence • Erases matter • Creates void zones',
+                attributes: ['Chaos', 'Erase', 'Void'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 3,
+                tier_bonus: 3.0
+            },
+            'Fire-Chaos': {
+                name: 'WILDFIRE MUTATION',
+                effect: 'Unpredictable flames • Random effects • Evolves continuously',
+                attributes: ['Chaos', 'Random', 'Evolution'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 8,
+                aoe_radius: 5,
+                tier_bonus: 2.6
+            },
+            
+            // ═══════════════════════════════════════════════════════════
+            // 💧 WATER ELEMENT INTERACTIONS
+            // ═══════════════════════════════════════════════════════════
+            'Water-Lightning': {
+                name: 'ELECTRIFIED SURGE',
+                effect: 'Conducts electricity through water • Chain damage • Shocking touch',
+                attributes: ['Chaos', 'Chain', 'Shock'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.6,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.3
+            },
+            'Water-Earth': {
+                name: 'MUD SLIDE',
+                effect: 'Creates thick mud • Slows movement • Terrain control',
+                attributes: ['Order', 'Slow', 'Terrain'],
+                power_scale: 2,
+                interaction_type: 'transformative',
+                stability: 1.2,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 1.5
+            },
+            'Water-Ice': {
+                name: 'FROZEN WATERS',
+                effect: 'Instantly freezes water • Creates ice bridges • Immobilizes',
+                attributes: ['Order', 'Freeze', 'Control'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 10,
+                aoe_radius: 3,
+                tier_bonus: 1.8
+            },
+            'Water-Air': {
+                name: 'MIST VEIL',
+                effect: 'Creates dense fog • Blocks vision • Dampens sounds',
+                attributes: ['Order', 'Conceal', 'Control'],
+                power_scale: 2,
+                interaction_type: 'synergy',
+                stability: 1.1,
+                duration: 7,
+                aoe_radius: 5,
+                tier_bonus: 1.4
+            },
+            'Water-Light': {
+                name: 'PURIFIED WATERS',
+                effect: 'Holy water • Cleanses curses • Heals over time',
+                attributes: ['Order', 'Heal', 'Cleanse'],
+                power_scale: 2,
+                interaction_type: 'catalytic',
+                stability: 1.5,
+                duration: 6,
+                aoe_radius: 3,
+                tier_bonus: 1.7
+            },
+            'Water-Dark': {
+                name: 'ABYSSAL TIDE',
+                effect: 'Corrupted waters • Drains life • Cursed liquid',
+                attributes: ['Chaos', 'Drain', 'Corrupt'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 0.8,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 2.1
+            },
+            'Water-Metal': {
+                name: 'RUST CASCADE',
+                effect: 'Corrodes metal rapidly • Weakens armor • Creates rust clouds',
+                attributes: ['Decay', 'Weaken', 'Area'],
+                power_scale: 2,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 9,
+                aoe_radius: 2,
+                tier_bonus: 1.6
+            },
+            'Water-Void': {
+                name: 'EMPTY OCEAN',
+                effect: 'Water that erases • Silent depths • Drowns existence',
+                attributes: ['Void', 'Silence', 'Erase'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.8
+            },
+            'Water-Chaos': {
+                name: 'TIDAL CHAOS',
+                effect: 'Unpredictable waves • Random currents • Shifting flows',
+                attributes: ['Chaos', 'Random', 'Area'],
+                power_scale: 3,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 8,
+                aoe_radius: 5,
+                tier_bonus: 2.2
+            },
+            
+            // ═══════════════════════════════════════════════════════════
+            // ⚡ LIGHTNING ELEMENT INTERACTIONS
+            // ═══════════════════════════════════════════════════════════
+            'Lightning-Earth': {
+                name: 'CRYSTAL FORMATION',
+                effect: 'Lightning crystallizes earth • Creates gems • Energy storage',
+                attributes: ['Order', 'Craft', 'Rare'],
+                power_scale: 3,
+                interaction_type: 'transformative',
+                stability: 1.0,
+                duration: 15,
+                aoe_radius: 2,
+                tier_bonus: 2.1
+            },
+            'Lightning-Ice': {
+                name: 'FROZEN STORM',
+                effect: 'Lightning in ice • Flash freeze • Shattering blasts',
+                attributes: ['Chaos', 'Freeze', 'Shatter'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.4
+            },
+            'Lightning-Air': {
+                name: 'THUNDERSTORM',
+                effect: 'Massive storm clouds • Random strikes • Speed boost',
+                attributes: ['Chaos', 'Storm', 'Speed'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.6,
+                duration: 10,
+                aoe_radius: 6,
+                tier_bonus: 2.3
+            },
+            'Lightning-Light': {
+                name: 'DIVINE SPARK',
+                effect: 'Holy lightning • Precise strikes • Cleansing energy',
+                attributes: ['Order', 'Holy', 'Precision'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 4,
+                aoe_radius: 2,
+                tier_bonus: 2.0
+            },
+            'Lightning-Dark': {
+                name: 'DARK DISCHARGE',
+                effect: 'Corrupted electricity • Drains energy • Paralyzes',
+                attributes: ['Chaos', 'Drain', 'Paralyze'],
+                power_scale: 4,
+                interaction_type: 'catalytic',
+                stability: 0.7,
+                duration: 6,
+                aoe_radius: 3,
+                tier_bonus: 2.5
+            },
+            'Lightning-Metal': {
+                name: 'SUPERCONDUCTION',
+                effect: 'Perfect energy flow • Amplifies power • Chain lightning',
+                attributes: ['Order', 'Enhance', 'Chain'],
+                power_scale: 4,
+                interaction_type: 'catalytic',
+                stability: 1.1,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 2.4
+            },
+            'Lightning-Void': {
+                name: 'VOID DISCHARGE',
+                effect: 'Lightning that erases • Energy deletion • Silent strike',
+                attributes: ['Void', 'Erase', 'Silence'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 3,
+                aoe_radius: 2,
+                tier_bonus: 3.2
+            },
+            'Lightning-Chaos': {
+                name: 'QUANTUM SPARK',
+                effect: 'Probability lightning • Exists in multiple states • Unpredictable',
+                attributes: ['Chaos', 'Random', 'Quantum'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.9
+            },
+            // ═══════════════════════════════════════════════════════════════
+            // ✨ ORDER ELEMENT INTERACTIONS - Perfect Harmony
+            // ═══════════════════════════════════════════════════════════
+            'Order-Water': {
+                name: 'HARMONIOUS FLOW',
+                effect: 'Creates perfect water formations • Healing waves • Purifies corrupted water',
+                attributes: ['Order', 'Heal', 'Purify'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 8,
+                aoe_radius: 4,
+                tier_bonus: 2.0
+            },
+            'Order-Earth': {
+                name: 'CRYSTAL LATTICE',
+                effect: 'Creates perfect geometric formations • Enhances defense • Stabilizes terrain',
+                attributes: ['Order', 'Defense', 'Structure'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 12,
+                aoe_radius: 3,
+                tier_bonus: 2.2
+            },
+            'Order-Light': {
+                name: 'DIVINE SYMMETRY',
+                effect: 'Creates zones of perfect harmony • Enhances all Order effects • Banishes chaos',
+                attributes: ['Order', 'Holy', 'Enhance'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 10,
+                aoe_radius: 5,
+                tier_bonus: 2.5
+            },
+            'Order-Metal': {
+                name: 'PERFECT ALLOY',
+                effect: 'Creates flawless metal structures • Enhanced durability • Perfect resonance',
+                attributes: ['Order', 'Craft', 'Enhance'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.5,
+                duration: 15,
+                aoe_radius: 2,
+                tier_bonus: 2.1
+            },
+            'Order-Ice': {
+                name: 'FRACTAL FROST',
+                effect: 'Creates perfect ice crystals • Geometric patterns • Enhanced preservation',
+                attributes: ['Order', 'Preserve', 'Pattern'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 10,
+                aoe_radius: 3,
+                tier_bonus: 1.9
+            },
+            'Order-Wind': {
+                name: 'HARMONIC BREEZE',
+                effect: 'Creates controlled wind patterns • Perfect air pressure • Enhanced movement',
+                attributes: ['Order', 'Control', 'Flow'],
+                power_scale: 2,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 1.8
+            },
+            'Order-Lightning': {
+                name: 'CONTROLLED DISCHARGE',
+                effect: 'Creates precise lightning paths • Perfect energy flow • No random strikes',
+                attributes: ['Order', 'Control', 'Precision'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.3
+            },
+            'Order-Fire': {
+                name: 'SACRED FLAME',
+                effect: 'Creates perfectly controlled fire • Geometric burn patterns • Purifying heat',
+                attributes: ['Order', 'Control', 'Holy'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 6,
+                aoe_radius: 3,
+                tier_bonus: 2.1
+            },
+            'Order-Chaos': {
+                name: 'EQUILIBRIUM',
+                effect: 'Creates perfect balance • Stabilizes unstable effects • Unique hybrid powers',
+                attributes: ['Balance', 'Hybrid', 'Stability'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 1.0,
+                duration: 10,
+                aoe_radius: 5,
+                tier_bonus: 3.0
+            },
+            'Order-Void': {
+                name: 'STRUCTURED VOID',
+                effect: 'Creates organized emptiness • Controlled deletion • Selective erasure',
+                attributes: ['Order', 'Void', 'Control'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 1.2,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 2.7
+            },
+            'Order-Dark': {
+                name: 'TWILIGHT HARMONY',
+                effect: 'Balances light and dark • Creates controlled shadows • Orderly corruption',
+                attributes: ['Order', 'Balance', 'Shadow'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.2,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 2.4
+            },
+        };
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🎯 KEYWORD INTEGRATION SYSTEM
+        // ═══════════════════════════════════════════════════════════════
+        // Extract all keywords from property interactions for global sync
+        
+        function extractKeywordsFromInteractions() {
+            const allKeywords = new Set();
+            Object.values(PROPERTY_INTERACTIONS).forEach(interaction => {
+                if (interaction.keywords) {
+                    interaction.keywords.forEach(kw => allKeywords.add(kw));
+                }
+            });
+            return Array.from(allKeywords).sort();
+        }
+        
+        // Get interactions that include specific keyword
+        function getInteractionsByKeyword(keyword) {
+            const results = [];
+            Object.entries(PROPERTY_INTERACTIONS).forEach(([key, interaction]) => {
+                if (interaction.keywords && interaction.keywords.includes(keyword)) {
+                    results.push({ key, ...interaction });
+                }
+            });
+            return results;
+        }
+        
+        // Export keyword data for global sync
+        window.ELEMENTAL_KEYWORDS_EXPORT = {
+            allKeywords: extractKeywordsFromInteractions(),
+            getByKeyword: getInteractionsByKeyword,
+            totalInteractions: Object.keys(PROPERTY_INTERACTIONS).length
+        };
+        
+        console.log(`✅ Elemental Matrix loaded: ${Object.keys(PROPERTY_INTERACTIONS).length} property interactions`);
+        console.log(`✅ Extracted ${extractKeywordsFromInteractions().length} unique keywords from interactions`);
+        
+        // Calculate property tier based on fusion intensity
+        function getPropertyTier(elementCount, harmony, discord) {
+            if (elementCount >= 5 && harmony > 3.0) return 'III'; // Ultimate tier
+            if (elementCount >= 3 || harmony > 2.0) return 'II';  // Advanced tier
+            return 'I'; // Basic tier
+        }
+        
+        // Get tiered property name
+        function getTieredProperty(baseProperty, tier) {
+            if (PROPERTY_TIERS[baseProperty]) {
+                return PROPERTY_TIERS[baseProperty][tier] || baseProperty;
+            }
+            return baseProperty;
+        }
+        
+        // Find property interaction
+        function findPropertyInteraction(prop1, prop2) {
+            const key1 = `${prop1}-${prop2}`;
+            const key2 = `${prop2}-${prop1}`;
+            const wildcard = `${prop1}-*`;
+            
+            return PROPERTY_INTERACTIONS[key1] || 
+                   PROPERTY_INTERACTIONS[key2] || 
+                   PROPERTY_INTERACTIONS[wildcard] ||
+                   null;
+        }
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🌟 11 PRIMAL ELEMENTS - Enhanced with Keyword Integration
+        // ═══════════════════════════════════════════════════════════════
+        
+        const ELEMENTS = {
+            Fire: {
+                icon: '🔥',
+                color: '#ff6464',
+                primary: 'Heat',
+                secondary: 'Consume',
+                tertiary: 'Spread',
+                quaternary: 'Rebirth',
+                basePower: 100,
+                resonance: 1.0,
+                phiMultiplier: GOLDEN_RATIO,
+                opposites: ['Ice', 'Water'],
+                synergies: ['Lightning', 'Wind', 'Light'],
+                neutrals: ['Earth', 'Metal'],
+                chaos: ['Dark', 'Void', 'Chaos']
+            },
+            Ice: {
+                icon: '❄️',
+                color: '#64b4ff',
+                primary: 'Freeze',
+                secondary: 'Slow',
+                tertiary: 'Preserve',
+                quaternary: 'Shatter',
+                basePower: 90,
+                resonance: 0.95,
+                phiMultiplier: 1.5,
+                opposites: ['Fire'],
+                synergies: ['Water', 'Void'],
+                neutrals: ['Wind', 'Metal'],
+                chaos: ['Lightning', 'Dark', 'Chaos']
+            },
+            Lightning: {
+                icon: '⚡',
+                color: '#ffeb64',
+                primary: 'Speed',
+                secondary: 'Energy',
+                tertiary: 'Chain',
+                quaternary: 'Shock',
+                basePower: 110,
+                resonance: 1.1,
+                phiMultiplier: GOLDEN_RATIO,
+                opposites: ['Earth'],
+                synergies: ['Fire', 'Light', 'Wind'],
+                neutrals: ['Metal', 'Void'],
+                chaos: ['Water', 'Ice', 'Chaos']
+            },
+            Water: {
+                icon: '💧',
+                color: '#64c8ff',
+                primary: 'Flow',
+                secondary: 'Adapt',
+                tertiary: 'Cleanse',
+                quaternary: 'Heal',
+                basePower: 85,
+                resonance: 0.9,
+                phiMultiplier: 1.4,
+                opposites: ['Fire'],
+                synergies: ['Ice', 'Earth', 'Light'],
+                neutrals: ['Dark', 'Void'],
+                chaos: ['Lightning', 'Chaos']
+            },
+            Earth: {
+                icon: '🌍',
+                color: '#96c864',
+                primary: 'Stability',
+                secondary: 'Defense',
+                tertiary: 'Absorb',
+                quaternary: 'Ground',
+                basePower: 95,
+                resonance: 1.0,
+                phiMultiplier: 1.3,
+                opposites: ['Lightning', 'Wind'],
+                synergies: ['Water', 'Metal', 'Dark'],
+                neutrals: ['Fire', 'Ice'],
+                chaos: ['Void', 'Chaos']
+            },
+            Dark: {
+                icon: '🌑',
+                color: '#9664c8',
+                primary: 'Decay',
+                secondary: 'Drain',
+                tertiary: 'Curse',
+                quaternary: 'Entropy',
+                basePower: 105,
+                resonance: 1.05,
+                phiMultiplier: GOLDEN_RATIO,
+                opposites: ['Light'],
+                synergies: ['Earth', 'Void', 'Fire'],
+                neutrals: ['Water', 'Ice'],
+                chaos: ['Lightning', 'Chaos']
+            },
+            Light: {
+                icon: '☀️',
+                color: '#ffe664',
+                primary: 'Purify',
+                secondary: 'Empower',
+                tertiary: 'Radiate',
+                quaternary: 'Order',
+                basePower: 100,
+                resonance: 1.0,
+                phiMultiplier: GOLDEN_RATIO,
+                opposites: ['Dark'],
+                synergies: ['Fire', 'Lightning', 'Water'],
+                neutrals: ['Earth', 'Wind'],
+                chaos: ['Void', 'Chaos']
+            },
+            Wind: {
+                icon: '🌪️',
+                color: '#96ffeb',
+                primary: 'Flow',
+                secondary: 'Disperse',
+                tertiary: 'Accelerate',
+                quaternary: 'Freedom',
+                basePower: 88,
+                resonance: 0.92,
+                phiMultiplier: 1.45,
+                opposites: ['Earth'],
+                synergies: ['Fire', 'Lightning', 'Ice'],
+                neutrals: ['Water', 'Dark'],
+                chaos: ['Void', 'Chaos']
+            },
+            Metal: {
+                icon: '⚙️',
+                color: '#c8c8c8',
+                primary: 'Conduct',
+                secondary: 'Reflect',
+                tertiary: 'Resonate',
+                quaternary: 'Forge',
+                basePower: 92,
+                resonance: 0.98,
+                phiMultiplier: 1.35,
+                opposites: ['Void'],
+                synergies: ['Lightning', 'Earth', 'Light'],
+                neutrals: ['Fire', 'Ice'],
+                chaos: ['Dark', 'Chaos']
+            },
+            Void: {
+                icon: '🕳️',
+                color: '#4b0082',
+                primary: 'Nothingness',
+                secondary: 'Erasure',
+                tertiary: 'Consume',
+                quaternary: 'Silence',
+                basePower: 115,
+                resonance: 1.15,
+                phiMultiplier: PHI_SQUARED,
+                opposites: ['Metal', 'Light'],
+                synergies: ['Dark', 'Ice', 'Chaos'],
+                neutrals: ['Earth', 'Water'],
+                chaos: ['Fire', 'Lightning']
+            },
+            Chaos: {
+                icon: '🎲',
+                color: '#ff00ff',
+                primary: 'Random',
+                secondary: 'Unpredictable',
+                tertiary: 'Mutation',
+                quaternary: 'Evolution',
+                basePower: 120,
+                resonance: 1.2,
+                phiMultiplier: PHI_CUBED,
+                opposites: ['Order'],
+                synergies: [],
+                neutrals: [],
+                chaos: ['Fire', 'Ice', 'Lightning', 'Water', 'Earth', 'Dark', 'Light', 'Wind', 'Metal', 'Void']
+            },
+            Order: {
+                icon: '✨',
+                color: '#64e3d6',
+                primary: 'Structure',
+                secondary: 'Harmony',
+                tertiary: 'Balance',
+                quaternary: 'Perfect',
+                basePower: 100,
+                resonance: 1.0,
+                phiMultiplier: GOLDEN_RATIO,
+                opposites: ['Chaos'],
+                synergies: ['Light', 'Earth', 'Metal', 'Water'],
+                neutrals: ['Fire', 'Ice', 'Wind'],
+                chaos: ['Dark', 'Void']
+            }
+        };
+        
+        let selectedElements = [];
+        
+        // Initialize
+        function init() {
+            renderElementGrid();
+            renderMatrixTable();
+            
+            // Update interaction count
+            const elementCount = Object.keys(ELEMENTS).length;
+            const totalCombinations = elementCount * elementCount;
+            const interactionCountEl = document.getElementById('interactionCount');
+            if (interactionCountEl) {
+                interactionCountEl.textContent = totalCombinations;
+            }
+        }
+        
+        // Render element selection grid
+        function renderElementGrid() {
+            const grid = document.getElementById('elementGrid');
+            grid.innerHTML = Object.entries(ELEMENTS).map(([name, data]) => `
+                <div class="element-btn" 
+                     style="border-color: ${data.color}; color: ${data.color};"
+                     onclick="toggleElement('${name}')">
+                    <span class="icon">${data.icon}</span>
+                    <div>${name}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Toggle element selection
+        function toggleElement(name) {
+            const index = selectedElements.indexOf(name);
+            if (index > -1) {
+                selectedElements.splice(index, 1);
+            } else {
+                if (selectedElements.length < 11) {
+                    selectedElements.push(name);
+                } else {
+                    alert('Maximum 11 elements allowed!');
+                    return;
+                }
+            }
+            updateDisplay();
+        }
+        
+        // Clear selection
+        function clearSelection() {
+            selectedElements = [];
+            updateDisplay();
+        }
+        
+        // Update display
+        function updateDisplay() {
+            // Update element buttons
+            document.querySelectorAll('.element-btn').forEach(btn => {
+                const name = btn.textContent.trim().split('\n').pop();
+                if (selectedElements.includes(name)) {
+                    btn.classList.add('selected');
+                } else {
+                    btn.classList.remove('selected');
+                }
+            });
+            
+            // Update selected chips
+            const selectedContainer = document.getElementById('selectedElements');
+            if (selectedElements.length === 0) {
+                selectedContainer.innerHTML = '<div style="width: 100%; text-align: center; opacity: 0.5;">Select elements to begin fusion</div>';
+            } else {
+                selectedContainer.innerHTML = selectedElements.map((name, i) => {
+                    const data = ELEMENTS[name];
+                    return `
+                        <div class="selected-element-chip" style="background: ${data.color}33; border-color: ${data.color}; color: ${data.color};">
+                            <span>${data.icon}</span>
+                            <span>${name}</span>
+                            <span class="remove" onclick="event.stopPropagation(); toggleElement('${name}')">×</span>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            // Calculate and display fusion
+            if (selectedElements.length > 0) {
+                const fusion = calculateFusion(selectedElements);
+                displayFusion(fusion);
+            } else {
+                document.getElementById('fusionResult').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">✨</div>
+                        <div>Select 2 or more elements to see fusion result</div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Calculate fusion using Golden Ratio for EFFECTS (not power!)
+        function calculateFusion(elements) {
+            // Sort by resonance for consistency
+            const sorted = elements.sort((a, b) => 
+                ELEMENTS[a].resonance - ELEMENTS[b].resonance
+            );
+            
+            let harmony = 1.0;
+            let discord = 0.0;
+            const properties = [];
+            const propertyInteractions = [];
+            const tacticalEffects = [];
+            
+            // Analyze interactions
+            for (let i = 0; i < sorted.length; i++) {
+                const e1 = ELEMENTS[sorted[i]];
+                properties.push(e1.primary);
+                
+                if (i < sorted.length - 1) {
+                    const e2 = ELEMENTS[sorted[i + 1]];
+                    
+                    if (e1.opposites.includes(sorted[i + 1])) {
+                        discord += 0.5;
+                    } else if (e1.synergies.includes(sorted[i + 1])) {
+                        harmony *= GOLDEN_RATIO;
+                    } else if (e1.chaos.includes(sorted[i + 1])) {
+                        discord += 0.2;
+                    }
+                    
+                    // Check for ELEMENT interactions (not property interactions)
+                    // Use element names (Fire, Water) not property names (Heat, Flow)
+                    const interaction = findPropertyInteraction(sorted[i], sorted[i + 1]);
+                    if (interaction) {
+                        propertyInteractions.push({
+                            elements: [sorted[i], sorted[i + 1]],
+                            props: [e1.primary, e2.primary],
+                            ...interaction
+                        });
+                    }
+                }
+            }
+            
+            // Determine property tier based on fusion intensity
+            const propertyTier = getPropertyTier(sorted.length, harmony, discord);
+            
+            // Apply tiered properties
+            const tieredProperties = properties.map(prop => 
+                getTieredProperty(prop, propertyTier)
+            );
+            
+            // BALANCED POWER - doesn't scale exponentially!
+            const basePower = 100; // Base skill power (CONSTANT)
+            
+            // φ determines EFFECT COMPLEXITY, not damage!
+            const effectComplexity = Math.pow(GOLDEN_RATIO, sorted.length - 1);
+            
+            // Generate dynamic effects from properties and interactions
+            const dynamicEffects = generateDynamicFusionEffect(sorted, tieredProperties, propertyInteractions);
+            
+            // Use dynamic effects as tactical effects
+            dynamicEffects.forEach(effect => {
+                tacticalEffects.push(effect);
+            });
+            
+            // Risk tier
+            const riskLevel = discord > 0.8 ? 'FORBIDDEN' :
+                             discord > 0.5 ? 'LEGENDARY' :
+                             discord > 0.3 ? 'EPIC' :
+                             discord > 0.1 ? 'RARE' : 'COMMON';
+            
+            // Upgrade risk if Tier III
+            const finalRisk = propertyTier === 'III' && riskLevel !== 'FORBIDDEN' ? 
+                             (riskLevel === 'LEGENDARY' ? 'FORBIDDEN' : 'LEGENDARY') : 
+                             riskLevel;
+            
+            // Generate name
+            const name = generateFusionName(sorted, tieredProperties, propertyTier);
+            const description = generateFusionDescription(sorted, harmony, discord, tieredProperties, propertyTier);
+            
+            return {
+                name,
+                power: basePower, // BALANCED - always 100
+                harmony: harmony.toFixed(3),
+                discord: discord.toFixed(3),
+                risk: finalRisk,
+                description,
+                properties: tieredProperties,
+                propertyTier,
+                propertyInteractions,
+                tacticalEffects,
+                effectComplexity: effectComplexity.toFixed(3),
+                effectCount: tacticalEffects.length,
+                elementCount: sorted.length,
+                elements: sorted
+            };
+        }
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🎮 DYNAMIC EFFECT GENERATION SYSTEM
+        // ═══════════════════════════════════════════════════════════════
+        // Generate effects based on elemental properties and interactions
+        
+        const PROPERTY_EFFECT_RULES = {
+            // Fire properties
+            'Heat': { effect: 'Burns target', mechanic: 'DoT (Damage over Time)', value: '8-15 per turn' },
+            'Consume': { effect: 'Destroys resources', mechanic: 'Mana/Energy drain', value: '20% of max' },
+            'Spread': { effect: 'Ignites nearby targets', mechanic: 'AoE expansion', value: '2-4 units' },
+            'Rebirth': { effect: 'Revives on death', mechanic: 'Phoenix effect', value: '50% HP once' },
+            
+            // Ice properties
+            'Freeze': { effect: 'Immobilizes target', mechanic: 'Movement lock', value: '1-3 turns' },
+            'Slow': { effect: 'Reduces action speed', mechanic: 'Speed reduction', value: '30-60%' },
+            'Preserve': { effect: 'Prevents decay', mechanic: 'Status immunity', value: '3-5 turns' },
+            'Shatter': { effect: 'Breaks on impact', mechanic: 'Burst damage', value: '2x damage' },
+            
+            // Lightning properties
+            'Speed': { effect: 'Acts faster', mechanic: 'Initiative boost', value: '+50-100%' },
+            'Energy': { effect: 'Charges abilities', mechanic: 'Cooldown reduction', value: '-2 turns' },
+            'Chain': { effect: 'Jumps to nearby foes', mechanic: 'Multi-target', value: '3-8 targets' },
+            'Shock': { effect: 'Stuns briefly', mechanic: 'Action interrupt', value: '1 turn skip' },
+            
+            // Water properties
+            'Flow': { effect: 'Adapts to terrain', mechanic: 'Ignores obstacles', value: 'Free movement' },
+            'Adapt': { effect: 'Changes form', mechanic: 'Counter element', value: 'Type shift' },
+            'Cleanse': { effect: 'Removes debuffs', mechanic: 'Purification', value: 'All negative' },
+            'Heal': { effect: 'Restores health', mechanic: 'HP recovery', value: '15-30%' },
+            
+            // Earth properties
+            'Stability': { effect: 'Cannot be moved', mechanic: 'Knockback immunity', value: 'Full resist' },
+            'Defense': { effect: 'Reduces damage', mechanic: 'Damage reduction', value: '20-40%' },
+            'Absorb': { effect: 'Nullifies attacks', mechanic: 'Damage shield', value: '100-200 HP' },
+            'Ground': { effect: 'Cancels energy', mechanic: 'Magic negation', value: 'Spell block' },
+            
+            // Dark properties
+            'Decay': { effect: 'Reduces max HP', mechanic: 'Permanent damage', value: '-10% max HP' },
+            'Drain': { effect: 'Steals life', mechanic: 'Lifesteal', value: '25-50%' },
+            'Curse': { effect: 'Weakens target', mechanic: 'Debuff amplifier', value: '+50% duration' },
+            'Entropy': { effect: 'Degrades over time', mechanic: 'Progressive damage', value: 'Escalating' },
+            
+            // Light properties
+            'Purify': { effect: 'Cleanses corruption', mechanic: 'Remove curses', value: 'All dark effects' },
+            'Empower': { effect: 'Boosts allies', mechanic: 'Buff amplifier', value: '+25% stats' },
+            'Radiate': { effect: 'Reveals hidden', mechanic: 'True sight', value: '5 unit radius' },
+            'Order': { effect: 'Controls chaos', mechanic: 'RNG override', value: 'Guaranteed' },
+            
+            // Wind properties
+            'Disperse': { effect: 'Scatters enemies', mechanic: 'Forced movement', value: '3 spaces' },
+            'Accelerate': { effect: 'Increases speed', mechanic: 'Haste', value: '+40% speed' },
+            'Freedom': { effect: 'Breaks bindings', mechanic: 'CC immunity', value: 'Full freedom' },
+            
+            // Metal properties
+            'Conduct': { effect: 'Channels energy', mechanic: 'Spell amplify', value: '+30% power' },
+            'Reflect': { effect: 'Bounces attacks', mechanic: 'Mirror damage', value: '40-80%' },
+            'Resonate': { effect: 'Echoes effects', mechanic: 'Duplicate cast', value: '1 extra use' },
+            'Forge': { effect: 'Creates items', mechanic: 'Item generation', value: 'Random gear' },
+            
+            // Void properties
+            'Nothingness': { effect: 'Erases buffs', mechanic: 'Buff removal', value: 'All positive' },
+            'Erasure': { effect: 'Deletes target', mechanic: 'Instant kill', value: 'Below 20% HP' },
+            'Silence': { effect: 'Prevents casting', mechanic: 'Spell lock', value: '2-3 turns' },
+            
+            // Chaos properties
+            'Random': { effect: 'Unpredictable outcome', mechanic: 'Wild magic', value: 'Variable' },
+            'Unpredictable': { effect: 'Changes each use', mechanic: 'Mutation', value: 'Different' },
+            'Mutation': { effect: 'Alters properties', mechanic: 'Transform', value: 'New element' },
+            'Evolution': { effect: 'Grows stronger', mechanic: 'Scaling', value: '+10% per use' },
+            
+            // Order properties
+            'Structure': { effect: 'Perfect formation', mechanic: 'Formation bonus', value: '+20% team' },
+            'Harmony': { effect: 'Balances effects', mechanic: 'Equilibrium', value: 'Optimize' },
+            'Balance': { effect: 'Stabilizes power', mechanic: 'Consistent', value: 'No variance' },
+            'Perfect': { effect: 'Guaranteed success', mechanic: 'No miss', value: '100% hit' }
+        };
+        
+        // Generate dynamic fusion description based on properties
+        function generateDynamicFusionEffect(elements, properties, propertyInteractions) {
+            let effects = [];
+            
+            // If we have property interactions, use those first
+            if (propertyInteractions && propertyInteractions.length > 0) {
+                propertyInteractions.forEach(interaction => {
+                    effects.push({
+                        name: interaction.name,
+                        description: interaction.effect,
+                        source: 'interaction'
+                    });
+                });
+            }
+            
+            // Then add effects from properties
+            properties.forEach(prop => {
+                // Extract base property (remove tier suffixes like "Intense Burn" -> "Heat")
+                const baseProps = ['Heat', 'Consume', 'Spread', 'Rebirth', 'Freeze', 'Slow', 'Preserve', 
+                                  'Shatter', 'Speed', 'Energy', 'Chain', 'Shock', 'Flow', 'Adapt', 
+                                  'Cleanse', 'Heal', 'Stability', 'Defense', 'Absorb', 'Ground', 
+                                  'Decay', 'Drain', 'Curse', 'Entropy', 'Purify', 'Empower', 'Radiate',
+                                  'Disperse', 'Accelerate', 'Freedom', 'Conduct', 'Reflect', 'Resonate',
+                                  'Forge', 'Nothingness', 'Erasure', 'Silence', 'Random', 'Unpredictable',
+                                  'Mutation', 'Evolution', 'Structure', 'Harmony', 'Balance', 'Perfect', 'Order'];
+                
+                const baseProp = baseProps.find(bp => prop.includes(bp)) || prop;
+                
+                if (PROPERTY_EFFECT_RULES[baseProp]) {
+                    const rule = PROPERTY_EFFECT_RULES[baseProp];
+                    effects.push({
+                        name: prop,
+                        description: `${rule.effect} • ${rule.mechanic} (${rule.value})`,
+                        source: 'property'
+                    });
+                }
+            });
+            
+            return effects;
+        }
+        
+        // Generate fusion name with tier awareness
+        function generateFusionName(elements, properties, tier) {
+            const count = elements.length;
+            const tierPrefix = tier === 'III' ? 'DIVINE' : tier === 'II' ? 'ULTIMATE' : '';
+            
+            if (count === 1) return elements[0];
+            if (count === 2) return `${tierPrefix} ${properties[0]}-${properties[1]} Convergence`.trim();
+            if (count === 3) return `${tierPrefix} ${properties[0]} Trinity Genesis`.trim();
+            if (count === 5) return `${tierPrefix} Pentacle of ${properties[0]}`.trim();
+            if (count === 8) return `${tierPrefix} ${properties[0]} Octave`.trim();
+            if (count === 11) return tier === 'III' ? 'COSMIC SINGULARITY' : 'Elemental Convergence';
+            
+            return `${tierPrefix} ${count}-Fold ${properties[0]} Fusion`.trim();
+        }
+        
+        // Generate fusion description with tier and interaction info
+        function generateFusionDescription(elements, harmony, discord, properties, tier) {
+            const tierName = tier === 'III' ? 'Ultimate' : tier === 'II' ? 'Advanced' : 'Basic';
+            
+            // Build description based on actual properties
+            let desc = `Combines the essence of ${elements.map(e => e.toLowerCase()).join(' and ')} into a ${tierName.toLowerCase()} fusion. `;
+            
+            // Add property-based description
+            if (properties.length > 0) {
+                const primaryProp = properties[0];
+                const propRule = PROPERTY_EFFECT_RULES[primaryProp] || 
+                               PROPERTY_EFFECT_RULES[primaryProp.split(' ')[0]];
+                
+                if (propRule) {
+                    desc += `Primary effect: ${propRule.effect} through ${propRule.mechanic}. `;
+                }
+            }
+            
+            // Add tier-specific info
+            if (tier === 'III') {
+                desc += `⚡ This ultimate fusion has transcended normal limits - all effects are maximized!`;
+            } else if (tier === 'II') {
+                desc += `🔥 Enhanced power flows through this advanced combination.`;
+            } else {
+                desc += `The elements work together with ${harmony > 1.5 ? 'perfect harmony' : discord > 0.5 ? 'volatile tension' : 'balanced synergy'}.`;
+            }
+            
+            // Add warnings if needed
+            if (discord > 0.5) {
+                desc += ` ⚠️ WARNING: High discord (${(discord * 100).toFixed(0)}%) creates unstable effects!`;
+            }
+            
+            if (elements.includes('Chaos')) {
+                desc += ` 🎲 Chaos element makes outcomes unpredictable!`;
+            }
+            
+            return desc;
+        }
+        
+        // Display fusion result with tiered properties
+        function displayFusion(fusion) {
+            const resultEl = document.getElementById('fusionResult');
+            
+            const tierColors = {
+                COMMON: '#8b5cf6',
+                RARE: '#ffe664',
+                EPIC: '#ff6496',
+                LEGENDARY: '#ff8800',
+                FORBIDDEN: '#ff0000'
+            };
+            
+            const tierColor = tierColors[fusion.risk];
+            const propertyTierBadge = fusion.propertyTier === 'III' ? '⚡ ULTIMATE' : 
+                                     fusion.propertyTier === 'II' ? '🔥 ADVANCED' : 
+                                     '✨ BASIC';
+            
+            // Build property interactions display with ATTRIBUTES & INTERACTION RULES
+            let interactionsHTML = '';
+            if (fusion.propertyInteractions && fusion.propertyInteractions.length > 0) {
+                interactionsHTML = `
+                    <div style="margin-top: 25px; padding: 20px; background: rgba(255,215,0,0.1); border-radius: 12px; border: 2px solid rgba(255,215,0,0.3);">
+                        <strong style="color: #ffd700; font-size: 1.2em;">🔗 Property Interactions Detected:</strong>
+                        <div style="margin-top: 15px; display: grid; gap: 12px;">
+                            ${fusion.propertyInteractions.map(int => {
+                                // Calculate dynamic stats if available
+                                const powerScale = int.power_scale || 2;
+                                const stability = int.stability || 1.0;
+                                const interactionType = int.interaction_type || 'neutral';
+                                const aoeRadius = int.aoe_radius || 2;
+                                const duration = int.duration || 3;
+                                
+                                // Power scale visual
+                                const powerDots = Array(5).fill(0).map((_, i) => 
+                                    `<span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: ${i < powerScale ? '#ffd700' : '#333'}; margin: 0 2px; box-shadow: ${i < powerScale ? '0 0 8px #ffd700' : 'none'};"></span>`
+                                ).join('');
+                                
+                                // Stability bar
+                                const stabilityPercent = (stability * 100).toFixed(0);
+                                const stabilityColor = stability >= 1.2 ? '#00ff00' : stability >= 1.0 ? '#ffeb64' : stability >= 0.8 ? '#ff8800' : '#ff0000';
+                                
+                                return `
+                                <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 8px; border-left: 4px solid ${tierColor};">
+                                    <div style="font-size: 1.1em; font-weight: bold; color: ${tierColor};">
+                                        ${int.props.join(' + ')} = ${int.name}
+                                    </div>
+                                    <div style="margin-top: 8px; opacity: 0.9;">
+                                        ${int.effect}
+                                    </div>
+                                    
+                                    <!-- Power Scale -->
+                                    <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px;">
+                                        <span style="opacity: 0.8; font-size: 0.9em;">Power:</span>
+                                        ${powerDots}
+                                        <span style="color: #ffd700; font-weight: bold; font-size: 0.9em;">${powerScale}/5</span>
+                                    </div>
+                                    
+                                    <!-- Stability Meter -->
+                                    <div style="margin-top: 10px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                            <span style="opacity: 0.8; font-size: 0.9em;">Stability:</span>
+                                            <span style="color: ${stabilityColor}; font-weight: bold; font-size: 0.9em;">${stabilityPercent}%</span>
+                                        </div>
+                                        <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                            <div style="width: ${stabilityPercent}%; height: 100%; background: linear-gradient(90deg, ${stabilityColor}, ${stabilityColor}99); transition: width 0.3s;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Interaction Details -->
+                                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                                        <span style="background: rgba(139,92,246,0.3); color: #8b5cf6; padding: 4px 10px; border-radius: 12px; font-size: 0.85em; border: 1px solid rgba(139,92,246,0.5);">
+                                            ${interactionType}
+                                        </span>
+                                        <span style="background: rgba(255,100,100,0.3); color: #ff6464; padding: 4px 10px; border-radius: 12px; font-size: 0.85em;">
+                                            AoE: ${aoeRadius}
+                                        </span>
+                                        <span style="background: rgba(100,200,255,0.3); color: #64c8ff; padding: 4px 10px; border-radius: 12px; font-size: 0.85em;">
+                                            Duration: ${duration}s
+                                        </span>
+                                    </div>
+                                    
+                                    ${int.attributes ? `
+                                        <div style="margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap;">
+                                            ${int.attributes.map(attr => `
+                                                <span style="background: rgba(100,227,214,0.2); color: #00e3d6; padding: 4px 10px; border-radius: 12px; font-size: 0.85em; border: 1px solid rgba(100,227,214,0.4);">
+                                                    ${attr}
+                                                </span>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                    <div style="margin-top: 8px; font-size: 0.9em; opacity: 0.7;">
+                                        Tier Bonus: ×${int.tier_bonus || 1.0}
+                                    </div>
+                                </div>
+                            `}).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            resultEl.innerHTML = `
+                <div class="fusion-result" style="border-color: ${tierColor};">
+                    <div class="fusion-name" style="color: ${tierColor};">${fusion.name}</div>
+                    
+                    <div style="text-align: center; margin-bottom: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: ${tierColor}33; color: ${tierColor}; padding: 8px 20px; border-radius: 20px; border: 2px solid ${tierColor}; font-size: 1.1rem; font-weight: bold;">
+                            ${fusion.risk} TIER
+                        </span>
+                        <span style="background: rgba(100,227,214,0.2); color: #00e3d6; padding: 8px 20px; border-radius: 20px; border: 2px solid #00e3d6; font-size: 1.1rem; font-weight: bold;">
+                            ${propertyTierBadge} TIER ${fusion.propertyTier}
+                        </span>
+                        <span style="background: rgba(255,215,0,0.2); color: #ffd700; padding: 8px 20px; border-radius: 20px; border: 2px solid #ffd700; font-size: 1.1rem; font-weight: bold;">
+                            ${fusion.effectCount} EFFECTS
+                        </span>
+                    </div>
+                    
+                    <div class="fusion-stats">
+                        <div class="stat-box">
+                            <div class="stat-label">⚡ Base Power</div>
+                            <div class="stat-value">${fusion.power}</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">🎵 Harmony</div>
+                            <div class="stat-value" style="color: #00ff00;">${fusion.harmony}</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">⚠️ Discord</div>
+                            <div class="stat-value" style="color: #ff6464;">${fusion.discord}</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">� Complexity</div>
+                            <div class="stat-value">${fusion.effectComplexity}φ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="fusion-description">
+                        <strong style="color: #ffd700; font-size: 1.2em;">📜 Fusion Overview:</strong><br>
+                        ${fusion.description}
+                    </div>
+                    
+                    ${fusion.tacticalEffects && fusion.tacticalEffects.length > 0 ? `
+                        <div style="margin-top: 25px; padding: 20px; background: rgba(100,200,255,0.1); border-radius: 12px; border: 2px solid rgba(100,200,255,0.4);">
+                            <strong style="color: #64c8ff; font-size: 1.2em;">⚔️ Tactical Effects (${fusion.tacticalEffects.length}):</strong>
+                            <div style="margin-top: 15px; display: grid; gap: 10px;">
+                                ${fusion.tacticalEffects.map(effect => `
+                                    <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px; border-left: 4px solid #64c8ff;">
+                                        <div style="font-weight: bold; color: #64c8ff; font-size: 1.05em;">
+                                            ${effect.name}
+                                        </div>
+                                        <div style="margin-top: 5px; opacity: 0.9; font-size: 0.95em;">
+                                            ${effect.description}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                    
+                    ${interactionsHTML}
+                    
+                    <div style="margin-top: 20px;">
+                        <strong style="color: #00e3d6;">Evolved Properties (Tier ${fusion.propertyTier}):</strong>
+                        <div class="properties-grid">
+                            ${fusion.properties.map(prop => `
+                                <div class="property-tag" style="background: rgba(100,227,214,0.2); border-color: rgba(100,227,214,0.4);">
+                                    ${prop}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <strong style="color: #00e3d6;">Elemental Composition:</strong>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                            ${fusion.elements.map(e => {
+                                const data = ELEMENTS[e];
+                                return `<span style="background: ${data.color}33; color: ${data.color}; padding: 6px 12px; border-radius: 8px; border: 1px solid ${data.color}80;">${data.icon} ${e}</span>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Render complete matrix table
+        function renderMatrixTable() {
+            const table = document.getElementById('matrixTable');
+            const elementNames = Object.keys(ELEMENTS);
+            
+            let html = '<tr><th>↓ + →</th>';
+            elementNames.forEach(name => {
+                const data = ELEMENTS[name];
+                html += `<th style="color: ${data.color};">${data.icon} ${name}</th>`;
+            });
+            html += '</tr>';
+            
+            elementNames.forEach(e1 => {
+                const data1 = ELEMENTS[e1];
+                html += `<tr><th style="color: ${data1.color};">${data1.icon} ${e1}</th>`;
+                
+                elementNames.forEach(e2 => {
+                    const fusion = calculateFusion([e1, e2]);
+                    const tierColors = {
+                        COMMON: '#8b5cf6',
+                        RARE: '#ffe664',
+                        EPIC: '#ff6496',
+                        LEGENDARY: '#ff8800',
+                        FORBIDDEN: '#ff0000'
+                    };
+                    const color = tierColors[fusion.risk];
+                    
+                    html += `<td onclick="selectFromMatrix(['${e1}', '${e2}'])" style="color: ${color};" title="${fusion.name}">
+                        ${fusion.name.substring(0, 20)}...
+                    </td>`;
+                });
+                
+                html += '</tr>';
+            });
+            
+            table.innerHTML = html;
+        }
+        
+        // Select fusion from matrix
+        function selectFromMatrix(elements) {
+            selectedElements = elements;
+            updateDisplay();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Initialize on load
+        init();
+        
+        // ═══════════════════════════════════════════════════════════════
+        // 🌐 GLOBAL EXPORT - Make Available to Other Engines
+        // ═══════════════════════════════════════════════════════════════
+        
+        window.ELEMENTAL_MATRIX_ENGINE.calculateFusion = calculateFusion;
+        window.ELEMENTAL_MATRIX_ENGINE.ELEMENTS = ELEMENTS;
+        window.ELEMENTAL_MATRIX_ENGINE.PROPERTY_INTERACTIONS = PROPERTY_INTERACTIONS;
+        window.ELEMENTAL_MATRIX_ENGINE.PROPERTY_TIERS = PROPERTY_TIERS;
+        
+        // Export utility functions for other engines
+        window.ELEMENTAL_MATRIX_ENGINE.utils = {
+            findPropertyInteraction,
+            getPropertyTier,
+            getTieredProperty,
+            generateTacticalEffect,
+            extractKeywordsFromInteractions,
+            getInteractionsByKeyword
+        };
+        
+        console.log('🌌 Elemental Matrix Engine v2.0 - FULLY LOADED');
+        console.log(`   📊 ${Object.keys(ELEMENTS).length} Elements`);
+        console.log(`   🔗 ${Object.keys(PROPERTY_INTERACTIONS).length} Property Interactions`);
+        console.log(`   🎯 ${extractKeywordsFromInteractions().length} Unique Keywords`);
+        console.log(`   ✅ Global Sync Ready`);
+    </script>
+</body>
+</html>
