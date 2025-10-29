@@ -137,6 +137,339 @@
             background: rgba(255, 107, 157, 0.3);
             box-shadow: 0 0 20px rgba(255, 107, 157, 0.4);
         }
+        
+        /* ============================================ */
+        /* FUSION WORKSHOP STYLES */
+        /* ============================================ */
+        .fusion-workshop {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(59,130,246,0.1) 100%);
+            border: 2px solid rgba(139,92,246,0.4);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fusion-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .fusion-header h2 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .close-workshop-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid #ef4444;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .close-workshop-btn:hover {
+            background: rgba(239, 68, 68, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .selection-panel, .results-panel {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(139,92,246,0.3);
+        }
+        
+        .selected-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            min-height: 60px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            border: 2px dashed rgba(139,92,246,0.3);
+        }
+        
+        .selected-keyword-tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(139,92,246,0.3);
+            border: 2px solid #8b5cf6;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .selected-keyword-tag:hover {
+            background: rgba(139,92,246,0.5);
+            transform: scale(1.05);
+        }
+        
+        .selected-keyword-tag .remove {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        .element-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .element-btn {
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .element-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px currentColor;
+        }
+        
+        .element-btn.selected {
+            box-shadow: 0 0 30px currentColor, inset 0 0 20px currentColor;
+            transform: scale(1.05);
+        }
+        
+        .fusion-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .fusion-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .fusion-btn.calculate {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.2);
+        }
+        
+        .fusion-btn.calculate:hover {
+            background: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 20px #10b981;
+        }
+        
+        .fusion-btn.clear {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+        }
+        
+        .fusion-btn.clear:hover {
+            background: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 0 20px #ef4444;
+        }
+        
+        .fusion-btn.save {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .fusion-btn.save:hover {
+            background: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 20px #3b82f6;
+        }
+        
+        .tier-indicator {
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(139,92,246,0.3);
+        }
+        
+        .tier-indicator.tier-1 {
+            border-color: rgba(139,92,246,0.4);
+        }
+        
+        .tier-indicator.tier-2 {
+            border-color: rgba(139,92,246,0.7);
+            box-shadow: 0 0 15px rgba(139,92,246,0.5);
+        }
+        
+        .tier-indicator.tier-3 {
+            border-color: rgba(255,215,0,0.9);
+            box-shadow: 0 0 25px rgba(255,215,0,0.8);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 25px rgba(255,215,0,0.8); }
+            50% { box-shadow: 0 0 40px rgba(255,215,0,1); }
+        }
+        
+        .fusion-result {
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(59,130,246,0.4);
+            min-height: 200px;
+        }
+        
+        .fusion-result h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffd700, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .fusion-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .fusion-stat:last-child {
+            border-bottom: none;
+        }
+        
+        .combination-matrix {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .combo-item {
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .combo-item.synergy {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        .combo-item.opposition {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+        
+        .combo-item.catalytic {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        
+        .combo-item.transformative {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
+        }
+        
+        .combo-multiplier {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffd700;
+        }
+        
+        .engine-sync button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #8b5cf6;
+            background: rgba(139, 92, 246, 0.2);
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .engine-sync button:hover {
+            background: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 0 20px #8b5cf6;
+        }
+        
+        #syncStatus {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(139,92,246,0.3);
+        }
+        
+        .saved-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .saved-fusion-card {
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid #3b82f6;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .saved-fusion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        .keyword-card.selectable {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .keyword-card.selectable::after {
+            content: '☐';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+        
+        .keyword-card.selected::after {
+            content: '☑';
+            opacity: 1;
+            color: #10b981;
+        }
+        
+        .keyword-card.selected {
+            border-color: #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -155,6 +488,59 @@
         <div class="category-filter" id="categoryFilter"></div>
         
         <div class="keywords-grid" id="keywordsGrid"></div>
+        
+        <!-- ============================================ -->
+        <!-- KEYWORD FUSION WORKSHOP -->
+        <!-- ============================================ -->
+        <div class="fusion-workshop" id="fusionWorkshop" style="margin-top: 40px; display: none;">
+            <div class="fusion-header">
+                <h2>⚗️ Keyword Fusion Workshop</h2>
+                <p>Combine keywords to unlock powerful synergies</p>
+                <button class="close-workshop-btn" onclick="closeFusionWorkshop()">✕ Close</button>
+            </div>
+            
+            <div class="fusion-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Left Panel: Selection & Controls -->
+                <div class="selection-panel">
+                    <h3>🎯 Selected Keywords (<span id="selectionCount">0</span>/10)</h3>
+                    <div class="selected-keywords" id="selectedKeywordsDisplay"></div>
+                    
+                    <h3 style="margin-top: 20px;">🌟 Element Amplification</h3>
+                    <div class="element-selector" id="elementSelector"></div>
+                    
+                    <div class="fusion-controls" style="margin-top: 20px;">
+                        <button class="fusion-btn calculate" onclick="performFusion()">⚡ Calculate Fusion</button>
+                        <button class="fusion-btn clear" onclick="clearSelection()">🗑️ Clear All</button>
+                        <button class="fusion-btn save" onclick="saveCurrent()">💾 Save Fusion</button>
+                    </div>
+                    
+                    <div class="tier-indicator" id="tierIndicator" style="margin-top: 20px;"></div>
+                </div>
+                
+                <!-- Right Panel: Combination Matrix & Results -->
+                <div class="results-panel">
+                    <h3>🔮 Fusion Result</h3>
+                    <div class="fusion-result" id="fusionResultDisplay">
+                        <p style="opacity: 0.5;">Select keywords and click Calculate Fusion to see results...</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;">📊 Active Combinations</h3>
+                    <div class="combination-matrix" id="combinationMatrix"></div>
+                    
+                    <h3 style="margin-top: 20px;">🔗 Cross-Engine Sync</h3>
+                    <div class="engine-sync" id="engineSync">
+                        <button onclick="syncEngines()">🔄 Sync with Elemental Engine</button>
+                        <div id="syncStatus"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Saved Fusions History -->
+            <div class="saved-fusions" style="margin-top: 30px;">
+                <h3>📚 Saved Fusions (<span id="savedCount">0</span>)</h3>
+                <div class="saved-grid" id="savedGrid"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1088,6 +1474,1338 @@
             youth: { name: '👶 Youth', category: 'trait', color: '#f39c12', short: 'Young age', medium: 'Youth represents young age.', detailed: { description: 'Youth is state of being young. Young!', strengths: ['Energy', 'Potential', 'Growth'], weaknesses: ['Inexperienced', 'Weak', 'Immature'], combos: ['Youth + Energy = Vigor', 'Youth + Potential = Promise', 'Youth + Grow = Develop'] } }
         
         }; // End TAG_DATA
+
+        // ============================================
+        // KEYWORD COMBINATION RULES ENGINE
+        // Based on keyword desgine phhilo.txt
+        // ============================================
+        const COMBINATION_RULES = {
+            // A. SYNERGY - Keywords enhance each other
+            synergy: {
+                'dot + spread': {
+                    result: 'AoE Damage Over Time',
+                    effect: 'DoT effect spreads to nearby enemies',
+                    powerMultiplier: 1.5,
+                    description: 'Combines persistent damage with area spread'
+                },
+                'shield + heal': {
+                    result: 'Regenerating Barrier',
+                    effect: 'Shield regenerates over time',
+                    powerMultiplier: 1.6,
+                    description: 'Ultimate defensive sustain'
+                },
+                'stun + silence': {
+                    result: 'Total Lockdown',
+                    effect: 'Target cannot move, attack, or use abilities',
+                    powerMultiplier: 1.8,
+                    description: 'Complete crowd control'
+                },
+                'mark + empower': {
+                    result: 'Focused Burst Damage',
+                    effect: 'Massive damage bonus on marked target',
+                    powerMultiplier: 2.0,
+                    description: 'Deletion potential'
+                },
+                'haste + empower': {
+                    result: 'Quick Assault',
+                    effect: 'Attack speed and damage boost',
+                    powerMultiplier: 1.7,
+                    description: 'Rapid devastating strikes'
+                },
+                'fortify + regeneration': {
+                    result: 'Unkillable Tank',
+                    effect: 'High defense with constant healing',
+                    powerMultiplier: 1.9,
+                    description: 'Immortal warrior build'
+                },
+                'focus + empower': {
+                    result: 'Guaranteed Critical',
+                    effect: 'Critical hits guaranteed with massive damage',
+                    powerMultiplier: 2.2,
+                    description: 'Perfect precision meets raw power'
+                }
+            },
+            
+            // B. OPPOSITION - Keywords conflict to create new effect
+            opposition: {
+                'heal + decay': {
+                    result: 'Life Drain',
+                    effect: 'Damage enemy to heal self',
+                    powerMultiplier: 1.5,
+                    description: 'Vampiric transformation'
+                },
+                'haste + stasis': {
+                    result: 'Time Paradox',
+                    effect: 'Randomly speed up or slow down',
+                    powerMultiplier: 1.3,
+                    description: 'Chaos through temporal conflict'
+                },
+                'shield + pierce': {
+                    result: 'Shatter',
+                    effect: 'Break through enemy defenses',
+                    powerMultiplier: 1.8,
+                    description: 'Defense becomes offense'
+                },
+                'light + dark': {
+                    result: 'Twilight',
+                    effect: 'Balanced power between extremes',
+                    powerMultiplier: 1.6,
+                    description: 'Harmony of opposites'
+                },
+                'order + chaos': {
+                    result: 'Controlled Chaos',
+                    effect: 'Random effects within boundaries',
+                    powerMultiplier: 1.4,
+                    description: 'Structured unpredictability'
+                },
+                'love + hate': {
+                    result: 'Obsession',
+                    effect: 'Intense fixation with dual nature',
+                    powerMultiplier: 2.3,
+                    description: 'Passionate extremes merge'
+                }
+            },
+            
+            // C. CATALYTIC - One keyword amplifies another
+            catalytic: {
+                'amplify': {
+                    result: 'Enhanced Effect',
+                    effect: '2x effectiveness of any keyword',
+                    powerMultiplier: 2.0,
+                    description: 'Universal amplification'
+                },
+                'chain': {
+                    result: 'Multi-Target',
+                    effect: 'Single target becomes multi-target',
+                    powerMultiplier: 1.8,
+                    description: 'Spreads effect to nearby'
+                },
+                'persist': {
+                    result: 'Permanent Duration',
+                    effect: 'Temporary becomes permanent',
+                    powerMultiplier: 2.2,
+                    description: 'Eternal effects'
+                },
+                'focus': {
+                    result: 'Concentrated Power',
+                    effect: 'Increased precision and damage',
+                    powerMultiplier: 1.7,
+                    description: 'Laser-focused enhancement'
+                }
+            },
+            
+            // D. TRANSFORMATIVE - Creates entirely new mechanic
+            transformative: {
+                'summon + invoke': {
+                    result: 'Divine Avatar',
+                    effect: 'Summon becomes divine vessel',
+                    powerMultiplier: 3.0,
+                    description: 'Godly transformation'
+                },
+                'draw + scry': {
+                    result: 'Prophetic Vision',
+                    effect: 'See and control future draws',
+                    powerMultiplier: 2.5,
+                    description: 'Perfect card manipulation'
+                },
+                'sacrifice + resurrect': {
+                    result: 'Phoenix Protocol',
+                    effect: 'Death triggers rebirth',
+                    powerMultiplier: 2.8,
+                    description: 'Immortality through sacrifice'
+                },
+                'time + void': {
+                    result: 'Temporal Erasure',
+                    effect: 'Remove target from timeline',
+                    powerMultiplier: 3.5,
+                    description: 'Ultimate removal'
+                },
+                'birth + death': {
+                    result: 'Cycle of Rebirth',
+                    effect: 'Continuous reincarnation',
+                    powerMultiplier: 2.6,
+                    description: 'Eternal cycle'
+                }
+            }
+        };
+
+        // ============================================
+        // SMART COMBINATION RULES (From Philosophy)
+        // ============================================
+        const SMART_RULES = {
+            // Rule 1: Damage Stacking
+            damageStacking: {
+                'dot + dot': {
+                    result: 'Both tick separately (additive)',
+                    stacks: 'up to 5x',
+                    powerMultiplier: 'linear'
+                },
+                'dot + spread': {
+                    result: 'AoE DoT',
+                    effect: 'Damage over time affects area'
+                },
+                'dot + amplify': {
+                    result: '2x damage per tick',
+                    powerMultiplier: 2.0
+                }
+            },
+            
+            // Rule 2: Control Layering
+            controlLayering: {
+                'stun + silence': {
+                    result: 'Total lockdown (can\'t do anything)',
+                    priority: 'highest'
+                },
+                'stun + root': {
+                    result: 'Redundant (stun is stronger)',
+                    priority: 'stun'
+                },
+                'root + silence': {
+                    result: 'Tactical lockdown (can attack but not move/cast)',
+                    priority: 'both'
+                },
+                'charm + control': {
+                    result: 'Charm overrides (mind control is absolute)',
+                    priority: 'charm'
+                }
+            },
+            
+            // Rule 3: Defense Stacking
+            defenseStacking: {
+                'shield + shield': {
+                    result: 'Layers (must break all)',
+                    stacking: 'layered'
+                },
+                'armor + ward': {
+                    result: 'Full resistance (physical + magic)',
+                    coverage: 'complete'
+                },
+                'shield + heal': {
+                    result: 'Regenerating barrier',
+                    sustainability: 'high'
+                },
+                'immunity + defense': {
+                    result: 'Immunity overrides',
+                    priority: 'immunity'
+                }
+            },
+            
+            // Rule 4: Buff Synergy
+            buffSynergy: {
+                'haste + empower': {
+                    result: 'Quick Assault (speed + damage)',
+                    multiplier: 1.7
+                },
+                'fortify + regeneration': {
+                    result: 'Unkillable Tank',
+                    multiplier: 1.9
+                },
+                'focus + empower': {
+                    result: 'Guaranteed Critical',
+                    multiplier: 2.2
+                },
+                'all buffs': {
+                    result: 'Overcharge (risk of burnout)',
+                    risk: 'high',
+                    multiplier: 2.5
+                         },
+                    'buff + debuff': {
+                        result: 'Unstable Power',
+                        effect: 'Randomized stats for 2 turns',
+                        notes: 'Combining a buff and debuff creates unpredictable power surges and drops. Lasts 2 turns.'
+                             }
+                        ,
+                        'heal + curse': {
+                            result: 'Corrupted Recovery',
+                            effect: 'Healing applies curse for 2 turns',
+                            notes: 'Healing is tainted, target receives curse effect for 2 turns.'
+                        }
+            }
+        };
+
+        // ============================================
+        // ELEMENT-KEYWORD AMPLIFICATION MATRIX
+        // How each element modifies keyword effects
+        // ============================================
+        const ELEMENT_KEYWORD_MATRIX = {
+            Fire: {
+                amplifies: ['damage', 'dot', 'burn', 'empower', 'rage', 'spread'],
+                weakens: ['heal', 'shield', 'ice', 'water', 'freeze'],
+                transforms: {
+                    'shield': 'Fire Barrier (damage reflection)',
+                    'heal': 'Cauterize (instant but painful)',
+                    'stun': 'Scorching Paralysis (DoT while stunned)'
+                },
+                multiplier: 1.3,
+                icon: '🔥',
+                philosophy: 'Consume, Spread, Rebirth'
+            },
+            Ice: {
+                amplifies: ['stun', 'freeze', 'slow', 'control', 'preserve', 'shatter'],
+                weakens: ['haste', 'speed', 'fire', 'heat', 'burn'],
+                transforms: {
+                    'heal': 'Cryogenic Stasis (freeze to preserve)',
+                    'damage': 'Frostbite (permanent slow)',
+                    'shield': 'Permafrost Wall (immune to physical)'
+                },
+                multiplier: 1.25,
+                icon: '❄️',
+                philosophy: 'Freeze, Slow, Shatter'
+            },
+            Lightning: {
+                amplifies: ['speed', 'haste', 'chain', 'energy', 'shock', 'stun'],
+                weakens: ['slow', 'root', 'earth', 'ground', 'stability'],
+                transforms: {
+                    'damage': 'Chain Lightning (bounces)',
+                    'stun': 'Electrocution (extended duration)',
+                    'buff': 'Overcharge (+speed, -defense)'
+                },
+                multiplier: 1.4,
+                icon: '⚡',
+                philosophy: 'Speed, Energy, Chain'
+            },
+            Water: {
+                amplifies: ['heal', 'flow', 'adapt', 'cleanse', 'purify', 'shield'],
+                weakens: ['fire', 'burn', 'chaos', 'rigid', 'fixed'],
+                transforms: {
+                    'damage': 'Erosion (slow persistent)',
+                    'control': 'Drown (suffocation)',
+                    'buff': 'Fluid Form (adaptability)'
+                },
+                multiplier: 1.2,
+                icon: '💧',
+                philosophy: 'Flow, Adapt, Heal'
+            },
+            Earth: {
+                amplifies: ['defense', 'stability', 'absorb', 'ground', 'fortify', 'armor'],
+                weakens: ['lightning', 'wind', 'speed', 'flight', 'mobility'],
+                transforms: {
+                    'shield': 'Stone Skin (massive defense)',
+                    'control': 'Entomb (complete immobilization)',
+                    'damage': 'Earthquake (AoE disruption)'
+                },
+                multiplier: 1.35,
+                icon: '🌍',
+                philosophy: 'Stability, Defense, Ground'
+            },
+            Dark: {
+                amplifies: ['decay', 'drain', 'curse', 'debuff', 'fear', 'entropy'],
+                weakens: ['light', 'heal', 'purify', 'cleanse', 'order'],
+                transforms: {
+                    'heal': 'Life Drain (damage to heal)',
+                    'buff': 'Dark Empowerment (power at cost)',
+                    'summon': 'Necromancy (raise undead)'
+                },
+                multiplier: 1.45,
+                icon: '🌑',
+                philosophy: 'Decay, Drain, Curse'
+            },
+            Light: {
+                amplifies: ['heal', 'purify', 'empower', 'radiate', 'order', 'cleanse'],
+                weakens: ['dark', 'decay', 'curse', 'undead', 'chaos'],
+                transforms: {
+                    'damage': 'Holy Smite (extra vs dark)',
+                    'shield': 'Divine Ward (invulnerability)',
+                    'buff': 'Blessing (all stats up)'
+                },
+                multiplier: 1.38,
+                icon: '☀️',
+                philosophy: 'Purify, Empower, Order'
+            },
+            Wind: {
+                amplifies: ['speed', 'disperse', 'accelerate', 'freedom', 'mobility', 'evasion'],
+                weakens: ['earth', 'heavy', 'root', 'anchor', 'stability'],
+                transforms: {
+                    'damage': 'Cutting Wind (precision)',
+                    'control': 'Tornado (group displacement)',
+                    'buff': 'Zephyr (perfect dodge)'
+                },
+                multiplier: 1.3,
+                icon: '🌪️',
+                philosophy: 'Flow, Disperse, Freedom'
+            },
+            Metal: {
+                amplifies: ['conduct', 'reflect', 'resonate', 'forge', 'precision', 'armor'],
+                weakens: ['void', 'corruption', 'rust', 'decay'],
+                transforms: {
+                    'damage': 'Precision Strike (guaranteed crit)',
+                    'shield': 'Mirror Shield (reflect attacks)',
+                    'buff': 'Tempered (hardened strength)'
+                },
+                multiplier: 1.28,
+                icon: '⚙️',
+                philosophy: 'Conduct, Reflect, Forge'
+            },
+            Void: {
+                amplifies: ['erase', 'consume', 'silence', 'nothingness', 'removal', 'annihilate'],
+                weakens: ['metal', 'light', 'creation', 'summon', 'birth'],
+                transforms: {
+                    'damage': 'Void Strike (bypass defense)',
+                    'control': 'Banishment (remove from game)',
+                    'debuff': 'Existence Drain (reduce to nothing)'
+                },
+                multiplier: 1.5,
+                icon: '🕳️',
+                philosophy: 'Nothingness, Erasure, Silence'
+            },
+            Chaos: {
+                amplifies: ['random', 'mutation', 'evolution', 'unpredictable', 'wild', 'transform'],
+                weakens: ['order', 'control', 'predictable', 'stable', 'fixed'],
+                transforms: {
+                    'any': 'Chaotic Mutation (random effect)',
+                    'buff': 'Wild Magic (massive variance)',
+                    'summon': 'Aberration (unpredictable power)'
+                },
+                multiplier: 1.6,
+                icon: '🎲',
+                philosophy: 'Random, Mutation, Evolution'
+            },
+            Order: {
+                amplifies: ['control', 'precision', 'calculate', 'structure', 'law', 'bind'],
+                weakens: ['chaos', 'random', 'wild', 'unpredictable'],
+                transforms: {
+                    'damage': 'Calculated Strike (perfect damage)',
+                    'control': 'Absolute Law (cannot be resisted)',
+                    'buff': 'Perfect Form (optimization)'
+                },
+                multiplier: 1.42,
+                icon: '⚖️',
+                philosophy: 'Law, Structure, Precision'
+            }
+        };
+
+        // ============================================
+        // TIER EVOLUTION SYSTEM
+        // Auto-upgrade based on keyword count
+        // ============================================
+        const TIER_EVOLUTION = {
+            tiers: {
+                I: {
+                    name: 'Tier I - Foundational',
+                    minKeywords: 1,
+                    maxKeywords: 2,
+                    powerBonus: 1.0,
+                    icon: '⭐',
+                    description: 'Basic keyword effect',
+                    visual: {
+                        border: '2px solid rgba(139,92,246,0.4)',
+                        glow: 'none'
+                    }
+                },
+                II: {
+                    name: 'Tier II - Enhanced',
+                    minKeywords: 3,
+                    maxKeywords: 4,
+                    powerBonus: 1.5,
+                    icon: '✨',
+                    description: 'Combination synergies unlock',
+                    visual: {
+                        border: '3px solid rgba(139,92,246,0.7)',
+                        glow: '0 0 15px rgba(139,92,246,0.5)'
+                    },
+                    unlocks: ['combination_rules', 'element_amplification']
+                },
+                III: {
+                    name: 'Tier III - Transcendent',
+                    minKeywords: 5,
+                    maxKeywords: 999,
+                    powerBonus: 2.5,
+                    icon: '🌟',
+                    description: 'Transformative effects, ultimate power',
+                    visual: {
+                        border: '4px solid rgba(255,215,0,0.9)',
+                        glow: '0 0 25px rgba(255,215,0,0.8)'
+                    },
+                    unlocks: ['transformative_rules', 'tier_exclusive_combos', 'ultimate_effects']
+                }
+            },
+            
+            // Calculate tier based on keyword count
+            calculateTier(keywordCount) {
+                if (keywordCount >= 5) return 'III';
+                if (keywordCount >= 3) return 'II';
+                return 'I';
+            },
+            
+            // Get tier bonus multiplier
+            getTierBonus(tier) {
+                return this.tiers[tier].powerBonus;
+            },
+            
+            // Check if specific rule type is unlocked
+            isUnlocked(tier, ruleType) {
+                return this.tiers[tier].unlocks?.includes(ruleType) || false;
+            }
+        };
+
+// Keyword balancing
+TAG_DATA.charm = { name: '💘 Charm', category: 'control', color: '#ffb6c1', short: 'Ally conversion', medium: 'Converts enemy to ally for 1 turn', detailed: { description: 'Charm turns an enemy into an ally for 1 turn. If combined with subservience, duration increases to 2 turns.', strengths: ['Control', 'Combo with subservience', 'Disruption'], weaknesses: ['Short duration', 'Boss resist'], combos: ['Charm + Subservience = Total Enchantment'], tags: { type: 'charm', duration: 1 } } };
+TAG_DATA.silence = { name: '🔇 Silence', category: 'control', color: '#9b7fb8', short: 'Prevent abilities', medium: 'Disables enemy skills for 1 turn', detailed: { description: 'Silence prevents casting for 1 turn. If amplified, disables all abilities for 2 turns.', strengths: ['Counter casters', 'Stop combos', 'Interrupt channels'], weaknesses: ['Short duration', "Doesn't stop autos"], combos: ['Silence + Amplify = Null Field'], tags: { type: 'silence', duration: 1 } } };
+TAG_DATA.amplify = { name: '🔊 Amplify', category: 'buff', color: '#ffd700', short: 'Boost effect', medium: 'Increases power of any effect by 50%', detailed: { description: 'Amplify boosts any effect by 50%. If combined with silence, disables all abilities for 2 turns.', strengths: ['Universal boost', 'Combo potential'], weaknesses: ['Short duration', 'Can be dispelled'], combos: ['Amplify + Silence = Null Field'], tags: { type: 'amplify', potency: 1.5 } } };
+
+// ============================================
+// KEYWORD FUSION CALCULATOR ENGINE
+// Core fusion logic
+// ============================================
+
+// State management
+let selectedKeywords = [];
+let selectedElement = null;
+let fusionResult = null;
+/**
+ * Main fusion calculation function
+ * @param {Array<string>} keywords - Array of keyword names to fuse
+ * @param {string} element - Optional element to apply (Fire, Ice, etc.)
+ * @returns {Object} Fusion result with all calculations
+ */
+function calculateFusion(keywords, element = null) {
+            if (!keywords || keywords.length === 0) {
+                return { error: 'No keywords selected' };
+            }
+
+            // Get keyword data
+            const keywordData = keywords.map(name => TAG_DATA[name]).filter(Boolean);
+            if (keywordData.length !== keywords.length) {
+                return { error: 'Invalid keyword(s)' };
+            }
+
+            // Calculate tier
+            const tier = TIER_EVOLUTION.calculateTier(keywords.length);
+            const tierBonus = TIER_EVOLUTION.getTierBonus(tier);
+            const tierInfo = TIER_EVOLUTION.tiers[tier];
+
+            // Initialize result
+            const result = {
+                name: '',
+                keywords: keywords,
+                keywordCount: keywords.length,
+                tier: tier,
+                tierInfo: tierInfo,
+                basePower: 100,
+                totalMultiplier: 1.0,
+                combinations: [],
+                elementEffect: null,
+                strengths: [],
+                weaknesses: [],
+                effects: [],
+                visual: tierInfo.visual,
+                timestamp: Date.now()
+            };
+
+            // 1. Check COMBINATION_RULES
+            const combos = checkCombinationRules(keywords);
+            result.combinations = combos;
+            combos.forEach(combo => {
+                result.totalMultiplier *= combo.powerMultiplier;
+                result.effects.push(combo.effect);
+            });
+
+            // 2. Apply SMART_RULES
+            const smartRules = applySmartRules(keywords);
+            smartRules.forEach(rule => {
+                if (rule.multiplier) result.totalMultiplier *= rule.multiplier;
+                result.effects.push(rule.result);
+            });
+
+            // 3. Apply Tier Bonus
+            result.totalMultiplier *= tierBonus;
+
+            // 4. Apply Element Amplification
+            if (element && ELEMENT_KEYWORD_MATRIX[element]) {
+                const elementData = ELEMENT_KEYWORD_MATRIX[element];
+                result.elementEffect = applyElementAmplification(keywords, element);
+                result.totalMultiplier *= result.elementEffect.multiplier;
+                result.effects.push(...result.elementEffect.effects);
+            }
+
+            // 5. Aggregate strengths/weaknesses
+            keywordData.forEach(kw => {
+                if (kw.detailed?.strengths) {
+                    result.strengths.push(...kw.detailed.strengths);
+                }
+                if (kw.detailed?.weaknesses) {
+                    result.weaknesses.push(...kw.detailed.weaknesses);
+                }
+            });
+
+            // Remove duplicates
+            result.strengths = [...new Set(result.strengths)];
+            result.weaknesses = [...new Set(result.weaknesses)];
+
+            // 6. Calculate final power
+            result.finalPower = Math.round(result.basePower * result.totalMultiplier);
+
+            // 7. Generate fusion name
+            result.name = generateFusionName(keywords, combos, element);
+
+            // 8. Add description
+            result.description = generateFusionDescription(result);
+
+            return result;
+        }
+
+        /**
+         * Check all combination rules against keyword set
+         */
+        function checkCombinationRules(keywords) {
+            const results = [];
+            const keywordSet = new Set(keywords.map(k => k.toLowerCase()));
+
+            // Check Synergy rules
+            Object.entries(COMBINATION_RULES.synergy).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({
+                        type: 'synergy',
+                        combo: combo,
+                        ...data
+                    });
+                }
+            });
+
+            // Check Opposition rules
+            Object.entries(COMBINATION_RULES.opposition).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({
+                        type: 'opposition',
+                        combo: combo,
+                        ...data
+                    });
+                }
+            });
+
+            // Check Catalytic rules
+            Object.entries(COMBINATION_RULES.catalytic).forEach(([catalyst, data]) => {
+                if (keywordSet.has(catalyst.toLowerCase())) {
+                    results.push({
+                        type: 'catalytic',
+                        combo: catalyst + ' + any',
+                        ...data
+                    });
+                }
+            });
+
+            // Check Transformative rules
+            Object.entries(COMBINATION_RULES.transformative).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({
+                        type: 'transformative',
+                        combo: combo,
+                        ...data
+                    });
+                }
+            });
+
+            return results;
+        }
+
+        /**
+         * Apply smart combination rules
+         */
+        function applySmartRules(keywords) {
+            const results = [];
+            const keywordSet = new Set(keywords.map(k => k.toLowerCase()));
+
+            // Damage Stacking
+            Object.entries(SMART_RULES.damageStacking).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({ category: 'damageStacking', combo, ...data });
+                }
+            });
+
+            // Control Layering
+            Object.entries(SMART_RULES.controlLayering).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({ category: 'controlLayering', combo, ...data });
+                }
+            });
+
+            // Defense Stacking
+            Object.entries(SMART_RULES.defenseStacking).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({ category: 'defenseStacking', combo, ...data });
+                }
+            });
+
+            // Buff Synergy
+            Object.entries(SMART_RULES.buffSynergy).forEach(([combo, data]) => {
+                const parts = combo.split(' + ').map(p => p.trim());
+                if (parts.every(p => keywordSet.has(p))) {
+                    results.push({ category: 'buffSynergy', combo, ...data });
+                }
+            });
+
+            return results;
+        }
+
+        /**
+         * Apply element amplification to keywords
+         */
+        function applyElementAmplification(keywords, element) {
+            const elementData = ELEMENT_KEYWORD_MATRIX[element];
+            const result = {
+                element: element,
+                icon: elementData.icon,
+                multiplier: 1.0,
+                effects: [],
+                amplified: [],
+                weakened: []
+            };
+
+            keywords.forEach(keyword => {
+                const kw = keyword.toLowerCase();
+                
+                // Check if amplified
+                if (elementData.amplifies.some(amp => kw.includes(amp))) {
+                    result.amplified.push(keyword);
+                    result.multiplier *= elementData.multiplier;
+                    result.effects.push(`${element} amplifies ${keyword}`);
+                }
+                
+                // Check if weakened
+                if (elementData.weakens.some(weak => kw.includes(weak))) {
+                    result.weakened.push(keyword);
+                    result.multiplier *= 0.7; // Reduced effectiveness
+                    result.effects.push(`${element} weakens ${keyword}`);
+                }
+                
+                // Check for transformations
+                Object.entries(elementData.transforms).forEach(([key, transform]) => {
+                    if (kw.includes(key)) {
+                        result.effects.push(`${keyword} → ${transform}`);
+                    }
+                });
+            });
+
+            return result;
+        }
+
+        /**
+         * Generate creative fusion name
+         */
+        function generateFusionName(keywords, combos, element) {
+            // If there's a named combination, use it
+            if (combos.length > 0 && combos[0].result) {
+                let name = combos[0].result;
+                if (element) name = `${element} ${name}`;
+                return name;
+            }
+
+            // Otherwise create compound name
+            if (keywords.length === 1) {
+                return element ? `${element} ${keywords[0]}` : keywords[0];
+            } else if (keywords.length === 2) {
+                return `${keywords[0]}-${keywords[1]}` + (element ? ` (${element})` : '');
+            } else {
+                return `${keywords.length}-Keyword Fusion` + (element ? ` (${element})` : '');
+            }
+        }
+
+        /**
+         * Generate fusion description
+         */
+        function generateFusionDescription(result) {
+            let desc = `A ${result.tierInfo.name} fusion combining ${result.keywordCount} keyword(s). `;
+            
+            if (result.combinations.length > 0) {
+                desc += `Features ${result.combinations.map(c => c.type).join(', ')} synergies. `;
+            }
+            
+            if (result.elementEffect) {
+                desc += `Empowered by ${result.elementEffect.element} energy. `;
+            }
+            
+            desc += `Total power multiplier: ${result.totalMultiplier.toFixed(2)}x (${result.finalPower} effective power).`;
+            
+            return desc;
+        }
+
+        /**
+         * Save fusion result to localStorage
+         */
+        function saveFusionResult(result) {
+            const saved = JSON.parse(localStorage.getItem('savedFusions') || '[]');
+            saved.push(result);
+            // Keep only last 50
+            if (saved.length > 50) saved.shift();
+            localStorage.setItem('savedFusions', JSON.stringify(saved));
+        }
+
+        /**
+         * Load saved fusions from localStorage
+         */
+        function loadSavedFusions() {
+            return JSON.parse(localStorage.getItem('savedFusions') || '[]');
+        }
+
+        // ============================================
+        // LOCALSTORAGE PERSISTENCE & CROSS-ENGINE SYNC
+        // ============================================
+
+        /**
+         * Save current state to localStorage
+         */
+        function saveStateToLocalStorage() {
+            const state = {
+                selectedKeywords: selectedKeywords,
+                selectedElement: selectedElement,
+                fusionResult: fusionResult,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('keywordEngineState', JSON.stringify(state));
+        }
+
+        /**
+         * Load state from localStorage
+         */
+        function loadStateFromLocalStorage() {
+            const saved = localStorage.getItem('keywordEngineState');
+            if (saved) {
+                const state = JSON.parse(saved);
+                selectedKeywords = state.selectedKeywords || [];
+                selectedElement = state.selectedElement || null;
+                fusionResult = state.fusionResult || null;
+                return state;
+            }
+            return null;
+        }
+
+        /**
+         * Sync with Elemental Matrix Engine
+         * Pulls element data from elemental engine localStorage
+         */
+        function syncWithElementalEngine() {
+            // Try to get data from localStorage
+            const elementalState = localStorage.getItem('elementalMatrixState');
+            const elementalExport = localStorage.getItem('elementalEngineExport');
+            
+            if (elementalState || elementalExport) {
+                // Prefer export data (more complete)
+                const data = elementalExport ? JSON.parse(elementalExport) : JSON.parse(elementalState);
+                
+                // If elemental engine has selected elements, use the first one
+                if (data.selectedElements && data.selectedElements.length > 0) {
+                    selectedElement = data.selectedElements[0];
+                }
+                
+                // If there's a fusion result from elemental engine, integrate it
+                if (data.fusionResult) {
+                    const fusion = data.fusionResult;
+                    return {
+                        synced: true,
+                        element: data.element || data.selectedElements?.[0] || null,
+                        elementPower: fusion.power || 100,
+                        phiMultiplier: parseFloat(fusion.harmony) || data.phiMultiplier || 1.618,
+                        elements: data.selectedElements || [],
+                        fusionData: fusion
+                    };
+                }
+                
+                // Even without fusion, we have elements selected
+                if (data.selectedElements && data.selectedElements.length > 0) {
+                    return {
+                        synced: true,
+                        element: data.selectedElements[0],
+                        elementPower: 100,
+                        phiMultiplier: 1.618,
+                        elements: data.selectedElements
+                    };
+                }
+            }
+            
+            return { synced: false };
+        }
+
+        /**
+         * Push keyword fusion data to elemental engine
+         * Allows elemental engine to see keyword combinations
+         */
+        function pushToElementalEngine(fusionResult) {
+            if (!fusionResult) return;
+            
+            const dataToShare = {
+                source: 'keywordEngine',
+                keywords: fusionResult.keywords,
+                power: fusionResult.finalPower,
+                multiplier: fusionResult.totalMultiplier,
+                tier: fusionResult.tier,
+                effects: fusionResult.effects,
+                timestamp: Date.now()
+            };
+            
+            localStorage.setItem('keywordEngineExport', JSON.stringify(dataToShare));
+        }
+
+        /**
+         * Get combined power when both engines are active
+         * Element Power × Keyword Power × Phi Harmony
+         */
+        function calculateCombinedEnginePower() {
+            const elementalSync = syncWithElementalEngine();
+            
+            if (elementalSync.synced && fusionResult) {
+                const PHI = 1.618033988749;
+                const combinedPower = {
+                    elementPower: elementalSync.elementPower,
+                    keywordPower: fusionResult.finalPower,
+                    phiBonus: elementalSync.phiMultiplier || PHI,
+                    totalPower: Math.round(
+                        elementalSync.elementPower * 
+                        fusionResult.finalPower * 
+                        (elementalSync.phiMultiplier || PHI) / 100
+                    ),
+                    harmony: 'Golden Ratio Alignment',
+                    description: 'Perfect fusion of Elemental and Keyword forces'
+                };
+                
+                return combinedPower;
+            }
+            
+            return null;
+        }
+
+        /**
+         * Auto-save on changes
+         */
+        function enableAutoSave() {
+            // Save every 5 seconds if there are changes
+            setInterval(() => {
+                if (selectedKeywords.length > 0 || fusionResult) {
+                    saveStateToLocalStorage();
+                }
+            }, 5000);
+        }
+
+        /**
+         * Clear all saved data
+         */
+        function clearAllSavedData() {
+            if (confirm('Clear all saved keyword combinations? This cannot be undone.')) {
+                localStorage.removeItem('keywordEngineState');
+                localStorage.removeItem('savedFusions');
+                localStorage.removeItem('keywordEngineExport');
+                selectedKeywords = [];
+                selectedElement = null;
+                fusionResult = null;
+                alert('All data cleared!');
+                location.reload();
+            }
+        }
+
+        // ============================================
+        // FUSION WORKSHOP UI FUNCTIONS
+        // ============================================
+        
+        /**
+         * Open fusion workshop
+         */
+        function openFusionWorkshop() {
+            document.getElementById('fusionWorkshop').style.display = 'block';
+            renderElementSelector();
+            updateTierIndicator();
+            renderSavedFusions();
+            loadStateFromLocalStorage();
+            renderKeywords(); // Re-render in selection mode
+        }
+        
+        /**
+         * Close fusion workshop
+         */
+        function closeFusionWorkshop() {
+            document.getElementById('fusionWorkshop').style.display = 'none';
+            renderKeywords(); // Re-render in normal mode
+        }
+        
+        /**
+         * Toggle keyword selection
+         */
+        function toggleKeywordSelection(keywordName) {
+            const index = selectedKeywords.indexOf(keywordName);
+            
+            if (index === -1) {
+                // Add if not selected and under limit
+                if (selectedKeywords.length < 10) {
+                    selectedKeywords.push(keywordName);
+                } else {
+                    alert('Maximum 10 keywords can be selected!');
+                    return;
+                }
+            } else {
+                // Remove if already selected
+                selectedKeywords.splice(index, 1);
+            }
+            
+            updateSelectionDisplay();
+            updateTierIndicator();
+            saveStateToLocalStorage();
+        }
+        
+        /**
+         * Update selected keywords display
+         */
+        function updateSelectionDisplay() {
+            const container = document.getElementById('selectedKeywordsDisplay');
+            const count = document.getElementById('selectionCount');
+            
+            count.textContent = selectedKeywords.length;
+            
+            if (selectedKeywords.length === 0) {
+                container.innerHTML = '<p style="opacity: 0.5; text-align: center;">Click on keywords to select them...</p>';
+                return;
+            }
+            
+            container.innerHTML = selectedKeywords.map(kw => {
+                const data = TAG_DATA[kw];
+                return `
+                    <div class="selected-keyword-tag" onclick="toggleKeywordSelection('${kw}')">
+                        <span>${data.name}</span>
+                        <span class="remove">✕</span>
+                    </div>
+                `;
+            }).join('');
+            
+            // Update keyword cards visual state
+            document.querySelectorAll('.keyword-card').forEach(card => {
+                const name = card.dataset.keyword;
+                if (selectedKeywords.includes(name)) {
+                    card.classList.add('selected');
+                } else {
+                    card.classList.remove('selected');
+                }
+            });
+        }
+        
+        /**
+         * Render element selector buttons
+         */
+        function renderElementSelector() {
+            const container = document.getElementById('elementSelector');
+            const elements = ['Fire', 'Ice', 'Lightning', 'Water', 'Earth', 'Dark', 'Light', 'Wind', 'Metal', 'Void', 'Chaos', 'Order'];
+            
+            container.innerHTML = elements.map(elem => {
+                const data = ELEMENT_KEYWORD_MATRIX[elem];
+                return `
+                    <button class="element-btn ${selectedElement === elem ? 'selected' : ''}" 
+                            style="border-color: ${getElementColor(elem)}; color: ${getElementColor(elem)};"
+                            onclick="selectElement('${elem}')">
+                        ${data.icon}
+                    </button>
+                `;
+            }).join('');
+        }
+        
+        /**
+         * Get element color
+         */
+        function getElementColor(element) {
+            const colors = {
+                Fire: '#ff6464', Ice: '#64b4ff', Lightning: '#ffeb64', Water: '#64c8ff',
+                Earth: '#96c864', Dark: '#9664c8', Light: '#ffe664', Wind: '#96ffeb',
+                Metal: '#c8c8c8', Void: '#4b0082', Chaos: '#ff00ff', Order: '#ffd700'
+            };
+            return colors[element] || '#8b5cf6';
+        }
+        
+        /**
+         * Select element
+         */
+        function selectElement(element) {
+            selectedElement = selectedElement === element ? null : element;
+            renderElementSelector();
+            saveStateToLocalStorage();
+        }
+        
+        /**
+         * Update tier indicator
+         */
+        function updateTierIndicator() {
+            const container = document.getElementById('tierIndicator');
+            const tier = TIER_EVOLUTION.calculateTier(selectedKeywords.length);
+            const tierData = TIER_EVOLUTION.tiers[tier];
+            
+            container.className = `tier-indicator tier-${tier === 'I' ? '1' : tier === 'II' ? '2' : '3'}`;
+            container.innerHTML = `
+                <div style="font-size: 2rem; margin-bottom: 10px;">${tierData.icon}</div>
+                <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 5px;">${tierData.name}</div>
+                <div style="opacity: 0.8;">${tierData.description}</div>
+                <div style="margin-top: 10px; font-size: 1.1rem; color: #ffd700;">
+                    Power Bonus: ${tierData.powerBonus}x
+                </div>
+            `;
+        }
+        
+        /**
+         * Perform fusion calculation
+         */
+        function performFusion() {
+            if (selectedKeywords.length === 0) {
+                alert('Please select at least one keyword!');
+                return;
+            }
+            
+            fusionResult = calculateFusion(selectedKeywords, selectedElement);
+            displayFusionResult(fusionResult);
+            displayCombinationMatrix(fusionResult);
+            saveStateToLocalStorage();
+        }
+        
+        /**
+         * Display fusion result
+         */
+        function displayFusionResult(result) {
+            const container = document.getElementById('fusionResultDisplay');
+            
+            if (result.error) {
+                container.innerHTML = `<p style="color: #ef4444;">${result.error}</p>`;
+                return;
+            }
+            
+            container.innerHTML = `
+                <h4>${result.tierInfo.icon} ${result.name}</h4>
+                <p style="margin-bottom: 20px; opacity: 0.9;">${result.description}</p>
+                
+                <div class="fusion-stat">
+                    <span>Keywords:</span>
+                    <strong>${result.keywords.join(', ')}</strong>
+                </div>
+                <div class="fusion-stat">
+                    <span>Tier:</span>
+                    <strong>${result.tier} - ${result.tierInfo.name}</strong>
+                </div>
+                <div class="fusion-stat">
+                    <span>Base Power:</span>
+                    <strong>${result.basePower}</strong>
+                </div>
+                <div class="fusion-stat">
+                    <span>Total Multiplier:</span>
+                    <strong style="color: #ffd700;">${result.totalMultiplier.toFixed(2)}x</strong>
+                </div>
+                <div class="fusion-stat">
+                    <span>Final Power:</span>
+                    <strong style="color: #10b981; font-size: 1.3rem;">${result.finalPower}</strong>
+                </div>
+                
+                ${result.elementEffect ? `
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(139,92,246,0.2); border-radius: 8px;">
+                        <strong>${result.elementEffect.icon} ${result.elementEffect.element} Amplification</strong>
+                        <div style="margin-top: 10px;">
+                            ${result.elementEffect.effects.map(e => `<div>• ${e}</div>`).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                ${result.effects.length > 0 ? `
+                    <div style="margin-top: 20px;">
+                        <strong>🎯 Combined Effects:</strong>
+                        <div style="margin-top: 10px;">
+                            ${result.effects.map(e => `<div>• ${e}</div>`).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                ${result.strengths.length > 0 ? `
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #10b981;">💪 Strengths:</strong>
+                        <div style="margin-top: 5px; opacity: 0.9;">
+                            ${result.strengths.slice(0, 5).map(s => `<span>• ${s}</span>`).join(' ')}
+                        </div>
+                    </div>
+                ` : ''}
+                
+                ${result.weaknesses.length > 0 ? `
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #ef4444;">⚠️ Weaknesses:</strong>
+                        <div style="margin-top: 5px; opacity: 0.9;">
+                            ${result.weaknesses.slice(0, 5).map(w => `<span>• ${w}</span>`).join(' ')}
+                        </div>
+                    </div>
+                ` : ''}
+            `;
+        }
+        
+        /**
+         * Display combination matrix
+         */
+        function displayCombinationMatrix(result) {
+            const container = document.getElementById('combinationMatrix');
+            
+            if (!result.combinations || result.combinations.length === 0) {
+                container.innerHTML = '<p style="opacity: 0.5;">No special combinations detected</p>';
+                return;
+            }
+            
+            container.innerHTML = result.combinations.map(combo => `
+                <div class="combo-item ${combo.type}">
+                    <div>
+                        <strong>${combo.combo}</strong>
+                        <div style="opacity: 0.8; font-size: 0.9rem;">${combo.result}</div>
+                    </div>
+                    <div class="combo-multiplier">${combo.powerMultiplier}x</div>
+                </div>
+            `).join('');
+        }
+        
+        /**
+         * Clear selection
+         */
+        function clearSelection() {
+            selectedKeywords = [];
+            selectedElement = null;
+            fusionResult = null;
+            updateSelectionDisplay();
+            renderElementSelector();
+            updateTierIndicator();
+            document.getElementById('fusionResultDisplay').innerHTML = '<p style="opacity: 0.5;">Select keywords and click Calculate Fusion to see results...</p>';
+            document.getElementById('combinationMatrix').innerHTML = '';
+            saveStateToLocalStorage();
+        }
+        
+        /**
+         * Save current fusion
+         */
+        function saveCurrent() {
+            if (!fusionResult) {
+                alert('Please calculate a fusion first!');
+                return;
+            }
+            
+            saveFusionResult(fusionResult);
+            renderSavedFusions();
+            alert('Fusion saved!');
+        }
+        
+        /**
+         * Render saved fusions
+         */
+        function renderSavedFusions() {
+            const saved = loadSavedFusions();
+            const container = document.getElementById('savedGrid');
+            const count = document.getElementById('savedCount');
+            
+            count.textContent = saved.length;
+            
+            if (saved.length === 0) {
+                container.innerHTML = '<p style="opacity: 0.5;">No saved fusions yet</p>';
+                return;
+            }
+            
+            container.innerHTML = saved.reverse().slice(0, 12).map((fusion, idx) => `
+                <div class="saved-fusion-card" onclick="loadFusion(${saved.length - 1 - idx})">
+                    <strong>${fusion.name}</strong>
+                    <div style="opacity: 0.8; font-size: 0.9rem; margin-top: 5px;">
+                        ${fusion.keywords.slice(0, 3).join(', ')}${fusion.keywords.length > 3 ? '...' : ''}
+                    </div>
+                    <div style="margin-top: 10px; display: flex; justify-content: space-between;">
+                        <span>${fusion.tier}</span>
+                        <span style="color: #ffd700;">${fusion.finalPower} power</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        /**
+         * Load saved fusion
+         */
+        function loadFusion(index) {
+            const saved = loadSavedFusions();
+            const fusion = saved[index];
+            
+            if (fusion) {
+                selectedKeywords = fusion.keywords;
+                selectedElement = fusion.elementEffect?.element || null;
+                updateSelectionDisplay();
+                renderElementSelector();
+                updateTierIndicator();
+                performFusion();
+            }
+        }
+        
+        /**
+         * Sync with elemental engine
+         */
+        function syncEngines() {
+            const syncData = syncWithElementalEngine();
+            const statusDiv = document.getElementById('syncStatus');
+            
+            if (syncData.synced) {
+                selectedElement = syncData.element;
+                renderElementSelector();
+                
+                statusDiv.innerHTML = `
+                    <div style="color: #10b981; font-size: 1.1rem; margin-bottom: 15px;">
+                        ✓ Successfully Synced with Elemental Engine
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 8px; border: 1px solid #10b981;">
+                        <strong>🌟 Selected Element:</strong> ${syncData.element}<br>
+                        <strong>⚡ Element Power:</strong> ${syncData.elementPower}<br>
+                        <strong>🌊 Phi Multiplier:</strong> ${syncData.phiMultiplier.toFixed(3)}x
+                        ${syncData.elements ? `<br><strong>🔗 Elements:</strong> ${syncData.elements.join(', ')}` : ''}
+                    </div>
+                `;
+                
+                if (fusionResult) {
+                    const combined = calculateCombinedEnginePower();
+                    if (combined) {
+                        statusDiv.innerHTML += `
+                            <div style="margin-top: 15px; padding: 20px; background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,136,0,0.2)); border-radius: 12px; border: 2px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.3);">
+                                <div style="text-align: center; font-size: 1.3rem; margin-bottom: 15px;">
+                                    <strong style="color: #ffd700;">🌟 GOLDEN RATIO HARMONY 🌟</strong>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                                    <div>
+                                        <div style="opacity: 0.8;">Element Power:</div>
+                                        <div style="font-size: 1.2rem; color: #3b82f6;">${combined.elementPower}</div>
+                                    </div>
+                                    <div>
+                                        <div style="opacity: 0.8;">Keyword Power:</div>
+                                        <div style="font-size: 1.2rem; color: #8b5cf6;">${combined.keywordPower}</div>
+                                    </div>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 8px;">
+                                    <div style="opacity: 0.8; margin-bottom: 5px;">Phi Harmony Bonus: ${combined.phiBonus.toFixed(3)}x</div>
+                                    <div style="font-size: 1.8rem; font-weight: bold; color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.5);">
+                                        ${combined.totalPower}
+                                    </div>
+                                    <div style="opacity: 0.7; margin-top: 5px; font-size: 0.9rem;">
+                                        ${combined.description}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+                
+                // Push our data back
+                pushToElementalEngine(fusionResult);
+                
+                // Auto-perform fusion if we have keywords
+                if (selectedKeywords.length > 0 && !fusionResult) {
+                    performFusion();
+                }
+            } else {
+                statusDiv.innerHTML = `
+                    <div style="color: #f59e0b; text-align: center; padding: 20px;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">⚠️</div>
+                        <div style="font-size: 1.1rem; margin-bottom: 10px;">No Elemental Engine Data Found</div>
+                        <div style="opacity: 0.7; margin-bottom: 15px;">
+                            To enable cross-engine sync:
+                        </div>
+                        <ol style="text-align: left; display: inline-block; opacity: 0.8;">
+                            <li>Open <code>01-elemental-matrix-engine.html</code></li>
+                            <li>Select 2+ elements</li>
+                            <li>Click "Fuse Elements"</li>
+                            <li>Return here and click "Sync" again</li>
+                        </ol>
+                    </div>
+                `;
+            }
+        }
+        
         // ============================================
         // Initialize
         // ============================================
@@ -1099,6 +2817,35 @@
             renderCategoryFilter();
             renderKeywords();
             setupSearch();
+            enableAutoSave();
+            loadStateFromLocalStorage();
+            
+            // Add fusion workshop button to header
+            const header = document.querySelector('header');
+            const fusionBtn = document.createElement('button');
+            fusionBtn.innerHTML = '⚗️ Open Fusion Workshop';
+            fusionBtn.style.cssText = `
+                margin-top: 15px;
+                padding: 12px 24px;
+                border-radius: 12px;
+                border: 2px solid #8b5cf6;
+                background: rgba(139, 92, 246, 0.2);
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 1rem;
+                transition: all 0.3s;
+            `;
+            fusionBtn.onmouseover = () => {
+                fusionBtn.style.background = 'rgba(139, 92, 246, 0.4)';
+                fusionBtn.style.boxShadow = '0 0 20px #8b5cf6';
+            };
+            fusionBtn.onmouseout = () => {
+                fusionBtn.style.background = 'rgba(139, 92, 246, 0.2)';
+                fusionBtn.style.boxShadow = 'none';
+            };
+            fusionBtn.onclick = openFusionWorkshop;
+            header.appendChild(fusionBtn);
         }
 
         function updateStats() {
@@ -1156,6 +2903,8 @@
             const grid = document.getElementById('keywordsGrid');
             grid.innerHTML = '';
             
+            const fusionMode = document.getElementById('fusionWorkshop').style.display !== 'none';
+            
             Object.entries(TAG_DATA).forEach(([key, data]) => {
                 // Filter by category
                 if (currentFilter !== 'all' && data.category !== currentFilter) return;
@@ -1166,8 +2915,13 @@
                     !data.medium.toLowerCase().includes(searchQuery)) return;
                 
                 const card = document.createElement('div');
-                card.className = 'keyword-card';
+                card.className = 'keyword-card' + (fusionMode ? ' selectable' : '');
                 card.style.borderColor = data.color;
+                card.dataset.keyword = key;
+                
+                if (selectedKeywords.includes(key)) {
+                    card.classList.add('selected');
+                }
                 
                 card.innerHTML = `
                     <div class="keyword-name" style="color: ${data.color};">${data.name}</div>
@@ -1177,7 +2931,12 @@
                     <div class="keyword-desc">${data.medium}</div>
                 `;
                 
-                card.onclick = () => showDetails(key, data);
+                if (fusionMode) {
+                    card.onclick = () => toggleKeywordSelection(key);
+                } else {
+                    card.onclick = () => showDetails(key, data);
+                }
+                
                 grid.appendChild(card);
             });
         }

@@ -1,0 +1,39 @@
+Skill System
+Base Skills: 1,037+ skills, each with unique effects and some with passives.
+Fusion: Fusing skills creates new, evolved skills with transformed effects, not just simple combinations.
+Passives: Skills can have passives that amplify keyword/element synergies, but the real magic is in fusion and dynamic combos.
+Card System
+Affinity & Keyword: At creation, each card can optionally get a random keyword and element (affinity). These are the card’s “core identity.”
+Evolution: Cards can gain new keywords/elements by spending resources (seeds, etc.)—not by fusing cards, but by evolving their own properties.
+Synergy: Multiple elements/keywords on a card create new effects for the card and its skills, based on synergy rules (not fusion).
+Gameplay Loop
+No Card Fusion: Each card is a standalone powerhouse, but can evolve by adding new keywords/elements.
+Jyotish System: The 12-house chart and planetary/nakshatra modifiers add another layer of dynamic buffs and synergies.
+Building Blocks: Skills, elements, keywords, and Jyotish modifiers are all modular—combine them in any way for infinite combos.
+Prototypes
+Fusion Demo: Skill fusion logic is working—need more content (skills, effects, rules).
+Keywords/Elements Engines: Logic for keyword/element synergy is working—need more data and rules.
+Card Builder: Jyotish chart and slotting system is working—needs more content and integration.
+Next Steps
+Content Creation:
+
+Finish populating the prototypes with more skills, keywords, elements, and synergy rules.
+Make sure each system (skills, keywords, elements, Jyotish) has enough variety and depth.
+Synergy Rules:
+
+Define how keywords and elements interact (synergy matrix).
+Make sure fusion/evolution effects are interesting and not just stat boosts.
+Gameplay Loop:
+
+Decide how players earn resources, unlock skills, and evolve cards.
+Make the loop rewarding and endless (always something new to discover).
+Integration:
+
+Connect the prototypes so cards, skills, keywords, elements, and Jyotish all interact smoothly.
+Keep everything modular so new content can be added easily.
+Questions for you:
+
+Do you want to focus first on expanding the skill database, or on defining more synergy rules for keywords/elements?
+Should we design more Jyotish modifiers, or refine the resource/currency system for evolving cards?
+What’s your vision for how players progress—unlocking, evolving, or discovering combos?
+Let’s keep talking and break it down step by step!

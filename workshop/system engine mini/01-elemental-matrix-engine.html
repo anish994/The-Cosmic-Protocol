@@ -547,6 +547,45 @@
             PROPERTY_INTERACTIONS: null,
             GLOBAL_SYNC: GLOBAL_ENGINE_SYNC
         };
+
+        // ═══════════════════════════════════════════════════════════════
+        // 🏷️ EFFECT TAG SYSTEM - Modular Tags for Fusion, Cards, Skills
+        // ═══════════════════════════════════════════════════════════════
+
+        /**
+         * EffectTag structure for modular, stackable effects
+         * @typedef {Object} EffectTag
+         * @property {string} type - The tag type (e.g. 'Burn', 'Heal', 'Stun')
+         * @property {number} [potency] - Optional strength/amplification value
+         * @property {number} [stacks] - Optional stack count for dynamic effects
+         * @property {Object} [meta] - Optional metadata for advanced logic
+         */
+
+        /**
+         * Utility to attach tags to any fusion result, card, or skill
+         * @param {Object} target - The object to attach tags to
+         * @param {EffectTag[]} tags - Array of EffectTag objects
+         */
+        function applyEffectTags(target, tags) {
+            if (!Array.isArray(tags)) return;
+            if (!target.effectTags) target.effectTags = [];
+            for (const tag of tags) {
+                // Merge stacks if same type exists
+                const existing = target.effectTags.find(t => t.type === tag.type);
+                if (existing) {
+                    existing.stacks = (existing.stacks || 1) + (tag.stacks || 1);
+                    if (tag.potency) existing.potency = Math.max(existing.potency || 0, tag.potency);
+                    // Optionally merge meta
+                } else {
+                    target.effectTags.push({...tag});
+                }
+            }
+        }
+
+        // Example usage:
+        // let fusionResult = { ... };
+        // applyEffectTags(fusionResult, [ {type: 'Burn', potency: 2}, {type: 'Stun', stacks: 1} ]);
+        // Now fusionResult.effectTags contains modular tags
         
         // PROPERTY TIER SYSTEM - Properties evolve through mastery
         const PROPERTY_TIERS = {
@@ -687,6 +726,1014 @@
         // Complete elemental matrix with power scaling and balance
         
         const PROPERTY_INTERACTIONS = {
+            // Self synergy: Chaos-Chaos
+            'Chaos-Chaos': {
+                name: 'INFINITE ANOMALY',
+                effect: 'Unleashes endless unpredictable effects, random buffs and debuffs, disrupts all order.',
+                attributes: ['Random', 'Disrupt', 'Mutate'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 0.5,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.9
+            },
+            // Chaos-Fire
+            'Chaos-Fire': {
+                name: 'WILDFIRE MUTATION',
+                effect: 'Unpredictable flames, random effects, evolves continuously.',
+                attributes: ['Chaos', 'Random', 'Evolution'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 8,
+                aoe_radius: 5,
+                tier_bonus: 2.6
+            },
+            // Chaos-Ice
+            'Chaos-Ice': {
+                name: 'CHAOTIC HAIL',
+                effect: 'Unpredictable hailstorm, random damage, disrupts movement and plans.',
+                attributes: ['Random', 'Freeze', 'Disrupt'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.3
+            },
+            // Chaos-Earth
+            'Chaos-Earth': {
+                name: 'QUAKE FRENZY',
+                effect: 'Unpredictable earthquakes, random terrain changes, disrupts all movement.',
+                attributes: ['Random', 'Disrupt', 'Terrain'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.3
+            },
+            // Chaos-Lightning
+            'Chaos-Lightning': {
+                name: 'QUANTUM SPARK',
+                effect: 'Probability lightning, exists in multiple states, unpredictable.',
+                attributes: ['Chaos', 'Random', 'Quantum'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.9
+            },
+            // Chaos-Water
+            'Chaos-Water': {
+                name: 'TIDAL CHAOS',
+                effect: 'Unpredictable waves, random currents, shifting flows.',
+                attributes: ['Chaos', 'Random', 'Area'],
+                power_scale: 3,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 8,
+                aoe_radius: 5,
+                tier_bonus: 2.2
+            },
+            // Chaos-Light
+            'Chaos-Light': {
+                name: 'PRISMATIC ANOMALY',
+                effect: 'Unpredictable bursts of color and light, random buffs and debuffs, disrupts all plans.',
+                attributes: ['Random', 'Disrupt', 'Buff'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.5
+            },
+            // Chaos-Dark
+            'Chaos-Dark': {
+                name: 'ENTROPIC MAELSTROM',
+                effect: 'Unleashes chaotic dark energy, random curses, unpredictable decay.',
+                attributes: ['Chaos', 'Random', 'Decay'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.5
+            },
+            // Chaos-Air
+            'Chaos-Air': {
+                name: 'WHIRLWIND MADNESS',
+                effect: 'Unpredictable wind patterns, random movement, disrupts all plans.',
+                attributes: ['Random', 'Disrupt', 'Chaos'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.3
+            },
+            // Chaos-Metal
+            'Chaos-Metal': {
+                name: 'ANARCHIC FORGE',
+                effect: 'Unpredictable metal mutations, random effects, disrupts crafting.',
+                attributes: ['Random', 'Disrupt', 'Mutate'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 2.1
+            },
+            // Chaos-Void
+            'Chaos-Void': {
+                name: 'VOID ANOMALY',
+                effect: 'Unpredictable void effects, random erasures, disrupts all plans.',
+                attributes: ['Random', 'Erase', 'Disrupt'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 5,
+                tier_bonus: 2.8
+            },
+            // Chaos-Order
+            'Chaos-Order': {
+                name: 'EQUILIBRIUM',
+                effect: 'Creates perfect balance, stabilizes unstable effects, unique hybrid powers.',
+                attributes: ['Balance', 'Hybrid', 'Stability'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 1.0,
+                duration: 10,
+                aoe_radius: 5,
+                tier_bonus: 3.0
+            },
+            // Self synergy: Void-Void
+            'Void-Void': {
+                name: 'ABSOLUTE NULL',
+                effect: 'Creates a zone of complete erasure, removes all effects and matter, risk of instability.',
+                attributes: ['Erase', 'Silence', 'Instability'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 3,
+                tier_bonus: 2.9
+            },
+            // Void-Fire
+            'Void-Fire': {
+                name: 'ANNIHILATION FLAME',
+                effect: 'Burns away existence, erases matter, creates void zones.',
+                attributes: ['Chaos', 'Erase', 'Void'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 3,
+                tier_bonus: 3.0
+            },
+            // Void-Ice
+            'Void-Ice': {
+                name: 'NULL FROST',
+                effect: 'Erases heat and energy, creates zones of absolute silence and cold.',
+                attributes: ['Void', 'Freeze', 'Silence'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 2,
+                tier_bonus: 2.9
+            },
+            // Void-Earth
+            'Void-Earth': {
+                name: 'NULL TRENCH',
+                effect: 'Creates bottomless voids in the earth, erases terrain, risk of collapse.',
+                attributes: ['Void', 'Erase', 'Collapse'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.7
+            },
+            // Void-Lightning
+            'Void-Lightning': {
+                name: 'VOID DISCHARGE',
+                effect: 'Lightning that erases, energy deletion, silent strike.',
+                attributes: ['Void', 'Erase', 'Silence'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 3,
+                aoe_radius: 2,
+                tier_bonus: 3.2
+            },
+            // Void-Water
+            'Void-Water': {
+                name: 'EMPTY OCEAN',
+                effect: 'Water that erases, silent depths, drowns existence.',
+                attributes: ['Void', 'Silence', 'Erase'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.8
+            },
+            // Void-Light
+            'Void-Light': {
+                name: 'NULL RADIANCE',
+                effect: 'Light that erases shadows, creates zones of pure emptiness, silences all effects.',
+                attributes: ['Erase', 'Silence', 'Radiate'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.8,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.7
+            },
+            // Void-Dark
+            'Void-Dark': {
+                name: 'OBLIVION VEIL',
+                effect: 'Envelops area in void darkness, erases memories, silences all effects.',
+                attributes: ['Void', 'Erase', 'Silence'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 3,
+                tier_bonus: 2.9
+            },
+            // Void-Air
+            'Void-Air': {
+                name: 'SILENT STORM',
+                effect: 'Wind that erases sound, creates zones of silence and confusion.',
+                attributes: ['Silence', 'Disperse', 'Confuse'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.1
+            },
+            // Void-Metal
+            'Void-Metal': {
+                name: 'NULL ALLOY',
+                effect: 'Metal infused with void, erases durability, creates unstable constructs.',
+                attributes: ['Void', 'Erase', 'Unstable'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.3
+            },
+            // Void-Chaos
+            'Void-Chaos': {
+                name: 'VOID ANOMALY',
+                effect: 'Unpredictable void effects, random erasures, disrupts all plans.',
+                attributes: ['Random', 'Erase', 'Disrupt'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 5,
+                tier_bonus: 2.8
+            },
+            // Void-Order
+            'Void-Order': {
+                name: 'STRUCTURED VOID',
+                effect: 'Creates organized emptiness, controlled deletion, selective erasure.',
+                attributes: ['Order', 'Void', 'Control'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 1.2,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 2.7
+            },
+            // Self synergy: Metal-Metal
+            'Metal-Metal': {
+                name: 'INFINITE FORGE',
+                effect: 'Creates endless metal constructs, amplifies crafting and defense, risk of overburden.',
+                attributes: ['Craft', 'Amplify', 'Defense'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 2.7
+            },
+            // Metal-Fire
+            'Metal-Fire': {
+                name: 'MOLTEN FORGE',
+                effect: 'Superheats metal, creates weapons, metal becomes liquid.',
+                attributes: ['Transform', 'Craft', 'Enhance'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 6,
+                aoe_radius: 2,
+                tier_bonus: 1.9
+            },
+            // Metal-Ice
+            'Metal-Ice': {
+                name: 'FROSTED STEEL',
+                effect: 'Encrusts metal with ice, increases durability, can shatter on impact.',
+                attributes: ['Enhance', 'Freeze', 'Shatter'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.1,
+                duration: 8,
+                aoe_radius: 2,
+                tier_bonus: 1.6
+            },
+            // Metal-Earth
+            'Metal-Earth': {
+                name: 'ORE AWAKENING',
+                effect: 'Earth reveals hidden ores, boosts crafting, enhances defense.',
+                attributes: ['Craft', 'Enhance', 'Defense'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 9,
+                aoe_radius: 2,
+                tier_bonus: 1.8
+            },
+            // Metal-Lightning
+            'Metal-Lightning': {
+                name: 'SUPERCONDUCTION',
+                effect: 'Perfect energy flow, amplifies power, chain lightning.',
+                attributes: ['Order', 'Enhance', 'Chain'],
+                power_scale: 4,
+                interaction_type: 'catalytic',
+                stability: 1.1,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 2.4
+            },
+            // Metal-Water
+            'Metal-Water': {
+                name: 'RUST CASCADE',
+                effect: 'Corrodes metal rapidly, weakens armor, creates rust clouds.',
+                attributes: ['Decay', 'Weaken', 'Area'],
+                power_scale: 2,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 9,
+                aoe_radius: 2,
+                tier_bonus: 1.6
+            },
+            // Metal-Light
+            'Metal-Light': {
+                name: 'RADIANT FORGE',
+                effect: 'Infuses metal with light, creates holy weapons, reflects and amplifies light.',
+                attributes: ['Reflect', 'Amplify', 'Holy'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 2.2
+            },
+            // Metal-Dark
+            'Metal-Dark': {
+                name: 'FORSAKEN FORGE',
+                effect: 'Corrupts metal, weakens armor, creates cursed weapons.',
+                attributes: ['Corrupt', 'Weaken', 'Craft'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 0.9,
+                duration: 7,
+                aoe_radius: 2,
+                tier_bonus: 1.8
+            },
+            // Metal-Air
+            'Metal-Air': {
+                name: 'SONIC FORGE',
+                effect: 'Wind vibrates metal, enhances resonance, can shatter or strengthen structures.',
+                attributes: ['Resonate', 'Shatter', 'Enhance'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 1.7
+            },
+            // Metal-Void
+            'Metal-Void': {
+                name: 'NULL ALLOY',
+                effect: 'Metal infused with void, erases durability, creates unstable constructs.',
+                attributes: ['Void', 'Erase', 'Unstable'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.3
+            },
+            // Metal-Chaos
+            'Metal-Chaos': {
+                name: 'ANARCHIC FORGE',
+                effect: 'Unpredictable metal mutations, random effects, disrupts crafting.',
+                attributes: ['Random', 'Disrupt', 'Mutate'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 2.1
+            },
+            // Metal-Order
+            'Metal-Order': {
+                name: 'PERFECT ALLOY',
+                effect: 'Creates flawless metal structures, enhanced durability, perfect resonance.',
+                attributes: ['Craft', 'Enhance', 'Resonate'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.5,
+                duration: 15,
+                aoe_radius: 2,
+                tier_bonus: 2.1
+            },
+            // Self synergy: Light-Light
+            'Light-Light': {
+                name: 'SOLAR ASCENDANCE',
+                effect: 'Creates a field of pure light, heals all allies, dispels all darkness, empowers light abilities.',
+                attributes: ['Heal', 'Empower', 'Dispel'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.8
+            },
+            // Light-Metal
+            'Light-Metal': {
+                name: 'RADIANT FORGE',
+                effect: 'Infuses metal with light, creates holy weapons, reflects and amplifies light.',
+                attributes: ['Reflect', 'Amplify', 'Holy'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 2.2
+            },
+            // Light-Void
+            'Light-Void': {
+                name: 'NULL RADIANCE',
+                effect: 'Light that erases shadows, creates zones of pure emptiness, silences all effects.',
+                attributes: ['Erase', 'Silence', 'Radiate'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.8,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.7
+            },
+            // Light-Chaos
+            'Light-Chaos': {
+                name: 'PRISMATIC ANOMALY',
+                effect: 'Unpredictable bursts of color and light, random buffs and debuffs, disrupts all plans.',
+                attributes: ['Random', 'Disrupt', 'Buff'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.5
+            },
+            // Light-Wind
+            'Light-Wind': {
+                name: 'LUMINOUS GALE',
+                effect: 'A radiant wind that purifies the air, boosts morale, and accelerates movement for allies.',
+                attributes: ['Radiate', 'Purify', 'Accelerate'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.9
+            },
+            // Self synergy: Wind-Wind
+            'Wind-Wind': {
+                name: 'TEMPEST ASCENT',
+                effect: 'Summons a massive storm, accelerates all movement, disperses obstacles, risk of uncontrollable chaos.',
+                attributes: ['Accelerate', 'Disperse', 'Chaos'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 0.8,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.7
+            },
+            // Wind-Fire
+            'Wind-Fire': {
+                name: 'SCORCHING GALE',
+                effect: 'Hot wind, spreads fire rapidly, can clear obstacles or create firebreaks.',
+                attributes: ['Spread', 'Accelerate', 'Area'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 0.9,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 1.8
+            },
+            // Wind-Ice
+            'Wind-Ice': {
+                name: 'FROST WHIRLWIND',
+                effect: 'Spiraling vortex of icy air, chills and slows all targets, disperses projectiles.',
+                attributes: ['Chill', 'Slow', 'Disperse'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.1,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.8
+            },
+            // Wind-Earth
+            'Wind-Earth': {
+                name: 'DUST DEVIL',
+                effect: 'Creates swirling dust storms, reduces visibility, disrupts ranged attacks.',
+                attributes: ['Disperse', 'Disrupt', 'Conceal'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.0,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.7
+            },
+            // Wind-Lightning
+            'Wind-Lightning': {
+                name: 'STORM RIDER',
+                effect: 'Lightning rides the wind, increases speed, random strikes across wide area.',
+                attributes: ['Speed', 'Random', 'Area'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.9,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.2
+            },
+            // Wind-Water
+            'Wind-Water': {
+                name: 'MIST VEIL',
+                effect: 'Creates dense fog, blocks vision, dampens sounds.',
+                attributes: ['Conceal', 'Control', 'Dampen'],
+                power_scale: 2,
+                interaction_type: 'synergy',
+                stability: 1.1,
+                duration: 7,
+                aoe_radius: 5,
+                tier_bonus: 1.4
+            },
+            // Wind-Light
+            'Wind-Light': {
+                name: 'RADIANT BREEZE',
+                effect: 'Wind infused with light, purifies air, boosts morale and movement.',
+                attributes: ['Purify', 'Empower', 'Accelerate'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.9
+            },
+            // Wind-Dark
+            'Wind-Dark': {
+                name: 'SHADOW GALE',
+                effect: 'Winds of darkness, disperses light, spreads curses across the battlefield.',
+                attributes: ['Disperse', 'Curse', 'Shadow'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.8,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 2.2
+            },
+            // Wind-Metal
+            'Wind-Metal': {
+                name: 'SONIC FORGE',
+                effect: 'Wind vibrates metal, enhances resonance, can shatter or strengthen structures.',
+                attributes: ['Resonate', 'Shatter', 'Enhance'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.0,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 1.7
+            },
+            // Wind-Void
+            'Wind-Void': {
+                name: 'SILENT STORM',
+                effect: 'Wind that erases sound, creates zones of silence and confusion.',
+                attributes: ['Silence', 'Disperse', 'Confuse'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.1
+            },
+            // Wind-Chaos
+            'Wind-Chaos': {
+                name: 'WHIRLWIND MADNESS',
+                effect: 'Unpredictable wind patterns, random movement, disrupts all plans.',
+                attributes: ['Random', 'Disrupt', 'Chaos'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.3
+            },
+            // Wind-Order
+            'Wind-Order': {
+                name: 'HARMONIC BREEZE',
+                effect: 'Controlled wind patterns, perfect air pressure, enhanced movement.',
+                attributes: ['Control', 'Flow', 'Balance'],
+                power_scale: 2,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 7,
+                aoe_radius: 4,
+                tier_bonus: 1.8
+            },
+            // Self synergy: Water-Water
+            'Water-Water': {
+                name: 'OCEANIC UNITY',
+                effect: 'Creates a vast surge of water, heals allies, cleanses all negative effects, risk of flooding.',
+                attributes: ['Heal', 'Cleanse', 'Flood'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.6
+            },
+            // Ice-Wind
+            'Ice-Wind': {
+                name: 'FROST WHIRLWIND',
+                effect: 'Summons a spiraling vortex of icy air, chills and slows all targets, disperses projectiles.',
+                attributes: ['Chill', 'Slow', 'Disperse'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.1,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.8
+            },
+            // Self synergy: Dark-Dark
+            'Dark-Dark': {
+                name: 'NIGHTFALL DOMAIN',
+                effect: 'Creates a realm of pure darkness, drains all light and energy, empowers dark abilities.',
+                attributes: ['Drain', 'Empower', 'Shadow'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.7
+            },
+            // Dark-Air
+            'Dark-Air': {
+                name: 'SHADOW GALE',
+                effect: 'Summons winds of darkness, disperses light, spreads curses across the battlefield.',
+                attributes: ['Disperse', 'Curse', 'Shadow'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.8,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 2.2
+            },
+            // Dark-Metal
+            'Dark-Metal': {
+                name: 'FORSAKEN FORGE',
+                effect: 'Corrupts metal, weakens armor, creates cursed weapons.',
+                attributes: ['Corrupt', 'Weaken', 'Craft'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 0.9,
+                duration: 7,
+                aoe_radius: 2,
+                tier_bonus: 1.8
+            },
+            // Dark-Void
+            'Dark-Void': {
+                name: 'OBLIVION VEIL',
+                effect: 'Envelops area in void darkness, erases memories, silences all effects.',
+                attributes: ['Void', 'Erase', 'Silence'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 3,
+                tier_bonus: 2.9
+            },
+            // Dark-Chaos
+            'Dark-Chaos': {
+                name: 'ENTROPIC MAELSTROM',
+                effect: 'Unleashes chaotic dark energy, random curses, unpredictable decay.',
+                attributes: ['Chaos', 'Random', 'Decay'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.5
+            },
+            // Self synergy: Earth-Earth
+            'Earth-Earth': {
+                name: 'TITANIC FORTRESS',
+                effect: 'Creates massive, impenetrable walls, boosts defense and stability, risk of immobility.',
+                attributes: ['Defense', 'Stability', 'Immovable'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 1.5,
+                duration: 10,
+                aoe_radius: 3,
+                tier_bonus: 2.8
+            },
+            // Earth-Fire
+            'Earth-Fire': {
+                name: 'MAGMA SURGE',
+                effect: 'Earth erupts with molten lava, deals burn and terrain damage, reshapes battlefield.',
+                attributes: ['Burn', 'Terrain', 'Reshape'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.8,
+                duration: 8,
+                aoe_radius: 4,
+                tier_bonus: 2.4
+            },
+            // Earth-Ice
+            'Earth-Ice': {
+                name: 'GLACIAL CLIFF',
+                effect: 'Forms icy cliffs and barriers, slows movement, enhances defense.',
+                attributes: ['Freeze', 'Defense', 'Slow'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 1.9
+            },
+            // Earth-Air
+            'Earth-Air': {
+                name: 'DUST DEVIL',
+                effect: 'Creates swirling dust storms, reduces visibility, disrupts ranged attacks.',
+                attributes: ['Disperse', 'Disrupt', 'Conceal'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.0,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.7
+            },
+            // Earth-Light
+            'Earth-Light': {
+                name: 'CRYSTAL SANCTUARY',
+                effect: 'Creates radiant crystal structures, heals allies, purifies terrain.',
+                attributes: ['Radiate', 'Heal', 'Purify'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.3,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 2.0
+            },
+            // Earth-Dark
+            'Earth-Dark': {
+                name: 'GRAVE SOIL',
+                effect: 'Infuses earth with dark energy, drains life, curses terrain.',
+                attributes: ['Drain', 'Curse', 'Decay'],
+                power_scale: 4,
+                interaction_type: 'catalytic',
+                stability: 0.7,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 2.2
+            },
+            // Earth-Metal
+            'Earth-Metal': {
+                name: 'ORE AWAKENING',
+                effect: 'Earth reveals hidden ores, boosts crafting, enhances defense.',
+                attributes: ['Craft', 'Enhance', 'Defense'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 9,
+                aoe_radius: 2,
+                tier_bonus: 1.8
+            },
+            // Earth-Void
+            'Earth-Void': {
+                name: 'NULL TRENCH',
+                effect: 'Creates bottomless voids in the earth, erases terrain, risk of collapse.',
+                attributes: ['Void', 'Erase', 'Collapse'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.7
+            },
+            // Earth-Chaos
+            'Earth-Chaos': {
+                name: 'QUAKE FRENZY',
+                effect: 'Unpredictable earthquakes, random terrain changes, disrupts all movement.',
+                attributes: ['Random', 'Disrupt', 'Terrain'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.3
+            },
+            // Self synergy: Lightning-Lightning
+            'Lightning-Lightning': {
+                name: 'INFINITE ARC',
+                effect: 'Creates a feedback loop of energy, amplifies all lightning effects, risk of overload.',
+                attributes: ['Amplify', 'Overload', 'Chain'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 0.6,
+                duration: 3,
+                aoe_radius: 2,
+                tier_bonus: 2.7
+            },
+            // Lightning-Fire
+            'Lightning-Fire': {
+                name: 'ARC BLAZE',
+                effect: 'Ignites plasma fire, deals burn and shock damage, explosive chain reactions.',
+                attributes: ['Burn', 'Shock', 'Explosive'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.7,
+                duration: 5,
+                aoe_radius: 3,
+                tier_bonus: 2.3
+            },
+            // Lightning-Water
+            'Lightning-Water': {
+                name: 'CONDUCTIVE WAVE',
+                effect: 'Electricity surges through water, chain damage, stuns all in area.',
+                attributes: ['Chain', 'Stun', 'Area'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.8,
+                duration: 4,
+                aoe_radius: 4,
+                tier_bonus: 2.1
+            },
+            // Lightning-Wind
+            'Lightning-Wind': {
+                name: 'STORM RIDER',
+                effect: 'Lightning rides the wind, increases speed, random strikes across wide area.',
+                attributes: ['Speed', 'Random', 'Area'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.9,
+                duration: 6,
+                aoe_radius: 5,
+                tier_bonus: 2.2
+            },
+            // Self synergy: Ice-Ice
+            'Ice-Ice': {
+                name: 'ABSOLUTE ZERO',
+                effect: 'Creates a zone of perfect cold, halts all movement and energy, risk of shattering.',
+                attributes: ['Freeze', 'Stasis', 'Shatter'],
+                power_scale: 5,
+                interaction_type: 'synergy',
+                stability: 0.6,
+                duration: 3,
+                aoe_radius: 2,
+                tier_bonus: 2.5
+            },
+            // Ice-Earth
+            'Ice-Earth': {
+                name: 'PERMAFROST BARRIER',
+                effect: 'Creates impenetrable frozen walls, enhances defense, slows attackers.',
+                attributes: ['Defense', 'Freeze', 'Slow'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.3,
+                duration: 8,
+                aoe_radius: 3,
+                tier_bonus: 2.0
+            },
+            // Ice-Air
+            'Ice-Air': {
+                name: 'BLIZZARD WINDS',
+                effect: 'Summons freezing winds, reduces visibility, disperses projectiles.',
+                attributes: ['Disperse', 'Freeze', 'Conceal'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.0,
+                duration: 6,
+                aoe_radius: 4,
+                tier_bonus: 1.7
+            },
+            // Ice-Light
+            'Ice-Light': {
+                name: 'CRYSTAL RADIANCE',
+                effect: 'Creates radiant ice crystals, reflects light, purifies surroundings.',
+                attributes: ['Radiate', 'Purify', 'Reflect'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 1.2,
+                duration: 7,
+                aoe_radius: 3,
+                tier_bonus: 1.8
+            },
+            // Ice-Dark
+            'Ice-Dark': {
+                name: 'SHADOW FROST',
+                effect: 'Casts freezing shadows, drains warmth, curses targets with slow decay.',
+                attributes: ['Curse', 'Freeze', 'Decay'],
+                power_scale: 4,
+                interaction_type: 'catalytic',
+                stability: 0.8,
+                duration: 6,
+                aoe_radius: 3,
+                tier_bonus: 2.2
+            },
+            // Ice-Metal
+            'Ice-Metal': {
+                name: 'FROSTED STEEL',
+                effect: 'Encrusts metal with ice, increases durability, can shatter on impact.',
+                attributes: ['Enhance', 'Freeze', 'Shatter'],
+                power_scale: 3,
+                interaction_type: 'catalytic',
+                stability: 1.1,
+                duration: 8,
+                aoe_radius: 2,
+                tier_bonus: 1.6
+            },
+            // Ice-Void
+            'Ice-Void': {
+                name: 'NULL FROST',
+                effect: 'Erases heat and energy, creates zones of absolute silence and cold.',
+                attributes: ['Void', 'Freeze', 'Silence'],
+                power_scale: 5,
+                interaction_type: 'transformative',
+                stability: 0.5,
+                duration: 4,
+                aoe_radius: 2,
+                tier_bonus: 2.9
+            },
+            // Ice-Chaos
+            'Ice-Chaos': {
+                name: 'CHAOTIC HAIL',
+                effect: 'Unpredictable hailstorm, random damage, disrupts movement and plans.',
+                attributes: ['Random', 'Freeze', 'Disrupt'],
+                power_scale: 4,
+                interaction_type: 'transformative',
+                stability: 0.6,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 2.3
+            },
+            // Self synergy: Fire-Fire
+            'Fire-Fire': {
+                name: 'PYROCLASM',
+                effect: 'Amplifies all fire effects, creates feedback loop of heat, risk of burnout or explosion.',
+                attributes: ['Amplify', 'Overheat', 'Feedback'],
+                power_scale: 4,
+                interaction_type: 'synergy',
+                stability: 0.7,
+                duration: 4,
+                aoe_radius: 3,
+                tier_bonus: 2.2
+            },
+            // Lawful synergy: Fire-Order (if Order is present)
+            'Fire-Order': {
+                name: 'LAWFUL BLAZE',
+                effect: 'Controlled fire, purifies and enforces boundaries, cannot spread chaotically.',
+                attributes: ['Control', 'Purify', 'Law'],
+                power_scale: 2,
+                interaction_type: 'order',
+                stability: 1.5,
+                duration: 6,
+                aoe_radius: 2,
+                tier_bonus: 1.5
+            },
+            // Synergy: Fire-Wind (if not covered by Fire-Air)
+            'Fire-Wind': {
+                name: 'SCORCHING GALE',
+                effect: 'Hot wind, spreads fire rapidly, can clear obstacles or create firebreaks.',
+                attributes: ['Spread', 'Accelerate', 'Area'],
+                power_scale: 3,
+                interaction_type: 'synergy',
+                stability: 0.9,
+                duration: 5,
+                aoe_radius: 4,
+                tier_bonus: 1.8
+            },
             // ═══════════════════════════════════════════════════════════
             // 🔥 FIRE ELEMENT INTERACTIONS - Power Scale Enhanced
             // ═══════════════════════════════════════════════════════════
@@ -1454,14 +2501,19 @@
             // Calculate and display fusion
             if (selectedElements.length > 0) {
                 const fusion = calculateFusion(selectedElements);
+                currentFusionResult = fusion;
                 displayFusion(fusion);
+                saveStateToLocalStorage(); // Save after each fusion
+                pushToKeywordEngine(fusion); // Push to keyword engine
             } else {
+                currentFusionResult = null;
                 document.getElementById('fusionResult').innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-icon">✨</div>
                         <div>Select 2 or more elements to see fusion result</div>
                     </div>
                 `;
+                saveStateToLocalStorage(); // Save cleared state
             }
         }
         
@@ -1544,7 +2596,19 @@
             const name = generateFusionName(sorted, tieredProperties, propertyTier);
             const description = generateFusionDescription(sorted, harmony, discord, tieredProperties, propertyTier);
             
-            return {
+            // Map tacticalEffects to effect tags
+            const effectTags = tacticalEffects.map(effect => {
+                if (typeof effect === 'string') {
+                    return { type: effect, stacks: 1 };
+                } else if (effect && effect.type) {
+                    return { type: effect.type, potency: effect.potency || 1, stacks: effect.stacks || 1 };
+                } else {
+                    return null;
+                }
+            }).filter(Boolean);
+
+            // Build fusion result object
+            const fusionResult = {
                 name,
                 power: basePower, // BALANCED - always 100
                 harmony: harmony.toFixed(3),
@@ -1560,6 +2624,11 @@
                 elementCount: sorted.length,
                 elements: sorted
             };
+
+            // Attach effect tags using modular system
+            applyEffectTags(fusionResult, effectTags);
+
+            return fusionResult;
         }
         
         // ═══════════════════════════════════════════════════════════════
@@ -1967,6 +3036,99 @@
         init();
         
         // ═══════════════════════════════════════════════════════════════
+        // 💾 LOCALSTORAGE PERSISTENCE & CROSS-ENGINE SYNC
+        // ═══════════════════════════════════════════════════════════════
+        
+        let currentFusionResult = null;
+        
+        /**
+         * Save current state to localStorage
+         */
+        function saveStateToLocalStorage() {
+            const state = {
+                selectedElements: selectedElements,
+                fusionResult: currentFusionResult,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('elementalMatrixState', JSON.stringify(state));
+        }
+        
+        /**
+         * Load state from localStorage
+         */
+        function loadStateFromLocalStorage() {
+            const saved = localStorage.getItem('elementalMatrixState');
+            if (saved) {
+                const state = JSON.parse(saved);
+                selectedElements = state.selectedElements || [];
+                currentFusionResult = state.fusionResult || null;
+                updateSelected();
+                return state;
+            }
+            return null;
+        }
+        
+        /**
+         * Push fusion data to keyword engine
+         */
+        function pushToKeywordEngine(fusionResult) {
+            if (!fusionResult) return;
+            
+            const dataToShare = {
+                source: 'elementalEngine',
+                selectedElements: selectedElements,
+                element: fusionResult.elements[0] || null,
+                fusionResult: fusionResult,
+                power: fusionResult.power || 100,
+                phiMultiplier: parseFloat(fusionResult.harmony) || 1.618,
+                timestamp: Date.now()
+            };
+            
+            localStorage.setItem('elementalEngineExport', JSON.stringify(dataToShare));
+        }
+        
+        /**
+         * Get data from keyword engine
+         */
+        function syncWithKeywordEngine() {
+            const keywordState = localStorage.getItem('keywordEngineExport');
+            if (keywordState) {
+                return JSON.parse(keywordState);
+            }
+            return null;
+        }
+        
+        /**
+         * Enable auto-save
+         */
+        function enableAutoSave() {
+            setInterval(() => {
+                if (selectedElements.length > 0 || currentFusionResult) {
+                    saveStateToLocalStorage();
+                }
+            }, 5000);
+        }
+        
+        // Wrap calculateFusion to auto-save and sync
+        const originalCalculateFusion = calculateFusion;
+        function calculateFusionWithSync(elements) {
+            const result = originalCalculateFusion(elements);
+            currentFusionResult = result;
+            saveStateToLocalStorage();
+            pushToKeywordEngine(result);
+            return result;
+        }
+        
+        // Replace calculateFusion with syncing version
+        calculateFusion = calculateFusionWithSync;
+        
+        // Enable auto-save
+        enableAutoSave();
+        
+        // Load saved state on init
+        loadStateFromLocalStorage();
+        
+        // ═══════════════════════════════════════════════════════════════
         // 🌐 GLOBAL EXPORT - Make Available to Other Engines
         // ═══════════════════════════════════════════════════════════════
         
@@ -1985,11 +3147,24 @@
             getInteractionsByKeyword
         };
         
+        // Export sync functions for cross-engine communication
+        window.ELEMENTAL_MATRIX_ENGINE.sync = {
+            saveState: saveStateToLocalStorage,
+            loadState: loadStateFromLocalStorage,
+            pushToKeywordEngine: pushToKeywordEngine,
+            syncWithKeywordEngine: syncWithKeywordEngine,
+            getCurrentState: () => ({
+                selectedElements: selectedElements,
+                fusionResult: currentFusionResult
+            })
+        };
+        
         console.log('🌌 Elemental Matrix Engine v2.0 - FULLY LOADED');
         console.log(`   📊 ${Object.keys(ELEMENTS).length} Elements`);
         console.log(`   🔗 ${Object.keys(PROPERTY_INTERACTIONS).length} Property Interactions`);
         console.log(`   🎯 ${extractKeywordsFromInteractions().length} Unique Keywords`);
-        console.log(`   ✅ Global Sync Ready`);
+        console.log(`   ✅ Global Sync Ready - localStorage enabled`);
+        console.log(`   🔄 Cross-Engine Communication Active`);
     </script>
 </body>
 </html>

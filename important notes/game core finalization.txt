@@ -1,0 +1,34 @@
+Core
+Card = created by skills. The end result showing the final calculated result of the connected and fused skills and standalone skills, the effect of keywords on those skills. And the elemental mods on those skills
+
+Skill - so there are 8 skill engines.. 100 skills in 7 of them and 337 skills in 1 od them.... And these skills : are base skills with each it's own unique abilities and passives and many with actions.. Ofcourse of varied kind..
+
+Ofcourse 8 skill engines.. So each will be different with different kind of skills.. But since there are 8 engines. Lets give them 1 very Minor pasives each very tiny.. Yet as they start combining. The passives combine together. Evolve to a stronger one but still weak because they can keep combining get become stronger and it's effects always evolve.
+Basically..  Like.. Every card . to grow Like players start combining skills.. Can suddenly the new combined skills have new powers and skills.. Ofcourse.. Same card but new and permanently evolved..
+
+
+Now.. The end result.. The frsion processes...
+So user choses 12 skills to insert into the sockets.. While that happens.. There will be another 2 smooth satasfying buttons.. When pressed.. We get get a keyword and a base element randomly added.. Now we got our sills pre element and keyword mods.. Out hotysh system mods.. Now. We fuse it..
+The end result.. A card with many actions or functions.
+
+We create another system like a keyword and a element fusion system that's like a gatcha game... Where users spend resource.. How?
+Well they bring a card place it on the socket we create.. And swip the statasfying button.. E switch a flip between keywords and element.. And as we click it.. Either a keyword or element is added.. The resource is spent and the card is now modes with the element fusion result and the keywords not fusion but keywords sync mods
+
+We can reroll the keyword or element from this slot by spending a new seed and rerolling.
+
+
+4 types of currencies
+
+1 the main one.. Used to unlock cards but resources like fusion seeds attribute seeds and keywords seeds
+
+2 fusion seeds.. Unlocked through playing game or spending alot of main currency
+
+3 attribute seeds.. Used.. To reroll the attribute
+
+4 keywords seeds used to reroll the keyword
+
+
+
+We will Desgine the skill fusion as such. That it is already strong and fun to play but had 10000x potentially in fun and excitement. As we have already Desgine an algorithm.. That was with numbers.. And stats.. But this time.. Numbers stats and fantasy.. Connected...the cosmic protocol. ( and a cool sanskrit name )
+
+Lets talk
