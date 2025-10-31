@@ -1,0 +1,485 @@
+{
+  "timestamp": "Phase 2 Validation",
+  "total_skills": 1030,
+  "total_connections": 4140,
+  "total_teams": [
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003",
+        "SKILL_FOUNDATIONAL_001"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_021",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_041",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_003_var_specialized_tier_3",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_008_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_008_var_mastery_tier_4",
+        "SKILL_FOUNDATIONAL_008_var_specialized_tier_4"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_013_var_specialized_tier_3",
+        "SKILL_FOUNDATIONAL_006",
+        "SKILL_FOUNDATIONAL_013"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_018_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_029_var_advanced_tier_4",
+        "SKILL_FOUNDATIONAL_018_var_specialized_tier_4"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_023_var_specialized_tier_1",
+        "SKILL_FOUNDATIONAL_001_var_enhanced_tier_1",
+        "SKILL_FOUNDATIONAL_003_var_advanced_tier_1"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_028_var_specialized_tier_1",
+        "SKILL_FOUNDATIONAL_001_var_enhanced_tier_1",
+        "SKILL_FOUNDATIONAL_003_var_advanced_tier_1"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_033_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_033_var_mastery_tier_3",
+        "SKILL_FOUNDATIONAL_033"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_038_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_018_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_029_var_advanced_tier_4"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_043_var_specialized_tier_5",
+        "SKILL_FOUNDATIONAL_008_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_008_var_mastery_tier_4"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_048_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_015_var_specialized_tier_4",
+        "SKILL_FOUNDATIONAL_048_var_specialized_tier_4"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_008050",
+        "SKILL_FOUNDATIONAL_008",
+        "SKILL_FOUNDATIONAL_035"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_017050",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_024032",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_007044",
+        "SKILL_FOUNDATIONAL_005",
+        "SKILL_FOUNDATIONAL_042"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_014013",
+        "SKILL_FOUNDATIONAL_002",
+        "SKILL_FOUNDATIONAL_014"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_032024",
+        "SKILL_FOUNDATIONAL_018",
+        "SKILL_FOUNDATIONAL_029"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_039050",
+        "SKILL_FOUNDATIONAL_008",
+        "SKILL_FOUNDATIONAL_035"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_002044",
+        "SKILL_FOUNDATIONAL_002",
+        "SKILL_FOUNDATIONAL_014"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_001020",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_021020",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_043044",
+        "SKILL_FOUNDATIONAL_015",
+        "SKILL_FOUNDATIONAL_048"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_010050",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_023039",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_011043",
+        "SKILL_FOUNDATIONAL_005",
+        "SKILL_FOUNDATIONAL_042"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_008037",
+        "SKILL_FOUNDATIONAL_008",
+        "SKILL_FOUNDATIONAL_035"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_012031",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_048006",
+        "SKILL_FOUNDATIONAL_015",
+        "SKILL_FOUNDATIONAL_048"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_014001",
+        "SKILL_FOUNDATIONAL_002",
+        "SKILL_FOUNDATIONAL_014"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_019021",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_041005",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_027025",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_036002",
+        "SKILL_FOUNDATIONAL_005",
+        "SKILL_FOUNDATIONAL_042"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_044010",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "HYBRID_023027",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_024_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_016_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_016",
+        "SKILL_FOUNDATIONAL_040"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_007_var_specialized_tier_5",
+        "SKILL_FOUNDATIONAL_011_var_enhanced_tier_5",
+        "SKILL_FOUNDATIONAL_011_var_specialized_tier_5"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_004_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_004",
+        "SKILL_FOUNDATIONAL_004_var_specialized_tier_2"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_011_var_specialized_tier_3",
+        "SKILL_FOUNDATIONAL_007",
+        "SKILL_FOUNDATIONAL_011"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_050_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_050",
+        "SKILL_FOUNDATIONAL_050_var_enhanced_tier_2"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_046_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_018",
+        "SKILL_FOUNDATIONAL_029"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_046_var_specialized_tier_3",
+        "SKILL_FOUNDATIONAL_018",
+        "SKILL_FOUNDATIONAL_029"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_037_var_specialized_tier_5",
+        "SKILL_FOUNDATIONAL_045_var_advanced_tier_5",
+        "SKILL_FOUNDATIONAL_037_var_specialized_tier_5"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_022_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_022",
+        "SKILL_FOUNDATIONAL_022_var_mastery_tier_2"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_044_var_specialized_tier_3",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_023_var_specialized_tier_2",
+        "SKILL_FOUNDATIONAL_001",
+        "SKILL_FOUNDATIONAL_003"
+      ],
+      "strategy": "Synergistic chain damage"
+    },
+    {
+      "type": "combo",
+      "skills": [
+        "SKILL_FOUNDATIONAL_002_var_specialized_tier_1",
+        "SKILL_FOUNDATIONAL_002_var_advanced_tier_1",
+        "SKILL_FOUNDATIONAL_002_var_mastery_tier_1"
+      ],
+      "strategy": "Synergistic chain damage"
+    }
+  ],
+  "metrics": {
+    "power_tiers": {
+      "4": 502,
+      "5": 183,
+      "6": 100,
+      "2": 63,
+      "8": 94,
+      "3": 44,
+      "10": 44
+    },
+    "rarities": {
+      "epic": 129,
+      "legendary": 117,
+      "common": 107,
+      "rare": 585,
+      "uncommon": 92
+    },
+    "avg_cost": 618085562.4359224,
+    "avg_cooldown": 9.336893203883495,
+    "teams": 50,
+    "team_types": {
+      "combo": 50
+    },
+    "unique_keywords": 15,
+    "problematic_keywords": 0
+  },
+  "issues": [],
+  "status": "PASS"
+}

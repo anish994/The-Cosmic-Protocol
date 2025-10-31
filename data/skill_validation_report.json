@@ -1,0 +1,530 @@
+{
+  "validation_reports": [
+    {
+      "id": "SKILL_FOUNDATIONAL_001",
+      "name": "Basic Scaffold",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_002",
+      "name": "Load-Bearing Pillar",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [],
+      "quality_score": 85,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe1 GOOD - Minor improvements suggested"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_003",
+      "name": "Foundation Network",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_004",
+      "name": "Anchor Point",
+      "issues": [],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 88,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe1 GOOD - Minor improvements suggested"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_005",
+      "name": "Reinforcement Grid",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_006",
+      "name": "Energy Conduit",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_007",
+      "name": "Stability Matrix",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_008",
+      "name": "Power Node",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_009",
+      "name": "Foundation Seal",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_010",
+      "name": "Resonance Link",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_011",
+      "name": "Structure Amplifier",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_012",
+      "name": "Foundation Echo",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_013",
+      "name": "Power Grid",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_014",
+      "name": "Stability Field",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_015",
+      "name": "Anchor Network",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_016",
+      "name": "Energy Matrix",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_017",
+      "name": "Structure Shield",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_018",
+      "name": "Power Flow",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_019",
+      "name": "Foundation Beacon",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_020",
+      "name": "Resonance Field",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_021",
+      "name": "Advanced Scaffold",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_022",
+      "name": "Power Pillar",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_023",
+      "name": "Network Hub",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_024",
+      "name": "Stability Anchor",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_025",
+      "name": "Energy Grid",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_026",
+      "name": "Structure Core",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_027",
+      "name": "Power Nexus",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_028",
+      "name": "Foundation Pulse",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_029",
+      "name": "Resonance Node",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_030",
+      "name": "Master Grid",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_031",
+      "name": "Supreme Scaffold",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_032",
+      "name": "Energy Column",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_033",
+      "name": "Network Matrix",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_034",
+      "name": "Core Anchor",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_035",
+      "name": "Power Field",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_036",
+      "name": "Structure Nexus",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_037",
+      "name": "Foundation Core",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_038",
+      "name": "Energy Beacon",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_039",
+      "name": "Master Node",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_040",
+      "name": "Power Matrix",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_041",
+      "name": "Elite Scaffold",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_042",
+      "name": "Structure Crown",
+      "issues": [
+        "\u274c Non-gameplay keyword in layer: 'grammar'"
+      ],
+      "warnings": [
+        "\u26a0\ufe0f 5 out of 8 combos seem disconnected"
+      ],
+      "quality_score": 73,
+      "recommended_fixes": [
+        "Replace 'grammar' with gameplay-relevant keyword"
+      ],
+      "quality_level": "\ud83d\udfe0 FAIR - Should fix issues"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_043",
+      "name": "Network Sovereign",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_044",
+      "name": "Anchor Crown",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_045",
+      "name": "Energy Crown",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_046",
+      "name": "Core Crown",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_047",
+      "name": "Power Crown",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_048",
+      "name": "Foundation Sovereign",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_049",
+      "name": "Grid Crown",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    },
+    {
+      "id": "SKILL_FOUNDATIONAL_050",
+      "name": "Master Crown",
+      "issues": [],
+      "warnings": [],
+      "quality_score": 100,
+      "recommended_fixes": [],
+      "quality_level": "\ud83d\udfe2 EXCELLENT - Ready for gameplay"
+    }
+  ],
+  "summary": {
+    "avg_cost": 30,
+    "median_cooldown": 10.0,
+    "avg_power_tier": 4.42,
+    "rarity_distribution": {
+      "epic": 29,
+      "legendary": 21
+    }
+  },
+  "total_skills_validated": 50
+}

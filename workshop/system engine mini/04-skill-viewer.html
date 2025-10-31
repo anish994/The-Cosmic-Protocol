@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Viewer - 50 Example Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a0f2e 100%);
+            color: #e0e0e0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00ff88 0%, #00ffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        input, select {
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #e0e0e0;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .stats {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .stats span {
+            color: #00ff88;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: rgba(0, 255, 136, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #00ff88;
+            flex: 1;
+        }
+
+        .skill-tier {
+            background: rgba(0, 150, 255, 0.2);
+            color: #00bfff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .skill-rarity {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        .rarity-common { background: rgba(128, 128, 128, 0.3); color: #999; }
+        .rarity-uncommon { background: rgba(0, 200, 0, 0.3); color: #00ff00; }
+        .rarity-rare { background: rgba(0, 100, 255, 0.3); color: #00bfff; }
+        .rarity-epic { background: rgba(200, 100, 255, 0.3); color: #ff88ff; }
+        .rarity-legendary { background: rgba(255, 200, 0, 0.3); color: #ffff00; }
+
+        .skill-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 12px 0;
+            font-size: 0.9em;
+        }
+
+        .meta-item {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 8px;
+            border-radius: 5px;
+            border-left: 3px solid #00ff88;
+        }
+
+        .meta-label {
+            color: #888;
+            font-size: 0.8em;
+        }
+
+        .meta-value {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .skill-category {
+            display: inline-block;
+            background: rgba(100, 150, 255, 0.2);
+            color: #88ccff;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .skill-keywords {
+            margin: 12px 0;
+        }
+
+        .keyword {
+            display: inline-block;
+            background: rgba(255, 136, 0, 0.2);
+            color: #ffaa44;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin: 2px 2px;
+        }
+
+        .skill-effects {
+            margin-top: 15px;
+            border-top: 1px solid rgba(0, 255, 136, 0.2);
+            padding-top: 12px;
+        }
+
+        .effect {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            border-left: 3px solid #00bfff;
+        }
+
+        .effect-type {
+            color: #00bfff;
+            font-weight: bold;
+            font-size: 0.85em;
+            text-transform: uppercase;
+        }
+
+        .effect-desc {
+            color: #b0d0ff;
+            margin-top: 4px;
+        }
+
+        .no-skills {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 1.2em;
+        }
+
+        .filter-badge {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 4px;
+            border: 1px solid rgba(0, 255, 136, 0.4);
+        }
+
+        .filter-badge .remove {
+            cursor: pointer;
+            margin-left: 8px;
+            color: #ff6666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Skill Viewer</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="search">Search by Name:</label>
+                <input type="text" id="search" placeholder="e.g., Inferno, Shield...">
+            </div>
+            <div class="control-group">
+                <label for="tier-filter">Filter by Tier:</label>
+                <select id="tier-filter">
+                    <option value="">All Tiers</option>
+                    <option value="2">Tier 2</option>
+                    <option value="3">Tier 3</option>
+                    <option value="4">Tier 4</option>
+                    <option value="5">Tier 5</option>
+                    <option value="6">Tier 6</option>
+                    <option value="8">Tier 8</option>
+                    <option value="10">Tier 10</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="rarity-filter">Filter by Rarity:</label>
+                <select id="rarity-filter">
+                    <option value="">All Rarities</option>
+                    <option value="common">Common</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="rare">Rare</option>
+                    <option value="epic">Epic</option>
+                    <option value="legendary">Legendary</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span id="skill-count">50 Skills</span>
+            <span id="filtered-count">Showing: 50</span>
+        </div>
+
+        <div class="skills-grid" id="skills-container"></div>
+    </div>
+
+    <script>
+        let allSkills = [];
+
+        // Load sample skills
+        const sampleSkills = [{"id":"SKILL_001","name":"Power Flow","tier":4,"rarity":"rare","category":"Foundational","cost":25,"cooldown":12,"keywords":["power","flow","energy"],"effects":[{"type":"damage","value":1.2,"description":"Increases ally power flow by 20%"}]},{"id":"SKILL_002","name":"Resonance Link","tier":5,"rarity":"rare","category":"Foundational","cost":30,"cooldown":15,"keywords":["resonance","link","harmony"],"effects":[{"type":"synergy","value":1.5,"description":"Harmonizes 2 skills for enhanced effects"}]},{"id":"SKILL_003","name":"Structure Anchor","tier":4,"rarity":"uncommon","category":"Foundational","cost":20,"cooldown":10,"keywords":["structure","anchor","stability"],"effects":[{"type":"defense","value":1.3,"description":"Creates immovable point of structural support"}]},{"id":"SKILL_004","name":"Inferno Burst","tier":5,"rarity":"rare","category":"Elemental","cost":35,"cooldown":18,"keywords":["fire","burst","explosion"],"effects":[{"type":"damage","value":2.5,"description":"Unleashes massive fire explosion dealing 250% damage"},{"type":"burn","value":0.5,"description":"Applies burn status dealing 50% damage per turn for 3 turns"}]},{"id":"SKILL_005","name":"Frost Shield","tier":4,"rarity":"rare","category":"Elemental","cost":28,"cooldown":14,"keywords":["ice","shield","cold"],"effects":[{"type":"defense","value":2.0,"description":"Creates protective ice barrier reducing incoming damage by 50%"},{"type":"crowd_control","value":0.3,"description":"Slows enemies by 30%"}]},{"id":"SKILL_006","name":"Lightning Strike","tier":6,"rarity":"epic","category":"Elemental","cost":40,"cooldown":20,"keywords":["lightning","strike","electricity"],"effects":[{"type":"damage","value":2.2,"description":"Strikes with 220% damage instantly"},{"type":"stun","value":0.6,"description":"60% chance to stun enemy for 1 turn"}]},{"id":"SKILL_007","name":"Shadow Clone","tier":5,"rarity":"epic","category":"Dark","cost":32,"cooldown":16,"keywords":["shadow","clone","duplicate"],"effects":[{"type":"summon","value":1.0,"description":"Creates shadow clone with 80% of user's stats"}]},{"id":"SKILL_008","name":"Holy Blessing","tier":5,"rarity":"epic","category":"Light","cost":30,"cooldown":15,"keywords":["holy","blessing","heal"],"effects":[{"type":"heal","value":1.8,"description":"Restores 180% of spell power to all allies"},{"type":"buff","value":1.2,"description":"Increases attack by 20% for 3 turns"}]},{"id":"SKILL_009","name":"Temporal Warp","tier":8,"rarity":"legendary","category":"Time","cost":50,"cooldown":30,"keywords":["time","warp","teleport"],"effects":[{"type":"utility","value":1.0,"description":"Teleports to any location within 100m instantly"},{"type":"buff","value":2.0,"description":"Increases speed by 100% for 2 turns after warp"}]},{"id":"SKILL_010","name":"Gravity Well","tier":6,"rarity":"epic","category":"Physics","cost":38,"cooldown":19,"keywords":["gravity","well","pull"],"effects":[{"type":"crowd_control","value":1.5,"description":"Pulls all enemies toward center, dealing damage"},{"type":"stun","value":0.8,"description":"Stuns all pulled enemies for 1 turn"}]},{"id":"SKILL_011","name":"Forest Renewal","tier":4,"rarity":"uncommon","category":"Nature","cost":22,"cooldown":12,"keywords":["nature","renewal","growth"],"effects":[{"type":"heal","value":1.5,"description":"Heals all allies for 150% spell power"},{"type":"buff","value":1.15,"description":"Increases regeneration by 15%"}]},{"id":"SKILL_012","name":"Poison Cloud","tier":5,"rarity":"rare","category":"Toxin","cost":28,"cooldown":14,"keywords":["poison","cloud","toxin"],"effects":[{"type":"damage","value":1.8,"description":"Creates poisonous cloud dealing 180% damage"},{"type":"debuff","value":0.7,"description":"Reduces enemy defense by 30% for 4 turns"}]},{"id":"SKILL_013","name":"Iron Fortress","tier":4,"rarity":"rare","category":"Defense","cost":24,"cooldown":12,"keywords":["iron","fortress","defense"],"effects":[{"type":"defense","value":2.5,"description":"Increases defense by 250% for 3 turns"}]},{"id":"SKILL_014","name":"Whirlwind Attack","tier":5,"rarity":"rare","category":"Wind","cost":30,"cooldown":15,"keywords":["wind","whirlwind","attack"],"effects":[{"type":"damage","value":2.0,"description":"Spins rapidly dealing 200% damage to all enemies"},{"type":"crowd_control","value":0.5,"description":"Knocks enemies back"}]},{"id":"SKILL_015","name":"Earthquake","tier":6,"rarity":"epic","category":"Earth","cost":40,"cooldown":20,"keywords":["earth","quake","ground"],"effects":[{"type":"damage","value":2.3,"description":"Shakes earth dealing 230% AoE damage"},{"type":"crowd_control","value":0.8,"description":"Stuns all enemies for 1 turn"}]},{"id":"SKILL_016","name":"Void Corruption","tier":8,"rarity":"legendary","category":"Void","cost":55,"cooldown":35,"keywords":["void","corruption","chaos"],"effects":[{"type":"damage","value":3.5,"description":"Channels void energy dealing 350% damage"},{"type":"debuff","value":0.9,"description":"Reduces all stats by 50% for 5 turns"}]},{"id":"SKILL_017","name":"Spirit Bond","tier":4,"rarity":"uncommon","category":"Spirit","cost":20,"cooldown":10,"keywords":["spirit","bond","connection"],"effects":[{"type":"synergy","value":1.4,"description":"Links spirits for shared buffs"}]},{"id":"SKILL_018","name":"Meteor Storm","tier":10,"rarity":"legendary","category":"Cosmic","cost":60,"cooldown":40,"keywords":["meteor","storm","cosmic"],"effects":[{"type":"damage","value":4.0,"description":"Rains meteors dealing 400% total damage over 3 turns"},{"type":"crowd_control","value":1.0,"description":"Multiple hits hard to avoid"}]},{"id":"SKILL_019","name":"Healing Light","tier":3,"rarity":"common","category":"Light","cost":15,"cooldown":8,"keywords":["light","healing","restoration"],"effects":[{"type":"heal","value":1.2,"description":"Restores 120% spell power to target"}]},{"id":"SKILL_020","name":"Quick Strike","tier":2,"rarity":"common","category":"Physical","cost":10,"cooldown":5,"keywords":["strike","quick","attack"],"effects":[{"type":"damage","value":1.0,"description":"Fast attack dealing 100% weapon damage"}]},{"id":"SKILL_021","name":"Prismatic Refraction","tier":6,"rarity":"epic","category":"Light","cost":42,"cooldown":21,"keywords":["prism","light","refraction"],"effects":[{"type":"damage","value":2.1,"description":"Splits light dealing 210% damage in 3 directions"}]},{"id":"SKILL_022","name":"Chain Reaction","tier":5,"rarity":"rare","category":"Elemental","cost":35,"cooldown":17,"keywords":["chain","reaction","combo"],"effects":[{"type":"synergy","value":2.0,"description":"Links with recent skills for exponential damage"}]},{"id":"SKILL_023","name":"Spectral Armor","tier":4,"rarity":"rare","category":"Spirit","cost":26,"cooldown":13,"keywords":["spectral","armor","ghost"],"effects":[{"type":"defense","value":1.8,"description":"Creates ghost armor reducing damage by 30%"}]},{"id":"SKILL_024","name":"Sonic Boom","tier":5,"rarity":"rare","category":"Sound","cost":32,"cooldown":16,"keywords":["sonic","boom","sound"],"effects":[{"type":"damage","value":1.9,"description":"Releases sonic wave dealing 190% damage"},{"type":"stun","value":0.5,"description":"50% chance to stun nearby enemies"}]},{"id":"SKILL_025","name":"Crystalline Guard","tier":4,"rarity":"uncommon","category":"Earth","cost":21,"cooldown":11,"keywords":["crystal","guard","protection"],"effects":[{"type":"defense","value":1.6,"description":"Creates crystal shield blocking 60% damage once"}]},{"id":"SKILL_026","name":"Infuse Essence","tier":5,"rarity":"epic","category":"Magical","cost":34,"cooldown":17,"keywords":["essence","infuse","magic"],"effects":[{"type":"buff","value":1.7,"description":"Infuses ally with essence increasing magic by 70%"}]},{"id":"SKILL_027","name":"Twilight Veil","tier":6,"rarity":"epic","category":"Dark","cost":38,"cooldown":19,"keywords":["twilight","veil","shadow"],"effects":[{"type":"defense","value":2.2,"description":"Creates shadow veil reducing all damage by 40%"}]},{"id":"SKILL_028","name":"Phoenix Rising","tier":8,"rarity":"legendary","category":"Fire","cost":52,"cooldown":32,"keywords":["phoenix","rising","rebirth"],"effects":[{"type":"heal","value":3.0,"description":"Resurrects with 300% health restoration"},{"type":"buff","value":2.0,"description":"Doubles damage for next 3 attacks"}]},{"id":"SKILL_029","name":"Dimensional Slash","tier":6,"rarity":"epic","category":"Physics","cost":41,"cooldown":20,"keywords":["dimension","slash","rift"],"effects":[{"type":"damage","value":2.4,"description":"Cuts through dimensions dealing 240% damage"}]},{"id":"SKILL_030","name":"Arcane Overflow","tier":5,"rarity":"rare","category":"Magical","cost":36,"cooldown":18,"keywords":["arcane","overflow","magic"],"effects":[{"type":"damage","value":2.2,"description":"Releases excess magic dealing 220% damage to all nearby"}]},{"id":"SKILL_031","name":"Stalwart Resolve","tier":3,"rarity":"uncommon","category":"Mental","cost":18,"cooldown":9,"keywords":["resolve","determination","will"],"effects":[{"type":"buff","value":1.3,"description":"Increases defense and willpower by 30%"}]},{"id":"SKILL_032","name":"Nebula Burst","tier":6,"rarity":"epic","category":"Cosmic","cost":44,"cooldown":22,"keywords":["nebula","burst","cosmic"],"effects":[{"type":"damage","value":2.3,"description":"Expands nebula cloud dealing 230% damage"},{"type":"crowd_control","value":0.6,"description":"Disorients enemies reducing accuracy"}]},{"id":"SKILL_033","name":"Venom Strike","tier":4,"rarity":"rare","category":"Toxin","cost":27,"cooldown":13,"keywords":["venom","poison","strike"],"effects":[{"type":"damage","value":1.5,"description":"Injects venom dealing 150% damage"},{"type":"debuff","value":0.6,"description":"Poisons target for 3 turns"}]},{"id":"SKILL_034","name":"Azure Barrier","tier":4,"rarity":"uncommon","category":"Water","cost":23,"cooldown":11,"keywords":["water","barrier","azure"],"effects":[{"type":"defense","value":1.7,"description":"Creates water shield reducing damage by 35%"}]},{"id":"SKILL_035","name":"Gravity Anchor","tier":5,"rarity":"rare","category":"Physics","cost":31,"cooldown":15,"keywords":["gravity","anchor","hold"],"effects":[{"type":"crowd_control","value":1.0,"description":"Roots enemy preventing movement for 2 turns"}]},{"id":"SKILL_036","name":"Radiant Judgement","tier":6,"rarity":"epic","category":"Light","cost":43,"cooldown":21,"keywords":["radiant","judgment","holy"],"effects":[{"type":"damage","value":2.5,"description":"Judges and smites with 250% damage"},{"type":"buff","value":1.5,"description":"Allied defenses increased by 50%"}]},{"id":"SKILL_037","name":"Volatile Mix","tier":5,"rarity":"rare","category":"Alchemy","cost":33,"cooldown":16,"keywords":["volatile","alchemy","explosion"],"effects":[{"type":"damage","value":2.1,"description":"Mixes volatile chemicals dealing 210% AoE damage"}]},{"id":"SKILL_038","name":"Ethereal Form","tier":5,"rarity":"epic","category":"Spirit","cost":35,"cooldown":17,"keywords":["ethereal","form","ghost"],"effects":[{"type":"utility","value":1.0,"description":"Becomes ethereal avoiding physical damage for 2 turns"}]},{"id":"SKILL_039","name":"Harvest Moon","tier":4,"rarity":"rare","category":"Nature","cost":28,"cooldown":14,"keywords":["harvest","moon","nature"],"effects":[{"type":"heal","value":1.6,"description":"Gathers nature's essence healing for 160%"},{"type":"buff","value":1.2,"description":"Allies regenerate 20% health per turn"}]},{"id":"SKILL_040","name":"Apocalypse Cannon","tier":10,"rarity":"legendary","category":"Destructive","cost":65,"cooldown":45,"keywords":["apocalypse","cannon","destruction"],"effects":[{"type":"damage","value":5.0,"description":"Ultimate cannon dealing 500% damage in massive radius"}]},{"id":"SKILL_041","name":"Synchronize","tier":3,"rarity":"common","category":"Support","cost":12,"cooldown":6,"keywords":["sync","harmony","coordination"],"effects":[{"type":"buff","value":1.15,"description":"Synchronizes team for 15% damage increase"}]},{"id":"SKILL_042","name":"Frozen Tomb","tier":6,"rarity":"epic","category":"Ice","cost":39,"cooldown":19,"keywords":["freeze","tomb","ice"],"effects":[{"type":"crowd_control","value":1.0,"description":"Freezes enemy in place for 3 turns"}]},{"id":"SKILL_043","name":"Shockwave","tier":4,"rarity":"rare","category":"Physics","cost":29,"cooldown":14,"keywords":["shock","wave","impact"],"effects":[{"type":"damage","value":1.7,"description":"Sends shockwave dealing 170% damage to all"}]},{"id":"SKILL_044","name":"Twilight Ascension","tier":8,"rarity":"legendary","category":"Dark","cost":54,"cooldown":33,"keywords":["twilight","ascension","ascend"],"effects":[{"type":"buff","value":3.0,"description":"Ascends to twilight form tripling all stats"}]},{"id":"SKILL_045","name":"Mirage Strike","tier":5,"rarity":"rare","category":"Illusion","cost":30,"cooldown":15,"keywords":["mirage","illusion","strike"],"effects":[{"type":"damage","value":1.8,"description":"Creates illusion to strike dealing 180% damage"},{"type":"crowd_control","value":0.4,"description":"Confuses enemies reducing accuracy"}]},{"id":"SKILL_046","name":"Magma Flow","tier":5,"rarity":"rare","category":"Fire","cost":33,"cooldown":16,"keywords":["magma","flow","lava"],"effects":[{"type":"damage","value":1.9,"description":"Flows magma dealing 190% damage over area"},{"type":"burn","value":0.4,"description":"Enemies in magma catch fire"}]},{"id":"SKILL_047","name":"Phantom Step","tier":4,"rarity":"uncommon","category":"Dark","cost":19,"cooldown":9,"keywords":["phantom","step","shadow"],"effects":[{"type":"utility","value":1.0,"description":"Steps into shadow dodging next attack"}]},{"id":"SKILL_048","name":"Stellar Explosion","tier":8,"rarity":"legendary","category":"Cosmic","cost":56,"cooldown":36,"keywords":["stellar","explosion","star"],"effects":[{"type":"damage","value":3.8,"description":"Stellar explosion dealing 380% damage in huge radius"}]},{"id":"SKILL_049","name":"Regeneration Aura","tier":4,"rarity":"rare","category":"Healing","cost":25,"cooldown":12,"keywords":["regeneration","aura","heal"],"effects":[{"type":"heal","value":0.5,"description":"Aura heals all allies 50% spell power per turn"}]},{"id":"SKILL_050","name":"Absolute Zero","tier":10,"rarity":"legendary","category":"Ice","cost":62,"cooldown":38,"keywords":["absolute","zero","freeze"],"effects":[{"type":"crowd_control","value":1.0,"description":"Freezes everything at absolute zero instantly"},{"type":"damage","value":4.5,"description":"Shatters frozen enemies for massive damage"}]}];
+
+        allSkills = sampleSkills;
+
+        // Populate categories
+        const categories = [...new Set(allSkills.map(s => s.category))].sort();
+        const categorySelect = document.getElementById('category-filter');
+        categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat.toLowerCase();
+            option.textContent = cat;
+            categorySelect.appendChild(option);
+        });
+
+        function renderSkills() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const tier = document.getElementById('tier-filter').value;
+            const rarity = document.getElementById('rarity-filter').value;
+            const category = document.getElementById('category-filter').value;
+
+            const filtered = allSkills.filter(skill => {
+                const matchSearch = search === '' || skill.name.toLowerCase().includes(search);
+                const matchTier = tier === '' || skill.tier.toString() === tier;
+                const matchRarity = rarity === '' || skill.rarity.toLowerCase() === rarity;
+                const matchCategory = category === '' || skill.category.toLowerCase() === category;
+                return matchSearch && matchTier && matchRarity && matchCategory;
+            });
+
+            document.getElementById('filtered-count').textContent = `Showing: ${filtered.length}`;
+
+            const container = document.getElementById('skills-container');
+            container.innerHTML = '';
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="no-skills">No skills match your filters</div>';
+                return;
+            }
+
+            filtered.forEach(skill => {
+                const card = document.createElement('div');
+                card.className = 'skill-card';
+                
+                const rarityClass = `rarity-${skill.rarity.toLowerCase()}`;
+                
+                card.innerHTML = `
+                    <div class="skill-header">
+                        <div class="skill-name">${skill.name}</div>
+                        <div class="skill-tier">T${skill.tier}</div>
+                    </div>
+                    
+                    <div class="skill-category">${skill.category}</div>
+                    <span class="skill-rarity ${rarityClass}">${skill.rarity.toUpperCase()}</span>
+                    
+                    <div class="skill-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">COST</div>
+                            <div class="meta-value">${skill.cost}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">COOLDOWN</div>
+                            <div class="meta-value">${skill.cooldown}s</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-keywords">
+                        ${skill.keywords.map(kw => `<span class="keyword">${kw}</span>`).join('')}
+                    </div>
+                    
+                    <div class="skill-effects">
+                        ${skill.effects.map(effect => `
+                            <div class="effect">
+                                <div class="effect-type">${effect.type} (${(effect.value * 100).toFixed(0)}%)</div>
+                                <div class="effect-desc">${effect.description}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Event listeners
+        document.getElementById('search').addEventListener('input', renderSkills);
+        document.getElementById('tier-filter').addEventListener('change', renderSkills);
+        document.getElementById('rarity-filter').addEventListener('change', renderSkills);
+        document.getElementById('category-filter').addEventListener('change', renderSkills);
+
+        // Initial render
+        renderSkills();
+    </script>
+</body>
+</html>

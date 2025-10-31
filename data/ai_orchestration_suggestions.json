@@ -1,0 +1,162 @@
+{
+  "burst_damage": {
+    "type": "burst_damage",
+    "playstyle": "Aggressive offensive play with high initial damage",
+    "skills": [
+      "SKILL_FOUNDATIONAL_005_var_specialized_tier_5",
+      "SKILL_FOUNDATIONAL_011_var_enhanced_tier_5",
+      "SKILL_FOUNDATIONAL_018_var_advanced_tier_5"
+    ],
+    "skill_names": [
+      "Specialized Reinforcement Grid",
+      "Enhanced Structure Amplifier",
+      "Advanced Power Flow"
+    ],
+    "synergy": "High scaling on structure/construct keywords",
+    "avg_tier": 10,
+    "total_cooldown": 15
+  },
+  "control": {
+    "type": "control",
+    "playstyle": "Crowd control and battlefield manipulation",
+    "skills": [
+      "SKILL_FOUNDATIONAL_015",
+      "SKILL_FOUNDATIONAL_048",
+      "SKILL_FOUNDATIONAL_049"
+    ],
+    "skill_names": [
+      "Anchor Network",
+      "Foundation Sovereign",
+      "Grid Crown"
+    ],
+    "synergy": "Control/field keywords stack for lock-down",
+    "control_score": 12
+  },
+  "sustain": {
+    "type": "sustain",
+    "playstyle": "Defensive play with emphasis on survival",
+    "skills": [
+      "SKILL_FOUNDATIONAL_005_var_specialized_tier_5",
+      "SKILL_FOUNDATIONAL_011_var_enhanced_tier_5",
+      "SKILL_FOUNDATIONAL_018_var_advanced_tier_5"
+    ],
+    "skill_names": [
+      "Specialized Reinforcement Grid",
+      "Enhanced Structure Amplifier",
+      "Advanced Power Flow"
+    ],
+    "synergy": "High rarity synergy for defensive multipliers",
+    "survivability": 30
+  },
+  "balanced": {
+    "type": "balanced",
+    "playstyle": "Flexible adaptation with varied roles",
+    "skills": [
+      "SKILL_FOUNDATIONAL_001",
+      "HYBRID_023039",
+      "SKILL_FOUNDATIONAL_041_var_specialized_tier_2"
+    ],
+    "skill_names": [
+      "Basic Scaffold",
+      "Network Hub Master Node",
+      "Specialized Elite Scaffold"
+    ],
+    "synergy": "Rarity-based progression for skill growth",
+    "flexibility": "Can adapt to multiple threats"
+  },
+  "meta": {
+    "combo_count": 1147,
+    "avg_synergy": 1.883897122929381,
+    "tier_distribution": {
+      "4": 502,
+      "5": 183,
+      "6": 100,
+      "2": 63,
+      "8": 94,
+      "3": 44,
+      "10": 44
+    },
+    "top_combos": [
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_004_SKILL_FOUNDATIONAL_004_var_specialized_tier_2_SKILL_FOUNDATIONAL_004_var_specialized_tier_3",
+        "skills": [
+          "SKILL_FOUNDATIONAL_004",
+          "SKILL_FOUNDATIONAL_004_var_specialized_tier_2",
+          "SKILL_FOUNDATIONAL_004_var_specialized_tier_3"
+        ],
+        "skill_names": [
+          "Anchor Point",
+          "Specialized Anchor Point",
+          "Specialized Anchor Point"
+        ],
+        "synergy_multiplier": 2.0,
+        "damage_type": "synergistic_chain",
+        "strategy": "Chain Anchor Point \u2192 Specialized Anchor Point \u2192 Specialized Anchor Point"
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_004_SKILL_FOUNDATIONAL_004_var_specialized_tier_3_SKILL_FOUNDATIONAL_004_var_mastery_tier_3",
+        "skills": [
+          "SKILL_FOUNDATIONAL_004",
+          "SKILL_FOUNDATIONAL_004_var_specialized_tier_3",
+          "SKILL_FOUNDATIONAL_004_var_mastery_tier_3"
+        ],
+        "skill_names": [
+          "Anchor Point",
+          "Specialized Anchor Point",
+          "Mastery: Anchor Point"
+        ],
+        "synergy_multiplier": 2.0,
+        "damage_type": "synergistic_chain",
+        "strategy": "Chain Anchor Point \u2192 Specialized Anchor Point \u2192 Mastery: Anchor Point"
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_004_SKILL_FOUNDATIONAL_004_var_mastery_tier_3_SKILL_FOUNDATIONAL_004_var_specialized_tier_3",
+        "skills": [
+          "SKILL_FOUNDATIONAL_004",
+          "SKILL_FOUNDATIONAL_004_var_mastery_tier_3",
+          "SKILL_FOUNDATIONAL_004_var_specialized_tier_3"
+        ],
+        "skill_names": [
+          "Anchor Point",
+          "Mastery: Anchor Point",
+          "Specialized Anchor Point"
+        ],
+        "synergy_multiplier": 2.0,
+        "damage_type": "synergistic_chain",
+        "strategy": "Chain Anchor Point \u2192 Mastery: Anchor Point \u2192 Specialized Anchor Point"
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_014_SKILL_FOUNDATIONAL_014_var_specialized_tier_3_SKILL_FOUNDATIONAL_014_var_mastery_tier_3",
+        "skills": [
+          "SKILL_FOUNDATIONAL_014",
+          "SKILL_FOUNDATIONAL_014_var_specialized_tier_3",
+          "SKILL_FOUNDATIONAL_014_var_mastery_tier_3"
+        ],
+        "skill_names": [
+          "Stability Field",
+          "Specialized Stability Field",
+          "Mastery: Stability Field"
+        ],
+        "synergy_multiplier": 2.0,
+        "damage_type": "synergistic_chain",
+        "strategy": "Chain Stability Field \u2192 Specialized Stability Field \u2192 Mastery: Stability Field"
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_014_SKILL_FOUNDATIONAL_014_var_mastery_tier_3_SKILL_FOUNDATIONAL_014_var_specialized_tier_3",
+        "skills": [
+          "SKILL_FOUNDATIONAL_014",
+          "SKILL_FOUNDATIONAL_014_var_mastery_tier_3",
+          "SKILL_FOUNDATIONAL_014_var_specialized_tier_3"
+        ],
+        "skill_names": [
+          "Stability Field",
+          "Mastery: Stability Field",
+          "Specialized Stability Field"
+        ],
+        "synergy_multiplier": 2.0,
+        "damage_type": "synergistic_chain",
+        "strategy": "Chain Stability Field \u2192 Mastery: Stability Field \u2192 Specialized Stability Field"
+      }
+    ]
+  }
+}

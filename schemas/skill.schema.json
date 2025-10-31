@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.game1.local/skill.schema.json",
+  "title": "Skill",
+  "description": "Canonical schema for a single skill record in the Elemental + Keyword system.",
+  "$defs": {
+    "UUID": { "type": "string", "format": "uuid" },
+    "NonEmptyString": { "type": "string", "minLength": 1 },
+    "KeywordStrength": {
+      "type": "string",
+      "enum": ["primary", "secondary", "tertiary"]
+    },
+    "SkillType": {
+      "type": "string",
+      "enum": ["active", "passive", "ultimate", "aura"]
+    },
+    "Rarity": {
+      "type": "string",
+      "enum": ["common", "rare", "epic", "legendary", "mythic"]
+    },
+    "ResourceType": {
+      "type": "string",
+      "enum": ["mana", "stamina", "health", "willpower"]
+    },
+    "Range": {
+      "type": "string",
+      "enum": ["melee", "short", "medium", "long", "unlimited"]
+    },
+    "Element": {
+      "type": "string",
+      "enum": [
+        "Fire", "Ice", "Lightning", "Water", "Earth",
+        "Dark", "Light", "Wind", "Metal", "Void", "Chaos"
+      ]
+    },
+    "AffinityStrength": {
+      "type": "string",
+      "enum": ["weak", "neutral", "strong", "symbiotic"]
+    },
+    "UnlockType": {
+      "type": "string",
+      "enum": ["level", "quest", "currency", "crafting", "boss_drop"]
+    },
+    "KeywordRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "$ref": "#/$defs/NonEmptyString", "description": "Canonical keyword name (from catalog of 900+)." },
+        "strength": { "$ref": "#/$defs/KeywordStrength" },
+        "is_primary": { "type": "boolean", "default": false }
+      },
+      "required": ["name", "strength"]
+    },
+    "ResourceCost": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "$ref": "#/$defs/ResourceType" },
+        "amount": { "type": "number", "minimum": 0 }
+      },
+      "required": ["type", "amount"]
+    },
+    "Stacking": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_stacks": { "type": "integer", "minimum": 0, "default": 1 },
+        "merge_same": { "type": "boolean", "default": true },
+        "merge_similar": { "type": "boolean", "default": false }
+      }
+    },
+    "Conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "on_hit": { "type": "boolean", "default": false },
+        "on_crit": { "type": "boolean", "default": false },
+        "on_kill": { "type": "boolean", "default": false },
+        "on_defend": { "type": "boolean", "default": false },
+        "requires_element": { "$ref": "#/$defs/Element" }
+      }
+    },
+    "Scaling": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stat": { "type": "string", "enum": ["power", "wisdom", "dexterity", "constitution"] },
+        "multiplier": { "type": "number", "minimum": 0 },
+        "formula": { "type": "string", "minLength": 1, "description": "Interpolation formula, e.g., '2*{stat}+5'" }
+      },
+      "required": ["stat", "multiplier"]
+    },
+    "EffectBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-zA-Z0-9_-]{1,64}$" },
+        "keyword": { "$ref": "#/$defs/NonEmptyString" },
+        "potency": { "type": "number", "minimum": 0, "maximum": 10 },
+        "duration": { "type": "number", "minimum": 0 },
+        "cooldown": { "type": "number", "minimum": 0 },
+        "resource_cost": { "$ref": "#/$defs/ResourceCost" },
+        "stacking": { "$ref": "#/$defs/Stacking" },
+        "conditions": { "$ref": "#/$defs/Conditions" },
+        "scaling": { "$ref": "#/$defs/Scaling" }
+      },
+      "required": ["keyword"]
+    },
+    "ElementAffinity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "element": { "$ref": "#/$defs/Element" },
+        "affinity_strength": { "$ref": "#/$defs/AffinityStrength" },
+        "bonus": { "type": "number", "minimum": 0.7, "maximum": 1.5 }
+      },
+      "required": ["element", "affinity_strength", "bonus"]
+    },
+    "AOE": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string", "enum": ["none", "cone", "circle", "line"] },
+        "radius": { "type": "number", "minimum": 0 }
+      },
+      "required": ["type"]
+    },
+    "BaseStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "power": { "type": "number", "minimum": 0 },
+        "cooldown": { "type": "number", "minimum": 0 },
+        "resource_cost": { "type": "number", "minimum": 0 },
+        "duration": { "type": "number", "minimum": 0 },
+        "range": { "$ref": "#/$defs/Range" },
+        "aoe": { "$ref": "#/$defs/AOE" }
+      },
+      "required": ["power", "cooldown", "resource_cost", "duration", "range"]
+    },
+    "UnlockCondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "$ref": "#/$defs/UnlockType" },
+        "requirement": {},
+        "description": { "type": "string" }
+      },
+      "required": ["type", "requirement"],
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "level" } }, "required": ["type"] },
+          "then": { "properties": { "requirement": { "type": "integer", "minimum": 1, "maximum": 100 } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "quest" } }, "required": ["type"] },
+          "then": { "properties": { "requirement": { "$ref": "#/$defs/NonEmptyString" } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "currency" } }, "required": ["type"] },
+          "then": { "properties": { "requirement": { "type": "number", "minimum": 0 } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "crafting" } }, "required": ["type"] },
+          "then": { "properties": { "requirement": { "type": "object" } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "boss_drop" } }, "required": ["type"] },
+          "then": { "properties": { "requirement": { "$ref": "#/$defs/NonEmptyString" } } }
+        }
+      ]
+    },
+    "Combo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "compatible_skill_id": { "oneOf": [ { "$ref": "#/$defs/UUID" }, { "$ref": "#/$defs/NonEmptyString" } ] },
+        "combo_name": { "$ref": "#/$defs/NonEmptyString" },
+        "bonus_description": { "type": "string" },
+        "power_multiplier": { "type": "number", "minimum": 1.0, "maximum": 3.0 }
+      },
+      "required": ["compatible_skill_id", "combo_name", "power_multiplier"]
+    },
+    "Skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "oneOf": [ { "$ref": "#/$defs/UUID" }, { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_\-]{1,63}$" } ] },
+        "name": { "$ref": "#/$defs/NonEmptyString" },
+        "description": { "type": "string", "maxLength": 1000 },
+        "type": { "$ref": "#/$defs/SkillType" },
+        "rarity": { "$ref": "#/$defs/Rarity" },
+        "level_requirement": { "type": "integer", "minimum": 1, "maximum": 100 },
+        "keywords": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/KeywordRef" },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "contains": { "type": "object", "properties": { "strength": { "const": "primary" } }, "required": ["strength"] },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        "max_keywords": { "type": "integer", "minimum": 1, "maximum": 3, "default": 3 },
+        "effect_blocks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/EffectBlock" },
+          "minItems": 0,
+          "maxItems": 5
+        },
+        "element_affinities": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ElementAffinity" },
+          "minItems": 0,
+          "maxItems": 11,
+          "uniqueItems": true
+        },
+        "base_stats": { "$ref": "#/$defs/BaseStats" },
+        "unlock_condition": { "$ref": "#/$defs/UnlockCondition" },
+        "combos": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Combo" },
+          "minItems": 0,
+          "maxItems": 20
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 32 },
+          "minItems": 0,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "version": { "type": "string" },
+            "author": { "type": "string" },
+            "created_at": { "type": "string", "format": "date-time" },
+            "updated_at": { "type": "string", "format": "date-time" }
+          }
+        },
+        "deprecated": { "type": "boolean", "default": false }
+      },
+      "required": ["id", "name", "type", "rarity", "level_requirement", "keywords", "base_stats"]
+    }
+  },
+  "$ref": "#/$defs/Skill"
+}

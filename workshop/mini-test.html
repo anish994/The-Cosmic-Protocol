@@ -1906,7 +1906,7 @@
                 <span>📚 Owned Skills</span>
                 <div style="display: flex; gap: 4px;">
                     <button onclick="refreshSkills()" style="padding: 4px 8px; background: rgba(0,227,214,0.2); color: #00e3d6; border: 1px solid rgba(0,227,214,0.4); border-radius: 4px; cursor: pointer; font-size: 11px;" title="Refresh skill library">🔄</button>
-                    <button onclick="window.location.href='../05-fusion/demo/index.html'" style="padding: 4px 8px; background: rgba(139,92,246,0.3); color: #b894ff; border: 1px solid rgba(139,92,246,0.5); border-radius: 4px; cursor: pointer; font-size: 11px;">⚡ Fusion</button>
+                    <button onclick="window.location.href='../05-fusion/demo/card%20fusion%20demo.html'" style="padding: 4px 8px; background: rgba(139,92,246,0.3); color: #b894ff; border: 1px solid rgba(139,92,246,0.5); border-radius: 4px; cursor: pointer; font-size: 11px;">⚡ Fusion</button>
                 </div>
             </div>
             <!-- Skill Engine Filter Tabs -->
@@ -3560,8 +3560,8 @@
                 ownedSkills = ownedSkills.filter(skill => skill.engine === currentSkillFilter);
             }
             
-            if (ownedSkills.length === 0) {
-                container.innerHTML = '<div class="placeholder" style="padding: 20px; text-align: center;">🔒 No skills owned yet!<br><br>Visit the <a href="../05-fusion/demo/index.html" style="color: #8b5cf6; text-decoration: underline;">⚡ Fusion System</a> to unlock and fuse skills first!</div>';
+                if (ownedSkills.length === 0) {
+                container.innerHTML = '<div class="placeholder" style="padding: 20px; text-align: center;">🔒 No skills owned yet!<br><br>Visit the <a href="../05-fusion/demo/card%20fusion%20demo.html" style="color: #8b5cf6; text-decoration: underline;">⚡ Fusion System</a> to unlock and fuse skills first!</div>';
                 return;
             }
             
@@ -4049,6 +4049,7 @@
                 slotsFilled: slotsFilled
             };
             
+            // Update main stat displays
             document.getElementById('stat-power').textContent = displayStats.stats.power;
             document.getElementById('stat-defense').textContent = displayStats.stats.cooldown || avgCooldown;
             document.getElementById('stat-speed').textContent = displayStats.stats.versatility || (slotsFilled * 5);
@@ -4196,18 +4197,7 @@
                 }[ability.tier] || '#8b5cf6';
                 
                 return `
-                    <div style="background: ${tierColor}11; border-left: 3px solid ${tierColor}; padding: 8px; margin-bottom: 6px; border-radius: 6px; position: relative; overflow: hidden;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                            <span style="font-weight: 700; font-size: 12px; color: ${tierColor};">${ability.icon} ${ability.name}</span>
-                            <span style="font-size: 9px; padding: 2px 6px; background: ${tierColor}33; border: 1px solid ${tierColor}80; color: ${tierColor}; border-radius: 4px; text-transform: uppercase;">${ability.tier}</span>
-                        </div>
-                        <div style="font-size: 10px; opacity: 0.85; line-height: 1.4; margin-bottom: 4px;">${ability.description}</div>
-                        <div style="font-size: 9px; opacity: 0.6;">
-                            ${ability.pattern ? `Pattern: ${ability.pattern}` : ''}
-                            ${ability.multiplier > 1 ? ` • <span style="color: ${tierColor};">×${ability.multiplier}</span> bonus` : ''}
-                        </div>
-                    </div>
-                `;
+                    <div style=\"background: ${tierColor}11; border-left: 3px solid ${tierColor}; padding: 8px; margin-bottom: 6px; border-radius: 6px; position: relative; overflow: hidden;\">\r\n                        <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;\">\r\n                            <span style=\"font-weight: 700; font-size: 12px; color: ${tierColor};\">${ability.icon} ${ability.name}</span>\r\n                            <span style=\"font-size: 9px; padding: 2px 6px; background: ${tierColor}33; border: 1px solid ${tierColor}80; color: ${tierColor}; border-radius: 4px; text-transform: uppercase;\">${ability.tier}</span>\r\n                        </div>\r\n                        <div style=\"font-size: 10px; opacity: 0.85; line-height: 1.4; margin-bottom: 4px;\">${ability.description}</div>\r\n                        <div style=\"font-size: 9px; opacity: 0.6;\">\r\n                            ${ability.pattern ? `Pattern: ${ability.pattern}` : ''}\r\n                            ${ability.multiplier > 1 ? ` • <span style=\"color: ${tierColor};\">×${ability.multiplier}</span> bonus` : ''}\r\n                        </div>\r\n                    </div>\r\n                `;
             }).join('');
         }
         
@@ -4251,9 +4241,10 @@
             `;
         }
         
-        // Detect synergies (original system)
-        detectSynergies();
-    }
+            // Detect synergies (original system)
+            detectSynergies();
+            
+        }
         
         // === DETECT YOGAS (SYNERGIES) ===
         function detectSynergies() {
@@ -4447,18 +4438,36 @@
                 alert('❌ Please invoke a card first!');
                 return;
             }
+            // Ensure name exists
+            if (!invokedCard.name) {
+                const n = document.getElementById('card-name-display')?.textContent || '';
+                invokedCard.name = n || `Card_${Date.now()}`;
+            }
             
+            // Prefer centralized SkillSystem storage
+            try {
+                if (window.SkillSystem && typeof SkillSystem.saveSanctumCard === 'function') {
+                    const ok = SkillSystem.saveSanctumCard(invokedCard);
+                    if (ok) {
+                        console.log(`💾 Saved via SkillSystem: ${invokedCard.name}`);
+                        alert(`✅ "${invokedCard.name}" saved to collection!`);
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.warn('⚠️ SkillSystem save failed, falling back to localStorage', e);
+            }
+            
+            // Fallback: localStorage within this page key
             let savedCards = [];
             try {
                 const stored = localStorage.getItem(STORAGE_KEY);
                 if (stored) savedCards = JSON.parse(stored);
             } catch (e) {}
-            
             savedCards.push(invokedCard);
-            
             try {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(savedCards));
-                console.log(`💾 Card saved: ${invokedCard.name}`);
+                console.log(`💾 Card saved (fallback): ${invokedCard.name}`);
                 alert(`✅ "${invokedCard.name}" saved to collection!`);
             } catch (e) {
                 alert('❌ Failed to save card');
@@ -4468,8 +4477,12 @@
         function openLoadMenu() {
             let savedCards = [];
             try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (stored) savedCards = JSON.parse(stored);
+                if (window.SkillSystem && typeof SkillSystem.getSanctumCards === 'function') {
+                    savedCards = SkillSystem.getSanctumCards() || [];
+                } else {
+                    const stored = localStorage.getItem(STORAGE_KEY);
+                    if (stored) savedCards = JSON.parse(stored);
+                }
             } catch (e) {}
             
             const container = document.getElementById('saved-cards-list');
@@ -4481,7 +4494,7 @@
                     <div class="saved-card-item" onclick="loadCard(${card.id})">
                         <div style="font-weight: 600; margin-bottom: 4px;">${card.name}</div>
                         <div style="font-size: 11px; opacity: 0.7;">⚡ ${card.stats.power} | 🔒 ${card.slotsFilled}/12 slots</div>
-                        <div style="font-size: 10px; opacity: 0.5; margin-top: 4px;">${card.invokedAt}</div>
+                        <div style="font-size: 10px; opacity: 0.5; margin-top: 4px;">${card.invokedAt || ''}</div>
                         <button onclick="event.stopPropagation(); deleteCard(${card.id})" style="margin-top: 8px; padding: 4px 8px; background: rgba(255,80,80,0.2); color: #ff5050; border: 1px solid rgba(255,80,80,0.4); border-radius: 4px; cursor: pointer; font-size: 10px;">🗑️ Delete</button>
                     </div>
                 `).join('');
@@ -4500,8 +4513,12 @@
         function loadCard(cardId) {
             let savedCards = [];
             try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (stored) savedCards = JSON.parse(stored);
+                if (window.SkillSystem && typeof SkillSystem.getSanctumCards === 'function') {
+                    savedCards = SkillSystem.getSanctumCards() || [];
+                } else {
+                    const stored = localStorage.getItem(STORAGE_KEY);
+                    if (stored) savedCards = JSON.parse(stored);
+                }
             } catch (e) {}
             
             const card = savedCards.find(c => c.id === cardId);
@@ -4552,17 +4569,30 @@
         function deleteCard(cardId) {
             if (!confirm('🗑️ Delete this card permanently?')) return;
             
+            // Prefer centralized SkillSystem deletion
+            try {
+                if (window.SkillSystem && typeof SkillSystem.deleteSanctumCard === 'function') {
+                    const ok = SkillSystem.deleteSanctumCard(cardId);
+                    if (ok) {
+                        console.log('🗑️ Card deleted via SkillSystem');
+                        openLoadMenu();
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.warn('⚠️ SkillSystem delete failed, falling back', e);
+            }
+            
+            // Fallback localStorage
             let savedCards = [];
             try {
                 const stored = localStorage.getItem(STORAGE_KEY);
                 if (stored) savedCards = JSON.parse(stored);
             } catch (e) {}
-            
             savedCards = savedCards.filter(c => c.id !== cardId);
-            
             try {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(savedCards));
-                console.log(`🗑️ Card deleted`);
+                console.log(`🗑️ Card deleted (fallback)`);
                 openLoadMenu(); // Refresh list
             } catch (e) {
                 alert('❌ Failed to delete card');

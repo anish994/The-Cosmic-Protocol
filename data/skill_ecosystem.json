@@ -1,0 +1,792 @@
+{
+  "total_skills": 50,
+  "skill_patterns": {
+    "offensive_chains": [],
+    "defensive_chains": [],
+    "control_chains": [],
+    "hybrid_chains": []
+  },
+  "skill_chains": [
+    {
+      "starter_skill": "Basic Scaffold",
+      "starter_id": "SKILL_FOUNDATIONAL_001",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Load-Bearing Pillar",
+      "starter_id": "SKILL_FOUNDATIONAL_002",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_001",
+          "skill_name": "Basic Scaffold",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_003",
+          "skill_name": "Foundation Network",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_004",
+          "skill_name": "Anchor Point",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_006",
+          "skill_name": "Energy Conduit",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Foundation Network",
+      "starter_id": "SKILL_FOUNDATIONAL_003",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Anchor Point",
+      "starter_id": "SKILL_FOUNDATIONAL_004",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Reinforcement Grid",
+      "starter_id": "SKILL_FOUNDATIONAL_005",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_001",
+          "skill_name": "Basic Scaffold",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_003",
+          "skill_name": "Foundation Network",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_004",
+          "skill_name": "Anchor Point",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_006",
+          "skill_name": "Energy Conduit",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Energy Conduit",
+      "starter_id": "SKILL_FOUNDATIONAL_006",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Stability Matrix",
+      "starter_id": "SKILL_FOUNDATIONAL_007",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_001",
+          "skill_name": "Basic Scaffold",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_003",
+          "skill_name": "Foundation Network",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_004",
+          "skill_name": "Anchor Point",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Power Node",
+      "starter_id": "SKILL_FOUNDATIONAL_008",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Foundation Seal",
+      "starter_id": "SKILL_FOUNDATIONAL_009",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Resonance Link",
+      "starter_id": "SKILL_FOUNDATIONAL_010",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Structure Amplifier",
+      "starter_id": "SKILL_FOUNDATIONAL_011",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_001",
+          "skill_name": "Basic Scaffold",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_003",
+          "skill_name": "Foundation Network",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_004",
+          "skill_name": "Anchor Point",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Foundation Echo",
+      "starter_id": "SKILL_FOUNDATIONAL_012",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Power Grid",
+      "starter_id": "SKILL_FOUNDATIONAL_013",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Stability Field",
+      "starter_id": "SKILL_FOUNDATIONAL_014",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_001",
+          "skill_name": "Basic Scaffold",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_003",
+          "skill_name": "Foundation Network",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_004",
+          "skill_name": "Anchor Point",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_006",
+          "skill_name": "Energy Conduit",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Energy Matrix",
+      "starter_id": "SKILL_FOUNDATIONAL_016",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_001",
+          "skill_name": "Basic Scaffold",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_003",
+          "skill_name": "Foundation Network",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_004",
+          "skill_name": "Anchor Point",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_006",
+          "skill_name": "Energy Conduit",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "amplify + construct"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Structure Shield",
+      "starter_id": "SKILL_FOUNDATIONAL_017",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Power Flow",
+      "starter_id": "SKILL_FOUNDATIONAL_018",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Foundation Beacon",
+      "starter_id": "SKILL_FOUNDATIONAL_019",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Resonance Field",
+      "starter_id": "SKILL_FOUNDATIONAL_020",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    },
+    {
+      "starter_skill": "Advanced Scaffold",
+      "starter_id": "SKILL_FOUNDATIONAL_021",
+      "chain_depth": 5,
+      "compatible_skills": [
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_002",
+          "skill_name": "Load-Bearing Pillar",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_005",
+          "skill_name": "Reinforcement Grid",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_007",
+          "skill_name": "Stability Matrix",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_011",
+          "skill_name": "Structure Amplifier",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        },
+        {
+          "skill_id": "SKILL_FOUNDATIONAL_014",
+          "skill_name": "Stability Field",
+          "synergy_multiplier": 1.5,
+          "keywords_match": "construct + amplify"
+        }
+      ],
+      "total_synergy": 7.5,
+      "average_synergy": 1.5
+    }
+  ],
+  "categories_represented": 1
+}

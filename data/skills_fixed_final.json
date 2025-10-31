@@ -1,0 +1,4592 @@
+[
+  {
+    "id": "SKILL_FOUNDATIONAL_001",
+    "name": "Basic Scaffold",
+    "category": "Foundational",
+    "description": "Creates support structure boosting nearby skills by 10%",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_002",
+    "name": "Load-Bearing Pillar",
+    "category": "Foundational",
+    "description": "Deploys pillar increasing effect radius by 20%",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "stunned",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Clear communication",
+      "Standard",
+      "Precise"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_003",
+    "name": "Foundation Network",
+    "category": "Foundational",
+    "description": "Links 3 structures for attribute synergy",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_004",
+    "name": "Anchor Point",
+    "category": "Foundational",
+    "description": "Creates point reducing cooldowns by 15% in 5m radius",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "anchor",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "banished",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Persistent state",
+      "Future value",
+      "Combo enabler",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Needs follow-up",
+      "Slow",
+      "Resources needed",
+      "Cannot act",
+      "Cannot help team",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_005",
+    "name": "Reinforcement Grid",
+    "category": "Foundational",
+    "description": "Forms grid boosting structure durability by 25%",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_006",
+    "name": "Energy Conduit",
+    "category": "Foundational",
+    "description": "Channels power between structures, 30% efficiency",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Hurts everyone",
+      "Economic chaos",
+      "Hard to stop"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_007",
+    "name": "Stability Matrix",
+    "category": "Foundational",
+    "description": "Reduces structure decay rate by 40%",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_008",
+    "name": "Power Node",
+    "category": "Foundational",
+    "description": "Creates energy focal point boosting nearby effects",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Create permanent",
+      "Useful",
+      "Progress"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone",
+      "Economic chaos"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_009",
+    "name": "Foundation Seal",
+    "category": "Foundational",
+    "description": "Protects structures from disruption for 1 minute",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_010",
+    "name": "Resonance Link",
+    "category": "Foundational",
+    "description": "Harmonizes 2 structures for enhanced effects",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_011",
+    "name": "Structure Amplifier",
+    "category": "Foundational",
+    "description": "Increases structure power output by 25%",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_012",
+    "name": "Foundation Echo",
+    "category": "Foundational",
+    "description": "Replicates structure effects in 3m radius",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_013",
+    "name": "Power Grid",
+    "category": "Foundational",
+    "description": "Creates energy network between structures",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Hurts everyone",
+      "Economic chaos",
+      "Hard to stop"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_014",
+    "name": "Stability Field",
+    "category": "Foundational",
+    "description": "Generates zone of enhanced structure stability",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Clear communication",
+      "Standard",
+      "Precise"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_015",
+    "name": "Anchor Network",
+    "category": "Foundational",
+    "description": "Links multiple anchor points for expanded effect",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Beautiful structures",
+      "Functional",
+      "Lasting"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_016",
+    "name": "Energy Matrix",
+    "category": "Foundational",
+    "description": "Forms complex power distribution network",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Beautiful structures",
+      "Functional"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Expensive",
+      "Time consuming",
+      "Requires materials"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_017",
+    "name": "Structure Shield",
+    "category": "Foundational",
+    "description": "Projects protective barrier around structures",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_018",
+    "name": "Power Flow",
+    "category": "Foundational",
+    "description": "Optimizes energy movement between nodes",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_019",
+    "name": "Foundation Beacon",
+    "category": "Foundational",
+    "description": "Creates rally point boosting ally structures",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_020",
+    "name": "Resonance Field",
+    "category": "Foundational",
+    "description": "Harmonizes all structures in 10m radius",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Hurts everyone",
+      "Economic chaos",
+      "Hard to stop"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_021",
+    "name": "Advanced Scaffold",
+    "category": "Foundational",
+    "description": "Creates enhanced support boosting skills by 20%",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_022",
+    "name": "Power Pillar",
+    "category": "Foundational",
+    "description": "Projects energy column increasing power by 30%",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "anger",
+        "category": "buff",
+        "effect": {
+          "type": "buff",
+          "stat": "power",
+          "amount": 20,
+          "duration": 12,
+          "cooldown": 8
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Damage boost",
+      "Ignore pain"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Lose defense",
+      "Reckless",
+      "Exploitable"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_023",
+    "name": "Network Hub",
+    "category": "Foundational",
+    "description": "Forms central node for structure coordination",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_024",
+    "name": "Stability Anchor",
+    "category": "Foundational",
+    "description": "Creates immovable point of structural support",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_025",
+    "name": "Energy Grid",
+    "category": "Foundational",
+    "description": "Establishes power distribution matrix",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_026",
+    "name": "Structure Core",
+    "category": "Foundational",
+    "description": "Forms central foundation strengthening all links",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_027",
+    "name": "Power Nexus",
+    "category": "Foundational",
+    "description": "Creates major energy distribution center",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Hurts everyone",
+      "Economic chaos",
+      "Hard to stop"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_028",
+    "name": "Foundation Pulse",
+    "category": "Foundational",
+    "description": "Emits waves strengthening nearby structures",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_029",
+    "name": "Resonance Node",
+    "category": "Foundational",
+    "description": "Establishes harmonic energy focal point",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_030",
+    "name": "Master Grid",
+    "category": "Foundational",
+    "description": "Forms advanced structural support network",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_031",
+    "name": "Supreme Scaffold",
+    "category": "Foundational",
+    "description": "Creates ultimate support increasing power 40%",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Hurts everyone",
+      "Economic chaos",
+      "Hard to stop"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_032",
+    "name": "Energy Column",
+    "category": "Foundational",
+    "description": "Projects massive power amplification beam",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_033",
+    "name": "Network Matrix",
+    "category": "Foundational",
+    "description": "Establishes complex structural web",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Beautiful structures",
+      "Functional"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Expensive",
+      "Time consuming",
+      "Requires materials"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_034",
+    "name": "Core Anchor",
+    "category": "Foundational",
+    "description": "Forms unbreakable structural foundation",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_035",
+    "name": "Power Field",
+    "category": "Foundational",
+    "description": "Creates persistent energy enhancement zone",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Create permanent",
+      "Useful",
+      "Progress"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone",
+      "Economic chaos"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_036",
+    "name": "Structure Nexus",
+    "category": "Foundational",
+    "description": "Forms central point of structural control",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "curse",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Slow",
+      "Resources needed",
+      "Needs time to stack"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_037",
+    "name": "Foundation Core",
+    "category": "Foundational",
+    "description": "Establishes primary power distribution hub",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_038",
+    "name": "Energy Beacon",
+    "category": "Foundational",
+    "description": "Projects powerful enhancement signal",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_039",
+    "name": "Master Node",
+    "category": "Foundational",
+    "description": "Creates supreme control point for network",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "panic",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Create permanent",
+      "Useful",
+      "Progress"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Slow",
+      "Resources needed",
+      "Can spread",
+      "Unpredictable"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_040",
+    "name": "Power Matrix",
+    "category": "Foundational",
+    "description": "Forms complex energy amplification grid",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Beautiful structures",
+      "Functional"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Expensive",
+      "Time consuming",
+      "Requires materials"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_041",
+    "name": "Elite Scaffold",
+    "category": "Foundational",
+    "description": "Creates perfect support structure system",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_042",
+    "name": "Structure Crown",
+    "category": "Foundational",
+    "description": "Forms pinnacle of structural mastery",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "amplify",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Clear communication",
+      "Standard",
+      "Precise",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Can be pedantic",
+      "Complex",
+      "Varies by language",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Amplify + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Amplify + Buff = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_043",
+    "name": "Network Sovereign",
+    "category": "Foundational",
+    "description": "Establishes absolute control over grid",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Beautiful structures",
+      "Functional",
+      "Lasting"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_044",
+    "name": "Anchor Crown",
+    "category": "Foundational",
+    "description": "Creates supreme stability point",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Doesn't stop abilities",
+      "Cleansable",
+      "Temporary"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_045",
+    "name": "Energy Crown",
+    "category": "Foundational",
+    "description": "Forms perfect power distribution system",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_046",
+    "name": "Core Crown",
+    "category": "Foundational",
+    "description": "Establishes ultimate foundation center",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Beautiful structures",
+      "Functional",
+      "Lasting",
+      "Create permanent",
+      "Useful"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Slow",
+      "Resources needed",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_047",
+    "name": "Power Crown",
+    "category": "Foundational",
+    "description": "Creates supreme energy control point",
+    "type": "active",
+    "rarity": "legendary",
+    "power_tier": 5,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "inflation",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Create permanent",
+      "Useful",
+      "Progress"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Slow",
+      "Resources needed",
+      "Hurts everyone",
+      "Economic chaos"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      },
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_048",
+    "name": "Foundation Sovereign",
+    "category": "Foundational",
+    "description": "Forms absolute structural control",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Beautiful structures",
+      "Functional",
+      "Lasting"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_049",
+    "name": "Grid Crown",
+    "category": "Foundational",
+    "description": "Establishes perfect network control",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 10,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "field",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "architecture",
+        "category": "trait",
+        "effect": {
+          "type": "trait",
+          "name": "aoe",
+          "radius": 4
+        }
+      },
+      {
+        "keyword": "cripple",
+        "category": "debuff",
+        "effect": {
+          "type": "debuff",
+          "effect": "vulnerable",
+          "amount": 20,
+          "duration": 8,
+          "cooldown": 10
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Continuous effect",
+      "Forces positioning",
+      "Beautiful structures",
+      "Functional",
+      "Lasting"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Stationary",
+      "Can avoid",
+      "Expensive",
+      "Time consuming",
+      "Requires materials",
+      "Doesn't stop abilities"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Field + Damage = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Field + Control = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      }
+    ],
+    "element_modifier": null
+  },
+  {
+    "id": "SKILL_FOUNDATIONAL_050",
+    "name": "Master Crown",
+    "category": "Foundational",
+    "description": "Creates ultimate mastery point",
+    "type": "active",
+    "rarity": "epic",
+    "power_tier": 4,
+    "cost": {
+      "type": "mana",
+      "amount": 30
+    },
+    "cooldown": 12,
+    "range": "medium",
+    "layers": [
+      {
+        "keyword": "structure",
+        "category": "deployable",
+        "effect": {
+          "type": "deployable",
+          "hp": 200,
+          "duration": 20,
+          "cooldown": 10
+        }
+      },
+      {
+        "keyword": "construct",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "construction",
+        "category": "mechanic",
+        "effect": {
+          "type": "mechanic",
+          "name": "amplify",
+          "value": 1.25
+        }
+      },
+      {
+        "keyword": "study",
+        "category": "utility",
+        "effect": {
+          "type": "utility",
+          "effect": "cleanse",
+          "cooldown": 12
+        }
+      }
+    ],
+    "strengths": [
+      "Zone control",
+      "Block projectiles",
+      "Force pathing",
+      "Create permanent",
+      "Useful",
+      "Progress",
+      "Create structures",
+      "Permanent"
+    ],
+    "weaknesses": [
+      "Can be destroyed",
+      "Blocks allies too",
+      "Slow",
+      "Resources needed",
+      "Resources",
+      "Takes time",
+      "Requires focus",
+      "Not immediate"
+    ],
+    "combo_suggestions": [
+      {
+        "text": "Construct + Amplify = Synergy",
+        "synergy_multiplier": 1.5,
+        "reasoning": "Perfect combo: 1.5x multiplier"
+      },
+      {
+        "text": "Construct + Deploy = Synergy",
+        "synergy_multiplier": 1.6,
+        "reasoning": "Perfect combo: 1.6x multiplier"
+      }
+    ],
+    "element_modifier": null
+  }
+]

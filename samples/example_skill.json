@@ -1,0 +1,45 @@
+{
+  "id": "00000000-0000-0000-0000-000000000001",
+  "name": "Fireball",
+  "description": "Hurl a blazing orb that explodes, applying Burn and spreading to nearby foes.",
+  "type": "active",
+  "rarity": "rare",
+  "level_requirement": 10,
+  "keywords": [
+    { "name": "Burn", "strength": "primary", "is_primary": true },
+    { "name": "Spread", "strength": "secondary" }
+  ],
+  "max_keywords": 3,
+  "effect_blocks": [
+    {
+      "id": "e1",
+      "keyword": "Burn",
+      "potency": 8,
+      "duration": 10,
+      "cooldown": 5,
+      "resource_cost": { "type": "mana", "amount": 20 },
+      "stacking": { "max_stacks": 5, "merge_same": true, "merge_similar": false },
+      "conditions": { "on_hit": true, "on_crit": false, "on_kill": false, "on_defend": false, "requires_element": "Fire" },
+      "scaling": { "stat": "power", "multiplier": 1.5, "formula": "2*{stat}+5" }
+    }
+  ],
+  "element_affinities": [
+    { "element": "Fire", "affinity_strength": "strong", "bonus": 1.5 },
+    { "element": "Ice", "affinity_strength": "weak", "bonus": 0.8 }
+  ],
+  "base_stats": {
+    "power": 45,
+    "cooldown": 5,
+    "resource_cost": 20,
+    "duration": 10,
+    "range": "medium",
+    "aoe": { "type": "circle", "radius": 3 }
+  },
+  "unlock_condition": { "type": "level", "requirement": 10, "description": "Learn at Level 10" },
+  "combos": [
+    { "compatible_skill_id": "00000000-0000-0000-0000-000000000002", "combo_name": "Inferno Spiral", "bonus_description": "+25% burning damage", "power_multiplier": 1.25 }
+  ],
+  "tags": ["damage", "fire", "aoe"],
+  "metadata": { "version": "1.0.0" },
+  "deprecated": false
+}

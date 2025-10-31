@@ -1,0 +1,1031 @@
+Skill ID,Skill Name,Category,Effect (vague/connected),Primary Keyword (guessed),Secondary Keyword,Tertiary Keyword,Type (active/passive/ultimate),Power Tier (1-5),Rarity (common/rare/epic/legendary/mythic),Status (needs_mapping),Notes
+SKILL_FOUNDATIONAL_001,Basic Scaffold,Foundational,Creates support structure boosting nearby skills by 10%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_002,Load-Bearing Pillar,Foundational,Deploys pillar increasing effect radius by 20%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_003,Foundation Network,Foundational,Links 3 structures for attribute synergy,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_004,Anchor Point,Foundational,Creates point reducing cooldowns by 15% in 5m radius,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_005,Reinforcement Grid,Foundational,Forms grid boosting structure durability by 25%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_006,Energy Conduit,Foundational,"Channels power between structures, 30% efficiency",Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_007,Stability Matrix,Foundational,Reduces structure decay rate by 40%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_008,Power Node,Foundational,Creates energy focal point boosting nearby effects,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_009,Foundation Seal,Foundational,Protects structures from disruption for 1 minute,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_010,Resonance Link,Foundational,Harmonizes 2 structures for enhanced effects,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_011,Structure Amplifier,Foundational,Increases structure power output by 25%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_012,Foundation Echo,Foundational,Replicates structure effects in 3m radius,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_013,Power Grid,Foundational,Creates energy network between structures,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_014,Stability Field,Foundational,Generates zone of enhanced structure stability,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_015,Anchor Network,Foundational,Links multiple anchor points for expanded effect,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_016,Energy Matrix,Foundational,Forms complex power distribution network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_017,Structure Shield,Foundational,Projects protective barrier around structures,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_018,Power Flow,Foundational,Optimizes energy movement between nodes,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_019,Foundation Beacon,Foundational,Creates rally point boosting ally structures,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_020,Resonance Field,Foundational,Harmonizes all structures in 10m radius,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_021,Advanced Scaffold,Foundational,Creates enhanced support boosting skills by 20%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_022,Power Pillar,Foundational,Projects energy column increasing power by 30%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_023,Network Hub,Foundational,Forms central node for structure coordination,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_024,Stability Anchor,Foundational,Creates immovable point of structural support,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_025,Energy Grid,Foundational,Establishes power distribution matrix,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_026,Structure Core,Foundational,Forms central foundation strengthening all links,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_027,Power Nexus,Foundational,Creates major energy distribution center,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_028,Foundation Pulse,Foundational,Emits waves strengthening nearby structures,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_029,Resonance Node,Foundational,Establishes harmonic energy focal point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_030,Master Grid,Foundational,Forms advanced structural support network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_031,Supreme Scaffold,Foundational,Creates ultimate support increasing power 40%,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_032,Energy Column,Foundational,Projects massive power amplification beam,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_033,Network Matrix,Foundational,Establishes complex structural web,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_034,Core Anchor,Foundational,Forms unbreakable structural foundation,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_035,Power Field,Foundational,Creates persistent energy enhancement zone,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_036,Structure Nexus,Foundational,Forms central point of structural control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_037,Foundation Core,Foundational,Establishes primary power distribution hub,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_038,Energy Beacon,Foundational,Projects powerful enhancement signal,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_039,Master Node,Foundational,Creates supreme control point for network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_040,Power Matrix,Foundational,Forms complex energy amplification grid,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_041,Elite Scaffold,Foundational,Creates perfect support structure system,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_042,Structure Crown,Foundational,Forms pinnacle of structural mastery,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_043,Network Sovereign,Foundational,Establishes absolute control over grid,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_044,Anchor Crown,Foundational,Creates supreme stability point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_045,Energy Crown,Foundational,Forms perfect power distribution system,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_046,Core Crown,Foundational,Establishes ultimate foundation center,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_047,Power Crown,Foundational,Creates supreme energy control point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_048,Foundation Sovereign,Foundational,Forms absolute structural control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_049,Grid Crown,Foundational,Establishes perfect network control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_050,Master Crown,Foundational,Creates ultimate mastery point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_051,Divine Scaffold,Foundational,Forms transcendent support structure,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_052,Structure Divine,Foundational,Creates godlike structural system,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_053,Network Divine,Foundational,Establishes perfect grid control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_054,Anchor Divine,Foundational,Forms absolute stability point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_055,Energy Divine,Foundational,Creates perfect power flow,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_056,Core Divine,Foundational,Establishes transcendent foundation,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_057,Power Divine,Foundational,Forms absolute energy control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_058,Foundation Divine,Foundational,Creates perfect structural base,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_059,Grid Divine,Foundational,Establishes transcendent network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_060,Master Divine,Foundational,Forms ultimate control point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_061,Eternal Scaffold,Foundational,Creates everlasting support structure,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_062,Structure Eternal,Foundational,Forms permanent structural system,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_063,Network Eternal,Foundational,Establishes endless grid connection,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_064,Anchor Eternal,Foundational,Creates permanent stability point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_065,Energy Eternal,Foundational,Forms endless power flow,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_066,Core Eternal,Foundational,Establishes permanent foundation,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_067,Power Eternal,Foundational,Creates endless energy control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_068,Foundation Eternal,Foundational,Forms everlasting structural base,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_069,Grid Eternal,Foundational,Establishes permanent network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_070,Master Eternal,Foundational,Creates endless control point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_071,Supreme Divine Scaffold,Foundational,Forms ultimate divine support,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_072,Structure Supreme,Foundational,Creates perfect structural harmony,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_073,Network Supreme,Foundational,Establishes ultimate grid mastery,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_074,Anchor Supreme,Foundational,Forms perfect stability core,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_075,Energy Supreme,Foundational,Creates ultimate power harmony,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_076,Core Supreme,Foundational,Establishes perfect foundation,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_077,Power Supreme,Foundational,Forms ultimate energy mastery,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_078,Foundation Supreme,Foundational,Creates perfect structural unity,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_079,Grid Supreme,Foundational,Establishes ultimate network harmony,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_080,Master Supreme,Foundational,Forms perfect control center,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_081,Cosmic Scaffold,Foundational,Creates universal support structure,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_082,Structure Cosmic,Foundational,Forms universe-spanning system,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_083,Network Cosmic,Foundational,Establishes cosmic grid connection,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_084,Anchor Cosmic,Foundational,Creates universal stability point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_085,Energy Cosmic,Foundational,Forms cosmic power flow,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_086,Core Cosmic,Foundational,Establishes universal foundation,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_087,Power Cosmic,Foundational,Creates cosmic energy control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_088,Foundation Cosmic,Foundational,Forms universal structural base,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_089,Grid Cosmic,Foundational,Establishes cosmic network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_090,Master Cosmic,Foundational,Creates universal control point,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_091,Ultimate Scaffold,Foundational,Forms absolute perfect support,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_092,Structure Ultimate,Foundational,Creates perfect structural system,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_093,Network Ultimate,Foundational,Establishes perfect grid harmony,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_094,Anchor Ultimate,Foundational,Forms perfect stability nexus,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_095,Energy Ultimate,Foundational,Creates perfect power harmony,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_096,Core Ultimate,Foundational,Establishes perfect foundation,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_097,Power Ultimate,Foundational,Forms perfect energy mastery,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_098,Foundation Ultimate,Foundational,Creates perfect structural unity,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_099,Grid Ultimate,Foundational,Establishes perfect network,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_FOUNDATIONAL_100,Master Ultimate,Foundational,Forms absolute perfect control,Unknown,,,,,,needs_mapping,From Foundational engine
+SKILL_CHAR_001,Ego Pattern Analysis,Character Analysis,Reveals core personality traits and current mental state,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_002,Shadow Integration,Character Analysis,Temporarily harnesses suppressed aspects for increased power,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_003,Archetypal Resonance,Character Analysis,Identifies and strengthens dominant personality patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_004,Persona Mapping,Character Analysis,Creates a detailed analysis of behavior patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_005,Core Motive Scan,Character Analysis,Reveals underlying motivations and primary drives,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_006,Mind Mirror,Character Analysis,Reflects current mental state,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_007,Psyche Echo,Character Analysis,Creates resonance with subject,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_008,Personality Matrix,Character Analysis,Maps complex personality structures,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_009,Emotional Current,Character Analysis,Traces flow of emotional patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_010,Thought Pattern,Character Analysis,Analyzes thought structure sequences,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_011,Mental Bridge,Character Analysis,Creates connection between minds,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_012,Soul Echo,Character Analysis,Resonates with soul frequencies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_013,Character Web,Character Analysis,Maps interconnected personality traits,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_014,Psyche Scan,Character Analysis,Deep analysis of psychological state,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_015,Mind Pattern,Character Analysis,Identifies mental activity patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_016,Spirit Link,Character Analysis,Forms connection with spirit essence,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_017,Ego Bridge,Character Analysis,Links different ego states,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_018,Soul Matrix,Character Analysis,Creates framework of soul aspects,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_019,Persona Wave,Character Analysis,Emits waves of personality influence,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_020,Mental Current,Character Analysis,Directs flow of mental energy,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_021,Psyche Bridge,Character Analysis,Connects different psyche levels,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_022,Character Resonance,Character Analysis,Harmonizes with personality traits,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_023,Mind Web,Character Analysis,Creates network of mental connections,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_024,Soul Pattern,Character Analysis,Analyzes soul structure patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_025,Ego Matrix,Character Analysis,Forms framework of ego structures,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_026,Spirit Echo,Character Analysis,Creates spiritual resonance patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_027,Mental Wave,Character Analysis,Generates waves of mental influence,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_028,Psyche Pattern,Character Analysis,Maps psychological patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_029,Character Flow,Character Analysis,Directs personality energies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_030,Mind Current,Character Analysis,Channels mental energy streams,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_031,Soul Wave,Character Analysis,Emits waves of soul energy,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_032,Ego Resonance,Character Analysis,Creates ego state harmony,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_033,Spirit Matrix,Character Analysis,Forms spiritual energy framework,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_034,Persona Pattern,Character Analysis,Analyzes persona structures,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_035,Mental Echo,Character Analysis,Generates mental resonance,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_036,Psyche Wave,Character Analysis,Creates waves of psychic energy,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_037,Character Bridge,Character Analysis,Links personality aspects,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_038,Mind Matrix,Character Analysis,Forms mental energy framework,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_039,Soul Current,Character Analysis,Directs soul energy flows,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_040,Ego Pattern,Character Analysis,Maps ego state patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_041,Spirit Wave,Character Analysis,Generates spiritual wave patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_042,Mental Flow,Character Analysis,Guides mental energy currents,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_043,Psyche Matrix,Character Analysis,Creates psychic energy framework,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_044,Character Echo,Character Analysis,Resonates with personality aspects,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_045,Mind Wave,Character Analysis,Emits waves of mental force,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_046,Soul Resonance,Character Analysis,Harmonizes with soul energies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_047,Ego Wave,Character Analysis,Generates ego energy waves,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_048,Spirit Flow,Character Analysis,Directs spiritual energies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_049,Persona Echo,Character Analysis,Creates persona resonance,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_050,Mental Nexus,Character Analysis,Forms mental energy center,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_051,Psyche Flow,Character Analysis,Guides psychic energies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_052,Character Matrix,Character Analysis,Forms personality framework,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_053,Mind Flow,Character Analysis,Directs mental currents,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_054,Soul Matrix Prime,Character Analysis,Creates supreme soul framework,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_055,Ego Nexus,Character Analysis,Forms ego energy center,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_056,Spirit Pattern,Character Analysis,Maps spiritual patterns,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_057,Mental Crown,Character Analysis,Achieves mental mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_058,Psyche Nexus,Character Analysis,Forms psychic energy center,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_059,Character Wave,Character Analysis,Emits personality waves,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_060,Mind Resonance,Character Analysis,Creates mental harmony,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_061,Soul Crown,Character Analysis,Attains soul mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_062,Ego Flow,Character Analysis,Directs ego energies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_063,Spirit Nexus,Character Analysis,Forms spiritual center,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_064,Persona Matrix,Character Analysis,Creates persona framework,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_065,Mental Pattern Prime,Character Analysis,Supreme mental mapping,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_066,Psyche Crown,Character Analysis,Masters psychic energy,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_067,Character Nexus,Character Analysis,Forms personality center,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_068,Mind Crown,Character Analysis,Achieves mental sovereignty,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_069,Soul Nexus,Character Analysis,Creates soul energy center,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_070,Ego Crown,Character Analysis,Masters ego energies,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_071,Spirit Crown,Character Analysis,Attains spiritual mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_072,Mental Sovereign,Character Analysis,Rules mental domain,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_073,Psyche Sovereign,Character Analysis,Commands psychic forces,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_074,Character Crown,Character Analysis,Masters personality forces,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_075,Mind Nexus Prime,Character Analysis,Supreme mental nexus,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_076,Soul Sovereign,Character Analysis,Rules soul domain,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_077,Ego Sovereign,Character Analysis,Commands ego forces,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_078,Spirit Sovereign,Character Analysis,Rules spiritual domain,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_079,Persona Crown,Character Analysis,Masters persona aspects,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_080,Mental Absolute,Character Analysis,Absolute mental control,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_081,Psyche Absolute,Character Analysis,Complete psychic mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_082,Character Sovereign,Character Analysis,Rules personality domain,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_083,Mind Absolute,Character Analysis,Perfect mental mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_084,Soul Absolute,Character Analysis,Complete soul control,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_085,Ego Absolute,Character Analysis,Perfect ego mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_086,Spirit Absolute,Character Analysis,Complete spiritual control,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_087,Persona Sovereign,Character Analysis,Rules persona domain,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_088,Mental Supreme,Character Analysis,Supreme mental power,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_089,Psyche Supreme,Character Analysis,Ultimate psychic mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_090,Character Absolute,Character Analysis,Perfect character control,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_091,Mind Supreme,Character Analysis,Ultimate mental mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_092,Soul Supreme,Character Analysis,Ultimate soul power,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_093,Ego Supreme,Character Analysis,Ultimate ego mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_094,Spirit Supreme,Character Analysis,Ultimate spiritual power,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_095,Persona Absolute,Character Analysis,Perfect persona control,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_096,Psyche Zenith,Character Analysis,Peak psychic achievement,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_097,Character Supreme,Character Analysis,Ultimate character mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_098,Mind Zenith,Character Analysis,Peak mental achievement,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_099,Soul Zenith,Character Analysis,Peak soul achievement,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CHAR_100,Analysis Prime,Character Analysis,Ultimate analytical mastery,Unknown,,,,,,needs_mapping,From Character Analysis engine
+SKILL_CONS_001,Mind Bridge,Consciousness,Creates a temporary mental connection between two targets,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_002,Awareness Field,Consciousness,Expands perception range and mental clarity in an area,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_003,Thought Matrix,Consciousness,Organizes and enhances mental processes,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_004,Neural Link,Consciousness,Establishes a stable connection for information sharing,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_005,Memory Echo,Consciousness,Creates a temporary copy of recent mental patterns,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_006,Cognitive Pulse,Consciousness,Emits waves of mental enhancement,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_007,Mindscape Gateway,Consciousness,Opens portal to mental realms,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_008,Consciousness Web,Consciousness,Creates network of awareness,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_009,Thought Stream,Consciousness,Channels flow of mental energy,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_010,Awareness Nexus,Consciousness,Forms center of heightened perception,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_011,Mental Beacon,Consciousness,Projects focused consciousness signal,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_012,Mind Wave,Consciousness,Generates waves of mental force,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_013,Thought Shield,Consciousness,Creates mental defense barrier,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_014,Neural Network,Consciousness,Forms interconnected mental pathways,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_015,Memory Matrix,Consciousness,Organizes and enhances memories,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_016,Cognitive Field,Consciousness,Establishes zone of mental enhancement,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_017,Mind Vortex,Consciousness,Creates spinning mental energy,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_018,Consciousness Flow,Consciousness,Directs streams of awareness,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_019,Thought Beacon,Consciousness,Projects mental signal beacon,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_020,Awareness Stream,Consciousness,Channels flow of perception,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_021,Mental Wave,Consciousness,Emits waves of consciousness,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_022,Mind Matrix,Consciousness,Forms framework of mental energy,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_023,Thought Vortex,Consciousness,Creates mental energy spiral,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_024,Neural Beacon,Consciousness,Projects neural enhancement signal,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_025,Memory Stream,Consciousness,Channels flow of memories,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_026,Cognitive Web,Consciousness,Creates mental enhancement network,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_027,Mind Flow,Consciousness,Directs mental energy currents,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_028,Consciousness Beacon,Consciousness,Projects awareness signal,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_029,Thought Field,Consciousness,Establishes mental energy zone,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_030,Awareness Matrix,Consciousness,Forms framework of perception,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_031,Mental Network,Consciousness,Creates interconnected mind paths,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_032,Mind Shield,Consciousness,Forms protective mental barrier,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_033,Thought Wave,Consciousness,Generates thought energy waves,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_034,Neural Field,Consciousness,Creates zone of neural enhancement,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_035,Memory Beacon,Consciousness,Projects memory signal,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_036,Cognitive Flow,Consciousness,Directs mental enhancement,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_037,Mind Stream,Consciousness,Channels mental energy flow,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_038,Consciousness Field,Consciousness,Forms field of awareness,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_039,Thought Network,Consciousness,Creates thought connection web,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_040,Awareness Wave,Consciousness,Generates perception waves,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_041,Mental Stream,Consciousness,Channels consciousness flow,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_042,Mind Network,Consciousness,Forms mental connection grid,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_043,Thought Shield Prime,Consciousness,Creates supreme mental defense,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_044,Neural Wave,Consciousness,Emits neural enhancement waves,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_045,Memory Field,Consciousness,Establishes memory enhancement zone,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_046,Cognitive Matrix,Consciousness,Forms mental enhancement framework,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_047,Mind Beacon Prime,Consciousness,Projects powerful mental signal,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_048,Consciousness Network,Consciousness,Creates awareness grid,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_049,Thought Stream Prime,Consciousness,Channels powerful thought energy,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_050,Awareness Shield,Consciousness,Forms perception defense,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_051,Mental Crown,Consciousness,Achieves mental sovereignty,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_052,Mind Nexus,Consciousness,Creates mental power center,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_053,Thought Crown,Consciousness,Masters thought manipulation,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_054,Neural Crown,Consciousness,Achieves neural mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_055,Memory Crown,Consciousness,Masters memory manipulation,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_056,Cognitive Crown,Consciousness,Achieves cognitive mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_057,Mind Sovereign,Consciousness,Rules mental domain,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_058,Consciousness Crown,Consciousness,Masters awareness control,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_059,Thought Nexus,Consciousness,Forms thought power center,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_060,Awareness Crown,Consciousness,Achieves perception mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_061,Mental Sovereign,Consciousness,Commands mental forces,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_062,Mind Crown Prime,Consciousness,Supreme mental mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_063,Thought Sovereign,Consciousness,Rules thought domain,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_064,Neural Nexus,Consciousness,Forms neural power center,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_065,Memory Nexus,Consciousness,Creates memory power hub,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_066,Cognitive Sovereign,Consciousness,Rules cognitive domain,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_067,Mind Absolute,Consciousness,Perfect mental control,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_068,Consciousness Sovereign,Consciousness,Rules awareness domain,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_069,Thought Absolute,Consciousness,Perfect thought control,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_070,Awareness Sovereign,Consciousness,Commands perception forces,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_071,Mental Absolute,Consciousness,Complete mental mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_072,Mind Supreme,Consciousness,Ultimate mental power,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_073,Thought Supreme,Consciousness,Ultimate thought mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_074,Neural Sovereign,Consciousness,Rules neural domain,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_075,Memory Sovereign,Consciousness,Commands memory forces,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_076,Cognitive Absolute,Consciousness,Perfect cognitive control,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_077,Mind Zenith,Consciousness,Peak mental achievement,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_078,Consciousness Absolute,Consciousness,Perfect awareness control,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_079,Thought Zenith,Consciousness,Peak thought achievement,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_080,Awareness Absolute,Consciousness,Perfect perception control,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_081,Mental Supreme,Consciousness,Ultimate mental mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_082,Mind Oracle,Consciousness,Transcendent mental insight,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_083,Thought Oracle,Consciousness,Transcendent thought wisdom,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_084,Neural Supreme,Consciousness,Ultimate neural mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_085,Memory Supreme,Consciousness,Ultimate memory mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_086,Cognitive Supreme,Consciousness,Ultimate cognitive power,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_087,Mind Paragon,Consciousness,Perfect mental exemplar,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_088,Consciousness Supreme,Consciousness,Ultimate awareness mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_089,Thought Paragon,Consciousness,Perfect thought exemplar,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_090,Awareness Supreme,Consciousness,Ultimate perception mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_091,Mental Oracle,Consciousness,Transcendent mental wisdom,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_092,Mind Enlightened,Consciousness,Enlightened mental state,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_093,Thought Enlightened,Consciousness,Enlightened thought state,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_094,Neural Oracle,Consciousness,Transcendent neural wisdom,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_095,Memory Oracle,Consciousness,Transcendent memory wisdom,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_096,Cognitive Oracle,Consciousness,Transcendent cognitive wisdom,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_097,Consciousness Oracle,Consciousness,Transcendent awareness wisdom,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_098,Mental Enlightened,Consciousness,Complete mental enlightenment,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_099,Thought Divine,Consciousness,Divine thought mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_CONS_100,Consciousness Prime,Consciousness,Ultimate consciousness mastery,Unknown,,,,,,needs_mapping,From Consciousness engine
+SKILL_DIV_001,Future Sight,Divination,Glimpses three potential events within the next minute,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_002,Path Reader,Divination,Reveals immediate outcome of the next chosen action,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_003,Time Stream,Divination,Views a continuous flow of events for 30 seconds ahead,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_004,Probability Web,Divination,Shows five most likely outcomes of current situation,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_005,Fate Echo,Divination,Identifies next major decision point in timeline,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_006,Destiny Thread,Divination,Follows a single timeline strand to its conclusion,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_007,Oracle Eye,Divination,Reveals one absolute truth about current situation,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_008,Timeline Scanner,Divination,Reviews sequence of past events leading to now,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_009,Causality Net,Divination,Shows direct consequences of last three actions,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_010,Prophecy Wave,Divination,Projects vision of major upcoming event to allies,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_011,Time Lens,Divination,Examines specific moment in future with clarity,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_012,Quantum Sight,Divination,Observes three parallel timelines simultaneously,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_013,Destiny Fork,Divination,Highlights pivotal decisions in next 24 hours,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_014,Future Echo,Divination,Receives audio premonitions of approaching events,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_015,Temporal Eye,Divination,Pierces through temporal distortions and illusions,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_016,Path Convergence,Divination,Identifies point where multiple futures unite,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_017,Fate Mirror,Divination,Shows reflection of most probable destiny,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_018,Timeline Bridge,Divination,Creates mental link between past and future,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_019,Future Weave,Divination,Merges insights from multiple timeline strands,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_021,Temporal Mastery,Divination,Extends divination duration by 2x for 5 minutes,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_023,Chrono Web,Divination,Maps interconnected timeline branches for next hour,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_024,Future Whispers,Divination,Gains prophetic insights as audible warnings,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_025,Fate Analyzer,Divination,Calculates probability percentages of outcomes,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_027,Time Tracker,Divination,Follows specific event thread through timelines,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_028,Probability Field,Divination,Creates zone where future sight is enhanced,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_029,Destiny Scribe,Divination,Records predicted events with 90% accuracy,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_030,Truth Cascade,Divination,Reveals chain of interconnected future truths,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_031,Destiny Scanner,Divination,Deep analysis of target,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_032,Temporal Zone,Divination,Creates area where time flows slower for analysis,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_033,Future Network,Divination,Links multiple possible futures for comparison,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_034,Past Reader,Divination,Traces causal chains from past to present,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_035,Vision Focus,Divination,Enhances clarity of all divination effects,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_036,Fate Current,Divination,Rides waves of probability to likely outcomes,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_037,Truth Pulse,Divination,Sends waves that reveal hidden intentions,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_038,Chrono Weaver,Divination,Binds multiple timelines for unified reading,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_039,Chance Field,Divination,Area where probability can be accurately read,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_040,Destiny Flow,Divination,Channels pure fate energy for enhanced sight,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_042,Time Lord,Divination,Views entire timeline without temporal distortion,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_043,Future Sovereign,Divination,Can see all possible outcomes clearly,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_044,Past Master,Divination,Reveals complete historical context instantly,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_046,Truth Seer,Divination,Cannot be deceived by any illusion or falsehood,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_047,Fate Weaver,Divination,Can discern optimal path through timeline,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_048,Time Sovereign,Divination,Complete mastery over temporal perception,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_049,Probability Master,Divination,Calculates exact odds of any future event,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_050,Prophet Supreme,Divination,Channels purest form of prophetic vision,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_051,Destiny Sovereign,Divination,Commands fate forces,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_052,Oracle Sovereign,Divination,Rules truth domain,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_053,Time Absolute,Divination,Perfect temporal control,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_054,Future Sovereign,Divination,Rules possibility domain,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_055,Past Sovereign,Divination,Commands historical forces,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_056,Prophecy Absolute,Divination,Perfect prophetic sight,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_057,Destiny Absolute,Divination,Perfect fate control,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_058,Oracle Absolute,Divination,Perfect truth vision,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_059,Fate Sovereign,Divination,Rules destiny realm,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_060,Time Supreme,Divination,Ultimate temporal power,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_061,Probability Sovereign,Divination,Rules likelihood forces,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_062,Future Absolute,Divination,Perfect possibility sight,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_063,Past Absolute,Divination,Perfect historical vision,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_064,Prophecy Supreme,Divination,Ultimate prophetic power,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_065,Destiny Supreme,Divination,Ultimate fate mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_066,Oracle Supreme,Divination,Ultimate truth mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_067,Fate Absolute,Divination,Perfect destiny control,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_068,Time Oracle,Divination,Transcendent temporal wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_069,Probability Supreme,Divination,Ultimate likelihood mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_070,Future Supreme,Divination,Ultimate possibility mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_071,Past Supreme,Divination,Ultimate historical mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_072,Prophecy Oracle,Divination,Transcendent prophetic wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_073,Destiny Oracle,Divination,Transcendent fate wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_074,Oracle Enlightened,Divination,Enlightened truth state,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_075,Fate Supreme,Divination,Ultimate destiny mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_076,Time Enlightened,Divination,Enlightened temporal state,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_077,Probability Oracle,Divination,Transcendent likelihood wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_078,Future Oracle,Divination,Transcendent possibility wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_079,Past Oracle,Divination,Transcendent historical wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_080,Prophecy Enlightened,Divination,Enlightened prophetic state,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_081,Destiny Enlightened,Divination,Enlightened fate state,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_082,Oracle Divine,Divination,Divine truth perception,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_083,Fate Oracle,Divination,Transcendent destiny wisdom,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_084,Time Divine,Divination,Divine temporal mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_085,Probability Divine,Divination,Divine likelihood mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_086,Future Divine,Divination,Divine possibility sight,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_087,Past Divine,Divination,Divine historical vision,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_088,Prophecy Divine,Divination,Divine prophetic sight,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_089,Destiny Divine,Divination,Divine fate mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_090,Oracle Paragon,Divination,Perfect truth exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_091,Fate Divine,Divination,Divine destiny control,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_092,Time Paragon,Divination,Perfect temporal exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_093,Probability Paragon,Divination,Perfect likelihood exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_094,Future Paragon,Divination,Perfect possibility exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_095,Past Paragon,Divination,Perfect historical exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_096,Prophecy Paragon,Divination,Perfect prophetic exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_097,Destiny Paragon,Divination,Perfect fate exemplar,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_098,Oracle Zenith,Divination,Peak truth achievement,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_099,Fate Enlightened,Divination,Enlightened destiny state,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_DIV_100,Divination Prime,Divination,Ultimate divinatory mastery,Unknown,,,,,,needs_mapping,From Divination engine
+SKILL_SING_001,Unity Point,Singularity,Creates a focal point of concentrated power,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_002,Convergence,Singularity,Merges multiple effects into a single point,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_003,Nexus Field,Singularity,Establishes an area where powers intersect,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_004,Collapse Wave,Singularity,Concentrates scattered energy into a single burst,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_005,Void Gate,Singularity,Opens a temporary passage through space,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_006,Quantum Loop,Singularity,Creates a recurring cycle of energy patterns,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_007,Density Point,Singularity,Forms a high-concentration energy sphere,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_008,Gravity Well,Singularity,Generates an attractive force field,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_009,Space Fold,Singularity,Bends local space for tactical advantage,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_010,Time Dilation,Singularity,Alters the flow of time in a small area,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_011,Event Horizon,Singularity,Creates a boundary of no return,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_012,Dimensional Anchor,Singularity,Stabilizes space-time fluctuations,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_013,Void Matrix,Singularity,Establishes a grid of spatial control points,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_014,Quantum Bridge,Singularity,Links two points through quantum tunneling,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_015,Entropy Field,Singularity,Creates an area of increasing chaos,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_016,Reality Ripple,Singularity,Causes waves of spatial distortion,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_017,Probability Collapse,Singularity,Forces a specific outcome in an area,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_018,Vacuum Sphere,Singularity,Creates a void sphere that absorbs energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_019,Singularity Core,Singularity,Forms an ultra-dense power center,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_020,Spatial Lens,Singularity,Focuses and redirects spatial energies,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_021,Quantum Maze,Singularity,Creates a labyrinth of spatial distortions,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_022,Void Storm,Singularity,Generates a maelstrom of spatial energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_023,Reality Anchor,Singularity,Stabilizes local reality fluctuations,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_024,Time Lock,Singularity,Freezes time in a small area,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_025,Space Rift,Singularity,Creates a tear in the spatial fabric,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_026,Quantum Cascade,Singularity,Triggers a chain reaction of reality shifts,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_027,Void Beacon,Singularity,Creates a focal point for void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_028,Dimensional Echo,Singularity,Replicates effects across multiple spaces,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_029,Probability Matrix,Singularity,Creates a field of manipulated chances,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_030,Reality Weave,Singularity,Intertwines multiple reality streams,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_031,Null Zone,Singularity,Creates an area where powers are neutralized,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_032,Quantum Splice,Singularity,Merges different quantum states,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_033,Time Stream,Singularity,Creates a current of accelerated time,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_034,Space Warp,Singularity,Bends space for instantaneous movement,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_035,Void Current,Singularity,Channels a stream of void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_036,Reality Pulse,Singularity,Emits waves that alter local reality,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_037,Quantum Web,Singularity,Creates an interconnected field of possibilities,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_038,Singularity Vortex,Singularity,Forms a swirling mass of dense energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_039,Time Flux,Singularity,Creates areas of variable time flow,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_040,Space Nexus,Singularity,Establishes a hub of spatial connections,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_041,Void Resonance,Singularity,Amplifies void energy frequencies,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_042,Reality Maze,Singularity,Creates a labyrinth of altered space,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_043,Quantum Lock,Singularity,Fixes quantum states in place,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_044,Dimensional Tide,Singularity,Creates waves of spatial distortion,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_045,Time Mirror,Singularity,Reflects temporal effects back,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_046,Space Shell,Singularity,Creates a protective spatial barrier,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_047,Void Echo,Singularity,Creates resonating void effects,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_048,Reality Shift,Singularity,Causes localized reality changes,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_049,Quantum Field,Singularity,Establishes a field of quantum manipulation,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_050,Singularity Beacon,Singularity,Creates a powerful energy focal point,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_051,Temporal Cage,Singularity,Creates a prison of slowed time,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_052,Space Fracture,Singularity,Creates multiple spatial breaks,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_053,Void Corridor,Singularity,Forms a tunnel through void space,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_054,Reality Anchor Point,Singularity,Creates a fixed point in reality,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_055,Quantum Recursion,Singularity,Creates self-repeating quantum effects,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_056,Dimensional Fold,Singularity,Compresses space between points,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_057,Time Eddy,Singularity,Creates a swirling temporal distortion,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_058,Space Lattice,Singularity,Forms a grid of spatial control points,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_059,Void Pulse,Singularity,Emits waves of void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_060,Reality Splice,Singularity,Merges different reality states,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_061,Quantum Barrier,Singularity,Creates a wall of quantum energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_062,Singularity Well,Singularity,Forms a deep well of concentrated force,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_063,Temporal Spiral,Singularity,Creates a spiral of altered time,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_064,Space Node,Singularity,Establishes a fixed spatial reference point,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_065,Void Nexus,Singularity,Creates an intersection of void streams,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_066,Reality Wave,Singularity,Sends out waves of reality distortion,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_067,Quantum Veil,Singularity,Creates a field of quantum uncertainty,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_068,Dimensional Gate,Singularity,Opens a stable dimensional passage,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_069,Time Crystal,Singularity,Forms a crystallized moment in time,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_070,Space Current,Singularity,Creates a flow of spatial energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_071,Void Matrix,Singularity,Forms a complex grid of void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_072,Reality Prism,Singularity,Splits and redirects reality streams,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_073,Quantum Bridge,Singularity,Creates a bridge between quantum states,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_074,Singularity Lens,Singularity,Focuses and amplifies spatial effects,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_075,Temporal Web,Singularity,Creates an interconnected time network,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_076,Space Rupture,Singularity,Tears open a hole in space,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_077,Void Storm,Singularity,Creates a tempest of void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_078,Reality Cascade,Singularity,Triggers chain reactions in reality,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_079,Quantum Tempest,Singularity,Generates a storm of quantum possibilities,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_080,Dimensional Maze,Singularity,Creates a complex dimensional labyrinth,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_081,Time Vortex,Singularity,Forms a spinning temporal anomaly,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_082,Space Weave,Singularity,Intertwines multiple spatial threads,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_083,Void Horizon,Singularity,Establishes a boundary of void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_084,Reality Nexus,Singularity,Creates a hub of reality streams,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_085,Quantum Seal,Singularity,Locks quantum states in place,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_086,Singularity Storm,Singularity,Generates a maelstrom of dense energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_087,Temporal Maze,Singularity,Creates a maze of time distortions,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_088,Space Beacon,Singularity,Establishes a spatial reference point,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_089,Void Weaver,Singularity,Manipulates and shapes void energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_090,Reality Forge,Singularity,Shapes and molds local reality,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_091,Quantum Matrix,Singularity,Creates a complex quantum framework,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_092,Dimensional Storm,Singularity,Unleashes dimensional chaos,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_093,Time Forge,Singularity,Shapes and molds temporal energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_094,Space Tempest,Singularity,Creates a storm of spatial energy,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_095,Void Crown,Singularity,Forms a peak of void power,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_096,Reality Storm,Singularity,Generates chaos in local reality,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_097,Quantum Crown,Singularity,Creates supreme quantum control,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_SING_098,Singularity Prime,Singularity,Manifests ultimate singularity power,Unknown,,,,,,needs_mapping,From Singularity engine
+SKILL_TANT_001,Energy Flow,Tantra,Directs and channels power currents,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_002,Force Channel,Tantra,Creates a pathway for energy transfer,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_003,Power Circuit,Tantra,Forms a closed loop of flowing energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_004,Resonance Link,Tantra,Synchronizes energy frequencies between points,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_005,Pulse Wave,Tantra,Emits waves of transformative energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_006,Chakra Awakening,Tantra,Activates dormant energy centers,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_007,Energy Spiral,Tantra,Creates a spiraling energy pattern,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_008,Force Matrix,Tantra,Establishes a grid of power flows,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_009,Power Nexus,Tantra,Forms an intersection of energy streams,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_010,Vital Stream,Tantra,Channels life force energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_011,Energy Weave,Tantra,Intertwines multiple energy patterns,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_012,Force Bridge,Tantra,Creates a bridge between energy points,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_013,Power Vortex,Tantra,Generates a spinning energy formation,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_014,Resonance Field,Tantra,Creates an area of harmonized energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_015,Pulse Network,Tantra,Forms an interconnected energy grid,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_016,Chakra Stream,Tantra,Links multiple energy centers,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_017,Energy Gate,Tantra,Opens a gateway for power flow,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_018,Force Shield,Tantra,Creates a protective energy barrier,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_019,Power Surge,Tantra,Releases a burst of concentrated energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_020,Vital Link,Tantra,Connects life force streams,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_021,Energy Storm,Tantra,Creates a tempest of raw power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_022,Force Wave,Tantra,Sends out waves of pure force,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_023,Power Web,Tantra,Weaves a network of energy lines,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_024,Resonance Echo,Tantra,Creates reverberating energy patterns,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_025,Pulse Core,Tantra,Forms a center of pulsing power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_026,Chakra Nexus,Tantra,Creates a hub of energy center connections,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_027,Energy Forge,Tantra,Shapes and molds raw energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_028,Force Lattice,Tantra,Creates a structured power framework,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_029,Power Cascade,Tantra,Triggers chain reactions of energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_030,Vital Node,Tantra,Establishes a life force anchor point,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_031,Energy Helix,Tantra,Forms a double spiral of power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_032,Force Beacon,Tantra,Creates a focal point for power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_033,Power Maze,Tantra,Forms a labyrinth of energy paths,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_034,Resonance Veil,Tantra,Creates a field of harmonic energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_035,Pulse Storm,Tantra,Generates a storm of energy pulses,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_036,Chakra Crown,Tantra,Activates supreme energy center,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_037,Energy Matrix,Tantra,Creates complex energy patterns,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_038,Force Tempest,Tantra,Unleashes a maelstrom of power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_039,Power Prism,Tantra,Splits and redirects energy flows,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_040,Vital Crown,Tantra,Manifests peak life force control,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_041,Energy Nexus Prime,Tantra,Creates supreme energy intersection,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_042,Force Matrix Prime,Tantra,Forms ultimate power framework,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_043,Power Core Supreme,Tantra,Manifests central point of ultimate power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_044,Resonance Prime,Tantra,Achieves perfect energy harmony,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_045,Pulse Crown,Tantra,Creates supreme energy pulse pattern,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_046,Tantra Prime,Tantra,Manifests ultimate tantric mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_047,Energy Lattice,Tantra,Creates an interconnected grid of power flows,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_048,Force Conduit,Tantra,Establishes a powerful energy conduit,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_049,Power Synthesis,Tantra,Merges different energy types,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_050,Vital Junction,Tantra,Creates intersection of life force streams,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_051,Energy Nexus,Tantra,Forms a central hub of power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_052,Force Beacon,Tantra,Projects a powerful energy signal,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_053,Power Lens,Tantra,Focuses and amplifies energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_054,Resonance Web,Tantra,Creates web of harmonic frequencies,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_055,Pulse Matrix,Tantra,Forms complex patterns of energy pulses,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_056,Chakra Vortex,Tantra,Creates spinning energy center,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_057,Energy Bridge,Tantra,Links distant power sources,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_058,Force Gateway,Tantra,Opens pathways for energy flow,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_059,Power Echo,Tantra,Creates resonating power effects,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_060,Vital Cascade,Tantra,Triggers chain of life force reactions,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_061,Energy Forge,Tantra,Shapes and molds raw power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_062,Force Weave,Tantra,Intertwines multiple force streams,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_063,Power Spiral,Tantra,Creates spiraling energy patterns,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_064,Resonance Core,Tantra,Forms center of harmonic energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_065,Pulse Storm,Tantra,Generates tempest of energy pulses,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_066,Chakra Matrix,Tantra,Creates complex energy center patterns,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_067,Energy Tempest,Tantra,Unleashes storm of raw power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_068,Force Nova,Tantra,Releases burst of concentrated force,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_069,Power Maze,Tantra,Creates labyrinth of energy paths,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_070,Vital Nexus,Tantra,Forms hub of life force streams,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_071,Energy Crown,Tantra,Manifests peak of power control,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_072,Force Prime,Tantra,Achieves mastery of force manipulation,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_073,Power Supreme,Tantra,Unlocks ultimate power potential,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_074,Resonance Prime,Tantra,Reaches perfect harmonic state,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_075,Pulse Crown,Tantra,Masters energy pulse patterns,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_076,Chakra Ascendant,Tantra,Elevates energy center mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_077,Energy Sovereign,Tantra,Claims dominion over energy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_078,Force Absolute,Tantra,Achieves absolute force control,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_079,Power Zenith,Tantra,Reaches peak of power mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_080,Vital Crown,Tantra,Attains supreme life force control,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_081,Energy Paragon,Tantra,Embodies perfect energy mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_082,Force Sovereign,Tantra,Rules over force dynamics,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_083,Power Absolute,Tantra,Commands absolute power,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_084,Resonance Zenith,Tantra,Achieves ultimate harmony,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_085,Pulse Sovereign,Tantra,Masters all energy frequencies,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_086,Chakra Sovereign,Tantra,Rules energy center network,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_087,Energy Absolute,Tantra,Gains complete energy dominion,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_088,Force Zenith,Tantra,Reaches force manipulation peak,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_089,Power Paragon,Tantra,Exemplifies power perfection,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_090,Vital Sovereign,Tantra,Commands life force supremacy,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_091,Energy Zenith,Tantra,Achieves energy mastery peak,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_092,Force Paragon,Tantra,Embodies force perfection,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_093,Power Sovereign,Tantra,Claims power sovereignty,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_094,Resonance Sovereign,Tantra,Rules harmonic frequencies,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_095,Pulse Paragon,Tantra,Perfects energy pulse mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_096,Chakra Zenith,Tantra,Reaches energy center pinnacle,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_097,Energy Supreme,Tantra,Manifests supreme energy control,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_098,Force Crown,Tantra,Claims crown of force mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_099,Power Ascendant,Tantra,Ascends to power perfection,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_TANT_100,Tantra Absolute,Tantra,Achieves absolute tantric mastery,Unknown,,,,,,needs_mapping,From Tantra engine
+SKILL_THERAPEUTIC_001,Minor Heal,Therapeutic,Restores 100 HP to single target,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_002,Cleanse Light,Therapeutic,Removes one minor negative effect,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_003,Healing Touch,Therapeutic,Heals 50 HP per second for 3 seconds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_004,Purify Self,Therapeutic,Cleanses all self negative effects,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_005,Recovery Aura,Therapeutic,Allies in 5m heal 20 HP/second,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_006,Vitality Boost,Therapeutic,Increases max HP by 10% for 1 minute,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_007,Restorative Pulse,Therapeutic,Instant 150 HP heal in 3m radius,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_008,Cleansing Wave,Therapeutic,Removes 1 negative effect from allies in 5m,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_009,Regeneration,Therapeutic,Target heals 30 HP/second for 10 seconds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_010,Mass Cleanse,Therapeutic,Removes 2 negative effects from group,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_011,Greater Heal,Therapeutic,Restores 300 HP to single target,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_012,Purification Beam,Therapeutic,Cleanses and heals in a line,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_013,Healing Circle,Therapeutic,Creates 5m healing zone for 15 seconds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_014,Cleansing Touch,Therapeutic,Removes all negative effects from target,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_015,Vitality Stream,Therapeutic,Channels healing to target for 5 seconds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_016,Group Shield,Therapeutic,Reduces damage taken by 20% for 8 seconds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_017,Chain Heal,Therapeutic,Heals primary target and 2 nearby allies,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_018,Purifying Light,Therapeutic,Cleanses and provides immunity for 3s,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_019,Recovery Link,Therapeutic,Links 2 targets for shared healing,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_020,Mass Rejuvenation,Therapeutic,Group heals 40 HP/second for 8s,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_021,Divine Heal,Therapeutic,Restores 500 HP instantly,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_022,Total Cleanse,Therapeutic,Removes all negative effects + immunity 5s,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_023,Healing Nova,Therapeutic,Burst heals all allies in 8m radius,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_024,Purification Field,Therapeutic,Creates cleansing zone lasting 12s,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_025,Life Link,Therapeutic,Shares healing between 3 targets,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_026,Recovery Matrix,Therapeutic,Enhances all healing by 30% in area,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_027,Vitality Surge,Therapeutic,Instant full heal single target,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_028,Group Barrier,Therapeutic,Absorbs 50% damage for group 10s,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_029,Chain Cleanse,Therapeutic,Cleansing effect chains to nearby allies,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_030,Mass Recovery,Therapeutic,Full group heal over 5 seconds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_031,Supreme Heal,Therapeutic,Restores 1000 HP instantly,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_032,Divine Cleanse,Therapeutic,Perfect cleansing + 10s immunity,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_033,Healing Beacon,Therapeutic,Creates powerful healing focal point,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_034,Pure Light,Therapeutic,Cleanses all negative effects in 10m,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_035,Life Stream,Therapeutic,Continuous powerful healing channel,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_036,Recovery Wave,Therapeutic,Healing wave hits all allies,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_037,Vitality Field,Therapeutic,Creates major healing zone,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_038,Group Shield Matrix,Therapeutic,Complex damage reduction field,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_039,Chain Recovery,Therapeutic,Healing chains through whole group,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_040,Mass Restoration,Therapeutic,Complete group recovery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_041,Elite Heal,Therapeutic,Perfect single target healing,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_042,Cleansing Crown,Therapeutic,Supreme purification ability,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_043,Healing Crown,Therapeutic,Mastery over restoration,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_044,Pure Crown,Therapeutic,Perfect cleansing mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_045,Life Crown,Therapeutic,Supreme vitality control,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_046,Recovery Crown,Therapeutic,Perfect healing mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_047,Vitality Crown,Therapeutic,Supreme health control,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_048,Shield Crown,Therapeutic,Perfect protection mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_049,Chain Crown,Therapeutic,Supreme healing chains,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_050,Restoration Crown,Therapeutic,Perfect recovery mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_051,Divine Restoration,Therapeutic,Transcendent healing power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_052,Pure Divine,Therapeutic,Perfect divine cleansing,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_053,Healing Divine,Therapeutic,Transcendent restoration,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_054,Cleansing Divine,Therapeutic,Perfect divine purification,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_055,Life Divine,Therapeutic,Transcendent vitality,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_056,Recovery Divine,Therapeutic,Perfect divine healing,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_057,Vitality Divine,Therapeutic,Transcendent health,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_058,Shield Divine,Therapeutic,Perfect divine protection,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_059,Chain Divine,Therapeutic,Transcendent healing links,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_060,Restoration Divine,Therapeutic,Perfect divine recovery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_061,Eternal Healing,Therapeutic,Everlasting restoration power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_062,Pure Eternal,Therapeutic,Permanent cleansing effect,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_063,Healing Eternal,Therapeutic,Endless restoration flow,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_064,Cleansing Eternal,Therapeutic,Permanent purification,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_065,Life Eternal,Therapeutic,Endless vitality source,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_066,Recovery Eternal,Therapeutic,Permanent healing effect,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_067,Vitality Eternal,Therapeutic,Endless health flow,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_068,Shield Eternal,Therapeutic,Permanent protection,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_069,Chain Eternal,Therapeutic,Endless healing links,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_070,Restoration Eternal,Therapeutic,Permanent recovery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_071,Supreme Divine Heal,Therapeutic,Ultimate divine healing,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_072,Pure Supreme,Therapeutic,Ultimate cleansing power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_073,Healing Supreme,Therapeutic,Ultimate restoration force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_074,Cleansing Supreme,Therapeutic,Ultimate purification,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_075,Life Supreme,Therapeutic,Ultimate vitality control,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_076,Recovery Supreme,Therapeutic,Ultimate healing mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_077,Vitality Supreme,Therapeutic,Ultimate health power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_078,Shield Supreme,Therapeutic,Ultimate protection force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_079,Chain Supreme,Therapeutic,Ultimate healing bonds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_080,Restoration Supreme,Therapeutic,Ultimate recovery power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_081,Cosmic Healing,Therapeutic,Universe-spanning restoration,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_082,Pure Cosmic,Therapeutic,Cosmic cleansing force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_083,Healing Cosmic,Therapeutic,Universal restoration,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_084,Cleansing Cosmic,Therapeutic,Cosmic purification,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_085,Life Cosmic,Therapeutic,Universal vitality,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_086,Recovery Cosmic,Therapeutic,Cosmic healing force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_087,Vitality Cosmic,Therapeutic,Universal health power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_088,Shield Cosmic,Therapeutic,Cosmic protection,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_089,Chain Cosmic,Therapeutic,Universal healing links,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_090,Restoration Cosmic,Therapeutic,Cosmic recovery force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_091,Ultimate Healing,Therapeutic,Perfect healing mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_092,Pure Ultimate,Therapeutic,Perfect cleansing power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_093,Healing Ultimate,Therapeutic,Perfect restoration force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_094,Cleansing Ultimate,Therapeutic,Perfect purification,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_095,Life Ultimate,Therapeutic,Perfect vitality control,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_096,Recovery Ultimate,Therapeutic,Perfect healing power,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_097,Vitality Ultimate,Therapeutic,Perfect health mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_098,Shield Ultimate,Therapeutic,Perfect protection force,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_099,Chain Ultimate,Therapeutic,Perfect healing bonds,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_THERAPEUTIC_100,Restoration Ultimate,Therapeutic,Perfect recovery mastery,Unknown,,,,,,needs_mapping,From Therapeutic engine
+SKILL_INVOCATION_ANGEL_ANG_001,Vehuiah,Invocation,Target ally gains +2/+2 and First Strike until end of turn. Restore 2 Sanctity.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_002,Jeliel,Invocation,End all combats. All creatures lose aggressive abilities until your next turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_003,Sitael,Invocation,Create two 2/2 Construct tokens. Your structures cost 1 less this turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_004,Elemiah,Invocation,Target gains Hexproof and +3/+3 until end of turn. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_005,Mahasiah,Invocation,All allies gain +1/+1 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_006,Lelahel,Invocation,Restore 5 HP to all allies. Remove one negative effect.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_007,Achaiah,Invocation,Target gains Indestructible for 1 turn. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_008,Cahetel,Invocation,Summon a 3/3 Angel token with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_009,Haziel,Invocation,Target gains Lifelink and +2/+0 until end of turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_010,Aladiah,Invocation,Remove all negative effects from target. Restore 10 HP.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_011,Lauviah,Invocation,All allies gain +0/+2 and Regeneration for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_012,Hahaiah,Invocation,Target gains Ward and Hexproof for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_013,Iezalel,Invocation,Draw 2 cards. Target gains +1/+1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_014,Mebahel,Invocation,Summon two 1/1 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_015,Hariel,Invocation,Target gains +2/+2 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_016,Hakamiah,Invocation,All allies gain +1/+1 and Hexproof for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_017,Lauvuel,Invocation,Restore 3 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_018,Caliel,Invocation,Target gains Indestructible and +3/+0 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_019,Leuviah,Invocation,Summon a 2/2 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_020,Pahaliah,Invocation,All allies gain +2/+2 and Lifelink for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INV_021,Major Invoke,Unknown,Channels significant divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_022,Spirit Command,Unknown,Controls powerful spirit entity,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_023,Divine Flow,Unknown,Steady stream of divine power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_024,Sacred Verse,Unknown,Speaks verses of great power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_025,Celestial Pact,Unknown,Forms strong divine alliance,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_026,Holy Radiance,Unknown,Emits powerful divine light,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_027,Divine Commune,Unknown,Deep connection with deity,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_028,Spirit Realm,Unknown,Creates zone of spirit energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_029,Sacred Shield,Unknown,Forms powerful divine barrier,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_030,Celestial Summon,Unknown,Calls divine being,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_031,Supreme Invoke,Unknown,Channels immense divine power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_032,Spirit Lord,Unknown,Commands multiple spirit entities,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_033,Divine Stream,Unknown,Massive flow of divine energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_034,Sacred Scripture,Unknown,Recites holy texts of power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_035,Celestial Alliance,Unknown,Forms divine partnership,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_036,Holy Presence,Unknown,Overwhelming divine aura,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_037,Divine Council,Unknown,Consults with multiple deities,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_038,Spirit World,Unknown,Manifests spirit realm overlay,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_039,Sacred Aegis,Unknown,Creates supreme divine shield,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_040,Celestial Being,Unknown,Manifests divine entity,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_041,Master Invoke,Unknown,Perfect divine channeling,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_042,Spirit Crown,Unknown,Mastery over spirits,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_043,Divine Crown,Unknown,Supreme divine authority,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_044,Sacred Crown,Unknown,Perfect holy power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_045,Celestial Crown,Unknown,Mastery of divine realm,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_046,Holy Crown,Unknown,Supreme sacred authority,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_047,Invocation Crown,Unknown,Perfect channeling mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_048,Spirit Sovereign,Unknown,Rules spirit realm,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_049,Divine Sovereign,Unknown,Commands divine forces,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_050,Sacred Sovereign,Unknown,Rules holy domain,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_051,Divine Absolute,Unknown,Perfect divine control,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_052,Spirit Divine,Unknown,Transcendent spirit power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_053,Sacred Divine,Unknown,Perfect holy energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_054,Celestial Divine,Unknown,Transcendent divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_055,Holy Divine,Unknown,Perfect sacred power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_056,Invocation Divine,Unknown,Transcendent channeling,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_057,Spirit Absolute,Unknown,Perfect spirit mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_058,Divine Perfect,Unknown,Ultimate divine control,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_059,Sacred Absolute,Unknown,Perfect holy mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_060,Celestial Supreme,Unknown,Ultimate divine power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_061,Eternal Invoke,Unknown,Endless divine channel,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_062,Spirit Eternal,Unknown,Permanent spirit connection,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_063,Divine Eternal,Unknown,Endless divine power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_064,Sacred Eternal,Unknown,Permanent holy energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_065,Celestial Eternal,Unknown,Endless divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_066,Holy Eternal,Unknown,Permanent sacred power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_067,Invocation Eternal,Unknown,Endless channeling,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_068,Spirit Infinite,Unknown,Boundless spirit power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_069,Divine Infinite,Unknown,Limitless divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_070,Sacred Infinite,Unknown,Boundless holy energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_071,Supreme Divine Call,Unknown,Ultimate divine summon,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_072,Spirit Supreme,Unknown,Ultimate spirit mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_073,Divine Supreme,Unknown,Ultimate divine power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_074,Sacred Supreme,Unknown,Ultimate holy force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_075,Celestial Supreme,Unknown,Ultimate divine energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_076,Holy Supreme,Unknown,Ultimate sacred might,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_077,Invocation Supreme,Unknown,Ultimate channeling,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_078,Spirit Zenith,Unknown,Peak spirit mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_079,Divine Zenith,Unknown,Peak divine control,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_080,Sacred Zenith,Unknown,Peak holy power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_081,Cosmic Invocation,Unknown,Universe-spanning channel,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_082,Spirit Cosmic,Unknown,Cosmic spirit force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_083,Divine Cosmic,Unknown,Cosmic divine power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_084,Sacred Cosmic,Unknown,Cosmic holy energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_085,Celestial Cosmic,Unknown,Cosmic divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_086,Holy Cosmic,Unknown,Cosmic sacred might,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_087,Invocation Cosmic,Unknown,Cosmic channeling,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_088,Spirit Universal,Unknown,Universal spirit power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_089,Divine Universal,Unknown,Universal divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_090,Sacred Universal,Unknown,Universal holy energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_091,Ultimate Invocation,Unknown,Perfect divine mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_092,Spirit Ultimate,Unknown,Perfect spirit power,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_093,Divine Ultimate,Unknown,Perfect divine force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_094,Sacred Ultimate,Unknown,Perfect holy might,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_095,Celestial Ultimate,Unknown,Perfect divine energy,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_096,Holy Ultimate,Unknown,Perfect sacred force,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_097,Invocation Perfect,Unknown,Perfect channeling,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_098,Spirit Perfect,Unknown,Perfect spirit control,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_099,Divine Perfect,Unknown,Perfect divine mastery,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INV_100,Sacred Perfect,Unknown,Perfect holy control,Unknown,,,,,,needs_mapping,From Unknown engine
+SKILL_INVOCATION_ANGEL_ANG_101,Angelus Prime,Invocation,Summon a 5/5 Angel with Divine Shield.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_102,Seraphiel,Invocation,All allies gain +3/+3 and Flying for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_103,Uriel,Invocation,Deal 5 damage to all enemies. Scry 3.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_104,Raphael,Invocation,Restore 15 HP to all allies. Remove all debuffs.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_105,Gabriel,Invocation,Draw 3 cards. Target gains +4/+4.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_106,Michael,Invocation,Summon a 6/6 Angel with First Strike and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_107,Zadkiel,Invocation,All allies gain Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_108,Jophiel,Invocation,Target gains Hexproof and Lifelink for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_109,Chamuel,Invocation,Summon two 2/2 Angel tokens with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_110,Raguel,Invocation,All enemies lose all abilities until your next turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_111,Remiel,Invocation,Restore 10 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_112,Sariel,Invocation,Target gains +5/+5 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_113,Metatron,Invocation,Summon a 7/7 Angel with Flying and Hexproof.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_114,Sandalphon,Invocation,All allies gain +2/+2 and Regeneration for 3 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_115,Raziel,Invocation,Draw 2 cards. Target gains Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_116,Haniel,Invocation,Summon a 4/4 Angel token with Flying and Lifelink.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_117,Phanuel,Invocation,All allies gain Hexproof and +3/+3 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_118,Jeremiel,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_119,Barachiel,Invocation,Target gains +2/+2 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_120,Jehudiel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_121,Selaphiel,Invocation,All allies gain Lifelink and +1/+1 for 3 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_122,Azrael,Invocation,Deal 7 damage to all enemies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_123,Ariel,Invocation,Target gains Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_124,Malachiel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_125,Verchiel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_126,Muriel,Invocation,Restore 12 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_127,Adnachiel,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_128,Aniel,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_129,Amitiel,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_130,Amriel,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_131,Anael,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_132,Arariel,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_133,Asariel,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_134,Ashriel,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_135,Auriel,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_136,Azazel,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_137,Baraquiel,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_138,Barchiel,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_139,Bariel,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_140,Batriel,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_141,Beneiel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_142,Benevoliel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_143,Bethuel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_144,Briathiel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_145,Camael,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_146,Cassiel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_147,Cathetel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_148,Chayyliel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_149,Chesediel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_150,Chochmael,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_151,Dumah,Invocation,Target enemy loses all abilities until end of turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_152,Harut,Invocation,Summon a 4/4 Angel token with Hexproof.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_153,Marut,Invocation,All allies gain +2/+2 and Flying for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_154,Penemue,Invocation,Restore 10 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_155,Ramiel,Invocation,Deal 6 damage to all enemies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_156,Samael,Invocation,Target gains Indestructible and +3/+3 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_157,Zaphkiel,Invocation,Summon two 2/2 Angel tokens with Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_158,Amitiel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_159,Anael,Invocation,Restore 8 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_160,Ananiel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_161,Arariel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_162,Azrael,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_163,Barachiel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_164,Beneiel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_165,Benevoliel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_166,Bethuel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_167,Briathiel,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_168,Camael,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_169,Cassiel,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_170,Cathetel,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_171,Chayyliel,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_172,Chesediel,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_173,Chochmael,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_174,Dumah,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_175,Harut,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_176,Marut,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_177,Penemue,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_178,Ramiel,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_179,Samael,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_180,Zaphkiel,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_181,Amitiel,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_182,Anael,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_183,Ananiel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_184,Arariel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_185,Azrael,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_186,Barachiel,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_187,Beneiel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_188,Benevoliel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_189,Bethuel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_190,Briathiel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_191,Camael,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_192,Cassiel,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_193,Cathetel,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_194,Chayyliel,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_195,Chesediel,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_196,Chochmael,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_197,Dumah,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_198,Harut,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_199,Marut,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_200,Penemue,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_201,Ramiel,Invocation,Summon a 3/3 Angel token with Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_202,Samael,Invocation,All allies gain +2/+2 and Hexproof for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_203,Zaphkiel,Invocation,Restore 10 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_204,Amitiel,Invocation,Deal 6 damage to all enemies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_205,Anael,Invocation,Target gains Indestructible and +3/+3 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_206,Ananiel,Invocation,Summon two 2/2 Angel tokens with Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_207,Arariel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_208,Azrael,Invocation,Restore 8 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_209,Barachiel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_210,Beneiel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_211,Benevoliel,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_212,Bethuel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_213,Briathiel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_214,Camael,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_215,Cassiel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_216,Cathetel,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_217,Chayyliel,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_218,Chesediel,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_219,Chochmael,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_220,Dumah,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_221,Harut,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_222,Marut,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_223,Penemue,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_224,Ramiel,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_225,Samael,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_226,Zaphkiel,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_227,Amitiel,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_228,Anael,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_229,Ananiel,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_230,Arariel,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_231,Azrael,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_232,Barachiel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_233,Beneiel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_234,Benevoliel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_235,Bethuel,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_236,Briathiel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_237,Camael,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_238,Cassiel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_239,Cathetel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_240,Chayyliel,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_241,Chesediel,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_242,Chochmael,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_243,Dumah,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_244,Harut,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_245,Marut,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_246,Penemue,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_247,Ramiel,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_248,Samael,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_249,Zaphkiel,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_250,Amitiel,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_251,Anael,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_252,Ananiel,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_253,Arariel,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_254,Azrael,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_255,Barachiel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_256,Beneiel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_257,Benevoliel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_258,Bethuel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_259,Briathiel,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_260,Camael,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_261,Cassiel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_262,Cathetel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_263,Chayyliel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_264,Chesediel,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_265,Chochmael,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_266,Dumah,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_267,Harut,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_268,Marut,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_269,Penemue,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_270,Ramiel,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_271,Samael,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_272,Zaphkiel,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_273,Amitiel,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_274,Anael,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_275,Ananiel,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_276,Arariel,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_277,Azrael,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_278,Barachiel,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_279,Beneiel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_280,Benevoliel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_281,Bethuel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_282,Briathiel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_283,Camael,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_284,Cassiel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_285,Cathetel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_286,Chayyliel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_287,Chesediel,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_288,Chochmael,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_289,Dumah,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_290,Harut,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_291,Marut,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_292,Penemue,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_293,Ramiel,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_294,Samael,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_295,Zaphkiel,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_296,Amitiel,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_297,Anael,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_298,Ananiel,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_299,Arariel,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_300,Azrael,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_301,Barachiel,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_302,Beneiel,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_303,Benevoliel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_304,Bethuel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_305,Briathiel,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_306,Camael,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_307,Cassiel,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_308,Cathetel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_309,Chayyliel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_310,Chesediel,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_311,Chochmael,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_312,Dumah,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_313,Harut,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_314,Marut,Invocation,Summon a 5/5 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_315,Penemue,Invocation,All allies gain Hexproof and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_316,Ramiel,Invocation,Restore 6 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_317,Samael,Invocation,Target gains +3/+3 and Vigilance for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_318,Zaphkiel,Invocation,Summon a 4/4 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_319,Amitiel,Invocation,All allies gain Lifelink and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_320,Anael,Invocation,Deal 6 damage to all enemies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_321,Ananiel,Invocation,Target gains Hexproof and +2/+2 for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_322,Arariel,Invocation,Summon two 3/3 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_323,Azrael,Invocation,All allies gain +2/+2 and Indestructible for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_324,Barachiel,Invocation,Restore 10 HP to all allies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_325,Beneiel,Invocation,Target gains +3/+3 and First Strike for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_326,Benevoliel,Invocation,Summon a 4/4 Angel token with Flying and Vigilance.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_327,Bethuel,Invocation,All allies gain Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_328,Briathiel,Invocation,Restore 5 HP to all allies. Draw a card.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_329,Camael,Invocation,Target gains +2/+2 and Vigilance for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_330,Cassiel,Invocation,Summon a 3/3 Angel token with First Strike.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_331,Cathetel,Invocation,All allies gain Lifelink and +2/+2 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_332,Chayyliel,Invocation,Deal 5 damage to all enemies. Scry 1.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_333,Chesediel,Invocation,Target gains Hexproof and +1/+1 for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_334,Chochmael,Invocation,Summon two 2/2 Angel tokens with Flying.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_335,Dumah,Invocation,All allies gain +3/+3 and Indestructible for 1 turn.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_336,Harut,Invocation,Restore 8 HP to all allies. Scry 2.,Unknown,,,,,,needs_mapping,From Invocation engine
+SKILL_INVOCATION_ANGEL_ANG_337,Marut,Invocation,Target gains +4/+4 and First Strike for 2 turns.,Unknown,,,,,,needs_mapping,From Invocation engine

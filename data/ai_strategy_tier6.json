@@ -1,0 +1,340 @@
+{
+  "tier": 6,
+  "primary_combos": [
+    {
+      "goal": "burst",
+      "combos": [
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1",
+          "skills": [
+            "Advanced Reinforcement Grid",
+            "Enhanced Reinforcement Grid",
+            "Specialized Reinforcement Grid"
+          ],
+          "synergy": 2.0,
+          "score": 28
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1",
+          "skills": [
+            "Advanced Reinforcement Grid",
+            "Specialized Reinforcement Grid",
+            "Enhanced Reinforcement Grid"
+          ],
+          "synergy": 2.0,
+          "score": 28
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1",
+          "skills": [
+            "Enhanced Reinforcement Grid",
+            "Advanced Reinforcement Grid",
+            "Specialized Reinforcement Grid"
+          ],
+          "synergy": 2.0,
+          "score": 28
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1_SKILL_FOUNDATIONAL_005_var_advanced_tier_1",
+          "skills": [
+            "Enhanced Reinforcement Grid",
+            "Specialized Reinforcement Grid",
+            "Advanced Reinforcement Grid"
+          ],
+          "synergy": 2.0,
+          "score": 28
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_007_var_advanced_tier_3_SKILL_FOUNDATIONAL_007_SKILL_FOUNDATIONAL_011_var_specialized_tier_2",
+          "skills": [
+            "Advanced Stability Matrix",
+            "Stability Matrix",
+            "Specialized Structure Amplifier"
+          ],
+          "synergy": 2.0,
+          "score": 28
+        }
+      ]
+    },
+    {
+      "goal": "control",
+      "combos": [
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_015_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_048",
+          "skills": [
+            "Anchor Network",
+            "Enhanced Anchor Network",
+            "Foundation Sovereign"
+          ],
+          "synergy": 1.93,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_048_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_015",
+          "skills": [
+            "Foundation Sovereign",
+            "Enhanced Anchor Network",
+            "Anchor Network"
+          ],
+          "synergy": 1.93,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_049_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_015",
+          "skills": [
+            "Grid Crown",
+            "Enhanced Anchor Network",
+            "Anchor Network"
+          ],
+          "synergy": 1.93,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_049_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_048",
+          "skills": [
+            "Grid Crown",
+            "Enhanced Anchor Network",
+            "Foundation Sovereign"
+          ],
+          "synergy": 1.93,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_015_var_specialized_tier_1_SKILL_FOUNDATIONAL_049_var_specialized_tier_1_SKILL_FOUNDATIONAL_028_var_specialized_tier_1",
+          "skills": [
+            "Specialized Anchor Network",
+            "Specialized Grid Crown",
+            "Specialized Foundation Pulse"
+          ],
+          "synergy": 2.0,
+          "score": 20
+        }
+      ]
+    },
+    {
+      "goal": "sustain",
+      "combos": [
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_004_SKILL_FOUNDATIONAL_004_var_specialized_tier_2_SKILL_FOUNDATIONAL_004_var_specialized_tier_3",
+          "skills": [
+            "Anchor Point",
+            "Specialized Anchor Point",
+            "Specialized Anchor Point"
+          ],
+          "synergy": 2.0,
+          "score": 16
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_004_SKILL_FOUNDATIONAL_004_var_specialized_tier_3_SKILL_FOUNDATIONAL_004_var_mastery_tier_3",
+          "skills": [
+            "Anchor Point",
+            "Specialized Anchor Point",
+            "Mastery: Anchor Point"
+          ],
+          "synergy": 2.0,
+          "score": 16
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_004_SKILL_FOUNDATIONAL_004_var_mastery_tier_3_SKILL_FOUNDATIONAL_004_var_specialized_tier_3",
+          "skills": [
+            "Anchor Point",
+            "Mastery: Anchor Point",
+            "Specialized Anchor Point"
+          ],
+          "synergy": 2.0,
+          "score": 16
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_014_SKILL_FOUNDATIONAL_014_var_specialized_tier_3_SKILL_FOUNDATIONAL_014_var_mastery_tier_3",
+          "skills": [
+            "Stability Field",
+            "Specialized Stability Field",
+            "Mastery: Stability Field"
+          ],
+          "synergy": 2.0,
+          "score": 16
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_014_SKILL_FOUNDATIONAL_014_var_mastery_tier_3_SKILL_FOUNDATIONAL_014_var_specialized_tier_3",
+          "skills": [
+            "Stability Field",
+            "Mastery: Stability Field",
+            "Specialized Stability Field"
+          ],
+          "synergy": 2.0,
+          "score": 16
+        }
+      ]
+    },
+    {
+      "goal": "balanced",
+      "combos": [
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_043_SKILL_FOUNDATIONAL_043_var_advanced_tier_3_SKILL_FOUNDATIONAL_043_var_enhanced_tier_3",
+          "skills": [
+            "Network Sovereign",
+            "Advanced Network Sovereign",
+            "Enhanced Network Sovereign"
+          ],
+          "synergy": 2.0,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_043_SKILL_FOUNDATIONAL_043_var_enhanced_tier_3_SKILL_FOUNDATIONAL_043_var_advanced_tier_3",
+          "skills": [
+            "Network Sovereign",
+            "Enhanced Network Sovereign",
+            "Advanced Network Sovereign"
+          ],
+          "synergy": 2.0,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_050_SKILL_FOUNDATIONAL_050_var_enhanced_tier_2_SKILL_FOUNDATIONAL_050_var_specialized_tier_2",
+          "skills": [
+            "Master Crown",
+            "Enhanced Master Crown",
+            "Specialized Master Crown"
+          ],
+          "synergy": 2.0,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_050_SKILL_FOUNDATIONAL_050_var_specialized_tier_2_SKILL_FOUNDATIONAL_050_var_enhanced_tier_2",
+          "skills": [
+            "Master Crown",
+            "Specialized Master Crown",
+            "Enhanced Master Crown"
+          ],
+          "synergy": 2.0,
+          "score": 22
+        },
+        {
+          "id": "COMBO_SKILL_FOUNDATIONAL_050_SKILL_FOUNDATIONAL_050_var_mastery_tier_2_SKILL_FOUNDATIONAL_050_var_enhanced_tier_2",
+          "skills": [
+            "Master Crown",
+            "Mastery: Master Crown",
+            "Enhanced Master Crown"
+          ],
+          "synergy": 2.0,
+          "score": 22
+        }
+      ]
+    }
+  ],
+  "counter_strategies": {
+    "burst": [
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_015_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_048",
+        "skills": [
+          "Anchor Network",
+          "Enhanced Anchor Network",
+          "Foundation Sovereign"
+        ],
+        "synergy": 1.93
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_048_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_015",
+        "skills": [
+          "Foundation Sovereign",
+          "Enhanced Anchor Network",
+          "Anchor Network"
+        ],
+        "synergy": 1.93
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_049_SKILL_FOUNDATIONAL_015_var_enhanced_tier_2_SKILL_FOUNDATIONAL_015",
+        "skills": [
+          "Grid Crown",
+          "Enhanced Anchor Network",
+          "Anchor Network"
+        ],
+        "synergy": 1.93
+      }
+    ],
+    "control": [
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1",
+        "skills": [
+          "Advanced Reinforcement Grid",
+          "Enhanced Reinforcement Grid",
+          "Specialized Reinforcement Grid"
+        ],
+        "synergy": 2.0
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1",
+        "skills": [
+          "Advanced Reinforcement Grid",
+          "Specialized Reinforcement Grid",
+          "Enhanced Reinforcement Grid"
+        ],
+        "synergy": 2.0
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1",
+        "skills": [
+          "Enhanced Reinforcement Grid",
+          "Advanced Reinforcement Grid",
+          "Specialized Reinforcement Grid"
+        ],
+        "synergy": 2.0
+      }
+    ],
+    "sustain": [
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1",
+        "skills": [
+          "Advanced Reinforcement Grid",
+          "Enhanced Reinforcement Grid",
+          "Specialized Reinforcement Grid"
+        ],
+        "synergy": 2.0
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1",
+        "skills": [
+          "Advanced Reinforcement Grid",
+          "Specialized Reinforcement Grid",
+          "Enhanced Reinforcement Grid"
+        ],
+        "synergy": 2.0
+      },
+      {
+        "id": "COMBO_SKILL_FOUNDATIONAL_005_var_enhanced_tier_1_SKILL_FOUNDATIONAL_005_var_advanced_tier_1_SKILL_FOUNDATIONAL_005_var_specialized_tier_1",
+        "skills": [
+          "Enhanced Reinforcement Grid",
+          "Advanced Reinforcement Grid",
+          "Specialized Reinforcement Grid"
+        ],
+        "synergy": 2.0
+      }
+    ]
+  },
+  "goal_analysis": {
+    "burst": {
+      "goal": "burst",
+      "total_combos": 1147,
+      "supporting_combos": 1147,
+      "coverage_percent": 100.0
+    },
+    "control": {
+      "goal": "control",
+      "total_combos": 1147,
+      "supporting_combos": 962,
+      "coverage_percent": 83.87096774193549
+    },
+    "sustain": {
+      "goal": "sustain",
+      "total_combos": 1147,
+      "supporting_combos": 465,
+      "coverage_percent": 40.54054054054054
+    },
+    "balanced": {
+      "goal": "balanced",
+      "total_combos": 1147,
+      "supporting_combos": 1147,
+      "coverage_percent": 100.0
+    }
+  }
+}

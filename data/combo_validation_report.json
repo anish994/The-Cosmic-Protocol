@@ -1,0 +1,3273 @@
+{
+  "summary": {
+    "total_combos": 400,
+    "valid_percentage": 12.5,
+    "avg_synergy_score": 0.7051282051282052,
+    "median_synergy_score": 0.5,
+    "questionable_count": 50,
+    "bad_count": 290
+  },
+  "skills_with_bad_combos": [
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_001",
+      "skill_name": "Basic Scaffold",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_002",
+      "skill_name": "Load-Bearing Pillar",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Stunned + Damage = Free hits",
+          "keyword_1": "stunned",
+          "keyword_2": "damage",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'stunned' and 'damage' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_003",
+      "skill_name": "Foundation Network",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_004",
+      "skill_name": "Anchor Point",
+      "bad_combos": [
+        {
+          "text": "Anchor + Return = Teleport point",
+          "keyword_1": "anchor",
+          "keyword_2": "return",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'anchor' and 'return' - consider different combo"
+        },
+        {
+          "text": "Anchor + Amplify = Power boost",
+          "keyword_1": "anchor",
+          "keyword_2": "amplify",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'anchor' and 'amplify' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Banished + Wait = Cooldowns recover",
+          "keyword_1": "banished",
+          "keyword_2": "wait",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'banished' and 'wait' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_005",
+      "skill_name": "Reinforcement Grid",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_006",
+      "skill_name": "Energy Conduit",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_007",
+      "skill_name": "Stability Matrix",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_008",
+      "skill_name": "Power Node",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Inflation + Time = Worthless currency",
+          "keyword_1": "inflation",
+          "keyword_2": "time",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'inflation' and 'time' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_009",
+      "skill_name": "Foundation Seal",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_010",
+      "skill_name": "Resonance Link",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_011",
+      "skill_name": "Structure Amplifier",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_012",
+      "skill_name": "Foundation Echo",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_013",
+      "skill_name": "Power Grid",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_014",
+      "skill_name": "Stability Field",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Inflation + Time = Worthless currency",
+          "keyword_1": "inflation",
+          "keyword_2": "time",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'inflation' and 'time' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_015",
+      "skill_name": "Anchor Network",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Cripple + Chase = Cannot escape",
+          "keyword_1": "cripple",
+          "keyword_2": "chase",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'cripple' and 'chase' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_016",
+      "skill_name": "Energy Matrix",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_017",
+      "skill_name": "Structure Shield",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_018",
+      "skill_name": "Power Flow",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_019",
+      "skill_name": "Foundation Beacon",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_020",
+      "skill_name": "Resonance Field",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_021",
+      "skill_name": "Advanced Scaffold",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_022",
+      "skill_name": "Power Pillar",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Anger + Attack = Fury damage",
+          "keyword_1": "anger",
+          "keyword_2": "attack",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'anger' and 'attack' - consider different combo"
+        },
+        {
+          "text": "Anger + Berserk = Maximum rage",
+          "keyword_1": "anger",
+          "keyword_2": "berserk",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'anger' and 'berserk' - consider different combo"
+        },
+        {
+          "text": "Anger + Control lost = Dangerous",
+          "keyword_1": "anger",
+          "keyword_2": "control lost",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'anger' and 'control lost' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_023",
+      "skill_name": "Network Hub",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_024",
+      "skill_name": "Stability Anchor",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_025",
+      "skill_name": "Energy Grid",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_026",
+      "skill_name": "Structure Core",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_027",
+      "skill_name": "Power Nexus",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_028",
+      "skill_name": "Foundation Pulse",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_029",
+      "skill_name": "Resonance Node",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_030",
+      "skill_name": "Master Grid",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_031",
+      "skill_name": "Supreme Scaffold",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_032",
+      "skill_name": "Energy Column",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_033",
+      "skill_name": "Network Matrix",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_034",
+      "skill_name": "Core Anchor",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_035",
+      "skill_name": "Power Field",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Inflation + Time = Worthless currency",
+          "keyword_1": "inflation",
+          "keyword_2": "time",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'inflation' and 'time' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_036",
+      "skill_name": "Structure Nexus",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_037",
+      "skill_name": "Foundation Core",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_038",
+      "skill_name": "Energy Beacon",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_039",
+      "skill_name": "Master Node",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Panic + Fear = Terror",
+          "keyword_1": "panic",
+          "keyword_2": "fear",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'panic' and 'fear' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_040",
+      "skill_name": "Power Matrix",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_041",
+      "skill_name": "Elite Scaffold",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_042",
+      "skill_name": "Structure Crown",
+      "bad_combos": [
+        {
+          "text": "Grammar + Language = Proper speech",
+          "keyword_1": "grammar",
+          "keyword_2": "language",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'language' - consider different combo"
+        },
+        {
+          "text": "Grammar + Writing = Correct",
+          "keyword_1": "grammar",
+          "keyword_2": "writing",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'writing' - consider different combo"
+        },
+        {
+          "text": "Grammar + Scholar = Linguist",
+          "keyword_1": "grammar",
+          "keyword_2": "scholar",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'grammar' and 'scholar' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_043",
+      "skill_name": "Network Sovereign",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Inflation + Time = Worthless currency",
+          "keyword_1": "inflation",
+          "keyword_2": "time",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'inflation' and 'time' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_044",
+      "skill_name": "Anchor Crown",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_045",
+      "skill_name": "Energy Crown",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_046",
+      "skill_name": "Core Crown",
+      "bad_combos": [
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_047",
+      "skill_name": "Power Crown",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Inflation + Time = Worthless currency",
+          "keyword_1": "inflation",
+          "keyword_2": "time",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'inflation' and 'time' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_048",
+      "skill_name": "Foundation Sovereign",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Cripple + Chase = Cannot escape",
+          "keyword_1": "cripple",
+          "keyword_2": "chase",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'cripple' and 'chase' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_049",
+      "skill_name": "Grid Crown",
+      "bad_combos": [
+        {
+          "text": "Field + DoT = Constant damage",
+          "keyword_1": "field",
+          "keyword_2": "dot",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'field' and 'dot' - consider different combo"
+        },
+        {
+          "text": "Multiple fields = Layered control",
+          "valid": false,
+          "reason": "Invalid format - expected 'Keyword1 + Keyword2 = Result'",
+          "score": 0
+        },
+        {
+          "text": "Architecture + Build = Monument",
+          "keyword_1": "architecture",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'build' - consider different combo"
+        },
+        {
+          "text": "Architecture + Beauty = Wonder",
+          "keyword_1": "architecture",
+          "keyword_2": "beauty",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'beauty' - consider different combo"
+        },
+        {
+          "text": "Architecture + Defense = Fortress",
+          "keyword_1": "architecture",
+          "keyword_2": "defense",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'architecture' and 'defense' - consider different combo"
+        },
+        {
+          "text": "Cripple + Chase = Cannot escape",
+          "keyword_1": "cripple",
+          "keyword_2": "chase",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'cripple' and 'chase' - consider different combo"
+        }
+      ]
+    },
+    {
+      "skill_id": "SKILL_FOUNDATIONAL_050",
+      "skill_name": "Master Crown",
+      "bad_combos": [
+        {
+          "text": "Build + Construct = Create",
+          "keyword_1": "build",
+          "keyword_2": "construct",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'construct' - consider different combo"
+        },
+        {
+          "text": "Build + Structure = Building",
+          "keyword_1": "build",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Build + Craft = Make",
+          "keyword_1": "build",
+          "keyword_2": "craft",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'build' and 'craft' - consider different combo"
+        },
+        {
+          "text": "Construction + Build = Create",
+          "keyword_1": "construction",
+          "keyword_2": "build",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'build' - consider different combo"
+        },
+        {
+          "text": "Construction + Structure = Building",
+          "keyword_1": "construction",
+          "keyword_2": "structure",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'structure' - consider different combo"
+        },
+        {
+          "text": "Construction + Progress = Develop",
+          "keyword_1": "construction",
+          "keyword_2": "progress",
+          "synergy_score": 0.5,
+          "synergy_reason": "unknown_keyword",
+          "valid": false,
+          "quality": "\ud83d\udd34 WEAK",
+          "reason": "Low synergy between 'construction' and 'progress' - consider different combo"
+        }
+      ]
+    }
+  ],
+  "total_skills_processed": 50
+}

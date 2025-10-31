@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner Village Game Demo</title>
+    <style>
+        body { background: #222; color: #eee; font-family: sans-serif; }
+        canvas { background: #6ec6e6; display: block; margin: 20px auto; border: 2px solid #444; }
+        #controls { text-align: center; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Beginner Village Game Demo</h2>
+    <div id="controls">
+        <button onclick="moveAsset(-10,0)">Left</button>
+        <button onclick="moveAsset(10,0)">Right</button>
+        <button onclick="moveAsset(0,-10)">Up</button>
+        <button onclick="moveAsset(0,10)">Down</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script>
+    // Load background image (JPG map)
+    const bgImg = new Image();
+    bgImg.src = '../assets/backgrounds/beginner_village_prototype.jpg'; // Place your JPG here
+
+    // Example asset PNGs (replace with your own)
+    const assets = [
+        { name: 'Building 1', src: '../assets/buildings/building1.png', x: 350, y: 250, img: new Image() },
+        { name: 'Tree 1', src: '../assets/trees/tree1.png', x: 200, y: 400, img: new Image() },
+        { name: 'Bridge', src: '../assets/bridges/bridge1.png', x: 500, y: 350, img: new Image() },
+        // Add more assets as needed
+    ];
+    let selectedAsset = 0;
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Load all images
+    let loadedCount = 0;
+    let totalToLoad = assets.length + 1; // +1 for background
+    assets.forEach((asset, i) => {
+        asset.img.src = asset.src;
+        asset.img.onload = function() {
+            loadedCount++;
+            if (loadedCount === totalToLoad) draw();
+        };
+        asset.img.onerror = function() {
+            loadedCount++;
+            if (loadedCount === totalToLoad) draw();
+        };
+    });
+    bgImg.onload = function() {
+        loadedCount++;
+        if (loadedCount === totalToLoad) draw();
+    };
+    bgImg.onerror = function() {
+        loadedCount++;
+        if (loadedCount === totalToLoad) draw();
+    };
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Draw background
+        ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+        // Draw assets
+        assets.forEach((asset, i) => {
+            ctx.drawImage(asset.img, asset.x, asset.y, 100, 100);
+            // Draw selection box
+            if (i === selectedAsset) {
+                ctx.strokeStyle = 'yellow';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(asset.x, asset.y, 100, 100);
+            }
+        });
+    }
+
+    window.moveAsset = function(dx, dy) {
+        assets[selectedAsset].x += dx;
+        assets[selectedAsset].y += dy;
+        draw();
+    };
+
+    // Asset selector
+    const controlsDiv = document.getElementById('controls');
+    const selectDiv = document.createElement('div');
+    selectDiv.innerHTML = 'Select Asset: ' + assets.map((a, i) => `<button onclick=\"selectAsset(${i})\">${a.name}</button>`).join(' ');
+    controlsDiv.appendChild(selectDiv);
+
+    window.selectAsset = function(idx) {
+        selectedAsset = idx;
+        draw();
+    };
+    </script>
+    <p style="text-align:center;">
+        <b>How to see your assets:</b><br>
+        1. Place your map JPG in <code>assets/backgrounds/beginner_village_prototype.jpg</code>.<br>
+        2. Place PNGs in <code>assets/buildings/</code>, <code>assets/trees/</code>, etc.<br>
+        3. Edit the <code>assets</code> array in the script to add your PNGs.<br>
+        <br>
+        If you don't have PNGs yet, you'll see empty boxes. Add your own assets for best results!
+    </p>
+</body>
+</html>
