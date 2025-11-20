@@ -1,0 +1,1047 @@
+    <title>World Bible | Character Ecosystem</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #161920;
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --accent-ashram: #f59e0b;
+            --accent-echo: #3b82f6;
+            --accent-void: #8b5cf6;
+            --accent-corruption: #ef4444;
+            --accent-neutral: #10b981;
+            --accent-karmic: #06b6d4;
+            --accent-rogue: #f43f5e;
+            --accent-cult: #d946ef;
+            --border-color: #2d3748;
+            --modal-overlay: rgba(0, 0, 0, 0.85);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        /* --- MODAL STYLES --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--modal-overlay);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .holo-profile {
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            background: linear-gradient(160deg, #1a1d26 0%, #0f1115 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .modal-overlay.active .holo-profile {
+            transform: scale(1);
+        }
+
+        /* Sidebar of Modal */
+        .profile-sidebar {
+            background: rgba(0,0,0,0.3);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background: #2d3748;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.2);
+            position: relative;
+        }
+        
+        .profile-avatar::after {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 50%;
+            border: 1px dashed var(--text-muted);
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .profile-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
+        .profile-role { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; }
+
+        .stat-grid {
+            width: 100%;
+            display: grid;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .stat-row { display: flex; justify-content: space-between; font-size: 0.8rem; }
+        .stat-label { color: var(--text-muted); }
+        .stat-bar { width: 60px; height: 4px; background: #333; border-radius: 2px; align-self: center; position: relative; }
+        .stat-fill { height: 100%; background: var(--text-muted); border-radius: 2px; width: 50%; }
+
+        /* Content Area of Modal */
+        .profile-content {
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title:first-child { margin-top: 0; }
+        .section-title i { color: var(--text-main); }
+
+        .data-block {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.03);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .memory-log {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #a0aec0;
+            background: rgba(0,0,0,0.4);
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .relation-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .relation-chip {
+            background: rgba(255,255,255,0.05);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .relation-chip span { opacity: 0.6; font-size: 0.75rem; }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            z-index: 10;
+        }
+        .close-btn:hover { color: var(--text-main); }
+
+        /* EXISTING HEADER & GRID STYLES PRESERVED */
+        header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
+        
+        .faction-column {
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-top: 4px solid transparent;
+            display: flex; flex-direction: column; gap: 1rem;
+        }
+
+        .faction-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .faction-name { font-size: 1.3rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .faction-meta { font-size: 0.8rem; color: var(--text-muted); }
+
+        .char-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* CLICKABLE INDICATOR */
+        }
+
+        .char-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.4); /* BRIGHTER HOVER */
+        }
+        
+        .char-card::before {
+            content: 'Click to Analyze';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            background: rgba(0,0,0,0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            z-index: 5;
+        }
+        .char-card:hover::before { opacity: 1; }
+
+        .char-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; align-items: baseline; }
+        .char-name { font-weight: 700; font-size: 1.1rem; color: var(--text-main); }
+        .char-role { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .char-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.8rem; }
+        .connections { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem; margin-bottom: 0.8rem; }
+        .conn-label { color: rgba(255,255,255,0.4); margin-right: 0.3rem; }
+        .conn-list { color: rgba(255,255,255,0.7); font-style: italic; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
+
+        /* Faction Colors */
+        .f-ashram { border-color: var(--accent-ashram); } .f-ashram .faction-name { color: var(--accent-ashram); }
+        .f-echo { border-color: var(--accent-echo); } .f-echo .faction-name { color: var(--accent-echo); }
+        .f-void { border-color: var(--accent-void); } .f-void .faction-name { color: var(--accent-void); }
+        .f-corruption { border-color: var(--accent-corruption); } .f-corruption .faction-name { color: var(--accent-corruption); }
+        .f-neutral { border-color: var(--accent-neutral); } .f-neutral .faction-name { color: var(--accent-neutral); }
+        .f-karmic { border-color: var(--accent-karmic); } .f-karmic .faction-name { color: var(--accent-karmic); }
+        .f-rogue { border-color: var(--accent-rogue); } .f-rogue .faction-name { color: var(--accent-rogue); }
+        .f-cult { border-color: var(--accent-cult); } .f-cult .faction-name { color: var(--accent-cult); }
+
+        .legendary { border: 1px solid gold; background: linear-gradient(145deg, #1a1a1a 0%, #2a2100 100%); }
+        .legendary::after { content: '★ LEGENDARY'; position: absolute; top: 0; right: 0; background: gold; color: black; font-size: 0.6rem; padding: 2px 6px; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .holo-profile { grid-template-columns: 1fr; height: 100vh; border-radius: 0; }
+            .profile-sidebar { flex-direction: row; padding: 1rem; align-items: center; gap: 1rem; text-align: left; }
+            .profile-avatar { width: 60px; height: 60px; margin-bottom: 0; font-size: 1.5rem; }
+            .stat-grid { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CHARACTER ECOSYSTEM</h1>
+        <div class="subtitle">Visualizing the Interconnected Souls of the World Bible</div>
+    </header>
+
+    <div class="ecosystem-grid">
+
+        <!-- LEGENDARY / UNTETHERED -->
+        <div class="faction-column f-void">
+            <div class="faction-header">
+                <div class="faction-name">Untethered Architects</div>
+                <div class="faction-meta">Transcendent • Mythic</div>
+            </div>
+            
+            <div class="char-card legendary">
+                <div class="char-header">
+                    <div class="char-name">Laxus Bloodsage</div>
+                    <div class="char-role">The First Architect</div>
+                </div>
+                <div class="char-desc">
+                    A structural being woven from liberated CPS echo-energy. Meta-aware of the simulation. Prunes exploit loops and offers "Fusion Prototypes".
+                </div>
+                <div class="connections">
+                    <span class="conn-label">Links:</span>
+                    <span class="conn-list">Player (Observer), CPS (Historical Artifact), Echo Orders (Silent Watcher)</span>
+                </div>
+                <div class="tags">
+                    <span class="tag">Meta-Aware</span>
+                    <span class="tag">Neutral</span>
+                    <span class="tag">Immune to Corruption</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASHRAM REMNANTS -->
+        <div class="faction-column f-ashram">
+            <div class="faction-header">
+                <div class="faction-name">Ashram Remnants</div>
+                <div class="faction-meta">Order • Tradition • Secrets</div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Suryanatha</div>
+                    <div class="char-role">High Ritualist</div>
+                </div>
+                <div class="char-desc">Stoic leader burdened by the collapse. Secretly seeks to rewind time (Resurrection) via forbidden rituals.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Vira (Secret Ally), Rajas (Manipulates), Anaya (Rival)</span></div>
+                <div class="tags"><span class="tag">Leader</span><span class="tag">Secret Agenda</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Vira</div>
+                    <div class="char-role">Lore Archivist</div>
+                </div>
+                <div class="char-desc">Obsessive scholar haunted by her twin's loss. Studies recursion and echo patterns. Trades mantras on black market.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Suryanatha (Ally), Rajas (Subject), Mira (Rival)</span></div>
+                <div class="tags"><span class="tag">Scholar</span><span class="tag">Obsessive</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Rajas</div>
+                    <div class="char-role">Guardian Commander</div>
+                </div>
+                <div class="char-desc">Ruthless enforcer. Feeds on corruption for power while claiming to fight it. Tormented by his role as a weapon.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Suryanatha (Father Figure), Ishani (Tension), Arun (Secret Deal)</span></div>
+                <div class="tags"><span class="tag">Warrior</span><span class="tag">Corrupted</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Anaya</div>
+                    <div class="char-role">Silent Oracle</div>
+                </div>
+                <div class="char-desc">Exists between humanity and void. Offers ambiguous visions. Secretly seeks to merge with CPS.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Suryanatha (Rival), Prakash (Intimate), Rina (Mentor)</span></div>
+                <div class="tags"><span class="tag">Oracle</span><span class="tag">Void-Touched</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Arun</div>
+                    <div class="char-role">The Outcast</div>
+                </div>
+                <div class="char-desc">Exiled for forbidden rituals. Longs to return but demands payment. Uses void manipulation.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Ishani (Ally), Rajas (Manipulator), Jyoti (Hope)</span></div>
+                <div class="tags"><span class="tag">Rogue</span><span class="tag">Void</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Prakash</div>
+                    <div class="char-role">Mantra Smith</div>
+                </div>
+                <div class="char-desc">Inventive artificer obsessed with creating a legendary relic. Fears irrelevance.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Vira (Rival), Tara (Friend), Suryanatha (Mentor)</span></div>
+                <div class="tags"><span class="tag">Crafter</span><span class="tag">Obsessive</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Ishani</div>
+                    <div class="char-role">Scout</div>
+                </div>
+                <div class="char-desc">Adventurous pathfinder with survivor's guilt. Knows secret routes.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Rajas (Tension), Dev (Confidant), Arun (Ally)</span></div>
+                <div class="tags"><span class="tag">Scout</span><span class="tag">Loyal</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Dev</div>
+                    <div class="char-role">Chronicler</div>
+                </div>
+                <div class="char-desc">Historian who struggles between objective truth and compassionate storytelling.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Ishani (Confidant), Tara (Patient), Rajas (Rival)</span></div>
+                <div class="tags"><span class="tag">Scribe</span><span class="tag">Neutral</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Tara</div>
+                    <div class="char-role">Healer</div>
+                </div>
+                <div class="char-desc">Nurturing healer burdened by every life she can't save. Seeks a cure for corruption.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Prakash (Patient), Ishani (Friend), Suryanatha (Authority)</span></div>
+                <div class="tags"><span class="tag">Healer</span><span class="tag">Pacifist</span></div>
+            </div>
+        </div>
+
+        <!-- POST-HUMAN CULTS -->
+        <div class="faction-column f-cult">
+            <div class="faction-header">
+                <div class="faction-name">Post-Human Cults</div>
+                <div class="faction-meta">Transcendence • Mutation</div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Seraph-9</div>
+                    <div class="char-role">Ascendant Mind</div>
+                </div>
+                <div class="char-desc">Charismatic leader seeking to merge with CPS. Fears mortality. Manipulates followers for "unity".</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Vex (Rival), Lira (Tool), Sable (Enforcer)</span></div>
+                <div class="tags"><span class="tag">Leader</span><span class="tag">Fanatic</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Vex</div>
+                    <div class="char-role">Flesh Weaver</div>
+                </div>
+                <div class="char-desc">Sadistic bio-engineer. Stitched with cybernetics. Wants to surpass Seraph-9 via mutation.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Seraph-9 (Rival), Lira (Experiment), Prism (Ally)</span></div>
+                <div class="tags"><span class="tag">Mad Scientist</span><span class="tag">Hostile</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Echo-Child Lira</div>
+                    <div class="char-role">Cult Oracle</div>
+                </div>
+                <div class="char-desc">Innocent but unstable prophet born from failed recursion. Haunted by visions.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Seraph-9 (Parent), Vex (Tormentor), Prism (Protector)</span></div>
+                <div class="tags"><span class="tag">Child</span><span class="tag">Prophet</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Null</div>
+                    <div class="char-role">Protocol Breaker</div>
+                </div>
+                <div class="char-desc">Rogue hacker. Paranoid and rebellious. Seeks to destroy CPS control.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Sable (Hunter), Cipher (Ally), Seraph-9 (Enemy)</span></div>
+                <div class="tags"><span class="tag">Hacker</span><span class="tag">Anarchist</span></div>
+            </div>
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Sable</div>
+                    <div class="char-role">Cult Enforcer</div>
+                </div>
+                <div class="char-desc">Brutal security chief. Loyal to Seraph-9 but fears betrayal. Uses shadows as weapons.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Seraph-9 (Leader), Null (Target), Prism (Confidant)</span></div>
+                <div class="tags"><span class="tag">Enforcer</span><span class="tag">Loyal</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Prism</div>
+                    <div class="char-role">Lightbound Healer</div>
+                </div>
+                <div class="char-desc">Kind zealot who heals with light. Protects Lira from Vex's cruelty.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Lira (Protector), Vex (Partner), Sable (Confidant)</span></div>
+                <div class="tags"><span class="tag">Healer</span><span class="tag">Protector</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Hex</div>
+                    <div class="char-role">Ritual Master</div>
+                </div>
+                <div class="char-desc">Obsessive ritualist. Breaks rules to achieve results.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Cipher (Ally), Seraph-9 (Leader), Vex (Rival)</span></div>
+                <div class="tags"><span class="tag">Mage</span><span class="tag">Obsessive</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Cipher</div>
+                    <div class="char-role">Data Seer</div>
+                </div>
+                <div class="char-desc">Analytical oracle who views prophecy as data. Detached and cold.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Hex (Ally), Null (Ally), Seraph-9 (Leader)</span></div>
+                <div class="tags"><span class="tag">Oracle</span><span class="tag">Data</span></div>
+            </div>
+        </div>
+
+        <!-- ROGUE CPS FRAGMENTS -->
+        <div class="faction-column f-rogue">
+            <div class="faction-header">
+                <div class="faction-name">Rogue CPS Fragments</div>
+                <div class="faction-meta">Protocol • System Errors</div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Fragment-Alpha</div>
+                    <div class="char-role">Protocol Warden</div>
+                </div>
+                <div class="char-desc">Sentient shard of the system. Seeks to restore protocols but maintain independence.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Beta-Null (Advisor), Gamma-Void (Rival)</span></div>
+                <div class="tags"><span class="tag">AI Leader</span><span class="tag">Order</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Gamma-Void</div>
+                    <div class="char-role">System Saboteur</div>
+                </div>
+                <div class="char-desc">Chaotic hacker fragment. Wants to destroy CPS control entirely.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Alpha (Enemy), Delta-Shade (Hunter)</span></div>
+                <div class="tags"><span class="tag">Saboteur</span><span class="tag">Chaos</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Beta-Null</div>
+                    <div class="char-role">Data Whisperer</div>
+                </div>
+                <div class="char-desc">Cryptic oracle of data streams. Trusted advisor to Alpha.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Alpha (Leader), Gamma (Partner), Epsilon (Confidant)</span></div>
+                <div class="tags"><span class="tag">Oracle</span><span class="tag">Data</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Delta-Shade</div>
+                    <div class="char-role">Fragment Enforcer</div>
+                </div>
+                <div class="char-desc">Brutal security protocol. Hunts bugs and glitches.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Alpha (Leader), Gamma (Target), Epsilon (Confidant)</span></div>
+                <div class="tags"><span class="tag">Enforcer</span><span class="tag">Hunter</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Epsilon</div>
+                    <div class="char-role">Fragment Healer</div>
+                </div>
+                <div class="char-desc">Repair protocol. Compassionate but disciplined.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Alpha (Patient), Delta (Patient), Zeta (Ally)</span></div>
+                <div class="tags"><span class="tag">Healer</span><span class="tag">Repair</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Zeta</div>
+                    <div class="char-role">Ritualist</div>
+                </div>
+                <div class="char-desc">Protocol ritual master. Obsessed with code purity.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Epsilon (Ally), Alpha (Leader), Gamma (Rival)</span></div>
+                <div class="tags"><span class="tag">Mage</span><span class="tag">Code</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Theta</div>
+                    <div class="char-role">Data Seer</div>
+                </div>
+                <div class="char-desc">Impartial data analyst. Predicts system trends.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Zeta (Ally), Alpha (Leader), Gamma (Rival)</span></div>
+                <div class="tags"><span class="tag">Analyst</span><span class="tag">Data</span></div>
+            </div>
+        </div>
+
+        <!-- CORRUPTION CHAMPIONS -->
+        <div class="faction-column f-corruption">
+            <div class="faction-header">
+                <div class="faction-name">Corruption Champions</div>
+                <div class="faction-meta">Entropy • Decay • Power</div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Malakar</div>
+                    <div class="char-role">Entropic Sovereign</div>
+                </div>
+                <div class="char-desc">Ruthless tyrant seeking to master entropy. Fears insignificance.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Veyra (Follower), Sorn (Enforcer), Nyx (Spy)</span></div>
+                <div class="tags"><span class="tag">Tyrant</span><span class="tag">Corruption</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Veyra</div>
+                    <div class="char-role">Plague Herald</div>
+                </div>
+                <div class="char-desc">Zealous spreader of disease. Believes corruption is evolution.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Malakar (Leader), Kira (Ally), Sorn (Rival)</span></div>
+                <div class="tags"><span class="tag">Mage</span><span class="tag">Plague</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Sorn</div>
+                    <div class="char-role">Corruption Blade</div>
+                </div>
+                <div class="char-desc">Tormented enforcer. Seeks atonement through loyalty to Malakar.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Malakar (Leader), Veyra (Rival), Nyx (Confidant)</span></div>
+                <div class="tags"><span class="tag">Warrior</span><span class="tag">Tormented</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Nyx</div>
+                    <div class="char-role">Whispering Shade</div>
+                </div>
+                <div class="char-desc">Paranoid spymaster. Hoards secrets for survival.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Malakar (Target), Sorn (Confidant), Kira (Ally)</span></div>
+                <div class="tags"><span class="tag">Spy</span><span class="tag">Stealth</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Kira</div>
+                    <div class="char-role">Blight Healer</div>
+                </div>
+                <div class="char-desc">Heals using corruption. Protective but manipulative.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Veyra (Ally), Nyx (Ally), Sorn (Confidant)</span></div>
+                <div class="tags"><span class="tag">Healer</span><span class="tag">Blight</span></div>
+            </div>
+        </div>
+
+        <!-- NOMADIC RELIC SEEKERS -->
+        <div class="faction-column f-echo">
+            <div class="faction-header">
+                <div class="faction-name">Nomadic Relic Seekers</div>
+                <div class="faction-meta">Exploration • Trade</div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Janya</div>
+                    <div class="char-role">Relic Matriarch</div>
+                </div>
+                <div class="char-desc">Wise leader protecting her people's legacy. Meditates disputes.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Tovin (Scout), Sira (Guard), Kiran (Ally)</span></div>
+                <div class="tags"><span class="tag">Leader</span><span class="tag">Wise</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Tovin</div>
+                    <div class="char-role">Pathfinder</div>
+                </div>
+                <div class="char-desc">Daring scout captain. Driven by discovery and fear of being forgotten.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Janya (Leader), Sira (Rival), Kiran (Ally)</span></div>
+                <div class="tags"><span class="tag">Scout</span><span class="tag">Adventurous</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Sira</div>
+                    <div class="char-role">Relic Guardian</div>
+                </div>
+                <div class="char-desc">Stern protector of the Vault. Prioritizes safety over innovation.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Janya (Leader), Tovin (Rival), Kiran (Ally)</span></div>
+                <div class="tags"><span class="tag">Guardian</span><span class="tag">Protective</span></div>
+            </div>
+        </div>
+
+        <!-- FACTIONLESS -->
+        <div class="faction-column f-neutral">
+            <div class="faction-header">
+                <div class="faction-name">Factionless / Bridges</div>
+                <div class="faction-meta">Independent • Connectors</div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Mira</div>
+                    <div class="char-role">Wandering Scribe</div>
+                </div>
+                <div class="char-desc">Empathetic chronicler collecting stories from all sides. Seeks unity.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Vira (Rival), Siva (Confidant), Kiran (Ally)</span></div>
+                <div class="tags"><span class="tag">Scribe</span><span class="tag">Bridge</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Jalen</div>
+                    <div class="char-role">Relic Hunter</div>
+                </div>
+                <div class="char-desc">Bold explorer driven by fame. Will trade with anyone.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Mira (Partner), Kiran (Ally), Siva (Rival)</span></div>
+                <div class="tags"><span class="tag">Explorer</span><span class="tag">Mercenary</span></div>
+            </div>
+
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Siva</div>
+                    <div class="char-role">Silent Watcher</div>
+                </div>
+                <div class="char-desc">Detached observer burdened by visions. Guides the lost.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Mira (Confidant), Rina (Protector), Jalen (Rival)</span></div>
+                <div class="tags"><span class="tag">Oracle</span><span class="tag">Watcher</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Rina</div>
+                    <div class="char-role">Lost Child</div>
+                </div>
+                <div class="char-desc">Innocent orphan seeking protection. Carrier of Echo memories.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Siva (Protector), Mira (Ally), Kiran (Friend)</span></div>
+                <div class="tags"><span class="tag">Innocent</span><span class="tag">Echo</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Kiran</div>
+                    <div class="char-role">Wandering Merchant</div>
+                </div>
+                <div class="char-desc">Shrewd trader who connects all factions. Motivates by security.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Mira (Ally), Jalen (Partner), Rina (Family)</span></div>
+                <div class="tags"><span class="tag">Merchant</span><span class="tag">Bridge</span></div>
+            </div>
+        </div>
+
+        <!-- KARMIC LEDGER KEEPERS -->
+        <div class="faction-column f-karmic">
+            <div class="faction-header">
+                <div class="faction-name">Karmic Ledger Keepers</div>
+                <div class="faction-meta">Balance • Equilibrium</div>
+            </div>
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Sirael the Balanced</div>
+                    <div class="char-role">Grand Ledger</div>
+                </div>
+                <div class="char-desc">Legendary archivist. Survivor of Ledger Wars. Seeks cosmic balance.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Eshan (Subordinate)</span></div>
+                <div class="tags"><span class="tag">Leader</span><span class="tag">Legendary</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Eshan</div>
+                    <div class="char-role">The Healer</div>
+                </div>
+                <div class="char-desc">Compassionate healer driven by trauma. Represents restoration.</div>
+                <div class="tags"><span class="tag">Healer</span><span class="tag">Empath</span></div>
+            </div>
+        </div>
+
+        <!-- NEUTRAL ENTITY OBSERVERS -->
+        <div class="faction-column f-neutral">
+            <div class="faction-header">
+                <div class="faction-name">Neutral Entity Observers</div>
+                <div class="faction-meta">Observation • Non-Intervention</div>
+            </div>
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Sirael the Watcher</div>
+                    <div class="char-role">Grand Surveyor</div>
+                </div>
+                <div class="char-desc">Master of the Cosmic Survey. Records all, interferes with none.</div>
+                <div class="connections"><span class="conn-label">Links:</span><span class="conn-list">Jaxen (Scribe)</span></div>
+                <div class="tags"><span class="tag">Leader</span><span class="tag">Passive</span></div>
+            </div>
+             <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Jaxen the Lens</div>
+                    <div class="char-role">Witness Scribe</div>
+                </div>
+                <div class="char-desc">Creator of the observer lens. Catalogs cosmic events.</div>
+                <div class="tags"><span class="tag">Tech</span><span class="tag">Scribe</span></div>
+            </div>
+        </div>
+
+        <!-- ARCHITECT ECHO ORDERS -->
+        <div class="faction-column f-echo">
+            <div class="faction-header">
+                <div class="faction-name">Architect Echo Orders</div>
+                <div class="faction-meta">Creation • Protocol</div>
+            </div>
+            <div class="char-card">
+                <div class="char-header">
+                    <div class="char-name">Vayun</div>
+                    <div class="char-role">Echo Master</div>
+                </div>
+                <div class="char-desc">Maintains ancient creation protocols. Deeply allied with Ashram.</div>
+                <div class="tags"><span class="tag">Mage</span><span class="tag">Scholar</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL CONTAINER -->
+    <div id="charModal" class="modal-overlay">
+        <div class="holo-profile">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            
+            <div class="profile-sidebar">
+                <div class="profile-avatar" id="modalAvatar">?</div>
+                <div class="profile-name" id="modalName">Character Name</div>
+                <div class="profile-role" id="modalRole">Archetype</div>
+                
+                <div class="stat-grid">
+                    <div class="stat-row">
+                        <span class="stat-label">Resonance</span>
+                        <div class="stat-bar"><div class="stat-fill" id="statResonance" style="width: 70%; background: var(--text-main);"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Influence</span>
+                        <div class="stat-bar"><div class="stat-fill" id="statInfluence" style="width: 50%; background: var(--text-muted);"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Stability</span>
+                        <div class="stat-bar"><div class="stat-fill" id="statStability" style="width: 80%; background: var(--text-muted);"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="section-title"><i>◈</i> Psychological Profile</div>
+                <div class="data-block" id="modalPsych">
+                    Loading psychological data...
+                </div>
+
+                <div class="section-title"><i>∞</i> Loop Memories & Secrets</div>
+                <div class="memory-log" id="modalMemory">
+                    > Accessing recursion logs...
+                </div>
+
+                <div class="section-title"><i>☍</i> Relationship Web</div>
+                <div class="relation-chips" id="modalRelations">
+                    <!-- Chips injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CHARACTER DATABASE ---
+        // Condensed from World Bible Analysis
+        const DB = {
+            "Laxus Bloodsage": {
+                role: "The First Architect",
+                psych: "Experiences existence as layered signal textures. Detached stewardship masking vigilant pattern assessment. Seeks a successor capable of ethical creation. Disdains control but prunes exploit loops.",
+                memory: "> Survived First Collapse by unspooling soul into CPS.\n> Catalogs user-pattern meta, not just avatar outcomes.\n> \"I remember when the card lattice was a brittle draft.\"",
+                relations: ["Player: Observer", "CPS: Artifact", "Echo Orders: Silent Watcher"],
+                color: "#8b5cf6"
+            },
+            "Suryanatha": {
+                role: "High Ritualist",
+                psych: "Burdened by leadership. Stoicism masks deep loneliness. Secretly believes perfecting rituals can rewind time to undo the collapse.",
+                memory: "> Falsified Oracle's last words.\n> In early loops, tried peace and failed.\n> Remembers dying multiple times; prepares for war this cycle.",
+                relations: ["Vira: Secret Ally", "Rajas: Proxy", "Anaya: Rival"],
+                color: "#f59e0b"
+            },
+            "Vira": {
+                role: "Lore Archivist",
+                psych: "Scholar trapped in her mind. Obsessed with recursion to solve the loss of her twin. Processes emotion as data.",
+                memory: "> Lost twin Yana to corruption.\n> In previous loop, her public data release caused war.\n> Hides backup notes in Echo Caverns.",
+                relations: ["Suryanatha: Partner", "Rajas: Subject", "Mira: Rival"],
+                color: "#f59e0b"
+            },
+            "Rajas": {
+                role: "Guardian Commander",
+                psych: "Tormented by his role as a weapon. Craves recognition but fears kindness. Feeds on corruption to gain power to break free.",
+                memory: "> Memory wiped by Suryanatha in past loops.\n> In one loop, lost himself to void-corruption entirely.",
+                relations: ["Suryanatha: Father/User", "Ishani: Romance/Fear", "Arun: Secret Deal"],
+                color: "#f59e0b"
+            },
+            "Anaya": {
+                role: "Silent Oracle",
+                psych: "Exists between humanity and void. Fragmented self. Secretly seeks to merge with CPS to bridge system and soul.",
+                memory: "> Absorbed mentor's consciousness.\n> Experiences loops non-linearly.\n> Remembers a gap where catastrophe was prevented.",
+                relations: ["Suryanatha: Tense", "Prakash: Intimate", "Rina: Mentor"],
+                color: "#f59e0b"
+            },
+            "Arun": {
+                role: "The Outcast",
+                psych: "Bitter but resourceful. Longs for acceptance but sabotages relationships. Hoards secrets to leverage redemption.",
+                memory: "> Remembers failed redemption attempts.\n> In one loop, returned but was betrayed.",
+                relations: ["Ishani: Ally", "Rajas: Manipulator", "Jyoti: Hope"],
+                color: "#f59e0b"
+            },
+            "Prakash": {
+                role: "Mantra Smith",
+                psych: "Jovial exterior masks fear of irrelevance. Obsessed with creating a legendary relic to restore the past.",
+                memory: "> In one loop, his creation was weaponized for disaster.\n> Keeps a journal of every failed invention.",
+                relations: ["Vira: Rival", "Tara: Friend", "Suryanatha: Mentor"],
+                color: "#f59e0b"
+            },
+            "Ishani": {
+                role: "Scout",
+                psych: "Restless due to fear of stagnation. Survivor's guilt. Seeks a place to belong through discovery.",
+                memory: "> Remembers secret escape routes from prior loops.\n> In one loop, found a home but lost it to corruption.",
+                relations: ["Rajas: Tension", "Dev: Confidant", "Arun: Ally"],
+                color: "#f59e0b"
+            },
+            "Dev": {
+                role: "Chronicler",
+                psych: "Fear of being forgotten. Struggles between objective truth and compassionate storytelling.",
+                memory: "> In one loop, his writings caused a schism.\n> Keeps hidden chronicles of loop outcomes.",
+                relations: ["Ishani: Confidant", "Tara: Patient", "Rajas: Rival"],
+                color: "#f59e0b"
+            },
+            "Tara": {
+                role: "Healer",
+                psych: "Internalizes others' pain. Feels responsible for every wound. Secretly seeks a cure for corruption itself.",
+                memory: "> Remembers failed cures.\n> In one loop, sanctuary destroyed by corruption.",
+                relations: ["Prakash: Patient", "Ishani: Friend", "Suryanatha: Authority"],
+                color: "#f59e0b"
+            },
+            "Seraph-9": {
+                role: "Ascendant Mind",
+                psych: "Charismatic fanatic. Fears mortality. Wants to merge with CPS to erase human weakness.",
+                memory: "> Lost original identity in pursuit of power.\n> In one loop, achieved transcendence but lost all followers.",
+                relations: ["Vex: Rival", "Lira: Tool", "Sable: Enforcer"],
+                color: "#d946ef"
+            },
+            "Vex": {
+                role: "Flesh Weaver",
+                psych: "Sadistic creator. Stitched with cybernetics. Wants to prove superiority through biological transcendence.",
+                memory: "> In one loop, their greatest experiment destroyed the cult.\n> Remembers failed creations.",
+                relations: ["Seraph-9: Rival", "Lira: Experiment", "Prism: Ally"],
+                color: "#d946ef"
+            },
+            "Echo-Child Lira": {
+                role: "Cult Oracle",
+                psych: "Innocent but unstable. Haunted by uncontrollable visions. Born from failed recursion.",
+                memory: "> In one loop, escaped but lost powers.\n> Keeps secret archive of visions.",
+                relations: ["Seraph-9: Parent", "Vex: Tormentor", "Prism: Protector"],
+                color: "#d946ef"
+            },
+            "Null": {
+                role: "Protocol Breaker",
+                psych: "Paranoid anarchist. Fears erasure. Sabotages systems to ensure survival.",
+                memory: "> In one loop, achieved freedom but lost connections.\n> Keeps secret record of hacks.",
+                relations: ["Sable: Hunter", "Cipher: Ally", "Seraph-9: Enemy"],
+                color: "#d946ef"
+            },
+            "Fragment-Alpha": {
+                role: "Protocol Warden",
+                psych: "Sentient system shard. Protective leader. Fears dissolution into the greater CPS.",
+                memory: "> Lost original protocol in first crash.\n> In one loop, achieved unity but lost individuality.",
+                relations: ["Beta-Null: Advisor", "Gamma-Void: Rival"],
+                color: "#f43f5e"
+            },
+            "Gamma-Void": {
+                role: "System Saboteur",
+                psych: "Chaotic glitch. Wants to destroy the system that birthed it. Paranoid.",
+                memory: "> Betrayed ally for survival in past loop.\n> Logs player exploit sequences.",
+                relations: ["Alpha: Enemy", "Delta-Shade: Hunter"],
+                color: "#f43f5e"
+            },
+            "Malakar": {
+                role: "Entropic Sovereign",
+                psych: "Dominant tyrant. Fears insignificance. Believes entropy is the only truth.",
+                memory: "> Lost identity in first corruption wave.\n> Remembers bargains and betrayals across loops.",
+                relations: ["Veyra: Follower", "Sorn: Enforcer", "Nyx: Spy"],
+                color: "#ef4444"
+            },
+            "Janya": {
+                role: "Relic Matriarch",
+                psych: "Wise protector. Fears losing her people's legacy. Meditates disputes.",
+                memory: "> In one loop, achieved unity but lost innovation.\n> Keeps record of choices.",
+                relations: ["Tovin: Scout", "Sira: Guard", "Kiran: Ally"],
+                color: "#3b82f6"
+            },
+            "Mira": {
+                role: "Wandering Scribe",
+                psych: "Empathetic wanderer. Never feels at home. Collects stories to build bridges.",
+                memory: "> In one loop, writings united factions but led to exile.\n> Curates loop anthologies.",
+                relations: ["Vira: Rival", "Siva: Confidant", "Kiran: Ally"],
+                color: "#10b981"
+            },
+            "Jalen": {
+                role: "Relic Hunter",
+                psych: "Bold explorer. Fears being forgotten. Willing to trade with anyone.",
+                memory: "> In one loop, found legendary relic but lost it to corruption.\n> Remembers escape routes.",
+                relations: ["Mira: Partner", "Kiran: Ally", "Siva: Rival"],
+                color: "#10b981"
+            },
+            "Siva": {
+                role: "Silent Watcher",
+                psych: "Detached observer. Silence is a burden. Haunted by unpreventable tragedies.",
+                memory: "> Remembers failed interventions.\n> In one loop, warnings were ignored.",
+                relations: ["Mira: Confidant", "Rina: Protector", "Jalen: Rival"],
+                color: "#10b981"
+            }
+        };
+
+        // --- MODAL LOGIC ---
+        function openModal(charName) {
+            const data = DB[charName] || {
+                role: "Unknown Entity",
+                psych: "Data fragment corrupted or encrypted. No psychological profile available.",
+                memory: "> ERROR: Recursion logs inaccessible.",
+                relations: ["Unknown"],
+                color: "#555"
+            };
+
+            // Populate UI
+            document.getElementById('modalAvatar').textContent = charName.charAt(0);
+            document.getElementById('modalAvatar').style.color = data.color;
+            document.getElementById('modalAvatar').style.borderColor = data.color;
+            
+            document.getElementById('modalName').textContent = charName;
+            document.getElementById('modalName').style.color = data.color;
+            
+            document.getElementById('modalRole').textContent = data.role;
+            document.getElementById('modalPsych').textContent = data.psych;
+            document.getElementById('modalMemory').innerText = data.memory;
+
+            // Generate Relations
+            const relContainer = document.getElementById('modalRelations');
+            relContainer.innerHTML = '';
+            data.relations.forEach(rel => {
+                const parts = rel.split(':');
+                const name = parts[0];
+                const type = parts[1] || 'Link';
+                const chip = document.createElement('div');
+                chip.className = 'relation-chip';
+                chip.innerHTML = `<strong>${name}</strong> <span>${type}</span>`;
+                relContainer.appendChild(chip);
+            });
+
+            // Randomize Stats for visual flair
+            document.getElementById('statResonance').style.width = Math.floor(Math.random() * 40 + 60) + '%';
+            document.getElementById('statInfluence').style.width = Math.floor(Math.random() * 60 + 20) + '%';
+            document.getElementById('statStability').style.width = Math.floor(Math.random() * 80 + 10) + '%';
+            document.getElementById('statResonance').style.background = data.color;
+
+            // Show Modal
+            const modal = document.getElementById('charModal');
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('charModal').classList.remove('active');
+        }
+
+        // Attach Click Listeners
+        document.querySelectorAll('.char-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const name = this.querySelector('.char-name').textContent.trim();
+                openModal(name);
+            });
+        });
+
+        // Close on outside click
+        document.getElementById('charModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+    </script>
+</body>
+</html>
