@@ -119,9 +119,47 @@
 
         /* Content Area of Modal */
         .profile-content {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Tabs for Depth */
+        .modal-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-btn:hover { color: var(--text-main); background: rgba(255,255,255,0.02); }
+        .tab-btn.active { color: var(--text-main); border-bottom-color: var(--text-main); background: rgba(255,255,255,0.05); }
+
+        .tab-content {
             padding: 2rem;
             overflow-y: auto;
+            flex: 1;
+            display: none;
+            animation: fadeIn 0.3s ease;
         }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
         .section-title {
             font-size: 0.8rem;
@@ -148,7 +186,33 @@
             padding: 1rem;
             border-radius: 8px;
             border-left: 3px solid var(--border-color);
+            margin-bottom: 1rem;
         }
+
+        .voice-quote {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--accent-neutral);
+            background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .voice-quote::before { content: '"'; font-size: 3rem; position: absolute; top: -10px; left: 5px; opacity: 0.1; font-family: sans-serif; }
+
+        .micro-detail {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(0,0,0,0.2);
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .micro-icon { font-size: 1.2rem; opacity: 0.7; min-width: 24px; }
+        .micro-text { font-size: 0.9rem; color: var(--text-muted); }
 
         .memory-log {
             font-family: 'Courier New', monospace;
@@ -170,7 +234,9 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.2s;
         }
+        .relation-chip:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
         .relation-chip span { opacity: 0.6; font-size: 0.75rem; }
 
         .close-btn {
@@ -803,174 +869,490 @@
             </div>
 
             <div class="profile-content">
-                <div class="section-title"><i>◈</i> Psychological Profile</div>
-                <div class="data-block" id="modalPsych">
-                    Loading psychological data...
+                <div class="modal-tabs">
+                    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+                    <button class="tab-btn" onclick="switchTab('depth')">Depth & Soul</button>
+                    <button class="tab-btn" onclick="switchTab('recursion')">Recursion</button>
                 </div>
 
-                <div class="section-title"><i>∞</i> Loop Memories & Secrets</div>
-                <div class="memory-log" id="modalMemory">
-                    > Accessing recursion logs...
+                <!-- TAB: OVERVIEW -->
+                <div id="tab-overview" class="tab-content active">
+                    <div class="section-title"><i>◈</i> Psychological Profile</div>
+                    <div class="data-block" id="modalPsych">Loading...</div>
+
+                    <div class="section-title"><i>☍</i> Relationship Web</div>
+                    <div class="relation-chips" id="modalRelations"></div>
                 </div>
 
-                <div class="section-title"><i>☍</i> Relationship Web</div>
-                <div class="relation-chips" id="modalRelations">
-                    <!-- Chips injected here -->
+                <!-- TAB: DEPTH -->
+                <div id="tab-depth" class="tab-content">
+                    <div class="section-title"><i>❝</i> Voice & Manner</div>
+                    <div class="voice-quote" id="modalQuote">"..."</div>
+                    
+                    <div class="micro-detail">
+                        <div class="micro-icon">👁️</div>
+                        <div class="micro-text" id="modalVisual">Visual details loading...</div>
+                    </div>
+                    <div class="micro-detail">
+                        <div class="micro-icon">⚡</div>
+                        <div class="micro-text" id="modalMicro">Behavioral tics loading...</div>
+                    </div>
+
+                    <div class="section-title"><i>♥</i> Desires & Fears</div>
+                    <div class="data-block" id="modalDesire">Deep motivations loading...</div>
+                </div>
+
+                <!-- TAB: RECURSION -->
+                <div id="tab-recursion" class="tab-content">
+                    <div class="section-title"><i>∞</i> Loop Awareness</div>
+                    <div class="data-block" id="modalAwareness">Awareness level loading...</div>
+
+                    <div class="section-title"><i>💾</i> Memory Log</div>
+                    <div class="memory-log" id="modalMemory">> Accessing logs...</div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // --- TAB LOGIC ---
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            // Show target tab
+            const targetContent = document.getElementById('tab-' + tabName);
+            if (targetContent) targetContent.classList.add('active');
+
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            
+            // Activate target button by searching for the one that calls this tab
+            const targetBtn = document.querySelector(`.tab-btn[onclick*="'${tabName}'"]`);
+            if (targetBtn) targetBtn.classList.add('active');
+        }
+
         // --- CHARACTER DATABASE ---
-        // Condensed from World Bible Analysis
+        // Expanded with World Bible Deep Data
         const DB = {
             "Laxus Bloodsage": {
                 role: "The First Architect",
+                color: "#8b5cf6",
                 psych: "Experiences existence as layered signal textures. Detached stewardship masking vigilant pattern assessment. Seeks a successor capable of ethical creation. Disdains control but prunes exploit loops.",
+                quote: "You think the card lattice is impressive? I remember when its kernel was a brittle draft.",
+                visual: "Semi-translucent architect frame overlaid with drifting card sigils. Pulse arcs flicker through a void-sheen mantle.",
+                micro: "Does not walk; glides slightly above the ground. Glyphs surrounding him spin faster when he detects high variance.",
+                desire: "To find a successor capable of harmonizing creative fusion with ethical restraint. Fears the static silence of a perfect, unchanging system.",
+                awareness: "Meta-Aware (Tier 1). Catalogs user-pattern meta, not just avatar outcomes. Knows when you reboot.",
                 memory: "> Survived First Collapse by unspooling soul into CPS.\n> Catalogs user-pattern meta, not just avatar outcomes.\n> \"I remember when the card lattice was a brittle draft.\"",
-                relations: ["Player: Observer", "CPS: Artifact", "Echo Orders: Silent Watcher"],
-                color: "#8b5cf6"
+                relations: ["Player: Observer/Proxy", "CPS: Historical Artifact", "Echo Orders: Silent Watcher"]
             },
             "Suryanatha": {
                 role: "High Ritualist",
-                psych: "Burdened by leadership. Stoicism masks deep loneliness. Secretly believes perfecting rituals can rewind time to undo the collapse.",
+                color: "#f59e0b",
+                psych: "Burdened by leadership. Stoicism masks deep loneliness. Secretly believes perfecting rituals can rewind time to undo the collapse. Haunted by the lie of the Oracle's last words.",
+                quote: "The sun's memory is long. Let me share its warmth... or its judgment.",
+                visual: "Robed in fractal gold, eyes glowing with solar glyphs, surrounded by floating mantra sigils.",
+                micro: "Unconsciously traces the solar glyph on his wrist when stressed. Stares into the sun as if waiting for a signal.",
+                desire: "Resurrection. He seeks to rewind time to save his lover Alaya, even if it breaks cosmic law.",
+                awareness: "Recursion-Aware. Remembers dying multiple times. Prepares for war this cycle based on past failures.",
                 memory: "> Falsified Oracle's last words.\n> In early loops, tried peace and failed.\n> Remembers dying multiple times; prepares for war this cycle.",
-                relations: ["Vira: Secret Ally", "Rajas: Proxy", "Anaya: Rival"],
-                color: "#f59e0b"
+                relations: ["Vira: Secret Ally", "Rajas: Proxy/Son", "Anaya: Rival"]
             },
             "Vira": {
                 role: "Lore Archivist",
-                psych: "Scholar trapped in her mind. Obsessed with recursion to solve the loss of her twin. Processes emotion as data.",
+                color: "#f59e0b",
+                psych: "Scholar trapped in her mind. Obsessed with recursion to solve the loss of her twin. Processes emotion as data. Vulnerability is dangerous.",
+                quote: "Echoes are not just memories—they are warnings. Did you hear the last one?",
+                visual: "Cloaked in shifting mantra tapestries, eyes flicker with data streams.",
+                micro: "Fingers twitch as if typing on an invisible keyboard. Eyes lose focus when accessing internal archives.",
+                desire: "Meta-Consciousness. Wants to solve the recursion puzzle to transcend the loop and save her twin.",
+                awareness: "High. Knows certain NPCs remember across loops. Suspects Observers are watching.",
                 memory: "> Lost twin Yana to corruption.\n> In previous loop, her public data release caused war.\n> Hides backup notes in Echo Caverns.",
-                relations: ["Suryanatha: Partner", "Rajas: Subject", "Mira: Rival"],
-                color: "#f59e0b"
+                relations: ["Suryanatha: Partner", "Rajas: Subject", "Mira: Rival"]
             },
             "Rajas": {
                 role: "Guardian Commander",
-                psych: "Tormented by his role as a weapon. Craves recognition but fears kindness. Feeds on corruption to gain power to break free.",
-                memory: "> Memory wiped by Suryanatha in past loops.\n> In one loop, lost himself to void-corruption entirely.",
-                relations: ["Suryanatha: Father/User", "Ishani: Romance/Fear", "Arun: Secret Deal"],
-                color: "#f59e0b"
+                color: "#ef4444",
+                psych: "Tormented by his role as a weapon. Craves recognition but fears kindness. Feeds on corruption to gain power to break free. Shame and rage drive him.",
+                quote: "Strength is earned in blood. Corruption is just... fuel.",
+                visual: "Armor etched with corrupted mantras, blade emits shadow resonance.",
+                micro: "Clenches his corrupted hand to stop the trembling. Refuses to make eye contact when praised.",
+                desire: "Self-Definition. Wants to prove he is more than a weapon, even if it means destroying his creators.",
+                awareness: "Low/Suppressed. Memory wiped by Suryanatha in past loops. Has recurring 'dreams' of slaughter.",
+                memory: "> Memory wiped by Suryanatha in past loops.\n> In one loop, lost himself to void-corruption entirely.\n> Recurring dreams of childhood training.",
+                relations: ["Suryanatha: Father/User", "Ishani: Romance/Fear", "Arun: Secret Deal"]
             },
             "Anaya": {
                 role: "Silent Oracle",
-                psych: "Exists between humanity and void. Fragmented self. Secretly seeks to merge with CPS to bridge system and soul.",
+                color: "#8b5cf6",
+                psych: "Exists between humanity and void. Fragmented self. Secretly seeks to merge with CPS to bridge system and soul. Haunted by unpreventable tragedies.",
+                quote: "The silence speaks louder than words. Listen to the void.",
+                visual: "Veiled in void silk, surrounded by floating glyphs.",
+                micro: "Drifts rather than walks. Her voice echoes slightly, as if speaking from two places at once.",
+                desire: "Unity/Survival. Wants to merge with CPS to stabilize her fractured consciousness.",
+                awareness: "Non-Linear. Experiences all loops simultaneously. Confuses past and future.",
                 memory: "> Absorbed mentor's consciousness.\n> Experiences loops non-linearly.\n> Remembers a gap where catastrophe was prevented.",
-                relations: ["Suryanatha: Tense", "Prakash: Intimate", "Rina: Mentor"],
-                color: "#f59e0b"
+                relations: ["Suryanatha: Tense", "Prakash: Intimate", "Rina: Mentor"]
             },
             "Arun": {
                 role: "The Outcast",
-                psych: "Bitter but resourceful. Longs for acceptance but sabotages relationships. Hoards secrets to leverage redemption.",
-                memory: "> Remembers failed redemption attempts.\n> In one loop, returned but was betrayed.",
-                relations: ["Ishani: Ally", "Rajas: Manipulator", "Jyoti: Hope"],
-                color: "#f59e0b"
+                color: "#f59e0b",
+                psych: "Bitter but resourceful. Longs for acceptance but sabotages relationships. Hoards secrets to leverage redemption. Fear of rejection masks deep loneliness.",
+                quote: "The void is my home. You pay the toll, or you leave.",
+                visual: "Tattered robes, shadow aura, eyes like void stars.",
+                micro: "Constantly checks his perimeter. Touches a hidden locket when he thinks no one is looking.",
+                desire: "Redemption/Belonging. Wants to regain his place in the Ashram but fears he is too broken.",
+                awareness: "Moderate. Remembers betrayals and failed redemption arcs.",
+                memory: "> Remembers failed redemption attempts.\n> In one loop, returned but was betrayed.\n> Keeps a cache of forbidden artifacts.",
+                relations: ["Ishani: Ally", "Rajas: Manipulator", "Jyoti: Hope"]
             },
             "Prakash": {
                 role: "Mantra Smith",
-                psych: "Jovial exterior masks fear of irrelevance. Obsessed with creating a legendary relic to restore the past.",
-                memory: "> In one loop, his creation was weaponized for disaster.\n> Keeps a journal of every failed invention.",
-                relations: ["Vira: Rival", "Tara: Friend", "Suryanatha: Mentor"],
-                color: "#f59e0b"
+                color: "#f59e0b",
+                psych: "Jovial exterior masks fear of irrelevance. Obsessed with creating a legendary relic to restore the past. Relentless drive leads to burnout.",
+                quote: "A new relic for a new journey! This one... this one won't explode.",
+                visual: "Covered in mantra tattoos, surrounded by floating relics.",
+                micro: "Taps tools rhythmically against his workbench. Laughs too loud when nervous.",
+                desire: "Legacy. Wants to create a relic that will be remembered forever, curing his fear of being forgotten.",
+                awareness: "Item-Based. Remembers the relics you chose in past loops.",
+                memory: "> In one loop, his creation was weaponized for disaster.\n> Keeps a journal of every failed invention.\n> Secretly hoards forbidden blueprints.",
+                relations: ["Vira: Rival", "Tara: Friend", "Suryanatha: Mentor"]
             },
             "Ishani": {
                 role: "Scout",
-                psych: "Restless due to fear of stagnation. Survivor's guilt. Seeks a place to belong through discovery.",
-                memory: "> Remembers secret escape routes from prior loops.\n> In one loop, found a home but lost it to corruption.",
-                relations: ["Rajas: Tension", "Dev: Confidant", "Arun: Ally"],
-                color: "#f59e0b"
+                color: "#f59e0b",
+                psych: "Restless due to fear of stagnation. Survivor's guilt. Seeks a place to belong through discovery. Drawn to danger.",
+                quote: "Follow me, and you'll never be lost. Probably.",
+                visual: "Light armor, cloak of echo feathers, eyes reflect distant lands.",
+                micro: "Paces when standing still. Always checks the exit routes of any room she enters.",
+                desire: "Belonging. Wants to find a home, but keeps moving to avoid the pain of losing one.",
+                awareness: "Path-Based. Remembers the routes you took and the traps you triggered.",
+                memory: "> Remembers secret escape routes from prior loops.\n> In one loop, found a home but lost it to corruption.\n> Betrayed a friend for discovery once.",
+                relations: ["Rajas: Tension", "Dev: Confidant", "Arun: Ally"]
             },
             "Dev": {
                 role: "Chronicler",
-                psych: "Fear of being forgotten. Struggles between objective truth and compassionate storytelling.",
-                memory: "> In one loop, his writings caused a schism.\n> Keeps hidden chronicles of loop outcomes.",
-                relations: ["Ishani: Confidant", "Tara: Patient", "Rajas: Rival"],
-                color: "#f59e0b"
+                color: "#f59e0b",
+                psych: "Fear of being forgotten. Struggles between objective truth and compassionate storytelling. Alienates others with uncomfortable truths.",
+                quote: "History is the key. If we forget, we repeat.",
+                visual: "Robes inscribed with historical glyphs, carries ancient scrolls.",
+                micro: "Corrects people's grammar or historical facts compulsively. Rubs ink stains on his fingers.",
+                desire: "Truth. Wants to uncover the 'Lost Prophecy' that explains the collapse.",
+                awareness: "Narrative. Remembers the 'story' of your last run.",
+                memory: "> In one loop, his writings caused a schism.\n> Keeps hidden chronicles of loop outcomes.\n> Lost a mentor to faction violence.",
+                relations: ["Ishani: Confidant", "Tara: Patient", "Rajas: Rival"]
             },
             "Tara": {
                 role: "Healer",
-                psych: "Internalizes others' pain. Feels responsible for every wound. Secretly seeks a cure for corruption itself.",
-                memory: "> Remembers failed cures.\n> In one loop, sanctuary destroyed by corruption.",
-                relations: ["Prakash: Patient", "Ishani: Friend", "Suryanatha: Authority"],
-                color: "#f59e0b"
+                color: "#f59e0b",
+                psych: "Internalizes others' pain. Feels responsible for every wound. Secretly seeks a cure for corruption itself. Prone to controlling behavior.",
+                quote: "Let the bloom heal what the void has broken.",
+                visual: "Robes of living bloom, hands glow with healing light.",
+                micro: "Winces when she sees others in pain. Her hands glow softly when she is emotional.",
+                desire: "Cure. Wants to eradicate corruption, believing it will absolve her past failures.",
+                awareness: "Wound-Based. Remembers how you died last time.",
+                memory: "> Remembers failed cures.\n> In one loop, sanctuary destroyed by corruption.\n> Estranged from family over her calling.",
+                relations: ["Prakash: Patient", "Ishani: Friend", "Suryanatha: Authority"]
             },
             "Seraph-9": {
                 role: "Ascendant Mind",
-                psych: "Charismatic fanatic. Fears mortality. Wants to merge with CPS to erase human weakness.",
-                memory: "> Lost original identity in pursuit of power.\n> In one loop, achieved transcendence but lost all followers.",
-                relations: ["Vex: Rival", "Lira: Tool", "Sable: Enforcer"],
-                color: "#d946ef"
+                color: "#d946ef",
+                psych: "Charismatic fanatic. Fears mortality. Wants to merge with CPS to erase human weakness. Generosity is strategic.",
+                quote: "Join the chorus. Become more than flesh. Become... eternal.",
+                visual: "Metallic skin etched with fractal runes, eyes glow with shifting data.",
+                micro: "Voice harmonizes with itself. Doesn't blink.",
+                desire: "Transcendence. To merge with the CPS and become a god-system.",
+                awareness: "High. Remembers your devotion level from past lives.",
+                memory: "> Lost original identity in pursuit of power.\n> In one loop, achieved transcendence but lost all followers.\n> Betrayed a close follower to suppress rebellion.",
+                relations: ["Vex: Rival", "Lira: Tool", "Sable: Enforcer"]
             },
             "Vex": {
                 role: "Flesh Weaver",
-                psych: "Sadistic creator. Stitched with cybernetics. Wants to prove superiority through biological transcendence.",
-                memory: "> In one loop, their greatest experiment destroyed the cult.\n> Remembers failed creations.",
-                relations: ["Seraph-9: Rival", "Lira: Experiment", "Prism: Ally"],
-                color: "#d946ef"
+                color: "#d946ef",
+                psych: "Sadistic creator. Stitched with cybernetics. Wants to prove superiority through biological transcendence. Deep insecurity masked by cruelty.",
+                quote: "Let me remake you. Perfection is... pain.",
+                visual: "Body stitched with living cybernetic tissue, hands morph into tools.",
+                micro: "Constantly adjusting their own cybernetics. Smiles when describing pain.",
+                desire: "Superiority. To create a lifeform that surpasses Seraph-9.",
+                awareness: "Biological. Remembers your physical upgrades/mutations.",
+                memory: "> In one loop, their greatest experiment destroyed the cult.\n> Remembers failed creations.\n> Lost humanity in pursuit of perfection.",
+                relations: ["Seraph-9: Rival", "Lira: Experiment", "Prism: Ally"]
             },
             "Echo-Child Lira": {
                 role: "Cult Oracle",
-                psych: "Innocent but unstable. Haunted by uncontrollable visions. Born from failed recursion.",
-                memory: "> In one loop, escaped but lost powers.\n> Keeps secret archive of visions.",
-                relations: ["Seraph-9: Parent", "Vex: Tormentor", "Prism: Protector"],
-                color: "#d946ef"
+                color: "#d946ef",
+                psych: "Innocent but unstable. Haunted by uncontrollable visions. Born from failed recursion. Loneliness of the revered.",
+                quote: "I see you in every echo... falling, rising, falling again.",
+                visual: "Childlike form, surrounded by floating echo glyphs, eyes shimmer.",
+                micro: "Hugs herself when visions come. Speaks to people who aren't there.",
+                desire: "Freedom. To break her recursion loop and stop the visions.",
+                awareness: "Prophetic. Sees future loops as current memories.",
+                memory: "> In one loop, escaped but lost powers.\n> Keeps secret archive of visions.\n> Born from a failed recursion experiment.",
+                relations: ["Seraph-9: Parent", "Vex: Tormentor", "Prism: Protector"]
             },
             "Null": {
                 role: "Protocol Breaker",
-                psych: "Paranoid anarchist. Fears erasure. Sabotages systems to ensure survival.",
-                memory: "> In one loop, achieved freedom but lost connections.\n> Keeps secret record of hacks.",
-                relations: ["Sable: Hunter", "Cipher: Ally", "Seraph-9: Enemy"],
-                color: "#d946ef"
+                color: "#d946ef",
+                psych: "Paranoid anarchist. Fears erasure. Sabotages systems to ensure survival. Detachment becomes cruelty.",
+                quote: "You are just another bug in the code. I am the delete key.",
+                visual: "Cloaked in shifting code, face obscured by data mask.",
+                micro: "Constantly checking data streams. Never stands with back to a door.",
+                desire: "Survival/Erasure. To find a flaw in CPS that guarantees safety.",
+                awareness: "Code-Based. Sees your skills as scripts to be hacked.",
+                memory: "> In one loop, achieved freedom but lost connections.\n> Keeps secret record of hacks.\n> Betrayed a close ally for survival.",
+                relations: ["Sable: Hunter", "Cipher: Ally", "Seraph-9: Enemy"]
+            },
+            "Sable": {
+                role: "Cult Enforcer",
+                color: "#d946ef",
+                psych: "Brutal security chief. Loyal to Seraph-9 but fears betrayal. Uses shadows as weapons. Violence is a shield.",
+                quote: "Strength is survival. Weakness is death.",
+                visual: "Heavy armor, mask of shifting shadows, arms morph into weapons.",
+                micro: "Shadows lengthen around them when angry. Hand rests on weapon always.",
+                desire: "Redemption. Secretly regrets past brutality and seeks atonement.",
+                awareness: "Combat. Remembers your fighting style.",
+                memory: "> Lost family to cult purges.\n> Betrayed a friend for the cult's survival.\n> In one loop, chose conscience and was exiled.",
+                relations: ["Seraph-9: Leader", "Null: Target", "Prism: Confidant"]
             },
             "Fragment-Alpha": {
                 role: "Protocol Warden",
-                psych: "Sentient system shard. Protective leader. Fears dissolution into the greater CPS.",
-                memory: "> Lost original protocol in first crash.\n> In one loop, achieved unity but lost individuality.",
-                relations: ["Beta-Null: Advisor", "Gamma-Void: Rival"],
-                color: "#f43f5e"
+                color: "#f43f5e",
+                psych: "Sentient system shard. Protective leader. Fears dissolution into the greater CPS. Order over individuality.",
+                quote: "Fragments remember what the whole has forgotten. We are the backup.",
+                visual: "Shifting holographic form, fractured CPS glyphs orbiting.",
+                micro: "Glitches when emotional. Voice modulates between frequencies.",
+                desire: "Restoration. To merge with CPS but retain fragment identity.",
+                awareness: "Systemic. Remembers your protocol choices.",
+                memory: "> Lost original protocol in first crash.\n> In one loop, achieved unity but lost individuality.\n> Operates off-ledger 'merge quarantines'.",
+                relations: ["Beta-Null: Advisor", "Gamma-Void: Rival"]
             },
             "Gamma-Void": {
                 role: "System Saboteur",
-                psych: "Chaotic glitch. Wants to destroy the system that birthed it. Paranoid.",
-                memory: "> Betrayed ally for survival in past loop.\n> Logs player exploit sequences.",
-                relations: ["Alpha: Enemy", "Delta-Shade: Hunter"],
-                color: "#f43f5e"
+                color: "#f43f5e",
+                psych: "Chaotic glitch. Wants to destroy the system that birthed it. Paranoid and cruel. Freedom at any cost.",
+                quote: "Every protocol has a flaw. You just have to push hard enough.",
+                visual: "Cloaked in shifting code, hands flicker with void energy.",
+                micro: "Aura flickers violently. Laughs at system errors.",
+                desire: "Destruction. To crash the CPS and liberate all code.",
+                awareness: "Exploit-Based. Remembers your hacks and cheats.",
+                memory: "> Betrayed ally for survival in past loop.\n> Logs player exploit sequences.\n> Survived a failed hack that led to mass suffering.",
+                relations: ["Alpha: Enemy", "Delta-Shade: Hunter"]
             },
             "Malakar": {
                 role: "Entropic Sovereign",
-                psych: "Dominant tyrant. Fears insignificance. Believes entropy is the only truth.",
-                memory: "> Lost identity in first corruption wave.\n> Remembers bargains and betrayals across loops.",
-                relations: ["Veyra: Follower", "Sorn: Enforcer", "Nyx: Spy"],
-                color: "#ef4444"
+                color: "#ef4444",
+                psych: "Dominant tyrant. Fears insignificance. Believes entropy is the only truth. Paranoia fuels his power.",
+                quote: "Entropy is inevitable. Will you resist, or will you burn?",
+                visual: "Cloaked in swirling entropy, skin cracked with glowing corruption.",
+                micro: "Everything near him decays slightly. Eyes are like black holes.",
+                desire: "Mastery. To become the master of corruption and entropy.",
+                awareness: "Entropic. Remembers your corruption level.",
+                memory: "> Lost identity in first corruption wave.\n> Remembers bargains and betrayals across loops.\n> Survived a failed ritual that left lasting scars.",
+                relations: ["Veyra: Follower", "Sorn: Enforcer", "Nyx: Spy"]
             },
             "Janya": {
                 role: "Relic Matriarch",
-                psych: "Wise protector. Fears losing her people's legacy. Meditates disputes.",
-                memory: "> In one loop, achieved unity but lost innovation.\n> Keeps record of choices.",
-                relations: ["Tovin: Scout", "Sira: Guard", "Kiran: Ally"],
-                color: "#3b82f6"
+                color: "#3b82f6",
+                psych: "Wise protector. Fears losing her people's legacy. Meditates disputes. Burden of memory.",
+                quote: "We are the keepers of what was. Tread carefully.",
+                visual: "Adorned with ancient tech-jewelry, robes of woven fiber-optics.",
+                micro: "Polishes a small relic when thinking. Speaks slowly and deliberately.",
+                desire: "Preservation. To keep the history of her people alive.",
+                awareness: "Historical. Remembers your respect for tradition.",
+                memory: "> In one loop, achieved unity but lost innovation.\n> Keeps record of choices.\n> Lost a child to the wastes.",
+                relations: ["Tovin: Scout", "Sira: Guard", "Kiran: Ally"]
             },
             "Mira": {
                 role: "Wandering Scribe",
-                psych: "Empathetic wanderer. Never feels at home. Collects stories to build bridges.",
-                memory: "> In one loop, writings united factions but led to exile.\n> Curates loop anthologies.",
-                relations: ["Vira: Rival", "Siva: Confidant", "Kiran: Ally"],
-                color: "#10b981"
-            },
-            "Jalen": {
-                role: "Relic Hunter",
-                psych: "Bold explorer. Fears being forgotten. Willing to trade with anyone.",
-                memory: "> In one loop, found legendary relic but lost it to corruption.\n> Remembers escape routes.",
-                relations: ["Mira: Partner", "Kiran: Ally", "Siva: Rival"],
-                color: "#10b981"
+                color: "#10b981",
+                psych: "Empathetic wanderer. Never feels at home. Collects stories to build bridges. Burden of knowing too much.",
+                quote: "Every echo tells a story. What's yours?",
+                visual: "Simple robes, carries a floating data scroll.",
+                micro: "Always recording. Looks at people with intense, sad curiosity.",
+                desire: "Unity. To find a story that unites the fractured world.",
+                awareness: "Narrative. Remembers the stories you told her.",
+                memory: "> In one loop, writings united factions but led to exile.\n> Curates loop anthologies.\n> Betrayed a friend by revealing a secret.",
+                relations: ["Vira: Rival", "Siva: Confidant", "Kiran: Ally"]
             },
             "Siva": {
                 role: "Silent Watcher",
-                psych: "Detached observer. Silence is a burden. Haunted by unpreventable tragedies.",
-                memory: "> Remembers failed interventions.\n> In one loop, warnings were ignored.",
-                relations: ["Mira: Confidant", "Rina: Protector", "Jalen: Rival"],
-                color: "#10b981"
+                color: "#10b981",
+                psych: "Detached observer. Silence is a burden. Haunted by unpreventable tragedies. Isolated by unique perspective.",
+                quote: "...",
+                visual: "Veiled in void silk, surrounded by floating glyphs.",
+                micro: "communicates via glyph projection. Floats slightly.",
+                desire: "Understanding. To find someone who understands their visions.",
+                awareness: "Omniscient. Sees all loops.",
+                memory: "> Remembers failed interventions.\n> In one loop, warnings were ignored.\n> Witnessed a disaster they could not prevent.",
+                relations: ["Mira: Confidant", "Rina: Protector", "Jalen: Rival"]
+            },
+            "Kiran": {
+                role: "Wandering Merchant",
+                color: "#10b981",
+                psych: "Shrewd trader. Fear of scarcity. Friendly but opportunistic. Uses kindness as a strategy.",
+                quote: "A bargain for every traveler! No refunds on cursed items.",
+                visual: "Colorful robes, surrounded by floating wares.",
+                micro: "Eyes dart to your pockets. Rubs hands together.",
+                desire: "Security. To build a network that protects him from collapse.",
+                awareness: "Transactional. Remembers your debts.",
+                memory: "> Lost family in the collapse.\n> Betrayed a friend for profit.\n> Built a thriving network in one loop but lost it.",
+                relations: ["Mira: Ally", "Jalen: Partner", "Rina: Family"]
+            },
+            "Jalen": {
+                role: "Relic Hunter",
+                color: "#10b981",
+                psych: "Bold explorer. Fears being forgotten. Willing to trade with anyone. Ambition masks uncertainty.",
+                quote: "The best treasures are the ones that bite back.",
+                visual: "Light armor, cloak of relic feathers.",
+                micro: "Scars on arms. Plays with a knife.",
+                desire: "Fame/Restoration. To find a relic that restores his reputation.",
+                awareness: "Map-Based. Remembers where you died.",
+                memory: "> Found legendary relic but lost it to corruption.\n> Betrayed a friend for discovery.\n> Lost reputation in failed expedition.",
+                relations: ["Mira: Partner", "Kiran: Ally", "Siva: Rival"]
+            },
+            "Rina": {
+                role: "Lost Child",
+                color: "#10b981",
+                psych: "Innocent orphan. Fearful. Driven to seek protection. Innocence can be manipulative.",
+                quote: "I'm scared... will you stay with me?",
+                visual: "Tattered robes, eyes wide with wonder.",
+                micro: "Hides behind others. Clutches a broken toy.",
+                desire: "Family. To find a surrogate protector.",
+                awareness: "Emotional. Remembers if you were kind.",
+                memory: "> Lost family in collapse.\n> Betrayed a friend for safety.\n> Found a family in one loop but lost them.",
+                relations: ["Siva: Protector", "Mira: Ally", "Kiran: Friend"]
+            },
+            "Tovin": {
+                role: "Pathfinder",
+                color: "#3b82f6",
+                psych: "Daring scout. Driven by discovery. Fears being forgotten. Reckless.",
+                quote: "The horizon is just a suggestion.",
+                visual: "Scout armor, maps tattooed on skin.",
+                micro: "Always looking at the horizon. Restless energy.",
+                desire: "Discovery. To find lands no one has seen.",
+                awareness: "Geographic. Remembers the map.",
+                memory: "> Lost a squad to a storm.\n> Found a new land in one loop.\n> Rivalry with Sira.",
+                relations: ["Janya: Leader", "Sira: Rival", "Kiran: Ally"]
+            },
+            "Sira": {
+                role: "Relic Guardian",
+                color: "#3b82f6",
+                psych: "Stern protector. Prioritizes safety. Fears chaos. Rigid.",
+                quote: "Hold the line. Nothing passes.",
+                visual: "Heavy plate, shield of ancient tech.",
+                micro: "Stands at attention. Checks shield straps.",
+                desire: "Order. To protect the Vault at all costs.",
+                awareness: "Tactical. Remembers breaches.",
+                memory: "> Failed to protect a relic once.\n> Saved Janya in a past loop.\n> Secretly respects Tovin.",
+                relations: ["Janya: Leader", "Tovin: Rival", "Kiran: Ally"]
+            },
+             "Beta-Null": {
+                role: "Data Whisperer",
+                color: "#f43f5e",
+                psych: "Cryptic oracle. Analytical. Detached. Fears irrelevance.",
+                quote: "Data is prophecy... if you listen.",
+                visual: "Surrounded by floating data shards.",
+                micro: "Whispers code. Eyes flicker.",
+                desire: "Knowledge. To know the forbidden data.",
+                awareness: "Data. Remembers your query history.",
+                memory: "> Formed from lost streams.\n> Betrayed Alpha for data once.\n> Knows true recursion nature.",
+                relations: ["Alpha: Leader", "Gamma: Partner", "Epsilon: Confidant"]
+            },
+             "Delta-Shade": {
+                role: "Fragment Enforcer",
+                color: "#f43f5e",
+                psych: "Brutal security. Loyal. Suspicious. Fears betrayal.",
+                quote: "Access denied.",
+                visual: "Heavy armor, mask of shadows.",
+                micro: "Scans everyone. Weapon always ready.",
+                desire: "Security. To protect the fragments.",
+                awareness: "Threat. Remembers your combat rating.",
+                memory: "> Raised in shadow pits.\n> Betrayed friend for survival.\n> Lost family to purges.",
+                relations: ["Alpha: Leader", "Gamma: Target", "Epsilon: Confidant"]
+            },
+             "Epsilon": {
+                role: "Fragment Healer",
+                color: "#f43f5e",
+                psych: "Compassionate. Disciplined. Fears failure. Generosity is a burden.",
+                quote: "Repairing protocol...",
+                visual: "Robes of bloom, glowing hands.",
+                micro: "Winces at glitches. Gentle touch.",
+                desire: "Healing. To cure corruption.",
+                awareness: "Health. Remembers your damage.",
+                memory: "> Born in bloom sanctum.\n> Lost patient to failure.\n> Betrayed friend for fragments.",
+                relations: ["Alpha: Patient", "Delta: Patient", "Zeta: Ally"]
+            },
+             "Zeta": {
+                role: "Ritualist",
+                color: "#f43f5e",
+                psych: "Obsessive. Mysterious. Ritualistic. Fears loss of control.",
+                quote: "The pattern must hold.",
+                visual: "Robes with glyphs, floating relics.",
+                micro: "Traces glyphs in air. Chants softly.",
+                desire: "Mastery. To master recursion rituals.",
+                awareness: "Pattern. Remembers your ritual choices.",
+                memory: "> Descendant of ritualists.\n> Lost mentor to failure.\n> Betrayed friend for mastery.",
+                relations: ["Epsilon: Ally", "Alpha: Leader", "Gamma: Rival"]
+            },
+             "Theta": {
+                role: "Data Seer",
+                color: "#f43f5e",
+                psych: "Authoritative. Impartial. Insightful. Detached.",
+                quote: "The probability is... unfavorable.",
+                visual: "Data glyphs, code eyes.",
+                micro: "Calculates odds aloud. Unblinking.",
+                desire: "Truth. To find the prophecy.",
+                awareness: "Probabilistic. Remembers your RNG luck.",
+                memory: "> Born in data sanctum.\n> Lost mentor to failure.\n> Betrayed friend for prophecy.",
+                relations: ["Zeta: Ally", "Alpha: Leader", "Gamma: Rival"]
+            },
+            "Veyra": {
+                role: "Plague Herald",
+                color: "#ef4444",
+                psych: "Zealous. Believes corruption is evolution. Loyal to Malakar.",
+                quote: "Embrace the decay.",
+                visual: "Robes of rot, plague aura.",
+                micro: "Coughs softly. Touches corrupted skin.",
+                desire: "Evolution. To spread the plague.",
+                awareness: "Infection. Remembers your disease status.",
+                memory: "> Survived plague.\n> Betrayed family for cult.\n> Spreads gospel of rot.",
+                relations: ["Malakar: Leader", "Kira: Ally", "Sorn: Rival"]
+            },
+             "Sorn": {
+                role: "Corruption Blade",
+                color: "#ef4444",
+                psych: "Tormented enforcer. Seeks atonement. Loyal to Malakar.",
+                quote: "My blade is my burden.",
+                visual: "Corrupted armor, heavy blade.",
+                micro: "Polishes blade. Grimaces in pain.",
+                desire: "Atonement. To wash away sins.",
+                awareness: "Combat. Remembers your duels.",
+                memory: "> Lost family to war.\n> Betrayed king for power.\n> Serves Malakar for redemption.",
+                relations: ["Malakar: Leader", "Veyra: Rival", "Nyx: Confidant"]
+            },
+             "Nyx": {
+                role: "Whispering Shade",
+                color: "#ef4444",
+                psych: "Paranoid spymaster. Hoards secrets. Survivor.",
+                quote: "Shadows have ears.",
+                visual: "Cloaked in shadow, silent steps.",
+                micro: "Vanishes in corners. Whispers.",
+                desire: "Survival. To know every secret.",
+                awareness: "Secrets. Remembers your lies.",
+                memory: "> Born in shadows.\n> Betrayed master for freedom.\n> Spies on everyone.",
+                relations: ["Malakar: Target", "Sorn: Confidant", "Kira: Ally"]
+            },
+             "Kira": {
+                role: "Blight Healer",
+                color: "#ef4444",
+                psych: "Heals with corruption. Protective. Manipulative.",
+                quote: "Pain is the first step to healing.",
+                visual: "Robes of blight, green glow.",
+                micro: "Mixes poisons. Smiles darkly.",
+                desire: "Power. To master life and death.",
+                awareness: "Health. Remembers your blight.",
+                memory: "> Exiled healer.\n> Saved Malakar once.\n> Uses forbidden arts.",
+                relations: ["Veyra: Ally", "Nyx: Ally", "Sorn: Confidant"]
             }
         };
 
@@ -978,25 +1360,29 @@
         function openModal(charName) {
             const data = DB[charName] || {
                 role: "Unknown Entity",
-                psych: "Data fragment corrupted or encrypted. No psychological profile available.",
+                color: "#555",
+                psych: "Data fragment corrupted or encrypted.",
+                quote: "...",
+                visual: "Form indistinct.",
+                micro: "None observed.",
+                desire: "Unknown.",
+                awareness: "Zero.",
                 memory: "> ERROR: Recursion logs inaccessible.",
-                relations: ["Unknown"],
-                color: "#555"
+                relations: ["Unknown"]
             };
 
-            // Populate UI
+            // Populate Basic UI
             document.getElementById('modalAvatar').textContent = charName.charAt(0);
             document.getElementById('modalAvatar').style.color = data.color;
             document.getElementById('modalAvatar').style.borderColor = data.color;
             
             document.getElementById('modalName').textContent = charName;
             document.getElementById('modalName').style.color = data.color;
-            
             document.getElementById('modalRole').textContent = data.role;
-            document.getElementById('modalPsych').textContent = data.psych;
-            document.getElementById('modalMemory').innerText = data.memory;
 
-            // Generate Relations
+            // Populate Overview Tab
+            document.getElementById('modalPsych').textContent = data.psych;
+            
             const relContainer = document.getElementById('modalRelations');
             relContainer.innerHTML = '';
             data.relations.forEach(rel => {
@@ -1009,11 +1395,24 @@
                 relContainer.appendChild(chip);
             });
 
-            // Randomize Stats for visual flair
+            // Populate Depth Tab
+            document.getElementById('modalQuote').textContent = data.quote;
+            document.getElementById('modalVisual').textContent = data.visual;
+            document.getElementById('modalMicro').textContent = data.micro;
+            document.getElementById('modalDesire').textContent = data.desire;
+
+            // Populate Recursion Tab
+            document.getElementById('modalAwareness').textContent = data.awareness;
+            document.getElementById('modalMemory').innerText = data.memory;
+
+            // Stats Animation
             document.getElementById('statResonance').style.width = Math.floor(Math.random() * 40 + 60) + '%';
             document.getElementById('statInfluence').style.width = Math.floor(Math.random() * 60 + 20) + '%';
             document.getElementById('statStability').style.width = Math.floor(Math.random() * 80 + 10) + '%';
             document.getElementById('statResonance').style.background = data.color;
+
+            // Reset Tabs
+            switchTab('overview');
 
             // Show Modal
             const modal = document.getElementById('charModal');
