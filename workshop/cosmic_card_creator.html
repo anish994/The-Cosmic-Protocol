@@ -280,9 +280,173 @@
         .loading {
             animation: pulse 2s ease-in-out infinite;
         }
+
+        /* === SKILL CARD ANIMATIONS === */
+        @keyframes skillAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes legendaryGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 30px rgba(245, 158, 11, 0.3); }
+        }
+
+        @keyframes rareGlow {
+            0%, 100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 16px rgba(59, 130, 246, 0.5); }
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+
+        .skill-card {
+            animation: skillAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card.legendary {
+            animation: skillAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards, legendaryGlow 3s ease-in-out infinite;
+        }
+
+        .skill-card.rare {
+            animation: skillAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards, rareGlow 4s ease-in-out infinite;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(139,92,246,0.8), transparent);
+            animation: scanline 8s linear infinite;
+        }
+
+        /* === PARTICLE EFFECTS === */
+        .particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: particleFloat 6s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+
+        /* === MASTERY PROGRESS === */
+        .mastery-bar {
+            height: 3px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .mastery-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8b5cf6, #10b981);
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(139,92,246,0.5);
+        }
+
+        /* === NOTIFICATION SYSTEM === */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(15,15,22,0.95);
+            border: 1px solid var(--accent-glow);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 2.7s forwards;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 20px rgba(139,92,246,0.3);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(400px); opacity: 0; }
+        }
+
+        /* === EVENT BANNER === */
+        .event-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(139,92,246,0.9), rgba(109,40,217,0.9));
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            z-index: 999;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            box-shadow: 0 10px 30px rgba(139,92,246,0.4);
+            animation: bannerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes bannerPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        /* === AMBIENT OVERLAY === */
+        .ambient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.05) 0%, transparent 50%);
+            animation: ambientPulse 10s ease-in-out infinite;
+        }
+
+        @keyframes ambientPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Ambient Overlay -->
+    <div class="ambient-overlay"></div>
+
+    <!-- Particle Container -->
+    <div class="particle-container" id="particle-container"></div>
 
     <div class="cosmic-workspace">
         
@@ -344,6 +508,226 @@
     </div>
 
     <script>
+        // === AUDIO SYSTEM ===
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let ambientSound = null;
+
+        function playSound(type, frequency = 440, duration = 0.1) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            const now = audioCtx.currentTime;
+            
+            if (type === 'hover') {
+                osc.frequency.value = 600;
+                gain.gain.setValueAtTime(0.05, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            } else if (type === 'click') {
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+                osc.start(now);
+                osc.stop(now + 0.1);
+            } else if (type === 'select') {
+                osc.frequency.value = 1000;
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now);
+                osc.stop(now + 0.2);
+            } else if (type === 'achievement') {
+                // Two-tone success sound
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            }
+        }
+
+        function startAmbientSound() {
+            if (!ambientSound) {
+                // Subtle background hum
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.frequency.value = 60; // Deep hum
+                gain.gain.value = 0.02; // Very quiet
+                osc.start();
+                ambientSound = { osc, gain };
+            }
+        }
+
+        // === PARTICLE SYSTEM ===
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.height = particle.style.width;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.background = `rgba(139, 92, 246, ${Math.random() * 0.5 + 0.2})`;
+                particle.style.animationDelay = `${Math.random() * 6}s`;
+                particle.style.animationDuration = `${Math.random() * 4 + 4}s`;
+                container.appendChild(particle);
+            }
+        }
+
+        // === NOTIFICATION SYSTEM ===
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div style="display:flex; align-items:center; gap:0.8rem;">
+                    <span style="font-size:1.5rem;">${type === 'achievement' ? '🏆' : type === 'event' ? '⚡' : 'ℹ️'}</span>
+                    <div>
+                        <div style="font-weight:600; margin-bottom:0.2rem;">${message}</div>
+                        <div style="font-size:0.7rem; color:var(--text-dim);">${new Date().toLocaleTimeString()}</div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            playSound(type === 'achievement' ? 'achievement' : 'click');
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // === ACHIEVEMENT SYSTEM ===
+        let achievements = JSON.parse(localStorage.getItem('cosmic_achievements') || '[]');
+        
+        function unlockAchievement(id, name, description) {
+            if (!achievements.includes(id)) {
+                achievements.push(id);
+                localStorage.setItem('cosmic_achievements', JSON.stringify(achievements));
+                showNotification(`Achievement Unlocked: ${name}`, 'achievement');
+                createSparkEffect();
+            }
+        }
+
+        function checkAchievements() {
+            if (ownedSkills.length >= 1 && !achievements.includes('first_skill')) {
+                unlockAchievement('first_skill', 'First Steps', 'Acquired your first skill');
+            }
+            if (ownedSkills.length >= 5 && !achievements.includes('collector')) {
+                unlockAchievement('collector', 'Skill Collector', 'Acquired 5 skills');
+            }
+            if (ownedSkills.length >= 10 && !achievements.includes('master')) {
+                unlockAchievement('master', 'Skill Master', 'Acquired 10 skills');
+            }
+            
+            const legendaryCount = ownedSkills.filter(s => s.tier === 'LEGENDARY').length;
+            if (legendaryCount >= 1 && !achievements.includes('legendary')) {
+                unlockAchievement('legendary', 'Legendary Hunter', 'Acquired a Legendary skill');
+            }
+        }
+
+        // === SPARK EFFECT ===
+        function createSparkEffect() {
+            for (let i = 0; i < 20; i++) {
+                const spark = document.createElement('div');
+                spark.style.cssText = `
+                    position: fixed;
+                    width: 4px;
+                    height: 4px;
+                    background: linear-gradient(135deg, #f59e0b, #ef4444);
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                `;
+                document.body.appendChild(spark);
+                
+                const angle = (Math.PI * 2 * i) / 20;
+                const velocity = Math.random() * 3 + 2;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                let x = 0, y = 0, opacity = 1;
+                const animate = () => {
+                    x += vx;
+                    y += vy;
+                    opacity -= 0.02;
+                    spark.style.transform = `translate(${x}px, ${y}px)`;
+                    spark.style.opacity = opacity;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        spark.remove();
+                    }
+                };
+                animate();
+            }
+        }
+
+        // === DYNAMIC EVENTS ===
+        let currentEvent = null;
+        
+        function triggerRandomEvent() {
+            if (ownedSkills.length === 0 || Math.random() > 0.3) return;
+            
+            const events = [
+                { name: '⚡ Resonance Surge', effect: 'All skills gain +10% power for 30s' },
+                { name: '🌌 Cosmic Alignment', effect: 'Fusion success rate increased' },
+                { name: '✨ Skill Echo', effect: 'Random skill duplicated temporarily' },
+                { name: '🔥 Power Spike', effect: 'Legendary drop rate increased' }
+            ];
+            
+            const event = events[Math.floor(Math.random() * events.length)];
+            currentEvent = event;
+            
+            const banner = document.createElement('div');
+            banner.className = 'event-banner';
+            banner.innerHTML = `${event.name} - ${event.effect}`;
+            document.body.appendChild(banner);
+            
+            showNotification(event.name, 'event');
+            
+            setTimeout(() => {
+                banner.remove();
+                currentEvent = null;
+            }, 8000);
+        }
+
+        // === MASTERY SYSTEM ===
+        let skillMastery = JSON.parse(localStorage.getItem('skill_mastery') || '{}');
+        
+        function gainMasteryXP(skillId, amount = 1) {
+            if (!skillMastery[skillId]) {
+                skillMastery[skillId] = { xp: 0, level: 1 };
+            }
+            
+            skillMastery[skillId].xp += amount;
+            
+            // Level up every 10 XP
+            if (skillMastery[skillId].xp >= skillMastery[skillId].level * 10) {
+                skillMastery[skillId].level++;
+                showNotification(`Skill Mastery Level Up! Lvl ${skillMastery[skillId].level}`, 'achievement');
+            }
+            
+            localStorage.setItem('skill_mastery', JSON.stringify(skillMastery));
+        }
+
+        function getMasteryProgress(skillId) {
+            const mastery = skillMastery[skillId] || { xp: 0, level: 1 };
+            const xpNeeded = mastery.level * 10;
+            const progress = (mastery.xp % xpNeeded) / xpNeeded * 100;
+            return { ...mastery, progress };
+        }
+
         // === DATA LOADING ===
         let ownedSkills = [];
         
@@ -379,9 +763,9 @@
             const skillList = document.createElement('div');
             skillList.style.cssText = 'display:flex; flex-direction:column; gap:0.5rem; padding:0.5rem; overflow-y:auto; height:100%;';
 
-            ownedSkills.forEach(skill => {
+            ownedSkills.forEach((skill, index) => {
                 const skillCard = document.createElement('div');
-                skillCard.className = 'skill-card';
+                skillCard.className = `skill-card ${skill.tier === 'LEGENDARY' ? 'legendary' : skill.tier === 'RARE' ? 'rare' : ''}`;
                 skillCard.style.cssText = `
                     background: rgba(139, 92, 246, 0.05);
                     border: 1px solid rgba(139, 92, 246, 0.2);
@@ -389,11 +773,13 @@
                     padding: 0.75rem;
                     cursor: pointer;
                     transition: all 0.2s ease;
+                    animation-delay: ${index * 0.05}s;
                 `;
 
                 // Icon based on type
                 const icon = getSkillIcon(skill.tags[0]);
                 const tierColor = getTierColor(skill.tier);
+                const mastery = getMasteryProgress(skill.id);
 
                 skillCard.innerHTML = `
                     <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
@@ -409,10 +795,15 @@
                         ).join('')}
                     </div>
                     ${skill.fusionIngredients ? '<div style="margin-top:0.5rem; font-size:0.65rem; color:#10b981;">⚡ FUSED</div>' : ''}
+                    <div class="mastery-bar">
+                        <div class="mastery-fill" style="width: ${mastery.progress}%;"></div>
+                    </div>
+                    <div style="font-size:0.65rem; color:var(--text-dim); margin-top:0.3rem;">Mastery Lvl ${mastery.level} • ${Math.floor(mastery.progress)}%</div>
                 `;
 
                 // Hover effects
                 skillCard.onmouseenter = () => {
+                    playSound('hover');
                     skillCard.style.background = 'rgba(139, 92, 246, 0.1)';
                     skillCard.style.borderColor = 'var(--accent-glow)';
                     skillCard.style.transform = 'translateX(4px)';
@@ -423,7 +814,12 @@
                     skillCard.style.transform = 'translateX(0)';
                 };
 
-                skillCard.onclick = () => selectSkill(skill);
+                skillCard.onclick = () => {
+                    playSound('select');
+                    gainMasteryXP(skill.id, 1);
+                    selectSkill(skill);
+                    renderSkillArchive(); // Re-render to update mastery
+                };
 
                 skillList.appendChild(skillCard);
             });
@@ -536,13 +932,34 @@
         
         // Load skills on startup
         window.addEventListener('load', () => {
+            createParticles();
             loadOwnedSkills();
+            checkAchievements();
+            
+            // Start ambient sound on first user interaction
+            document.body.addEventListener('click', () => {
+                startAmbientSound();
+            }, { once: true });
+            
+            // Random events every 30-60 seconds
+            setInterval(() => {
+                triggerRandomEvent();
+            }, Math.random() * 30000 + 30000);
         });
 
         // Reload skills when returning from fusion lab
         window.addEventListener('focus', () => {
             console.log('🔄 Window focused, reloading skills...');
+            const previousCount = ownedSkills.length;
             loadOwnedSkills();
+            
+            // Check if new skills were added
+            setTimeout(() => {
+                if (ownedSkills.length > previousCount) {
+                    showNotification(`+${ownedSkills.length - previousCount} New Skill(s) Detected!`, 'achievement');
+                    checkAchievements();
+                }
+            }, 100);
         });
         
         // Detect orientation changes
@@ -562,8 +979,19 @@
 
         // Manual refresh button
         document.querySelector('#left-panel .cosmic-btn').onclick = () => {
+            playSound('click');
             console.log('🔄 Manual refresh triggered');
+            const previousCount = ownedSkills.length;
             loadOwnedSkills();
+            
+            setTimeout(() => {
+                if (ownedSkills.length > previousCount) {
+                    showNotification('Skill Database Synchronized!', 'info');
+                    checkAchievements();
+                } else {
+                    showNotification('Database Already Up-to-Date', 'info');
+                }
+            }, 100);
         };
     </script>
 
