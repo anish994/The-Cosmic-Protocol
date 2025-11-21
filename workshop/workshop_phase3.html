@@ -90,6 +90,19 @@
             flex-shrink: 0;
         }
 
+        .view-tab {
+            transition: all 0.2s ease;
+        }
+
+        .view-tab.active {
+            background: var(--accent) !important;
+            color: #fff !important;
+        }
+
+        .view-tab:not(.active):hover {
+            background: rgba(139,92,246,0.2) !important;
+        }
+
         /* LEFT: SKILL REPOSITORY */
         .search-bar {
             background: #000;
@@ -437,6 +450,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             background: linear-gradient(to right, #fff, #94a3b8);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -721,10 +735,14 @@
         <!-- LEFT: SKILL REPOSITORY -->
         <div class="panel">
             <div class="panel-header">
-                <span>Database</span>
+                <div style="display:flex; gap:1rem; align-items:center;">
+                    <button class="view-tab active" id="tab-database" onclick="switchView('database')" style="background:var(--accent); color:#fff; border:none; padding:0.4rem 0.8rem; cursor:pointer; font-size:0.75rem; border-radius:4px; text-transform:uppercase; font-weight:600;">Database</button>
+                    <button class="view-tab" id="tab-owned" onclick="switchView('owned')" style="background:rgba(139,92,246,0.1); color:var(--accent-glow); border:1px solid rgba(139,92,246,0.3); padding:0.4rem 0.8rem; cursor:pointer; font-size:0.75rem; border-radius:4px; text-transform:uppercase; font-weight:600;">Owned Skills</button>
+                </div>
                 <div style="display:flex; gap:10px; align-items:center;">
                     <button onclick="resetDatabase()" style="background:none; border:1px solid #444; color:#888; font-size:0.7rem; cursor:pointer; padding:2px 6px;" title="Force reload from source files">RESET DB</button>
                     <span id="skill-count">0</span>
+                    <span id="owned-count" style="display:none;">0</span>
                 </div>
             </div>
             <div style="padding: 0.5rem; display:flex; gap:0.5rem; align-items: center;">
@@ -740,6 +758,9 @@
             </div>
             <div id="skill-list" class="skill-list">
                 <!-- Populated by JS -->
+            </div>
+            <div id="owned-list" class="skill-list" style="display:none;">
+                <!-- Owned skills populated by JS -->
             </div>
         </div>
 
@@ -914,14 +935,92 @@
             `).join('');
         }
 
+        // --- VIEW SWITCHING ---
+        function switchView(viewName) {
+            const databaseList = document.getElementById('skill-list');
+            const ownedList = document.getElementById('owned-list');
+            const tabDatabase = document.getElementById('tab-database');
+            const tabOwned = document.getElementById('tab-owned');
+            const skillCount = document.getElementById('skill-count');
+            const ownedCount = document.getElementById('owned-count');
+
+            if (viewName === 'database') {
+                databaseList.style.display = 'block';
+                ownedList.style.display = 'none';
+                tabDatabase.classList.add('active');
+                tabOwned.classList.remove('active');
+                skillCount.style.display = 'inline';
+                ownedCount.style.display = 'none';
+            } else if (viewName === 'owned') {
+                databaseList.style.display = 'none';
+                ownedList.style.display = 'block';
+                tabDatabase.classList.remove('active');
+                tabOwned.classList.add('active');
+                skillCount.style.display = 'none';
+                ownedCount.style.display = 'inline';
+                renderOwnedList();
+            }
+        }
+
+        // --- OWNED SKILLS RENDERING ---
+        function renderOwnedList() {
+            const list = document.getElementById('owned-list');
+            list.innerHTML = "";
+
+            // Filter for owned skills: those with fusionIngredients (fused by player) or marked as owned
+            const ownedSkills = knownSkills.filter(skill => 
+                skill.fusionIngredients || skill.owned === true
+            );
+
+            document.getElementById('owned-count').innerText = ownedSkills.length;
+
+            if (ownedSkills.length === 0) {
+                list.innerHTML = `
+                    <div style="text-align:center; padding:2rem; color:#64748b; font-size:0.9rem;">
+                        <div style="font-size:3rem; opacity:0.3; margin-bottom:1rem;">∅</div>
+                        <div>No owned skills yet.</div>
+                        <div style="font-size:0.8rem; margin-top:0.5rem;">Fuse skills in the laboratory to add them to your collection.</div>
+                    </div>
+                `;
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            ownedSkills.forEach(skill => {
+                const isFav = favoriteSkills.has(skill.id);
+                const el = document.createElement('div');
+                el.className = `skill-item ${skill.tier === 'LEGENDARY' ? 'legendary' : ''}`;
+                el.draggable = true;
+                el.ondragstart = (e) => drag(e, skill.id);
+                el.onmouseenter = () => playSound('hover');
+                el.onclick = () => { playSound('click'); showAnalysis(skill); };
+                
+                el.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="skill-name">${skill.name}</div>
+                        <span onclick="toggleFavorite(event, '${skill.id}')" style="cursor:pointer; color:${isFav ? '#fbbf24' : '#444'}; font-size:1.2rem; line-height:1;">★</span>
+                    </div>
+                    <div class="skill-type">${skill.tier} • ${skill.type}</div>
+                    ${skill.fusionIngredients ? `<div style="font-size:0.7rem; color:#6d28d9; margin-top:0.25rem;">⚡ FUSED</div>` : ''}
+                `;
+                fragment.appendChild(el);
+            });
+
+            list.appendChild(fragment);
+        }
+
         // AUTO-UPDATE CHECK:
         // If the loaded DB (SKILL_DB) is significantly larger than the stored one,
         // it means we have a major content update. We should merge or reset.
+        console.log(`System Init: Loaded ${SKILL_DB.length} skills from database.`);
+        
         if (SKILL_DB.length > knownSkills.length + 50) {
             console.log("System Update Detected: Refreshing Skill Database...");
             knownSkills = [...SKILL_DB];
             localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
         } else if (knownSkills.length === 0) {
+             console.log("New User Detected: Seeding Database...");
              knownSkills = [...SKILL_DB];
         }
         
@@ -973,6 +1072,8 @@
                 displaySkills.sort((a, b) => (tierOrder[b.tier] || 0) - (tierOrder[a.tier] || 0));
             }
 
+            const fragment = document.createDocumentFragment();
+
             displaySkills.forEach(skill => {
                 if (filter && !skill.name.toLowerCase().includes(filter)) return;
                 if (showFavsOnly && !favoriteSkills.has(skill.id)) return;
@@ -992,8 +1093,9 @@
                     </div>
                     <div class="skill-type">${skill.tier} • ${skill.type}</div>
                 `;
-                list.appendChild(el);
+                fragment.appendChild(el);
             });
+            list.appendChild(fragment);
         }
 
         function showAnalysis(skill) {
@@ -1534,6 +1636,9 @@
         window.collectSkill = () => {
             if (!pendingNewSkill) return;
             playSound('success');
+
+            // Mark as owned (player created this)
+            pendingNewSkill.owned = true;
 
             // Add to Known Skills
             knownSkills.unshift(pendingNewSkill);

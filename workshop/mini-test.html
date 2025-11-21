@@ -143,10 +143,12 @@
             min-height: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 10px;
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
             overscroll-behavior: contain;
+            will-change: scroll-position;
+            contain: layout style paint;
         }
         
         /* Smooth scrollbar styling */
@@ -181,19 +183,24 @@
         }
         
         .glyph-card {
-            background: linear-gradient(to bottom, rgba(20,20,35,0.95), rgba(15,15,25,0.98));
+            background: linear-gradient(135deg, rgba(20,20,35,0.95) 0%, rgba(15,15,25,0.98) 100%);
             border-left: 3px solid;
             border-right: 1px solid rgba(255,255,255,0.08);
             border-top: 1px solid rgba(255,255,255,0.08);
             border-bottom: 1px solid rgba(0,0,0,0.4);
-            border-radius: 5px;
-            padding: 10px;
+            border-radius: 6px;
+            padding: 12px;
             cursor: grab;
-            transition: all 0.25s ease;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                        border-left-width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             user-select: none;
             position: relative;
             box-shadow: 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
             touch-action: manipulation;
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
         @media (max-width: 768px) and (orientation: landscape) {
@@ -211,10 +218,12 @@
         .glyph-card[data-tier="4"] { border-left-color: #ff8800; }
         
         .glyph-card:hover {
-            background: linear-gradient(to bottom, rgba(25,25,45,0.98), rgba(18,18,30,1));
+            background: linear-gradient(135deg, rgba(25,25,45,0.98) 0%, rgba(18,18,30,1) 100%);
             border-left-width: 5px;
-            transform: translateX(2px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
+            transform: translateX(3px) translateZ(0);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.7), 
+                        0 0 30px rgba(var(--glow-rgb), 0.15),
+                        inset 0 1px 0 rgba(255,255,255,0.1);
         }
         
         .glyph-card:active {
@@ -1903,7 +1912,7 @@
         <!-- LEFT PANEL: Glyph Library -->
         <div class="panel">
             <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
-                <span>📚 Owned Skills</span>
+                <span>📚 Neural Archive</span>
                 <div style="display: flex; gap: 4px;">
                     <button onclick="refreshSkills()" style="padding: 4px 8px; background: rgba(0,227,214,0.2); color: #00e3d6; border: 1px solid rgba(0,227,214,0.4); border-radius: 4px; cursor: pointer; font-size: 11px;" title="Refresh skill library">🔄</button>
                     <button onclick="window.location.href='../05-fusion/demo/card%20fusion%20demo.html'" style="padding: 4px 8px; background: rgba(139,92,246,0.3); color: #b894ff; border: 1px solid rgba(139,92,246,0.5); border-radius: 4px; cursor: pointer; font-size: 11px;">⚡ Fusion</button>
@@ -1912,14 +1921,14 @@
             <!-- Skill Engine Filter Tabs -->
             <div class="skill-filter-tabs">
                 <div class="filter-tab active" onclick="filterSkills('all')" data-filter="all">🌟 All</div>
-                <div class="filter-tab" onclick="filterSkills('foundational')" data-filter="foundational">🏛️ Foundational</div>
+                <div class="filter-tab" onclick="filterSkills('foundational')" data-filter="foundational">🏛️ Structure</div>
+                <div class="filter-tab" onclick="filterSkills('invocation')" data-filter="invocation">🕯️ Summon</div>
+                <div class="filter-tab" onclick="filterSkills('divination')" data-filter="divination">🔮 Fate</div>
+                <div class="filter-tab" onclick="filterSkills('consciousness')" data-filter="consciousness">🧠 Mind</div>
+                <div class="filter-tab" onclick="filterSkills('singularity')" data-filter="singularity">🌌 Void</div>
+                <div class="filter-tab" onclick="filterSkills('tantra')" data-filter="tantra">🕉️ Energy</div>
+                <div class="filter-tab" onclick="filterSkills('therapeutic')" data-filter="therapeutic">🌿 Heal</div>
                 <div class="filter-tab" onclick="filterSkills('character_analysis')" data-filter="character_analysis">🎭 Character</div>
-                <div class="filter-tab" onclick="filterSkills('consciousness')" data-filter="consciousness">👁️ Consciousness</div>
-                <div class="filter-tab" onclick="filterSkills('divination')" data-filter="divination">🔮 Divination</div>
-                <div class="filter-tab" onclick="filterSkills('singularity')" data-filter="singularity">⚡ Singularity</div>
-                <div class="filter-tab" onclick="filterSkills('tantra')" data-filter="tantra">🕉️ Tantra</div>
-                <div class="filter-tab" onclick="filterSkills('therapeutic')" data-filter="therapeutic">🌿 Therapeutic</div>
-                <div class="filter-tab" onclick="filterSkills('invocation')" data-filter="invocation">✨ Invocation</div>
             </div>
             <div class="glyph-library" id="glyph-library">
                 <!-- Glyphs populated by JS -->
@@ -2208,63 +2217,53 @@
         </div>
     </div>
     
+    <!-- Skill Loader -->
+    <script src="js/skill_loader.js"></script>
+
     <script>
         // === MINI PROTOTYPE LOGIC ===
         
-        // Load Skills from SkillSystem (real fusion data!)
+        // Load Skills from workshop_phase3.html (cosmic_skills localStorage!)
         let AVAILABLE_SKILLS = [];
         
         function loadSkillsFromSystem() {
-            const useFallback = () => {
-                console.warn('⚠️ Using fallback sample skills');
-                AVAILABLE_SKILLS = [
-                    { id: 1, name: 'Fireball', power: 50, kp: 5, cooldown: 3, keywords: ['fire', 'damage'], unlocked: true },
-                    { id: 2, name: 'Ice Shield', power: 30, kp: 4, cooldown: 5, keywords: ['ice', 'defense'], unlocked: true },
-                    { id: 3, name: 'Lightning Bolt', power: 70, kp: 7, cooldown: 4, keywords: ['lightning', 'damage'], unlocked: true },
-                    { id: 4, name: 'Heal', power: 20, kp: 3, cooldown: 6, keywords: ['heal', 'support'], unlocked: true },
-                    { id: 5, name: 'Speed Boost', power: 10, kp: 2, cooldown: 2, keywords: ['buff', 'speed'], unlocked: true },
-                    { id: 6, name: 'Earthquake', power: 90, kp: 10, cooldown: 8, keywords: ['earth', 'damage'], unlocked: true },
-                ];
-            };
-            
             try {
-                if (window.SkillSystem && typeof SkillSystem.getAllSkills === 'function') {
-                    const allSkills = SkillSystem.getAllSkills() || [];
-                    if (!Array.isArray(allSkills) || allSkills.length === 0) {
-                        console.warn('⚠️ SkillSystem returned no skills');
-                        useFallback();
-                        return;
+                // Load from workshop_phase3.html's localStorage
+                const storedSkills = localStorage.getItem('cosmic_skills');
+                
+                if (storedSkills) {
+                    const parsedSkills = JSON.parse(storedSkills);
+                    
+                    if (Array.isArray(parsedSkills) && parsedSkills.length > 0) {
+                        // Convert workshop_phase3 format to mini-test format
+                        AVAILABLE_SKILLS = parsedSkills.map(skill => ({
+                            id: skill.id,
+                            name: skill.name,
+                            power: skill.stats?.damage || skill.powerScore || skill.power || 0,
+                            powerScore: skill.stats?.damage || skill.powerScore || skill.power || 0,
+                            kp: skill.stats?.cost || skill.cost?.kp || skill.kp || 0,
+                            cooldown: skill.stats?.cooldown || skill.cooldown || 1,
+                            keywords: skill.tags || skill.keywords || [],
+                            tags: skill.tags || skill.keywords || [],
+                            engine: skill.type || skill.engine || 'foundational',
+                            tier: skill.tier || (skill.rarity === 'legendary' ? 4 : skill.rarity === 'rare' ? 2 : 0),
+                            category: skill.category || skill.type || 'Unknown',
+                            isFused: !!skill.fusionIngredients || skill.isFused || false,
+                            unlocked: true // All skills in cosmic_skills are unlocked
+                        }));
+                        
+                        console.log(`🔗 Loaded ${AVAILABLE_SKILLS.length} skills from workshop_phase3.html (cosmic_skills)`);
+                    } else {
+                        console.warn('⚠️ cosmic_skills localStorage is empty');
+                        AVAILABLE_SKILLS = [];
                     }
-                    
-                    // Convert to workshop format
-                    AVAILABLE_SKILLS = allSkills.map(skill => ({
-                        id: skill.id,
-                        name: skill.name,
-                        power: skill.powerScore || skill.power || 0,
-                        kp: skill.cost?.kp || 0,
-                        cooldown: skill.cooldown || 1,
-                        keywords: skill.keywords || [],
-                        tags: skill.tags || skill.keywords || [], // Use tags for synergy, fallback to keywords
-                        engine: skill.engine || 'unknown',
-                        tier: skill.tier || 0,
-                        category: skill.category || 'Unknown',
-                        isFused: !!skill.fusionIngredients,
-                        unlocked: skill.unlocked !== false // default to true if undefined
-                    }));
-                    
-                    console.log(`🔗 Loaded ${AVAILABLE_SKILLS.length} skills from SkillSystem`);
                 } else {
-                    console.warn('⚠️ SkillSystem missing or invalid');
-                    useFallback();
+                    console.warn('⚠️ cosmic_skills not found in localStorage');
+                    AVAILABLE_SKILLS = [];
                 }
             } catch (err) {
-                console.error('❌ Error loading skills from SkillSystem:', err);
-                useFallback();
-            }
-            
-            // Final safety: ensure we always have skills to render
-            if (!Array.isArray(AVAILABLE_SKILLS) || AVAILABLE_SKILLS.length === 0) {
-                useFallback();
+                console.error('❌ Error loading skills from cosmic_skills:', err);
+                AVAILABLE_SKILLS = [];
             }
         }
         
@@ -3922,7 +3921,7 @@
                 ownedSkills = ownedSkills.filter(skill => skill.engine === currentSkillFilter);
             }
             
-                if (ownedSkills.length === 0) {
+            if (ownedSkills.length === 0) {
                 container.innerHTML = '<div class="placeholder" style="padding: 20px; text-align: center;">🔒 No skills owned yet!<br><br>Visit the <a href="../05-fusion/demo/card%20fusion%20demo.html" style="color: #8b5cf6; text-decoration: underline;">⚡ Fusion System</a> to unlock and fuse skills first!</div>';
                 return;
             }
@@ -3930,26 +3929,10 @@
             console.log(`✅ Showing ${ownedSkills.length} owned skills in workshop`);
             
             const tierNames = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'];
-            const engineIcons = {
-                'foundational': '🏛️',
-                'character_analysis': '🎭',
-                'consciousness': '👁️',
-                'divination': '🔮',
-                'singularity': '⚡',
-                'tantra': '🕉️',
-                'therapeutic': '🌿',
-                'invocation': '✨'
-            };
-            const engineNames = {
-                'foundational': 'Foundational',
-                'character_analysis': 'Character',
-                'consciousness': 'Consciousness',
-                'divination': 'Divination',
-                'singularity': 'Singularity',
-                'tantra': 'Tantra',
-                'therapeutic': 'Therapeutic',
-                'invocation': 'Invocation'
-            };
+            const tierColors = ['#8b5cf6', '#64b4ff', '#ffe664', '#ff6496', '#ff8800'];
+            
+            // Use document fragment for better performance
+            const fragment = document.createDocumentFragment();
             
             ownedSkills.forEach(skill => {
                 const card = document.createElement('div');
@@ -3958,57 +3941,72 @@
                 card.dataset.tier = skill.tier || 0;
                 card.draggable = true;
                 
-                // Get primary keyword color for card accent
-                const primaryKeyword = (skill.keywords || [])[0];
-                const primaryTagData = primaryKeyword ? TAG_DATA[primaryKeyword.toLowerCase()] : null;
-                const accentColor = primaryTagData ? primaryTagData.color : '#8b5cf6';
+                // Use Engine Color as primary accent
+                const engineKey = (skill.engine || 'foundational').toLowerCase();
+                const tagData = TAG_DATA[engineKey] || TAG_DATA['foundational'];
                 
-                // Get keyword colors from TAG_DATA
+                const accentColor = tagData.color || '#8b5cf6';
+                const tierColor = tierColors[skill.tier || 0];
+                
+                // Extract RGB for glow effects
+                const glowRgb = hexToRgb(accentColor);
+                
+                // Get keyword badges
                 const keywordBadges = (skill.keywords || []).slice(0, 3).map(kw => {
-                    const tagData = TAG_DATA[kw.toLowerCase()];
-                    const color = tagData ? tagData.color : '#8b5cf6';
-                    return `<span class="glyph-keyword-badge" style="background: ${color}33; border: 1px solid ${color}80; color: ${color};">${kw}</span>`;
+                    const kwData = TAG_DATA[kw.toLowerCase()];
+                    const color = kwData ? kwData.color : '#8b5cf6';
+                    return `<span class="glyph-keyword-badge" style="background: ${color}22; border: 1px solid ${color}44; color: ${color}; font-size: 9px; padding: 2px 6px; border-radius: 4px;">${kw}</span>`;
                 }).join('');
                 
-                const engineIcon = engineIcons[skill.engine] || '🏛️';
-                const engineName = engineNames[skill.engine] || skill.engine;
+                const engineIcon = tagData.name ? tagData.name.split(' ')[0] : '⚡';
+                const engineName = tagData.name ? tagData.name.split(' ').slice(1).join(' ') : 'Skill';
                 const powerScore = skill.powerScore || skill.power || 0;
                 
-                // Apply color accent as left border and subtle background glow
+                // Styling: Left border is Engine Color, Top-Right glow is Tier Color
+                card.style.setProperty('--glow-rgb', glowRgb);
                 card.style.borderLeft = `4px solid ${accentColor}`;
-                card.style.background = `linear-gradient(135deg, ${accentColor}08, rgba(24,24,32,0.95))`;
-                card.style.boxShadow = `0 2px 8px ${accentColor}20, inset 0 0 30px ${accentColor}05`;
+                card.style.background = `linear-gradient(135deg, ${accentColor}15 0%, rgba(20,20,25,0.95) 60%)`;
+                card.style.boxShadow = `0 2px 8px rgba(0,0,0,0.3), 
+                                        inset 0 0 0 1px rgba(255,255,255,0.05),
+                                        inset -1px -1px 20px ${accentColor}11`;
+                card.style.position = 'relative';
+                card.style.overflow = 'hidden';
+                card.style.isolation = 'isolate';
                 
                 card.innerHTML = `
-                    <div class="glyph-header">
-                        <div class="glyph-header-left">
-                            <div class="glyph-name" style="color: ${accentColor};">${skill.name}${skill.isFused ? ' ✨' : ''}</div>
-                            <div class="glyph-engine-badge">
-                                <span>${engineIcon}</span>
-                                <span>${engineName}</span>
+                    <div style="position: absolute; top: 0; right: 0; width: 50px; height: 50px; background: radial-gradient(circle at top right, ${tierColor}55, transparent 70%); pointer-events: none; mix-blend-mode: screen;"></div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, ${accentColor}44, transparent); pointer-events: none;"></div>
+                    
+                    <div class="glyph-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; position: relative; z-index: 1;">
+                        <div class="glyph-header-left" style="flex: 1; min-width: 0;">
+                            <div class="glyph-name" style="color: #fff; font-weight: 700; font-size: 14px; text-shadow: 0 0 15px ${accentColor}88, 0 2px 4px rgba(0,0,0,0.5); line-height: 1.3; word-wrap: break-word;">${skill.name}${skill.isFused ? ' <span style="color: #ff8800; filter: drop-shadow(0 0 8px #ff8800);">✨</span>' : ''}</div>
+                            <div class="glyph-engine-badge" style="display: inline-flex; align-items: center; gap: 4px; font-size: 10px; color: ${accentColor}; margin-top: 4px; opacity: 0.95; filter: drop-shadow(0 0 4px ${accentColor}44);">
+                                <span style="font-size: 11px;">${engineIcon}</span>
+                                <span style="text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600;">${engineName}</span>
                             </div>
                         </div>
-                        <div class="glyph-header-right">
-                            <div class="glyph-tier-badge">${tierNames[skill.tier || 0]}</div>
-                            <div class="glyph-category">${skill.category || 'No Category'}</div>
+                        <div class="glyph-tier-badge" style="font-size: 9px; padding: 3px 7px; background: ${tierColor}28; border: 1px solid ${tierColor}88; color: ${tierColor}; border-radius: 5px; text-transform: uppercase; font-weight: 700; box-shadow: 0 0 10px ${tierColor}33, inset 0 1px 0 rgba(255,255,255,0.1); white-space: nowrap;">
+                            ${tierNames[skill.tier || 0]}
                         </div>
                     </div>
-                    <div class="glyph-stats">
-                        <div class="glyph-stat-item">
-                            <div class="stat-value" style="color: ${accentColor};">${powerScore}</div>
-                            <div class="stat-label">Power</div>
+                    
+                    <div class="glyph-stats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 10px; background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.15)); padding: 6px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.03);">
+                        <div class="glyph-stat-item" style="text-align: center;">
+                            <div class="stat-value" style="color: ${accentColor}; font-weight: 800; font-size: 13px; text-shadow: 0 0 8px ${accentColor}66;">${powerScore}</div>
+                            <div class="stat-label" style="font-size: 8px; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.5px;">PWR</div>
                         </div>
-                        <div class="glyph-stat-item">
-                            <div class="stat-value">${skill.cooldown || 0}s</div>
-                            <div class="stat-label">Cooldown</div>
+                        <div class="glyph-stat-item" style="text-align: center;">
+                            <div class="stat-value" style="color: #64b4ff; font-weight: 700; font-size: 13px; text-shadow: 0 0 6px #64b4ff44;">${skill.cooldown || 0}s</div>
+                            <div class="stat-label" style="font-size: 8px; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.5px;">CD</div>
                         </div>
-                        <div class="glyph-stat-item">
-                            <div class="stat-value">${skill.cost?.kp || skill.kp || 0}</div>
-                            <div class="stat-label">KP Cost</div>
+                        <div class="glyph-stat-item" style="text-align: center;">
+                            <div class="stat-value" style="color: #00e3d6; font-weight: 700; font-size: 13px; text-shadow: 0 0 6px #00e3d644;">${skill.cost?.kp || skill.kp || 0}</div>
+                            <div class="stat-label" style="font-size: 8px; opacity: 0.65; text-transform: uppercase; letter-spacing: 0.5px;">KP</div>
                         </div>
                     </div>
-                    <div class="glyph-keywords">${keywordBadges}</div>
-                    ${skill.isFused ? '<div style="font-size: 9px; opacity: 0.7; margin-top: 4px; color: #ff8800;">🔥 Fused Skill</div>' : ''}
+                    
+                    <div class="glyph-keywords" style="display: flex; flex-wrap: wrap; gap: 5px;">${keywordBadges}</div>
+                    ${skill.isFused ? '<div style="font-size: 9px; opacity: 0.8; margin-top: 8px; color: #ff8800; font-style: italic; font-weight: 600; text-shadow: 0 0 8px #ff880066;">🔥 Fused Synthesis</div>' : ''}
                 `;
                 
                 // Click to select
@@ -4021,8 +4019,17 @@
                     selectedGlyph = skill;
                 });
                 
-                container.appendChild(card);
+                fragment.appendChild(card);
             });
+            
+            // Batch append for better performance
+            container.appendChild(fragment);
+        }
+        
+        // Helper: Convert hex to RGB for glow effects
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '139, 92, 246';
         }
         
         // === RENDER 12-HOUSE CHART ===
@@ -4102,79 +4109,16 @@
             slottedGlyphs.forEach((glyph, index) => {
                 if (glyph) {
                     const slot = document.getElementById(`slot-${index}`);
-                    const house = HOUSES[index];
-                    const sign = getSignForHouse(house.id);
-                    const adjustedPower = getAdjustedPower(glyph, index);
-                    
-                    // Check for synergies
-                    const planetSynergy = checkPlanetSynergy(glyph, house);
-                    const houseSynergy = checkHouseSynergy(glyph, house);
-                    const hasSynergy = planetSynergy || houseSynergy;
+                    const renderResult = renderSlottedGlyphHTML(glyph, index);
                     
                     if (slot) {
-                        let synergyClasses = 'slotted-glyph';
-                        let synergyStyle = '';
-                        let synergyIndicator = '';
-                        
-                        if (planetSynergy) {
-                            synergyClasses += ' planet-synergy';
-                            synergyStyle = `border-color: ${planetSynergy.planetColor};`;
-                            synergyIndicator = `<div class="synergy-indicator" title="Planet Synergy: ${planetSynergy.matches.join(', ')}">
-                                ${house.planetIcon} +${Math.round((planetSynergy.bonusMultiplier - 1) * 100)}%
-                            </div>`;
-                        }
-                        
-                        if (houseSynergy) {
-                            synergyClasses += ' house-synergy';
-                            if (!synergyIndicator) {
-                                synergyIndicator = `<div class="synergy-indicator" title="House Synergy: ${houseSynergy.matches.join(', ')}">
-                                    ⭐ +${Math.round((houseSynergy.bonusMultiplier - 1) * 100)}%
-                                </div>`;
-                            }
-                        }
-                        
-                        // Lagna/Nakshatra minor bonuses
-                        const slotBonusInfo = getSlotMultiplier(glyph, index);
-                        const lagnaPct = Math.round(((slotBonusInfo.lagnaMult || 1) - 1) * 100);
-                        const nakPct = Math.round(((slotBonusInfo.nakMult || 1) - 1) * 100);
-                        if (lagnaPct > 0) {
-                            synergyIndicator += `<div class="synergy-indicator" title="Lagna bonus">🌅 +${lagnaPct}%</div>`;
-                        }
-                        if (nakPct > 0) {
-                            const nakName = slotBonusInfo.nakName ? `: ${slotBonusInfo.nakName}` : '';
-                            synergyIndicator += `<div class="synergy-indicator" title="Nakshatra${nakName}">⭐ +${nakPct}%</div>`;
-                        }
-                        
-                        const planetColor = getPlanetColor(house.planet);
-                        const planetSymbol = getPlanetSymbol(house.planet);
-                        const planetKW = (PLANET_SYNERGIES[house.planet]?.keywords || []).slice(0,2).join(' • ');
-                        slot.innerHTML = `
-                            <div class="${synergyClasses}" style="${synergyStyle}">
-                                <div class="slot-state-badge" title="Filled & Active">✓</div>
-                                <button class="remove-btn" onclick="removeGlyph(${index})">×</button>
-                                <div style="display:flex; align-items:center; gap:6px;">
-                                    <div style="font-weight: 700; font-size: 11px;">${glyph.name}</div>
-                                    <div class="slot-planet-badge" style="color:${planetColor}; border-color:${planetColor}" title="${house.planet}">
-                                        <span class="planet-symbol">${planetSymbol}</span>
-                                        <span class="planet-name">${house.planet}</span>
-                                    </div>
-                                </div>
-                                <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
-                                <div class="slot-buffs">${planetKW || ''}</div>
-                                <div class="slot-effects" style="display:flex; gap:4px; flex-wrap:wrap; margin-top:4px;">
-                                    ${buildSlotEffectBadges(glyph, index)}
-                                    <button onclick="showSlotCosmicInfo(${index})" title="Cosmic effects"
-                                            style="margin-left:auto; padding:2px 6px; font-size:10px; border-radius:4px; background:rgba(0,227,214,0.1); border:1px solid rgba(0,227,214,0.3); color:#00e3d6; cursor:pointer;">ⓘ</button>
-                                </div>
-                                ${synergyIndicator}
-                            </div>
-                        `;
+                        slot.innerHTML = renderResult.html;
                         
                         // Mark house as filled and add synergy class if applicable
                         const houseEl = document.querySelector(`[data-house-index="${index}"]`);
                         if (houseEl) {
                             houseEl.classList.add('filled');
-                            if (hasSynergy) {
+                            if (renderResult.hasSynergy) {
                                 houseEl.classList.add('synergy-active');
                             }
                         }
@@ -4202,77 +4146,15 @@
             
             // Update UI with synergy detection
             const slot = document.getElementById(`slot-${houseIndex}`);
-            const house = HOUSES[houseIndex];
-            const adjustedPower = getAdjustedPower(selectedGlyph, houseIndex);
+            const renderResult = renderSlottedGlyphHTML(selectedGlyph, houseIndex);
             
-            // Check for synergies
-            const planetSynergy = checkPlanetSynergy(selectedGlyph, house);
-            const houseSynergy = checkHouseSynergy(selectedGlyph, house);
-            const hasSynergy = planetSynergy || houseSynergy;
-            
-            let synergyClasses = 'slotted-glyph';
-            let synergyStyle = '';
-            let synergyIndicator = '';
-            
-            if (planetSynergy) {
-                synergyClasses += ' planet-synergy';
-                synergyStyle = `border-color: ${planetSynergy.planetColor};`;
-                synergyIndicator = `<div class="synergy-indicator" title="Planet Synergy: ${planetSynergy.matches.join(', ')}">
-                    ${house.planetIcon} +${Math.round((planetSynergy.bonusMultiplier - 1) * 100)}%
-                </div>`;
-            }
-            
-            if (houseSynergy) {
-                synergyClasses += ' house-synergy';
-                if (!synergyIndicator) {
-                    synergyIndicator = `<div class="synergy-indicator" title="House Synergy: ${houseSynergy.matches.join(', ')}">
-                        ⭐ +${Math.round((houseSynergy.bonusMultiplier - 1) * 100)}%
-                    </div>`;
-                }
-            }
-            
-            // Lagna/Nakshatra minor bonuses
-            const slotBonusInfo = getSlotMultiplier(selectedGlyph, houseIndex);
-            const lagnaPct = Math.round(((slotBonusInfo.lagnaMult || 1) - 1) * 100);
-            const nakPct = Math.round(((slotBonusInfo.nakMult || 1) - 1) * 100);
-            if (lagnaPct > 0) {
-                synergyIndicator += `<div class="synergy-indicator" title="Lagna bonus">🌅 +${lagnaPct}%</div>`;
-            }
-            if (nakPct > 0) {
-                const nakName = slotBonusInfo.nakName ? `: ${slotBonusInfo.nakName}` : '';
-                synergyIndicator += `<div class="synergy-indicator" title="Nakshatra${nakName}">⭐ +${nakPct}%</div>`;
-            }
-            
-            const planetColor = getPlanetColor(house.planet);
-            const planetSymbol = getPlanetSymbol(house.planet);
-            const planetKW = (PLANET_SYNERGIES[house.planet]?.keywords || []).slice(0,2).join(' • ');
-            slot.innerHTML = `
-                <div class="${synergyClasses}" style="${synergyStyle}">
-                    <div class="slot-state-badge" title="Filled & Active">✓</div>
-                    <button class="remove-btn" onclick="removeGlyph(${houseIndex})">×</button>
-                    <div style="display:flex; align-items:center; gap:6px;">
-                        <div style="font-weight: 700; font-size: 11px;">${selectedGlyph.name}</div>
-                        <div class="slot-planet-badge" style="color:${planetColor}; border-color:${planetColor}" title="${house.planet}">
-                            <span class="planet-symbol">${planetSymbol}</span>
-                            <span class="planet-name">${house.planet}</span>
-                        </div>
-                    </div>
-                    <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
-                    <div class="slot-buffs">${planetKW || ''}</div>
-                    <div class="slot-effects" style="display:flex; gap:4px; flex-wrap:wrap; margin-top:4px;">
-                        ${buildSlotEffectBadges(selectedGlyph, houseIndex)}
-                        <button onclick="showSlotCosmicInfo(${houseIndex})" title="Cosmic effects"
-                                style="margin-left:auto; padding:2px 6px; font-size:10px; border-radius:4px; background:rgba(0,227,214,0.1); border:1px solid rgba(0,227,214,0.3); color:#00e3d6; cursor:pointer;">ⓘ</button>
-                    </div>
-                    ${synergyIndicator}
-                </div>
-            `;
+            slot.innerHTML = renderResult.html;
             
             // Mark house as filled and add synergy class
             const houseEl = document.querySelector(`[data-house-index="${houseIndex}"]`);
             if (houseEl) {
                 houseEl.classList.add('filled');
-                if (hasSynergy) {
+                if (renderResult.hasSynergy) {
                     houseEl.classList.add('synergy-active');
                 }
             }
@@ -5071,7 +4953,73 @@
         
         // === TAG GLOSSARY DATABASE ===
         const TAG_DATA = {
-            // === ENGINES (Elemental Types) ===
+            // === NEW ENGINES (Fusion Lab) ===
+            foundational: {
+                name: '🏛️ Structure',
+                category: 'engine',
+                color: '#A0522D',
+                short: 'Base building blocks',
+                medium: 'Fundamental skills that form the bedrock of any build.',
+                detailed: { description: 'The Foundational engine provides reliable, standard abilities.', strengths: ['Versatile'], weaknesses: ['None'], combos: [] }
+            },
+            invocation: {
+                name: '🕯️ Summon',
+                category: 'engine',
+                color: '#9370DB',
+                short: 'Summoning and calling',
+                medium: 'Calls forth entities or powers to aid in battle.',
+                detailed: { description: 'Invocation specializes in bringing external forces to the field.', strengths: ['Numbers advantage'], weaknesses: ['Setup time'], combos: [] }
+            },
+            character_analysis: {
+                name: '🎭 Character',
+                category: 'engine',
+                color: '#DAA520',
+                short: 'Analysis and adaptation',
+                medium: 'Skills that analyze targets to exploit weaknesses.',
+                detailed: { description: 'Character Analysis focuses on understanding and countering opponents.', strengths: ['Counter-play'], weaknesses: ['Complexity'], combos: [] }
+            },
+            consciousness: {
+                name: '🧠 Mind',
+                category: 'engine',
+                color: '#FF69B4',
+                short: 'Mental and psychic',
+                medium: 'Attacks the mind and perception of enemies.',
+                detailed: { description: 'Consciousness engine manipulates the mental state of targets.', strengths: ['Control'], weaknesses: ['Robots/Mindless'], combos: [] }
+            },
+            divination: {
+                name: '🔮 Fate',
+                category: 'engine',
+                color: '#8A2BE2',
+                short: 'Prediction and luck',
+                medium: 'Manipulates probability and foresees outcomes.',
+                detailed: { description: 'Divination engine bends luck and fate to your advantage.', strengths: ['Crit/Dodge'], weaknesses: ['RNG'], combos: [] }
+            },
+            singularity: {
+                name: '🌌 Void',
+                category: 'engine',
+                color: '#000000',
+                short: 'Gravity and void',
+                medium: 'Harnesses the power of black holes and emptiness.',
+                detailed: { description: 'Singularity engine deals with high-gravity and void damage.', strengths: ['Scaling'], weaknesses: ['Self-harm'], combos: [] }
+            },
+            tantra: {
+                name: '🕉️ Energy',
+                category: 'engine',
+                color: '#FF4500',
+                short: 'Energy flow and chakras',
+                medium: 'Manipulates internal energy flows for buffs and bursts.',
+                detailed: { description: 'Tantra engine focuses on channeling and releasing energy.', strengths: ['Burst'], weaknesses: ['Resource management'], combos: [] }
+            },
+            therapeutic: {
+                name: '🌿 Heal',
+                category: 'engine',
+                color: '#32CD32',
+                short: 'Restoration and cure',
+                medium: 'Heals wounds and cures ailments.',
+                detailed: { description: 'Therapeutic engine keeps you and your allies alive.', strengths: ['Sustain'], weaknesses: ['Low damage'], combos: [] }
+            },
+
+            // === ENGINES (Elemental Types - Legacy Support) ===
             fire: {
                 name: '🔥 Fire',
                 category: 'engine',
@@ -5884,7 +5832,73 @@
             leadership: { name: '👑 Leadership', category: 'mechanic', color: '#ffd700', short: 'Empowers allies', medium: 'Leadership skills buff and inspire your team.', detailed: { description: 'Leadership abilities make everyone around you stronger.', strengths: ['Team multiplier', 'Force multiplier'], weaknesses: ['Needs allies'], combos: ['Leadership + Support = Unstoppable team'] } },
             
             // === SINGULAR/PLURAL ALIASES ===
-            sutra: { name: '📜 Sutra', category: 'ancient', color: '#ffd700', short: 'Ancient and powerful ability', medium: 'Ancient and powerful skill derived from sacred texts.', detailed: { description: 'Sutra skills are ancient, powerful abilities learned from sacred texts.', strengths: ['High impact', 'Unique effects', 'Profound power'], weaknesses: ['High cost', 'Long cooldowns', 'Situational'], combos: ['Sutra + Ritual = Divine power', 'Sutra + Meditation = Enlightened state'] } }
+            sutra: { name: '📜 Sutra', category: 'ancient', color: '#ffd700', short: 'Ancient and powerful ability', medium: 'Ancient and powerful skill derived from sacred texts.', detailed: { description: 'Sutra skills are ancient, powerful abilities learned from sacred texts.', strengths: ['High impact', 'Unique effects', 'Profound power'], weaknesses: ['High cost', 'Long cooldowns', 'Situational'], combos: ['Sutra + Ritual = Divine power', 'Sutra + Meditation = Enlightened state'] } },
+            
+            // === NEW ENGINE TAGS ===
+            structure: {
+                name: '🏗️ Structure',
+                category: 'engine',
+                color: '#A0522D',
+                short: 'Builds lasting constructs',
+                medium: 'Creates physical structures that persist on the battlefield.',
+                detailed: { description: 'Foundational skills that create walls, towers, or platforms.', strengths: ['Zone control', 'Defense'], weaknesses: ['Mobile enemies'], combos: [] }
+            },
+            invocation: {
+                name: '🕯️ Invocation',
+                category: 'engine',
+                color: '#9370DB',
+                short: 'Calls upon higher powers',
+                medium: 'Summons entities or channels divine energy.',
+                detailed: { description: 'Invocation skills call forth allies or powerful buffs.', strengths: ['Versatility', 'Support'], weaknesses: ['Cast time'], combos: [] }
+            },
+            divination: {
+                name: '🔮 Divination',
+                category: 'engine',
+                color: '#8A2BE2',
+                short: 'Predicts and alters fate',
+                medium: 'Reveals hidden info or manipulates RNG.',
+                detailed: { description: 'Divination skills provide foresight and luck manipulation.', strengths: ['Utility', 'Crit chance'], weaknesses: ['Low direct damage'], combos: [] }
+            },
+            consciousness: {
+                name: '🧠 Consciousness',
+                category: 'engine',
+                color: '#FF69B4',
+                short: 'Mind over matter',
+                medium: 'Psychic attacks and mental manipulation.',
+                detailed: { description: 'Consciousness skills attack the mind or control enemies.', strengths: ['CC', 'Bypass armor'], weaknesses: ['Robots/Undead'], combos: [] }
+            },
+            singularity: {
+                name: '🌌 Singularity',
+                category: 'engine',
+                color: '#000000',
+                short: 'Gravity and void',
+                medium: 'Manipulates gravity and space-time.',
+                detailed: { description: 'Singularity skills pull enemies or warp time.', strengths: ['AoE control', 'Burst'], weaknesses: ['High cost'], combos: [] }
+            },
+            tantra: {
+                name: '🕉️ Tantra',
+                category: 'engine',
+                color: '#FF4500',
+                short: 'Energy weaving',
+                medium: 'Channels life force and energy flows.',
+                detailed: { description: 'Tantra skills balance offense and healing through energy exchange.', strengths: ['Sustain', 'Buffs'], weaknesses: ['Complex setup'], combos: [] }
+            },
+            therapeutic: {
+                name: '🌿 Therapeutic',
+                category: 'engine',
+                color: '#32CD32',
+                short: 'Healing and restoration',
+                medium: 'Restores health and cures ailments.',
+                detailed: { description: 'Therapeutic skills focus on keeping the team alive and healthy.', strengths: ['Healing', 'Cleanse'], weaknesses: ['No damage'], combos: ['Therapeutic + Water = Mass Heal'] }
+            },
+            character: {
+                name: '🎭 Character',
+                category: 'engine',
+                color: '#DAA520',
+                short: 'Social and persona skills',
+                medium: 'Influences NPCs and social situations.',
+                detailed: { description: 'Character analysis skills help in dialogue and social encounters.', strengths: ['Social', 'Trade'], weaknesses: ['Combat'], combos: [] }
+            }
         };
         
         // Log tag database on init for testing

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Cosmic Card Creator - Jotysh Engine</title>
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --panel-bg: #0f0f16;
+            --panel-border: #1f1f2e;
+            --accent: #6d28d9;
+            --accent-glow: #8b5cf6;
+            --text-main: #e2e8f0;
+            --text-dim: #64748b;
+            --void: #312e81;
+            --solar: #b45309;
+            --nature: #064e3b;
+            --success: #10b981;
+            --legendary-grad: linear-gradient(135deg, #f59e0b 0%, #b91c1c 100%);
+            --rare-grad: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --common-grad: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* === MOBILE LANDSCAPE LOCK === */
+        @media (orientation: portrait) {
+            body::before {
+                content: '📱 Please rotate your device to landscape mode';
+                position: fixed;
+                inset: 0;
+                background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: clamp(1rem, 4vw, 1.4rem);
+                text-align: center;
+                padding: 2rem;
+                font-weight: 600;
+                color: #fff;
+                animation: rotatePrompt 2s ease-in-out infinite;
+            }
+            
+            body::after {
+                content: '🔄';
+                position: fixed;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: clamp(3rem, 10vw, 5rem);
+                z-index: 10000;
+                animation: rotateIcon 1.5s ease-in-out infinite;
+            }
+            
+            .cosmic-workspace {
+                display: none !important;
+            }
+        }
+
+        @keyframes rotatePrompt {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes rotateIcon {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(90deg); }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            overflow: hidden;
+            touch-action: pan-x pan-y;
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for mobile */
+            width: 100vw;
+            -webkit-user-select: none;
+            user-select: none;
+            overscroll-behavior: none;
+            position: fixed;
+        }
+        
+        /* === MAIN WORKSPACE LAYOUT === */
+        .cosmic-workspace {
+            display: grid;
+            grid-template-columns: minmax(200px, 280px) 1fr minmax(220px, 300px);
+            grid-template-rows: 100%;
+            gap: 1px;
+            padding: 0;
+            height: 100vh;
+            height: 100dvh;
+            width: 100vw;
+            overflow: hidden;
+            background: var(--panel-border);
+        }
+        
+        /* === RESPONSIVE BREAKPOINTS === */
+        /* Large Landscape (Desktop) */
+        @media (min-width: 1400px) and (orientation: landscape) {
+            .cosmic-workspace {
+                grid-template-columns: 320px 1fr 380px;
+            }
+        }
+        
+        /* Standard Landscape (Tablets) */
+        @media (min-width: 1024px) and (max-width: 1399px) and (orientation: landscape) {
+            .cosmic-workspace {
+                grid-template-columns: 280px 1fr 340px;
+            }
+        }
+        
+        /* Small Landscape (Mobile) */
+        @media (max-width: 1023px) and (orientation: landscape) {
+            .cosmic-workspace {
+                grid-template-columns: 200px 1fr 240px;
+            }
+        }
+        
+        /* Tiny Landscape (Small Mobile) */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .cosmic-workspace {
+                grid-template-columns: 180px 1fr 200px;
+            }
+        }
+        
+        /* === PANEL BASE STYLES === */
+        .cosmic-panel {
+            background: var(--panel-bg);
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        /* === PANEL HEADERS === */
+        .panel-header {
+            background: rgba(0,0,0,0.2);
+            border-bottom: 1px solid var(--panel-border);
+            padding: 0.8rem 1rem;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            color: var(--text-dim);
+        }
+        
+        .panel-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .panel-icon {
+            font-size: 1rem;
+        }
+        
+        .panel-actions {
+            display: flex;
+            gap: 6px;
+        }
+        
+        /* === PANEL CONTENT AREAS === */
+        .panel-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0.5rem;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        /* Custom Scrollbar */
+        .panel-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .panel-content::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .panel-content::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.3);
+            border-radius: 3px;
+        }
+        
+        .panel-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(139,92,246,0.5);
+        }
+        
+        /* === PLACEHOLDER TEXT === */
+        .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: rgba(255,255,255,0.3);
+            font-size: clamp(12px, 2vh, 16px);
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+        }
+        
+        /* === ACTION BUTTONS === */
+        .cosmic-btn {
+            padding: 0.4rem 0.8rem;
+            background: rgba(139,92,246,0.1);
+            color: var(--accent-glow);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        
+        .cosmic-btn:hover {
+            background: rgba(139,92,246,0.2);
+            border-color: rgba(139,92,246,0.5);
+            transform: translateY(-1px);
+        }
+        
+        .cosmic-btn:active {
+            transform: translateY(0);
+        }
+        
+        .cosmic-btn.primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent-glow);
+        }
+        
+        .cosmic-btn.primary:hover {
+            background: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(139,92,246,0.3);
+        }
+        
+        /* === LEFT PANEL SPECIFIC === */
+        #left-panel {
+            grid-column: 1;
+        }
+        
+        /* === CENTER PANEL SPECIFIC === */
+        #center-panel {
+            grid-column: 2;
+        }
+        
+        /* === RIGHT PANEL SPECIFIC === */
+        #right-panel {
+            grid-column: 3;
+        }
+        
+        /* === LOADING ANIMATION === */
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        
+        .loading {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cosmic-workspace">
+        
+        <!-- LEFT PANEL: Neural Archive / Skill Library -->
+        <div class="cosmic-panel" id="left-panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">📚</span>
+                    <span>Neural Archive</span>
+                </div>
+                <div class="panel-actions">
+                    <button class="cosmic-btn" title="Refresh skills">🔄</button>
+                </div>
+            </div>
+            <div class="panel-content">
+                <div class="placeholder" style="display:flex; align-items:center; justify-content:center; height:100%; color:var(--text-dim); font-size:0.85rem;">
+                    Loading Neural Archive...
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER PANEL: Jotysh Engine / 12-House Chart -->
+        <div class="cosmic-panel" id="center-panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">🌟</span>
+                    <span>Jotysh Engine</span>
+                </div>
+                <div class="panel-actions">
+                    <button class="cosmic-btn primary" title="Invoke card">🎴 Invoke</button>
+                    <button class="cosmic-btn" title="Reset">🔄</button>
+                </div>
+            </div>
+            <div class="panel-content">
+                <div class="placeholder">
+                    12-House Vedic Chart will appear here...
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: Card Preview / Stats -->
+        <div class="cosmic-panel" id="right-panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span class="panel-icon">📊</span>
+                    <span>Card Preview</span>
+                </div>
+                <div class="panel-actions">
+                    <button class="cosmic-btn" title="Save card">💾</button>
+                </div>
+            </div>
+            <div class="panel-content">
+                <div class="placeholder">
+                    Card stats will appear here...
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // === DATA LOADING ===
+        let ownedSkills = [];
+        
+        function loadOwnedSkills() {
+            try {
+                const stored = localStorage.getItem('cosmic_skills');
+                if (stored) {
+                    const allSkills = JSON.parse(stored);
+                    // Filter for owned skills only (fused or marked as owned)
+                    ownedSkills = allSkills.filter(skill => 
+                        skill.fusionIngredients || skill.owned === true
+                    );
+                    console.log(`✅ Loaded ${ownedSkills.length} owned skills from Fusion Laboratory`);
+                    renderSkillArchive();
+                } else {
+                    console.log('⚠️ No skills found in localStorage. Please visit workshop_phase3.html to fuse skills.');
+                    renderEmptyState();
+                }
+            } catch (error) {
+                console.error('❌ Error loading skills:', error);
+                renderEmptyState();
+            }
+        }
+
+        function renderSkillArchive() {
+            const container = document.querySelector('#left-panel .panel-content');
+            
+            if (ownedSkills.length === 0) {
+                renderEmptyState();
+                return;
+            }
+
+            const skillList = document.createElement('div');
+            skillList.style.cssText = 'display:flex; flex-direction:column; gap:0.5rem; padding:0.5rem; overflow-y:auto; height:100%;';
+
+            ownedSkills.forEach(skill => {
+                const skillCard = document.createElement('div');
+                skillCard.className = 'skill-card';
+                skillCard.style.cssText = `
+                    background: rgba(139, 92, 246, 0.05);
+                    border: 1px solid rgba(139, 92, 246, 0.2);
+                    border-radius: 6px;
+                    padding: 0.75rem;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                `;
+
+                // Icon based on type
+                const icon = getSkillIcon(skill.tags[0]);
+                const tierColor = getTierColor(skill.tier);
+
+                skillCard.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                        <div>
+                            <div style="font-weight:600; font-size:0.9rem; color:${tierColor};">${skill.name}</div>
+                            <div style="font-size:0.7rem; color:var(--text-dim); margin-top:0.2rem;">${skill.tier} • ${skill.type}</div>
+                        </div>
+                        <div style="font-size:1.5rem; opacity:0.6;">${icon}</div>
+                    </div>
+                    <div style="display:flex; gap:0.5rem; font-size:0.65rem;">
+                        ${skill.tags.slice(0, 3).map(tag => 
+                            `<span style="background:rgba(139,92,246,0.2); padding:0.2rem 0.4rem; border-radius:3px; color:var(--accent-glow);">${tag}</span>`
+                        ).join('')}
+                    </div>
+                    ${skill.fusionIngredients ? '<div style="margin-top:0.5rem; font-size:0.65rem; color:#10b981;">⚡ FUSED</div>' : ''}
+                `;
+
+                // Hover effects
+                skillCard.onmouseenter = () => {
+                    skillCard.style.background = 'rgba(139, 92, 246, 0.1)';
+                    skillCard.style.borderColor = 'var(--accent-glow)';
+                    skillCard.style.transform = 'translateX(4px)';
+                };
+                skillCard.onmouseleave = () => {
+                    skillCard.style.background = 'rgba(139, 92, 246, 0.05)';
+                    skillCard.style.borderColor = 'rgba(139, 92, 246, 0.2)';
+                    skillCard.style.transform = 'translateX(0)';
+                };
+
+                skillCard.onclick = () => selectSkill(skill);
+
+                skillList.appendChild(skillCard);
+            });
+
+            container.innerHTML = '';
+            container.appendChild(skillList);
+        }
+
+        function renderEmptyState() {
+            const container = document.querySelector('#left-panel .panel-content');
+            container.innerHTML = `
+                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:2rem; text-align:center; color:var(--text-dim);">
+                    <div style="font-size:3rem; opacity:0.3; margin-bottom:1rem;">📚</div>
+                    <div style="font-size:0.9rem; font-weight:600; margin-bottom:0.5rem;">No Owned Skills</div>
+                    <div style="font-size:0.75rem; line-height:1.6; max-width:200px;">
+                        Visit the <a href="workshop_phase3.html" style="color:var(--accent-glow); text-decoration:none;">Fusion Laboratory</a> to fuse and unlock skills.
+                    </div>
+                </div>
+            `;
+        }
+
+        function getSkillIcon(tag) {
+            const icons = {
+                'VOID': '🌌',
+                'SOLAR': '☀️',
+                'NATURE': '🌿',
+                'ICE': '❄️',
+                'BLOOD': '🩸',
+                'COSMIC': '✨',
+                'FIRE': '🔥',
+                'WATER': '💧',
+                'EARTH': '🪨',
+                'AIR': '💨'
+            };
+            return icons[tag] || '⚡';
+        }
+
+        function getTierColor(tier) {
+            const colors = {
+                'LEGENDARY': '#f59e0b',
+                'RARE': '#3b82f6',
+                'COMMON': '#64748b',
+                'FORBIDDEN': '#ef4444'
+            };
+            return colors[tier] || '#8b5cf6';
+        }
+
+        function selectSkill(skill) {
+            console.log('🎯 Selected skill:', skill.name);
+            // TODO: Update chart and card preview with selected skill
+            showSkillDetails(skill);
+        }
+
+        function showSkillDetails(skill) {
+            const rightPanel = document.querySelector('#right-panel .panel-content');
+            rightPanel.innerHTML = `
+                <div style="padding:1rem;">
+                    <div style="font-size:1.4rem; font-weight:700; color:${getTierColor(skill.tier)}; margin-bottom:1rem;">
+                        ${skill.name}
+                    </div>
+                    
+                    <div style="display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;">
+                        ${skill.tags.map(tag => 
+                            `<span style="background:rgba(139,92,246,0.2); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.7rem; color:var(--accent-glow);">${tag}</span>`
+                        ).join('')}
+                    </div>
+
+                    <div style="margin-bottom:1.5rem;">
+                        <div style="font-size:0.7rem; color:var(--text-dim); text-transform:uppercase; margin-bottom:0.5rem;">Description</div>
+                        <div style="font-size:0.85rem; line-height:1.6;">${skill.description || 'No description available.'}</div>
+                    </div>
+
+                    <div style="margin-bottom:1.5rem;">
+                        <div style="font-size:0.7rem; color:var(--text-dim); text-transform:uppercase; margin-bottom:0.5rem;">Stats</div>
+                        <div style="display:grid; gap:0.5rem;">
+                            ${renderStatBar('Damage', skill.stats.damage || 0, 60, '#ef4444')}
+                            ${renderStatBar('Cost', skill.stats.cost || 0, 30, '#3b82f6')}
+                            ${renderStatBar('Cooldown', skill.stats.cooldown || 0, 15, '#f59e0b')}
+                        </div>
+                    </div>
+
+                    ${skill.lore_quote ? `
+                        <div style="margin-top:1.5rem; padding:1rem; background:rgba(139,92,246,0.05); border-left:2px solid var(--accent); font-style:italic; font-size:0.8rem; color:var(--text-dim);">
+                            ${skill.lore_quote}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function renderStatBar(label, value, max, color) {
+            const percentage = Math.min(100, (value / max) * 100);
+            return `
+                <div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; margin-bottom:0.25rem;">
+                        <span style="color:var(--text-dim);">${label}</span>
+                        <span style="color:#fff; font-weight:600;">${value}</span>
+                    </div>
+                    <div style="height:4px; background:rgba(255,255,255,0.1); border-radius:2px; overflow:hidden;">
+                        <div style="height:100%; width:${percentage}%; background:${color}; transition:width 0.3s ease;"></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // === INITIALIZATION ===
+        console.log('🚀 Cosmic Card Creator initialized');
+        console.log('📱 Viewport:', window.innerWidth, 'x', window.innerHeight);
+        console.log('🔄 Orientation:', window.orientation || screen.orientation?.type);
+        
+        // Load skills on startup
+        window.addEventListener('load', () => {
+            loadOwnedSkills();
+        });
+
+        // Reload skills when returning from fusion lab
+        window.addEventListener('focus', () => {
+            console.log('🔄 Window focused, reloading skills...');
+            loadOwnedSkills();
+        });
+        
+        // Detect orientation changes
+        window.addEventListener('orientationchange', () => {
+            console.log('🔄 Orientation changed to:', window.orientation || screen.orientation?.type);
+        });
+        
+        // Prevent zoom on double-tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Manual refresh button
+        document.querySelector('#left-panel .cosmic-btn').onclick = () => {
+            console.log('🔄 Manual refresh triggered');
+            loadOwnedSkills();
+        };
+    </script>
+
+</body>
+</html>
