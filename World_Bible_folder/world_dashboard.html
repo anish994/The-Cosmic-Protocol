@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Bible | Region Ecosystem</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #0a0a0a;
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --accent-hub: #ffd700;       /* Gold */
+            --accent-wild: #10b981;      /* Green */
+            --accent-echo: #3b82f6;      /* Blue */
+            --accent-void: #8b5cf6;      /* Purple */
+            --accent-corruption: #ef4444; /* Red */
+            --accent-mythic: #d946ef;    /* Pink */
+            --border-color: #2d3748;
+            --modal-overlay: rgba(0, 0, 0, 0.9);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            background-image: url('map_assets/cosmogram-bg.png'); /* Subtle BG */
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            color: var(--text-main);
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; background: rgba(0,0,0,0.7); padding: 2rem; border-radius: 12px; backdrop-filter: blur(5px); }
+        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 0.5rem; color: var(--accent-hub); text-transform: uppercase; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* --- GRID LAYOUT --- */
+        .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
+        
+        .region-column {
+            background: rgba(15, 15, 20, 0.8);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-top: 4px solid transparent;
+            display: flex; flex-direction: column; gap: 1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .region-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .region-group-name { font-size: 1.3rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .region-meta { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* --- CARDS --- */
+        .region-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0; /* Reset for image */
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .region-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .card-media {
+            height: 140px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .card-media img, .card-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .region-card:hover .card-media img, 
+        .region-card:hover .card-media video {
+            transform: scale(1.05);
+        }
+
+        .card-body { padding: 1.2rem; }
+
+        .card-title { font-weight: 700; font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.2rem; }
+        .card-subtitle { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+        .card-desc { font-size: 0.9rem; color: #aaa; line-height: 1.5; margin-bottom: 1rem; }
+        
+        .connections { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.8rem; margin-bottom: 0.8rem; }
+        .conn-label { color: rgba(255,255,255,0.4); margin-right: 0.3rem; font-size: 0.7rem; text-transform: uppercase; }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag { font-size: 0.7rem; padding: 3px 8px; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); text-transform: uppercase; }
+        
+        /* Danger Tiers */
+        .tier-low { color: #10b981; border-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+        .tier-med { color: #f59e0b; border-color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+        .tier-high { color: #ef4444; border-color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+        .tier-ext { color: #d946ef; border-color: #d946ef; background: rgba(217, 70, 239, 0.1); }
+
+        /* Column Accents */
+        .col-hub { border-color: var(--accent-hub); } .col-hub .region-group-name { color: var(--accent-hub); }
+        .col-wild { border-color: var(--accent-wild); } .col-wild .region-group-name { color: var(--accent-wild); }
+        .col-echo { border-color: var(--accent-echo); } .col-echo .region-group-name { color: var(--accent-echo); }
+        .col-void { border-color: var(--accent-void); } .col-void .region-group-name { color: var(--accent-void); }
+        .col-corr { border-color: var(--accent-corruption); } .col-corr .region-group-name { color: var(--accent-corruption); }
+
+        /* --- MODAL --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--modal-overlay);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active { display: flex; opacity: 1; }
+
+        .holo-modal {
+            width: 95%; max-width: 1100px; height: 85vh;
+            background: #0f1115;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 60px rgba(0,0,0,0.8);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            border-radius: 12px;
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.active .holo-modal { transform: scale(1); }
+
+        .modal-sidebar {
+            background: rgba(0,0,0,0.4);
+            border-right: 1px solid var(--border-color);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-media {
+            height: 200px;
+            width: 100%;
+            background: #000;
+            position: relative;
+        }
+        .modal-media img, .modal-media video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+
+        .sidebar-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+        .sidebar-title { font-size: 1.8rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.5rem; color: #fff; }
+        .sidebar-subtitle { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 2rem; }
+
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem; }
+        .stat-label { color: #666; }
+        .stat-val { color: #eee; font-family: monospace; }
+
+        .modal-main { display: flex; flex-direction: column; height: 100%; position: relative; }
+        
+        .modal-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(255,255,255,0.02);
+        }
+        .tab-btn {
+            flex: 1; background: none; border: none; padding: 1.2rem;
+            color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .tab-btn:hover { color: #eee; background: rgba(255,255,255,0.05); }
+        .tab-btn.active { color: var(--text-main); border-bottom-color: var(--text-main); background: rgba(255,255,255,0.08); }
+
+        .tab-content { padding: 2.5rem; overflow-y: auto; flex: 1; display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .close-btn {
+            position: absolute; top: 1rem; right: 1.5rem;
+            background: none; border: none; color: #666; font-size: 2rem; cursor: pointer; z-index: 10;
+        }
+        .close-btn:hover { color: #fff; }
+
+        /* Content Styling */
+        h3 { color: var(--text-main); font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; }
+        h3::before { content: '◈'; color: var(--text-muted); font-size: 0.8rem; }
+        p { line-height: 1.7; color: #ccc; margin-bottom: 1.5rem; }
+        
+        .node-list { display: grid; gap: 1rem; }
+        .node-item { 
+            background: rgba(255,255,255,0.03); 
+            padding: 1rem; 
+            border-radius: 6px; 
+            border-left: 3px solid var(--border-color);
+            transition: background 0.2s;
+        }
+        .node-item:hover { background: rgba(255,255,255,0.06); }
+        .node-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .node-name { font-weight: 700; color: #fff; }
+        .node-type { font-size: 0.7rem; text-transform: uppercase; padding: 2px 6px; background: rgba(0,0,0,0.3); border-radius: 4px; color: #aaa; }
+        .node-desc { font-size: 0.9rem; color: #999; }
+
+        .secret-block {
+            background: linear-gradient(45deg, rgba(20,20,30,0.8), rgba(10,10,15,0.9));
+            padding: 1.5rem;
+            border: 1px solid rgba(255,215,0,0.1);
+            border-radius: 8px;
+            color: #e2e8f0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>World Ecosystem Dashboard</h1>
+        <div class="subtitle">Operational Overview of the Fractured Cosmogram</div>
+    </header>
+
+    <div class="ecosystem-grid">
+
+        <!-- 1. CENTRAL HUB & ORIGIN -->
+        <div class="region-column col-hub">
+            <div class="region-header">
+                <div class="region-group-name">The Anchor</div>
+                <div class="region-meta">Stability • Origin</div>
+            </div>
+
+            <!-- Nexus Gate -->
+            <div class="region-card" onclick="openModal('nexus_gate')">
+                <div class="card-media"><video src="map_assets/nexus-pulse.mp4" autoplay muted loop></video></div>
+                <div class="card-body">
+                    <div class="card-title">Nexus Gate</div>
+                    <div class="card-subtitle">Central Hub</div>
+                    <div class="card-desc">The architect-forged constant. A compact, layered palace-hub suspended across all parallel timelines.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> All Major Regions
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-low">Safe Zone</span>
+                        <span class="tag">Echoes</span>
+                        <span class="tag">Pulse</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architect Graves -->
+            <div class="region-card" onclick="openModal('architect_graves')">
+                <div class="card-media"><img src="map_assets/cosmogram-bg.png" alt="Graves"></div>
+                <div class="card-body">
+                    <div class="card-title">Architect Graves</div>
+                    <div class="card-subtitle">Solemn Ruins</div>
+                    <div class="card-desc">Solemn tombs where ancient mechanisms activate. The resting place of the Builders.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> Nexus, Inverted Lands
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-low">Low Danger</span>
+                        <span class="tag">Fate</span>
+                        <span class="tag">History</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. CHAOS & CORRUPTION -->
+        <div class="region-column col-corr">
+            <div class="region-header">
+                <div class="region-group-name">Fractured Realities</div>
+                <div class="region-meta">Entropy • Danger</div>
+            </div>
+
+            <!-- Inverted Landmasses -->
+            <div class="region-card" onclick="openModal('inverted_landmasses')">
+                <div class="card-media"><img src="map_assets/inverted-landmasses.png" alt="Inverted"></div>
+                <div class="card-body">
+                    <div class="card-title">Inverted Landmasses</div>
+                    <div class="card-subtitle">Gravity Flux Zone</div>
+                    <div class="card-desc">A disorienting zone where gravity reverses and terrain shifts unpredictably.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> Echo Fields, Graves
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-med">Medium Danger</span>
+                        <span class="tag">Paradox</span>
+                        <span class="tag">Gravity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corrupted Zones -->
+            <div class="region-card" onclick="openModal('corrupted_zones')">
+                <div class="card-media"><img src="map_assets/corrupted-zone.png" alt="Corrupted"></div>
+                <div class="card-body">
+                    <div class="card-title">Corrupted Zones</div>
+                    <div class="card-subtitle">The Bleeding Edge</div>
+                    <div class="card-desc">Oppressive, haunted regions where the altar pulses with corrupted energy. High risk.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> Graves, Mythic
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-high">High Danger</span>
+                        <span class="tag">Entropy</span>
+                        <span class="tag">Void</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. GROWTH & MYTH -->
+        <div class="region-column col-wild">
+            <div class="region-header">
+                <div class="region-group-name">Life & Legend</div>
+                <div class="region-meta">Growth • Transcendence</div>
+            </div>
+
+            <!-- Resonant Bloom -->
+            <div class="region-card" onclick="openModal('resonant_bloom')">
+                <div class="card-media"><img src="map_assets/resonant-bloom.png" alt="Bloom"></div>
+                <div class="card-body">
+                    <div class="card-title">Resonant Bloom</div>
+                    <div class="card-subtitle">Harmonic Wilds</div>
+                    <div class="card-desc">Vibrant, uplifting zones where luminous flora pulse and rare blooms appear.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> Silence, Echo Fields
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-med">Moderate</span>
+                        <span class="tag">Growth</span>
+                        <span class="tag">Harmony</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mythic Biomes -->
+            <div class="region-card" onclick="openModal('mythic_biomes')">
+                <div class="card-media"><video src="map_assets/fusion-bg.mp4" autoplay muted loop></video></div>
+                <div class="card-body">
+                    <div class="card-title">Mythic Biomes</div>
+                    <div class="card-subtitle">Legendary Realms</div>
+                    <div class="card-desc">Living archives of legend. Birthplace of divine fusions and cosmic creation.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> CPS, Corruption
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-ext">Extreme</span>
+                        <span class="tag">Legend</span>
+                        <span class="tag">Myth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. DATA & ECHOES -->
+        <div class="region-column col-echo">
+            <div class="region-header">
+                <div class="region-group-name">Memory & Code</div>
+                <div class="region-meta">Archives • Time</div>
+            </div>
+
+            <!-- CPS Memory -->
+            <div class="region-card" onclick="openModal('cps_memory')">
+                <div class="card-media"><img src="map_assets/cps-memory-zone.png" alt="CPS"></div>
+                <div class="card-body">
+                    <div class="card-title">CPS Memory Zones</div>
+                    <div class="card-subtitle">Digital Archive</div>
+                    <div class="card-desc">Intense, revelatory zones where the core pulses with ancient Architect data.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> Silence, Mythic
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-high">High Danger</span>
+                        <span class="tag">Data</span>
+                        <span class="tag">Memory</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Echo Fields -->
+            <div class="region-card" onclick="openModal('echo_fields')">
+                <div class="card-media"><video src="map_assets/resonance-fog.mp4" autoplay muted loop></video></div>
+                <div class="card-body">
+                    <div class="card-title">Echo Fields</div>
+                    <div class="card-subtitle">Reverberant Plains</div>
+                    <div class="card-desc">Haunting, reflective plains where echoes of past actions flood the zone. Time is fluid here.</div>
+                    <div class="connections">
+                        <span class="conn-label">Links:</span> Inverted, Bloom
+                    </div>
+                    <div class="tags">
+                        <span class="tag tier-med">Medium</span>
+                        <span class="tag">Time</span>
+                        <span class="tag">Echoes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div id="regionModal" class="modal-overlay">
+        <div class="holo-modal">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            
+            <div class="modal-sidebar">
+                <div class="modal-media">
+                    <img id="modalImg" src="" alt="">
+                    <video id="modalVid" src="" autoplay muted loop style="display:none;"></video>
+                </div>
+                <div class="sidebar-content">
+                    <div class="sidebar-title" id="modalTitle">Region Name</div>
+                    <div class="sidebar-subtitle" id="modalSubtitle">Subtitle</div>
+                    
+                    <div class="stat-row">
+                        <span class="stat-label">Danger Level</span>
+                        <span class="stat-val" id="modalDanger">Low</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Corruption</span>
+                        <span class="stat-val" id="modalCorr">0%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Resonance</span>
+                        <span class="stat-val" id="modalRes">Echoes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-main">
+                <div class="modal-tabs">
+                    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+                    <button class="tab-btn" onclick="switchTab('nodes')">Sub-Zones & Nodes</button>
+                    <button class="tab-btn" onclick="switchTab('secrets')">Secrets</button>
+                </div>
+
+                <div id="tab-overview" class="tab-content active">
+                    <h3>Atmosphere & Logic</h3>
+                    <p id="modalDesc">Description goes here.</p>
+                    <h3>Faction Presence</h3>
+                    <p id="modalFactions">Faction details.</p>
+                </div>
+
+                <div id="tab-nodes" class="tab-content">
+                    <div class="node-list" id="modalNodes">
+                        <!-- Nodes injected here -->
+                    </div>
+                </div>
+
+                <div id="tab-secrets" class="tab-content">
+                    <h3>Hidden Pathways</h3>
+                    <div class="secret-block" id="modalSecrets">
+                        Secrets revealed...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA ---
+        const REGIONS = {
+            "nexus_gate": {
+                name: "Nexus Gate",
+                subtitle: "The Anchor",
+                mediaType: "video",
+                mediaSrc: "map_assets/nexus-pulse.mp4",
+                danger: "Low (Safe)",
+                corruption: "0%",
+                resonance: "Echoes, Pulse",
+                desc: "The Nexus Gate is the architect-forged constant: a compact, layered palace-hub suspended across all parallel timelines. It remains stable while realities fracture, providing a unified anchor for resurrection, coordination, and synthesis.",
+                factions: "Ashram Remnants (Custodians), Nomadic Relic Seekers (Traders), Architect Echoes (Advisors).",
+                nodes: [
+                    { name: "Arrival Platform", type: "Anchor", desc: "Normalize player state; first CPS imprint." },
+                    { name: "Resonance Relay Core", type: "System", desc: "Maintains Echoes/Pulse cycle. Adjust travel latency." },
+                    { name: "Skill Infusion Alcoves", type: "Crafting", desc: "Micro-fusion slots for low-risk upgrades." },
+                    { name: "Memory Echo Board", type: "Lore", desc: "Curated, safe replay of sanitized memory fragments." }
+                ],
+                secrets: "Surge Event: 'Cross-Reality Alignment' temporarily raises danger to Medium and unlocks hidden transfer paths to the Pantheon Hall."
+            },
+            "architect_graves": {
+                name: "Architect Graves",
+                subtitle: "Solemn Ruins",
+                mediaType: "img",
+                mediaSrc: "map_assets/cosmogram-bg.png",
+                danger: "Low",
+                corruption: "5%",
+                resonance: "Fate, Echoes",
+                desc: "Solemn, mysterious tombs where ancient mechanisms activate. The resting place of the Builders, filled with puzzles and lost wisdom.",
+                factions: "Ashram Remnants (Honor Tombs), Relic Seekers (Loot).",
+                nodes: [
+                    { name: "Tomb Awakening", type: "Event", desc: "Tomb pulses, ancient mechanisms activate." },
+                    { name: "Grave Echo Ritual", type: "Social", desc: "Factions gather, resonance harmonizes, wisdom is shared." },
+                    { name: "Architect Rune Puzzle", type: "Puzzle", desc: "Runes shift, echo gates open." },
+                    { name: "Relic Hunt", type: "Loot", desc: "Discover hidden relics guarded by corrupted entities." }
+                ],
+                secrets: "Deciphering Architect runes can unlock forbidden skill trees. High resonance reveals hidden burial chambers."
+            },
+            "inverted_landmasses": {
+                name: "Inverted Landmasses",
+                subtitle: "Gravity Flux Zone",
+                mediaType: "img",
+                mediaSrc: "map_assets/inverted-landmasses.png",
+                danger: "Medium",
+                corruption: "15%",
+                resonance: "Paradox, Gravity",
+                desc: "A disorienting zone where gravity reverses and terrain shifts unpredictably. Floating islands collide and separate in a dance of physics-defying chaos.",
+                factions: "Ashram Remnants (Stabilizers), Relic Seekers (Exploit Flux).",
+                nodes: [
+                    { name: "Gravity Flux Event", type: "Hazard", desc: "Gravity reverses, terrain shifts unpredictably." },
+                    { name: "Upside-Down Relic Hunt", type: "Loot", desc: "Relic is guarded by inverted entities." },
+                    { name: "Inversion Collapse", type: "Escape", desc: "Attempt to leave a subzone during a collapse event." }
+                ],
+                secrets: "High resonance stabilizes gravity. Rare 'Gravity Anchors' can be found here to allow flight in other zones."
+            },
+            "corrupted_zones": {
+                name: "Corrupted Zones",
+                subtitle: "Fractured Reality",
+                mediaType: "img",
+                mediaSrc: "map_assets/corrupted-zone.png",
+                danger: "High",
+                corruption: "85%",
+                resonance: "Entropy, Void",
+                desc: "Oppressive, haunted regions where the altar pulses with corrupted energy. The laws of reality are broken here, replaced by the logic of decay.",
+                factions: "Corruption Champions (Rulers), Ashram Remnants (Purifiers).",
+                nodes: [
+                    { name: "The Altar Awakening", type: "Boss", desc: "The altar pulses with corrupted energy, echoing lost prayers." },
+                    { name: "Code Storm Crossing", type: "Hazard", desc: "River floods with corrupted code, mutating the landscape." },
+                    { name: "Forbidden Ritual", type: "Event", desc: "Chamber filled with glitching sigils and gravity-defying relics." }
+                ],
+                secrets: "Purifying the Core Altar can permanently lower corruption in adjacent zones. Harnessing it grants immense power but risks permadeath."
+            },
+            "resonant_bloom": {
+                name: "Resonant Bloom",
+                subtitle: "Harmonic Wilds",
+                mediaType: "img",
+                mediaSrc: "map_assets/resonant-bloom.png",
+                danger: "Medium",
+                corruption: "10%",
+                resonance: "Growth, Harmony",
+                desc: "Vibrant, uplifting zones where luminous flora pulse and rare blooms appear. A place of transformation and rapid evolution.",
+                factions: "Ashram Remnants (Cultivators), Relic Seekers (Harvesters).",
+                nodes: [
+                    { name: "Bloom Surge Awakening", type: "Event", desc: "Luminous flora pulse, rare blooms appear." },
+                    { name: "Pantheon Ritual", type: "Sacred", desc: "Ritual chambers glow, echo gates open." },
+                    { name: "Pulse Garden Challenge", type: "Puzzle", desc: "Prismatic rivers shift, karma relics appear." }
+                ],
+                secrets: "Harvesting 'Void Blooms' mutates skills into their chaos variants. Protecting the wilds grants 'Harmony' status."
+            },
+            "mythic_biomes": {
+                name: "Mythic Biomes",
+                subtitle: "Legendary Realms",
+                mediaType: "video",
+                mediaSrc: "map_assets/fusion-bg.mp4",
+                danger: "Extreme",
+                corruption: "Variable",
+                resonance: "Myth, Legend",
+                desc: "Living archives of legend. The birthplace of divine fusions and cosmic creation. Only the strongest resonance can survive here.",
+                factions: "All Factions (High Stakes Conflict).",
+                nodes: [
+                    { name: "Pantheon Wilds", type: "Zone", desc: "Living archives of legend." },
+                    { name: "Titan Gardens", type: "Boss", desc: "Home to mythborn titans and cosmic echoes." },
+                    { name: "Archive of Legends", type: "Lore", desc: "Repository of lost legends and forbidden skills." }
+                ],
+                secrets: "Contains 'God-Tier' fusion recipes. Access is restricted to those who hold a 'Mythic Key'."
+            },
+            "cps_memory": {
+                name: "CPS Memory Zones",
+                subtitle: "Digital Archive",
+                mediaType: "img",
+                mediaSrc: "map_assets/cps-memory-zone.png",
+                danger: "High",
+                corruption: "40%",
+                resonance: "Data, Memory",
+                desc: "Intense, revelatory zones where the core pulses with ancient Architect data. Digital ghosts and rogue AI fragments roam these halls.",
+                factions: "Rogue AI Fragments (Natives), Relic Seekers (Hackers).",
+                nodes: [
+                    { name: "Memory Core Activation", type: "System", desc: "Core pulses with ancient Architect data." },
+                    { name: "Data Storm Event", type: "Hazard", desc: "Data surges distort reality, memories flood the zone." },
+                    { name: "Fragmented Archive", type: "Loot", desc: "Lost Architect memories surface." }
+                ],
+                secrets: "Synchronizing with the Core allows the player to 'rewrite' one past decision. High risk of data fragmentation."
+            },
+            "echo_fields": {
+                name: "Echo Fields",
+                subtitle: "Reverberant Plains",
+                mediaType: "video",
+                mediaSrc: "map_assets/resonance-fog.mp4",
+                danger: "Medium",
+                corruption: "25%",
+                resonance: "Time, Echoes",
+                desc: "Haunting, reflective plains where echoes of past actions flood the zone. Time is fluid here, and loops often overlap.",
+                factions: "Ashram Remnants (Monks), Echo-Beasts (Natives).",
+                nodes: [
+                    { name: "Echo Bloom Event", type: "Event", desc: "Echo nodes pulse, memories replay." },
+                    { name: "Recursion Loop", type: "Trap", desc: "Time and space repeat. Break the cycle to escape." },
+                    { name: "Archive Awakening", type: "Lore", desc: "Echoing halls pulse, lore nodes activate." }
+                ],
+                secrets: "Players can encounter their own 'Ghosts' from previous runs here. Defeating them recovers lost loot."
+            }
+        };
+
+        // --- LOGIC ---
+        function openModal(key) {
+            const data = REGIONS[key];
+            if(!data) return;
+
+            // Header
+            document.getElementById('modalTitle').textContent = data.name;
+            document.getElementById('modalSubtitle').textContent = data.subtitle;
+            document.getElementById('modalDanger').textContent = data.danger;
+            document.getElementById('modalCorr').textContent = data.corruption;
+            document.getElementById('modalRes').textContent = data.resonance;
+
+            // Media
+            const img = document.getElementById('modalImg');
+            const vid = document.getElementById('modalVid');
+            if(data.mediaType === 'video') {
+                img.style.display = 'none';
+                vid.style.display = 'block';
+                vid.src = data.mediaSrc;
+            } else {
+                vid.style.display = 'none';
+                img.style.display = 'block';
+                img.src = data.mediaSrc;
+            }
+
+            // Content
+            document.getElementById('modalDesc').textContent = data.desc;
+            document.getElementById('modalFactions').textContent = data.factions;
+            document.getElementById('modalSecrets').textContent = data.secrets;
+
+            // Nodes
+            const nodesContainer = document.getElementById('modalNodes');
+            nodesContainer.innerHTML = '';
+            data.nodes.forEach(node => {
+                const div = document.createElement('div');
+                div.className = 'node-item';
+                div.innerHTML = `
+                    <div class="node-header">
+                        <span class="node-name">${node.name}</span>
+                        <span class="node-type">${node.type}</span>
+                    </div>
+                    <div class="node-desc">${node.desc}</div>
+                `;
+                nodesContainer.appendChild(div);
+            });
+
+            // Tabs Reset
+            switchTab('overview');
+
+            // Show
+            document.getElementById('regionModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('regionModal').classList.remove('active');
+        }
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(`tab-${tab}`).classList.add('active');
+            
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Simple logic to find button by text/onclick match
+            const buttons = document.querySelectorAll('.tab-btn');
+            if(tab === 'overview') buttons[0].classList.add('active');
+            if(tab === 'nodes') buttons[1].classList.add('active');
+            if(tab === 'secrets') buttons[2].classList.add('active');
+        }
+
+        // Keyboard Close
+        document.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape') closeModal();
+        });
+
+        // Outside Click
+        document.getElementById('regionModal').addEventListener('click', (e) => {
+            if(e.target.id === 'regionModal') closeModal();
+        });
+
+    </script>
+</body>
+</html>
