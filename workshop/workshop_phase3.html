@@ -727,13 +727,16 @@
                     <span id="skill-count">0</span>
                 </div>
             </div>
-            <div style="padding: 0.5rem; display:flex; gap:0.5rem;">
-                <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterSkills(this.value)">
+            <div style="padding: 0.5rem; display:flex; gap:0.5rem; align-items: center;">
+                <input type="text" class="search-bar" placeholder="Search..." onkeyup="renderSkillList()">
                 <select id="sort-select" onchange="renderSkillList()" style="background:#1e1e2e; color:#fff; border:1px solid #333; border-radius:4px;">
                     <option value="tier">Tier</option>
                     <option value="name">Name</option>
                     <option value="type">Type</option>
                 </select>
+                <label style="display:flex; align-items:center; gap:4px; font-size:0.8rem; color:#aaa; cursor:pointer;">
+                    <input type="checkbox" id="fav-filter" onchange="renderSkillList()"> Favs
+                </label>
             </div>
             <div id="skill-list" class="skill-list">
                 <!-- Populated by JS -->
@@ -758,8 +761,15 @@
                 <button id="fuse-btn" class="fuse-btn" onclick="performFusion()">Synthesize</button>
                 <button class="clear-btn" onclick="clearAllSlots()">Clear Matrix</button>
                 
-                <div id="fusion-status" style="margin-top: 1.5rem; color: var(--text-dim); font-size: 0.9rem; height: 20px;">
+                <div id="fusion-status" style="margin-top: 1.5rem; color: var(--text-dim); font-size: 0.9rem; height: 40px;">
                     Awaiting components...
+                </div>
+            </div>
+
+            <div style="margin-top: 1rem; border-top: 1px solid #333; padding-top: 1rem;">
+                <div style="font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Recent Synthesis Log</div>
+                <div id="fusion-history" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 200px; overflow-y: auto; padding-right: 5px;">
+                    <!-- History Items -->
                 </div>
             </div>
         </div>
@@ -832,10 +842,77 @@
             ...(window.SKILL_DB_THERAPEUTIC || [])
         ];
 
+        // --- AUDIO SYSTEM ---
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playSound(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            const now = audioCtx.currentTime;
+            
+            if (type === 'hover') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(300, now);
+                gain.gain.setValueAtTime(0.02, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            } else if (type === 'click') {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(600, now);
+                gain.gain.setValueAtTime(0.05, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                osc.start(now);
+                osc.stop(now + 0.1);
+            } else if (type === 'success') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(400, now);
+                osc.frequency.exponentialRampToValueAtTime(800, now + 0.2);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                osc.start(now);
+                osc.stop(now + 0.4);
+            }
+        }
+
         // --- STATE ---
         // Load from LocalStorage or use Default DB
         let storedSkills = localStorage.getItem('cosmic_skills');
         let knownSkills = storedSkills ? JSON.parse(storedSkills) : [];
+
+        // Favorites State
+        let favoriteSkills = new Set(JSON.parse(localStorage.getItem('cosmic_favorites') || '[]'));
+        
+        // History State
+        let fusionHistory = JSON.parse(localStorage.getItem('cosmic_history') || '[]');
+
+        function toggleFavorite(e, skillId) {
+            e.stopPropagation(); // Prevent opening analysis
+            if (favoriteSkills.has(skillId)) {
+                favoriteSkills.delete(skillId);
+            } else {
+                favoriteSkills.add(skillId);
+            }
+            localStorage.setItem('cosmic_favorites', JSON.stringify([...favoriteSkills]));
+            renderSkillList();
+        }
+
+        function renderHistory() {
+            const container = document.getElementById('fusion-history');
+            if (!container) return;
+            container.innerHTML = fusionHistory.map(item => `
+                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <span style="color: var(--accent); font-weight: bold;">${item.name}</span>
+                        <div style="color: #666; font-size: 0.7rem;">${item.parents.join(' + ')}</div>
+                    </div>
+                    <div style="color: #555; font-size: 0.7rem;">${new Date(item.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                </div>
+            `).join('');
+        }
 
         // AUTO-UPDATE CHECK:
         // If the loaded DB (SKILL_DB) is significantly larger than the stored one,
@@ -854,6 +931,7 @@
         // --- INIT ---
         window.onload = () => {
             renderSkillList();
+            renderHistory();
         };
 
         function resetDatabase() {
@@ -869,10 +947,17 @@
         }
 
         // --- RENDERING ---
-        function renderSkillList(filter = "") {
+        function renderSkillList() {
             const list = document.getElementById('skill-list');
             list.innerHTML = "";
             document.getElementById('skill-count').innerText = knownSkills.length;
+
+            // Search Logic
+            const searchInput = document.querySelector('.search-bar');
+            const filter = searchInput ? searchInput.value.toLowerCase() : "";
+
+            // Favorites Logic
+            const showFavsOnly = document.getElementById('fav-filter') && document.getElementById('fav-filter').checked;
 
             // Sorting Logic
             const sortMode = document.getElementById('sort-select') ? document.getElementById('sort-select').value : 'tier';
@@ -889,16 +974,22 @@
             }
 
             displaySkills.forEach(skill => {
-                if (filter && !skill.name.toLowerCase().includes(filter.toLowerCase())) return;
+                if (filter && !skill.name.toLowerCase().includes(filter)) return;
+                if (showFavsOnly && !favoriteSkills.has(skill.id)) return;
 
+                const isFav = favoriteSkills.has(skill.id);
                 const el = document.createElement('div');
                 el.className = `skill-item ${skill.tier === 'LEGENDARY' ? 'legendary' : ''}`;
                 el.draggable = true;
                 el.ondragstart = (e) => drag(e, skill.id);
-                el.onclick = () => showAnalysis(skill);
+                el.onmouseenter = () => playSound('hover');
+                el.onclick = () => { playSound('click'); showAnalysis(skill); };
                 
                 el.innerHTML = `
-                    <div class="skill-name">${skill.name}</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="skill-name">${skill.name}</div>
+                        <span onclick="toggleFavorite(event, '${skill.id}')" style="cursor:pointer; color:${isFav ? '#fbbf24' : '#444'}; font-size:1.2rem; line-height:1;">★</span>
+                    </div>
                     <div class="skill-type">${skill.tier} • ${skill.type}</div>
                 `;
                 list.appendChild(el);
@@ -918,6 +1009,16 @@
 
             // Icon
             const icon = getIconForSkill(skill);
+
+            // Dynamic Background
+            const typeColors = {
+                'VOID': 'rgba(139, 92, 246, 0.2)',
+                'SOLAR': 'rgba(245, 158, 11, 0.2)',
+                'NATURE': 'rgba(16, 185, 129, 0.2)',
+                'ICE': 'rgba(59, 130, 246, 0.2)',
+                'BLOOD': 'rgba(239, 68, 68, 0.2)'
+            };
+            const bg = typeColors[skill.tags[0]] || 'rgba(139, 92, 246, 0.1)';
 
             panel.innerHTML = `
                 <div class="hud-header">
@@ -939,7 +1040,7 @@
                 <div class="hud-body">
                     
                     <!-- VISUALIZER -->
-                    <div class="skill-visualizer">
+                    <div class="skill-visualizer" style="background: radial-gradient(circle, ${bg} 0%, transparent 70%);">
                         ${icon}
                     </div>
 
@@ -1016,6 +1117,11 @@
                         ${skill.deep_data.evolution ? `
                             <div style="margin-top:0.5rem; font-size:0.85rem; color:#f59e0b;">
                                 <span style="color:#f59e0b">▲</span> POTENTIAL: ${skill.deep_data.evolution}
+                            </div>
+                        ` : ''}
+                        ${skill.deep_data.synergies ? `
+                            <div style="margin-top:0.5rem; font-size:0.85rem; color:#6366f1;">
+                                <span style="color:#6366f1">⚡</span> SYNERGIES: ${skill.deep_data.synergies.join(', ')}
                             </div>
                         ` : ''}
                     </div>
@@ -1098,8 +1204,20 @@
             
             if (selectedSlots[0] && selectedSlots[1]) {
                 btn.classList.add('ready');
-                status.innerText = "Fusion Matrix Stable.";
-                status.style.color = "#10b981";
+                
+                // Preview Logic
+                const s1 = selectedSlots[0];
+                const s2 = selectedSlots[1];
+                const potentialType = s1.type === s2.type ? `Pure ${s1.type}` : `${s1.type}-${s2.type} Hybrid`;
+                
+                status.innerHTML = `
+                    <span style="color:#10b981">Fusion Matrix Stable.</span><br>
+                    <span style="font-size:0.8rem; color:#aaa;">Projected Outcome: ${potentialType} Paradigm</span>
+                `;
+            } else {
+                btn.classList.remove('ready');
+                status.innerText = "Awaiting components...";
+                status.style.color = "#64748b";
             }
         }
 
@@ -1415,16 +1533,27 @@
 
         window.collectSkill = () => {
             if (!pendingNewSkill) return;
+            playSound('success');
 
             // Add to Known Skills
             knownSkills.unshift(pendingNewSkill);
             saveProgress(); // Persist to LocalStorage
             
+            // Add to History
+            fusionHistory.unshift({
+                name: pendingNewSkill.name,
+                parents: [selectedSlots[0].name, selectedSlots[1].name],
+                timestamp: Date.now()
+            });
+            if (fusionHistory.length > 10) fusionHistory.pop();
+            localStorage.setItem('cosmic_history', JSON.stringify(fusionHistory));
+            renderHistory();
+            
             // Reset UI
             selectedSlots = [null, null];
-            document.querySelectorAll('.fusion-slot').forEach(el => {
+            document.querySelectorAll('.fusion-slot').forEach((el, index) => {
                 el.classList.remove('active');
-                el.innerHTML = `<div style="color: var(--text-dim); font-size: 0.7rem;">INPUT</div>`;
+                el.innerHTML = `<div style="color: var(--text-dim); font-size: 0.7rem;">INPUT ${index === 0 ? 'A' : 'B'}</div>`;
             });
             
             // Hide Overlay
@@ -1704,6 +1833,15 @@
             const env = NARRATIVE_ENGINE.generateEnv(mergedTags);
             const social = NARRATIVE_ENGINE.generateSocial(mergedTags);
 
+            // E. Evolution Logic
+            let evolution = null;
+            if (newDmg > 40) evolution = "Ascended " + newName;
+            else if (mergedTags.includes('VOID')) evolution = "Void " + newName;
+            else evolution = "Perfected " + newName;
+
+            // F. Synergy Logic
+            const synergies = mergedTags.map(t => `${t} Resonance`).slice(0, 2);
+
             return {
                 id: `fusion_${Date.now()}`,
                 name: newName,
@@ -1722,7 +1860,8 @@
                 deep_data: {
                     environment: env,
                     narrative: social,
-                    evolution: null 
+                    evolution: evolution,
+                    synergies: synergies
                 }
             };
         }
