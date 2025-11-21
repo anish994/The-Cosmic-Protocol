@@ -288,6 +288,127 @@ class SkillDatabase_v2 {
                     on_cast: "Your veins turn black as power surges.",
                     environment: "CORRUPT_GROUND"
                 }
+            },
+            {
+                id: "skill_crimson_lance",
+                name: "Crimson Lance",
+                tier: "UNCOMMON",
+                type: "ACTIVE",
+                tags: ["BLOOD", "RANGED", "OFFENSIVE"],
+                base_stats: { damage: 18, cost: 6, cooldown: 4, range: 12 },
+                description: "Hurls a spear of crystallized blood that drains life.",
+                lore_quote: "\"It seeks the warmth it lacks.\"",
+                tactical_brief: "Your primary sustain tool in a Blood build. Use it to recover health lost from Blood Pact.",
+                mastery_perk: "Mastery Lvl 5: Pierces through enemies.",
+                gameplay_info: {
+                    usage: ["Target: Directional", "Range: Long"],
+                    features: ["Lifesteal 50%", "High Velocity", "Silent Cast"]
+                },
+                deep_data: {
+                    environment: "Stains surfaces permanently.",
+                    narrative: "Vampires regard you with interest.",
+                    evolution: "Evolves into 'Exsanguinate'."
+                },
+                effects: [
+                    { type: "DAMAGE", value: 18, target: "SINGLE" },
+                    { type: "HEAL", value: 9, target: "SELF" }
+                ],
+                narrative_triggers: {
+                    on_cast: "Blood coalesces into a jagged spear.",
+                    on_hit: "The spear shatters, drawing red mist back to you.",
+                    environment: "BLOOD_SPLATTER"
+                }
+            },
+
+            // --- STORM ENGINE ---
+            {
+                id: "skill_thunderclap",
+                name: "Thunderclap",
+                tier: "COMMON",
+                type: "ACTIVE",
+                tags: ["STORM", "AOE", "CONTROL", "SONIC"],
+                base_stats: { damage: 8, cost: 5, cooldown: 6, radius: 5 },
+                description: "A sonic boom that stuns nearby enemies.",
+                lore_quote: "\"Speak loudly, and carry a thunderbolt.\"",
+                tactical_brief: "Essential for disengaging. The stun duration is short, so use it to interrupt wind-up animations.",
+                mastery_perk: "Mastery Lvl 3: Knocks back enemies.",
+                gameplay_info: {
+                    usage: ["Target: Self (AOE)", "Radius: 5m"],
+                    features: ["Stun (1s)", "Interrupts", "Deafens Targets"]
+                },
+                deep_data: {
+                    environment: "Shatters glass windows.",
+                    narrative: "Alerts all enemies in the zone.",
+                    evolution: "Evolves into 'Storm Lord'."
+                },
+                effects: [
+                    { type: "DAMAGE", value: 8, target: "AREA" },
+                    { type: "STUN", duration: 1 }
+                ],
+                narrative_triggers: {
+                    on_cast: "You clap your hands, creating a shockwave.",
+                    environment: "SHATTER_GLASS"
+                }
+            },
+            {
+                id: "skill_lightning_dash",
+                name: "Lightning Dash",
+                tier: "RARE",
+                type: "ACTIVE",
+                tags: ["STORM", "MOBILITY", "OFFENSIVE"],
+                base_stats: { damage: 10, cost: 4, cooldown: 3, range: 8 },
+                description: "Transform into electricity and surge forward.",
+                lore_quote: "\"Be where they are not.\"",
+                tactical_brief: "Both a dodge and an attack. You are invulnerable during the dash frames. Use it to pass through projectiles.",
+                mastery_perk: "Mastery Lvl 5: Chains lightning to nearby foes on exit.",
+                gameplay_info: {
+                    usage: ["Target: Directional", "Range: 8m"],
+                    features: ["Invulnerable (0.2s)", "Pass Through Units", "Shock Trail"]
+                },
+                deep_data: {
+                    environment: "Charges machinery.",
+                    narrative: "Technomancers are impressed.",
+                    evolution: "Evolves into 'Ball Lightning'."
+                },
+                effects: [
+                    { type: "DASH", distance: 8 },
+                    { type: "DAMAGE", value: 10, target: "PATH" }
+                ],
+                narrative_triggers: {
+                    on_cast: "You dissolve into a streak of blue light.",
+                    environment: "CHARGE_ELECTRONICS"
+                }
+            },
+
+            // --- ICE ENGINE EXPANSION ---
+            {
+                id: "skill_glacial_spike",
+                name: "Glacial Spike",
+                tier: "COMMON",
+                type: "ACTIVE",
+                tags: ["ICE", "RANGED", "PHYSICAL"],
+                base_stats: { damage: 20, cost: 4, cooldown: 2, range: 20 },
+                description: "Launches a heavy icicle that shatters on impact.",
+                lore_quote: "\"Winter has teeth.\"",
+                tactical_brief: "High single-target damage but requires precise aim. Deals bonus damage to Frozen targets (Shatter Combo).",
+                mastery_perk: "Mastery Lvl 5: Fragments hit enemies behind target.",
+                gameplay_info: {
+                    usage: ["Target: Single", "Range: Very Long"],
+                    features: ["High Velocity", "Shatter Bonus", "Physical Dmg"]
+                },
+                deep_data: {
+                    environment: "Pins enemies to walls.",
+                    narrative: "Leaves evidence (melting ice).",
+                    evolution: "Evolves into 'Avalanche'."
+                },
+                effects: [
+                    { type: "DAMAGE", value: 20, target: "SINGLE" },
+                    { type: "BONUS_DAMAGE", condition: "FROZEN", multiplier: 2.0 }
+                ],
+                narrative_triggers: {
+                    on_cast: "Moisture freezes instantly into a spear.",
+                    environment: "PIN_TARGET"
+                }
             }
         ];
 

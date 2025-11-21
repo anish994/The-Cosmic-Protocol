@@ -169,6 +169,11 @@ class NarrativeEngine {
                 noun: ["Blizzard", "Glacier", "Shard", "Stasis", "Frost", "Winter", "Zero"],
                 verb: ["freezes", "shatters", "preserves", "halts", "crystallizes", "numbs"]
             },
+            STORM: {
+                adj: ["Volatile", "Thunderous", "Electric", "Static", "Charged", "Sonic", "Rapid"],
+                noun: ["Tempest", "Bolt", "Surge", "Thunder", "Current", "Flash", "Boom"],
+                verb: ["shocks", "overloads", "stuns", "conducts", "flashes", "deafens"]
+            },
             BLOOD: {
                 adj: ["Crimson", "Sanguine", "Vital", "Cursed", "Weeping", "Visceral"],
                 noun: ["Pact", "Sacrifice", "Hemorrhage", "Vessel", "Rite", "Carnage"],
@@ -219,6 +224,7 @@ class NarrativeEngine {
             SOLAR: "The lingering burn prevents enemies from entering stealth or regenerating.",
             NATURE: "Rooted enemies take bonus damage from Fire sources.",
             ICE: "Shatter frozen targets with heavy physical attacks for critical damage.",
+            STORM: "Chains to nearby wet or metal-armored enemies.",
             BLOOD: "The health cost is risky; ensure you have a healing source active."
         };
     }
