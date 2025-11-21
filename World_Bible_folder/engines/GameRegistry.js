@@ -11,6 +11,11 @@
  */
 
 import { EventBus } from './GlobalEventBus.js';
+import { SkillUnlocker } from './SkillUnlockRegistry.js';
+import { TrialSystem } from './SkillTrialSystem.js';
+import { FusionDiscovery } from './FusionDiscoverySystem.js';
+import { EnvironmentSystem } from './EnvironmentInteractionSystem.js';
+import { RumorMill } from './RumorMillSystem.js';
 
 class GameRegistry {
     constructor() {
@@ -80,6 +85,13 @@ class GameRegistry {
         
         // 3. Narrative Layer
         // this.registerSystem('StoryDirector', new StoryNodeSystem(worldState));
+
+        // 4. Progression Layer
+        this.registerSystem('SkillUnlocker', SkillUnlocker);
+        this.registerSystem('TrialSystem', TrialSystem);
+        this.registerSystem('FusionDiscovery', FusionDiscovery);
+        this.registerSystem('EnvironmentSystem', EnvironmentSystem);
+        this.registerSystem('RumorMill', RumorMill);
         
         this.isInitialized = true;
         EventBus.emit('SYSTEMS_INITIALIZED', { timestamp: Date.now() });

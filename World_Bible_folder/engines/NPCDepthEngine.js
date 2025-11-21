@@ -15,13 +15,13 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { Suryanatha } from './LivingCharacterSystem.js';
-import { Janya } from './RelicSeekers_Architects_Batch5.js';
-import { LaxusBloodsage } from './Mythic_Legends_Batch8.js';
-import { Malakar } from './Mixed_Batch4.js';
-import { NPCMemorySystem } from './SkillEnhancementSystem.js';
+const { Suryanatha } = require('./LivingCharacterSystem.js');
+const { Janya } = require('./RelicSeekers_Architects_Batch5.js');
+const { LaxusBloodsage } = require('./Mythic_Legends_Batch8.js');
+const { Malakar } = require('./Mixed_Batch4.js');
+const { NPCMemorySystem } = require('./SkillEnhancementSystem.js');
 
-export class NPCDepthEngine {
+class NPCDepthEngine {
     constructor(worldState, memorySystem) {
         this.worldState = worldState;
         this.memorySystem = memorySystem || new NPCMemorySystem();
@@ -68,3 +68,5 @@ export class NPCDepthEngine {
         };
     }
 }
+
+module.exports = { NPCDepthEngine };

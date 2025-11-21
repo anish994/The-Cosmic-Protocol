@@ -3,13 +3,13 @@
 // Nomadic Relic Seekers (Complete) + Architect Echo Orders (Partial)
 // ═══════════════════════════════════════════════════════════════════════════
 
-import { LivingCharacter } from './LivingCharacterSystem.js';
+const { LivingCharacter } = require('./LivingCharacterSystem.js');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // JANYA - The Relic Matriarch (Relic Seekers Leader)
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class Janya extends LivingCharacter {
+class Janya extends LivingCharacter {
   constructor(memorySystem, worldState) {
     const data = loadCharacterData('janya');
     super(data, memorySystem, worldState);
@@ -1188,3 +1188,5 @@ function loadCharacterData(characterId) {
   };
 }
 
+
+module.exports = { Janya };

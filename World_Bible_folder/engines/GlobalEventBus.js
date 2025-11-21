@@ -90,4 +90,5 @@ class GlobalEventBus {
 }
 
 // Export as Singleton
-export const EventBus = new GlobalEventBus();
+const EventBus = new GlobalEventBus();
+module.exports = { EventBus, GlobalEventBus };

@@ -156,6 +156,25 @@ export class UnifiedGameSystem {
   }
 
   /**
+   * Commit a fusion (Player learns/creates it).
+   * Triggers discovery events and world effects.
+   */
+  commitFusion(engine1Name, skill1Id, engine2Name, skill2Id, context) {
+    const result = this.calculateFusion(engine1Name, skill1Id, engine2Name, skill2Id, context);
+    
+    if (result.success) {
+      EventBus.emit('FUSION_DISCOVERED', {
+        fusion: result.fusedSkill,
+        synergy: result.synergy,
+        context: context
+      });
+      console.log(`[Fusion] Discovered: ${result.fusedSkill.name}`);
+    }
+    
+    return result;
+  }
+
+  /**
    * Calculate fusion between two skills
    */
   calculateFusion(engine1Name, skill1Id, engine2Name, skill2Id, context) {

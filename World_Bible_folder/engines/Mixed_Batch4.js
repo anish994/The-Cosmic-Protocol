@@ -3,7 +3,7 @@
 // Completing Rogue CPS Fragments (Zeta, Theta) + Starting other factions
 // ═══════════════════════════════════════════════════════════════════════════
 
-import { LivingCharacter } from './LivingCharacterSystem.js';
+const { LivingCharacter } = require('./LivingCharacterSystem.js');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // ZETA - The Ritualist (Rogue CPS Fragment)
@@ -402,7 +402,7 @@ export class Theta extends LivingCharacter {
 // MALAKAR - Entropic Sovereign (Corruption Champions Leader)
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class Malakar extends LivingCharacter {
+class Malakar extends LivingCharacter {
   constructor(memorySystem, worldState) {
     const data = loadCharacterData('malakar');
     super(data, memorySystem, worldState);
@@ -1318,3 +1318,5 @@ function loadCharacterData(characterId) {
   };
 }
 
+
+module.exports = { Malakar };

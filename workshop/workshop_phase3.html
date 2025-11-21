@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cosmic Protocol - Fusion Laboratory</title>
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --panel-bg: #0f0f16;
+            --panel-border: #1f1f2e;
+            --accent: #6d28d9;
+            --accent-glow: #8b5cf6;
+            --text-main: #e2e8f0;
+            --text-dim: #64748b;
+            --void: #312e81;
+            --solar: #b45309;
+            --nature: #064e3b;
+            --success: #10b981;
+            --legendary-grad: linear-gradient(135deg, #f59e0b 0%, #b91c1c 100%);
+            --rare-grad: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --common-grad: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(15, 15, 22, 0.95);
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            flex-shrink: 0;
+        }
+
+        h1 { 
+            margin: 0; 
+            font-size: 1.1rem; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* MAIN LAYOUT */
+        .container {
+            display: grid;
+            grid-template-columns: 320px 1fr 380px;
+            flex: 1;
+            gap: 1px;
+            background: var(--panel-border);
+            overflow: hidden;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .panel-header {
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        /* LEFT: SKILL REPOSITORY */
+        .search-bar {
+            background: #000;
+            border: 1px solid var(--panel-border);
+            color: white;
+            padding: 0.6rem;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-list {
+            overflow-y: auto;
+            padding: 0.5rem;
+            flex: 1;
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--panel-border);
+            padding: 0.8rem;
+            margin-bottom: 0.4rem;
+            cursor: grab;
+            transition: all 0.2s;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--accent);
+            transform: translateX(2px);
+        }
+
+        .skill-item.legendary {
+            border-color: #f59e0b;
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent);
+        }
+
+        .skill-name { font-weight: bold; color: #fff; margin-bottom: 2px; font-size: 0.95rem; }
+        .skill-type { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; }
+
+        /* CENTER: FUSION CORE */
+        .fusion-stage {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #050508 70%);
+            position: relative;
+        }
+
+        .fusion-slots-wrapper {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .fusion-slot {
+            width: 120px;
+            height: 160px;
+            border: 2px dashed var(--text-dim);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .fusion-slot.active {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+            background: rgba(139, 92, 246, 0.05);
+            transform: scale(1.05);
+        }
+
+        .connector-line {
+            height: 2px;
+            width: 60px;
+            background: var(--panel-border);
+            position: relative;
+        }
+        
+        .connector-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid var(--panel-border);
+            background: var(--bg-dark);
+        }
+
+        .fuse-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 3rem;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            opacity: 0.3;
+            pointer-events: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .fuse-btn.ready {
+            opacity: 1;
+            pointer-events: all;
+            box-shadow: 0 0 40px var(--accent);
+        }
+
+        .fuse-btn:hover {
+            transform: translateY(-2px);
+            background: var(--accent-glow);
+        }
+
+        /* RIGHT: DEEP ANALYSIS */
+        .analysis-content {
+            padding: 0;
+            overflow-y: auto;
+            flex: 1;
+            background: #0a0a0f;
+        }
+
+        .hud-header {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom, rgba(139, 92, 246, 0.1), transparent);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+        }
+
+        .hud-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+            letter-spacing: 1px;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .hud-subtitle {
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .hud-body {
+            padding: 1.5rem;
+        }
+
+        .hud-section {
+            margin-bottom: 2rem;
+        }
+
+        .hud-section-title {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .hud-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin-left: 1rem;
+        }
+
+        /* STAT BARS */
+        .stat-bar-container {
+            margin-bottom: 0.8rem;
+        }
+
+        .stat-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-bar-track {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* HEX GRID FOR TAGS */
+        .hex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .hex-tag {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+        }
+
+        /* TERMINAL BOX */
+        .terminal-box {
+            background: #050508;
+            border: 1px solid #333;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .terminal-box::before {
+            content: 'LOG_ENTRY_044';
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            background: #050508;
+            padding: 0 5px;
+            font-size: 0.6rem;
+            color: var(--text-dim);
+        }
+
+        /* VISUALIZER */
+        .skill-visualizer {
+            height: 120px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-visualizer::after {
+            content: '';
+            position: absolute;
+            width: 100%; height: 2px;
+            background: rgba(139, 92, 246, 0.5);
+            top: 50%;
+            animation: scanline 3s infinite linear;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-60px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(60px); opacity: 0; }
+        }
+
+        /* RESULT OVERLAY - ENHANCED SCHEMATIC */
+        .result-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(5, 5, 8, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .result-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .result-content {
+            width: 1100px;
+            max-width: 95%;
+            height: 90vh;
+            background: #0f0f16;
+            border: 1px solid var(--panel-border);
+            border-radius: 4px;
+            box-shadow: 0 0 100px rgba(0,0,0,0.8);
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* DECORATIVE CORNERS */
+        .result-content::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100px; height: 100px;
+            border-top: 2px solid var(--accent); border-left: 2px solid var(--accent);
+            z-index: 10; pointer-events: none;
+        }
+        .result-content::after {
+            content: ''; position: absolute; bottom: 0; right: 0; width: 100px; height: 100px;
+            border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent);
+            z-index: 10; pointer-events: none;
+        }
+
+        /* HEADER */
+        .result-header {
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-title-block h2 {
+            font-size: 2rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .result-subtitle {
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* MAIN BODY GRID */
+        .schematic-body {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            overflow: hidden;
+        }
+
+        /* LEFT: CARD & CORE STATS */
+        .schematic-sidebar {
+            background: rgba(0,0,0,0.3);
+            border-right: 1px solid var(--panel-border);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .schematic-card {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schematic-card.legendary { border-color: #f59e0b; box-shadow: 0 0 30px rgba(245, 158, 11, 0.2); }
+        
+        .card-icon-large {
+            font-size: 5rem;
+            text-align: center;
+            margin: 1rem 0;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+        }
+
+        /* RIGHT: TABS & DETAILS */
+        .schematic-main {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255,255,255,0.01);
+        }
+
+        .schematic-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-right: 1px solid var(--panel-border);
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        .tab-btn:hover { background: rgba(255,255,255,0.05); color: #fff; }
+        .tab-btn.active { background: var(--accent); color: #fff; }
+
+        .tab-content {
+            padding: 2rem;
+            overflow-y: auto;
+            flex: 1;
+            display: none;
+        }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* CONTENT MODULES */
+        .module-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-module {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--panel-border);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .module-title {
+            font-size: 0.8rem;
+            color: var(--accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        /* MASTERY TREE */
+        .mastery-tree {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .mastery-tree::before {
+            content: ''; position: absolute; top: 20px; left: 0; right: 0; height: 2px;
+            background: var(--panel-border); z-index: 0;
+        }
+
+        .mastery-node {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 30%;
+        }
+
+        .node-icon {
+            width: 40px; height: 40px;
+            background: #0f0f16;
+            border: 2px solid var(--text-dim);
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: var(--text-dim);
+        }
+
+        .mastery-node.unlocked .node-icon {
+            border-color: var(--success);
+            color: var(--success);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .node-desc { font-size: 0.8rem; color: #cbd5e1; line-height: 1.4; }
+
+        /* FOOTER */
+        .result-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--panel-border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--accent-glow); transform: translateX(2px); }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--text-dim);
+            color: var(--text-dim);
+            padding: 0.8rem 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: #fff; color: #fff; }
+
+        /* MOBILE */
+        @media (max-width: 850px) {
+            .schematic-body { grid-template-columns: 1fr; }
+            .schematic-sidebar { display: none; } /* Hide card on mobile for space */
+            .module-grid { grid-template-columns: 1fr; }
+        }
+
+
+        /* MOBILE LANDSCAPE OPTIMIZATION */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 260px 1fr 300px;
+            }
+            .fusion-slot { width: 100px; height: 140px; }
+            .connector-line { width: 40px; }
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 220px 1fr 0px; /* Hide analysis on small screens initially or make it overlay */
+            }
+            .panel:last-child { display: none; } /* Temporary hide for small screens */
+            
+            /* Adjust for landscape specifically */
+            @media (orientation: landscape) {
+                .container {
+                    grid-template-columns: 200px 1fr 250px;
+                }
+                .panel:last-child { display: flex; }
+                h1 { font-size: 1rem; }
+                .fusion-slot { width: 90px; height: 120px; }
+                .skill-item { padding: 0.5rem; }
+                .result-content { padding: 1rem; gap: 1rem; }
+                .result-title { font-size: 1.5rem; }
+                .card-art-placeholder { height: 100px; font-size: 2rem; }
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
+
+        .fusion-slot.active {
+            border-color: var(--accent);
+            background: rgba(139, 92, 246, 0.1);
+            animation: pulse-glow 2s infinite;
+        }
+
+        .action-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+        .clear-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 0.5rem;
+        }
+        .clear-btn:hover { color: #fff; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fusion Laboratory</h1>
+        <div style="display:flex; gap:1rem; align-items:center;">
+            <button onclick="clearStorage()" style="background:none; border:none; color:#ef4444; cursor:pointer; font-size:0.8rem;">Reset Data</button>
+            <div style="color: var(--text-dim); font-size: 0.8rem;">
+                <span style="color: #10b981">●</span> Online
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- LEFT: SKILL REPOSITORY -->
+        <div class="panel">
+            <div class="panel-header">
+                <span>Database</span>
+                <span id="skill-count">0</span>
+            </div>
+            <div style="padding: 0.5rem; display:flex; gap:0.5rem;">
+                <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterSkills(this.value)">
+                <select id="sort-select" onchange="renderSkillList()" style="background:#1e1e2e; color:#fff; border:1px solid #333; border-radius:4px;">
+                    <option value="tier">Tier</option>
+                    <option value="name">Name</option>
+                    <option value="type">Type</option>
+                </select>
+            </div>
+            <div id="skill-list" class="skill-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- CENTER: FUSION CORE -->
+        <div class="panel">
+            <div class="fusion-stage">
+                <div class="fusion-slots-wrapper">
+                    <div class="fusion-slot" id="slot-1" ondrop="drop(event)" ondragover="allowDrop(event)" onclick="clearSlot(0)">
+                        <div style="color: var(--text-dim); font-size: 0.7rem;">INPUT A</div>
+                    </div>
+                    
+                    <div class="connector-line"></div>
+                    
+                    <div class="fusion-slot" id="slot-2" ondrop="drop(event)" ondragover="allowDrop(event)" onclick="clearSlot(1)">
+                        <div style="color: var(--text-dim); font-size: 0.7rem;">INPUT B</div>
+                    </div>
+                </div>
+
+                <button id="fuse-btn" class="fuse-btn" onclick="performFusion()">Synthesize</button>
+                <button class="clear-btn" onclick="clearAllSlots()">Clear Matrix</button>
+                
+                <div id="fusion-status" style="margin-top: 1.5rem; color: var(--text-dim); font-size: 0.9rem; height: 20px;">
+                    Awaiting components...
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: DEEP ANALYSIS -->
+        <div class="panel">
+            <div class="panel-header">Deep Analysis</div>
+            <div id="analysis-panel" class="analysis-content">
+                <div style="text-align: center; color: var(--text-dim); margin-top: 50%;">
+                    Select a skill to view deep metrics.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT OVERLAY -->
+    <div id="result-overlay" class="result-overlay">
+        <div class="result-content">
+            <div class="result-header">
+                <div class="result-title">SYNTHESIS COMPLETE</div>
+                <div class="result-subtitle">New Paradigm Created</div>
+            </div>
+            
+            <!-- Left Column: The Card -->
+            <div class="card-display" id="result-card-container">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- Right Column: Details -->
+            <div class="result-details">
+                <div class="detail-section">
+                    <h3>Tactical Analysis</h3>
+                    <div id="result-tactics" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.5;"></div>
+                </div>
+                <div class="detail-section">
+                    <h3>Core Features</h3>
+                    <ul id="result-features" class="feature-list" style="margin:0; padding:0; list-style:none;"></ul>
+                </div>
+                <div class="detail-section">
+                    <h3>Lore & Impact</h3>
+                    <div id="result-lore" style="font-style: italic; color: #94a3b8; line-height: 1.5; font-size: 0.9rem;"></div>
+                </div>
+            </div>
+
+            <button class="collect-btn" onclick="collectSkill()">Integrate into Neural Link</button>
+        </div>
+    </div>
+
+    <script>
+        // --- DEEP DATA DB ---
+        const SKILL_DB = [
+            {
+                id: "skill_void_strike",
+                name: "Void Strike",
+                tier: "COMMON",
+                type: "ACTIVE",
+                tags: ["VOID", "MELEE", "DIMENSIONAL"],
+                stats: { damage: 15, cooldown: 3, cost: 5 },
+                description: "Tears a localized rift in reality, dealing Void damage.",
+                lore_quote: "\"The fabric of reality is not a wall, but a curtain. Tear it.\"",
+                tactical_brief: "Best used against armored targets. The armor penetration applies before damage calculation. Positioning is key—try to line up enemies for the evolved Cleave.",
+                mastery_perk: "Mastery Lvl 5: Cooldown resets on kill.",
+                gameplay_info: {
+                    usage: ["Target: Single Enemy", "Range: Melee (1.5m)"],
+                    features: ["Ignores 10% Armor", "Applies 'Void Touched' (5s)", "Interrupts Casting"]
+                },
+                deep_data: {
+                    environment: "Collapses weak structures. Absorbs light.",
+                    narrative: "NPCs fearful of the Void will recoil.",
+                    evolution: "Evolves into 'Dimensional Cleave'."
+                }
+            },
+            {
+                id: "skill_solar_flare",
+                name: "Solar Flare",
+                type: "ACTIVE",
+                tier: "COMMON",
+                tags: ["SOLAR", "RANGED", "FIRE"],
+                stats: { damage: 12, cooldown: 2, cost: 4 },
+                description: "Channels the fury of a dying star into a concentrated bolt.",
+                lore_quote: "\"Let them burn with the memory of a thousand suns.\"",
+                tactical_brief: "Excellent for crowd control in narrow corridors. The piercing effect allows you to hit multiple targets if you kite them into a line.",
+                mastery_perk: "Mastery Lvl 10: Leaves a trail of fire.",
+                gameplay_info: {
+                    usage: ["Target: Directional", "Range: Long (15m)"],
+                    features: ["Pierces first target", "Ignites enemies", "Illuminates dark areas"]
+                },
+                deep_data: {
+                    environment: "Ignites flammable terrain. Melts ice.",
+                    narrative: "Provides light in Dark Zones.",
+                    evolution: "Evolves into 'Supernova'."
+                }
+            },
+            {
+                id: "skill_thorn_whip",
+                name: "Thorn Whip",
+                type: "ACTIVE",
+                tier: "COMMON",
+                tags: ["NATURE", "MELEE", "CONTROL"],
+                stats: { damage: 10, cooldown: 1, cost: 3 },
+                description: "Summons a vine to strike and pull enemies.",
+                lore_quote: "\"Nature does not ask for permission to reclaim its own.\"",
+                tactical_brief: "Use this to pull ranged enemies into melee range, or to pull yourself towards terrain for mobility.",
+                mastery_perk: "Mastery Lvl 3: Applies 'Bleed' on hit.",
+                gameplay_info: {
+                    usage: ["Target: Single Enemy", "Range: Mid (4m)"],
+                    features: ["Pulls enemy 2m closer", "Bleed Effect", "Grapples terrain"]
+                },
+                deep_data: {
+                    environment: "Creates grapple points.",
+                    narrative: "Druids are less aggressive.",
+                    evolution: "Evolves into 'Ironwood Lash'."
+                }
+            },
+            {
+                id: "skill_cryo_stasis",
+                name: "Cryo Stasis",
+                type: "ACTIVE",
+                tier: "RARE",
+                tags: ["ICE", "DEFENSIVE", "TIME"],
+                stats: { shield: 30, cooldown: 6, cost: 8 },
+                description: "Freezes time and space around the caster.",
+                lore_quote: "\"Time is a river. I am the dam.\"",
+                tactical_brief: "A panic button. Use it to negate massive incoming damage mechanics. Be warned: you cannot move while in stasis.",
+                mastery_perk: "Mastery Lvl 5: Heals 10% HP while frozen.",
+                gameplay_info: {
+                    usage: ["Target: Self", "Duration: 3s"],
+                    features: ["Invulnerability", "Immobilizes Self", "Freezes nearby enemies"]
+                },
+                deep_data: {
+                    environment: "Freezes water surfaces.",
+                    narrative: "Can pause conversation timers.",
+                    evolution: "Evolves into 'Absolute Zero'."
+                }
+            },
+            {
+                id: "skill_blood_pact",
+                name: "Blood Pact",
+                type: "ACTIVE",
+                tier: "FORBIDDEN",
+                tags: ["BLOOD", "BUFF", "CURSED"],
+                stats: { health_cost: 10, damage_boost: 0.5 },
+                description: "Sacrifice vitality for raw power.",
+                lore_quote: "\"Power demands a price. I pay in red.\"",
+                tactical_brief: "High risk, high reward. Combine with lifesteal skills to mitigate the health cost. Do not use when below 20% HP.",
+                mastery_perk: "Mastery Lvl 10: Cost reduced by 50%.",
+                gameplay_info: {
+                    usage: ["Target: Self", "Cost: 10% HP"],
+                    features: ["Increases DMG by 50%", "Disables Healing", "Attracts Blood Beasts"]
+                },
+                deep_data: {
+                    environment: "Corrupts holy ground.",
+                    narrative: "Paladins will attack on sight.",
+                    evolution: "Evolves into 'Hemomancy'."
+                }
+            }
+        ];
+
+        // --- STATE ---
+        // Load from LocalStorage or use Default DB
+        let storedSkills = localStorage.getItem('cosmic_skills');
+        let knownSkills = storedSkills ? JSON.parse(storedSkills) : [...SKILL_DB];
+        
+        let selectedSlots = [null, null];
+        let pendingNewSkill = null;
+
+        // --- INIT ---
+        window.onload = () => {
+            renderSkillList();
+        };
+
+        // --- PERSISTENCE ---
+        function saveProgress() {
+            localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
+        }
+
+        // --- RENDERING ---
+        function renderSkillList(filter = "") {
+            const list = document.getElementById('skill-list');
+            list.innerHTML = "";
+            document.getElementById('skill-count').innerText = knownSkills.length;
+
+            // Sorting Logic
+            const sortMode = document.getElementById('sort-select') ? document.getElementById('sort-select').value : 'tier';
+            let displaySkills = [...knownSkills];
+
+            if (sortMode === 'name') {
+                displaySkills.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortMode === 'type') {
+                displaySkills.sort((a, b) => a.type.localeCompare(b.type));
+            } else {
+                // Tier Sort (Legendary > Rare > Common)
+                const tierOrder = { 'LEGENDARY': 3, 'RARE': 2, 'COMMON': 1, 'FORBIDDEN': 4 };
+                displaySkills.sort((a, b) => (tierOrder[b.tier] || 0) - (tierOrder[a.tier] || 0));
+            }
+
+            displaySkills.forEach(skill => {
+                if (filter && !skill.name.toLowerCase().includes(filter.toLowerCase())) return;
+
+                const el = document.createElement('div');
+                el.className = `skill-item ${skill.tier === 'LEGENDARY' ? 'legendary' : ''}`;
+                el.draggable = true;
+                el.ondragstart = (e) => drag(e, skill.id);
+                el.onclick = () => showAnalysis(skill);
+                
+                el.innerHTML = `
+                    <div class="skill-name">${skill.name}</div>
+                    <div class="skill-type">${skill.tier} • ${skill.type}</div>
+                `;
+                list.appendChild(el);
+            });
+        }
+
+        function showAnalysis(skill) {
+            const panel = document.getElementById('analysis-panel');
+            
+            // Helper for bars
+            const getWidth = (val, max) => Math.min(100, Math.max(5, (val / max) * 100));
+            
+            // Fake "Deep" Metrics
+            const stability = Math.floor(Math.random() * 30) + 70; // 70-100%
+            const complexity = skill.description.length > 50 ? 'HIGH' : 'MED';
+            const resonance = skill.tags[0] + '-' + (Math.floor(Math.random() * 900) + 100);
+
+            // Icon
+            const icon = getIconForSkill(skill);
+
+            panel.innerHTML = `
+                <div class="hud-header">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                        <div>
+                            <h2 class="hud-title">${skill.name}</h2>
+                            <div class="hud-subtitle">ID: ${skill.id.toUpperCase()} // TIER: ${skill.tier}</div>
+                        </div>
+                        <div style="font-size:2rem; opacity:0.5;">${icon}</div>
+                    </div>
+                    
+                    <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+                        <button class="action-btn" onclick="equipSkill('${skill.id}', 0)">LOAD INPUT A</button>
+                        <button class="action-btn" onclick="equipSkill('${skill.id}', 1)">LOAD INPUT B</button>
+                        <button class="action-btn" style="border-color: var(--accent-glow); color: var(--accent-glow);" onclick="inspectSkill('${skill.id}')">FULL SCHEMATIC</button>
+                    </div>
+                </div>
+
+                <div class="hud-body">
+                    
+                    <!-- VISUALIZER -->
+                    <div class="skill-visualizer">
+                        ${icon}
+                    </div>
+
+                    <!-- METRICS -->
+                    <div class="hud-section">
+                        <div class="hud-section-title">PERFORMANCE METRICS</div>
+                        
+                        <!-- Damage -->
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-label">
+                                <span>DAMAGE OUTPUT</span>
+                                <span>${skill.stats.damage || 0}</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: ${getWidth(skill.stats.damage || 0, 60)}%; background: #ef4444;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Cost -->
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-label">
+                                <span>ENERGY COST</span>
+                                <span>${skill.stats.cost || 0}</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: ${getWidth(skill.stats.cost || 0, 30)}%; background: #3b82f6;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Cooldown -->
+                        <div class="stat-bar-container">
+                            <div class="stat-bar-label">
+                                <span>RECHARGE RATE</span>
+                                <span>${skill.stats.cooldown || 0}s</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: ${getWidth(skill.stats.cooldown || 0, 15)}%; background: #f59e0b;"></div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-between; margin-top:1rem; font-size:0.75rem; color:#64748b;">
+                            <span>STABILITY: <span style="color:#10b981">${stability}%</span></span>
+                            <span>COMPLEXITY: <span style="color:#fff">${complexity}</span></span>
+                            <span>RES: ${resonance}</span>
+                        </div>
+                    </div>
+
+                    <!-- TAGS -->
+                    <div class="hud-section">
+                        <div class="hud-section-title">TACTICAL MATRIX</div>
+                        <div class="hex-grid">
+                            ${skill.tags.map(t => `<div class="hex-tag">${t}</div>`).join('')}
+                            <div class="hex-tag" style="border-color:#6366f1; color:#6366f1;">${skill.type}</div>
+                        </div>
+                    </div>
+
+                    <!-- LORE -->
+                    <div class="hud-section">
+                        <div class="hud-section-title">ARCHIVE DATA</div>
+                        <div class="terminal-box">
+                            > DECRYPTING...<br>
+                            > "${skill.lore_quote || 'DATA CORRUPTED'}"<br>
+                            ><br>
+                            > TACTICAL: ${skill.tactical_brief.substring(0, 60)}...
+                        </div>
+                    </div>
+
+                    <!-- ENV IMPACT -->
+                    <div class="hud-section">
+                        <div class="hud-section-title">REALITY DISTORTION</div>
+                        <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.4;">
+                            <span style="color:#10b981">●</span> ${skill.deep_data.environment}
+                        </div>
+                        ${skill.deep_data.evolution ? `
+                            <div style="margin-top:0.5rem; font-size:0.85rem; color:#f59e0b;">
+                                <span style="color:#f59e0b">▲</span> POTENTIAL: ${skill.deep_data.evolution}
+                            </div>
+                        ` : ''}
+                    </div>
+
+                </div>
+            `;
+        }
+
+        // --- INTERACTION HELPERS ---
+        window.equipSkill = (id, slotIndex) => {
+            const skill = knownSkills.find(s => s.id === id);
+            if (!skill) return;
+            
+            selectedSlots[slotIndex] = skill;
+            const slotEl = document.getElementById(slotIndex === 0 ? 'slot-1' : 'slot-2');
+            
+            slotEl.classList.add('active');
+            slotEl.innerHTML = `
+                <div style="font-weight:bold; color:#fff; font-size:0.9rem; text-align:center;">${skill.name}</div>
+                <div style="color:var(--accent); font-size:0.7rem;">${skill.type}</div>
+            `;
+            checkReady();
+        };
+
+        window.inspectSkill = (id) => {
+            const skill = knownSkills.find(s => s.id === id);
+            if (skill) showResultOverlay(skill, 'VIEW');
+        };
+
+        window.clearSlot = (index) => {
+            selectedSlots[index] = null;
+            const slotEl = document.getElementById(index === 0 ? 'slot-1' : 'slot-2');
+            slotEl.classList.remove('active');
+            slotEl.innerHTML = `<div style="color: var(--text-dim); font-size: 0.7rem;">INPUT ${index === 0 ? 'A' : 'B'}</div>`;
+            
+            document.getElementById('fuse-btn').classList.remove('ready');
+            document.getElementById('fusion-status').innerText = "Awaiting components...";
+        };
+
+        window.clearAllSlots = () => {
+            clearSlot(0);
+            clearSlot(1);
+        };
+
+        window.clearStorage = () => {
+            if(confirm("Reset all progress and delete created skills?")) {
+                localStorage.removeItem('cosmic_skills');
+                location.reload();
+            }
+        };
+
+        // --- DRAG & DROP ---
+        window.allowDrop = (ev) => ev.preventDefault();
+        window.drag = (ev, id) => ev.dataTransfer.setData("text", id);
+        
+        window.drop = (ev) => {
+            ev.preventDefault();
+            const id = ev.dataTransfer.getData("text");
+            const skill = knownSkills.find(s => s.id === id);
+            const slotEl = ev.target.closest('.fusion-slot');
+            
+            if (slotEl && skill) {
+                const index = slotEl.id === 'slot-1' ? 0 : 1;
+                selectedSlots[index] = skill;
+                
+                // Update UI
+                slotEl.classList.add('active');
+                slotEl.innerHTML = `
+                    <div style="font-weight:bold; color:#fff; font-size:0.9rem; text-align:center;">${skill.name}</div>
+                    <div style="color:var(--accent); font-size:0.7rem;">${skill.type}</div>
+                `;
+                
+                checkReady();
+            }
+        };
+
+        function checkReady() {
+            const btn = document.getElementById('fuse-btn');
+            const status = document.getElementById('fusion-status');
+            
+            if (selectedSlots[0] && selectedSlots[1]) {
+                btn.classList.add('ready');
+                status.innerText = "Fusion Matrix Stable.";
+                status.style.color = "#10b981";
+            }
+        }
+
+        // --- FUSION LOGIC (SMART ENGINE) ---
+        window.performFusion = () => {
+            if (!selectedSlots[0] || !selectedSlots[1]) return;
+
+            const s1 = selectedSlots[0];
+            const s2 = selectedSlots[1];
+            
+            // Simulate Processing
+            const btn = document.getElementById('fuse-btn');
+            btn.innerText = "Synthesizing...";
+            
+            setTimeout(() => {
+                // Generate Result (Using Smart Engine)
+                try {
+                    pendingNewSkill = generateSmartFusion(s1, s2);
+                    
+                    // Show Result Overlay
+                    showResultOverlay(pendingNewSkill);
+                    
+                    // Reset Button
+                    btn.classList.remove('ready');
+                    btn.innerText = "Synthesize";
+                    document.getElementById('fusion-status').innerText = "Awaiting components...";
+                } catch (e) {
+                    console.error("Fusion Error:", e);
+                    btn.innerText = "Error";
+                    document.getElementById('fusion-status').innerText = "Synthesis Failed. Check Console.";
+                }
+                
+            }, 800);
+        };
+
+        // --- ENHANCED SCHEMATIC ENGINE V2 ---
+        function showResultOverlay(skill, mode = 'NEW') {
+            const overlay = document.getElementById('result-overlay');
+            const content = overlay.querySelector('.result-content');
+            
+            // Generate Deep Data
+            const techData = generateTechnicalData(skill);
+            const combatData = generateCombatDynamics(skill);
+            
+            // Determine Gradient
+            let gradient = 'var(--common-grad)';
+            if (skill.tier === 'RARE') gradient = 'var(--rare-grad)';
+            if (skill.tier === 'LEGENDARY') gradient = 'var(--legendary-grad)';
+
+            // Build Full HTML Structure
+            content.innerHTML = `
+                <div class="result-header">
+                    <div class="result-title-block">
+                        <h2>${mode === 'NEW' ? 'SYNTHESIS COMPLETE' : 'NEURAL ARCHIVE'}</h2>
+                        <div class="result-subtitle">
+                            ID: ${skill.id.toUpperCase()} // PROTOCOL: ${skill.tier}
+                        </div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:0.8rem; color:var(--text-dim);">POWER RATING</div>
+                        <div style="font-size:1.5rem; color:var(--accent); font-weight:bold;">
+                            ${Math.floor((skill.stats.damage || 0) + (skill.stats.shield || 0) * 1.5 + (skill.stats.cooldown * 2))}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schematic-body">
+                    <!-- SIDEBAR: CARD -->
+                    <div class="schematic-sidebar">
+                        <div class="schematic-card ${skill.tier === 'LEGENDARY' ? 'legendary' : ''}" style="background: ${gradient}">
+                            <div class="card-icon-large">${getIconForSkill(skill)}</div>
+                            <div style="font-size:1.4rem; font-weight:bold; color:#fff; text-align:center; margin-bottom:0.5rem;">${skill.name}</div>
+                            <div style="text-align:center; color:rgba(255,255,255,0.7); font-size:0.8rem; text-transform:uppercase; margin-bottom:1.5rem;">
+                                ${skill.tier} • ${skill.type}
+                            </div>
+                            
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; width:100%; background:rgba(0,0,0,0.2); padding:1rem; border-radius:8px;">
+                                ${Object.entries(skill.stats).map(([k,v]) => `
+                                    <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                                        <span style="color:#cbd5e1; text-transform:capitalize;">${k}</span>
+                                        <span style="font-weight:bold; color:#fff;">${v}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="info-module" style="width:100%; box-sizing:border-box;">
+                            <div class="module-title">CORE TAGS</div>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                ${skill.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MAIN: TABS -->
+                    <div class="schematic-main">
+                        <div class="schematic-tabs">
+                            <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+                            <button class="tab-btn" onclick="switchTab('mechanics')">Mechanics</button>
+                            <button class="tab-btn" onclick="switchTab('dynamics')">Combat Logic</button>
+                            <button class="tab-btn" onclick="switchTab('lore')">Lore</button>
+                        </div>
+
+                        <!-- TAB: OVERVIEW -->
+                        <div id="tab-overview" class="tab-content active">
+                            <div class="module-grid">
+                                <div class="info-module">
+                                    <div class="module-title">TACTICAL BRIEF</div>
+                                    <div style="font-size:0.9rem; line-height:1.6; color:#cbd5e1;">
+                                        ${skill.tactical_brief}
+                                    </div>
+                                </div>
+                                <div class="info-module">
+                                    <div class="module-title">KEY FEATURES</div>
+                                    <ul style="margin:0; padding-left:1rem; color:#cbd5e1; font-size:0.9rem; line-height:1.6;">
+                                        ${skill.gameplay_info.features.map(f => `<li>${f}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="info-module" style="margin-top:2rem;">
+                                <div class="module-title">USAGE PARAMETERS</div>
+                                <div style="display:flex; gap:2rem; color:#cbd5e1; font-size:0.9rem;">
+                                    ${skill.gameplay_info.usage.map(u => `<div>• ${u}</div>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: MECHANICS -->
+                        <div id="tab-mechanics" class="tab-content">
+                            <div class="module-grid">
+                                <div class="info-module">
+                                    <div class="module-title">COMBAT SPECS</div>
+                                    ${techData.specs.map(s => `
+                                        <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.9rem; border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:4px;">
+                                            <span style="color:#94a3b8;">${s.label}</span>
+                                            <span style="color:#fff; font-weight:bold;">${s.val}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                <div class="info-module">
+                                    <div class="module-title">EFFICIENCY RATING</div>
+                                    ${techData.efficiency.map(e => `
+                                        <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.9rem;">
+                                            <span style="color:#94a3b8;">${e.label}</span>
+                                            <span style="color:#10b981;">${e.val}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div class="info-module" style="margin-top:2rem;">
+                                <div class="module-title">MECHANICAL BREAKDOWN</div>
+                                <div style="font-size:0.85rem; color:#cbd5e1; line-height:1.6;">
+                                    ${techData.mechanics_text}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: DYNAMICS (COMBAT FLOW) -->
+                        <div id="tab-dynamics" class="tab-content">
+                            <div class="info-module">
+                                <div class="module-title">COMBAT FLOW</div>
+                                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:2rem; padding: 1rem; background:rgba(0,0,0,0.2); border-radius:8px;">
+                                    <div style="text-align:center; width:30%;">
+                                        <div style="font-size:0.7rem; color:#94a3b8; margin-bottom:0.5rem; letter-spacing:1px;">PRIMER</div>
+                                        <div style="border:1px solid var(--text-dim); padding:0.5rem; border-radius:4px; color:#fff; font-size:0.8rem; background:rgba(255,255,255,0.05);">
+                                            ${combatData.primer}
+                                        </div>
+                                    </div>
+                                    <div style="color:var(--accent); font-size:1.5rem;">➜</div>
+                                    <div style="text-align:center; width:30%;">
+                                        <div style="font-size:0.7rem; color:var(--accent); margin-bottom:0.5rem; letter-spacing:1px;">EXECUTION</div>
+                                        <div style="border:1px solid var(--accent); padding:0.5rem; border-radius:4px; color:#fff; font-weight:bold; font-size:0.9rem; background:rgba(139, 92, 246, 0.1); box-shadow:0 0 15px rgba(139, 92, 246, 0.2);">
+                                            ${skill.name}
+                                        </div>
+                                    </div>
+                                    <div style="color:var(--accent); font-size:1.5rem;">➜</div>
+                                    <div style="text-align:center; width:30%;">
+                                        <div style="font-size:0.7rem; color:#94a3b8; margin-bottom:0.5rem; letter-spacing:1px;">AFTERMATH</div>
+                                        <div style="border:1px solid var(--text-dim); padding:0.5rem; border-radius:4px; color:#fff; font-size:0.8rem; background:rgba(255,255,255,0.05);">
+                                            ${combatData.aftermath}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="module-grid">
+                                <div class="info-module">
+                                    <div class="module-title">HARD COUNTERS</div>
+                                    <ul style="margin:0; padding-left:1rem; color:#ef4444; font-size:0.9rem; line-height:1.6;">
+                                        ${combatData.counters.map(c => `<li>${c}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="info-module">
+                                    <div class="module-title">OPTIMAL TARGETS</div>
+                                    <ul style="margin:0; padding-left:1rem; color:#10b981; font-size:0.9rem; line-height:1.6;">
+                                        ${combatData.targets.map(t => `<li>${t}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB: LORE -->
+                        <div id="tab-lore" class="tab-content">
+                            <div class="info-module">
+                                <div class="module-title">ARCHIVE RECORD</div>
+                                <div style="font-style:italic; color:#94a3b8; font-size:1.1rem; line-height:1.6; margin-bottom:2rem; border-left:3px solid var(--accent); padding-left:1.5rem;">
+                                    "${skill.lore_quote}"
+                                </div>
+                                <div style="font-size:0.9rem; color:#cbd5e1; line-height:1.6;">
+                                    <p><strong>NARRATIVE:</strong> ${skill.deep_data.narrative}</p>
+                                    <p><strong>ENVIRONMENTAL IMPACT:</strong> ${skill.deep_data.environment}</p>
+                                    <p><strong>ORIGIN:</strong> Discovered via synthesis of ${skill.tags[0]} and ${skill.tags[1] || 'UNKNOWN'} energies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="result-footer">
+                    ${mode === 'NEW' 
+                        ? `<button class="btn-primary" onclick="collectSkill()">Integrate Paradigm</button>`
+                        : `<button class="btn-secondary" onclick="document.getElementById('result-overlay').classList.remove('active')">Close Archive</button>`
+                    }
+                </div>
+            `;
+
+            overlay.classList.add('active');
+        }
+
+        // --- HELPERS ---
+        window.switchTab = (tabId) => {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            event.target.classList.add('active');
+        };
+
+        function generateTechnicalData(skill) {
+            // Procedural generation of "deep" stats
+            const isMelee = skill.tags.includes('MELEE');
+            const isArea = skill.gameplay_info.usage[1].includes('Area') || skill.description.includes('radius') || skill.tags.includes('NOVA');
+            
+            // Calculate Efficiency
+            const dpe = (skill.stats.damage / skill.stats.cost).toFixed(1);
+            const dps_rating = (skill.stats.damage / skill.stats.cooldown).toFixed(1);
+
+            return {
+                specs: [
+                    { label: "Activation", val: isMelee ? "Instant" : "0.5s Cast" },
+                    { label: "Targeting", val: isArea ? "Ground Target (AOE)" : "Unit Target (Lock-on)" },
+                    { label: "Effective Range", val: isMelee ? "2.5 Meters" : "18 Meters" },
+                    { label: "Duration", val: "Instant" } 
+                ],
+                efficiency: [
+                    { label: "Damage Efficiency", val: `${dpe} Dmg/Energy` },
+                    { label: "Burst Rating", val: `${dps_rating} DPS` },
+                    { label: "Threat Generation", val: skill.stats.damage > 20 ? "High" : "Low" }
+                ],
+                mechanics_text: `This skill utilizes a <strong>${isMelee ? 'Physical' : 'Magical'}</strong> coefficient. It benefits from <strong>${skill.tags[0]} Mastery</strong> and triggers on-hit effects at <strong>${isArea ? '50%' : '100%'}</strong> effectiveness.`
+            };
+        }
+
+        function generateCombatDynamics(skill) {
+            const t = skill.tags[0];
+            
+            // Procedural Logic
+            const primers = {
+                VOID: "Gravity Well, Defense Break",
+                SOLAR: "Oil Slick, Frozen Status",
+                NATURE: "Wet Status, Exposed Armor",
+                ICE: "Wet Status, Slowed",
+                BLOOD: "Bleed Stacks, Low HP"
+            };
+            
+            const aftermaths = {
+                VOID: "Applies 'Nullified' (No Healing)",
+                SOLAR: "Applies 'Ignite' (DoT)",
+                NATURE: "Spawns 'Thorn Patch' (Zone)",
+                ICE: "Applies 'Brittle' (+Crit Dmg)",
+                BLOOD: "Grants 'Vampirism' (Self Buff)"
+            };
+
+            const counters = {
+                VOID: ["Ethereal Enemies", "Phase Shifters"],
+                SOLAR: ["Fire Elementals", "Mirror Shields"],
+                NATURE: ["Flying Units", "Mechanical Armor"],
+                ICE: ["Frost Giants", "Energy Shields"],
+                BLOOD: ["Undead (Immune to Bleed)", "Constructs"]
+            };
+
+            const targets = {
+                VOID: ["Shielded Tanks", "Stationary Bosses"],
+                SOLAR: ["Swarm Types", "Regenerating Foes"],
+                NATURE: ["Casters (Interrupt)", "Groups"],
+                ICE: ["Fast Movers", "Melee Rushers"],
+                BLOOD: ["High HP Sponges", "Beasts"]
+            };
+
+            return {
+                primer: primers[t] || "Stunned Target",
+                aftermath: aftermaths[t] || "Knockback",
+                counters: counters[t] || ["Invulnerable Targets"],
+                targets: targets[t] || ["Standard Infantry"]
+            };
+        }
+
+        window.collectSkill = () => {
+            if (!pendingNewSkill) return;
+
+            // Add to Known Skills
+            knownSkills.unshift(pendingNewSkill);
+            saveProgress(); // Persist to LocalStorage
+            
+            // Reset UI
+            selectedSlots = [null, null];
+            document.querySelectorAll('.fusion-slot').forEach(el => {
+                el.classList.remove('active');
+                el.innerHTML = `<div style="color: var(--text-dim); font-size: 0.7rem;">INPUT</div>`;
+            });
+            
+            // Hide Overlay
+            document.getElementById('result-overlay').classList.remove('active');
+            
+            // Refresh List & Show New Skill
+            renderSkillList();
+            showAnalysis(pendingNewSkill);
+            
+            pendingNewSkill = null;
+        };
+
+        function getIconForSkill(skill) {
+            if (skill.tags.includes('VOID')) return '🌌';
+            if (skill.tags.includes('SOLAR')) return '☀️';
+            if (skill.tags.includes('NATURE')) return '🌿';
+            if (skill.tags.includes('ICE')) return '❄️';
+            if (skill.tags.includes('BLOOD')) return '🩸';
+            return '⚡';
+        }
+
+        // --- NARRATIVE SYNTHESIS ENGINE V2 (INFINITE DEPTH) ---
+        const NARRATIVE_ENGINE = {
+            // 1. LEXICON (The Building Blocks)
+            lexicon: {
+                VOID: {
+                    adj: ["Abyssal", "Null", "Empty", "Hollow", "Eldritch", "Forbidden", "Dark", "Silent"],
+                    noun: ["Singularity", "Rift", "Collapse", "Whisper", "Entropy", "Vortex", "Omen", "Horror"],
+                    verb: ["erases", "consumes", "unmakes", "silences", "devours", "warps", "shatters"]
+                },
+                SOLAR: {
+                    adj: ["Blazing", "Infernal", "Scorching", "Radiant", "Luminous", "Divine", "Searing"],
+                    noun: ["Nova", "Inferno", "Cataclysm", "Pyre", "Dawn", "Flare", "Judgment", "Star"],
+                    verb: ["incinerates", "cauterizes", "engulfs", "illuminates", "purifies", "melts"]
+                },
+                NATURE: {
+                    adj: ["Primal", "Overgrown", "Feral", "Blooming", "Toxic", "Wild", "Ancient"],
+                    noun: ["Root", "Bloom", "Thorn", "Grove", "Venom", "Swarm", "Canopy", "Wrath"],
+                    verb: ["entangles", "overgrows", "poisons", "crushes", "reclaims", "sprouts"]
+                },
+                ICE: {
+                    adj: ["Glacial", "Frozen", "Crystalline", "Absolute", "Shattered", "Numbing"],
+                    noun: ["Blizzard", "Glacier", "Shard", "Stasis", "Frost", "Winter", "Zero"],
+                    verb: ["freezes", "shatters", "preserves", "halts", "crystallizes", "numbs"]
+                },
+                BLOOD: {
+                    adj: ["Crimson", "Sanguine", "Vital", "Cursed", "Weeping", "Visceral"],
+                    noun: ["Pact", "Sacrifice", "Hemorrhage", "Vessel", "Rite", "Carnage"],
+                    verb: ["drains", "corrupts", "spills", "transmutes", "boils"]
+                },
+                // Generic / Structural
+                GENERIC: {
+                    noun: ["Strike", "Blast", "Wave", "Form", "Technique", "Art", "Method"],
+                    connector: ["of", "from", "beneath", "within"]
+                }
+            },
+
+            // 2. LORE FRAGMENTS (The "Soul")
+            lore_templates: [
+                "\"[A] is merely the precursor to [B].\"",
+                "\"They thought [A] was the end. [B] is the truth.\"",
+                "\"Born from the union of [A] and [B].\"",
+                "\"The [TAG1] energies twist the [TAG2] into something new.\"",
+                "\"A technique forbidden in three realms.\"",
+                "\"It hums with the song of [A].\"",
+                "\"Perfection is not singular. It is [A] fused with [B].\""
+            ],
+
+            // 3. TACTICAL ADVICE (The "Brain")
+            tactics: {
+                // Roles
+                nuke: [
+                    "High burst potential. Best used on stunned targets to guarantee the hit.", 
+                    "A heavy hitter. Save this for the boss's vulnerability phase.",
+                    "Deals massive trauma. Ensure you have a clear line of sight."
+                ],
+                poke: [
+                    "Low commitment, consistent damage. Use this to keep shields from regenerating.", 
+                    "Weave this between heavy attacks to maintain DPS uptime.",
+                    "Excellent for checking corners or baiting enemy reactions."
+                ],
+                cc: [
+                    "Controls the battlefield. Use this to peel for yourself or set up AOE combos.", 
+                    "Disrupts enemy formations. Ideal for initiating combat.",
+                    "Forces enemies to reposition, exposing their flanks."
+                ],
+                utility: [
+                    "Situational but powerful. Don't waste this on trash mobs.", 
+                    "Can turn the tide if timed correctly against enemy ultimates.",
+                    "Provides a tactical advantage that outweighs its raw damage."
+                ],
+                
+                // Elemental Specifics
+                VOID: "Void damage ignores a portion of enemy resistance.",
+                SOLAR: "The lingering burn prevents enemies from entering stealth or regenerating.",
+                NATURE: "Rooted enemies take bonus damage from Fire sources.",
+                ICE: "Shatter frozen targets with heavy physical attacks for critical damage.",
+                BLOOD: "The health cost is risky; ensure you have a healing source active.",
+                
+                // Combo
+                opener: "Start your rotation with this to apply debuffs.",
+                finisher: "Execute low-health enemies to trigger on-kill effects."
+            },
+
+            // 4. WORLD INTERACTION (The "Body")
+            env_templates: [
+                "The ground [VERB1] and [VERB2].",
+                "Leaves a lingering aura of [TAG1] energy.",
+                "Nearby [TAG2] sources are instantly [VERB1].",
+                "The air becomes heavy with [TAG1] particles.",
+                "Shadows lengthen and [VERB2]."
+            ],
+
+            // GENERATORS
+            getWord: function(tag, type) {
+                const pool = this.lexicon[tag] || this.lexicon.VOID;
+                const words = pool[type] || this.lexicon.GENERIC.noun;
+                return words[Math.floor(Math.random() * words.length)];
+            },
+
+            generateName: function(s1, s2) {
+                const t1 = s1.tags[0];
+                const t2 = s2.tags[0];
+                
+                // 1. Same Tag Evolution (Void + Void)
+                if (t1 === t2) {
+                    const adj = this.getWord(t1, 'adj');
+                    const noun = this.getWord(t1, 'noun');
+                    return `True ${adj} ${noun}`;
+                }
+
+                // 2. Hybrid Construction
+                const roll = Math.random();
+                if (roll < 0.4) {
+                    // "Abyssal Inferno" (Adj 1 + Noun 2)
+                    return `${this.getWord(t1, 'adj')} ${this.getWord(t2, 'noun')}`;
+                } else if (roll < 0.7) {
+                    // "Inferno of the Void" (Noun 2 + of + Noun 1)
+                    return `${this.getWord(t2, 'noun')} of ${this.getWord(t1, 'noun')}`;
+                } else {
+                    // "Frozen Blood" (Adj 2 + Noun 1) - Swap
+                    return `${this.getWord(t2, 'adj')} ${this.getWord(t1, 'noun')}`;
+                }
+            },
+
+            generateDescription: function(s1, s2, newName) {
+                const t1 = s1.tags[0];
+                const t2 = s2.tags[0];
+                const v1 = this.getWord(t1, 'verb');
+                const v2 = this.getWord(t2, 'verb');
+                
+                const templates = [
+                    `A volatile art that ${v1} matter while it ${v2} the spirit.`,
+                    `Channels ${t1} energy to ${v2} targets in a ${t2} radius.`,
+                    `Manifests a ${newName} that ${v1} everything it touches.`,
+                    `The ${s1.name} acts as a catalyst, allowing the ${s2.name} to ${v1} reality.`
+                ];
+                
+                return templates[Math.floor(Math.random() * templates.length)];
+            },
+
+            generateLore: function(s1, s2) {
+                const template = this.lore_templates[Math.floor(Math.random() * this.lore_templates.length)];
+                return template
+                    .replace('[A]', s1.name)
+                    .replace('[B]', s2.name)
+                    .replace('[TAG1]', s1.tags[0])
+                    .replace('[TAG2]', s2.tags[0]);
+            },
+
+            generateTactics: function(name, stats, tags) {
+                let advice = [];
+                
+                // 1. Determine Role based on Stats & Tags
+                if (stats.damage > 35) {
+                    advice.push(this.tactics.nuke[Math.floor(Math.random() * this.tactics.nuke.length)]);
+                } else if (stats.cooldown < 3) {
+                    advice.push(this.tactics.poke[Math.floor(Math.random() * this.tactics.poke.length)]);
+                } else if (tags.includes('CONTROL') || tags.includes('ICE') || tags.includes('TIME')) {
+                    advice.push(this.tactics.cc[Math.floor(Math.random() * this.tactics.cc.length)]);
+                } else if (tags.includes('DEFENSIVE') || tags.includes('BUFF')) {
+                    advice.push(this.tactics.utility[Math.floor(Math.random() * this.tactics.utility.length)]);
+                } else {
+                    advice.push("A balanced technique suitable for any engagement range.");
+                }
+
+                // 2. Add Elemental Flavor (Primary Tag)
+                const primaryTag = tags[0];
+                if (this.tactics[primaryTag]) {
+                    advice.push(this.tactics[primaryTag]);
+                }
+
+                // 3. Contextual Tip based on Cost/CD
+                if (stats.cost > 12) advice.push("Watch your resource management; missing is punishing.");
+                if (stats.cooldown > 8) advice.push("Long cooldown means you must commit to the cast.");
+
+                return advice.join(" ");
+            },
+
+            generateEnv: function(tags) {
+                const t1 = tags[0];
+                const t2 = tags[1] || t1;
+                const v1 = this.getWord(t1, 'verb');
+                const v2 = this.getWord(t2, 'verb');
+                
+                const template = this.env_templates[Math.floor(Math.random() * this.env_templates.length)];
+                return template
+                    .replace('[VERB1]', v1)
+                    .replace('[VERB2]', v2)
+                    .replace('[TAG1]', t1)
+                    .replace('[TAG2]', t2);
+            },
+
+            generateSocial: function(tags) {
+                if (tags.includes('VOID') || tags.includes('BLOOD')) return "Civilians flee in terror. Guards draw weapons.";
+                if (tags.includes('SOLAR')) return "Religious NPCs may bow. Undead flee.";
+                return "Observers are confused and wary.";
+            }
+        };
+
+        // --- SMART FUSION ALGORITHM ---
+        function generateSmartFusion(s1, s2) {
+            // 1. LEGENDARY CHECK (Hardcoded Recipes)
+            const isLegendary = (s1.tags.includes('VOID') && s2.tags.includes('SOLAR')) || (s2.tags.includes('VOID') && s1.tags.includes('SOLAR'));
+            
+            if (isLegendary) {
+                return {
+                    id: `fusion_${Date.now()}`,
+                    name: "Solar Void Singularity",
+                    tier: "LEGENDARY",
+                    type: "ULTIMATE",
+                    tags: ["COSMIC", "DESTRUCTIVE", "VOID", "SOLAR"],
+                    stats: { damage: 50, cooldown: 10, cost: 20 },
+                    description: "Collapses a star into a void rift, annihilating everything in the radius.",
+                    lore_quote: "\"When light and dark collide, they do not mix. They scream.\"",
+                    tactical_brief: "The ultimate area denial tool. Use it to block choke points or wipe entire squads.",
+                    mastery_perk: "Mastery Lvl 10: Radius increases by 50%.",
+                    gameplay_info: {
+                        usage: ["Target: Area (10m)", "Cast: 2s Channel"],
+                        features: ["Instantly kills non-bosses", "Destroys terrain permanently", "Summons Void Horrors"]
+                    },
+                    deep_data: {
+                        environment: "Permanently alters the biome to 'Null Zone'.",
+                        narrative: "Triggers the 'Cosmic Attention' event.",
+                        evolution: null // Final form
+                    }
+                };
+            }
+
+            // 2. PROCEDURAL GENERATION V2
+            
+            // A. Naming Logic (Lexicon Based)
+            let newName = NARRATIVE_ENGINE.generateName(s1, s2);
+
+            // B. Stat Logic (Synergy Bonus)
+            // If tags match, boost damage. If tags differ, boost utility (lower cost/cd).
+            const sameTag = s1.tags[0] === s2.tags[0];
+            let newDmg = Math.floor(((s1.stats.damage || 0) + (s2.stats.damage || 0)) * 0.85);
+            let newCost = Math.floor(Math.max(s1.stats.cost || 0, s2.stats.cost || 0) * 1.2);
+            let newCooldown = Math.floor((s1.stats.cooldown + s2.stats.cooldown) / 1.8);
+
+            if (sameTag) {
+                newDmg = Math.floor(newDmg * 1.2); // 20% Damage Boost for specialization
+                newName = `Greater ${newName}`; // Prefix for power
+            } else {
+                newCost = Math.floor(newCost * 0.9); // 10% Cost reduction for hybrid efficiency
+            }
+
+            // C. Tag Logic
+            const mergedTags = [...new Set([...s1.tags, ...s2.tags])].slice(0, 4);
+
+            // D. CONTEXT AWARE GENERATION
+            const lore = NARRATIVE_ENGINE.generateLore(s1, s2);
+            const desc = NARRATIVE_ENGINE.generateDescription(s1, s2, newName);
+            const tactics = NARRATIVE_ENGINE.generateTactics(newName, {damage: newDmg, cooldown: newCooldown, cost: newCost}, mergedTags);
+            const env = NARRATIVE_ENGINE.generateEnv(mergedTags);
+            const social = NARRATIVE_ENGINE.generateSocial(mergedTags);
+
+            return {
+                id: `fusion_${Date.now()}`,
+                name: newName,
+                tier: "RARE",
+                type: sameTag ? "SPECIALIZED" : "HYBRID",
+                tags: mergedTags,
+                stats: { damage: newDmg, cost: newCost, cooldown: newCooldown },
+                description: desc,
+                lore_quote: lore,
+                tactical_brief: tactics,
+                mastery_perk: "Mastery Lvl 1: Unlocks 'Instability' modifier.",
+                gameplay_info: {
+                    usage: s1.gameplay_info.usage, 
+                    features: [...new Set([...s1.gameplay_info.features, ...s2.gameplay_info.features])].slice(0, 3)
+                },
+                deep_data: {
+                    environment: env,
+                    narrative: social,
+                    evolution: null 
+                }
+            };
+        }
+
+    </script>
+</body>
+</html>

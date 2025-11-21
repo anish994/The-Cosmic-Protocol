@@ -25,7 +25,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-export class PsychologicalProfileSystem {
+class PsychologicalProfileSystem {
     constructor() {
         this.metrics = {
             aggression: 0,
@@ -100,3 +100,5 @@ export class PsychologicalProfileSystem {
         };
     }
 }
+
+module.exports = { PsychologicalProfileSystem };

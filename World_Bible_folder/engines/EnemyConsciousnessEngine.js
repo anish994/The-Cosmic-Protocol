@@ -15,6 +15,13 @@ import { EventBus } from './GlobalEventBus.js';
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+const WEAKNESS_MATRIX = {
+    'UNDEAD': ['LIGHT', 'FIRE'],
+    'CONSTRUCT': ['VOID', 'ACID'],
+    'BEAST': ['MENTAL', 'POISON'],
+    'DEMON': ['LIGHT', 'WATER']
+};
+
 export class EnemyConsciousnessEngine {
     constructor(worldState) {
         this.worldState = worldState;
@@ -22,12 +29,19 @@ export class EnemyConsciousnessEngine {
         this.tacticalMemory = {
             'AOE_SPAM': 0, // How much the player uses AOE
             'STEALTH': 0,  // How much the player uses Stealth
-            'RUSH': 0      // How much the player rushes
+            'RUSH': 0,     // How much the player rushes
+            'FUSION_FEAR': 0 // New: Fear of fusions
         };
         
         // NEW: Listen for Global Tactic Events (Hive Mind)
         EventBus.on('TACTIC_LEARNED', (data) => {
             this._assimilateTactic(data.tactic, data.sourceRegion);
+        });
+
+        // NEW: Listen for Legendary Fusions
+        EventBus.on('LEGENDARY_FUSION_TRIGGERED', (data) => {
+            console.log(`[EnemyAI] The world trembles. Enemies are now wary of ${data.name}.`);
+            this.tacticalMemory['FUSION_FEAR'] += 20;
         });
     }
 
@@ -73,16 +87,28 @@ export class EnemyConsciousnessEngine {
     /**
      * Process Enemy Reaction to Player Action.
      * @param {Object} enemy - The enemy instance.
-     * @param {string} actionType - 'ATTACK', 'HEAL', 'FLEE', 'INTIMIDATE'
+     * @param {string} actionType - 'ATTACK', 'HEAL', 'FLEE', 'INTIMIDATE', 'FUSION_USED'
      * @param {number} damage - Amount of damage dealt (if any).
+     * @param {Object} context - Extra data (skill tags, fusion info)
      */
-    processReaction(enemy, actionType, damage) {
+    processReaction(enemy, actionType, damage, context = {}) {
         // 1. Morale Check
         if (actionType === 'ATTACK' && damage > enemy.maxHp * 0.5) {
             enemy.aiState.morale -= 40;
             if (enemy.personality === 'COWARDLY' && enemy.aiState.morale < 20) {
                 return { type: 'FLEE', dialogue: "I'm not paid enough for this!" };
             }
+        }
+
+        // NEW: Fusion Reaction
+        if (actionType === 'FUSION_USED') {
+            return this._reactToFusion(enemy, context.fusionName);
+        }
+
+        // NEW: Weakness Check
+        if (actionType === 'ATTACK' && context.skillTags) {
+            const weaknessReaction = this._checkWeakness(enemy, context.skillTags);
+            if (weaknessReaction) return weaknessReaction;
         }
 
         // 2. Tactical Learning
@@ -140,5 +166,29 @@ export class EnemyConsciousnessEngine {
         const reaction = archetypeBarks[actionType === 'ATTACK' ? 'HIT' : 'ATTACK']; // Simplified mapping
         
         return { type: 'BARK', text: reaction };
+    }
+
+    _reactToFusion(enemy, fusionName) {
+        this.tacticalMemory['FUSION_FEAR'] += 5;
+        enemy.aiState.morale -= 20;
+        
+        if (enemy.traits.includes('COMMANDER')) {
+            return { type: 'ORDER', dialogue: "Focus fire! Don't let them cast that again!" };
+        }
+        
+        return { type: 'SHOCK', dialogue: `What is that power?! ${fusionName}?!` };
+    }
+
+    _checkWeakness(enemy, skillTags) {
+        const type = enemy.type || 'GENERIC';
+        const weaknesses = WEAKNESS_MATRIX[type] || [];
+        
+        for (const tag of skillTags) {
+            if (weaknesses.includes(tag)) {
+                enemy.aiState.morale -= 15;
+                return { type: 'STAGGER', dialogue: "Aaargh! It burns!" };
+            }
+        }
+        return null;
     }
 }

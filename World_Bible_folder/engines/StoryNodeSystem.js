@@ -17,18 +17,28 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { NarrativeArcRegistry } from './NarrativeArcRegistry.js';
-import { PsychologicalProfileSystem } from './PsychologicalProfileSystem.js';
-import { MetaNarrativeController } from './MetaNarrativeController.js';
-import { NPCDepthEngine } from './NPCDepthEngine.js';
+const { NarrativeArcRegistry } = require('./NarrativeArcRegistry.js');
+const { PsychologicalProfileSystem } = require('./PsychologicalProfileSystem.js');
+const { MetaNarrativeController } = require('./MetaNarrativeController.js');
+const { NPCDepthEngine } = require('./NPCDepthEngine.js');
+const { DIALOGUE_BATCH_1 } = require('./DialogueExpansion_Batch1.js');
+const { DIALOGUE_BATCH_2 } = require('./DialogueExpansion_Batch2.js');
+const { DIALOGUE_BATCH_3 } = require('./DialogueExpansion_Batch3.js');
+const { DIALOGUE_BATCH_4 } = require('./DialogueExpansion_Batch4.js');
+const { DialogueSynthesizer } = require('./DialogueSynthesizer.js');
+const { RumorMill } = require('./RumorMillSystem.js');
+const { FusionDiscovery } = require('./FusionDiscoverySystem.js');
+const { FactionSystem } = require('./FactionSystem.js');
 
-export class StoryNodeSystem {
+class StoryNodeSystem {
     constructor(worldState, recursionSystem) {
         this.worldState = worldState;
         this.recursionSystem = recursionSystem;
         
         // NEW: Deep Narrative Engines
         this.psychSystem = new PsychologicalProfileSystem();
+        this.factionSystem = new FactionSystem(worldState); // Initialize Faction System
+        this.dialogueSynthesizer = new DialogueSynthesizer(this.factionSystem); // Initialize Synthesizer
         this.metaController = new MetaNarrativeController(this.psychSystem, null); 
         this.npcEngine = new NPCDepthEngine(worldState, recursionSystem); // Initialize NPC Soul System
 
@@ -98,55 +108,37 @@ export class StoryNodeSystem {
         // 3b. Check Fusion Triggers
         if (node.fusionTriggers && outcomeKey === 'DEFAULT') {
              for (const [fusionTag, outcome] of Object.entries(node.fusionTriggers)) {
-                if (p.activeFusions && p.activeFusions.includes(fusionTag)) {
-                    console.log(`[Story] Fusion Trigger: ${fusionTag} unlocked outcome ${outcome}`);
-                    outcomeKey = outcome;
-                    break;
+                 if (FusionDiscovery.discoveredFusions.has(fusionTag)) {
+                     outcomeKey = outcome;
+                     break;
+                 }
+             }
+        }
+
+        // 3c. Check Advanced Conditions (New System)
+        if (node.outcomes) {
+            for (const [key, data] of Object.entries(node.outcomes)) {
+                if (key === 'DEFAULT') continue;
+                if (this._evaluateCondition(data.condition, context)) {
+                    outcomeKey = key;
+                    break; // First match wins (priority order in object matters)
                 }
             }
         }
 
-        // 3b-2. Check World Event Triggers (The "Living World" Check)
-        if (node.worldEventTriggers && outcomeKey === 'DEFAULT') {
-            // Check if any active world events match the node's triggers
-            const activeEvents = this.worldState.activeEvents || [];
-            // activeEvents is an array of objects { type, ... }
-            // We check if any active event's TYPE matches the trigger key
-            for (const [eventTag, outcome] of Object.entries(node.worldEventTriggers)) {
-                if (activeEvents.some(e => e.type === eventTag)) {
-                    console.log(`[Story] World Event Trigger: ${eventTag} unlocked outcome ${outcome}`);
-                    outcomeKey = outcome;
-                    break;
-                }
-            }
-        }
-
-        // 3c. Standard Weight Checks (Fallback)
-        if (outcomeKey === 'DEFAULT') {
-            if (weights.void > 50 && weights.madness > 20) {
-                outcomeKey = 'VOID_INSANITY';
-            } else if (weights.light > 50 && weights.heroism > 30) {
-                outcomeKey = 'LIGHT_CHAMPION';
-            } else if (weights.suspicion > 60) {
-                outcomeKey = 'HOSTILE_REJECTION';
-            } else if (weights.knowledge.includes('SECRET_TRUTH')) {
-                outcomeKey = 'SECRET_REVEAL';
-            }
-        }
-
-        // 4. Execute the specific logic for that outcome
-        const outcome = node.outcomes[outcomeKey] || node.outcomes['DEFAULT'];
+        // 4. Determine Final Outcome Object
+        let outcome = node.outcomes[outcomeKey] || node.outcomes['DEFAULT'];
+        console.log(`[Story] Outcome Key: ${outcomeKey}, Outcome:`, outcome);
 
         // 5. NPC SOUL OVERRIDE (The "Alive" Check)
-        // If the node involves an NPC, their personal mood might override the script.
         if (node.associatedNPC) {
+            console.log(`[Story] Checking NPC: ${node.associatedNPC}`);
             const npcReaction = this.npcEngine.getNPCReaction(node.associatedNPC, {
                 ...context.player,
                 psychProfile: this.psychSystem.getProfile()
             });
+            console.log(`[Story] NPC Reaction:`, npcReaction);
 
-            // If the NPC hates you, they might refuse to give the "Success" outcome
-            // CHANGED: Now overrides any non-failure outcome. Hostility is pervasive.
             if ((npcReaction.state === 'HOSTILE' || npcReaction.state === 'WARY') && outcome.type !== 'FAILURE') {
                 console.log(`[Story] NPC Override: ${node.associatedNPC} is HOSTILE/WARY.`);
                 return {
@@ -158,9 +150,7 @@ export class StoryNodeSystem {
                 };
             }
             
-            // If they love you, they might give extra dialogue
             if (npcReaction.state === 'ALLY' || npcReaction.state === 'DEVOTED') {
-                 // Ensure we don't duplicate if the dialogue is already there
                  if (!outcome.dialogue.includes(npcReaction.dialogue)) {
                      outcome.dialogue = `${npcReaction.dialogue} ${outcome.dialogue}`;
                  }
@@ -169,6 +159,84 @@ export class StoryNodeSystem {
 
         return this._finalizeOutcome(node, outcome, context);
     }
+
+    /**
+     * Evaluate complex conditions for dialogue outcomes.
+     */
+    _evaluateCondition(condition, context) {
+        if (!condition) return true;
+        const p = context.player;
+
+        // Skill Check
+        if (condition.skill && !p.unlockedSkills.includes(condition.skill)) return false;
+
+        // Fusion Check
+        if (condition.fusion && !FusionDiscovery.discoveredFusions.has(condition.fusion)) return false; // Note: FusionDiscovery stores IDs, ensure consistency
+
+        // Archetype Check
+        if (condition.archetype) {
+            const profile = this.psychSystem.getProfile();
+            if (profile.archetype !== condition.archetype) return false;
+        }
+
+        // Faction Rep Check
+        if (condition.factionRep) {
+            const rep = p.reputation[condition.factionRep] || 0;
+            if (condition.min !== undefined && rep < condition.min) return false;
+            if (condition.max !== undefined && rep > condition.max) return false;
+        }
+
+        // Faction Power Check (New)
+        if (condition.factionPower) {
+            const faction = this.factionSystem.getFactionState(condition.factionPower.factionId);
+            if (faction) {
+                if (condition.factionPower.min !== undefined && faction.power < condition.factionPower.min) return false;
+                if (condition.factionPower.max !== undefined && faction.power > condition.factionPower.max) return false;
+            }
+        }
+
+        return true;
+    }
+
+    _finalizeOutcome(node, outcome, context) {
+        if (!outcome) {
+            console.error("[Story] Critical Error: Outcome is undefined!");
+            return { type: 'ERROR', finalDialogue: "Error: Narrative Collapse." };
+        }
+
+        // Use Dialogue Synthesizer for advanced text generation
+        // We pass the NPC state if we have it (it might have been fetched in resolveNode)
+        // But resolveNode doesn't pass it down explicitly. Let's fetch it again or assume context has it.
+        // Ideally, resolveNode should attach the npcState to the context or pass it.
+        // For now, let's fetch it if associatedNPC exists.
+        let npcState = null;
+        if (node.associatedNPC) {
+             npcState = this.npcEngine.getNPCReaction(node.associatedNPC, context.player);
+        }
+
+        const synthesisContext = {
+            player: context.player,
+            npc: { 
+                ...npcState, 
+                faction: node.associatedFaction, 
+                region: node.region 
+            },
+            worldState: this.worldState
+        };
+
+        let dialogue = this.dialogueSynthesizer.synthesize(outcome.dialogue, synthesisContext);
+
+        const finalResult = {
+            ...outcome,
+            nodeId: node.id,
+            title: node.title,
+            finalDialogue: dialogue
+        };
+        console.log("[Story] Final Result:", finalResult);
+        return finalResult;
+    }
+
+
 
     _calculateWeights(node, context) {
         const p = context.player;
@@ -229,28 +297,8 @@ export class StoryNodeSystem {
         return null;
     }
 
-    _finalizeOutcome(node, outcome, context) {
-        // Apply side effects to the narrative state
-        if (outcome.narrativeShift) {
-            this.narrativeState.suspicion += (outcome.narrativeShift.suspicion || 0);
-            this.narrativeState.insight += (outcome.narrativeShift.insight || 0);
-        }
-
-        // Construct the final response object
-        return {
-            nodeId: node.id,
-            title: outcome.title || node.title, // Allow outcome to override title (e.g. Meta Events)
-            outcomeType: outcome.type || 'STANDARD',
-            dialogue: outcome.dialogue, 
-            rewards: outcome.rewards || [],
-            worldUpdates: outcome.worldUpdates || [], 
-            nextNodes: outcome.nextNodes || [],
-            metaData: outcome.metaData || {} // Pass meta-data for system checks
-        };
-    }
-
     _initializeDatabase() {
-        return {
+        const baseNodes = {
             // ═════════════════════════════════════════════════════════════════════
             // ASHRAM GATES: The First Test
             // ═════════════════════════════════════════════════════════════════════
@@ -360,5 +408,8 @@ export class StoryNodeSystem {
                 }
             }
         };
+        return { ...baseNodes, ...DIALOGUE_BATCH_1, ...DIALOGUE_BATCH_2, ...DIALOGUE_BATCH_3, ...DIALOGUE_BATCH_4 };
     }
 }
+
+module.exports = StoryNodeSystem;

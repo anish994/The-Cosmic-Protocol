@@ -20,7 +20,7 @@
 // WORLD STATE MANAGER - Permanent Changes Across Saves
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class WorldStateManager {
+class WorldStateManager {
   constructor() {
     this.permanentChanges = new Map(); // location -> changes array
     this.areaEffects = new Map(); // location -> active effects
@@ -292,7 +292,7 @@ export class WorldStateManager {
 // NPC MEMORY & REACTION SYSTEM - Dynamic Dialogue Based on Skills
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class NPCMemorySystem {
+class NPCMemorySystem {
   constructor() {
     this.memories = new Map(); // npcId -> memory array
     this.relationships = new Map(); // npcId -> relationship data
@@ -554,7 +554,7 @@ export class NPCMemorySystem {
   }
 }
 
-export default {
+module.exports = {
   WorldStateManager,
   NPCMemorySystem
 };

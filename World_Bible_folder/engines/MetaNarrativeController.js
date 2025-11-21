@@ -15,7 +15,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-export class MetaNarrativeController {
+class MetaNarrativeController {
     constructor(psychSystem, loreSystem) {
         this.psychSystem = psychSystem;
         this.loreSystem = loreSystem;
@@ -96,3 +96,5 @@ export class MetaNarrativeController {
         };
     }
 }
+
+module.exports = { MetaNarrativeController };

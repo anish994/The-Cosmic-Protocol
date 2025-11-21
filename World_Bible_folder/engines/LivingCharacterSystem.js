@@ -12,13 +12,13 @@
  * The illusion of life comes from depth of reaction, not complexity of simulation.
  */
 
-import { NPCMemorySystem } from './SkillEnhancementSystem.js';
+const { NPCMemorySystem } = require('./SkillEnhancementSystem.js');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // CHARACTER BASE CLASS
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class LivingCharacter {
+class LivingCharacter {
   constructor(data, memorySystem, worldState) {
     this.id = data.id;
     this.name = data.name;
@@ -611,7 +611,7 @@ export class LivingCharacter {
 // SURYANATHA - The Last Vedic Warden
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class Suryanatha extends LivingCharacter {
+class Suryanatha extends LivingCharacter {
   constructor(memorySystem, worldState) {
     // Load character data
     const data = loadCharacterData('suryanatha');
@@ -758,7 +758,7 @@ export class Suryanatha extends LivingCharacter {
 // VIRA - Keeper of the Fractured Mantra
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class Vira extends LivingCharacter {
+class Vira extends LivingCharacter {
   constructor(memorySystem, worldState) {
     const data = loadCharacterData('vira');
     super(data, memorySystem, worldState);
@@ -946,7 +946,7 @@ export class Vira extends LivingCharacter {
 // RAJAS - The Ashram Blade
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class Rajas extends LivingCharacter {
+class Rajas extends LivingCharacter {
   constructor(memorySystem, worldState) {
     const data = loadCharacterData('rajas');
     super(data, memorySystem, worldState);
@@ -1183,7 +1183,7 @@ export class Rajas extends LivingCharacter {
 // ANAYA - The Silent Oracle
 // ═══════════════════════════════════════════════════════════════════════════
 
-export class Anaya extends LivingCharacter {
+class Anaya extends LivingCharacter {
   constructor(memorySystem, worldState) {
     const data = loadCharacterData('anaya');
     super(data, memorySystem, worldState);
@@ -2046,3 +2046,5 @@ function loadCharacterData(characterId) {
   return baseData;
 }
 
+
+module.exports = { LivingCharacter, Suryanatha };

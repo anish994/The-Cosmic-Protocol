@@ -94,18 +94,57 @@ export class DynamicEventGenerator {
     }
 
     _getDominantFaction(regionId) {
-        // Mock logic - in real system, check region control
+        // Use FactionSystem if available to check real control
+        // For now, we'll stick to the mock logic or enhance it
         if (regionId.includes('ashram')) return 'ashram_remnants';
         if (regionId.includes('void')) return 'corruption_champions';
+        if (regionId.includes('nexus')) return 'untethered_architects';
         return 'factionless';
     }
 
     _generateFlavorText(type, regionId) {
-        const templates = [
-            "The air here tastes like ash and old regrets.",
-            "Shadows stretch longer than they should, whispering your name.",
-            "The ground bleeds a dark ichor where the battle was fought."
-        ];
-        return templates[Math.floor(Math.random() * templates.length)];
+        if (type === 'VOID') return "The air tastes like static. Shadows detach from the walls.";
+        if (type === 'GHOST') return "Whispers of the dead crowd your mind. They remember you.";
+        return "Something is wrong here.";
+    }
+
+    /**
+     * Generates a Dynamic Quest based on Faction Needs.
+     * @param {string} factionId 
+     */
+    generateFactionQuest(factionId) {
+        const faction = this.factionSystem.getFactionState(factionId);
+        if (!faction) return null;
+
+        let questType = 'GENERIC';
+        if (faction.state === 'EXPANSIONIST') questType = 'CONQUEST';
+        if (faction.state === 'DEFENSIVE') questType = 'DEFENSE';
+        if (faction.state === 'CRITICAL') questType = 'SURVIVAL';
+
+        const quest = {
+            id: `quest_dyn_${factionId}_${Date.now()}`,
+            title: `${faction.name}: ${questType} Protocol`,
+            description: this._getQuestDescription(questType, faction.name),
+            objectives: this._getQuestObjectives(questType),
+            rewards: { reputation: { [factionId]: 15 }, essence: 100 },
+            generatedAt: Date.now()
+        };
+
+        console.log(`[DynamicEvent] Generated Quest: ${quest.title}`);
+        return quest;
+    }
+
+    _getQuestDescription(type, factionName) {
+        if (type === 'CONQUEST') return `${factionName} is pushing into new territory. Clear the way.`;
+        if (type === 'DEFENSE') return `${factionName} is under siege. Hold the line.`;
+        if (type === 'SURVIVAL') return `${factionName} is on the brink. Gather supplies immediately.`;
+        return `Help ${factionName} with their operations.`;
+    }
+
+    _getQuestObjectives(type) {
+        if (type === 'CONQUEST') return [{ type: 'KILL_ENEMIES', count: 10, region: 'borderlands' }];
+        if (type === 'DEFENSE') return [{ type: 'DEFEND_LOCATION', duration: 60 }];
+        if (type === 'SURVIVAL') return [{ type: 'GATHER_ITEMS', itemId: 'ration_pack', count: 5 }];
+        return [];
     }
 }

@@ -11,7 +11,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-export const NarrativeArcRegistry = {
+const NarrativeArcRegistry = {
     // --- ASHRAM REMNANTS ---
     'vira': {
         'BETRAYAL_DEATH': {
@@ -159,7 +159,7 @@ export const NarrativeArcRegistry = {
     }
 };
 
-export class NarrativeArcHandler {
+class NarrativeArcHandler {
     static checkSpecificArcs(entityId, memories, loopCount) {
         const arcs = NarrativeArcRegistry[entityId];
         if (!arcs) return null;
@@ -179,3 +179,5 @@ export class NarrativeArcHandler {
         return bestMatch;
     }
 }
+
+module.exports = { NarrativeArcRegistry };

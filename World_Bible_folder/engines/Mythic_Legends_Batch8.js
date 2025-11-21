@@ -3,7 +3,7 @@
 // Completing the Character Roster with Mythic & Anomaly Figures
 // ═══════════════════════════════════════════════════════════════════════════
 
-import { LivingCharacter } from './LivingCharacterSystem.js';
+const { LivingCharacter } = require('./LivingCharacterSystem.js');
 
 // ═══════════════════════════════════════════════════════════════════════════
 // THE PARADOX CHILD - Living Anomaly
@@ -148,7 +148,7 @@ export class ParadoxChild extends LivingCharacter {
 // ═══════════════════════════════════════════════════════════════════════════
 // LAXUS BLOODSAGE - The Ether-Forged First Architect
 // ═══════════════════════════════════════════════════════════════════════════
-export class LaxusBloodsage extends LivingCharacter {
+class LaxusBloodsage extends LivingCharacter {
   constructor(memorySystem, worldState) {
     const data = {
       id: 'laxus_bloodsage',
@@ -169,6 +169,14 @@ export class LaxusBloodsage extends LivingCharacter {
           fear: { current: 0 }
         },
         emotional_states: ['neutral']
+      },
+      dialogue_system: {
+        base_greetings: {
+          first_meeting: "Another iteration. You look... stable enough.",
+          friendly: "The lattice hums when you approach.",
+          hostile: "You are a glitch I should patch.",
+          neutral: "State your query."
+        }
       }
     };
     super(data, memorySystem, worldState);
@@ -302,3 +310,5 @@ export class LaxusBloodsage extends LivingCharacter {
     return null;
   }
 }
+
+module.exports = { LaxusBloodsage };

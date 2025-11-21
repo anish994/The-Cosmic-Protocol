@@ -1,3 +1,5 @@
+import { EventBus } from './GlobalEventBus.js';
+
 /**
  * ═══════════════════════════════════════════════════════════════════════════
  * WORLD ECOSYSTEM ENGINE
@@ -17,7 +19,8 @@
  */
 
 export class WorldEcosystem {
-  constructor() {
+  constructor(factionSystem) { // Inject FactionSystem
+    this.factionSystem = factionSystem;
     this.globalState = {
       chaos: 10,       // 0-100: Affects enemy spawn rates and event severity
       stability: 80,   // 0-100: Affects trade prices and safe zone integrity
@@ -26,47 +29,11 @@ export class WorldEcosystem {
       turnCount: 0
     };
 
-    this.factions = new Map();
-    this.initializeFactions();
+    // this.factions = new Map();
+    // this.initializeFactions(); // REMOVED: Use FactionSystem instead
   }
 
-  initializeFactions() {
-    this.factions.set('ashram_remnants', { 
-      name: 'Ashram Remnants', 
-      power: 80, 
-      aggression: 20, 
-      resources: 500,
-      goals: ['STABILIZE', 'DEFEND']
-    });
-    this.factions.set('post_human_cults', { 
-      name: 'Post-Human Cults', 
-      power: 60, 
-      aggression: 80, 
-      resources: 300,
-      goals: ['EXPAND', 'CORRUPT']
-    });
-    this.factions.set('nomadic_relic_seekers', { 
-      name: 'Relic Seekers', 
-      power: 50, 
-      aggression: 30, 
-      resources: 200,
-      goals: ['SCAVENGE', 'SURVIVE']
-    });
-    this.factions.set('corruption_champions', { 
-      name: 'Corruption Champions', 
-      power: 90, 
-      aggression: 90, 
-      resources: 1000, // Corruption is their resource
-      goals: ['DESTROY', 'CONSUME']
-    });
-    this.factions.set('factionless', {
-      name: 'Factionless',
-      power: 10,
-      aggression: 10,
-      resources: 100,
-      goals: ['SURVIVE']
-    });
-  }
+  // initializeFactions() { ... } // REMOVED
 
   /**
    * Process a single turn of the ecosystem simulation.
@@ -78,6 +45,17 @@ export class WorldEcosystem {
     this.globalState.turnCount++;
     const updates = [];
     const regions = Object.values(regionDatabase);
+
+    // Sync with FactionSystem
+    if (this.factionSystem) {
+        // Update local cache or just use FactionSystem directly
+        // For now, we'll iterate the FactionSystem's data
+        Object.values(this.factionSystem.factions).forEach(f => {
+            // Logic that was previously in this.factions.forEach
+            // We need to adapt it to the new FactionSystem structure
+            this._processFactionLogic(f, regions, updates, regionDatabase);
+        });
+    }
 
     // Recursion Effects: The world degrades with each reset
     if (loopCount > 1) {
@@ -95,7 +73,8 @@ export class WorldEcosystem {
       updates.push(`Global Resonance Shift: The world aligns with ${this.globalState.dominantResonance}.`);
     }
 
-    // 2. Faction Simulation
+    // 2. Faction Simulation (REPLACED by _processFactionLogic above)
+    /*
     this.factions.forEach((faction, id) => {
       // Resource Generation based on controlled regions
       const controlledRegions = regions.filter(r => r.controllingFaction === id);
@@ -113,6 +92,7 @@ export class WorldEcosystem {
         }
       }
     });
+    */
 
     // 3. Economic Shift
     // If safe zones (Ashram) are corrupted, economy crashes (prices go up)
@@ -160,5 +140,23 @@ export class WorldEcosystem {
       }
     }
     return null;
+  }
+
+  _processFactionLogic(faction, regions, updates, regionDatabase) {
+      // Resource Generation based on controlled regions
+      const controlledRegions = regions.filter(r => r.controllingFaction === faction.id);
+      const income = controlledRegions.length * 10;
+      faction.power += (income / 100); // Convert resources to power for now
+
+      // Faction Actions based on State
+      if (faction.state === 'EXPANSIONIST' && faction.power > 60) {
+        // Try to expand to a neighbor
+        const target = this.findExpansionTarget(faction.id, controlledRegions, regionDatabase);
+        if (target) {
+          updates.push(`Faction Move: ${faction.name} is attempting to seize control of ${target.name}.`);
+          EventBus.emit('FACTION_MOVE_TRIGGERED', { factionId: faction.id, targetRegion: target.id });
+          faction.power -= 5; // Cost of war
+        }
+      }
   }
 }

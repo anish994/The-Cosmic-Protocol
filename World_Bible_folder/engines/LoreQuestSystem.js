@@ -15,6 +15,8 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import { EventBus } from './GlobalEventBus.js';
+
 export class LoreQuestSystem {
     constructor(loreIntegrationSystem, playerState) {
         this.loreSystem = loreIntegrationSystem;
@@ -79,6 +81,9 @@ export class LoreQuestSystem {
         this.completedQuests.add(questId);
         const quest = this.questDatabase[questId];
         
+        console.log(`[LoreQuest] Completed: ${quest.title}`);
+        EventBus.emit('QUEST_COMPLETED', { questId, questName: quest.title });
+
         // Grant Rewards
         if (quest.rewards) {
             if (quest.rewards.essence) this.playerState.resources.essence += quest.rewards.essence;
