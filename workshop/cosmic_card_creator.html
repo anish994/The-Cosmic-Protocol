@@ -148,28 +148,43 @@
         
         /* === PANEL HEADERS === */
         .panel-header {
-            background: rgba(0,0,0,0.2);
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
             border-bottom: 1px solid var(--panel-border);
-            padding: 0.8rem 1rem;
-            font-weight: bold;
-            font-size: 0.85rem;
+            padding: 1rem 1.2rem;
+            font-weight: 700;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-shrink: 0;
-            color: var(--text-dim);
+            color: var(--text-main);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .panel-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+            opacity: 0.3;
         }
         
         .panel-title {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            text-shadow: 0 0 10px rgba(139,92,246,0.3);
         }
         
         .panel-icon {
-            font-size: 1rem;
+            font-size: 1.1rem;
+            filter: drop-shadow(0 0 4px rgba(139,92,246,0.4));
         }
         
         .panel-actions {
@@ -260,6 +275,42 @@
         #left-panel {
             grid-column: 1;
         }
+
+        #left-panel .panel-header {
+            background: linear-gradient(180deg, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .collection-stats {
+            display: flex;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid var(--panel-border);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        .stat-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.6rem;
+            background: rgba(139,92,246,0.1);
+            border: 1px solid rgba(139,92,246,0.2);
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .stat-badge:hover {
+            background: rgba(139,92,246,0.15);
+            border-color: rgba(139,92,246,0.3);
+        }
+
+        .stat-value {
+            color: var(--accent-glow);
+            font-weight: 700;
+        }
         
         /* === CENTER PANEL SPECIFIC === */
         #center-panel {
@@ -294,33 +345,33 @@
         }
 
         @keyframes legendaryGlow {
-            0%, 100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
-            50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 30px rgba(245, 158, 11, 0.3); }
+            0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.15); }
+            50% { box-shadow: 0 0 8px rgba(245, 158, 11, 0.25); }
         }
 
         @keyframes rareGlow {
-            0%, 100% { box-shadow: 0 0 8px rgba(59, 130, 246, 0.3); }
-            50% { box-shadow: 0 0 16px rgba(59, 130, 246, 0.5); }
+            0%, 100% { box-shadow: 0 0 4px rgba(59, 130, 246, 0.15); }
+            50% { box-shadow: 0 0 6px rgba(59, 130, 246, 0.25); }
         }
 
         @keyframes scanline {
             0% { transform: translateY(-100%); opacity: 0; }
-            50% { opacity: 0.5; }
+            50% { opacity: 0.15; }
             100% { transform: translateY(100%); opacity: 0; }
         }
 
         .skill-card {
-            animation: skillAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+            animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards;
             position: relative;
             overflow: hidden;
         }
 
         .skill-card.legendary {
-            animation: skillAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards, legendaryGlow 3s ease-in-out infinite;
+            animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards, legendaryGlow 6s ease-in-out infinite;
         }
 
         .skill-card.rare {
-            animation: skillAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards, rareGlow 4s ease-in-out infinite;
+            animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards, rareGlow 8s ease-in-out infinite;
         }
 
         .skill-card::before {
@@ -329,9 +380,92 @@
             top: 0;
             left: -100%;
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(139,92,246,0.8), transparent);
-            animation: scanline 8s linear infinite;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);
+            animation: scanline 12s linear infinite;
+        }
+
+        /* Premium Skill Card Enhancements */
+        .skill-card-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .skill-card-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            line-height: 1.3;
+        }
+
+        .skill-card-icon {
+            font-size: 1.8rem;
+            opacity: 0.7;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover .skill-card-icon {
+            opacity: 1;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .skill-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(139,92,246,0.15);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            color: var(--accent-glow);
+            border: 1px solid rgba(139,92,246,0.2);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(139,92,246,0.25);
+            border-color: rgba(139,92,246,0.4);
+        }
+
+        .skill-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            margin-top: 0.6rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .fused-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.2rem 0.5rem;
+            background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.2));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 3px;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 0.5px;
         }
 
         /* === PARTICLE EFFECTS === */
@@ -349,29 +483,41 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            animation: particleFloat 6s ease-in-out infinite;
-            opacity: 0.3;
+            animation: particleFloat 10s ease-in-out infinite;
+            opacity: 0.15;
         }
 
         @keyframes particleFloat {
             0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(-15px) translateX(8px); }
         }
 
         /* === MASTERY PROGRESS === */
         .mastery-bar {
-            height: 3px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 2px;
+            height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 3px;
             overflow: hidden;
-            margin-top: 0.5rem;
+            margin-top: 0.6rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
         }
 
         .mastery-fill {
             height: 100%;
             background: linear-gradient(90deg, #8b5cf6, #10b981);
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 10px rgba(139,92,246,0.5);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 8px rgba(139,92,246,0.6);
+            position: relative;
+        }
+
+        .mastery-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent);
         }
 
         /* === NOTIFICATION SYSTEM === */
@@ -379,13 +525,13 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(15,15,22,0.95);
-            border: 1px solid var(--accent-glow);
+            background: rgba(15,15,22,0.98);
+            border: 1px solid rgba(139,92,246,0.4);
             border-radius: 8px;
             padding: 1rem 1.5rem;
             z-index: 1000;
-            animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 2.7s forwards;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 20px rgba(139,92,246,0.3);
+            animation: slideIn 0.4s cubic-bezier(0.2, 0, 0.1, 1), slideOut 0.4s cubic-bezier(0.2, 0, 0.1, 1) 2.6s forwards;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 10px rgba(139,92,246,0.15);
         }
 
         @keyframes slideIn {
@@ -404,7 +550,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, rgba(139,92,246,0.9), rgba(109,40,217,0.9));
+            background: linear-gradient(135deg, rgba(139,92,246,0.85), rgba(109,40,217,0.85));
             padding: 0.8rem 2rem;
             border-radius: 50px;
             z-index: 999;
@@ -412,13 +558,13 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 0.85rem;
-            box-shadow: 0 10px 30px rgba(139,92,246,0.4);
-            animation: bannerPulse 2s ease-in-out infinite;
+            box-shadow: 0 8px 25px rgba(139,92,246,0.25);
+            animation: bannerPulse 4s ease-in-out infinite;
         }
 
         @keyframes bannerPulse {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.05); }
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+            50% { transform: translateX(-50%) scale(1.02); opacity: 1; }
         }
 
         /* === AMBIENT OVERLAY === */
@@ -430,13 +576,13 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.05) 0%, transparent 50%);
-            animation: ambientPulse 10s ease-in-out infinite;
+            background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.03) 0%, transparent 50%);
+            animation: ambientPulse 15s ease-in-out infinite;
         }
 
         @keyframes ambientPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
         }
     </style>
 </head>
@@ -523,30 +669,30 @@
             
             if (type === 'hover') {
                 osc.frequency.value = 600;
-                gain.gain.setValueAtTime(0.05, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                gain.gain.setValueAtTime(0.02, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
                 osc.start(now);
-                osc.stop(now + 0.05);
+                osc.stop(now + 0.04);
             } else if (type === 'click') {
                 osc.frequency.value = 800;
-                gain.gain.setValueAtTime(0.1, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+                gain.gain.setValueAtTime(0.04, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
                 osc.start(now);
-                osc.stop(now + 0.1);
+                osc.stop(now + 0.08);
             } else if (type === 'select') {
                 osc.frequency.value = 1000;
-                gain.gain.setValueAtTime(0.15, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                gain.gain.setValueAtTime(0.06, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
                 osc.start(now);
-                osc.stop(now + 0.2);
+                osc.stop(now + 0.15);
             } else if (type === 'achievement') {
                 // Two-tone success sound
                 osc.frequency.setValueAtTime(800, now);
-                osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
-                gain.gain.setValueAtTime(0.2, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.frequency.exponentialRampToValueAtTime(1200, now + 0.08);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
                 osc.start(now);
-                osc.stop(now + 0.3);
+                osc.stop(now + 0.25);
             }
         }
 
@@ -558,7 +704,7 @@
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
                 osc.frequency.value = 60; // Deep hum
-                gain.gain.value = 0.02; // Very quiet
+                gain.gain.value = 0.008; // Extremely subtle
                 osc.start();
                 ambientSound = { osc, gain };
             }
@@ -567,18 +713,18 @@
         // === PARTICLE SYSTEM ===
         function createParticles() {
             const container = document.getElementById('particle-container');
-            const particleCount = 15;
+            const particleCount = 8;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                particle.style.width = `${Math.random() * 3 + 1}px`;
+                particle.style.width = `${Math.random() * 2 + 1}px`;
                 particle.style.height = particle.style.width;
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
-                particle.style.background = `rgba(139, 92, 246, ${Math.random() * 0.5 + 0.2})`;
-                particle.style.animationDelay = `${Math.random() * 6}s`;
-                particle.style.animationDuration = `${Math.random() * 4 + 4}s`;
+                particle.style.background = `rgba(139, 92, 246, ${Math.random() * 0.3 + 0.1})`;
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                particle.style.animationDuration = `${Math.random() * 6 + 8}s`;
                 container.appendChild(particle);
             }
         }
@@ -635,13 +781,13 @@
 
         // === SPARK EFFECT ===
         function createSparkEffect() {
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 12; i++) {
                 const spark = document.createElement('div');
                 spark.style.cssText = `
                     position: fixed;
-                    width: 4px;
-                    height: 4px;
-                    background: linear-gradient(135deg, #f59e0b, #ef4444);
+                    width: 3px;
+                    height: 3px;
+                    background: linear-gradient(135deg, rgba(245,158,11,0.6), rgba(239,68,68,0.6));
                     border-radius: 50%;
                     top: 50%;
                     left: 50%;
@@ -650,16 +796,16 @@
                 `;
                 document.body.appendChild(spark);
                 
-                const angle = (Math.PI * 2 * i) / 20;
-                const velocity = Math.random() * 3 + 2;
+                const angle = (Math.PI * 2 * i) / 12;
+                const velocity = Math.random() * 2 + 1.5;
                 const vx = Math.cos(angle) * velocity;
                 const vy = Math.sin(angle) * velocity;
                 
-                let x = 0, y = 0, opacity = 1;
+                let x = 0, y = 0, opacity = 0.8;
                 const animate = () => {
-                    x += vx;
-                    y += vy;
-                    opacity -= 0.02;
+                    x += vx * 0.8;
+                    y += vy * 0.8;
+                    opacity -= 0.015;
                     spark.style.transform = `translate(${x}px, ${y}px)`;
                     spark.style.opacity = opacity;
                     
@@ -760,20 +906,53 @@
                 return;
             }
 
+            // Calculate collection stats
+            const tierCounts = {
+                LEGENDARY: ownedSkills.filter(s => s.tier === 'LEGENDARY').length,
+                RARE: ownedSkills.filter(s => s.tier === 'RARE').length,
+                COMMON: ownedSkills.filter(s => s.tier === 'COMMON').length
+            };
+
+            container.innerHTML = '';
+
+            // Add collection stats
+            const statsBar = document.createElement('div');
+            statsBar.className = 'collection-stats';
+            statsBar.innerHTML = `
+                <div class="stat-badge" title="Total Skills">
+                    <span>📦</span>
+                    <span class="stat-value">${ownedSkills.length}</span>
+                </div>
+                <div class="stat-badge" title="Legendary Skills">
+                    <span>⭐</span>
+                    <span class="stat-value">${tierCounts.LEGENDARY}</span>
+                </div>
+                <div class="stat-badge" title="Rare Skills">
+                    <span>💎</span>
+                    <span class="stat-value">${tierCounts.RARE}</span>
+                </div>
+                <div class="stat-badge" title="Common Skills">
+                    <span>🔹</span>
+                    <span class="stat-value">${tierCounts.COMMON}</span>
+                </div>
+            `;
+            container.appendChild(statsBar);
+
             const skillList = document.createElement('div');
-            skillList.style.cssText = 'display:flex; flex-direction:column; gap:0.5rem; padding:0.5rem; overflow-y:auto; height:100%;';
+            skillList.style.cssText = 'display:flex; flex-direction:column; gap:0.6rem; padding:0.8rem; overflow-y:auto; height:calc(100% - 50px);';
 
             ownedSkills.forEach((skill, index) => {
                 const skillCard = document.createElement('div');
                 skillCard.className = `skill-card ${skill.tier === 'LEGENDARY' ? 'legendary' : skill.tier === 'RARE' ? 'rare' : ''}`;
                 skillCard.style.cssText = `
-                    background: rgba(139, 92, 246, 0.05);
+                    background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(139, 92, 246, 0.03) 100%);
                     border: 1px solid rgba(139, 92, 246, 0.2);
-                    border-radius: 6px;
-                    padding: 0.75rem;
+                    border-radius: 8px;
+                    padding: 0.9rem;
                     cursor: pointer;
-                    transition: all 0.2s ease;
-                    animation-delay: ${index * 0.05}s;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    animation-delay: ${index * 0.04}s;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
                 `;
 
                 // Icon based on type
@@ -782,36 +961,48 @@
                 const mastery = getMasteryProgress(skill.id);
 
                 skillCard.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-                        <div>
-                            <div style="font-weight:600; font-size:0.9rem; color:${tierColor};">${skill.name}</div>
-                            <div style="font-size:0.7rem; color:var(--text-dim); margin-top:0.2rem;">${skill.tier} • ${skill.type}</div>
+                    <div class="skill-card-inner">
+                        <div class="skill-card-header">
+                            <div style="flex: 1;">
+                                <div class="skill-card-title" style="color:${tierColor};">${skill.name}</div>
+                                <div style="font-size:0.7rem; color:var(--text-dim); margin-top:0.3rem; font-weight:600;">${skill.tier} • ${skill.type}</div>
+                            </div>
+                            <div class="skill-card-icon">${icon}</div>
                         </div>
-                        <div style="font-size:1.5rem; opacity:0.6;">${icon}</div>
+                        
+                        <div class="skill-tags">
+                            ${skill.tags.slice(0, 3).map(tag => 
+                                `<span class="skill-tag">${tag}</span>`
+                            ).join('')}
+                        </div>
+                        
+                        ${skill.fusionIngredients ? '<div class="fused-badge">⚡ FUSED SKILL</div>' : ''}
+                        
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" style="width: ${mastery.progress}%;"></div>
+                        </div>
+                        
+                        <div class="skill-meta">
+                            <span style="font-weight:600; color:var(--accent-glow);">Lvl ${mastery.level}</span>
+                            <span>•</span>
+                            <span>${Math.floor(mastery.progress)}% Mastery</span>
+                        </div>
                     </div>
-                    <div style="display:flex; gap:0.5rem; font-size:0.65rem;">
-                        ${skill.tags.slice(0, 3).map(tag => 
-                            `<span style="background:rgba(139,92,246,0.2); padding:0.2rem 0.4rem; border-radius:3px; color:var(--accent-glow);">${tag}</span>`
-                        ).join('')}
-                    </div>
-                    ${skill.fusionIngredients ? '<div style="margin-top:0.5rem; font-size:0.65rem; color:#10b981;">⚡ FUSED</div>' : ''}
-                    <div class="mastery-bar">
-                        <div class="mastery-fill" style="width: ${mastery.progress}%;"></div>
-                    </div>
-                    <div style="font-size:0.65rem; color:var(--text-dim); margin-top:0.3rem;">Mastery Lvl ${mastery.level} • ${Math.floor(mastery.progress)}%</div>
                 `;
 
                 // Hover effects
                 skillCard.onmouseenter = () => {
                     playSound('hover');
-                    skillCard.style.background = 'rgba(139, 92, 246, 0.1)';
+                    skillCard.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.06) 100%)';
                     skillCard.style.borderColor = 'var(--accent-glow)';
-                    skillCard.style.transform = 'translateX(4px)';
+                    skillCard.style.transform = 'translateX(4px) scale(1.02)';
+                    skillCard.style.boxShadow = '0 4px 16px rgba(139,92,246,0.3)';
                 };
                 skillCard.onmouseleave = () => {
-                    skillCard.style.background = 'rgba(139, 92, 246, 0.05)';
+                    skillCard.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(139, 92, 246, 0.03) 100%)';
                     skillCard.style.borderColor = 'rgba(139, 92, 246, 0.2)';
-                    skillCard.style.transform = 'translateX(0)';
+                    skillCard.style.transform = 'translateX(0) scale(1)';
+                    skillCard.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
                 };
 
                 skillCard.onclick = () => {
@@ -824,7 +1015,6 @@
                 skillList.appendChild(skillCard);
             });
 
-            container.innerHTML = '';
             container.appendChild(skillList);
         }
 
