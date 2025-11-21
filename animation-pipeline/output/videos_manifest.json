@@ -1,0 +1,224 @@
+[
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\background",
+    "out": "E:\\game1\\animation-pipeline\\output\\background.mp4",
+    "fps": 8,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\blue flame",
+    "out": "E:\\game1\\animation-pipeline\\output\\blue flame.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\blue flame 2",
+    "out": "E:\\game1\\animation-pipeline\\output\\blue flame 2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\blue_flame",
+    "out": "E:\\game1\\animation-pipeline\\output\\blue_flame.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\blue_flame_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\blue_flame_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\card structure",
+    "out": "E:\\game1\\animation-pipeline\\output\\card structure.mp4",
+    "fps": 8,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\card_structure",
+    "out": "E:\\game1\\animation-pipeline\\output\\card_structure.mp4",
+    "fps": 8,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\energy effect 1",
+    "out": "E:\\game1\\animation-pipeline\\output\\energy effect 1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\energy_effect_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\energy_effect_1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire effect 1",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire effect 1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\firee_effect_4",
+    "out": "E:\\game1\\animation-pipeline\\output\\firee_effect_4.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_effect_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_effect_1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_effect_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_effect_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_effect_3",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_effect_3.mp4",
+    "fps": 8,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_effect_5",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_effect_5.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_golam_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_golam_1.mp4",
+    "fps": 8,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_golam_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_golam_2.mp4",
+    "fps": 8,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fire_golam_3",
+    "out": "E:\\game1\\animation-pipeline\\output\\fire_golam_3.mp4",
+    "fps": 8,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\fusion_background",
+    "out": "E:\\game1\\animation-pipeline\\output\\fusion_background.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\green_golam_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\green_golam_1.mp4",
+    "fps": 8,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\green_golam_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\green_golam_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\green_golam_3",
+    "out": "E:\\game1\\animation-pipeline\\output\\green_golam_3.mp4",
+    "fps": 8,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\lightning_effect",
+    "out": "E:\\game1\\animation-pipeline\\output\\lightning_effect.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\lightning_effect_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\lightning_effect_1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\lightning_effect_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\lightning_effect_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\lightning_effect_3",
+    "out": "E:\\game1\\animation-pipeline\\output\\lightning_effect_3.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\liquid_lightning_effect_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\liquid_lightning_effect_1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\liquid_lightning_effect_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\liquid_lightning_effect_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\mountain_golam_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\mountain_golam_1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\mountain_golam_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\mountain_golam_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\mountain_golam_3",
+    "out": "E:\\game1\\animation-pipeline\\output\\mountain_golam_3.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\red_demon_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\red_demon_1.mp4",
+    "fps": 8,
+    "frames": 7
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\red_demon_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\red_demon_2.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\red_demon_3",
+    "out": "E:\\game1\\animation-pipeline\\output\\red_demon_3.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\reve-v1_b_more_of_a_clunky_gam",
+    "out": "E:\\game1\\animation-pipeline\\output\\reve-v1_b_more_of_a_clunky_gam.mp4",
+    "fps": 8,
+    "frames": 2
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\water_effect_1",
+    "out": "E:\\game1\\animation-pipeline\\output\\water_effect_1.mp4",
+    "fps": 8,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\animation-pipeline\\frames\\water_effect_2",
+    "out": "E:\\game1\\animation-pipeline\\output\\water_effect_2.mp4",
+    "fps": 8,
+    "frames": 4
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "mg1_00_00.png",
+    "row": 0,
+    "col": 0,
+    "source": "mountain golam 1.jpeg"
+  },
+  {
+    "file": "mg1_00_01.png",
+    "row": 0,
+    "col": 1,
+    "source": "mountain golam 1.jpeg"
+  },
+  {
+    "file": "mg1_01_00.png",
+    "row": 1,
+    "col": 0,
+    "source": "mountain golam 1.jpeg"
+  },
+  {
+    "file": "mg1_01_01.png",
+    "row": 1,
+    "col": 1,
+    "source": "mountain golam 1.jpeg"
+  }
+]

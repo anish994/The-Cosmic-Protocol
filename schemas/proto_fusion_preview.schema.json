@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-cosmic-protocol.io/schemas/proto_fusion_preview.schema.json",
+  "title": "Proto-Fusion Preview Event",
+  "description": "Event payload emitted when Laxus (or system) offers a reversible proto-fusion preview to the player.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "description": "Event ID", "examples": ["7b2f7c8e-3d2b-4c0c-ae4e-0f7e9f5a1d10"] },
+    "type": { "type": "string", "const": "protoFusionPreview" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$", "default": "1.0.0" },
+    "triggerSource": { "type": "string", "enum": ["laxus", "system", "debug"], "default": "laxus" },
+    "player": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "idHash": { "type": "string", "description": "Hashed player identifier" },
+        "profileId": { "type": "string" },
+        "anonymous": { "type": "boolean", "default": true }
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "echoRecursionDepth": { "type": "integer", "minimum": 0 },
+        "fusionDiversity": { "type": "integer", "minimum": 0 },
+        "trust": { "type": "number", "minimum": 0, "maximum": 1 },
+        "corruptionDebt": { "type": "number" },
+        "region": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "state": { "type": "string", "enum": ["Harmonized", "SurgeWatch", "Other"] }
+          },
+          "required": ["id", "state"]
+        },
+        "loopMonotony": { "type": "number", "minimum": 0, "maximum": 1 },
+        "exploitFlags": { "type": "boolean", "default": false }
+      },
+      "required": ["echoRecursionDepth", "fusionDiversity", "trust", "corruptionDebt", "region", "loopMonotony", "exploitFlags"]
+    },
+    "preview": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["id"]
+          },
+          "minItems": 1
+        },
+        "fusionTags": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "riskRating": { "type": "string", "enum": ["low", "medium", "high"] },
+        "powerEstimate": { "type": "number", "minimum": 0 },
+        "durationMs": { "type": "integer", "minimum": 1 },
+        "reversible": { "type": "boolean", "const": true },
+        "maxRollbacks": { "type": "integer", "minimum": 0, "default": 1 }
+      },
+      "required": ["inputs", "fusionTags", "durationMs", "reversible"]
+    },
+    "antiExploit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "monotonyScore": { "type": "number", "minimum": 0, "maximum": 1 },
+        "repeatedPattern": { "type": "boolean" },
+        "mitigation": { "type": "string", "enum": ["none", "observe", "throttle", "deny"], "default": "none" }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hint": { "type": "string" },
+        "showTimer": { "type": "boolean", "default": true },
+        "theme": { "type": "string", "enum": ["echo", "void", "neutral"], "default": "echo" }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "timestamp": { "type": "string", "format": "date-time" },
+        "build": { "type": "string" },
+        "checksum": { "type": "string" }
+      }
+    }
+  },
+  "required": ["id", "type", "version", "triggerSource", "conditions", "preview"],
+  "examples": [
+    {
+      "id": "7b2f7c8e-3d2b-4c0c-ae4e-0f7e9f5a1d10",
+      "type": "protoFusionPreview",
+      "version": "1.0.0",
+      "triggerSource": "laxus",
+      "player": { "idHash": "hash:abc123", "anonymous": true },
+      "conditions": {
+        "echoRecursionDepth": 3,
+        "fusionDiversity": 6,
+        "trust": 0.85,
+        "corruptionDebt": 0,
+        "region": { "id": "nexus_gate", "state": "Harmonized" },
+        "loopMonotony": 0.4,
+        "exploitFlags": false
+      },
+      "preview": {
+        "inputs": [ { "id": "skill.echo.wave", "tags": ["Echo"] }, { "id": "skill.void.thread", "tags": ["Void"] } ],
+        "fusionTags": ["Echo", "Void"],
+        "riskRating": "medium",
+        "powerEstimate": 2.1,
+        "durationMs": 20000,
+        "reversible": true,
+        "maxRollbacks": 1
+      },
+      "antiExploit": { "monotonyScore": 0.4, "repeatedPattern": false, "mitigation": "none" },
+      "ui": { "hint": "Preview synergy only—no commitment.", "showTimer": true, "theme": "echo" }
+    }
+  ]
+}

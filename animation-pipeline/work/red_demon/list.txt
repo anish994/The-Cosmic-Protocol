@@ -1,0 +1,43 @@
+file 'E:/game1/05-fusion/demo/game-assets/vfx-and-bosses/red demon 1 .png'
+duration 0.083333
+file 'E:/game1/pictures and mp4s/red demon 1 .png'
+duration 0.083333
+file 'E:/game1/05-fusion/demo/game-assets/vfx-and-bosses/red demon 2.jpeg'
+duration 0.083333
+file 'E:/game1/pictures and mp4s/red demon 2.jpeg'
+duration 0.083333
+file 'E:/game1/05-fusion/demo/game-assets/vfx-and-bosses/red demon 3.jpeg'
+duration 0.083333
+file 'E:/game1/pictures and mp4s/red demon 3.jpeg'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_001.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_1_001.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_1_002.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_1_003.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_1_004.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_002.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_2/red_demon_2_001.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_2/red_demon_2_002.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_2/red_demon_2_003.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_2/red_demon_2_004.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_1/red_demon_003.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_3/red_demon_3_001.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_3/red_demon_3_002.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_3/red_demon_3_003.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_3/red_demon_3_004.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/frames/red_demon_3/red_demon_3_004.png'

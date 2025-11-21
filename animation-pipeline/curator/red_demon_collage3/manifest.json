@@ -1,0 +1,26 @@
+[
+  {
+    "file": "rd3_00_00.png",
+    "row": 0,
+    "col": 0,
+    "source": "red demon 3.jpeg"
+  },
+  {
+    "file": "rd3_00_01.png",
+    "row": 0,
+    "col": 1,
+    "source": "red demon 3.jpeg"
+  },
+  {
+    "file": "rd3_01_00.png",
+    "row": 1,
+    "col": 0,
+    "source": "red demon 3.jpeg"
+  },
+  {
+    "file": "rd3_01_01.png",
+    "row": 1,
+    "col": 1,
+    "source": "red demon 3.jpeg"
+  }
+]

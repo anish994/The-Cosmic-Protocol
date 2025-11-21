@@ -1,0 +1,11 @@
+{
+  "name": "Mountain Golam",
+  "frames": [
+    "./mountain_golam_collage1/mg1_00_00.png",
+    "./mountain_golam_collage1/mg1_00_01.png",
+    "./mountain_golam_collage1/mg1_01_00.png",
+    "./mountain_golam_collage1/mg1_01_01.png"
+  ],
+  "count": 4,
+  "exported_at": "2025-11-01T13:57:58.911Z"
+}

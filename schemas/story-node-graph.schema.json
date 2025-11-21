@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Story Node Graph Schema",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "act": { "type": "integer" },
+    "resonance": { "type": "array", "items": { "type": "string" } },
+    "resonance_alias": { "type": "array", "items": { "type": "string" } },
+    "region_id": { "type": "string" },
+    "region_state": { "type": "string", "enum": ["Stable", "Corrupted", "Resonant", "Evolving", "Collapsed", "Restored", "Secret"] },
+    "tone_tags": { "type": "array", "items": { "type": "string" } },
+    "alignment_required": { "type": "array", "items": { "type": "string", "enum": ["Lawful", "Chaotic", "Neutral", "Good", "Evil", "Factional"] } },
+    "alignment_delta": { "type": "object" },
+    "factions_involved": { "type": "array", "items": { "type": "string" } },
+    "links": {
+      "type": "object",
+      "properties": {
+        "sequential": { "type": "array", "items": { "type": "string" } },
+        "branches": { "type": "array", "items": { "type": "string" } },
+        "hidden": { "type": "array", "items": { "type": "string" } },
+        "event_driven": { "type": "array", "items": { "type": "object" } }
+      },
+      "additionalProperties": false
+    },
+    "recursion": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "variant_id": { "type": "string" },
+        "loop_to": { "type": "array", "items": { "type": "string" } },
+        "memory_keys": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "choices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" },
+          "onChoose": {
+            "type": "object",
+            "properties": {
+              "resonance_delta": { "type": "object" },
+              "alignment_delta": { "type": "object" },
+              "corruption_delta": { "type": "integer" },
+              "unlocks": { "type": "object" },
+              "memory_store": { "type": "array", "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": ["id", "text", "onChoose"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["id", "act", "resonance", "region_id", "region_state", "choices"],
+  "additionalProperties": false
+}

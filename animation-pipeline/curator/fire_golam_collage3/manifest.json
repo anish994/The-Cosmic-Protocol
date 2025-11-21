@@ -1,0 +1,26 @@
+[
+  {
+    "file": "fg3_00_00.png",
+    "row": 0,
+    "col": 0,
+    "source": "fire golam 3.png"
+  },
+  {
+    "file": "fg3_00_01.png",
+    "row": 0,
+    "col": 1,
+    "source": "fire golam 3.png"
+  },
+  {
+    "file": "fg3_01_00.png",
+    "row": 1,
+    "col": 0,
+    "source": "fire golam 3.png"
+  },
+  {
+    "file": "fg3_01_01.png",
+    "row": 1,
+    "col": 1,
+    "source": "fire golam 3.png"
+  }
+]

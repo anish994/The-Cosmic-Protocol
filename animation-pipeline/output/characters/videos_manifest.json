@@ -1,0 +1,620 @@
+[
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\classes\\Generic Weapon Attack Effects",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\classes\\Generic Weapon Attack Effects.mp4",
+    "fps": 12,
+    "frames": 2
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\classes\\Mages",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\classes\\Mages.mp4",
+    "fps": 12,
+    "frames": 7
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\classes\\Magical Effects",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\classes\\Magical Effects.mp4",
+    "fps": 12,
+    "frames": 24
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\classes\\Rogues",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\classes\\Rogues.mp4",
+    "fps": 12,
+    "frames": 8
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\classes\\Warriors",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\classes\\Warriors.mp4",
+    "fps": 12,
+    "frames": 9
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\classes\\Warriors\\Paladin",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\classes\\Warriors\\Paladin.mp4",
+    "fps": 12,
+    "frames": 7
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Jump Loop",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Jump Loop.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Jump Start",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Jump Start.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_01\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_01\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Jump Loop",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Jump Loop.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Jump Start",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Jump Start.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_02\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_02\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Jump Loop",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Jump Loop.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Jump Start",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Jump Start.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\golem\\Golem_03\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\golem\\Golem_03\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\knight\\Heavy Knight",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\knight\\Heavy Knight.mp4",
+    "fps": 12,
+    "frames": 4
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Parts.mp4",
+    "fps": 12,
+    "frames": 45
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Without_shadow",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Without_shadow.mp4",
+    "fps": 12,
+    "frames": 10
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\With_shadow",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\With_shadow.mp4",
+    "fps": 12,
+    "frames": 8
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Sword\\Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Sword\\Parts.mp4",
+    "fps": 12,
+    "frames": 45
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Sword\\Without_shadow",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Sword\\Without_shadow.mp4",
+    "fps": 12,
+    "frames": 10
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Sword\\With_shadow",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Sword\\With_shadow.mp4",
+    "fps": 12,
+    "frames": 8
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Unarmed\\Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Unarmed\\Parts.mp4",
+    "fps": 12,
+    "frames": 17
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Unarmed\\Without_shadow",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Unarmed\\Without_shadow.mp4",
+    "fps": 12,
+    "frames": 7
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\male-hero\\Unarmed\\With_shadow",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\male-hero\\Unarmed\\With_shadow.mp4",
+    "fps": 12,
+    "frames": 5
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Jump Loop",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Jump Loop.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Jump Start",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Jump Start.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_01\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_01\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Jump Loop",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Jump Loop.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Jump Start",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Jump Start.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_02\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_02\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Jump Loop",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Jump Loop.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Jump Start",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Jump Start.mp4",
+    "fps": 12,
+    "frames": 6
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\minotaur\\Minotaur_03\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\minotaur\\Minotaur_03\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 10
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Casting Spells",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Casting Spells.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_01\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_01\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 10
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Casting Spells",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Casting Spells.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_02\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_02\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\Vector Parts",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\Vector Parts.mp4",
+    "fps": 12,
+    "frames": 10
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Attacking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Attacking.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Casting Spells",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Casting Spells.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Dying",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Dying.mp4",
+    "fps": 12,
+    "frames": 15
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Hurt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Hurt.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Idle",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Idle.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Idle Blink",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Idle Blink.mp4",
+    "fps": 12,
+    "frames": 12
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Taunt",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Taunt.mp4",
+    "fps": 12,
+    "frames": 18
+  },
+  {
+    "dir": "E:\\game1\\05-fusion\\demo\\game-assets\\character-sprites\\wraith\\Wraith_03\\PNG Sequences\\Walking",
+    "out": "E:\\game1\\animation-pipeline\\output\\characters\\wraith\\Wraith_03\\PNG Sequences\\Walking.mp4",
+    "fps": 12,
+    "frames": 12
+  }
+]

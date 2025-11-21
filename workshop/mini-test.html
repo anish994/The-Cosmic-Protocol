@@ -2032,8 +2032,18 @@
             
             <!-- Invoke Card Button -->
             <div style="padding: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px;">
+                    <button onclick="imbueWithRandomElement()" title="Imbue a base element via Element Matrix"
+                            style="padding: 8px 10px; background: rgba(255,215,0,0.15); color: #ffd700; border: 1px solid rgba(255,215,0,0.5); border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 700;">
+                        ✨ Element Matrix
+                    </button>
+                    <div id="base-element-pill" style="font-size:11px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); color: #fff; display:none;"></div>
+                </div>
                 <button id="invoke-card-btn" onclick="invokeCard()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(0,227,214,0.3)); color: #fff; border: 2px solid rgba(139,92,246,0.6); border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 700; transition: all 0.3s ease;" disabled>
                     🎴 Invoke Card (Fill at least 1 slot)
+                </button>
+                <button id="battle-btn" onclick="enterBattle()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(255,107,107,0.3), rgba(255,168,0,0.3)); color: #fff; border: 2px solid rgba(255,107,107,0.6); border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 700; transition: all 0.3s ease; margin-top: 8px;" disabled>
+                    ⚔️ Enter Battle
                 </button>
             </div>
             </div>
@@ -2107,6 +2117,17 @@
                 <h4 class="clickable-heading" onclick="showInfo('keyword')" style="font-size: 12px; margin-bottom: 6px; color: #6496ff;">🏷️ Keywords</h4>
                 <div id="keywords-list" style="display: flex; flex-wrap: wrap; gap: 4px;">
                     <div class="placeholder" style="font-size: 10px;">No keywords</div>
+                </div>
+            </div>
+            
+            <!-- Card Actions (NEW) -->
+            <div class="skill-section" style="margin-top: 10px;">
+                <h4 class="clickable-heading" onclick="showInfo('actions')" style="font-size: 12px; margin-bottom: 6px; color: #00e3d6;">🧭 Card Actions (Beta)</h4>
+                <div id="card-actions-list">
+                    <div class="placeholder" style="font-size: 10px;">Attack/Defend/Heal/Summon/Buff will appear here</div>
+                </div>
+                <div id="card-action-log" style="margin-top:6px; max-height:100px; overflow-y:auto; background:rgba(255,255,255,0.03); border-radius:6px; padding:6px; border:1px solid rgba(255,255,255,0.08);">
+                    <div class="placeholder" style="font-size:10px;">No actions used yet</div>
                 </div>
             </div>
             
@@ -2706,10 +2727,350 @@
             return null;
         }
         
+        // === JYOTISH MULTIPLIERS (Step 1: Planet + House only) ===
+        function getSkillTagsLower(skill){
+            const arr = (skill?.tags && skill.tags.length ? skill.tags : (skill?.keywords || []));
+            return Array.isArray(arr) ? arr.map(t => String(t).toLowerCase()) : [];
+        }
+        
+        function mapElementFavTags(element){
+            switch((element||'').toLowerCase()){
+                case 'fire': return ['fire','power','aoe','crit','burn'];
+                case 'earth': return ['earth','defense','shield','tank','slow'];
+                case 'air': return ['air','speed','lightning','combo','multi-hit'];
+                case 'water': return ['water','heal','support','regen','magic'];
+                default: return [];
+            }
+        }
+        
+        function getLagnaMultiplierForSkill(skill){
+            try{
+                const sign = LAGNA_NAMES[currentLagna - 1];
+                if(!sign) return { mult:1 };
+                const fav = mapElementFavTags(sign.element);
+                const tags = getSkillTagsLower(skill);
+                const matches = tags.filter(t => fav.some(f => t.includes(f)));
+                const base = 1 + Math.min(matches.length * 0.02, 0.10); // up to +10%
+                return { mult: base, matches };
+            }catch(e){ return { mult:1 }; }
+        }
+        
+        function getNakshatraMultiplierForSlot(skill, houseIndex){
+            try{
+                const house = HOUSES[houseIndex];
+                if(!house) return { mult:1 };
+                const sign = getSignForHouse(house.id);
+                const degree = (house.id === 1) ? (currentLagnaDegree || 0) : 0;
+                const info = getNakshatraForDegree(sign.id, degree);
+                const nak = info?.nakshatra;
+                if(!nak) return { mult:1 };
+                const planetKW = PLANET_SYNERGIES[nak.ruling]?.keywords || [];
+                const tags = getSkillTagsLower(skill);
+                const matches = tags.filter(t => planetKW.some(k => t.includes(String(k).toLowerCase())));
+                // Base from ruling planet match + small pada scaling
+                const base = 1 + Math.min(0.04 + matches.length * 0.01, 0.10); // 4% +1%/match up to 10%
+                const padaScale = 1 + ((info.pada-1) * 0.015); // +0/1.5/3.0/4.5%
+                const total = Math.min(base * padaScale, 1.15); // cap +15%
+                return { mult: total, name: nak.name, matches };
+            }catch(e){ return { mult:1 }; }
+        }
+        
+        function getSlotMultiplier(skill, houseIndex) {
+            const house = HOUSES[houseIndex];
+            if (!house || !skill) return { multiplier: 1, notes: [] };
+            let multiplier = house.bonus || 1;
+            const notes = [];
+            // Planet keyword synergy
+            const planetSynergy = checkPlanetSynergy(skill, house);
+            if (planetSynergy) {
+                multiplier *= planetSynergy.bonusMultiplier;
+                notes.push(`Planet:${house.planet}+${Math.round((planetSynergy.bonusMultiplier - 1) * 100)}%`);
+            }
+            // House theme synergy
+            const houseSynergy = checkHouseSynergy(skill, house);
+            if (houseSynergy) {
+                multiplier *= houseSynergy.bonusMultiplier;
+                notes.push(`House+${Math.round((houseSynergy.bonusMultiplier - 1) * 100)}%`);
+            }
+            // Lagna element-aligned boost
+            const lag = getLagnaMultiplierForSkill(skill);
+            multiplier *= lag.mult;
+            // Nakshatra ruling planet-aligned boost (per house sign)
+            const nak = getNakshatraMultiplierForSlot(skill, houseIndex);
+            multiplier *= nak.mult;
+            
+            return { 
+                multiplier, 
+                notes, 
+                lagnaMult: lag.mult, 
+                nakMult: nak.mult, 
+                nakName: nak.name 
+            };
+        }
+        
+        function getAdjustedPower(skill, houseIndex) {
+            const m = getSlotMultiplier(skill, houseIndex);
+            const base = skill?.power || 0;
+            return Math.round(base * m.multiplier);
+        }
+        
+        // === CARD ACTIONS (Step 1: Attack/Defend/Heal preview only) ===
+        function getLagnaActionBoosts() {
+            const sign = LAGNA_NAMES[currentLagna - 1];
+            const elem = (sign?.element || '').toLowerCase();
+            return {
+                attack: elem === 'fire' ? 1.10 : elem === 'air' ? 1.05 : 1.00,
+                defend: elem === 'earth' ? 1.10 : 1.00,
+                heal: elem === 'water' ? 1.10 : 1.00,
+            };
+        }
+        
+        // === ELEMENT MATRIX CORE (embedded minimal) ===
+        const MATRIX_ELEMENTS = ['Fire','Ice','Lightning','Water','Earth','Dark','Light','Wind','Metal','Void','Chaos'];
+        const MATRIX_EFFECT_TAGS = {
+            Fire:['Burn','AoE'], Ice:['Freeze','Slow'], Lightning:['Chain','Stun'], Water:['Heal','Cleanse'], Earth:['Shield','Defense'],
+            Dark:['Drain','Curse'], Light:['Purify','Empower'], Wind:['Disperse','Accelerate'], Metal:['Reflect','Resonate'], Void:['Erase','Silence'], Chaos:['Random','Mutate']
+        };
+        function getBaseElement(){ try{ return localStorage.getItem('elemental_matrix_base_element') || null; }catch(e){ return null; } }
+        function setBaseElement(el){ try{ localStorage.setItem('elemental_matrix_base_element', el); localStorage.setItem('ELEMENTAL_MATRIX_SYNC', JSON.stringify({ element: el, effectTags: MATRIX_EFFECT_TAGS[el]||[], ts: Date.now() })); }catch(e){} }
+        function imbueWithRandomElement(){ const el = MATRIX_ELEMENTS[Math.floor(Math.random()*MATRIX_ELEMENTS.length)]; setBaseElement(el); renderBaseElementPill(); renderCardActionsUI(); const log = document.getElementById('card-action-log'); if (log){ const d=document.createElement('div'); d.style.cssText='font-size:11px;opacity:0.9;padding:4px;border-bottom:1px solid rgba(255,255,255,0.08)'; d.textContent=`✨ Element Matrix imbued: ${el}`; log.prepend(d);} }
+        function renderBaseElementPill(){ const el = getBaseElement(); const pill = document.getElementById('base-element-pill'); if (!pill) return; if (!el){ pill.style.display='none'; pill.textContent=''; return; } const color = ({Fire:'#ff8c00',Ice:'#64b4ff',Lightning:'#ffd700',Water:'#64c8ff',Earth:'#6b8e23',Dark:'#6a0dad',Light:'#fff59d',Wind:'#87ceeb',Metal:'#c0c0c0',Void:'#888',Chaos:'#ff6ec7'})[el]||'#fff'; pill.style.display='inline-flex'; pill.style.borderColor = color+'66'; pill.style.color = color; pill.innerHTML = `<span style="margin-right:6px;">${el}</span><span style="font-size:10px; opacity:0.8;">${(MATRIX_EFFECT_TAGS[el]||[]).join(' • ')}</span>`; }
+        
+        function computeCardActions() {
+            // Total adjusted power
+            let totalPower = 0;
+            slottedGlyphs.forEach((g, idx) => { if (g) totalPower += getAdjustedPower(g, idx); });
+            
+            // Tag counts (element composition)
+            const tagCounts = countTags(slottedGlyphs);
+            const fire = tagCounts['fire'] || 0;
+            const air = tagCounts['air'] || 0;
+            const earth = tagCounts['earth'] || 0;
+            const water = tagCounts['water'] || 0;
+            const light = tagCounts['light'] || 0;
+            const dark = tagCounts['dark'] || 0;
+            
+            // Element multipliers (clamped for safety)
+            const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+            const elemAttack = clamp(1 + fire * 0.10 + air * 0.05, 1, 1.5);
+            const elemDefend = clamp(1 + earth * 0.10 + water * 0.10 + light * 0.05, 1, 1.6);
+            const elemHeal = clamp(1 + water * 0.10 + light * 0.10, 1, 1.5);
+            
+            // Lagna boosts
+            const lagnaBoost = getLagnaActionBoosts();
+            
+            let attack = Math.round(totalPower * elemAttack * lagnaBoost.attack);
+            let defend = Math.round(totalPower * 0.30 * elemDefend * lagnaBoost.defend);
+            let heal = Math.round(totalPower * 0.25 * elemHeal * lagnaBoost.heal);
+            
+            // Base Element slight boosts
+            const baseEl = getBaseElement();
+            if (baseEl === 'Fire') attack = Math.round(attack * 1.08);
+            else if (baseEl === 'Water') heal = Math.round(heal * 1.08);
+            else if (baseEl === 'Earth') defend = Math.round(defend * 1.08);
+            else if (baseEl === 'Lightning') attack = Math.round(attack * 1.05);
+            else if (baseEl === 'Light') { heal = Math.round(heal * 1.05); }
+            else if (baseEl === 'Dark') { attack = Math.round(attack * 1.05); }
+            
+            // Summon (dominant element defines archetype)
+            const elementCounts = [
+                {k:'fire',v:fire},{k:'water',v:water},{k:'earth',v:earth},{k:'air',v:air},{k:'light',v:light},{k:'dark',v:dark}
+            ].sort((a,b)=>b.v-a.v);
+            const dom = elementCounts[0].k;
+            const summonTypes = {
+                fire: { name: 'Flame Spirit', mult: 1.2, traits: ['DPS','Burn'] },
+                water: { name: 'Tidal Wisp', mult: 1.0, traits: ['Healer','Regen'] },
+                earth: { name: 'Stone Golem', mult: 1.1, traits: ['Tank','Shield'] },
+                air: { name: 'Storm Sprite', mult: 1.0, traits: ['Multi-hit','Speed'] },
+                light: { name: 'Seraph', mult: 1.1, traits: ['Aura','Cleanse'] },
+                dark: { name: 'Shadow Shade', mult: 1.15, traits: ['Drain','Debuff'] }
+            };
+            const sConf = summonTypes[dom] || summonTypes.fire;
+            let summonPower = Math.round(totalPower * 0.50 * sConf.mult);
+            if (baseEl && baseEl.toLowerCase() === dom) summonPower = Math.round(summonPower * 1.10);
+            const summon = { name: sConf.name, element: dom, power: summonPower, traits: sConf.traits.concat(MATRIX_EFFECT_TAGS[baseEl]||[]) };
+            
+            // Buff (element-weighted)
+            // Count passives (cooldown < 3)
+            let passiveCount = 0;
+            slottedGlyphs.forEach(g=>{ if(g && (g.cooldown||0) < 3) passiveCount++; });
+            const baseBuff = 10 + Math.min(passiveCount, 6) * 2; // 10% + up to +12%
+            const buff = {
+                powerPct: clamp(baseBuff + fire*5, 0, 50),
+                speedPct: clamp(5 + air*5, 0, 40),
+                defensePct: clamp(5 + earth*5, 0, 40),
+                critPct: clamp(light*5, 0, 25),
+                healPct: clamp(5 + water*5, 0, 40),
+                duration: 6 + Math.min(passiveCount, 4) // 6–10s
+            };
+            // Base element small bonus into buff
+            if (baseEl==='Fire') buff.powerPct = clamp(buff.powerPct+5,0,60);
+            else if (baseEl==='Water') buff.healPct = clamp(buff.healPct+5,0,60);
+            else if (baseEl==='Earth') buff.defensePct = clamp(buff.defensePct+5,0,60);
+            else if (baseEl==='Wind' || baseEl==='Air') buff.speedPct = clamp(buff.speedPct+5,0,60);
+            else if (baseEl==='Light') buff.critPct = clamp(buff.critPct+5,0,40);
+            else if (baseEl==='Dark') buff.powerPct = clamp(buff.powerPct+3,0,60);
+            
+            return { attack, defend, heal, totalPower, summon, buff, baseElement: baseEl };
+        }
+        
+        function renderCardActionsUI(){
+            ensureCardActionState();
+            const actions = computeCardActions();
+            const state = CARD_ACTION_STATE;
+            const actionsEl = document.getElementById('card-actions-list');
+            if (!actionsEl) return;
+            const btn = (key,label,value,color)=>{
+                const s = state[key];
+                const disabled = s.cd>0? 'disabled style="opacity:0.5; cursor:not-allowed;"' : '';
+                const cdText = s.cd>0? `CD ${s.cd}s` : 'Ready';
+                return `
+                <div style="background: ${color}14; border:1px solid ${color}44; border-radius:6px; padding:8px; text-align:center;">
+                    <div style="font-size:10px; opacity:0.7;">${label}</div>
+                    <div style="font-size:18px; font-weight:700; color:${color};">${value}</div>
+                    <div style="font-size:9px; opacity:0.7; margin:2px 0;">${cdText}</div>
+                    <button ${disabled} onclick="useCardAction('${key}')" style="padding:4px 8px; font-size:10px; border-radius:4px; background:${color}22; border:1px solid ${color}66; color:${color}; cursor:pointer;">Use</button>
+                </div>`;
+            };
+            const summonInfo = `${actions.summon.name} • ${actions.summon.element.toUpperCase()} • ${actions.summon.traits.join(' / ')}`;
+            const buffInfo = `Pwr ${actions.buff.powerPct}% • Spd ${actions.buff.speedPct}% • Def ${actions.buff.defensePct}% • Crit ${actions.buff.critPct}% • Heal ${actions.buff.healPct}% • ${actions.buff.duration}s`;
+            const baseEl = actions.baseElement || getBaseElement();
+            const elTags = baseEl ? (MATRIX_EFFECT_TAGS[baseEl]||[]).join(' • ') : '';
+            actionsEl.innerHTML = `
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                    <div style="font-size:11px; padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); color: #fff; ${baseEl?'':'display:none;'}">
+                        Base Element: <strong style="margin-left:6px;">${baseEl||''}</strong>
+                        ${elTags? `<span style=\"opacity:0.7; margin-left:6px;\">${elTags}</span>`:''}
+                    </div>
+                    <button onclick="imbueWithRandomElement()" style="margin-left:auto; padding:4px 8px; font-size:10px; border-radius:4px; background: rgba(255,215,0,0.12); border: 1px solid rgba(255,215,0,0.3); color: #ffd700; cursor: pointer;">Re-roll ✨</button>
+                </div>
+                <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+                    ${btn('ATTACK','⚔️ Attack', actions.attack, '#ff6464')}
+                    ${btn('DEFEND','🛡️ Defend', actions.defend, '#6496ff')}
+                    ${btn('HEAL','💚 Heal', actions.heal, '#64ff96')}
+                    ${btn('SUMMON','👥 Summon', actions.summon.power, '#ff8800')}
+                    ${btn('BUFF','📈 Buff', actions.buff.powerPct + '%', '#8b5cf6')}
+                </div>
+                <div style="font-size:10px; opacity:0.8; margin-top:6px;">Summon: ${summonInfo}</div>
+                <div style="font-size:10px; opacity:0.8;">Buff: ${buffInfo}</div>
+                <div style="margin-top:6px; display:flex; gap:6px;">
+                    <button onclick="tickActionCooldowns(1)" style="padding:4px 8px; font-size:10px; border-radius:4px; background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#fff; cursor:pointer;">▶ Next Turn (-1s)</button>
+                    <button onclick="resetActionCooldowns()" style="padding:4px 8px; font-size:10px; border-radius:4px; background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:#fff; cursor:pointer;">⟲ Reset CDs</button>
+                </div>`;
+        }
+        
+        function useCardAction(key){
+            ensureCardActionState();
+            const s = CARD_ACTION_STATE[key];
+            if (!s || s.cd>0) return;
+            const actions = computeCardActions();
+            let line = '';
+            if (key==='ATTACK') line = `⚔️ Attack hits for ${actions.attack}`;
+            else if (key==='DEFEND') line = `🛡️ Shield up for ${actions.defend}`;
+            else if (key==='HEAL') line = `💚 Heal restores ${actions.heal}`;
+            else if (key==='SUMMON') line = `👥 Summoned ${actions.summon.name} (${actions.summon.element}) with ${actions.summon.power} power [${actions.summon.traits.join(', ')}]`;
+            else if (key==='BUFF') line = `📈 Buff applied: +${actions.buff.powerPct}% Pwr, +${actions.buff.speedPct}% Spd, +${actions.buff.defensePct}% Def, +${actions.buff.critPct}% Crit, +${actions.buff.healPct}% Heal (${actions.buff.duration}s)`;
+            const log = document.getElementById('card-action-log');
+            if (log){
+                const entry = document.createElement('div');
+                entry.style.cssText = 'font-size:11px; opacity:0.9; padding:4px; border-bottom:1px solid rgba(255,255,255,0.08);';
+                entry.textContent = line;
+                log.prepend(entry);
+            }
+            // Set cooldown
+            s.cd = s.base;
+            renderCardActionsUI();
+        }
+        
+        function tickActionCooldowns(delta){
+            ensureCardActionState();
+            Object.values(CARD_ACTION_STATE).forEach(x=>{ if (x.cd>0) x.cd=Math.max(0, x.cd-delta); });
+            renderCardActionsUI();
+        }
+        function resetActionCooldowns(){ ensureCardActionState(); Object.values(CARD_ACTION_STATE).forEach(x=> x.cd=0); renderCardActionsUI(); }
+        
+        
+        // === COSMIC EFFECTS (Flavor, not stats) ===
+        function buildSlotEffectBadges(skill, houseIndex){
+            const tags = getSkillTagsLower(skill);
+            const effects = [];
+            const push = (icon,label)=>effects.push(`<span style=\"font-size:9px; padding:2px 6px; border-radius:4px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);\">${icon} ${label}</span>`);
+            if(tags.includes('aoe')) push('🟠','AoE+');
+            if(tags.includes('heal')) push('💚','Sustain+');
+            if(tags.includes('shield')) push('🛡️','Barrier+');
+            if(tags.includes('crit')) push('✨','Crit+');
+            if(tags.includes('bleed')||tags.includes('dot')) push('🩸','DoT+');
+            if(tags.includes('speed')||tags.includes('quick-cast')) push('💨','Speed+');
+            if(tags.includes('stealth')) push('👥','Stealth');
+            return effects.join('');
+        }
+        
+        function buildSlotCosmicDetails(skill, houseIndex){
+            try{
+                const house = HOUSES[houseIndex];
+                const sign = getSignForHouse(house.id);
+                const degree = (house.id===1? currentLagnaDegree||0 : 0);
+                const info = getNakshatraForDegree(sign.id, degree);
+                const nak = info.nakshatra;
+                const lagFav = mapElementFavTags(sign.element);
+                const lagMatch = getLagnaMultiplierForSkill(skill).matches || [];
+                const nakRule = PLANET_SYNERGIES[nak.ruling];
+                const nakKW = (nakRule?.keywords||[]).join(' • ');
+                const nakMatch = getNakshatraMultiplierForSlot(skill, houseIndex).matches || [];
+                const pSyn = checkPlanetSynergy(skill, house);
+                const hSyn = checkHouseSynergy(skill, house);
+                const effects = [];
+                const tags = getSkillTagsLower(skill);
+                if(tags.includes('aoe')) effects.push('Area expands slightly, better crowd coverage');
+                if(tags.includes('heal')) effects.push('Healing feels richer; regen flows smoother');
+                if(tags.includes('shield')) effects.push('Shields feel sturdier and replenish quicker');
+                if(tags.includes('crit')) effects.push('Moments of brilliance strike more often');
+                if(tags.includes('bleed')||tags.includes('dot')) effects.push('Wounds linger longer on foes');
+                if(tags.includes('speed')) effects.push('Actions feel snappier; combos link easier');
+                
+                const header = `${sign.sign} • ${nak.name} (${['1st','2nd','3rd','4th'][info.pada-1]} Pada) • ${house.planet}`;
+                const body = `
+• Element: ${sign.element} — favors ${lagFav.join(', ')||'balanced play'}
+• Nakshatra Ruling: ${nak.ruling} — boosts ${nakKW||'its domain'}
+• Matches: Planet[${(pSyn?.matches||[]).join(', ')||'—'}], House[${(hSyn?.matches||[]).join(', ')||'—'}], Lagna[${lagMatch.join(', ')||'—'}], Nakshatra[${nakMatch.join(', ')||'—'}]
+• Gameplay vibes: ${effects.length? effects.join('; ') : 'Subtle cosmic alignment enhances feel'}
+`;
+                return { header, body };
+            }catch(e){ return { header:'Cosmic Effects', body:'Subtle alignment active.'}; }
+        }
+        
+        function showSlotCosmicInfo(slotIndex){
+            try{
+                const skill = slottedGlyphs[slotIndex];
+                if(!skill) return;
+                const detail = buildSlotCosmicDetails(skill, slotIndex);
+                const tooltip = document.getElementById('info-tooltip');
+                document.getElementById('info-title').textContent = `🪐 ${detail.header}`;
+                document.getElementById('info-desc').textContent = detail.body;
+                tooltip.className = 'info-tooltip yoga-theme active';
+            }catch(e){}
+        }
+        
         // State
         let selectedGlyph = null;
         let slottedGlyphs = new Array(12).fill(null);
         let invokedCard = null; // Current invoked card state
+        // Card action cooldown state (initialized lazily)
+        let CARD_ACTION_STATE = null;
+        function getBaseActionCooldowns(){ return { ATTACK:3, DEFEND:4, HEAL:5, SUMMON:6, BUFF:4 }; }
+        function ensureCardActionState(){
+            if(!CARD_ACTION_STATE){
+                const base = getBaseActionCooldowns();
+                CARD_ACTION_STATE = {
+                    ATTACK:{cd:0, base:base.ATTACK},
+                    DEFEND:{cd:0, base:base.DEFEND},
+                    HEAL:{cd:0, base:base.HEAL},
+                    SUMMON:{cd:0, base:base.SUMMON},
+                    BUFF:{cd:0, base:base.BUFF}
+                };
+            }
+            return CARD_ACTION_STATE;
+        }
         
         // === LAGNA SYSTEM (Ascendant Selection) ===
         let currentLagna = 1; // Default: House 1 at position 1 (Aries ascendant)
@@ -3499,6 +3860,7 @@
             try { updateFilterCounts(); } catch (e) { console.error('❌ updateFilterCounts failed', e); }
             try { renderVedicChart(); } catch (e) { console.error('❌ renderVedicChart failed', e); }
             try { setupEventListeners(); } catch (e) { console.error('❌ setupEventListeners failed', e); }
+            try { renderBaseElementPill(); } catch (e) { console.error('❌ renderBaseElementPill failed', e); }
             try { updateCardPreview(); } catch (e) { console.error('❌ updateCardPreview failed', e); }
         }
         
@@ -3742,7 +4104,7 @@
                     const slot = document.getElementById(`slot-${index}`);
                     const house = HOUSES[index];
                     const sign = getSignForHouse(house.id);
-                    const adjustedPower = Math.round(glyph.power * house.bonus);
+                    const adjustedPower = getAdjustedPower(glyph, index);
                     
                     // Check for synergies
                     const planetSynergy = checkPlanetSynergy(glyph, house);
@@ -3771,6 +4133,18 @@
                             }
                         }
                         
+                        // Lagna/Nakshatra minor bonuses
+                        const slotBonusInfo = getSlotMultiplier(glyph, index);
+                        const lagnaPct = Math.round(((slotBonusInfo.lagnaMult || 1) - 1) * 100);
+                        const nakPct = Math.round(((slotBonusInfo.nakMult || 1) - 1) * 100);
+                        if (lagnaPct > 0) {
+                            synergyIndicator += `<div class="synergy-indicator" title="Lagna bonus">🌅 +${lagnaPct}%</div>`;
+                        }
+                        if (nakPct > 0) {
+                            const nakName = slotBonusInfo.nakName ? `: ${slotBonusInfo.nakName}` : '';
+                            synergyIndicator += `<div class="synergy-indicator" title="Nakshatra${nakName}">⭐ +${nakPct}%</div>`;
+                        }
+                        
                         const planetColor = getPlanetColor(house.planet);
                         const planetSymbol = getPlanetSymbol(house.planet);
                         const planetKW = (PLANET_SYNERGIES[house.planet]?.keywords || []).slice(0,2).join(' • ');
@@ -3787,6 +4161,11 @@
                                 </div>
                                 <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
                                 <div class="slot-buffs">${planetKW || ''}</div>
+                                <div class="slot-effects" style="display:flex; gap:4px; flex-wrap:wrap; margin-top:4px;">
+                                    ${buildSlotEffectBadges(glyph, index)}
+                                    <button onclick="showSlotCosmicInfo(${index})" title="Cosmic effects"
+                                            style="margin-left:auto; padding:2px 6px; font-size:10px; border-radius:4px; background:rgba(0,227,214,0.1); border:1px solid rgba(0,227,214,0.3); color:#00e3d6; cursor:pointer;">ⓘ</button>
+                                </div>
                                 ${synergyIndicator}
                             </div>
                         `;
@@ -3824,7 +4203,7 @@
             // Update UI with synergy detection
             const slot = document.getElementById(`slot-${houseIndex}`);
             const house = HOUSES[houseIndex];
-            const adjustedPower = Math.round(selectedGlyph.power * house.bonus);
+            const adjustedPower = getAdjustedPower(selectedGlyph, houseIndex);
             
             // Check for synergies
             const planetSynergy = checkPlanetSynergy(selectedGlyph, house);
@@ -3852,6 +4231,18 @@
                 }
             }
             
+            // Lagna/Nakshatra minor bonuses
+            const slotBonusInfo = getSlotMultiplier(selectedGlyph, houseIndex);
+            const lagnaPct = Math.round(((slotBonusInfo.lagnaMult || 1) - 1) * 100);
+            const nakPct = Math.round(((slotBonusInfo.nakMult || 1) - 1) * 100);
+            if (lagnaPct > 0) {
+                synergyIndicator += `<div class="synergy-indicator" title="Lagna bonus">🌅 +${lagnaPct}%</div>`;
+            }
+            if (nakPct > 0) {
+                const nakName = slotBonusInfo.nakName ? `: ${slotBonusInfo.nakName}` : '';
+                synergyIndicator += `<div class="synergy-indicator" title="Nakshatra${nakName}">⭐ +${nakPct}%</div>`;
+            }
+            
             const planetColor = getPlanetColor(house.planet);
             const planetSymbol = getPlanetSymbol(house.planet);
             const planetKW = (PLANET_SYNERGIES[house.planet]?.keywords || []).slice(0,2).join(' • ');
@@ -3868,6 +4259,11 @@
                     </div>
                     <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
                     <div class="slot-buffs">${planetKW || ''}</div>
+                    <div class="slot-effects" style="display:flex; gap:4px; flex-wrap:wrap; margin-top:4px;">
+                        ${buildSlotEffectBadges(selectedGlyph, houseIndex)}
+                        <button onclick="showSlotCosmicInfo(${houseIndex})" title="Cosmic effects"
+                                style="margin-left:auto; padding:2px 6px; font-size:10px; border-radius:4px; background:rgba(0,227,214,0.1); border:1px solid rgba(0,227,214,0.3); color:#00e3d6; cursor:pointer;">ⓘ</button>
+                    </div>
                     ${synergyIndicator}
                 </div>
             `;
@@ -3955,8 +4351,7 @@
             
             slottedGlyphs.forEach((glyph, index) => {
                 if (glyph) {
-                    const house = HOUSES[index];
-                    totalPower += Math.round(glyph.power * house.bonus);
+                    totalPower += getAdjustedPower(glyph, index);
                     totalKP += glyph.kp;
                 }
             });
@@ -3966,6 +4361,10 @@
                 id: Date.now(),
                 name: cardName,
                 glyphs: slottedGlyphs.map(g => g ? {...g} : null),
+                elemental: {
+                    base: getBaseElement(),
+                    effectTags: (MATRIX_EFFECT_TAGS[getBaseElement()]||[])
+                },
                 stats: {
                     power: totalPower,
                     defense: Math.round(totalPower * 0.3),
@@ -4008,8 +4407,31 @@
             // Enable save/load buttons
             document.querySelector('button[onclick="saveCard()"]').disabled = false;
             
+            // Enable battle button
+            const battleBtn = document.getElementById('battle-btn');
+            if (battleBtn) {
+                battleBtn.disabled = false;
+                battleBtn.style.background = 'linear-gradient(135deg, rgba(255,107,107,0.5), rgba(255,168,0,0.5))';
+                battleBtn.style.borderColor = 'rgba(255,107,107,0.8)';
+            }
+            
             console.log('✨ Card invoked:', invokedCard);
             alert(`✅ "${cardName}" invoked!\n\n⚡ Power: ${totalPower}\n🔒 ${filledCount}/12 slots\n💰 ${totalKP} KP`);
+            alert('🎮 Card ready for battle! Click ⚔️ Enter Battle to test it out.');
+        }
+        
+        // === ENTER BATTLE ===
+        function enterBattle() {
+            if (!invokedCard) {
+                alert('❌ Invoke a card first!');
+                return;
+            }
+            
+            // Save invoked card to localStorage for combat demo
+            localStorage.setItem('activeCard', JSON.stringify(invokedCard));
+            
+            // Open combat demo in new tab or redirect
+            window.open('combat-demo-v2.html', '_blank');
         }
         
         // === UPDATE CARD PREVIEW ===
@@ -4020,8 +4442,7 @@
             
             slottedGlyphs.forEach((glyph, index) => {
                 if (glyph) {
-                    const house = HOUSES[index];
-                    totalPower += Math.round(glyph.power * house.bonus);
+                    totalPower += getAdjustedPower(glyph, index);
                     totalKP += glyph.kp;
                     slotsFilled++;
                 }
@@ -4092,7 +4513,7 @@
                 if (!glyph) return;
                 
                 const house = HOUSES[index];
-                const adjustedPower = Math.round(glyph.power * house.bonus);
+                const adjustedPower = getAdjustedPower(glyph, index);
                 
                 // Categorize skills (you can enhance this logic)
                 const skillData = {
@@ -4200,9 +4621,12 @@
                     <div style=\"background: ${tierColor}11; border-left: 3px solid ${tierColor}; padding: 8px; margin-bottom: 6px; border-radius: 6px; position: relative; overflow: hidden;\">\r\n                        <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;\">\r\n                            <span style=\"font-weight: 700; font-size: 12px; color: ${tierColor};\">${ability.icon} ${ability.name}</span>\r\n                            <span style=\"font-size: 9px; padding: 2px 6px; background: ${tierColor}33; border: 1px solid ${tierColor}80; color: ${tierColor}; border-radius: 4px; text-transform: uppercase;\">${ability.tier}</span>\r\n                        </div>\r\n                        <div style=\"font-size: 10px; opacity: 0.85; line-height: 1.4; margin-bottom: 4px;\">${ability.description}</div>\r\n                        <div style=\"font-size: 9px; opacity: 0.6;\">\r\n                            ${ability.pattern ? `Pattern: ${ability.pattern}` : ''}\r\n                            ${ability.multiplier > 1 ? ` • <span style=\"color: ${tierColor};\">×${ability.multiplier}</span> bonus` : ''}\r\n                        </div>\r\n                    </div>\r\n                `;
             }).join('');
         }
-        
-        // Update Card Tier Display
-        const tierDisplay = document.getElementById('card-tier-display');
+            
+            // === CARD ACTIONS PREVIEW (expanded) ===
+            renderCardActionsUI();
+            
+            // Update Card Tier Display
+            const tierDisplay = document.getElementById('card-tier-display');
         if (tierDisplay) {
             const tierInfo = {
                 Common: { color: '#8b5cf6', icon: '⚪', label: 'COMMON' },
@@ -4537,13 +4961,13 @@
                 
                 if (slottedGlyphs[index]) {
                     const glyph = slottedGlyphs[index];
-                    const adjustedPower = Math.round(glyph.power * house.bonus);
+                    const adjustedPower = getAdjustedPower(glyph, index);
                     
                     slot.innerHTML = `
                         <div class="slotted-glyph">
                             <button class="remove-btn" onclick="removeGlyph(${index})">×</button>
                             <div style="font-weight: 600;">${glyph.name}</div>
-                            <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower} (×${house.bonus})</div>
+                            <div style="font-size: 10px; opacity: 0.8;">⚡${adjustedPower}</div>
                         </div>
                     `;
                     houseEl.classList.add('filled');

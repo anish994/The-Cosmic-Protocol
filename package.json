@@ -8,6 +8,11 @@
     "glyphs:balance": "node scripts/glyphs_balance.js",
     "glyphs:wave2": "node scripts/glyphs_camelize.js && node scripts/glyphs_validate.js && node scripts/glyphs_balance.js",
     "wave5:ttk": "node scripts/ttk_analyzer.js",
-    "wave5:all": "npm run glyphs:wave2 && npm run wave5:ttk"
+    "wave5:all": "npm run glyphs:wave2 && npm run wave5:ttk",
+    "validate:regions": "node tools/validate_region_consistency.js World_Bible_folder/story-nodes.md"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "js-yaml": "^4.1.0"
   }
 }

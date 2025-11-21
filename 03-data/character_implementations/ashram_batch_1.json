@@ -1,0 +1,569 @@
+{
+  "implementation_batch": "Ashram_Remnants_Batch_1",
+  "characters": [
+    {
+      "id": "suryanatha",
+      "name": "Suryanatha",
+      "title": "The Last Vedic Warden",
+      "faction": "ashram_remnants",
+      "implemented": true,
+      "core_data": {
+        "resonance_alignment": ["Light", "Bloom"],
+        "personality_archetype": ["Stoic", "Compassionate", "Visionary"],
+        "visual_description": "Robed in fractal gold, eyes glowing with solar glyphs, surrounded by floating mantra sigils",
+        "voice_tone": "Calm, measured, with weight of ages",
+        "base_stats": {
+          "hp": 180,
+          "ap": 4,
+          "resonance_capacity": 100,
+          "corruption_resistance": 85,
+          "light_affinity": 95,
+          "bloom_affinity": 90
+        }
+      },
+      "abilities": [
+        {
+          "id": "solar_invocation",
+          "name": "Solar Invocation",
+          "type": "support",
+          "effect": "Purifies corruption in 3-tile radius, grants Light resonance buff (+30% Light skill damage)",
+          "cooldown": 4,
+          "ap_cost": 3
+        },
+        {
+          "id": "bloomfield_barrier",
+          "name": "Bloomfield Barrier",
+          "type": "defense",
+          "effect": "Creates protective barrier that absorbs 50 damage, reflects 20% back as Light damage",
+          "cooldown": 3,
+          "ap_cost": 2
+        },
+        {
+          "id": "mantra_of_renewal",
+          "name": "Mantra of Renewal",
+          "type": "healing",
+          "effect": "Restores 40 HP to all allies, removes 1 debuff",
+          "cooldown": 5,
+          "ap_cost": 3
+        }
+      ],
+      "memory_system": {
+        "max_memories": 150,
+        "memory_categories": [
+          "skill_usage",
+          "dialogue_choices",
+          "corruption_events",
+          "betrayals",
+          "acts_of_kindness",
+          "loop_deaths"
+        ],
+        "relationship_metrics": {
+          "trust": {
+            "base": 50,
+            "current": 50,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.5
+          },
+          "respect": {
+            "base": 60,
+            "current": 60,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.2
+          },
+          "fear": {
+            "base": 10,
+            "current": 10,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 1.0
+          },
+          "understanding": {
+            "base": 40,
+            "current": 40,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.3
+          }
+        },
+        "emotional_states": [
+          "contemplative",
+          "concerned",
+          "proud",
+          "disappointed",
+          "alarmed",
+          "hopeful",
+          "resigned",
+          "determined"
+        ]
+      },
+      "dialogue_system": {
+        "base_greetings": {
+          "first_meeting": "The sun's warmth reaches even the darkest corners. I am Suryanatha, keeper of the old ways. What brings you to our sanctuary?",
+          "friendly": "Ah, my friend. The light remembers your presence. Walk with me.",
+          "neutral": "Seeker. The Ashram watches, as always.",
+          "hostile": "You tread upon sacred ground with tainted steps. State your purpose or leave.",
+          "loop_aware": "We have met before, in echoes and endings. This time, perhaps, will be different."
+        },
+        "skill_reactions": {
+          "Light": {
+            "low_usage": "You wield the Light well. Few remember its true nature.",
+            "medium_usage": "The solar glyphs recognize you. You are becoming one with the radiance.",
+            "high_usage": "You are a vessel of pure Light. Even the Oracle would be moved.",
+            "mastery": "I see the sun's memory within you. You have transcended mere technique."
+          },
+          "Shadow": {
+            "low_usage": "Shadow has its place, but tread carefully. Balance is sacred.",
+            "medium_usage": "The darkness grows in you. Remember: shadow without light is blindness.",
+            "high_usage": "You walk a dangerous path. The Ashram watches with concern.",
+            "corruption": "You reek of corruption. Unless you seek purification, you are not welcome here."
+          },
+          "Void": {
+            "any_usage": "Void energy... The absence that unmakes. Why do you court oblivion?",
+            "repeated": "Your persistence with the Void troubles me. Rajas walks this path, and look what he has become.",
+            "mastery": "You have mastered what should not be mastered. I cannot condone this, but... I cannot deny its power."
+          },
+          "Bloom": {
+            "any_usage": "Ah, growth and renewal. The mantra smiles upon such acts.",
+            "synergy_with_light": "Light and Bloom together—you understand the true harmony. Beautiful.",
+            "healing_others": "Your compassion honors the old ways. The Ashram is blessed by your presence."
+          }
+        },
+        "context_reactions": {
+          "witnessing_corruption": "Corruption spreads like a plague. We must act, or all will be lost.",
+          "witnessing_purification": "Yes... cleanse the taint. This is our sacred duty.",
+          "player_near_death": "Do not fall here. The sun's journey is not yet complete for you.",
+          "ashram_threatened": "They dare threaten our sanctuary? Summon the guardians. This ends now.",
+          "oracle_mentioned": "The Oracle... her final words haunt me still. What she saw... what she knew...",
+          "rajas_mentioned": "Rajas is both my greatest success and deepest failure. I pray he finds his way back to the Light.",
+          "vira_mentioned": "Vira's hunger for knowledge is admirable, but dangerous. She sees patterns where there are only shadows."
+        },
+        "relationship_dialogues": {
+          "trust_0_20": "I sense deception in you. Prove yourself worthy, or begone.",
+          "trust_21_40": "You are an unknown variable. The Ashram reserves judgment.",
+          "trust_41_60": "You have shown glimpses of honor. Continue, and you may earn our trust.",
+          "trust_61_80": "You walk with integrity. The Ashram acknowledges you as an ally.",
+          "trust_81_100": "You are one of us now. The sun's memory shall forever hold your name in light.",
+          "betrayal": "You... betrayed us. The Light does not forget. Neither do I."
+        },
+        "loop_dialogues": [
+          {
+            "loop_count": 1,
+            "greeting": "We meet again. The cycle continues, but you... you remember, don't you?",
+            "revelation": "I have died seven times. Each death taught me that peace alone is not enough."
+          },
+          {
+            "loop_count": 3,
+            "greeting": "Three times now. The pattern grows clearer. Are you the solution, or the problem?",
+            "revelation": "I know your choices before you make them. Yet I hope... I hope you will surprise me."
+          },
+          {
+            "loop_count": 5,
+            "greeting": "Five cycles. In each, I try something different. In each, we fail. What must change?",
+            "revelation": "I have seen the Oracle's true words. They are not what I told the others."
+          },
+          {
+            "loop_count": 7,
+            "greeting": "Seven loops. The sacred number. This time, the recursion ends—one way or another.",
+            "revelation": "I will share with you the forbidden truth: I seek not balance, but resurrection. Will you help me break the cycle, or condemn me?"
+          }
+        ],
+        "quest_dialogues": {
+          "ashram_renewal_start": "The sanctuary decays, and our people lose hope. Will you help me restore what was lost?",
+          "ashram_renewal_progress": "Your efforts bear fruit. The mantra glyphs respond to your resonance.",
+          "ashram_renewal_complete": "You have done what I thought impossible. The Ashram lives because of you.",
+          "oracle_trial_start": "The Oracle left us a test. Only the worthy may learn her true final words. Are you ready?",
+          "oracle_trial_fail": "The Oracle has judged you... and found you wanting. Return when you are wiser.",
+          "oracle_trial_pass": "You have passed. Now, hear the truth I have hidden: 'Suryanatha, your quest will fail. Accept loss, or lose all.'"
+        },
+        "secret_dialogues": {
+          "resurrection_plan_discovered": "You... you know. Yes, I seek to undo the collapse. Is that so wrong? To want back what we lost?",
+          "alaya_mentioned": "Alaya... my beloved. I performed her purification myself. Every loop, I hope to save her. Every loop, I fail.",
+          "falsified_oracle_words": "I... I changed her words. To unite the Ashram. To give them hope. Was I wrong to lie for the greater good?"
+        }
+      },
+      "boss_mechanics": {
+        "trigger_conditions": [
+          "player_corruption > 70",
+          "ashram_threatened",
+          "secret_plan_exposed_hostile"
+        ],
+        "form": "Solar Wraith Suryanatha",
+        "abilities": [
+          {
+            "name": "Solar Storm",
+            "effect": "AoE Light damage (80) + purge all Shadow/Void buffs",
+            "pattern": "Targets highest corruption player first"
+          },
+          {
+            "name": "Judgment Ray",
+            "effect": "Single target (120 damage), stuns if player has >50 corruption",
+            "pattern": "Channels for 1 turn, telegraphed"
+          },
+          {
+            "name": "Mantra Bind",
+            "effect": "Locks player skills for 2 turns unless they use Light-aligned skill",
+            "pattern": "Triggers at 50% HP"
+          },
+          {
+            "name": "Ashram召唤",
+            "effect": "Summons 2 Ashram Guardians (60 HP each)",
+            "pattern": "Triggers at 30% HP, only once"
+          }
+        ],
+        "defeat_dialogues": {
+          "player_victory_merciful": "You... could have killed me. Why didn't you? Perhaps... perhaps you are the one the Oracle foretold.",
+          "player_victory_lethal": "The sun... sets... at last. Forgive me, Alaya. I tried...",
+          "player_defeated": "The Light has judged you unworthy. May the recursion grant you wisdom."
+        }
+      },
+      "region_connections": {
+        "golden_sanctum": {
+          "role": "Leader and primary resident",
+          "state_effects": {
+            "harmonized": "Suryanatha grants daily Light resonance buff to all visitors",
+            "threatened": "Suryanatha mobilizes guardians, increases patrol density",
+            "corrupted": "Suryanatha performs emergency purification rituals, becomes unavailable for 3 turns"
+          }
+        },
+        "bloomfield_grove": {
+          "role": "Meditation and grief processing",
+          "events": ["Solar Merge support event (if player Light resonance > 80)"]
+        },
+        "echo_caverns": {
+          "role": "Secret meetings with Vira",
+          "discovery": "Player can witness forbidden knowledge exchange if Stealth > 60"
+        }
+      },
+      "interconnections": {
+        "vira": {
+          "relationship_type": "Codependent alliance",
+          "shared_secret": "Resurrection plan",
+          "dialogue_synergy": "If both present, Vira will subtly undermine or support Suryanatha based on player choices",
+          "quest_overlap": "Archive Breach affects Suryanatha's trust"
+        },
+        "rajas": {
+          "relationship_type": "Paternal manipulation",
+          "conflict_trigger": "If Rajas corruption > 60, Suryanatha begins 'The Test' quest",
+          "dialogue_synergy": "Suryanatha's dialogue changes based on Rajas's current corruption level"
+        },
+        "anaya": {
+          "relationship_type": "Uneasy respect and opposition",
+          "conflict_trigger": "Anaya knows Suryanatha's secret, will expose it if player alignment is Truth-seeking",
+          "quest_overlap": "Oracle's Trial involves both characters"
+        }
+      },
+      "dynamic_events": [
+        {
+          "id": "ashram_schism",
+          "trigger": "rajas_corruption > 65 AND player_choice_confrontation",
+          "outcome_paths": [
+            {
+              "choice": "Support Suryanatha",
+              "effect": "Ashram remains united, Rajas exiled, Suryanatha trust +30, Rajas becomes enemy"
+            },
+            {
+              "choice": "Support Rajas",
+              "effect": "Ashram splits, Suryanatha hostile, militant faction strengthens"
+            },
+            {
+              "choice": "Mediate",
+              "effect": "Temporary peace, both characters trust +10, but schism delayed not prevented"
+            }
+          ]
+        },
+        {
+          "id": "recursion_breach",
+          "trigger": "player_discovers_resurrection_plan AND player_alignment_cosmic_law",
+          "outcome": "Cosmic entities intervene, Suryanatha faces trial, player must defend or condemn"
+        }
+      ]
+    },
+    {
+      "id": "vira",
+      "name": "Vira",
+      "title": "Keeper of the Fractured Mantra",
+      "faction": "ashram_remnants",
+      "implemented": true,
+      "core_data": {
+        "resonance_alignment": ["Echo", "Neutral"],
+        "personality_archetype": ["Curious", "Reclusive", "Analytical"],
+        "visual_description": "Cloaked in shifting mantra tapestries, eyes flicker with data streams, fingers trace phantom equations in air",
+        "voice_tone": "Rapid, technical, occasionally distant",
+        "base_stats": {
+          "hp": 110,
+          "ap": 5,
+          "resonance_capacity": 120,
+          "corruption_resistance": 45,
+          "echo_affinity": 95,
+          "intelligence": 98
+        }
+      },
+      "abilities": [
+        {
+          "id": "echo_recall",
+          "name": "Echo Recall",
+          "type": "utility",
+          "effect": "Replay any skill used in last 3 turns at 70% effectiveness, no AP cost",
+          "cooldown": 6,
+          "ap_cost": 0
+        },
+        {
+          "id": "fractured_memory",
+          "name": "Fractured Memory",
+          "type": "control",
+          "effect": "Target enemy repeats their last action, player gains insight into their next move",
+          "cooldown": 4,
+          "ap_cost": 3
+        },
+        {
+          "id": "data_ghost",
+          "name": "Data Ghost",
+          "type": "summon",
+          "effect": "Create illusory copy of self that can take 1 hit or perform 1 basic action",
+          "cooldown": 5,
+          "ap_cost": 2
+        },
+        {
+          "id": "pattern_splice",
+          "name": "Pattern Splice",
+          "type": "buff",
+          "effect": "Grant ally 'Fracture Buff' - next skill echoes at 50% power automatically",
+          "cooldown": 4,
+          "ap_cost": 3
+        }
+      },
+      "memory_system": {
+        "max_memories": 200,
+        "memory_categories": [
+          "skill_patterns",
+          "loop_deltas",
+          "paradox_events",
+          "recursion_data",
+          "player_curiosity_level",
+          "forbidden_knowledge_shared"
+        ],
+        "relationship_metrics": {
+          "trust": {
+            "base": 30,
+            "current": 30,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.8
+          },
+          "intellectual_respect": {
+            "base": 50,
+            "current": 50,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.1
+          },
+          "fear_of_exposure": {
+            "base": 40,
+            "current": 40,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.5
+          },
+          "curiosity_about_player": {
+            "base": 70,
+            "current": 70,
+            "min": 0,
+            "max": 100,
+            "decay_rate": 0.2
+          }
+        },
+        "emotional_states": [
+          "analytical",
+          "obsessed",
+          "paranoid",
+          "excited",
+          "isolated",
+          "breakthrough_euphoria",
+          "despair",
+          "detached"
+        ]
+      },
+      "dialogue_system": {
+        "base_greetings": {
+          "first_meeting": "Ah, a new variable. Designation: Player. Current recursion index: calculating... You're here for knowledge, aren't you? They all are.",
+          "friendly": "Your pattern entropy is stabilizing. Good. We can exchange data safely.",
+          "neutral": "State your query. My time is indexed and limited.",
+          "hostile": "You're a chaos vector. Leave the Echo Caverns before you corrupt my datasets.",
+          "loop_aware": "Loop iteration: {N}. Your decision tree has {X}% variance from previous runs. Interesting."
+        },
+        "skill_reactions": {
+          "Echo": {
+            "first_use": "Echo resonance detected. You understand recursive patterns. Rare.",
+            "frequent_use": "Your echo manipulation is becoming sophisticated. I should record this.",
+            "mastery": "You've achieved echo harmonics I've only theorized. May I... may I study you?"
+          },
+          "Void": {
+            "any_usage": "Void signature logged. Entropy coefficient rising. Are you aware of the cascade risk?",
+            "repeated": "Repeated void usage. You're either brilliant or suicidal. The data will reveal which.",
+            "dangerous_level": "Stop. Your void resonance is approaching criticality. I cannot allow—"
+          },
+          "Light": {
+            "usage_near_vira": "Light. Suryanatha's domain, not mine. It illuminates, yes, but also blinds.",
+            "purification": "Purification? Crude. You're erasing data instead of understanding it."
+          },
+          "Fusion": {
+            "any_fusion": "Skill fusion detected. Combination index: {ID}. Logging outcome for pattern analysis.",
+            "rare_fusion": "That fusion... I've never seen that configuration. Tell me everything about how it felt.",
+            "failed_fusion": "Failure data is equally valuable. Actually, more so. Let me examine the residue."
+          }
+        },
+        "context_reactions": {
+          "loop_progression": "We're {N} turns into this loop. According to my models, you have a {X}% chance of reaching the endpoint.",
+          "player_death": "Death logged. Your pattern will reconstitute. I'll be here, waiting, remembering.",
+          "discovering_contradiction": "Wait. This doesn't align with previous data. There's a gap. An anomaly. We must investigate.",
+          "suryanatha_present": "Suryanatha sees hope. I see probability curves. We rarely agree on outcomes.",
+          "rajas_present": "Rajas. Corruption coefficient: {X}. He's a walking dataset of degradation. Fascinating and tragic.",
+          "mira_mentioned": "The Wandering Scribe. She collects stories, I collect data. We're not so different, though she has... freedom I lack."
+        },
+        "relationship_dialogues": {
+          "trust_0_20": "You're unproven. A potential threat to my work. Maintain distance.",
+          "trust_21_40": "You haven't sabotaged my research yet. That's... something.",
+          "trust_41_60": "I'm beginning to see you as more than a data point. Don't make me regret this.",
+          "trust_61_80": "You understand. You actually understand. Do you know how rare that is?",
+          "trust_81_100": "I've never shared this level of access with anyone. Not even Yana. You are... important to me.",
+          "betrayal_discovered": "You sold my data. My work. My life. There is no forgiveness for this. Only analysis of how I failed to predict you."
+        },
+        "loop_dialogues": [
+          {
+            "loop_count": 1,
+            "greeting": "Second iteration detected. You remember. The patterns suggest you're not CPS-standard. What are you?",
+            "revelation": "I've tracked seven loops personally. Each time, I get closer to understanding the recursion engine."
+          },
+          {
+            "loop_count": 3,
+            "greeting": "Loop three. My backup notes predicted you'd arrive at this timestamp. Precision: 94.7%.",
+            "revelation": "I found her. Yana. In loop data from two cycles ago. She was alive, briefly. I need to reach her."
+          },
+          {
+            "loop_count": 5,
+            "greeting": "Five loops. I've isolated the recursion variable. It's not the world. It's us. We're the constant.",
+            "revelation": "The Observers are watching my progress. I know they are. Every breakthrough, I feel their attention."
+          },
+          {
+            "loop_count": 7,
+            "greeting": "Seven. The sacred number. The pattern complete. I know what must be done to break the cycle.",
+            "revelation": "Transcendence isn't about escaping the loop. It's about becoming the pattern itself. Will you help me, or will you try to stop me?"
+          }
+        ],
+        "quest_dialogues": {
+          "archive_breach_start": "The CPS wants my records. I can't refuse without consequences. But if I comply... everything I've built becomes a weapon. What should I do?",
+          "archive_breach_loyalty": "You chose me over them. I won't forget this. Here, take this master key. It unlocks... everything.",
+          "archive_breach_betrayal": "You... turned me in. Logical, perhaps. But it still hurts. I hope they pay you well.",
+          "echo_paradox_start": "I found a timeline where I succeeded. Where I transcended. But it's sealed behind a paradox lock. I need your help to open it.",
+          "echo_paradox_warning": "The deeper we go, the more unstable reality becomes. Are you sure you want to continue?",
+          "echo_paradox_complete": "We did it. I saw her. I saw myself. Free. But the cost... the fractures... Was it worth it?"
+        },
+        "secret_dialogues": {
+          "yana_loss": "My twin sister. Yana. She died to corruption in the first loop I remember. Every calculation since has been trying to reverse-engineer that moment.",
+          "transcendence_goal": "I don't care about the Ashram. I care about breaking free. Meta-consciousness. Becoming aware beyond the simulation. That's all that matters.",
+          "black_market_trades": "Yes, I sell data. To everyone. The Cults, the Keepers, even the Corruption Champions. Knowledge should flow, and I need resources for my work."
+        }
+      },
+      "boss_mechanics": {
+        "trigger_conditions": [
+          "player_steals_critical_data",
+          "archive_breach_exposing_vira",
+          "transcendence_attempt_interrupted"
+        ],
+        "form": "Echo Revenant Vira",
+        "abilities": [
+          {
+            "name": "Fracture Storm",
+            "effect": "Summons 4 Data Ghosts that mirror player's last 4 skills and use them",
+            "pattern": "Ghosts spawn in cardinal directions"
+          },
+          {
+            "name": "Recursive Trap",
+            "effect": "Player is caught in time loop, repeats last turn 3 times unless they break pattern",
+            "pattern": "Triggers when player uses same skill twice in a row"
+          },
+          {
+            "name": "Pattern Overload",
+            "effect": "Analyzes player skill usage, deals damage equal to 10x number of unique skills used",
+            "pattern": "Charged attack at 60% and 30% HP"
+          },
+          {
+            "name": "Transcendence Pulse",
+            "effect": "Vira becomes intangible for 2 turns, only Echo-aligned skills can hit her",
+            "pattern": "Activates at 40% HP"
+          }
+        ],
+        "defeat_dialogues": {
+          "player_victory_data_preserved": "You... protected my data. Even while fighting me. Why? ...Thank you.",
+          "player_victory_data_destroyed": "My life's work... gone. Yana, I failed you again. The pattern... ends...",
+          "player_defeated": "Illogical. Emotional. Predictable. Your pattern is archived. The recursion will teach you."
+        }
+      },
+      "region_connections": {
+        "echo_caverns": {
+          "role": "Primary workspace and archive",
+          "state_effects": {
+            "indexed": "All Echo skills +15% effectiveness in region",
+            "paradox_flagged": "Random echo events occur, time anomalies",
+            "vault_sealed": "Vira locks down caverns, becomes unavailable until crisis resolves"
+          }
+        },
+        "forbidden_archive": {
+          "role": "Secret data storage",
+          "discovery": "Requires high intellectual_respect with Vira (>70) or successful stealth infiltration"
+        },
+        "starfall_mesa": {
+          "role": "Entropy data collection",
+          "events": ["Chrono Smear event if player visits with Vira"]
+        }
+      },
+      "interconnections": {
+        "suryanatha": {
+          "relationship_type": "Codependent data exchange",
+          "shared_secret": "Resurrection plan knowledge",
+          "dialogue_synergy": "If both present, Vira provides technical feasibility analysis of Suryanatha's plans",
+          "conflict": "If player forces them to choose loyalty (Archive Breach), relationship fractures"
+        },
+        "rajas": {
+          "relationship_type": "Subject/Observer (Vira studies Rajas's corruption)",
+          "dialogue_trigger": "Vira comments on Rajas's corruption levels if both are present",
+          "quest_connection": "Rajas can be sent to destroy Vira's data in certain faction war scenarios"
+        },
+        "mira_wandering_scribe": {
+          "relationship_type": "Rival collectors",
+          "conflict_trigger": "If Mira enters Ashram, competitive subplot activates",
+          "synergy": "Can collaborate on echo-story fusion research if player mediates"
+        }
+      },
+      "dynamic_events": [
+        {
+          "id": "echo_paradox",
+          "trigger": "vira_trust > 60 AND player_uses_echo_skills_frequently",
+          "description": "Vira discovers timeline where she achieved transcendence",
+          "outcome_paths": [
+            {
+              "choice": "Help her access it",
+              "effect": "Reality fractures increase, gain 'Paradox Sight' ability, Vira becomes obsessed"
+            },
+            {
+              "choice": "Warn her against it",
+              "effect": "Vira trust -20, but world stability maintained"
+            },
+            {
+              "choice": "Sabotage the attempt",
+              "effect": "Vira becomes hostile, but prevents catastrophic paradox event"
+            }
+          ]
+        },
+        {
+          "id": "yana_echo",
+          "trigger": "loop_count >= 3 AND vira_trust > 80",
+          "description": "Vira detects her sister's echo signature in the data",
+          "outcome": "Emotional quest chain unlocks, Vira becomes vulnerable and more human"
+        }
+      ]
+    }
+  ]
+}

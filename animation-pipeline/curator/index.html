@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animation Frame Curator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🎬 Frame Curator</h1>
+    <p>Select frames in order to build a custom animation sequence</p>
+  </header>
+
+  <div class="container">
+    <section class="panel">
+      <h2>Available Frames</h2>
+      <div id="frame-browser" class="frame-grid"></div>
+    </section>
+
+    <section class="panel right">
+      <h2>Sequence Builder</h2>
+      <div id="sequence" class="sequence-list"></div>
+      <div class="controls">
+        <button id="btn-clear">Clear Sequence</button>
+        <button id="btn-export">Export Sequence</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="curator.js"></script>
+</body>
+</html>

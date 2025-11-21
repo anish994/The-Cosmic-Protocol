@@ -1,0 +1,9 @@
+file 'E:/game1/animation-pipeline/curator/mountain_golam_collage1/mg1_00_00.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/curator/mountain_golam_collage1/mg1_00_01.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/curator/mountain_golam_collage1/mg1_01_00.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/curator/mountain_golam_collage1/mg1_01_01.png'
+duration 0.083333
+file 'E:/game1/animation-pipeline/curator/mountain_golam_collage1/mg1_01_01.png'

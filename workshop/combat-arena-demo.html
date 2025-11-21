@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Arena - Card Battle Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2e;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* MOBILE-FIRST LAYOUT */
+        .arena-layout {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* TOP: D&D NARRATION (40% height) */
+        .narration-section {
+            flex: 0 0 40vh;
+            background: #0f0f23;
+            border-bottom: 3px solid #333;
+            padding: 16px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .narration-title {
+            font-size: 14px;
+            color: #ffd700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+        }
+
+        .narration-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .combat-log {
+            font-size: 12px;
+            opacity: 0.8;
+            border-top: 1px solid #333;
+            padding-top: 8px;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin-bottom: 4px;
+            padding: 2px 4px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .log-attack { color: #ff6b6b; }
+        .log-defend { color: #4dabf7; }
+        .log-heal { color: #69db7c; }
+        .log-summon { color: #ffa726; }
+
+        /* MIDDLE: PIXEL ART BATTLE STAGE (30% height) */
+        .battle-stage {
+            flex: 0 0 30vh;
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid #333;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .battle-stage::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                #444 0px,
+                #444 20px,
+                #555 20px,
+                #555 40px
+            );
+        }
+
+        /* SPRITE DISPLAY */
+        .sprite {
+            width: 200px;
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        }
+
+        .player-sprite {
+            background-image: url('../05-fusion/demo/game-assets/character-sprites/classes/Mages/Mage_Fem_Red.png');
+        }
+
+        .enemy-sprite {
+            background-image: url('../05-fusion/demo/game-assets/character-sprites/classes/Magical Effects/Fire_Explosion_28x28.png');
+            width: 120px;
+            height: 120px;
+            background-color: #2d2d44;
+            border-radius: 50%;
+        }
+
+        .sprite.attacking {
+            animation: attack 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .sprite.defending {
+            animation: defend 0.6s ease-out;
+        }
+
+        .sprite.healing {
+            animation: heal 1s ease-in-out;
+        }
+
+        @keyframes attack {
+            0% { transform: translateX(0) scale(1); filter: brightness(1); }
+            40% { transform: translateX(40px) scale(1.15); filter: brightness(1.2); }
+            100% { transform: translateX(0) scale(1); filter: brightness(1); }
+        }
+
+        @keyframes defend {
+            0% { transform: scale(1) rotateZ(0); }
+            50% { transform: scale(0.85) rotateZ(-8deg); }
+            100% { transform: scale(1) rotateZ(0); }
+        }
+
+        @keyframes heal {
+            0%, 100% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 0px rgba(105, 219, 124, 0)); }
+            50% { transform: scale(1.1); filter: brightness(1.3) drop-shadow(0 0 15px rgba(105, 219, 124, 0.8)); }
+        }
+
+        /* HP BARS */
+        .hp-bar {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: #333;
+            border: 1px solid #000;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .hp-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #69db7c);
+            transition: width 0.5s ease;
+        }
+
+        /* FLOATING DAMAGE */
+        .battle-text {
+            position: absolute;
+            font-size: 28px;
+            font-weight: bold;
+            pointer-events: none;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.4);
+            animation: battleFloat 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            letter-spacing: 2px;
+        }
+
+        @keyframes battleFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.3);
+            }
+            50% {
+                transform: translateY(-30px) scale(1.3);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-80px) scale(0.8);
+            }
+        }
+
+        /* EFFECT OVERLAYS */
+        .effect-overlay {
+            position: absolute;
+            pointer-events: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .effect-fire {
+            background-image: url('../05-fusion/demo/game-assets/character-sprites/classes/Magical Effects/Fire_Explosion_28x28.png');
+            width: 100px;
+            height: 100px;
+            animation: effectPop 0.6s ease-out forwards;
+        }
+
+        .effect-ice {
+            background-image: url('../05-fusion/demo/game-assets/character-sprites/classes/Magical Effects/Ice-Burst_crystal_48x48.png');
+            width: 80px;
+            height: 80px;
+            animation: effectPop 0.6s ease-out forwards;
+        }
+
+        @keyframes effectPop {
+            0% { transform: scale(0) rotate(0); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+            100% { transform: scale(0) rotate(360deg); opacity: 0; }
+        }
+
+        /* BOTTOM: CARD & ACTIONS (30% height) */
+        .card-section {
+            flex: 0 0 30vh;
+            background: #1e1e2f;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card-display {
+            background: linear-gradient(135deg, #2a2a3e, #3a3a5e);
+            border: 2px solid #4a4a6e;
+            border-radius: 8px;
+            padding: 12px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .card-info {
+            text-align: center;
+        }
+
+        .card-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #ffd700;
+        }
+
+        .card-tier {
+            font-size: 11px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .stat-mini {
+            background: rgba(0,0,0,0.3);
+            padding: 4px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: #4dabf7;
+        }
+
+        /* ACTION BUTTONS */
+        .action-panel {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .action-btn {
+            padding: 16px 8px;
+            border: 2px solid;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.2);
+            color: #fff;
+            font-weight: bold;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .action-btn:active {
+            transform: scale(0.95);
+        }
+
+        .action-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .action-btn.attack {
+            border-color: #ff6b6b;
+            color: #ff6b6b;
+        }
+
+        .action-btn.defend {
+            border-color: #4dabf7;
+            color: #4dabf7;
+        }
+
+        .action-btn.heal {
+            border-color: #69db7c;
+            color: #69db7c;
+        }
+
+        .action-btn.summon {
+            border-color: #ffa726;
+            color: #ffa726;
+        }
+
+        .btn-icon {
+            font-size: 20px;
+        }
+
+        .btn-cd {
+            font-size: 9px;
+            opacity: 0.8;
+        }
+
+        /* HEADER */
+        .header {
+            background: #0f0f23;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            padding: 6px 12px;
+            background: #8b0000;
+            color: #fff;
+            border: 1px solid #a52a2a;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="arena-layout">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="title">⚔️ PIXEL COMBAT</div>
+            <button class="back-btn" onclick="goBack()">← BACK</button>
+        </div>
+
+        <!-- TOP: D&D NARRATION (40%) -->
+        <div class="narration-section">
+            <div class="narration-title">Battle Chronicle</div>
+            <div class="narration-text" id="mainNarration">
+                The arena falls silent as Shadow Blade prepares for combat...
+            </div>
+            <div class="combat-log" id="combatLog">
+                <div class="log-entry">⚡ Combat begins!</div>
+            </div>
+        </div>
+
+            <!-- MIDDLE: BATTLE STAGE (30%) -->
+            <div class="battle-stage" id="battleStage">
+                <div style="position: relative; flex: 1; display: flex; align-items: center; justify-content: flex-start;">
+                    <div class="sprite player-sprite" id="playerSprite">
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="playerHp" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative; flex: 1; display: flex; align-items: center; justify-content: flex-end;">
+                    <div class="sprite enemy-sprite" id="enemySprite">
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="enemyHp" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- BOTTOM: CARD & ACTIONS (30%) -->
+        <div class="card-section">
+            <div class="card-display">
+                <div class="card-info">
+                    <div class="card-name" id="cardName">Shadow Blade</div>
+                    <div class="card-tier" id="cardTier">⚪ COMMON</div>
+                    <div class="card-stats">
+                        <div class="stat-mini">
+                            <div class="stat-value" id="statPower">45</div>
+                            <div>PWR</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-value" id="statSpeed">3</div>
+                            <div>SPD</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-value" id="statVers">28</div>
+                            <div>VRS</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-value" id="statDens">6</div>
+                            <div>DNS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-panel">
+                <button class="action-btn attack" id="attackBtn" onclick="performAction('attack')">
+                    <div class="btn-icon">⚔️</div>
+                    <div>ATTACK</div>
+                    <div class="btn-cd" id="attackCD"></div>
+                </button>
+                <button class="action-btn defend" id="defendBtn" onclick="performAction('defend')">
+                    <div class="btn-icon">🛡️</div>
+                    <div>DEFEND</div>
+                    <div class="btn-cd" id="defendCD"></div>
+                </button>
+                <button class="action-btn heal" id="healBtn" onclick="performAction('heal')">
+                    <div class="btn-icon">💚</div>
+                    <div>HEAL</div>
+                    <div class="btn-cd" id="healCD"></div>
+                </button>
+                <button class="action-btn summon" id="summonBtn" onclick="performAction('summon')">
+                    <div class="btn-icon">👥</div>
+                    <div>SUMMON</div>
+                    <div class="btn-cd" id="summonCD"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/skillSystem.js"></script>
+    <script>
+        // Combat state
+        let cardData = {
+            name: 'Shadow Blade',
+            tier: 'Common',
+            power: 45,
+            cooldown: 3,
+            versatility: 28,
+            density: 6,
+            hp: 100,
+            maxHp: 100,
+            element: 'Fire',
+            actions: {
+                attack: { base: 45, cooldown: 2, current: 0 },
+                defend: { base: 30, cooldown: 3, current: 0 },
+                heal: { base: 25, cooldown: 4, current: 0 },
+                summon: { base: 35, cooldown: 5, current: 0 }
+            }
+        };
+
+        let enemyData = {
+            name: 'Training Dummy',
+            hp: 80,
+            maxHp: 80
+        };
+
+        let combatLog = [];
+
+        // Initialize from URL params or localStorage
+        function initCard() {
+            try {
+                const savedCard = localStorage.getItem('invokedCard');
+                if (savedCard) {
+                    const card = JSON.parse(savedCard);
+                    cardData = {
+                        ...cardData,
+                        name: card.name || cardData.name,
+                        power: card.power || cardData.power,
+                        cooldown: card.cooldown || cardData.cooldown,
+                        versatility: card.versatility || cardData.versatility,
+                        density: card.density || cardData.density,
+                        element: card.element || cardData.element
+                    };
+                }
+            } catch (e) {
+                console.log('Using default card');
+            }
+            renderCard();
+            updateNarration(`${cardData.name} enters the pixel arena, ready for battle!`);
+            addLog('system', `⚡ ${cardData.name} vs ${enemyData.name} - FIGHT!`);
+        }
+
+        function renderCard() {
+            document.getElementById('cardName').textContent = cardData.name;
+            document.getElementById('cardTier').textContent = '⚪ ' + cardData.tier.toUpperCase();
+            document.getElementById('statPower').textContent = cardData.power;
+            document.getElementById('statSpeed').textContent = cardData.cooldown;
+            document.getElementById('statVers').textContent = cardData.versatility;
+            document.getElementById('statDens').textContent = cardData.density;
+            
+            // Update HP bars
+            const playerHpPercent = (cardData.hp / cardData.maxHp) * 100;
+            const enemyHpPercent = (enemyData.hp / enemyData.maxHp) * 100;
+            document.getElementById('playerHp').style.width = playerHpPercent + '%';
+            document.getElementById('enemyHp').style.width = enemyHpPercent + '%';
+        }
+
+        function performAction(action) {
+            const actionData = cardData.actions[action];
+            if (!actionData || actionData.current > 0) {
+                updateNarration(`⏱️ ${action.toUpperCase()} is on cooldown!`);
+                return;
+            }
+
+            const playerSprite = document.getElementById('playerSprite');
+            let damage = 0, heal = 0, narrative = '';
+
+            switch (action) {
+                case 'attack':
+                    damage = Math.round(actionData.base * (1 + cardData.power / 100));
+                    enemyData.hp = Math.max(0, enemyData.hp - damage);
+                    narrative = `${cardData.name} strikes with deadly precision! The enemy takes ${damage} damage!`;
+                    
+                    // Animate player attack
+                    playerSprite.classList.add('attacking');
+                    setTimeout(() => playerSprite.classList.remove('attacking'), 800);
+                    
+                    // Spawn damage text
+                    spawnBattleText(`-${damage}`, 'damage', 'right');
+                    
+                    // Spawn fire effect on enemy
+                    spawnEffect('fire', 'right');
+                    
+                    addLog('attack', `⚔️ Attack hits for ${damage} damage`);
+                    break;
+
+                case 'defend':
+                    const shield = Math.round(actionData.base * (1 + cardData.versatility / 100));
+                    narrative = `${cardData.name} raises their guard, gaining ${shield} points of defense!`;
+                    
+                    playerSprite.classList.add('defending');
+                    setTimeout(() => playerSprite.classList.remove('defending'), 600);
+                    
+                    spawnBattleText(`SHIELD`, 'heal', 'left');
+                    spawnEffect('ice', 'left');
+                    
+                    addLog('defend', `🛡️ Defense increased by ${shield}`);
+                    break;
+
+                case 'heal':
+                    heal = Math.round(actionData.base * (1 + cardData.power / 50));
+                    cardData.hp = Math.min(cardData.hp + heal, cardData.maxHp);
+                    narrative = `Warm energy flows through ${cardData.name}, restoring ${heal} health!`;
+                    
+                    playerSprite.classList.add('healing');
+                    setTimeout(() => playerSprite.classList.remove('healing'), 1000);
+                    
+                    spawnBattleText(`+${heal}`, 'heal', 'left');
+                    spawnEffect('ice', 'left');
+                    
+                    addLog('heal', `💚 Healed for ${heal} HP`);
+                    break;
+
+                case 'summon':
+                    narrative = `${cardData.name} calls forth a powerful ${cardData.element} ally to aid in battle!`;
+                    spawnBattleText('SUMMON', 'summon', 'center');
+                    addLog('summon', `👥 ${cardData.element} ally summoned`);
+                    break;
+            }
+
+            // Set cooldown
+            actionData.current = actionData.cooldown;
+            updateCooldowns();
+            updateNarration(narrative);
+            renderCard();
+            
+            // Check victory condition
+            if (enemyData.hp <= 0) {
+                setTimeout(() => {
+                    updateNarration(`Victory! ${cardData.name} stands triumphant!`);
+                    addLog('system', `🏆 VICTORY ACHIEVED!`);
+                }, 1000);
+            }
+        }
+
+        function updateCooldowns() {
+            const actions = ['attack', 'defend', 'heal', 'summon'];
+            actions.forEach(action => {
+                if (cardData.actions[action].current > 0) {
+                    cardData.actions[action].current--;
+                }
+                
+                const btn = document.getElementById(action + 'Btn');
+                const cdDisplay = document.getElementById(action + 'CD');
+                const cd = cardData.actions[action].current;
+                
+                btn.disabled = cd > 0;
+                cdDisplay.textContent = cd > 0 ? `${cd}s` : 'READY';
+            });
+        }
+
+        function spawnBattleText(text, type, position) {
+            const stage = document.getElementById('battleStage');
+            const el = document.createElement('div');
+            el.className = `battle-text log-${type}`;
+            el.textContent = text;
+            
+            // Position based on side
+            if (position === 'left') {
+                el.style.left = '15%';
+            } else if (position === 'right') {
+                el.style.right = '15%';
+            } else {
+                el.style.left = '50%';
+                el.style.transform = 'translateX(-50%)';
+            }
+            
+            el.style.top = '35%';
+            stage.appendChild(el);
+            setTimeout(() => el.remove(), 1200);
+        }
+
+        function spawnEffect(type, position) {
+            const stage = document.getElementById('battleStage');
+            const effect = document.createElement('div');
+            effect.className = `effect-overlay effect-${type}`;
+            
+            if (position === 'left') {
+                effect.style.left = '10%';
+            } else {
+                effect.style.right = '10%';
+            }
+            
+            effect.style.top = '50%';
+            effect.style.transform = 'translateY(-50%)';
+            stage.appendChild(effect);
+            
+            setTimeout(() => effect.remove(), 600);
+        }
+
+        function updateNarration(text) {
+            document.getElementById('mainNarration').textContent = text;
+        }
+
+        function addLog(type, text) {
+            const log = document.getElementById('combatLog');
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${type}`;
+            entry.textContent = text;
+            log.insertBefore(entry, log.firstChild);
+            
+            // Keep only last 8 entries
+            while (log.children.length > 8) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        function goBack() {
+            window.location.href = 'mini-test.html';
+        }
+
+        // Initialize
+        initCard();
+
+        // Tick cooldowns every second
+        setInterval(updateCooldowns, 1000);
+    </script>
+</body>
+</html>

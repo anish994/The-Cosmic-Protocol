@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://the-cosmic-protocol.dev/schemas/story-node.schema.json",
+  "title": "StoryNode",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "shortDescription",
+    "toneTag",
+    "regionTag",
+    "resonanceTag",
+    "narrativePurpose",
+    "choiceVariations",
+    "triggers",
+    "consequences",
+    "recursionVariant",
+    "hiddenConditions",
+    "enemyCorruptionInteractions"
+  ],
+  "properties": {
+    "id": { "type": "integer", "minimum": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "shortDescription": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "toneTag": { "type": "string", "minLength": 1 },
+    "regionTag": { "type": "string", "minLength": 1 },
+    "resonanceTag": { "type": "string", "minLength": 1 },
+    "narrativePurpose": { "type": "string", "minLength": 1 },
+    "choiceVariations": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 8,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "triggers": { "type": "string", "minLength": 1 },
+    "consequences": { "type": "string", "minLength": 1 },
+    "recursionVariant": { "type": "string", "minLength": 1 },
+    "hiddenConditions": { "type": "string", "minLength": 1 },
+    "enemyCorruptionInteractions": { "type": "string", "minLength": 1 }
+  }
+}

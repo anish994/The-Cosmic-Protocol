@@ -1,0 +1,311 @@
+{
+  "summary": {
+    "count": 251,
+    "minId": 1,
+    "maxId": 259
+  },
+  "sampleHead": [
+    {
+      "id": 1,
+      "region": "nexus_gate",
+      "tone": "[harmonic, mysterious]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 2,
+      "region": "loom_of_fate",
+      "tone": "[intricate, fateful]",
+      "resonance": "[FinalJudgment]"
+    },
+    {
+      "id": 184,
+      "region": "loom_of_fate",
+      "tone": "[intricate, fateful]",
+      "resonance": "[Fate]"
+    },
+    {
+      "id": 185,
+      "region": "loom_of_fate",
+      "tone": "[fateful, reflective]",
+      "resonance": "[Fate]"
+    },
+    {
+      "id": 186,
+      "region": "loom_of_fate",
+      "tone": "[fateful, reflective]",
+      "resonance": "[Karma]"
+    },
+    {
+      "id": 187,
+      "region": "loom_of_fate",
+      "tone": "[fateful, reflective]",
+      "resonance": "[FinalJudgment]"
+    },
+    {
+      "id": 188,
+      "region": "loom_of_fate",
+      "tone": "[intricate, fateful]",
+      "resonance": "[Fate]"
+    },
+    {
+      "id": 189,
+      "region": "loom_of_fate",
+      "tone": "[intricate, reflective]",
+      "resonance": "[Karma]"
+    },
+    {
+      "id": 190,
+      "region": "loom_of_fate",
+      "tone": "[intricate, reflective]",
+      "resonance": "[FinalJudgment]"
+    },
+    {
+      "id": 114,
+      "region": "architect_graves",
+      "tone": "[solemn, mystical]",
+      "resonance": "[Karma]"
+    },
+    {
+      "id": 115,
+      "region": "architect_graves",
+      "tone": "[mystical, atmospheric]",
+      "resonance": "[Renewal]"
+    },
+    {
+      "id": 116,
+      "region": "architect_graves",
+      "tone": "[mystical, solemn]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 117,
+      "region": "architect_graves",
+      "tone": "[solemn, atmospheric]",
+      "resonance": "[Memory]"
+    },
+    {
+      "id": 118,
+      "region": "architect_graves",
+      "tone": "[solemn, mystical]",
+      "resonance": "[Fate]"
+    },
+    {
+      "id": 119,
+      "region": "architect_graves",
+      "tone": "[mournful, solemn]",
+      "resonance": "[Renewal]"
+    },
+    {
+      "id": 120,
+      "region": "architect_graves",
+      "tone": "[solemn, mystical]",
+      "resonance": "[Karma]"
+    },
+    {
+      "id": 121,
+      "region": "cps_memory_zones",
+      "tone": "[mystic, solemn]",
+      "resonance": "[Memory]"
+    },
+    {
+      "id": 122,
+      "region": "cps_memory_zones",
+      "tone": "[solemn, enigmatic]",
+      "resonance": "[Protocol]"
+    },
+    {
+      "id": 123,
+      "region": "cps_memory_zones",
+      "tone": "[solemn, enigmatic]",
+      "resonance": "[Data]"
+    },
+    {
+      "id": 124,
+      "region": "cps_memory_zones",
+      "tone": "[enigmatic, mystic]",
+      "resonance": "[Renewal]"
+    },
+    {
+      "id": 125,
+      "region": "cps_memory_zones",
+      "tone": "[mystic, atmospheric]",
+      "resonance": "[Eternity]"
+    },
+    {
+      "id": 126,
+      "region": "cps_memory_zones",
+      "tone": "[atmospheric, solemn]",
+      "resonance": "[Protocol]"
+    },
+    {
+      "id": 127,
+      "region": "cps_memory_zones",
+      "tone": "[solemn, enigmatic]",
+      "resonance": "[Data]"
+    },
+    {
+      "id": 128,
+      "region": "cps_memory_zones",
+      "tone": "[enigmatic, mystic]",
+      "resonance": "[Memory]"
+    },
+    {
+      "id": 129,
+      "region": "cps_memory_zones",
+      "tone": "[atmospheric, mystic]",
+      "resonance": "[Protocol]"
+    }
+  ],
+  "sampleTail": [
+    {
+      "id": 236,
+      "region": "void_path",
+      "tone": "[hopeful, sad]",
+      "resonance": "[Innocence]"
+    },
+    {
+      "id": 237,
+      "region": "void_path",
+      "tone": "[tense, sad]",
+      "resonance": "[Paradox]"
+    },
+    {
+      "id": 238,
+      "region": "void_path",
+      "tone": "[hopeful, tense]",
+      "resonance": "[Innocence]"
+    },
+    {
+      "id": 239,
+      "region": "void_path",
+      "tone": "[sad, hopeful]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 240,
+      "region": "void_path",
+      "tone": "[hopeful, sad]",
+      "resonance": "[Paradox]"
+    },
+    {
+      "id": 241,
+      "region": "remembrance_hall",
+      "tone": "[reflective, sad]",
+      "resonance": "[Memory]"
+    },
+    {
+      "id": 242,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 243,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Memory]"
+    },
+    {
+      "id": 244,
+      "region": "remembrance_hall",
+      "tone": "[reflective, sad]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 245,
+      "region": "remembrance_hall",
+      "tone": "[reflective, sad]",
+      "resonance": "[Renewal]"
+    },
+    {
+      "id": 246,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 247,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Memory]"
+    },
+    {
+      "id": 248,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Renewal]"
+    },
+    {
+      "id": 249,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Renewal]"
+    },
+    {
+      "id": 250,
+      "region": "nexus_gate",
+      "tone": "[awe, harmonic]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 251,
+      "region": "nexus_gate",
+      "tone": "[mysterious, harmonic]",
+      "resonance": "[Pulse]"
+    },
+    {
+      "id": 252,
+      "region": "nexus_gate",
+      "tone": "[mysterious, harmonic]",
+      "resonance": "[Pulse]"
+    },
+    {
+      "id": 253,
+      "region": "nexus_gate",
+      "tone": "[awe, mysterious]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 254,
+      "region": "nexus_gate",
+      "tone": "[harmonic, reflective]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 255,
+      "region": "nexus_gate",
+      "tone": "[awe, reflective]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 256,
+      "region": "nexus_gate",
+      "tone": "[harmonic, reflective]",
+      "resonance": "[Pulse]"
+    },
+    {
+      "id": 257,
+      "region": "nexus_gate",
+      "tone": "[harmonic, awe]",
+      "resonance": "[Pulse]"
+    },
+    {
+      "id": 258,
+      "region": "nexus_gate",
+      "tone": "[mysterious, harmonic]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 259,
+      "region": "nexus_gate",
+      "tone": "[awe, mysterious]",
+      "resonance": "[Echoes]"
+    },
+    {
+      "id": 250,
+      "region": "remembrance_hall",
+      "tone": "[reflective, joyful]",
+      "resonance": "[Memory]"
+    }
+  ]
+}
