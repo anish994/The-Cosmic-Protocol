@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Bible | Region Ecosystem</title>
+    <title>World Bible | Developer System View</title>
     <style>
         :root {
             --bg-color: #050505;
@@ -16,9 +16,11 @@
             --accent-void: #8b5cf6;      /* Purple */
             --accent-corruption: #ef4444; /* Red */
             --accent-mythic: #d946ef;    /* Pink */
+            --accent-system: #00f3ff;    /* Cyan for Dev Data */
             --border-color: #2d3748;
-            --modal-overlay: rgba(0, 0, 0, 0.9);
+            --modal-overlay: rgba(0, 0, 0, 0.95);
             --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+            --font-code: 'Consolas', 'Monaco', monospace;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -28,16 +30,45 @@
             background-image: url('map_assets/cosmogram-bg.png'); /* Subtle BG */
             background-size: cover;
             background-attachment: fixed;
-            background-blend-mode: overlay;
+            background-blend-mode: multiply;
             color: var(--text-main);
             padding: 2rem;
             overflow-x: hidden;
         }
 
         /* --- HEADER --- */
-        header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; background: rgba(0,0,0,0.7); padding: 2rem; border-radius: 12px; backdrop-filter: blur(5px); }
-        h1 { font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 0.5rem; color: var(--accent-hub); text-transform: uppercase; }
-        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        header { 
+            margin-bottom: 3rem; 
+            border-bottom: 1px solid var(--accent-system); 
+            padding-bottom: 1rem; 
+            background: rgba(0,10,20,0.9); 
+            padding: 2rem; 
+            border-radius: 4px; 
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-content h1 { 
+            font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 0.5rem; 
+            color: var(--accent-system); text-transform: uppercase; 
+            font-family: var(--font-code);
+        }
+        .subtitle { color: var(--text-muted); font-size: 1rem; font-family: var(--font-code); }
+        
+        .dev-badge {
+            background: var(--accent-corruption);
+            color: #fff;
+            padding: 5px 10px;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid #ff0000;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
 
         /* --- GRID LAYOUT --- */
         .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; }
@@ -58,11 +89,11 @@
 
         /* --- CARDS --- */
         .region-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 0; /* Reset for image */
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            background-color: #080808;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 0; 
+            transition: all 0.2s;
             position: relative;
             overflow: hidden;
             cursor: pointer;
@@ -72,8 +103,21 @@
 
         .region-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-            border-color: rgba(255,255,255,0.3);
+            box-shadow: 0 4px 20px rgba(0, 243, 255, 0.15);
+            border-color: var(--accent-system);
+        }
+
+        .dev-overlay-data {
+            position: absolute;
+            top: 5px; right: 5px;
+            font-family: var(--font-code);
+            font-size: 0.65rem;
+            color: var(--accent-system);
+            background: rgba(0,0,0,0.8);
+            padding: 2px 6px;
+            border: 1px solid var(--accent-system);
+            z-index: 10;
+            opacity: 0.7;
         }
 
         .card-media {
@@ -137,22 +181,22 @@
         .modal-overlay.active { display: flex; opacity: 1; }
 
         .holo-modal {
-            width: 95%; max-width: 1100px; height: 85vh;
-            background: #0f1115;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 0 60px rgba(0,0,0,0.8);
+            width: 98%; max-width: 1400px; height: 90vh;
+            background: #050508;
+            border: 1px solid var(--accent-system);
+            box-shadow: 0 0 60px rgba(0, 243, 255, 0.1);
             display: grid;
-            grid-template-columns: 300px 1fr;
-            border-radius: 12px;
+            grid-template-columns: 350px 1fr;
+            border-radius: 4px;
             overflow: hidden;
-            transform: scale(0.95);
+            transform: scale(0.98);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         .modal-overlay.active .holo-modal { transform: scale(1); }
 
         .modal-sidebar {
-            background: rgba(0,0,0,0.4);
-            border-right: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.6);
+            border-right: 1px solid #333;
             padding: 0;
             display: flex;
             flex-direction: column;
@@ -163,70 +207,94 @@
             width: 100%;
             background: #000;
             position: relative;
+            border-bottom: 1px solid var(--accent-system);
+        }
+        
+        .modal-media::after {
+            content: 'ASSET_PREVIEW_MODE';
+            position: absolute; bottom: 5px; right: 5px;
+            font-family: var(--font-code); font-size: 0.6rem; color: var(--accent-system);
+            background: rgba(0,0,0,0.7); padding: 2px;
         }
         .modal-media img, .modal-media video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 
-        .sidebar-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
-        .sidebar-title { font-size: 1.8rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.5rem; color: #fff; }
-        .sidebar-subtitle { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 2rem; }
+        .sidebar-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; font-family: var(--font-code); }
+        .sidebar-title { font-size: 1.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.2rem; color: var(--accent-system); text-transform: uppercase; }
+        .sidebar-subtitle { color: #666; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        .stat-row { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem; }
-        .stat-label { color: #666; }
-        .stat-val { color: #eee; font-family: monospace; }
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.85rem; border-bottom: 1px dashed #222; padding-bottom: 4px; }
+        .stat-label { color: #888; }
+        .stat-val { color: #eee; font-family: var(--font-code); }
+        .stat-val.danger-high { color: var(--accent-corruption); }
 
-        .modal-main { display: flex; flex-direction: column; height: 100%; position: relative; }
+        .modal-main { display: flex; flex-direction: column; height: 100%; position: relative; background: #0b0b0e; }
         
         .modal-tabs {
             display: flex;
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid #333;
+            background: #050505;
         }
         .tab-btn {
-            flex: 1; background: none; border: none; padding: 1.2rem;
-            color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;
+            flex: 1; background: none; border: none; padding: 1rem;
+            color: #555; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
             cursor: pointer; transition: all 0.2s;
-            border-bottom: 2px solid transparent;
+            border-right: 1px solid #222;
+            font-family: var(--font-code);
         }
-        .tab-btn:hover { color: #eee; background: rgba(255,255,255,0.05); }
-        .tab-btn.active { color: var(--text-main); border-bottom-color: var(--text-main); background: rgba(255,255,255,0.08); }
+        .tab-btn:hover { color: var(--accent-system); background: rgba(0, 243, 255, 0.05); }
+        .tab-btn.active { color: var(--accent-system); background: rgba(0, 243, 255, 0.1); border-bottom: 2px solid var(--accent-system); }
 
-        .tab-content { padding: 2.5rem; overflow-y: auto; flex: 1; display: none; animation: fadeIn 0.3s ease; }
+        .tab-content { padding: 2rem; overflow-y: auto; flex: 1; display: none; }
         .tab-content.active { display: block; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .close-btn {
-            position: absolute; top: 1rem; right: 1.5rem;
-            background: none; border: none; color: #666; font-size: 2rem; cursor: pointer; z-index: 10;
-        }
-        .close-btn:hover { color: #fff; }
-
         /* Content Styling */
-        h3 { color: var(--text-main); font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; }
-        h3::before { content: '◈'; color: var(--text-muted); font-size: 0.8rem; }
-        p { line-height: 1.7; color: #ccc; margin-bottom: 1.5rem; }
+        h3 { color: var(--text-main); font-weight: 600; margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; text-transform: uppercase; font-family: var(--font-code); border-left: 3px solid var(--accent-system); padding-left: 10px; }
+        h3::before { content: ''; }
         
-        .node-list { display: grid; gap: 1rem; }
+        .node-list { display: grid; gap: 0.8rem; }
         .node-item { 
-            background: rgba(255,255,255,0.03); 
+            background: #0f0f12; 
             padding: 1rem; 
-            border-radius: 6px; 
-            border-left: 3px solid var(--border-color);
-            transition: background 0.2s;
+            border: 1px solid #333;
+            border-left: 3px solid #555;
+            font-family: var(--font-code);
         }
-        .node-item:hover { background: rgba(255,255,255,0.06); }
-        .node-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
-        .node-name { font-weight: 700; color: #fff; }
-        .node-type { font-size: 0.7rem; text-transform: uppercase; padding: 2px 6px; background: rgba(0,0,0,0.3); border-radius: 4px; color: #aaa; }
-        .node-desc { font-size: 0.9rem; color: #999; }
+        .node-item:hover { border-color: var(--accent-system); border-left-color: var(--accent-system); }
+        .node-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; align-items: center; }
+        .node-name { font-weight: 700; color: #eee; font-size: 0.95rem; }
+        .node-type { font-size: 0.7rem; text-transform: uppercase; padding: 2px 6px; background: #222; border: 1px solid #444; color: var(--accent-wild); }
+        .node-desc { font-size: 0.85rem; color: #aaa; margin-bottom: 0.5rem; }
 
         .node-meta {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent-echo);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 8px;
+            border: 1px dashed var(--accent-echo);
             margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px dashed rgba(255,255,255,0.1);
-            font-family: 'Courier New', monospace;
+        }
+        
+        .raw-data-block {
+            background: #000;
+            border: 1px solid #333;
+            padding: 1rem;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: #00ff00;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            max-height: 300px;
+        }
+
+        .system-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            background: #222;
+            color: #888;
+            border: 1px solid #444;
+            margin-right: 5px;
+            font-family: var(--font-code);
         }
         .meta-label { color: #666; text-transform: uppercase; font-size: 0.7rem; margin-right: 5px; }
 
@@ -243,8 +311,11 @@
 <body>
 
     <header>
-        <h1>World Ecosystem Dashboard</h1>
-        <div class="subtitle">Operational Overview of the Fractured Cosmogram</div>
+        <div class="header-content">
+            <h1>SYSTEM.WORLD_ECOSYSTEM</h1>
+            <div class="subtitle">DEVELOPER OVERVIEW // BUILD: v0.9.4-ALPHA</div>
+        </div>
+        <div class="dev-badge">GOD_MODE: ACTIVE</div>
     </header>
 
     <div class="ecosystem-grid">
@@ -252,42 +323,42 @@
         <!-- 1. CENTRAL HUB & ORIGIN -->
         <div class="region-column col-hub">
             <div class="region-header">
-                <div class="region-group-name">The Anchor</div>
-                <div class="region-meta">Stability • Origin</div>
+                <div class="region-group-name">CORE_ANCHOR</div>
+                <div class="region-meta">SYS_ID: 001</div>
             </div>
 
             <!-- Nexus Gate -->
             <div class="region-card" onclick="openModal('nexus_gate')">
+                <div class="dev-overlay-data">ID: NEX_01</div>
                 <div class="card-media"><video src="map_assets/nexus-pulse.mp4" autoplay muted loop></video></div>
                 <div class="card-body">
                     <div class="card-title">Nexus Gate</div>
-                    <div class="card-subtitle">Central Hub</div>
-                    <div class="card-desc">The architect-forged constant. A compact, layered palace-hub suspended across all parallel timelines.</div>
+                    <div class="card-subtitle">HUB_NODE</div>
+                    <div class="card-desc">Primary spawn anchor. Global variable persistence layer. Safe zone.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> All Major Regions
+                        <span class="conn-label">OUT:</span> ALL_REGIONS
                     </div>
                     <div class="tags">
-                        <span class="tag tier-low">Safe Zone</span>
-                        <span class="tag">Echoes</span>
-                        <span class="tag">Pulse</span>
+                        <span class="tag tier-low">DANGER: 0</span>
+                        <span class="tag">RES: ECHOES</span>
                     </div>
                 </div>
             </div>
 
             <!-- Architect Graves -->
             <div class="region-card" onclick="openModal('architect_graves')">
+                <div class="dev-overlay-data">ID: GRV_02</div>
                 <div class="card-media"><img src="map_assets/cosmogram-bg.png" alt="Graves"></div>
                 <div class="card-body">
                     <div class="card-title">Architect Graves</div>
-                    <div class="card-subtitle">Solemn Ruins</div>
-                    <div class="card-desc">Solemn tombs where ancient mechanisms activate. The resting place of the Builders.</div>
+                    <div class="card-subtitle">RUIN_SET_A</div>
+                    <div class="card-desc">Lore dumps and puzzle mechanics. Low combat density.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> Nexus, Inverted Lands
+                        <span class="conn-label">OUT:</span> NEX, INV
                     </div>
                     <div class="tags">
-                        <span class="tag tier-low">Low Danger</span>
-                        <span class="tag">Fate</span>
-                        <span class="tag">History</span>
+                        <span class="tag tier-low">DANGER: 1</span>
+                        <span class="tag">RES: FATE</span>
                     </div>
                 </div>
             </div>
@@ -296,42 +367,42 @@
         <!-- 2. CHAOS & CORRUPTION -->
         <div class="region-column col-corr">
             <div class="region-header">
-                <div class="region-group-name">Fractured Realities</div>
-                <div class="region-meta">Entropy • Danger</div>
+                <div class="region-group-name">ENTROPY_SET</div>
+                <div class="region-meta">SYS_ID: 002</div>
             </div>
 
             <!-- Inverted Landmasses -->
             <div class="region-card" onclick="openModal('inverted_landmasses')">
+                <div class="dev-overlay-data">ID: INV_03</div>
                 <div class="card-media"><img src="map_assets/inverted-landmasses.png" alt="Inverted"></div>
                 <div class="card-body">
                     <div class="card-title">Inverted Landmasses</div>
-                    <div class="card-subtitle">Gravity Flux Zone</div>
-                    <div class="card-desc">A disorienting zone where gravity reverses and terrain shifts unpredictably.</div>
+                    <div class="card-subtitle">PHYSICS_MOD</div>
+                    <div class="card-desc">Gravity vector overrides. Vertical platforming mechanics enabled.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> Echo Fields, Graves
+                        <span class="conn-label">OUT:</span> ECHO, GRV
                     </div>
                     <div class="tags">
-                        <span class="tag tier-med">Medium Danger</span>
-                        <span class="tag">Paradox</span>
-                        <span class="tag">Gravity</span>
+                        <span class="tag tier-med">DANGER: 2-3</span>
+                        <span class="tag">RES: PARADOX</span>
                     </div>
                 </div>
             </div>
 
             <!-- Corrupted Zones -->
             <div class="region-card" onclick="openModal('corrupted_zones')">
+                <div class="dev-overlay-data">ID: COR_04</div>
                 <div class="card-media"><img src="map_assets/corrupted-zone.png" alt="Corrupted"></div>
                 <div class="card-body">
                     <div class="card-title">Corrupted Zones</div>
-                    <div class="card-subtitle">The Bleeding Edge</div>
-                    <div class="card-desc">Oppressive, haunted regions where the altar pulses with corrupted energy. High risk.</div>
+                    <div class="card-subtitle">HAZARD_ZONE</div>
+                    <div class="card-desc">High DoT environment. Permadeath triggers enabled. Elite spawns.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> Graves, Mythic
+                        <span class="conn-label">OUT:</span> GRV, MYTH
                     </div>
                     <div class="tags">
-                        <span class="tag tier-high">High Danger</span>
-                        <span class="tag">Entropy</span>
-                        <span class="tag">Void</span>
+                        <span class="tag tier-high">DANGER: 4</span>
+                        <span class="tag">RES: ENTROPY</span>
                     </div>
                 </div>
             </div>
@@ -340,42 +411,42 @@
         <!-- 3. GROWTH & MYTH -->
         <div class="region-column col-wild">
             <div class="region-header">
-                <div class="region-group-name">Life & Legend</div>
-                <div class="region-meta">Growth • Transcendence</div>
+                <div class="region-group-name">GROWTH_SET</div>
+                <div class="region-meta">SYS_ID: 003</div>
             </div>
 
             <!-- Resonant Bloom -->
             <div class="region-card" onclick="openModal('resonant_bloom')">
+                <div class="dev-overlay-data">ID: BLM_05</div>
                 <div class="card-media"><img src="map_assets/resonant-bloom.png" alt="Bloom"></div>
                 <div class="card-body">
                     <div class="card-title">Resonant Bloom</div>
-                    <div class="card-subtitle">Harmonic Wilds</div>
-                    <div class="card-desc">Vibrant, uplifting zones where luminous flora pulse and rare blooms appear.</div>
+                    <div class="card-subtitle">EVO_ZONE</div>
+                    <div class="card-desc">Skill mutation logic active. Faction reputation modifiers enhanced.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> Silence, Echo Fields
+                        <span class="conn-label">OUT:</span> SIL, ECHO
                     </div>
                     <div class="tags">
-                        <span class="tag tier-med">Moderate</span>
-                        <span class="tag">Growth</span>
-                        <span class="tag">Harmony</span>
+                        <span class="tag tier-med">DANGER: 2</span>
+                        <span class="tag">RES: GROWTH</span>
                     </div>
                 </div>
             </div>
 
             <!-- Mythic Biomes -->
             <div class="region-card" onclick="openModal('mythic_biomes')">
+                <div class="dev-overlay-data">ID: MTH_06</div>
                 <div class="card-media"><video src="map_assets/fusion-bg.mp4" autoplay muted loop></video></div>
                 <div class="card-body">
                     <div class="card-title">Mythic Biomes</div>
-                    <div class="card-subtitle">Legendary Realms</div>
-                    <div class="card-desc">Living archives of legend. Birthplace of divine fusions and cosmic creation.</div>
+                    <div class="card-subtitle">ENDGAME_RAID</div>
+                    <div class="card-desc">Fusion recipes unlocked. God-tier loot tables active.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> CPS, Corruption
+                        <span class="conn-label">OUT:</span> CPS, COR
                     </div>
                     <div class="tags">
-                        <span class="tag tier-ext">Extreme</span>
-                        <span class="tag">Legend</span>
-                        <span class="tag">Myth</span>
+                        <span class="tag tier-ext">DANGER: 5+</span>
+                        <span class="tag">RES: LEGEND</span>
                     </div>
                 </div>
             </div>
@@ -384,42 +455,42 @@
         <!-- 4. DATA & ECHOES -->
         <div class="region-column col-echo">
             <div class="region-header">
-                <div class="region-group-name">Memory & Code</div>
-                <div class="region-meta">Archives • Time</div>
+                <div class="region-group-name">DATA_SET</div>
+                <div class="region-meta">SYS_ID: 004</div>
             </div>
 
             <!-- CPS Memory -->
             <div class="region-card" onclick="openModal('cps_memory')">
+                <div class="dev-overlay-data">ID: CPS_07</div>
                 <div class="card-media"><img src="map_assets/cps-memory-zone.png" alt="CPS"></div>
                 <div class="card-body">
                     <div class="card-title">CPS Memory Zones</div>
-                    <div class="card-subtitle">Digital Archive</div>
-                    <div class="card-desc">Intense, revelatory zones where the core pulses with ancient Architect data.</div>
+                    <div class="card-subtitle">DIGITAL_ARCHIVE</div>
+                    <div class="card-desc">Meta-data manipulation allowed. Save file rewrite triggers.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> Silence, Mythic
+                        <span class="conn-label">OUT:</span> SIL, MTH
                     </div>
                     <div class="tags">
-                        <span class="tag tier-high">High Danger</span>
-                        <span class="tag">Data</span>
-                        <span class="tag">Memory</span>
+                        <span class="tag tier-high">DANGER: 4</span>
+                        <span class="tag">RES: DATA</span>
                     </div>
                 </div>
             </div>
 
             <!-- Echo Fields -->
             <div class="region-card" onclick="openModal('echo_fields')">
+                <div class="dev-overlay-data">ID: ECH_08</div>
                 <div class="card-media"><video src="map_assets/resonance-fog.mp4" autoplay muted loop></video></div>
                 <div class="card-body">
                     <div class="card-title">Echo Fields</div>
-                    <div class="card-subtitle">Reverberant Plains</div>
-                    <div class="card-desc">Haunting, reflective plains where echoes of past actions flood the zone. Time is fluid here.</div>
+                    <div class="card-subtitle">LOOP_BUFFER</div>
+                    <div class="card-desc">Time-loop logic. Previous run ghost data injected here.</div>
                     <div class="connections">
-                        <span class="conn-label">Links:</span> Inverted, Bloom
+                        <span class="conn-label">OUT:</span> INV, BLM
                     </div>
                     <div class="tags">
-                        <span class="tag tier-med">Medium</span>
-                        <span class="tag">Time</span>
-                        <span class="tag">Echoes</span>
+                        <span class="tag tier-med">DANGER: 3</span>
+                        <span class="tag">RES: TIME</span>
                     </div>
                 </div>
             </div>
@@ -458,16 +529,25 @@
 
             <div class="modal-main">
                 <div class="modal-tabs">
-                    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
-                    <button class="tab-btn" onclick="switchTab('nodes')">Sub-Zones & Nodes</button>
-                    <button class="tab-btn" onclick="switchTab('secrets')">Secrets</button>
+                    <button class="tab-btn active" onclick="switchTab('overview')">SYS_OVERVIEW</button>
+                    <button class="tab-btn" onclick="switchTab('nodes')">NODES & LOGIC</button>
+                    <button class="tab-btn" onclick="switchTab('secrets')">LOOT & SECRETS</button>
+                    <button class="tab-btn" onclick="switchTab('raw')">RAW_JSON</button>
                 </div>
 
                 <div id="tab-overview" class="tab-content active">
-                    <h3>Atmosphere & Logic</h3>
+                    <h3>System Description</h3>
                     <p id="modalDesc">Description goes here.</p>
-                    <h3>Faction Presence</h3>
+                    <h3>Faction Influence</h3>
                     <p id="modalFactions">Faction details.</p>
+                    <h3>Global Modifiers</h3>
+                    <div class="node-item" style="background: #080808; border-left-color: var(--accent-system);">
+                        <div class="node-header">
+                            <span class="node-name">Resonance Effect</span>
+                            <span class="node-type">PASSIVE</span>
+                        </div>
+                        <div class="node-desc" id="modalResEffect">Loading...</div>
+                    </div>
                 </div>
 
                 <div id="tab-nodes" class="tab-content">
@@ -477,9 +557,16 @@
                 </div>
 
                 <div id="tab-secrets" class="tab-content">
-                    <h3>Hidden Pathways</h3>
+                    <h3>Hidden Triggers</h3>
                     <div class="secret-block" id="modalSecrets">
                         Secrets revealed...
+                    </div>
+                </div>
+
+                <div id="tab-raw" class="tab-content">
+                    <h3>System Dump</h3>
+                    <div class="raw-data-block" id="modalRaw">
+                        // JSON Data
                     </div>
                 </div>
             </div>
@@ -491,161 +578,169 @@
         // Deep content derived from regions.md (World Bible)
         const REGIONS = {
             "nexus_gate": {
+                id: "NEX_01",
                 name: "Nexus Gate",
-                subtitle: "The Anchor",
+                subtitle: "HUB_ANCHOR",
                 mediaType: "video",
                 mediaSrc: "map_assets/nexus-pulse.mp4",
-                danger: "Low (Safe)",
-                corruption: "0% (Sanctuary)",
-                resonance: "Echoes, Pulse",
-                desc: "The architect-forged constant: a compact, layered palace-hub suspended across all parallel timelines. It remains stable while realities fracture, providing a unified anchor for resurrection, coordination, and synthesis. Echo damping prevents uncontrolled recursion loops.",
+                danger: "0 (SAFE)",
+                corruption: "0.0%",
+                resonance: "ECHOES | PULSE",
+                desc: "The architect-forged constant. A compact, layered palace-hub suspended across all parallel timelines. Stable anchor for resurrection logic. Echo damping prevents infinite recursion loops.",
                 factions: "Ashram Remnants (Custodians), Nomadic Relic Seekers (Traders), Architect Echoes (Advisors).",
+                resEffect: "Pulse Calibration: +5% Movement Speed per stack. Echo Sync: +1 Inventory Slot per 10 Resonance.",
                 nodes: [
-                    { name: "Arrival Platform", type: "Anchor", desc: "Normalize player state; first CPS imprint. Ashram Remnants greet new arrivals.", logic: "Pulse Calibration: Choose rhythm bonus for travel speed." },
-                    { name: "Resonance Relay Core", type: "System", desc: "Maintains Echoes/Pulse cycle. Adjust travel latency and skill cooldown shaping.", logic: "Over-allocation triggers minor desync anomaly (hidden branch)." },
-                    { name: "Skill Infusion Alcoves", type: "Crafting", desc: "Micro-fusion slots for low-risk upgrades. Apply Renewal/Echo overlays without full Chamber risk.", logic: "Efficiency vs Resilience infusion choices." },
-                    { name: "Memory Echo Board", type: "Lore", desc: "Curated, safe replay of sanitized memory fragments (no raw corruption bleed).", logic: "Selecting deep memory routes to Architect Graves." },
-                    { name: "Traversal Gate Array", type: "Transport", desc: "Four calibrated arches routing to major regions. Cost scales based on karma variance.", logic: "Performing 'Pulse Harmonize' grants reduced travel cost." }
+                    { name: "Arrival Platform", type: "SPAWN_POINT", desc: "Player state normalization. First CPS checkpoint trigger.", logic: "IF(FirstTime) -> PlayIntro(); ELSE -> QuickLoad();" },
+                    { name: "Resonance Relay Core", type: "SYSTEM", desc: "Maintains Echoes/Pulse cycle. Controls fast-travel latency.", logic: "Overload > 90% triggers 'Desync Anomaly' event." },
+                    { name: "Skill Infusion Alcoves", type: "CRAFTING", desc: "Micro-fusion slots. Apply modifiers to skills without full fusion risk.", logic: "SuccessRate = 100% (Safe Zone)." },
+                    { name: "Memory Echo Board", type: "UI_PANEL", desc: "Replay sanitized memory fragments. Lore retrieval interface.", logic: "UnlockCondition: 'Fragment_Key' item." }
                 ],
                 secrets: "Surge Event: 'Cross-Reality Alignment' temporarily raises danger to Medium and unlocks hidden transfer paths to the Pantheon Hall. Attempting to corrupt the core backfires unless alignment surge weakens filters."
             },
             "inverted_landmasses": {
+                id: "INV_03",
                 name: "Inverted Landmasses",
-                subtitle: "Gravity Flux Zone",
+                subtitle: "GRAVITY_FLUX",
                 mediaType: "img",
                 mediaSrc: "map_assets/inverted-landmasses.png",
-                danger: "Medium",
-                corruption: "15%",
-                resonance: "Paradox, Gravity",
-                desc: "A disorienting zone where gravity reverses and terrain shifts unpredictably. Floating islands collide and separate in a dance of physics-defying chaos. Home to Inverted Wraiths and lost physics.",
-                factions: "Ashram Remnants (Stabilizers), Relic Seekers (Exploit Flux).",
+                danger: "2-3 (MED)",
+                corruption: "15.5%",
+                resonance: "PARADOX | GRAVITY",
+                desc: "Gravity vector override zone. Verticality = Infinite. Floating islands act as moving platforms. Physics engine modified for local gravity wells.",
+                factions: "Ashram Remnants (Stabilizers), Relic Seekers (Exploiters).",
+                resEffect: "Gravity Well: Jump height +200%, Fall damage = 0. Projectiles curve towards center.",
                 nodes: [
-                    { name: "Gravity Flux Event", type: "Hazard", desc: "Gravity reverses, terrain shifts unpredictably. Choices: Stabilize, Exploit, or Escape.", logic: "High resonance stabilizes flux; Low resonance intensifies chaos." },
-                    { name: "Inverted Echo Ritual", type: "Social", desc: "Factions gather as resonance inverts. Wisdom is shared if not disrupted.", logic: "High resonance strengthens ritual; Low resonance triggers disruption." },
-                    { name: "Upside-Down Relic Hunt", type: "Loot", desc: "Relic is guarded by inverted entities. Stealing triggers pursuit.", logic: "High resonance reveals location; Low resonance spawns guards." },
-                    { name: "Inversion Collapse Escape", type: "Challenge", desc: "Terrain fractures, exits loop. Requires breaking the cycle to survive.", logic: "High resonance reveals exit; Low resonance accelerates collapse." },
-                    { name: "Gravity Vein Puzzle", type: "Puzzle", desc: "Solve a puzzle in shifting gravity veins during a surge.", logic: "High resonance reveals solutions; Low resonance scrambles patterns." },
-                    { name: "Inverted Architect Challenge", type: "Boss", desc: "Confront an inverted Architect entity during a surge.", logic: "High resonance weakens entity; Low resonance strengthens it." }
+                    { name: "Gravity Flux Event", type: "HAZARD", desc: "Periodic gravity reversal. Timed platforming challenge.", logic: "Timer: 60s interval. Vector.Y = -Vector.Y" },
+                    { name: "Inverted Echo Ritual", type: "SOCIAL_EVENT", desc: "NPC gathering during inversion. Trade window open.", logic: "Trigger: Resonance > 50. Spawns: Merchant_Xur." },
+                    { name: "Upside-Down Relic Hunt", type: "LOOT_SPAWN", desc: "Rare artifact spawn on underside of islands.", logic: "Requires: Flight or Gravity Boots." },
+                    { name: "Inversion Collapse Escape", type: "TIME_TRIAL", desc: "Terrain fractures. Pathfinding algorithm recalculates in real-time.", logic: "FailState: Player Death (Void Fall)." },
+                    { name: "Gravity Vein Puzzle", type: "LOGIC_PUZZLE", desc: "Align gravity streams to power ancient mechanism.", logic: "Reward: 'Gravity Core' Key Item." }
                 ],
                 secrets: "High resonance stabilizes gravity. Rare 'Gravity Anchors' can be found here to allow flight in other zones. Hidden paths often open only during 'Inversion Surges'."
             },
             "corrupted_zones": {
+                id: "COR_04",
                 name: "Corrupted Zones",
-                subtitle: "Fractured Reality",
+                subtitle: "ENTROPY_SINK",
                 mediaType: "img",
                 mediaSrc: "map_assets/corrupted-zone.png",
-                danger: "High",
-                corruption: "85%",
-                resonance: "Entropy, Void",
-                desc: "Oppressive, haunted regions where the altar pulses with corrupted energy. The laws of reality are broken here, replaced by the logic of decay. Highly dangerous but rich in power.",
-                factions: "Corruption Champions (Rulers), Ashram Remnants (Purifiers), Rogue AI (Hackers).",
+                danger: "4 (HIGH)",
+                corruption: "85.0%",
+                resonance: "ENTROPY | VOID",
+                desc: "High DoT environment. Reality logic broken. Textures glitch. Audio distorted. The 'Bleeding Edge' of the simulation.",
+                factions: "Corruption Champions (Hostile), Rogue AI (Neutral/Hostile).",
+                resEffect: "Void Rot: -1 HP/sec. Skill Cost +50%. Loot Rarity +2 Tier.",
                 nodes: [
-                    { name: "The Altar Awakening", type: "Boss", desc: "The altar pulses with corrupted energy, echoing lost prayers. Purify or Harness?", logic: "High resonance reveals hidden mantras; Low resonance spawns echo storms." },
-                    { name: "Code Storm Crossing", type: "Hazard", desc: "River floods with corrupted code, mutating the landscape.", logic: "Crossing with high resonance stabilizes river; Low resonance spawns anomalies." },
-                    { name: "Forbidden Ritual", type: "Event", desc: "Chamber filled with glitching sigils and gravity-defying relics.", logic: "High resonance allows safe completion; Low resonance causes backlash." },
-                    { name: "Entropy Collapse", type: "Trap", desc: "Tunnels collapse, void pits open. Escape or harvest void crystals.", logic: "High resonance stabilizes tunnels; Low resonance accelerates collapse." },
-                    { name: "Null Breach", type: "Secret", desc: "Vault walls shift, memories fade. Recover erased data or escape.", logic: "High resonance protects memory; Low resonance triggers void awakenings." },
-                    { name: "Corruption Core Hunt", type: "Raid", desc: "Core is hidden, guarded by elite enemies and environmental traps.", logic: "High resonance reveals core; Low resonance triggers traps." }
+                    { name: "The Altar Awakening", type: "BOSS_RAID", desc: "Corruption Avatar spawn point. High HP/DPS.", logic: "Phases: 3. Phase 2 spawns 'Void Echoes'." },
+                    { name: "Code Storm Crossing", type: "HAZARD", desc: "River of corrupted code. Contact = Instant Mutation.", logic: "Bridge_State: Unstable. Probability of collapse: 30%." },
+                    { name: "Forbidden Ritual", type: "EVENT", desc: "Cultist ritual. Interrupt to prevent Elite Spawn.", logic: "Timer: 120s. Fail: Spawns 'Void Titan'." },
+                    { name: "Entropy Collapse", type: "TRAP", desc: "Floor collision removal. Void pit.", logic: "Detection: Perception > 5 required." },
+                    { name: "Null Breach", type: "SECRET", desc: "Access to Dev Room 04 (Glitched).", logic: "Key: 'Null_Token'. Loot: 'Debug_Sword'." }
                 ],
                 secrets: "Purifying the Core Altar can permanently lower corruption in adjacent zones. Harnessing it grants immense power but risks permadeath (Character Deletion Risk). The 'Bleeding Gardens' subzone contains skill mutation pools."
             },
             "resonant_bloom": {
+                id: "BLM_05",
                 name: "Resonant Bloom",
-                subtitle: "Harmonic Wilds",
+                subtitle: "EVO_GARDEN",
                 mediaType: "img",
                 mediaSrc: "map_assets/resonant-bloom.png",
-                danger: "Medium",
-                corruption: "10%",
-                resonance: "Growth, Harmony",
-                desc: "Vibrant, uplifting zones where luminous flora pulse and rare blooms appear. A place of transformation and rapid evolution, but overgrowth can be deadly.",
-                factions: "Ashram Remnants (Cultivators), Relic Seekers (Harvesters).",
+                danger: "2 (MED)",
+                corruption: "10.0%",
+                resonance: "GROWTH | HARMONY",
+                desc: "Rapid asset generation zone. Flora grows in real-time. Luminous lighting engine. Skill mutation probability increased.",
+                factions: "Ashram Remnants (Gardeners), Relic Seekers (Harvesters).",
+                resEffect: "Overgrowth: HP Regen +5/sec. Skill Cooldown -20%.",
                 nodes: [
-                    { name: "Bloom Surge Awakening", type: "Event", desc: "Luminous flora pulse, rare blooms appear. Harvest or Protect?", logic: "High resonance triggers rare blooms; Low resonance fades them." },
-                    { name: "Pantheon Ritual", type: "Sacred", desc: "Ritual chambers glow, echo gates open. Participate or Disrupt.", logic: "High resonance amplifies ritual; Low resonance triggers backlash." },
-                    { name: "Pulse Garden Challenge", type: "Puzzle", desc: "Prismatic rivers shift, karma relics appear.", logic: "High resonance triggers rare events; Low resonance increases challenge." },
-                    { name: "Prismatic Bloom Puzzle", type: "Puzzle", desc: "Bioluminescent vines shift, fractal flowers bloom.", logic: "High resonance reveals solutions; Low resonance scrambles patterns." },
-                    { name: "Floating Isle Exploration", type: "Exploration", desc: "Islands drift, resonance bridges pulse.", logic: "High resonance opens bridges; Low resonance locks them." },
-                    { name: "Aurora Field Event", type: "Mythic", desc: "Auroras swirl, mythic stones pulse. Harmonize with the light.", logic: "High resonance triggers mythic events; Low resonance fades aurora." }
+                    { name: "Bloom Surge Awakening", type: "EVENT", desc: "Mass flora spawn. Harvest window active.", logic: "Loot_Table: 'Rare_Herbs_B'." },
+                    { name: "Pantheon Ritual", type: "SACRED", desc: "Echo gate activation. Fast travel to Mythic zones.", logic: "Req: Harmony > 75." },
+                    { name: "Pulse Garden Challenge", type: "PUZZLE", desc: "Rhythm-based interaction.", logic: "Input: Audio Sync. Reward: 'Harmony Gem'." },
+                    { name: "Prismatic Bloom Puzzle", type: "LOGIC", desc: "Color matching sequence.", logic: "Fail: Spawns 'Thorny Vines'." },
+                    { name: "Floating Isle Exploration", type: "EXPLORE", desc: "Dynamic platform generation.", logic: "RNG Seed: Active." }
                 ],
                 secrets: "Harvesting 'Void Blooms' mutates skills into their chaos variants. Protecting the wilds grants 'Harmony' status, unlocking the Pantheon Springs subzone."
             },
             "mythic_biomes": {
+                id: "MTH_06",
                 name: "Mythic Biomes",
-                subtitle: "Legendary Realms",
+                subtitle: "ENDGAME_ZONE",
                 mediaType: "video",
                 mediaSrc: "map_assets/fusion-bg.mp4",
-                danger: "Extreme",
-                corruption: "Variable",
-                resonance: "Myth, Legend",
-                desc: "Living archives of legend. The birthplace of divine fusions and cosmic creation. Only the strongest resonance can survive here. Reality bends to belief.",
-                factions: "All Factions (High Stakes Conflict).",
+                danger: "5+ (EXTREME)",
+                corruption: "VAR",
+                resonance: "MYTH | LEGEND",
+                desc: "Endgame content. Raid bosses. Legendary crafting stations. Reality bending effects enabled.",
+                factions: "All Factions (War State).",
+                resEffect: "Legendary Aura: All stats +10%. Enemy HP +200%.",
                 nodes: [
-                    { name: "Pantheon Wilds", type: "Zone", desc: "Living archives of legend. Fractal trees and rivers of liquid light.", logic: "High mythic resonance unlocks rare legends and skill upgrades." },
-                    { name: "Titan Gardens", type: "Boss", desc: "Sacred grounds of ancient battles, home to mythborn titans.", logic: "Garden harmonization unlocks rare events and skill upgrades." },
-                    { name: "Sacred Depths", type: "Dungeon", desc: "Labyrinth of mythic gates and ancient rituals.", logic: "Depth harmonization unlocks rare skill fusions and lore." },
-                    { name: "Archive of Legends", type: "Lore", desc: "Hidden subzone recording every resonance shift.", logic: "Archive harmonization unlocks rare lore and skill branches." },
-                    { name: "The Aurora Isles", type: "Zone", desc: "Isles beneath swirling auroras, echoing stories of gods.", logic: "Aurora harmonization unlocks mythic events." },
-                    { name: "The Legend Gates", type: "Portal", desc: "Gates to the world’s deepest mythic resonance.", logic: "Gate harmonization unlocks new story paths." }
+                    { name: "Pantheon Wilds", type: "ZONE", desc: "Open world raid zone. Roaming Titans.", logic: "Spawn_Rate: Low. Tier: Boss." },
+                    { name: "Titan Gardens", type: "BOSS_ARENA", desc: "Fixed boss encounters.", logic: "Instance: Locked." },
+                    { name: "Sacred Depths", type: "DUNGEON", desc: "Procedural dungeon crawl.", logic: "Levels: 5. Difficulty: Scaling." },
+                    { name: "Archive of Legends", type: "LORE_BANK", desc: "All game history stored here.", logic: "Access: 'Loremaster' Achievement." },
+                    { name: "The Legend Gates", type: "PORTAL", desc: "Exit to NG+.", logic: "Req: Complete Main Quest." }
                 ],
                 secrets: "Contains 'God-Tier' fusion recipes. Access is restricted to those who hold a 'Mythic Key'. The 'Archive of Legends' remembers every player's victory across all timelines."
             },
             "cps_memory": {
+                id: "CPS_07",
                 name: "CPS Memory Zones",
-                subtitle: "Digital Archive",
+                subtitle: "DIGITAL_ARCHIVE",
                 mediaType: "img",
                 mediaSrc: "map_assets/cps-memory-zone.png",
-                danger: "High",
-                corruption: "40%",
-                resonance: "Data, Memory",
-                desc: "Intense, revelatory zones where the core pulses with ancient Architect data. Digital ghosts and rogue AI fragments roam these halls. The boundary between code and soul is thin.",
-                factions: "Rogue AI Fragments (Natives), Relic Seekers (Hackers), Ashram Remnants (Defenders).",
+                danger: "4 (HIGH)",
+                corruption: "40.0%",
+                resonance: "DATA | MEMORY",
+                desc: "Direct interface with game database. Visualized as a digital library. Glitch enemies invoke raw code attacks.",
+                factions: "Rogue AI (Native), Relic Seekers (Hackers).",
+                resEffect: "Data Stream: Mana Regen +100%. Physical Dmg -50%.",
                 nodes: [
-                    { name: "Memory Core Activation", type: "System", desc: "Core pulses with ancient Architect data. Synchronize or Extract.", logic: "High resonance reveals hidden data; Low resonance spawns corruption." },
-                    { name: "Fragmented Archive", type: "Loot", desc: "Archives flicker, lost Architect memories surface.", logic: "High resonance reveals more fragments; Low resonance distorts memories." },
-                    { name: "Data Storm Event", type: "Hazard", desc: "Data surges distort reality, memories flood the zone.", logic: "High resonance calms the storm; Low resonance intensifies chaos." },
-                    { name: "Memory Gate Opening", type: "Portal", desc: "Gates pulse with Architect mantras. Open or Harmonize.", logic: "High resonance opens gates; Low resonance locks them." },
-                    { name: "Archive of Lost Voices", type: "Lore", desc: "Data crystals pulse, echo nodes activate.", logic: "High resonance reveals more data; Low resonance distorts echoes." },
-                    { name: "Recursive Escape", type: "Trap", desc: "Exits loop, time fractures. Break the loop or confront echoes.", logic: "High resonance reveals exit; Low resonance spawns more enemies." }
+                    { name: "Memory Core Activation", type: "SYSTEM", desc: "Database query interface.", logic: "Input: SQL_Injection (Simulated)." },
+                    { name: "Data Storm Event", type: "HAZARD", desc: "Packet loss simulation. Lag spikes (fake).", logic: "Effect: Player movement stutter." },
+                    { name: "Fragmented Archive", type: "LOOT", desc: "Corrupted save files as items.", logic: "Item_Type: 'Glitch_Artifact'." },
+                    { name: "Memory Gate Opening", type: "PORTAL", desc: "Firewall breach.", logic: "Mini-game: Hacking." },
+                    { name: "Recursive Escape", type: "TRAP", desc: "Infinite loop hallway.", logic: "Solution: Walk backwards." }
                 ],
                 secrets: "Synchronizing with the Core allows the player to 'rewrite' one past decision. High risk of data fragmentation. Rogue AI Fragments may offer 'illegal' skill upgrades here."
             },
             "echo_fields": {
+                id: "ECH_08",
                 name: "Echo Fields",
-                subtitle: "Reverberant Plains",
+                subtitle: "LOOP_BUFFER",
                 mediaType: "video",
                 mediaSrc: "map_assets/resonance-fog.mp4",
-                danger: "Medium",
-                corruption: "25%",
-                resonance: "Time, Echoes",
-                desc: "Haunting, reflective plains where echoes of past actions flood the zone. Time is fluid here, and loops often overlap. The past is a physical obstacle.",
-                factions: "Ashram Remnants (Monks), Echo-Beasts (Natives), Relic Seekers (Scavengers).",
+                danger: "3 (MED)",
+                corruption: "25.0%",
+                resonance: "TIME | ECHOES",
+                desc: "Temporal buffer zone. Previous playthrough data is loaded here as 'Ghosts'. Time is non-linear.",
+                factions: "Ashram Remnants (Monks), Echo-Beasts (Glitch Mobs).",
+                resEffect: "Time Dilation: Cooldowns 50% faster. Enemy attack speed 50% slower.",
                 nodes: [
-                    { name: "Echo Bloom Event", type: "Event", desc: "Echo nodes pulse, memories replay. Harmonize or Confront.", logic: "High resonance reveals more memories; Low resonance spawns hostile echoes." },
-                    { name: "Recursion Loop Challenge", type: "Trap", desc: "Time and space repeat. Break the loop, exploit it, or study it.", logic: "High resonance reveals loop exit; Low resonance spawns more enemies." },
-                    { name: "Archive Awakening", type: "Lore", desc: "Echoing halls pulse, lore nodes activate in the Hall of Echoes.", logic: "High resonance reveals more lore; Low resonance spawns hostile guardians." },
-                    { name: "Whispering Hollow Ritual", type: "Social", desc: "Caverns echo with past lives. Harmonize whispers or recover memories.", logic: "High resonance reveals memories; Low resonance distorts echoes." },
-                    { name: "Echoing Bridge Crossing", type: "Travel", desc: "Bridges pulse with resonance. Cross or Explore.", logic: "High resonance opens bridges; Low resonance locks them." },
-                    { name: "Echo Storm Event", type: "Hazard", desc: "Echoes of past actions flood the zone. Shelter or Harness.", logic: "High resonance calms the storm; Low resonance intensifies chaos." }
+                    { name: "Echo Bloom Event", type: "EVENT", desc: "Replay of previous player death.", logic: "Load: Last_Death_Log." },
+                    { name: "Recursion Loop Challenge", type: "TRAP", desc: "Map tile repeats.", logic: "Exit: Break breakable wall." },
+                    { name: "Archive Awakening", type: "LORE", desc: "Ancient logs unlocked.", logic: "Trigger: Proximity." },
+                    { name: "Whispering Hollow Ritual", type: "SOCIAL", desc: "Commune with ghosts.", logic: "Interaction: 'Talk'." },
+                    { name: "Echo Storm Event", type: "HAZARD", desc: "Temporal rain. Ages equipment.", logic: "Durability_Loss: 1/sec." }
                 ],
                 secrets: "Players can encounter their own 'Ghosts' from previous runs here. Defeating them recovers lost loot. The 'Recursion Loop' can be exploited to farm resources if the player has high 'Time' resonance."
             },
             "architect_graves": {
+                id: "GRV_02",
                 name: "Architect Graves",
-                subtitle: "Solemn Ruins",
+                subtitle: "RUIN_SET_A",
                 mediaType: "img",
                 mediaSrc: "map_assets/cosmogram-bg.png",
-                danger: "Low",
-                corruption: "5%",
-                resonance: "Fate, Echoes",
-                desc: "Solemn, mysterious tombs where ancient mechanisms activate. The resting place of the Builders, filled with puzzles and lost wisdom.",
-                factions: "Ashram Remnants (Honor Tombs), Relic Seekers (Loot).",
+                danger: "1 (LOW)",
+                corruption: "5.0%",
+                resonance: "FATE | ECHOES",
+                desc: "Static mesh ruins. High polygon count assets. Lore inscriptions baked into textures.",
+                factions: "Ashram Remnants (Guardians), Relic Seekers (Looters).",
+                resEffect: "Ancient Air: Stamina Regen +20%.",
                 nodes: [
-                    { name: "Tomb Awakening", type: "Event", desc: "Tomb pulses, ancient mechanisms activate. Harmonize or Decipher.", logic: "High resonance reveals hidden chambers; Low resonance spawns guardians." },
-                    { name: "Grave Echo Ritual", type: "Social", desc: "Factions gather, resonance harmonizes, wisdom is shared.", logic: "High resonance strengthens ritual; Low resonance triggers disruption." },
-                    { name: "Forgotten Architect Challenge", type: "Boss", desc: "Grave flickers, lost Architect memories surface.", logic: "High resonance reveals more memories; Low resonance distorts wisdom." },
-                    { name: "Tomb Guardian Confrontation", type: "Combat", desc: "Guardian awakens, tomb pulses. Defeat or Negotiate.", logic: "High resonance weakens guardian; Low resonance strengthens it." },
-                    { name: "Architect Rune Puzzle", type: "Puzzle", desc: "Runes shift, echo gates open. Solve or Harmonize.", logic: "High resonance reveals solutions; Low resonance scrambles patterns." },
-                    { name: "Grave Collapse Event", type: "Escape", desc: "Zone collapses, memories fragment. Escape or Stabilize.", logic: "High resonance stabilizes; Low resonance accelerates collapse." }
+                    { name: "Tomb Awakening", type: "EVENT", desc: "Door animation trigger.", logic: "Key: 'Ancient_Sigil'." },
+                    { name: "Grave Echo Ritual", type: "SOCIAL", desc: "Ambient dialogue scene.", logic: "Audio: 'Chant_01.mp3'." },
+                    { name: "Forgotten Architect Challenge", type: "BOSS", desc: "Mini-boss spawn.", logic: "Loot: 'Architect_Blueprint'." },
+                    { name: "Tomb Guardian Confrontation", type: "COMBAT", desc: "Standard mob wave.", logic: "Wave_Count: 3." },
+                    { name: "Architect Rune Puzzle", type: "PUZZLE", desc: "Texture alignment puzzle.", logic: "Reward: XP." }
                 ],
                 secrets: "Deciphering Architect runes can unlock forbidden skill trees. High resonance reveals hidden burial chambers. 'Spirit Awakening' events allow players to converse with dead Architects."
             }
@@ -658,7 +753,7 @@
 
             // Header
             document.getElementById('modalTitle').textContent = data.name;
-            document.getElementById('modalSubtitle').textContent = data.subtitle;
+            document.getElementById('modalSubtitle').textContent = `${data.subtitle} // ${data.id}`;
             document.getElementById('modalDanger').textContent = data.danger;
             document.getElementById('modalCorr').textContent = data.corruption;
             document.getElementById('modalRes').textContent = data.resonance;
@@ -679,7 +774,11 @@
             // Content
             document.getElementById('modalDesc').textContent = data.desc;
             document.getElementById('modalFactions').textContent = data.factions;
+            document.getElementById('modalResEffect').textContent = data.resEffect || "No passive effect.";
             document.getElementById('modalSecrets').textContent = data.secrets;
+            
+            // Raw Data
+            document.getElementById('modalRaw').textContent = JSON.stringify(data, null, 4);
 
             // Nodes
             const nodesContainer = document.getElementById('modalNodes');
@@ -690,7 +789,7 @@
                 
                 let logicHtml = '';
                 if (node.logic) {
-                    logicHtml = `<div class="node-meta"><span class="meta-label">Resonance Logic:</span> ${node.logic}</div>`;
+                    logicHtml = `<div class="node-meta"><span class="meta-label">LOGIC_HOOK:</span> ${node.logic}</div>`;
                 }
 
                 div.innerHTML = `
@@ -720,11 +819,13 @@
             document.getElementById(`tab-${tab}`).classList.add('active');
             
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            // Simple logic to find button by text/onclick match
-            const buttons = document.querySelectorAll('.tab-btn');
-            if(tab === 'overview') buttons[0].classList.add('active');
-            if(tab === 'nodes') buttons[1].classList.add('active');
-            if(tab === 'secrets') buttons[2].classList.add('active');
+            
+            // Button Logic (Index or Attribute)
+            const btns = document.querySelectorAll('.tab-btn');
+            if (tab === 'overview') btns[0].classList.add('active');
+            if (tab === 'nodes') btns[1].classList.add('active');
+            if (tab === 'secrets') btns[2].classList.add('active');
+            if (tab === 'raw') btns[3].classList.add('active');
         }
 
         // Keyboard Close
