@@ -722,7 +722,10 @@
         <div class="panel">
             <div class="panel-header">
                 <span>Database</span>
-                <span id="skill-count">0</span>
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <button onclick="resetDatabase()" style="background:none; border:1px solid #444; color:#888; font-size:0.7rem; cursor:pointer; padding:2px 6px;" title="Force reload from source files">RESET DB</button>
+                    <span id="skill-count">0</span>
+                </div>
             </div>
             <div style="padding: 0.5rem; display:flex; gap:0.5rem;">
                 <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterSkills(this.value)">
@@ -805,120 +808,45 @@
         </div>
     </div>
 
+    <!-- Load Skill Data Modules -->
+    <script src="data/skills_foundational.js"></script>
+    <script src="data/skills_invocation.js"></script>
+    <script src="data/skills_character_analysis.js"></script>
+    <script src="data/skills_consciousness.js"></script>
+    <script src="data/skills_divination.js"></script>
+    <script src="data/skills_singularity.js"></script>
+    <script src="data/skills_tantra.js"></script>
+    <script src="data/skills_therapeutic.js"></script>
+
     <script>
         // --- DEEP DATA DB ---
+        // Initialize SKILL_DB by aggregating all loaded modules
         const SKILL_DB = [
-            {
-                id: "skill_void_strike",
-                name: "Void Strike",
-                tier: "COMMON",
-                type: "ACTIVE",
-                tags: ["VOID", "MELEE", "DIMENSIONAL"],
-                stats: { damage: 15, cooldown: 3, cost: 5 },
-                description: "Tears a localized rift in reality, dealing Void damage.",
-                lore_quote: "\"The fabric of reality is not a wall, but a curtain. Tear it.\"",
-                tactical_brief: "Best used against armored targets. The armor penetration applies before damage calculation. Positioning is key—try to line up enemies for the evolved Cleave.",
-                mastery_perk: "Mastery Lvl 5: Cooldown resets on kill.",
-                gameplay_info: {
-                    usage: ["Target: Single Enemy", "Range: Melee (1.5m)"],
-                    features: ["Ignores 10% Armor", "Applies 'Void Touched' (5s)", "Interrupts Casting"]
-                },
-                deep_data: {
-                    environment: "Collapses weak structures. Absorbs light.",
-                    narrative: "NPCs fearful of the Void will recoil.",
-                    evolution: "Evolves into 'Dimensional Cleave'."
-                }
-            },
-            {
-                id: "skill_solar_flare",
-                name: "Solar Flare",
-                type: "ACTIVE",
-                tier: "COMMON",
-                tags: ["SOLAR", "RANGED", "FIRE"],
-                stats: { damage: 12, cooldown: 2, cost: 4 },
-                description: "Channels the fury of a dying star into a concentrated bolt.",
-                lore_quote: "\"Let them burn with the memory of a thousand suns.\"",
-                tactical_brief: "Excellent for crowd control in narrow corridors. The piercing effect allows you to hit multiple targets if you kite them into a line.",
-                mastery_perk: "Mastery Lvl 10: Leaves a trail of fire.",
-                gameplay_info: {
-                    usage: ["Target: Directional", "Range: Long (15m)"],
-                    features: ["Pierces first target", "Ignites enemies", "Illuminates dark areas"]
-                },
-                deep_data: {
-                    environment: "Ignites flammable terrain. Melts ice.",
-                    narrative: "Provides light in Dark Zones.",
-                    evolution: "Evolves into 'Supernova'."
-                }
-            },
-            {
-                id: "skill_thorn_whip",
-                name: "Thorn Whip",
-                type: "ACTIVE",
-                tier: "COMMON",
-                tags: ["NATURE", "MELEE", "CONTROL"],
-                stats: { damage: 10, cooldown: 1, cost: 3 },
-                description: "Summons a vine to strike and pull enemies.",
-                lore_quote: "\"Nature does not ask for permission to reclaim its own.\"",
-                tactical_brief: "Use this to pull ranged enemies into melee range, or to pull yourself towards terrain for mobility.",
-                mastery_perk: "Mastery Lvl 3: Applies 'Bleed' on hit.",
-                gameplay_info: {
-                    usage: ["Target: Single Enemy", "Range: Mid (4m)"],
-                    features: ["Pulls enemy 2m closer", "Bleed Effect", "Grapples terrain"]
-                },
-                deep_data: {
-                    environment: "Creates grapple points.",
-                    narrative: "Druids are less aggressive.",
-                    evolution: "Evolves into 'Ironwood Lash'."
-                }
-            },
-            {
-                id: "skill_cryo_stasis",
-                name: "Cryo Stasis",
-                type: "ACTIVE",
-                tier: "RARE",
-                tags: ["ICE", "DEFENSIVE", "TIME"],
-                stats: { shield: 30, cooldown: 6, cost: 8 },
-                description: "Freezes time and space around the caster.",
-                lore_quote: "\"Time is a river. I am the dam.\"",
-                tactical_brief: "A panic button. Use it to negate massive incoming damage mechanics. Be warned: you cannot move while in stasis.",
-                mastery_perk: "Mastery Lvl 5: Heals 10% HP while frozen.",
-                gameplay_info: {
-                    usage: ["Target: Self", "Duration: 3s"],
-                    features: ["Invulnerability", "Immobilizes Self", "Freezes nearby enemies"]
-                },
-                deep_data: {
-                    environment: "Freezes water surfaces.",
-                    narrative: "Can pause conversation timers.",
-                    evolution: "Evolves into 'Absolute Zero'."
-                }
-            },
-            {
-                id: "skill_blood_pact",
-                name: "Blood Pact",
-                type: "ACTIVE",
-                tier: "FORBIDDEN",
-                tags: ["BLOOD", "BUFF", "CURSED"],
-                stats: { health_cost: 10, damage_boost: 0.5 },
-                description: "Sacrifice vitality for raw power.",
-                lore_quote: "\"Power demands a price. I pay in red.\"",
-                tactical_brief: "High risk, high reward. Combine with lifesteal skills to mitigate the health cost. Do not use when below 20% HP.",
-                mastery_perk: "Mastery Lvl 10: Cost reduced by 50%.",
-                gameplay_info: {
-                    usage: ["Target: Self", "Cost: 10% HP"],
-                    features: ["Increases DMG by 50%", "Disables Healing", "Attracts Blood Beasts"]
-                },
-                deep_data: {
-                    environment: "Corrupts holy ground.",
-                    narrative: "Paladins will attack on sight.",
-                    evolution: "Evolves into 'Hemomancy'."
-                }
-            }
+            ...(window.SKILL_DB_FOUNDATIONAL || []),
+            ...(window.SKILL_DB_INVOCATION || []),
+            ...(window.SKILL_DB_CHARACTER_ANALYSIS || []),
+            ...(window.SKILL_DB_CONSCIOUSNESS || []),
+            ...(window.SKILL_DB_DIVINATION || []),
+            ...(window.SKILL_DB_SINGULARITY || []),
+            ...(window.SKILL_DB_TANTRA || []),
+            ...(window.SKILL_DB_THERAPEUTIC || [])
         ];
 
         // --- STATE ---
         // Load from LocalStorage or use Default DB
         let storedSkills = localStorage.getItem('cosmic_skills');
-        let knownSkills = storedSkills ? JSON.parse(storedSkills) : [...SKILL_DB];
+        let knownSkills = storedSkills ? JSON.parse(storedSkills) : [];
+
+        // AUTO-UPDATE CHECK:
+        // If the loaded DB (SKILL_DB) is significantly larger than the stored one,
+        // it means we have a major content update. We should merge or reset.
+        if (SKILL_DB.length > knownSkills.length + 50) {
+            console.log("System Update Detected: Refreshing Skill Database...");
+            knownSkills = [...SKILL_DB];
+            localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
+        } else if (knownSkills.length === 0) {
+             knownSkills = [...SKILL_DB];
+        }
         
         let selectedSlots = [null, null];
         let pendingNewSkill = null;
@@ -927,6 +855,13 @@
         window.onload = () => {
             renderSkillList();
         };
+
+        function resetDatabase() {
+            if(confirm("Reset Database to factory settings? This will clear custom synthesized skills.")) {
+                localStorage.removeItem('cosmic_skills');
+                location.reload();
+            }
+        }
 
         // --- PERSISTENCE ---
         function saveProgress() {
@@ -1411,8 +1346,12 @@
             const isArea = skill.gameplay_info.usage[1].includes('Area') || skill.description.includes('radius') || skill.tags.includes('NOVA');
             
             // Calculate Efficiency
-            const dpe = (skill.stats.damage / skill.stats.cost).toFixed(1);
-            const dps_rating = (skill.stats.damage / skill.stats.cooldown).toFixed(1);
+            const val = skill.stats.damage || skill.stats.heal || 0;
+            const cost = skill.stats.cost || 1;
+            const cd = skill.stats.cooldown || 1;
+            
+            const dpe = (val / cost).toFixed(1);
+            const dps_rating = (val / cd).toFixed(1);
 
             return {
                 specs: [
@@ -1504,6 +1443,7 @@
             if (skill.tags.includes('NATURE')) return '🌿';
             if (skill.tags.includes('ICE')) return '❄️';
             if (skill.tags.includes('BLOOD')) return '🩸';
+            if (skill.tags.includes('STORM')) return '⚡';
             return '⚡';
         }
 
