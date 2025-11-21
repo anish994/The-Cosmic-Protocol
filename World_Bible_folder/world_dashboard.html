@@ -220,6 +220,16 @@
         .node-type { font-size: 0.7rem; text-transform: uppercase; padding: 2px 6px; background: rgba(0,0,0,0.3); border-radius: 4px; color: #aaa; }
         .node-desc { font-size: 0.9rem; color: #999; }
 
+        .node-meta {
+            font-size: 0.8rem;
+            color: var(--accent-echo);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+            font-family: 'Courier New', monospace;
+        }
+        .meta-label { color: #666; text-transform: uppercase; font-size: 0.7rem; margin-right: 5px; }
+
         .secret-block {
             background: linear-gradient(45deg, rgba(20,20,30,0.8), rgba(10,10,15,0.9));
             padding: 1.5rem;
@@ -478,6 +488,7 @@
 
     <script>
         // --- DATA ---
+        // Deep content derived from regions.md (World Bible)
         const REGIONS = {
             "nexus_gate": {
                 name: "Nexus Gate",
@@ -485,17 +496,138 @@
                 mediaType: "video",
                 mediaSrc: "map_assets/nexus-pulse.mp4",
                 danger: "Low (Safe)",
-                corruption: "0%",
+                corruption: "0% (Sanctuary)",
                 resonance: "Echoes, Pulse",
-                desc: "The Nexus Gate is the architect-forged constant: a compact, layered palace-hub suspended across all parallel timelines. It remains stable while realities fracture, providing a unified anchor for resurrection, coordination, and synthesis.",
+                desc: "The architect-forged constant: a compact, layered palace-hub suspended across all parallel timelines. It remains stable while realities fracture, providing a unified anchor for resurrection, coordination, and synthesis. Echo damping prevents uncontrolled recursion loops.",
                 factions: "Ashram Remnants (Custodians), Nomadic Relic Seekers (Traders), Architect Echoes (Advisors).",
                 nodes: [
-                    { name: "Arrival Platform", type: "Anchor", desc: "Normalize player state; first CPS imprint." },
-                    { name: "Resonance Relay Core", type: "System", desc: "Maintains Echoes/Pulse cycle. Adjust travel latency." },
-                    { name: "Skill Infusion Alcoves", type: "Crafting", desc: "Micro-fusion slots for low-risk upgrades." },
-                    { name: "Memory Echo Board", type: "Lore", desc: "Curated, safe replay of sanitized memory fragments." }
+                    { name: "Arrival Platform", type: "Anchor", desc: "Normalize player state; first CPS imprint. Ashram Remnants greet new arrivals.", logic: "Pulse Calibration: Choose rhythm bonus for travel speed." },
+                    { name: "Resonance Relay Core", type: "System", desc: "Maintains Echoes/Pulse cycle. Adjust travel latency and skill cooldown shaping.", logic: "Over-allocation triggers minor desync anomaly (hidden branch)." },
+                    { name: "Skill Infusion Alcoves", type: "Crafting", desc: "Micro-fusion slots for low-risk upgrades. Apply Renewal/Echo overlays without full Chamber risk.", logic: "Efficiency vs Resilience infusion choices." },
+                    { name: "Memory Echo Board", type: "Lore", desc: "Curated, safe replay of sanitized memory fragments (no raw corruption bleed).", logic: "Selecting deep memory routes to Architect Graves." },
+                    { name: "Traversal Gate Array", type: "Transport", desc: "Four calibrated arches routing to major regions. Cost scales based on karma variance.", logic: "Performing 'Pulse Harmonize' grants reduced travel cost." }
                 ],
-                secrets: "Surge Event: 'Cross-Reality Alignment' temporarily raises danger to Medium and unlocks hidden transfer paths to the Pantheon Hall."
+                secrets: "Surge Event: 'Cross-Reality Alignment' temporarily raises danger to Medium and unlocks hidden transfer paths to the Pantheon Hall. Attempting to corrupt the core backfires unless alignment surge weakens filters."
+            },
+            "inverted_landmasses": {
+                name: "Inverted Landmasses",
+                subtitle: "Gravity Flux Zone",
+                mediaType: "img",
+                mediaSrc: "map_assets/inverted-landmasses.png",
+                danger: "Medium",
+                corruption: "15%",
+                resonance: "Paradox, Gravity",
+                desc: "A disorienting zone where gravity reverses and terrain shifts unpredictably. Floating islands collide and separate in a dance of physics-defying chaos. Home to Inverted Wraiths and lost physics.",
+                factions: "Ashram Remnants (Stabilizers), Relic Seekers (Exploit Flux).",
+                nodes: [
+                    { name: "Gravity Flux Event", type: "Hazard", desc: "Gravity reverses, terrain shifts unpredictably. Choices: Stabilize, Exploit, or Escape.", logic: "High resonance stabilizes flux; Low resonance intensifies chaos." },
+                    { name: "Inverted Echo Ritual", type: "Social", desc: "Factions gather as resonance inverts. Wisdom is shared if not disrupted.", logic: "High resonance strengthens ritual; Low resonance triggers disruption." },
+                    { name: "Upside-Down Relic Hunt", type: "Loot", desc: "Relic is guarded by inverted entities. Stealing triggers pursuit.", logic: "High resonance reveals location; Low resonance spawns guards." },
+                    { name: "Inversion Collapse Escape", type: "Challenge", desc: "Terrain fractures, exits loop. Requires breaking the cycle to survive.", logic: "High resonance reveals exit; Low resonance accelerates collapse." },
+                    { name: "Gravity Vein Puzzle", type: "Puzzle", desc: "Solve a puzzle in shifting gravity veins during a surge.", logic: "High resonance reveals solutions; Low resonance scrambles patterns." },
+                    { name: "Inverted Architect Challenge", type: "Boss", desc: "Confront an inverted Architect entity during a surge.", logic: "High resonance weakens entity; Low resonance strengthens it." }
+                ],
+                secrets: "High resonance stabilizes gravity. Rare 'Gravity Anchors' can be found here to allow flight in other zones. Hidden paths often open only during 'Inversion Surges'."
+            },
+            "corrupted_zones": {
+                name: "Corrupted Zones",
+                subtitle: "Fractured Reality",
+                mediaType: "img",
+                mediaSrc: "map_assets/corrupted-zone.png",
+                danger: "High",
+                corruption: "85%",
+                resonance: "Entropy, Void",
+                desc: "Oppressive, haunted regions where the altar pulses with corrupted energy. The laws of reality are broken here, replaced by the logic of decay. Highly dangerous but rich in power.",
+                factions: "Corruption Champions (Rulers), Ashram Remnants (Purifiers), Rogue AI (Hackers).",
+                nodes: [
+                    { name: "The Altar Awakening", type: "Boss", desc: "The altar pulses with corrupted energy, echoing lost prayers. Purify or Harness?", logic: "High resonance reveals hidden mantras; Low resonance spawns echo storms." },
+                    { name: "Code Storm Crossing", type: "Hazard", desc: "River floods with corrupted code, mutating the landscape.", logic: "Crossing with high resonance stabilizes river; Low resonance spawns anomalies." },
+                    { name: "Forbidden Ritual", type: "Event", desc: "Chamber filled with glitching sigils and gravity-defying relics.", logic: "High resonance allows safe completion; Low resonance causes backlash." },
+                    { name: "Entropy Collapse", type: "Trap", desc: "Tunnels collapse, void pits open. Escape or harvest void crystals.", logic: "High resonance stabilizes tunnels; Low resonance accelerates collapse." },
+                    { name: "Null Breach", type: "Secret", desc: "Vault walls shift, memories fade. Recover erased data or escape.", logic: "High resonance protects memory; Low resonance triggers void awakenings." },
+                    { name: "Corruption Core Hunt", type: "Raid", desc: "Core is hidden, guarded by elite enemies and environmental traps.", logic: "High resonance reveals core; Low resonance triggers traps." }
+                ],
+                secrets: "Purifying the Core Altar can permanently lower corruption in adjacent zones. Harnessing it grants immense power but risks permadeath (Character Deletion Risk). The 'Bleeding Gardens' subzone contains skill mutation pools."
+            },
+            "resonant_bloom": {
+                name: "Resonant Bloom",
+                subtitle: "Harmonic Wilds",
+                mediaType: "img",
+                mediaSrc: "map_assets/resonant-bloom.png",
+                danger: "Medium",
+                corruption: "10%",
+                resonance: "Growth, Harmony",
+                desc: "Vibrant, uplifting zones where luminous flora pulse and rare blooms appear. A place of transformation and rapid evolution, but overgrowth can be deadly.",
+                factions: "Ashram Remnants (Cultivators), Relic Seekers (Harvesters).",
+                nodes: [
+                    { name: "Bloom Surge Awakening", type: "Event", desc: "Luminous flora pulse, rare blooms appear. Harvest or Protect?", logic: "High resonance triggers rare blooms; Low resonance fades them." },
+                    { name: "Pantheon Ritual", type: "Sacred", desc: "Ritual chambers glow, echo gates open. Participate or Disrupt.", logic: "High resonance amplifies ritual; Low resonance triggers backlash." },
+                    { name: "Pulse Garden Challenge", type: "Puzzle", desc: "Prismatic rivers shift, karma relics appear.", logic: "High resonance triggers rare events; Low resonance increases challenge." },
+                    { name: "Prismatic Bloom Puzzle", type: "Puzzle", desc: "Bioluminescent vines shift, fractal flowers bloom.", logic: "High resonance reveals solutions; Low resonance scrambles patterns." },
+                    { name: "Floating Isle Exploration", type: "Exploration", desc: "Islands drift, resonance bridges pulse.", logic: "High resonance opens bridges; Low resonance locks them." },
+                    { name: "Aurora Field Event", type: "Mythic", desc: "Auroras swirl, mythic stones pulse. Harmonize with the light.", logic: "High resonance triggers mythic events; Low resonance fades aurora." }
+                ],
+                secrets: "Harvesting 'Void Blooms' mutates skills into their chaos variants. Protecting the wilds grants 'Harmony' status, unlocking the Pantheon Springs subzone."
+            },
+            "mythic_biomes": {
+                name: "Mythic Biomes",
+                subtitle: "Legendary Realms",
+                mediaType: "video",
+                mediaSrc: "map_assets/fusion-bg.mp4",
+                danger: "Extreme",
+                corruption: "Variable",
+                resonance: "Myth, Legend",
+                desc: "Living archives of legend. The birthplace of divine fusions and cosmic creation. Only the strongest resonance can survive here. Reality bends to belief.",
+                factions: "All Factions (High Stakes Conflict).",
+                nodes: [
+                    { name: "Pantheon Wilds", type: "Zone", desc: "Living archives of legend. Fractal trees and rivers of liquid light.", logic: "High mythic resonance unlocks rare legends and skill upgrades." },
+                    { name: "Titan Gardens", type: "Boss", desc: "Sacred grounds of ancient battles, home to mythborn titans.", logic: "Garden harmonization unlocks rare events and skill upgrades." },
+                    { name: "Sacred Depths", type: "Dungeon", desc: "Labyrinth of mythic gates and ancient rituals.", logic: "Depth harmonization unlocks rare skill fusions and lore." },
+                    { name: "Archive of Legends", type: "Lore", desc: "Hidden subzone recording every resonance shift.", logic: "Archive harmonization unlocks rare lore and skill branches." },
+                    { name: "The Aurora Isles", type: "Zone", desc: "Isles beneath swirling auroras, echoing stories of gods.", logic: "Aurora harmonization unlocks mythic events." },
+                    { name: "The Legend Gates", type: "Portal", desc: "Gates to the world’s deepest mythic resonance.", logic: "Gate harmonization unlocks new story paths." }
+                ],
+                secrets: "Contains 'God-Tier' fusion recipes. Access is restricted to those who hold a 'Mythic Key'. The 'Archive of Legends' remembers every player's victory across all timelines."
+            },
+            "cps_memory": {
+                name: "CPS Memory Zones",
+                subtitle: "Digital Archive",
+                mediaType: "img",
+                mediaSrc: "map_assets/cps-memory-zone.png",
+                danger: "High",
+                corruption: "40%",
+                resonance: "Data, Memory",
+                desc: "Intense, revelatory zones where the core pulses with ancient Architect data. Digital ghosts and rogue AI fragments roam these halls. The boundary between code and soul is thin.",
+                factions: "Rogue AI Fragments (Natives), Relic Seekers (Hackers), Ashram Remnants (Defenders).",
+                nodes: [
+                    { name: "Memory Core Activation", type: "System", desc: "Core pulses with ancient Architect data. Synchronize or Extract.", logic: "High resonance reveals hidden data; Low resonance spawns corruption." },
+                    { name: "Fragmented Archive", type: "Loot", desc: "Archives flicker, lost Architect memories surface.", logic: "High resonance reveals more fragments; Low resonance distorts memories." },
+                    { name: "Data Storm Event", type: "Hazard", desc: "Data surges distort reality, memories flood the zone.", logic: "High resonance calms the storm; Low resonance intensifies chaos." },
+                    { name: "Memory Gate Opening", type: "Portal", desc: "Gates pulse with Architect mantras. Open or Harmonize.", logic: "High resonance opens gates; Low resonance locks them." },
+                    { name: "Archive of Lost Voices", type: "Lore", desc: "Data crystals pulse, echo nodes activate.", logic: "High resonance reveals more data; Low resonance distorts echoes." },
+                    { name: "Recursive Escape", type: "Trap", desc: "Exits loop, time fractures. Break the loop or confront echoes.", logic: "High resonance reveals exit; Low resonance spawns more enemies." }
+                ],
+                secrets: "Synchronizing with the Core allows the player to 'rewrite' one past decision. High risk of data fragmentation. Rogue AI Fragments may offer 'illegal' skill upgrades here."
+            },
+            "echo_fields": {
+                name: "Echo Fields",
+                subtitle: "Reverberant Plains",
+                mediaType: "video",
+                mediaSrc: "map_assets/resonance-fog.mp4",
+                danger: "Medium",
+                corruption: "25%",
+                resonance: "Time, Echoes",
+                desc: "Haunting, reflective plains where echoes of past actions flood the zone. Time is fluid here, and loops often overlap. The past is a physical obstacle.",
+                factions: "Ashram Remnants (Monks), Echo-Beasts (Natives), Relic Seekers (Scavengers).",
+                nodes: [
+                    { name: "Echo Bloom Event", type: "Event", desc: "Echo nodes pulse, memories replay. Harmonize or Confront.", logic: "High resonance reveals more memories; Low resonance spawns hostile echoes." },
+                    { name: "Recursion Loop Challenge", type: "Trap", desc: "Time and space repeat. Break the loop, exploit it, or study it.", logic: "High resonance reveals loop exit; Low resonance spawns more enemies." },
+                    { name: "Archive Awakening", type: "Lore", desc: "Echoing halls pulse, lore nodes activate in the Hall of Echoes.", logic: "High resonance reveals more lore; Low resonance spawns hostile guardians." },
+                    { name: "Whispering Hollow Ritual", type: "Social", desc: "Caverns echo with past lives. Harmonize whispers or recover memories.", logic: "High resonance reveals memories; Low resonance distorts echoes." },
+                    { name: "Echoing Bridge Crossing", type: "Travel", desc: "Bridges pulse with resonance. Cross or Explore.", logic: "High resonance opens bridges; Low resonance locks them." },
+                    { name: "Echo Storm Event", type: "Hazard", desc: "Echoes of past actions flood the zone. Shelter or Harness.", logic: "High resonance calms the storm; Low resonance intensifies chaos." }
+                ],
+                secrets: "Players can encounter their own 'Ghosts' from previous runs here. Defeating them recovers lost loot. The 'Recursion Loop' can be exploited to farm resources if the player has high 'Time' resonance."
             },
             "architect_graves": {
                 name: "Architect Graves",
@@ -508,114 +640,14 @@
                 desc: "Solemn, mysterious tombs where ancient mechanisms activate. The resting place of the Builders, filled with puzzles and lost wisdom.",
                 factions: "Ashram Remnants (Honor Tombs), Relic Seekers (Loot).",
                 nodes: [
-                    { name: "Tomb Awakening", type: "Event", desc: "Tomb pulses, ancient mechanisms activate." },
-                    { name: "Grave Echo Ritual", type: "Social", desc: "Factions gather, resonance harmonizes, wisdom is shared." },
-                    { name: "Architect Rune Puzzle", type: "Puzzle", desc: "Runes shift, echo gates open." },
-                    { name: "Relic Hunt", type: "Loot", desc: "Discover hidden relics guarded by corrupted entities." }
+                    { name: "Tomb Awakening", type: "Event", desc: "Tomb pulses, ancient mechanisms activate. Harmonize or Decipher.", logic: "High resonance reveals hidden chambers; Low resonance spawns guardians." },
+                    { name: "Grave Echo Ritual", type: "Social", desc: "Factions gather, resonance harmonizes, wisdom is shared.", logic: "High resonance strengthens ritual; Low resonance triggers disruption." },
+                    { name: "Forgotten Architect Challenge", type: "Boss", desc: "Grave flickers, lost Architect memories surface.", logic: "High resonance reveals more memories; Low resonance distorts wisdom." },
+                    { name: "Tomb Guardian Confrontation", type: "Combat", desc: "Guardian awakens, tomb pulses. Defeat or Negotiate.", logic: "High resonance weakens guardian; Low resonance strengthens it." },
+                    { name: "Architect Rune Puzzle", type: "Puzzle", desc: "Runes shift, echo gates open. Solve or Harmonize.", logic: "High resonance reveals solutions; Low resonance scrambles patterns." },
+                    { name: "Grave Collapse Event", type: "Escape", desc: "Zone collapses, memories fragment. Escape or Stabilize.", logic: "High resonance stabilizes; Low resonance accelerates collapse." }
                 ],
-                secrets: "Deciphering Architect runes can unlock forbidden skill trees. High resonance reveals hidden burial chambers."
-            },
-            "inverted_landmasses": {
-                name: "Inverted Landmasses",
-                subtitle: "Gravity Flux Zone",
-                mediaType: "img",
-                mediaSrc: "map_assets/inverted-landmasses.png",
-                danger: "Medium",
-                corruption: "15%",
-                resonance: "Paradox, Gravity",
-                desc: "A disorienting zone where gravity reverses and terrain shifts unpredictably. Floating islands collide and separate in a dance of physics-defying chaos.",
-                factions: "Ashram Remnants (Stabilizers), Relic Seekers (Exploit Flux).",
-                nodes: [
-                    { name: "Gravity Flux Event", type: "Hazard", desc: "Gravity reverses, terrain shifts unpredictably." },
-                    { name: "Upside-Down Relic Hunt", type: "Loot", desc: "Relic is guarded by inverted entities." },
-                    { name: "Inversion Collapse", type: "Escape", desc: "Attempt to leave a subzone during a collapse event." }
-                ],
-                secrets: "High resonance stabilizes gravity. Rare 'Gravity Anchors' can be found here to allow flight in other zones."
-            },
-            "corrupted_zones": {
-                name: "Corrupted Zones",
-                subtitle: "Fractured Reality",
-                mediaType: "img",
-                mediaSrc: "map_assets/corrupted-zone.png",
-                danger: "High",
-                corruption: "85%",
-                resonance: "Entropy, Void",
-                desc: "Oppressive, haunted regions where the altar pulses with corrupted energy. The laws of reality are broken here, replaced by the logic of decay.",
-                factions: "Corruption Champions (Rulers), Ashram Remnants (Purifiers).",
-                nodes: [
-                    { name: "The Altar Awakening", type: "Boss", desc: "The altar pulses with corrupted energy, echoing lost prayers." },
-                    { name: "Code Storm Crossing", type: "Hazard", desc: "River floods with corrupted code, mutating the landscape." },
-                    { name: "Forbidden Ritual", type: "Event", desc: "Chamber filled with glitching sigils and gravity-defying relics." }
-                ],
-                secrets: "Purifying the Core Altar can permanently lower corruption in adjacent zones. Harnessing it grants immense power but risks permadeath."
-            },
-            "resonant_bloom": {
-                name: "Resonant Bloom",
-                subtitle: "Harmonic Wilds",
-                mediaType: "img",
-                mediaSrc: "map_assets/resonant-bloom.png",
-                danger: "Medium",
-                corruption: "10%",
-                resonance: "Growth, Harmony",
-                desc: "Vibrant, uplifting zones where luminous flora pulse and rare blooms appear. A place of transformation and rapid evolution.",
-                factions: "Ashram Remnants (Cultivators), Relic Seekers (Harvesters).",
-                nodes: [
-                    { name: "Bloom Surge Awakening", type: "Event", desc: "Luminous flora pulse, rare blooms appear." },
-                    { name: "Pantheon Ritual", type: "Sacred", desc: "Ritual chambers glow, echo gates open." },
-                    { name: "Pulse Garden Challenge", type: "Puzzle", desc: "Prismatic rivers shift, karma relics appear." }
-                ],
-                secrets: "Harvesting 'Void Blooms' mutates skills into their chaos variants. Protecting the wilds grants 'Harmony' status."
-            },
-            "mythic_biomes": {
-                name: "Mythic Biomes",
-                subtitle: "Legendary Realms",
-                mediaType: "video",
-                mediaSrc: "map_assets/fusion-bg.mp4",
-                danger: "Extreme",
-                corruption: "Variable",
-                resonance: "Myth, Legend",
-                desc: "Living archives of legend. The birthplace of divine fusions and cosmic creation. Only the strongest resonance can survive here.",
-                factions: "All Factions (High Stakes Conflict).",
-                nodes: [
-                    { name: "Pantheon Wilds", type: "Zone", desc: "Living archives of legend." },
-                    { name: "Titan Gardens", type: "Boss", desc: "Home to mythborn titans and cosmic echoes." },
-                    { name: "Archive of Legends", type: "Lore", desc: "Repository of lost legends and forbidden skills." }
-                ],
-                secrets: "Contains 'God-Tier' fusion recipes. Access is restricted to those who hold a 'Mythic Key'."
-            },
-            "cps_memory": {
-                name: "CPS Memory Zones",
-                subtitle: "Digital Archive",
-                mediaType: "img",
-                mediaSrc: "map_assets/cps-memory-zone.png",
-                danger: "High",
-                corruption: "40%",
-                resonance: "Data, Memory",
-                desc: "Intense, revelatory zones where the core pulses with ancient Architect data. Digital ghosts and rogue AI fragments roam these halls.",
-                factions: "Rogue AI Fragments (Natives), Relic Seekers (Hackers).",
-                nodes: [
-                    { name: "Memory Core Activation", type: "System", desc: "Core pulses with ancient Architect data." },
-                    { name: "Data Storm Event", type: "Hazard", desc: "Data surges distort reality, memories flood the zone." },
-                    { name: "Fragmented Archive", type: "Loot", desc: "Lost Architect memories surface." }
-                ],
-                secrets: "Synchronizing with the Core allows the player to 'rewrite' one past decision. High risk of data fragmentation."
-            },
-            "echo_fields": {
-                name: "Echo Fields",
-                subtitle: "Reverberant Plains",
-                mediaType: "video",
-                mediaSrc: "map_assets/resonance-fog.mp4",
-                danger: "Medium",
-                corruption: "25%",
-                resonance: "Time, Echoes",
-                desc: "Haunting, reflective plains where echoes of past actions flood the zone. Time is fluid here, and loops often overlap.",
-                factions: "Ashram Remnants (Monks), Echo-Beasts (Natives).",
-                nodes: [
-                    { name: "Echo Bloom Event", type: "Event", desc: "Echo nodes pulse, memories replay." },
-                    { name: "Recursion Loop", type: "Trap", desc: "Time and space repeat. Break the cycle to escape." },
-                    { name: "Archive Awakening", type: "Lore", desc: "Echoing halls pulse, lore nodes activate." }
-                ],
-                secrets: "Players can encounter their own 'Ghosts' from previous runs here. Defeating them recovers lost loot."
+                secrets: "Deciphering Architect runes can unlock forbidden skill trees. High resonance reveals hidden burial chambers. 'Spirit Awakening' events allow players to converse with dead Architects."
             }
         };
 
@@ -655,12 +687,19 @@
             data.nodes.forEach(node => {
                 const div = document.createElement('div');
                 div.className = 'node-item';
+                
+                let logicHtml = '';
+                if (node.logic) {
+                    logicHtml = `<div class="node-meta"><span class="meta-label">Resonance Logic:</span> ${node.logic}</div>`;
+                }
+
                 div.innerHTML = `
                     <div class="node-header">
                         <span class="node-name">${node.name}</span>
                         <span class="node-type">${node.type}</span>
                     </div>
                     <div class="node-desc">${node.desc}</div>
+                    ${logicHtml}
                 `;
                 nodesContainer.appendChild(div);
             });
