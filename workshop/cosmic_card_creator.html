@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -544,29 +545,6 @@
             to { transform: translateX(400px); opacity: 0; }
         }
 
-        /* === EVENT BANNER === */
-        .event-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, rgba(139,92,246,0.85), rgba(109,40,217,0.85));
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            z-index: 999;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            box-shadow: 0 8px 25px rgba(139,92,246,0.25);
-            animation: bannerPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes bannerPulse {
-            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.9; }
-            50% { transform: translateX(-50%) scale(1.02); opacity: 1; }
-        }
-
         /* === AMBIENT OVERLAY === */
         .ambient-overlay {
             position: fixed;
@@ -735,7 +713,7 @@
             notification.className = 'notification';
             notification.innerHTML = `
                 <div style="display:flex; align-items:center; gap:0.8rem;">
-                    <span style="font-size:1.5rem;">${type === 'achievement' ? '🏆' : type === 'event' ? '⚡' : 'ℹ️'}</span>
+                    <span style="font-size:1.5rem;">${type === 'achievement' ? '🏆' : 'ℹ️'}</span>
                     <div>
                         <div style="font-weight:600; margin-bottom:0.2rem;">${message}</div>
                         <div style="font-size:0.7rem; color:var(--text-dim);">${new Date().toLocaleTimeString()}</div>
@@ -817,35 +795,6 @@
                 };
                 animate();
             }
-        }
-
-        // === DYNAMIC EVENTS ===
-        let currentEvent = null;
-        
-        function triggerRandomEvent() {
-            if (ownedSkills.length === 0 || Math.random() > 0.3) return;
-            
-            const events = [
-                { name: '⚡ Resonance Surge', effect: 'All skills gain +10% power for 30s' },
-                { name: '🌌 Cosmic Alignment', effect: 'Fusion success rate increased' },
-                { name: '✨ Skill Echo', effect: 'Random skill duplicated temporarily' },
-                { name: '🔥 Power Spike', effect: 'Legendary drop rate increased' }
-            ];
-            
-            const event = events[Math.floor(Math.random() * events.length)];
-            currentEvent = event;
-            
-            const banner = document.createElement('div');
-            banner.className = 'event-banner';
-            banner.innerHTML = `${event.name} - ${event.effect}`;
-            document.body.appendChild(banner);
-            
-            showNotification(event.name, 'event');
-            
-            setTimeout(() => {
-                banner.remove();
-                currentEvent = null;
-            }, 8000);
         }
 
         // === MASTERY SYSTEM ===
@@ -1130,11 +1079,6 @@
             document.body.addEventListener('click', () => {
                 startAmbientSound();
             }, { once: true });
-            
-            // Random events every 30-60 seconds
-            setInterval(() => {
-                triggerRandomEvent();
-            }, Math.random() * 30000 + 30000);
         });
 
         // Reload skills when returning from fusion lab
