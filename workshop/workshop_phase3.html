@@ -102,6 +102,22 @@
             font-size: 0.9rem;
         }
 
+        .filter-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-select {
+            background: #1e1e2e;
+            color: #fff;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 4px;
+            font-size: 0.8rem;
+            flex: 1;
+        }
+
         .skill-list {
             overflow-y: auto;
             padding: 0.5rem;
@@ -110,29 +126,31 @@
 
         .skill-item {
             background: rgba(255,255,255,0.03);
-            border: 1px solid var(--panel-border);
+            border-left: 3px solid var(--panel-border);
             padding: 0.8rem;
             margin-bottom: 0.4rem;
             cursor: grab;
             transition: all 0.2s;
-            border-radius: 4px;
+            border-radius: 0 4px 4px 0;
             position: relative;
             overflow: hidden;
         }
 
         .skill-item:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: var(--accent);
-            transform: translateX(2px);
+            background: rgba(255,255,255,0.08);
+            transform: translateX(4px);
         }
 
-        .skill-item.legendary {
-            border-color: #f59e0b;
-            background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent);
-        }
+        .skill-item.common { border-left-color: #94a3b8; }
+        .skill-item.uncommon { border-left-color: #10b981; }
+        .skill-item.rare { border-left-color: #3b82f6; background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), transparent); }
+        .skill-item.legendary { border-left-color: #f59e0b; background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), transparent); }
+        .skill-item.mythic { border-left-color: #a855f7; background: linear-gradient(90deg, rgba(168, 85, 247, 0.15), transparent); }
+        .skill-item.forbidden { border-left-color: #ef4444; background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), transparent); }
 
-        .skill-name { font-weight: bold; color: #fff; margin-bottom: 2px; font-size: 0.95rem; }
-        .skill-type { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; }
+        .skill-name { font-weight: bold; color: #fff; margin-bottom: 2px; font-size: 0.95rem; display: flex; justify-content: space-between; }
+        .skill-type { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; display: flex; gap: 0.5rem; }
+        .skill-engine-tag { background: rgba(255,255,255,0.1); padding: 1px 4px; border-radius: 2px; font-size: 0.65rem; }
 
         /* CENTER: FUSION CORE */
         .fusion-stage {
@@ -219,6 +237,83 @@
         .fuse-btn:hover {
             transform: translateY(-2px);
             background: var(--accent-glow);
+        }
+
+        .clear-btn {
+            background: transparent;
+            border: 1px solid var(--text-dim);
+            color: var(--text-dim);
+            padding: 0.4rem 1rem;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .clear-btn:hover { border-color: #fff; color: #fff; }
+
+        /* LOADOUT BAR */
+        .loadout-bar {
+            background: #0a0a0f;
+            border-top: 1px solid var(--panel-border);
+            padding: 1rem;
+            flex-shrink: 0;
+        }
+
+        .loadout-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
+
+        .loadout-slots {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .loadout-slot {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--panel-border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1.2rem;
+        }
+
+        .loadout-slot:hover {
+            border-color: var(--accent);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .loadout-slot.filled {
+            border-color: var(--success);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        }
+
+        .terminal-log {
+            margin-top: 1.5rem;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            font-size: 0.8rem;
+            height: 80px;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            padding: 0.5rem;
+            border: 1px solid #333;
+            overflow-y: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column-reverse; /* Newest at bottom visually if we prepend, but let's append */
         }
 
         /* RIGHT: DEEP ANALYSIS */
@@ -727,13 +822,28 @@
                     <span id="skill-count">0</span>
                 </div>
             </div>
-            <div style="padding: 0.5rem; display:flex; gap:0.5rem;">
-                <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterSkills(this.value)">
-                <select id="sort-select" onchange="renderSkillList()" style="background:#1e1e2e; color:#fff; border:1px solid #333; border-radius:4px;">
-                    <option value="tier">Tier</option>
-                    <option value="name">Name</option>
-                    <option value="type">Type</option>
-                </select>
+            <div style="padding: 0.5rem; display:flex; flex-direction:column; gap:0.5rem;">
+                <input type="text" class="search-bar" placeholder="Search..." onkeyup="filterSkills()">
+                
+                <div class="filter-row">
+                    <select id="engine-filter" class="filter-select" onchange="filterSkills()">
+                        <option value="">All Engines</option>
+                        <option value="Foundational">Foundational</option>
+                        <option value="Invocation">Invocation</option>
+                        <option value="Character Analysis">Character Analysis</option>
+                        <option value="Consciousness">Consciousness</option>
+                        <option value="Divination">Divination</option>
+                        <option value="Singularity">Singularity</option>
+                        <option value="Tantra">Tantra</option>
+                        <option value="Therapeutic">Therapeutic</option>
+                    </select>
+                    
+                    <select id="sort-select" class="filter-select" onchange="renderSkillList()">
+                        <option value="tier">Sort: Tier</option>
+                        <option value="name">Sort: Name</option>
+                        <option value="type">Sort: Type</option>
+                    </select>
+                </div>
             </div>
             <div id="skill-list" class="skill-list">
                 <!-- Populated by JS -->
@@ -758,8 +868,24 @@
                 <button id="fuse-btn" class="fuse-btn" onclick="performFusion()">Synthesize</button>
                 <button class="clear-btn" onclick="clearAllSlots()">Clear Matrix</button>
                 
-                <div id="fusion-status" style="margin-top: 1.5rem; color: var(--text-dim); font-size: 0.9rem; height: 20px;">
-                    Awaiting components...
+                <div id="fusion-status" class="terminal-log">
+                    > SYSTEM READY...<br>
+                    > AWAITING INPUTS...
+                </div>
+            </div>
+
+            <!-- LOADOUT BAR -->
+            <div class="loadout-bar">
+                <div class="loadout-header">
+                    <span>Active Neural Link</span>
+                    <span id="loadout-stats" style="font-size:0.7rem; color:var(--accent);">0/5 SLOTS</span>
+                </div>
+                <div class="loadout-slots">
+                    <div class="loadout-slot" ondrop="dropLoadout(event, 0)" ondragover="allowDrop(event)" onclick="removeLoadout(0)"></div>
+                    <div class="loadout-slot" ondrop="dropLoadout(event, 1)" ondragover="allowDrop(event)" onclick="removeLoadout(1)"></div>
+                    <div class="loadout-slot" ondrop="dropLoadout(event, 2)" ondragover="allowDrop(event)" onclick="removeLoadout(2)"></div>
+                    <div class="loadout-slot" ondrop="dropLoadout(event, 3)" ondragover="allowDrop(event)" onclick="removeLoadout(3)"></div>
+                    <div class="loadout-slot" ondrop="dropLoadout(event, 4)" ondragover="allowDrop(event)" onclick="removeLoadout(4)"></div>
                 </div>
             </div>
         </div>
@@ -850,15 +976,19 @@
         
         let selectedSlots = [null, null];
         let pendingNewSkill = null;
+        let activeLoadout = [null, null, null, null, null];
 
         // --- INIT ---
         window.onload = () => {
+            loadLoadout();
             renderSkillList();
+            renderLoadout();
         };
 
         function resetDatabase() {
             if(confirm("Reset Database to factory settings? This will clear custom synthesized skills.")) {
                 localStorage.removeItem('cosmic_skills');
+                localStorage.removeItem('cosmic_loadout');
                 location.reload();
             }
         }
@@ -868,15 +998,83 @@
             localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
         }
 
+        function saveLoadout() {
+            localStorage.setItem('cosmic_loadout', JSON.stringify(activeLoadout));
+            renderLoadout();
+        }
+
+        function loadLoadout() {
+            const saved = localStorage.getItem('cosmic_loadout');
+            if (saved) {
+                activeLoadout = JSON.parse(saved);
+            }
+        }
+
+        // --- LOADOUT LOGIC ---
+        function dropLoadout(ev, index) {
+            ev.preventDefault();
+            const skillId = ev.dataTransfer.getData("text");
+            const skill = knownSkills.find(s => s.id === skillId);
+            
+            if (skill) {
+                activeLoadout[index] = skill;
+                saveLoadout();
+            }
+        }
+
+        function removeLoadout(index) {
+            activeLoadout[index] = null;
+            saveLoadout();
+        }
+
+        function renderLoadout() {
+            const slots = document.querySelectorAll('.loadout-slot');
+            let count = 0;
+            
+            activeLoadout.forEach((skill, i) => {
+                const el = slots[i];
+                el.innerHTML = "";
+                el.className = "loadout-slot";
+                
+                if (skill) {
+                    count++;
+                    el.classList.add('filled');
+                    el.innerHTML = getIconForSkill(skill);
+                    el.title = skill.name;
+                    
+                    // Add rarity color border
+                    if (skill.tier === 'LEGENDARY') el.style.borderColor = '#f59e0b';
+                    else if (skill.tier === 'MYTHIC') el.style.borderColor = '#a855f7';
+                    else if (skill.tier === 'RARE') el.style.borderColor = '#3b82f6';
+                    else el.style.borderColor = '#10b981';
+                } else {
+                    el.style.borderColor = '';
+                }
+            });
+
+            document.getElementById('loadout-stats').innerText = `${count}/5 SLOTS`;
+        }
+
         // --- RENDERING ---
-        function renderSkillList(filter = "") {
+        function filterSkills() {
+            renderSkillList();
+        }
+
+        function renderSkillList() {
             const list = document.getElementById('skill-list');
             list.innerHTML = "";
-            document.getElementById('skill-count').innerText = knownSkills.length;
+            
+            const searchTerm = document.querySelector('.search-bar').value.toLowerCase();
+            const engineFilter = document.getElementById('engine-filter').value;
+            const sortMode = document.getElementById('sort-select').value;
 
-            // Sorting Logic
-            const sortMode = document.getElementById('sort-select') ? document.getElementById('sort-select').value : 'tier';
-            let displaySkills = [...knownSkills];
+            let displaySkills = knownSkills.filter(skill => {
+                const matchesSearch = skill.name.toLowerCase().includes(searchTerm);
+                const matchesEngine = engineFilter ? (skill._engine === engineFilter || (skill.tags && skill.tags.includes(engineFilter.toUpperCase()))) : true;
+                return matchesSearch && matchesEngine;
+            });
+
+            document.getElementById('skill-count').innerText = displaySkills.length;
 
             if (sortMode === 'name') {
                 displaySkills.sort((a, b) => a.name.localeCompare(b.name));
@@ -884,25 +1082,49 @@
                 displaySkills.sort((a, b) => a.type.localeCompare(b.type));
             } else {
                 // Tier Sort (Legendary > Rare > Common)
-                const tierOrder = { 'LEGENDARY': 3, 'RARE': 2, 'COMMON': 1, 'FORBIDDEN': 4 };
+                const tierOrder = { 'MYTHIC': 5, 'LEGENDARY': 4, 'RARE': 3, 'UNCOMMON': 2, 'COMMON': 1, 'FORBIDDEN': 6 };
                 displaySkills.sort((a, b) => (tierOrder[b.tier] || 0) - (tierOrder[a.tier] || 0));
             }
 
-            displaySkills.forEach(skill => {
-                if (filter && !skill.name.toLowerCase().includes(filter.toLowerCase())) return;
+            // Limit rendering for performance if list is huge
+            const RENDER_LIMIT = 100;
+            const total = displaySkills.length;
+            if (total > RENDER_LIMIT) {
+                displaySkills = displaySkills.slice(0, RENDER_LIMIT);
+            }
 
+            displaySkills.forEach(skill => {
                 const el = document.createElement('div');
-                el.className = `skill-item ${skill.tier === 'LEGENDARY' ? 'legendary' : ''}`;
+                el.className = `skill-item ${skill.tier.toLowerCase()}`;
                 el.draggable = true;
                 el.ondragstart = (e) => drag(e, skill.id);
                 el.onclick = () => showAnalysis(skill);
                 
+                // Engine Tag
+                const engineTag = skill._engine ? `<span class="skill-engine-tag">${skill._engine}</span>` : '';
+
                 el.innerHTML = `
-                    <div class="skill-name">${skill.name}</div>
-                    <div class="skill-type">${skill.tier} • ${skill.type}</div>
+                    <div class="skill-name">
+                        <span>${skill.name}</span>
+                        ${skill.tier === 'LEGENDARY' || skill.tier === 'MYTHIC' ? '<span>✦</span>' : ''}
+                    </div>
+                    <div class="skill-type">
+                        ${engineTag}
+                        <span>${skill.tier} • ${skill.type}</span>
+                    </div>
                 `;
                 list.appendChild(el);
             });
+
+            if (total > RENDER_LIMIT) {
+                const more = document.createElement('div');
+                more.style.textAlign = 'center';
+                more.style.padding = '1rem';
+                more.style.color = '#666';
+                more.style.fontSize = '0.8rem';
+                more.innerText = `...and ${total - RENDER_LIMIT} more skills. Use filters to narrow down.`;
+                list.appendChild(more);
+            }
         }
 
         function showAnalysis(skill) {
@@ -1025,19 +1247,23 @@
         }
 
         // --- INTERACTION HELPERS ---
+        // --- FUSION LOGIC ---
         window.equipSkill = (id, slotIndex) => {
             const skill = knownSkills.find(s => s.id === id);
             if (!skill) return;
             
             selectedSlots[slotIndex] = skill;
-            const slotEl = document.getElementById(slotIndex === 0 ? 'slot-1' : 'slot-2');
             
+            const slotEl = document.getElementById(slotIndex === 0 ? 'slot-1' : 'slot-2');
             slotEl.classList.add('active');
             slotEl.innerHTML = `
-                <div style="font-weight:bold; color:#fff; font-size:0.9rem; text-align:center;">${skill.name}</div>
-                <div style="color:var(--accent); font-size:0.7rem;">${skill.type}</div>
+                <div style="font-size:2rem;">${getIconForSkill(skill)}</div>
+                <div style="font-size:0.8rem; margin-top:0.5rem; text-align:center;">${skill.name}</div>
+                <div style="font-size:0.6rem; color:var(--text-dim);">${skill.tier}</div>
             `;
-            checkReady();
+            
+            logSystem(`SLOT ${slotIndex === 0 ? 'A' : 'B'} LOADED: ${skill.name.toUpperCase()}`);
+            checkFusionReady();
         };
 
         window.inspectSkill = (id) => {
@@ -1052,7 +1278,7 @@
             slotEl.innerHTML = `<div style="color: var(--text-dim); font-size: 0.7rem;">INPUT ${index === 0 ? 'A' : 'B'}</div>`;
             
             document.getElementById('fuse-btn').classList.remove('ready');
-            document.getElementById('fusion-status').innerText = "Awaiting components...";
+            logSystem(`SLOT ${index === 0 ? 'A' : 'B'} CLEARED.`);
         };
 
         window.clearAllSlots = () => {
@@ -1074,32 +1300,21 @@
         window.drop = (ev) => {
             ev.preventDefault();
             const id = ev.dataTransfer.getData("text");
-            const skill = knownSkills.find(s => s.id === id);
             const slotEl = ev.target.closest('.fusion-slot');
             
-            if (slotEl && skill) {
+            if (slotEl) {
                 const index = slotEl.id === 'slot-1' ? 0 : 1;
-                selectedSlots[index] = skill;
-                
-                // Update UI
-                slotEl.classList.add('active');
-                slotEl.innerHTML = `
-                    <div style="font-weight:bold; color:#fff; font-size:0.9rem; text-align:center;">${skill.name}</div>
-                    <div style="color:var(--accent); font-size:0.7rem;">${skill.type}</div>
-                `;
-                
-                checkReady();
+                equipSkill(id, index);
             }
         };
 
-        function checkReady() {
+        function checkFusionReady() {
             const btn = document.getElementById('fuse-btn');
-            const status = document.getElementById('fusion-status');
-            
             if (selectedSlots[0] && selectedSlots[1]) {
                 btn.classList.add('ready');
-                status.innerText = "Fusion Matrix Stable.";
-                status.style.color = "#10b981";
+                logSystem("FUSION MATRIX STABLE. READY TO SYNTHESIZE.");
+            } else {
+                btn.classList.remove('ready');
             }
         }
 
@@ -1110,6 +1325,8 @@
             const s1 = selectedSlots[0];
             const s2 = selectedSlots[1];
             
+            logSystem(`INITIATING FUSION: ${s1.name} + ${s2.name}...`);
+
             // Simulate Processing
             const btn = document.getElementById('fuse-btn');
             btn.innerText = "Synthesizing...";
@@ -1121,8 +1338,18 @@
                     
                     // Show Result Overlay
                     showResultOverlay(pendingNewSkill);
+                    logSystem(`SUCCESS! NEW PARADIGM CREATED: ${pendingNewSkill.name.toUpperCase()}`);
                     
                     // Reset Button
+                    btn.innerText = "Synthesize";
+                    clearAllSlots();
+                } catch (e) {
+                    console.error(e);
+                    logSystem("ERROR: FUSION FAILED. INCOMPATIBLE PARADIGMS.");
+                    btn.innerText = "Synthesize";
+                }
+            }, 1500);
+        };
                     btn.classList.remove('ready');
                     btn.innerText = "Synthesize";
                     document.getElementById('fusion-status').innerText = "Awaiting components...";
@@ -1727,6 +1954,14 @@
             };
         }
 
+        // --- LOGGING ---
+        function logSystem(msg) {
+            const log = document.getElementById('fusion-status');
+            const line = document.createElement('div');
+            line.innerHTML = `> ${msg}`;
+            log.prepend(line); // Newest on top
+            if (log.children.length > 5) log.lastElementChild.remove();
+        }
     </script>
 </body>
 </html>
