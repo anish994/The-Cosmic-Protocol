@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Vedic Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .vedic-chart {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            width: 80%;
+            max-width: 800px;
+            aspect-ratio: 4 / 3;
+            background-color: #1e1e2e;
+            border: 2px solid #6d28d9;
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .house {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2e2e3e;
+            border: 1px solid #8b5cf6;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            color: #e2e8f0;
+        }
+
+        .house-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .house-content {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="vedic-chart">
+        <div class="house" id="house-1">
+            <div class="house-title">House 1</div>
+            <div class="house-content">Self</div>
+        </div>
+        <div class="house" id="house-2">
+            <div class="house-title">House 2</div>
+            <div class="house-content">Resources</div>
+        </div>
+        <div class="house" id="house-3">
+            <div class="house-title">House 3</div>
+            <div class="house-content">Communication</div>
+        </div>
+        <div class="house" id="house-4">
+            <div class="house-title">House 4</div>
+            <div class="house-content">Home</div>
+        </div>
+        <div class="house" id="house-5">
+            <div class="house-title">House 5</div>
+            <div class="house-content">Creativity</div>
+        </div>
+        <div class="house" id="house-6">
+            <div class="house-title">House 6</div>
+            <div class="house-content">Health</div>
+        </div>
+        <div class="house" id="house-7">
+            <div class="house-title">House 7</div>
+            <div class="house-content">Partnerships</div>
+        </div>
+        <div class="house" id="house-8">
+            <div class="house-title">House 8</div>
+            <div class="house-content">Transformation</div>
+        </div>
+        <div class="house" id="house-9">
+            <div class="house-title">House 9</div>
+            <div class="house-content">Fortune</div>
+        </div>
+        <div class="house" id="house-10">
+            <div class="house-title">House 10</div>
+            <div class="house-content">Career</div>
+        </div>
+        <div class="house" id="house-11">
+            <div class="house-title">House 11</div>
+            <div class="house-content">Community</div>
+        </div>
+        <div class="house" id="house-12">
+            <div class="house-title">House 12</div>
+            <div class="house-content">Spirituality</div>
+        </div>
+    </div>
+</body>
+</html>
