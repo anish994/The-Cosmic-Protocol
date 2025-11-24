@@ -267,9 +267,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.8rem 1.2rem;
+            gap: 0.2rem;
+            padding: 0.4rem 0.6rem;
             background:
+                /* Mechanical corner reinforcements */
+                radial-gradient(circle at 5% 5%, rgba(100,110,120,0.8) 2px, transparent 2px),
+                radial-gradient(circle at 95% 5%, rgba(100,110,120,0.8) 2px, transparent 2px),
+                radial-gradient(circle at 5% 95%, rgba(100,110,120,0.8) 2px, transparent 2px),
+                radial-gradient(circle at 95% 95%, rgba(100,110,120,0.8) 2px, transparent 2px),
                 /* Base rocky texture */
                 radial-gradient(circle at 30% 30%, rgba(60,65,70,0.8) 0%, transparent 40%),
                 radial-gradient(circle at 70% 70%, rgba(50,55,60,0.7) 0%, transparent 40%),
@@ -281,19 +286,19 @@
                     rgba(75,80,85,0.96) 50%,
                     rgba(60,65,70,0.97) 75%,
                     rgba(70,75,80,0.95) 100%);
-            border: 2px solid rgba(110,120,130,0.9);
-            border-radius: 12px;
+            border: 1px solid rgba(110,120,130,0.9);
+            border-radius: 8px;
             position: relative;
             width: 100%;
             box-shadow:
                 /* Ancient stone shadows */
-                0 8px 24px rgba(0,0,0,0.6),
-                inset 0 2px 4px rgba(30,35,40,0.4),
+                0 4px 12px rgba(0,0,0,0.6),
+                inset 0 1px 2px rgba(30,35,40,0.4),
                 inset 0 1px 0 rgba(140,150,160,0.4),
-                inset 0 -2px 0 rgba(25,30,35,0.6),
+                inset 0 -1px 0 rgba(25,30,35,0.6),
                 /* Silvery metallic glow */
-                0 0 40px rgba(120,130,140,0.3),
-                0 0 80px rgba(110,120,130,0.1);
+                0 0 20px rgba(120,130,140,0.3),
+                0 0 40px rgba(110,120,130,0.1);
             overflow: hidden;
         }
 
@@ -337,18 +342,18 @@
         .lagna-energy-selector::after {
             content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 2px solid rgba(130,140,150,0.7);
-            border-radius: 8px;
+            top: 6px;
+            left: 6px;
+            right: 6px;
+            bottom: 6px;
+            border: 1px solid rgba(130,140,150,0.7);
+            border-radius: 4px;
             pointer-events: none;
             box-shadow:
-                inset 0 2px 4px rgba(25,30,35,0.5),
+                inset 0 1px 2px rgba(25,30,35,0.5),
                 inset 0 1px 0 rgba(160,170,180,0.3),
                 inset 0 -1px 0 rgba(30,35,40,0.7),
-                0 0 20px rgba(140,150,160,0.2);
+                0 0 10px rgba(140,150,160,0.2);
         }
 
         .lagna-energy-selector label {
@@ -378,100 +383,170 @@
         .energy-field-container {
             position: relative;
             width: 100%;
-            height: 48px;
+            height: 32px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.3rem;
+            gap: 0.2rem;
         }
 
         .energy-field {
             position: relative;
             width: 100%;
-            height: 24px;
+            height: 16px;
             background:
-                /* Rocky ancient texture */
-                radial-gradient(circle at 25% 25%, rgba(55,60,65,0.9) 0%, transparent 35%),
-                radial-gradient(circle at 75% 75%, rgba(65,70,75,0.8) 0%, transparent 35%),
-                /* Silvery metallic base */
+                /* Mechanical scale with 12 distinct sections */
+                linear-gradient(90deg,
+                    /* Section 1 - Aries */
+                    rgba(60,70,80,0.8) 0%,
+                    rgba(60,70,80,0.8) 8.25%,
+                    rgba(40,50,60,0.9) 8.25%,
+                    rgba(40,50,60,0.9) 8.5%,
+                    /* Section 2 - Taurus */
+                    rgba(60,70,80,0.8) 8.5%,
+                    rgba(60,70,80,0.8) 16.75%,
+                    rgba(40,50,60,0.9) 16.75%,
+                    rgba(40,50,60,0.9) 17%,
+                    /* Section 3 - Gemini */
+                    rgba(60,70,80,0.8) 17%,
+                    rgba(60,70,80,0.8) 25.25%,
+                    rgba(40,50,60,0.9) 25.25%,
+                    rgba(40,50,60,0.9) 25.5%,
+                    /* Section 4 - Cancer */
+                    rgba(60,70,80,0.8) 25.5%,
+                    rgba(60,70,80,0.8) 33.75%,
+                    rgba(40,50,60,0.9) 33.75%,
+                    rgba(40,50,60,0.9) 34%,
+                    /* Section 5 - Leo */
+                    rgba(60,70,80,0.8) 34%,
+                    rgba(60,70,80,0.8) 42.25%,
+                    rgba(40,50,60,0.9) 42.25%,
+                    rgba(40,50,60,0.9) 42.5%,
+                    /* Section 6 - Virgo */
+                    rgba(60,70,80,0.8) 42.5%,
+                    rgba(60,70,80,0.8) 50.75%,
+                    rgba(40,50,60,0.9) 50.75%,
+                    rgba(40,50,60,0.9) 51%,
+                    /* Section 7 - Libra */
+                    rgba(60,70,80,0.8) 51%,
+                    rgba(60,70,80,0.8) 59.25%,
+                    rgba(40,50,60,0.9) 59.25%,
+                    rgba(40,50,60,0.9) 59.5%,
+                    /* Section 8 - Scorpio */
+                    rgba(60,70,80,0.8) 59.5%,
+                    rgba(60,70,80,0.8) 67.75%,
+                    rgba(40,50,60,0.9) 67.75%,
+                    rgba(40,50,60,0.9) 68%,
+                    /* Section 9 - Sagittarius */
+                    rgba(60,70,80,0.8) 68%,
+                    rgba(60,70,80,0.8) 76.25%,
+                    rgba(40,50,60,0.9) 76.25%,
+                    rgba(40,50,60,0.9) 76.5%,
+                    /* Section 10 - Capricorn */
+                    rgba(60,70,80,0.8) 76.5%,
+                    rgba(60,70,80,0.8) 84.75%,
+                    rgba(40,50,60,0.9) 84.75%,
+                    rgba(40,50,60,0.9) 85%,
+                    /* Section 11 - Aquarius */
+                    rgba(60,70,80,0.8) 85%,
+                    rgba(60,70,80,0.8) 93.25%,
+                    rgba(40,50,60,0.9) 93.25%,
+                    rgba(40,50,60,0.9) 93.5%,
+                    /* Section 12 - Pisces */
+                    rgba(60,70,80,0.8) 93.5%,
+                    rgba(60,70,80,0.8) 100%
+                ),
+                /* Industrial base plate */
                 linear-gradient(135deg,
-                    rgba(75,80,85,0.96) 0%,
-                    rgba(60,65,70,0.98) 30%,
-                    rgba(85,90,95,0.97) 70%,
-                    rgba(75,80,85,0.96) 100%);
-            border-radius: 12px;
-            border: 2px solid rgba(120,130,140,0.9);
+                    rgba(55,65,75,0.96) 0%,
+                    rgba(40,50,60,0.98) 30%,
+                    rgba(65,75,85,0.97) 70%,
+                    rgba(55,65,75,0.96) 100%);
+            border-radius: 6px;
+            border: 1px solid rgba(100,110,120,0.9);
             overflow: hidden;
             cursor: pointer;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow:
-                inset 0 3px 6px rgba(25,30,35,0.6),
-                inset 0 1px 0 rgba(150,160,170,0.5),
-                inset 0 -2px 0 rgba(35,40,45,0.7),
-                0 0 20px rgba(100,110,120,0.4),
-                0 2px 12px rgba(0,0,0,0.5);
+                inset 0 2px 4px rgba(25,30,35,0.6),
+                inset 0 1px 0 rgba(130,140,150,0.5),
+                inset 0 -1px 0 rgba(35,40,45,0.7),
+                0 0 8px rgba(80,90,100,0.4),
+                0 1px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Highlight overlay for the selected or hovered segment */
+        .segment-highlight {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            left: 0;
+            width: 0;
+            background: linear-gradient(90deg, rgba(90,120,140,0.14), rgba(70,90,110,0.08));
+            border-left: 1px solid rgba(85,100,115,0.5);
+            border-right: 1px solid rgba(85,100,115,0.45);
+            border-radius: 3px;
+            transition: left 0.12s ease, width 0.12s ease;
+            z-index: 2;
+            pointer-events: none;
+            display: none;
+        }
+
+        .segment-highlight.active {
+            background: linear-gradient(90deg, rgba(100,140,160,0.22), rgba(85,120,140,0.12));
+            display: block;
+        }
+
+        .energy-field:hover {
+            transform: scale(1.01);
+            box-shadow:
+                inset 0 2px 4px rgba(30,35,40,0.7),
+                inset 0 1px 0 rgba(160,170,180,0.6),
+                inset 0 -1px 0 rgba(40,45,50,0.8),
+                0 0 15px rgba(120,130,140,0.6),
+                0 0 30px rgba(110,120,130,0.3),
+                0 2px 8px rgba(0,0,0,0.6);
+            border-color: rgba(140,150,160,1);
         }
 
         .energy-field::before {
             content: '';
             position: absolute;
-            top: -6px;
+            top: -3px;
             left: 0;
             right: 0;
-            height: 6px;
+            height: 3px;
             background:
-                repeating-linear-gradient(
-                    90deg,
-                    rgba(130,140,150,0.9) 0px,
-                    rgba(130,140,150,0.9) 2px,
-                    transparent 2px,
-                    transparent 8px
-                ),
+                /* Mechanical end cap */
                 linear-gradient(90deg,
-                    rgba(110,120,130,0.6) 0%,
-                    rgba(140,150,160,0.8) 50%,
-                    rgba(110,120,130,0.6) 100%);
-            border-radius: 3px 3px 0 0;
+                    rgba(100,110,120,0.9) 0%,
+                    rgba(120,130,140,1) 20%,
+                    rgba(100,110,120,0.9) 80%,
+                    rgba(120,130,140,1) 100%);
+            border-radius: 2px 2px 0 0;
             box-shadow:
-                0 2px 4px rgba(50,60,70,0.5),
-                inset 0 1px 0 rgba(160,170,180,0.4);
+                0 1px 2px rgba(30,40,50,0.5),
+                inset 0 1px 0 rgba(140,150,160,0.4);
         }
 
         .energy-field::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -3px;
             left: 0;
             right: 0;
-            height: 6px;
+            height: 3px;
             background:
-                repeating-linear-gradient(
-                    90deg,
-                    rgba(110,120,130,0.8) 0px,
-                    rgba(110,120,130,0.8) 2px,
-                    transparent 2px,
-                    transparent 8px
-                ),
+                /* Mechanical base rail */
                 linear-gradient(90deg,
-                    rgba(100,110,120,0.5) 0%,
-                    rgba(130,140,150,0.7) 50%,
-                    rgba(100,110,120,0.5) 100%);
-            border-radius: 0 0 3px 3px;
+                    rgba(80,90,100,0.8) 0%,
+                    rgba(100,110,120,0.9) 20%,
+                    rgba(80,90,100,0.8) 80%,
+                    rgba(100,110,120,0.9) 100%);
+            border-radius: 0 0 2px 2px;
             box-shadow:
-                0 -2px 4px rgba(30,40,50,0.5),
-                inset 0 -1px 0 rgba(80,90,100,0.6);
-        }
-
-        .energy-field:hover {
-            transform: scale(1.02);
-            box-shadow:
-                inset 0 3px 8px rgba(30,35,40,0.7),
-                inset 0 1px 0 rgba(160,170,180,0.6),
-                inset 0 -2px 0 rgba(40,45,50,0.8),
-                0 0 30px rgba(120,130,140,0.6),
-                0 0 60px rgba(110,120,130,0.3),
-                0 4px 16px rgba(0,0,0,0.6);
-            border-color: rgba(140,150,160,1);
+                0 -1px 2px rgba(20,30,40,0.5),
+                inset 0 -1px 0 rgba(60,70,80,0.6);
         }
 
         .zodiac-markers {
@@ -483,46 +558,91 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 12px;
+            padding: 0 2px;
+        }
+
+        .zodiac-markers::before {
+            /* Overlay the field with mechanical segment dividers (12 segments) */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            /* thicker vertical divider lines for clearer mechanical separation */
+            background-image: linear-gradient(to right, rgba(60,70,80,0.98) 2px, transparent 2px);
+            background-size: calc(100% / 12) 100%;
+            z-index: 2; /* sits above the field but below markers */
+            mix-blend-mode: multiply;
+            opacity: 0.95;
         }
 
         .zodiac-marker {
-            width: 3px;
-            height: 16px;
+            width: 12px;
+            height: 20px;
             background:
-                /* Rocky ancient texture */
-                radial-gradient(circle at 50% 30%, rgba(120,130,140,0.9) 0%, rgba(100,110,120,0.8) 100%),
-                /* Silvery metallic base */
+                /* Mechanical scale marker with sharp definition */
                 linear-gradient(135deg,
-                    rgba(130,140,150,0.95) 0%,
-                    rgba(150,160,170,1) 30%,
-                    rgba(140,150,160,0.98) 70%,
-                    rgba(130,140,150,0.95) 100%);
-            border-radius: 2px;
+                    rgba(30,40,50,0.95) 0%,
+                    rgba(50,60,70,1) 40%,
+                    rgba(70,80,90,1) 60%,
+                    rgba(40,50,60,0.98) 100%),
+                /* Sharp metallic edge with contrast */
+                linear-gradient(to right,
+                    rgba(60,70,80,0.9) 0%,
+                    rgba(80,90,100,1) 30%,
+                    rgba(100,110,120,1) 70%,
+                    rgba(60,70,80,0.9) 100%);
+            border-radius: 2px 2px 0 0;
             position: relative;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             box-shadow:
-                0 2px 4px rgba(50,60,70,0.5),
-                inset 0 1px 0 rgba(160,170,180,0.4),
-                inset 0 -1px 0 rgba(80,90,100,0.6);
-            clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
+                0 2px 4px rgba(10,20,30,0.6),
+                inset 0 1px 0 rgba(100,110,120,0.6),
+                inset 0 -1px 0 rgba(20,30,40,0.8),
+                0 0 4px rgba(50,60,70,0.4);
+            border: 1px solid rgba(60,70,80,0.8);
+            border-bottom: none;
+            clip-path: polygon(10% 100%, 90% 100%, 95% 0%, 5% 0%);
+            z-index: 3;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 2px;
         }
 
         .zodiac-marker::before {
             content: attr(data-symbol);
             position: absolute;
-            top: -20px;
+            top: -18px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            color: rgba(130,150,170,0.8);
-            opacity: 0;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            color: rgba(170,180,190,0.95);
+            text-shadow: 0 1px 2px rgba(20,30,40,0.5);
+            z-index: 4;
+            opacity: 1; /* show the symbol by default */
             pointer-events: none;
-            text-shadow: 0 0 2px rgba(80,100,120,0.4);
             font-family: serif;
+        }
+
+        .zodiac-marker::after {
+            content: attr(data-lagna);
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: rgba(80,100,120,0.8);
+            font-family: 'Courier New', monospace;
+            background: rgba(20,30,40,0.7);
+            padding: 1px 2px;
+            border-radius: 1px;
+            border: 1px solid rgba(50,60,70,0.5);
         }
 
         .zodiac-marker:hover::before {
@@ -531,32 +651,51 @@
             transform: translateX(-50%) scale(1.1);
         }
 
+        .zodiac-marker:hover::after {
+            color: rgba(120,140,160,0.9);
+            background: rgba(40,60,80,0.8);
+            border-color: rgba(80,100,120,0.7);
+        }
+
         .zodiac-marker.active {
             background:
-                /* Enhanced rocky ancient texture */
-                radial-gradient(circle at 50% 25%, rgba(160,170,180,1) 0%, rgba(140,150,160,0.9) 100%),
-                /* Premium silvery metallic */
+                /* Enhanced mechanical steel with energy engagement */
                 linear-gradient(135deg,
-                    rgba(170,180,190,1) 0%,
-                    rgba(190,200,210,1) 30%,
-                    rgba(180,190,200,0.98) 70%,
-                    rgba(170,180,190,1) 100%);
+                    rgba(100,110,120,1) 0%,
+                    rgba(120,130,140,1) 50%,
+                    rgba(110,120,130,0.98) 100%),
+                /* Sharp metallic edge with engagement glow */
+                linear-gradient(to right,
+                    rgba(130,140,150,1) 0%,
+                    rgba(150,160,170,1) 50%,
+                    rgba(130,140,150,1) 100%);
             box-shadow:
-                0 0 16px rgba(130,140,150,0.9),
-                0 0 32px rgba(140,150,160,0.6),
-                inset 0 1px 0 rgba(200,210,220,0.5),
-                inset 0 -1px 0 rgba(100,110,120,0.7);
+                0 0 10px rgba(80,90,100,0.9),
+                0 0 20px rgba(90,100,110,0.6),
+                inset 0 1px 0 rgba(140,150,160,0.7),
+                inset 0 -1px 0 rgba(50,60,70,0.9);
             animation: gearPulse 1.5s ease-in-out infinite;
-            clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
+            border-color: rgba(100,110,120,1);
+            transform: scaleY(1.2) translateY(-1px);
+            clip-path: polygon(5% 100%, 95% 100%, 100% 0%, 0% 0%);
         }
 
         .zodiac-marker.active::before {
             opacity: 1;
-            color: rgba(160,180,200,1);
+            color: rgba(140,170,190,1);
             text-shadow:
-                0 0 4px rgba(100,120,140,0.8),
-                0 0 8px rgba(110,130,150,0.4);
-            transform: translateX(-50%) scale(1.2);
+                0 0 4px rgba(80,110,130,0.8),
+                0 0 8px rgba(90,120,140,0.4);
+            transform: translateX(-50%) scale(1.3);
+            background: rgba(50,70,90,0.9);
+            border-color: rgba(100,120,140,0.8);
+        }
+
+        .zodiac-marker.active::after {
+            color: rgba(120,150,170,1);
+            background: rgba(60,90,110,0.9);
+            border-color: rgba(100,130,150,0.8);
+            text-shadow: 0 0 3px rgba(80,110,130,0.5);
         }
 
         @keyframes gearPulse {
@@ -577,10 +716,10 @@
         .energy-cursor {
             position: absolute;
             top: 50%;
-            left: 12px;
+            left: 6px;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             z-index: 5;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
@@ -591,25 +730,36 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             background:
-                /* Rocky ancient texture */
-                radial-gradient(circle at 30% 30%, rgba(140,150,160,0.9) 0%, rgba(120,130,140,0.8) 100%),
-                /* Premium silvery metallic */
+                /* Mechanical gear with teeth */
+                repeating-conic-gradient(
+                    from 0deg at 50% 50%,
+                    rgba(50,60,70,0.9) 0deg,
+                    rgba(50,60,70,0.9) 20deg,
+                    rgba(70,80,90,1) 20deg,
+                    rgba(70,80,90,1) 40deg,
+                    rgba(50,60,70,0.9) 40deg,
+                    rgba(50,60,70,0.9) 60deg,
+                    rgba(70,80,90,1) 60deg,
+                    rgba(70,80,90,1) 80deg
+                ),
+                /* Industrial metallic base */
                 linear-gradient(135deg,
-                    rgba(150,160,170,0.96) 0%,
-                    rgba(170,180,190,1) 30%,
-                    rgba(160,170,180,0.98) 70%,
-                    rgba(150,160,170,0.96) 100%);
+                    rgba(60,70,80,0.96) 0%,
+                    rgba(80,90,100,1) 30%,
+                    rgba(70,80,90,0.98) 70%,
+                    rgba(60,70,80,0.96) 100%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             box-shadow:
-                0 0 12px rgba(120,130,140,0.7),
-                inset 0 2px 4px rgba(60,70,80,0.5),
-                inset 0 1px 0 rgba(180,190,200,0.4),
-                inset 0 -1px 0 rgba(90,100,110,0.6);
-            border: 2px solid rgba(160,170,180,0.9);
+                0 0 6px rgba(40,50,60,0.7),
+                inset 0 1px 2px rgba(20,30,40,0.5),
+                inset 0 1px 0 rgba(90,100,110,0.4),
+                inset 0 -1px 0 rgba(30,40,50,0.6);
+            border: 1px solid rgba(70,80,90,0.9);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
         }
 
         .energy-cursor::after {
@@ -617,21 +767,21 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background:
                 radial-gradient(circle,
-                    rgba(180,190,200,1) 0%,
-                    rgba(160,170,180,0.9) 40%,
-                    rgba(140,150,160,0.8) 70%,
-                    rgba(120,130,140,0.7) 100%);
+                    rgba(90,100,110,1) 0%,
+                    rgba(70,80,90,0.9) 40%,
+                    rgba(50,60,70,0.8) 70%,
+                    rgba(30,40,50,0.7) 100%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             box-shadow:
-                0 0 8px rgba(140,150,160,0.8),
-                0 0 16px rgba(130,140,150,0.5),
-                inset 0 1px 2px rgba(100,110,120,0.5);
-            animation: gearRotate 4s linear infinite;
+                0 0 4px rgba(50,60,70,0.8),
+                0 0 8px rgba(40,50,60,0.5),
+                inset 0 1px 1px rgba(20,30,40,0.5);
+            animation: gearRotate 3s linear infinite;
         }
 
         @keyframes gearRotate {
@@ -701,35 +851,35 @@
                     rgba(45,50,55,0.98) 30%,
                     rgba(65,70,75,0.96) 70%,
                     rgba(55,60,65,0.97) 100%);
-            border: 2px solid rgba(100,110,120,0.9);
-            border-radius: 10px;
-            padding: 6px 12px;
+            border: 1px solid rgba(100,110,120,0.9);
+            border-radius: 6px;
+            padding: 4px 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow:
-                0 4px 16px rgba(0,0,0,0.6),
-                inset 0 2px 6px rgba(35,40,45,0.4),
+                0 2px 8px rgba(0,0,0,0.6),
+                inset 0 1px 3px rgba(35,40,45,0.4),
                 inset 0 1px 0 rgba(130,140,150,0.3),
                 inset 0 -1px 0 rgba(25,30,35,0.5),
-                0 0 20px rgba(80,90,100,0.3);
+                0 0 10px rgba(80,90,100,0.3);
             position: relative;
         }
 
         .readout-screen::before {
             content: '';
             position: absolute;
-            top: 4px;
-            left: 4px;
-            right: 4px;
-            bottom: 4px;
-            border: 2px solid rgba(120,130,140,0.7);
-            border-radius: 6px;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            border: 1px solid rgba(120,130,140,0.7);
+            border-radius: 3px;
             pointer-events: none;
             box-shadow:
-                inset 0 2px 4px rgba(35,40,45,0.5),
+                inset 0 1px 2px rgba(35,40,45,0.5),
                 inset 0 1px 0 rgba(150,160,170,0.3),
-                0 0 12px rgba(100,110,120,0.2);
+                0 0 6px rgba(100,110,120,0.2);
         }
 
         .readout-label {
@@ -3120,6 +3270,14 @@
                 let startX = 0;
                 let currentX = 0;
 
+                // Create a segment highlight overlay to emphasize hovered segments
+                let segmentHighlight = energyField.querySelector('.segment-highlight');
+                if (!segmentHighlight) {
+                    segmentHighlight = document.createElement('div');
+                    segmentHighlight.className = 'segment-highlight';
+                    energyField.appendChild(segmentHighlight);
+                }
+
                 const getFieldWidth = () => energyField.offsetWidth;
                 const markerSpacing = () => (getFieldWidth() - 24) / 11; // 12 markers, 11 intervals, 12px padding on each side, 10px padding on each side
 
@@ -3184,12 +3342,29 @@
                 });
             }
 
-            // Wire zodiac markers for direct lagna selection
+                // Wire zodiac markers for direct lagna selection
             document.querySelectorAll('.lagna-energy-selector .zodiac-marker').forEach(marker => {
                 marker.addEventListener('click', () => {
                     const lagna = parseInt(marker.dataset.lagna);
                     rotateLagna(lagna);
                 });
+                    // Hover highlights the entire section for clarity
+                    marker.addEventListener('mouseenter', () => {
+                        const spacing = markerSpacing();
+                        const idx = parseInt(marker.dataset.lagna || '1', 10) - 1;
+                        const leftEdge = Math.max(12, 12 + (idx * spacing) - (spacing / 2));
+                        const widthEdge = spacing;
+                        segmentHighlight.style.left = `${leftEdge}px`;
+                        segmentHighlight.style.width = `${Math.max(10, widthEdge)}px`;
+                        segmentHighlight.style.display = 'block';
+                    });
+                    marker.addEventListener('mouseleave', () => {
+                        // Keep it visible if this marker is active; hide otherwise
+                        const lagna = parseInt(marker.dataset.lagna || '0', 10);
+                        if (lagna !== currentLagna) {
+                            segmentHighlight.style.display = 'none';
+                        }
+                    });
             });
 
             // Wire stellar field interactions
@@ -3363,6 +3538,18 @@
             saveLagnaToStorage();
             updateLagnaInfo();
             updateGearDial();
+            // Update segment highlight to the selected segment
+            const field = document.querySelector('.lagna-energy-selector .energy-field');
+            const highlight = document.querySelector('.lagna-energy-selector .segment-highlight');
+            if (field && highlight) {
+                const fieldWidth = field.offsetWidth;
+                const spacing = (fieldWidth - 24) / 11;
+                const idx = currentLagna - 1;
+                const leftEdge = Math.max(12, 12 + (idx * spacing) - (spacing / 2));
+                highlight.style.left = `${leftEdge}px`;
+                highlight.style.width = `${Math.max(10, spacing)}px`;
+                highlight.classList.add('active');
+            }
             // Debug: directly update readout
             const readout = document.getElementById('lagna-readout');
             if (readout) {
