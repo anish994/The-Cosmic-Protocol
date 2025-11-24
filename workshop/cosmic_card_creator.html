@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Cosmic Card Creator - Jotysh Engine</title>
+    <!-- NOTE: Lagna selector replaced with sleek mechanical slider (see workshop/test .html) -->
     <style>
         :root {
             --bg-dark: #050508;
@@ -1389,6 +1390,8 @@
             transition: transform var(--anim-medium) var(--easing-smooth);
             transform-origin: center center;
             perspective: 900px;
+            /* fractional offset set by lagna slider for fluid transitions */
+            --lagna-offset: 0;
         }
         .vedic-chart:hover { box-shadow: 0 20px 70px rgba(109,40,217,0.08), inset 0 0 40px rgba(139,92,246,0.03); }
 
@@ -1408,6 +1411,21 @@
             transform: translateZ(0);
             will-change: transform, border-color, box-shadow;
         }
+
+        /* soft micro-shift on sign indicators when lagna slider is moving (fractional progress) */
+        .house .sign-indicator { transition: transform 120ms var(--easing-smooth), filter 120ms var(--easing-smooth); transform: translateY(calc(var(--lagna-offset) * -6px)); filter: blur(calc(var(--lagna-offset) * 0.2px)); }
+        .house { --house-offset: 0; }
+        .house .sign-indicator { transform: translateY(calc(var(--house-offset) * -12px)); opacity: calc(0.75 + var(--house-offset) * 0.25); }
+
+        /* Crossfade between current and next sign/logo while slider moves */
+        .sign-logo .sign-current, .sign-logo .sign-next, .sign-label .sign-current, .sign-label .sign-next{
+            position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; transition: opacity 120ms var(--easing-smooth), transform 120ms var(--easing-smooth);
+        }
+        .sign-logo .sign-current{opacity:calc(1 - var(--house-offset)); transform: translateY(calc(var(--house-offset) * -6px));}
+        .sign-logo .sign-next{opacity:calc(var(--house-offset)); transform: translateY(calc((1 - var(--house-offset)) * 6px));}
+        .sign-label .sign-current{opacity:calc(1 - var(--house-offset)); transform: translateY(calc(var(--house-offset) * -4px)); font-weight:700}
+        .sign-label .sign-next{opacity:calc(var(--house-offset)); transform: translateY(calc((1 - var(--house-offset)) * 4px)); font-weight:700}
+        .sign-logo, .sign-label{position:relative; min-height:1.0rem;}
 
         .house[data-element="fire"] { border-color: rgba(255,140,0,0.45); box-shadow: 0 0 10px rgba(255,140,0,0.15); }
         .house[data-element="earth"] { border-color: rgba(107,142,35,0.45); box-shadow: 0 0 10px rgba(107,142,35,0.15); }
@@ -2417,33 +2435,48 @@
             </div>
             <div class="panel-content">
                     <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:0.8rem;">
-                        <div class="lagna-energy-selector">
-                            <label for="lagna-selector">Ascendant</label>
-                            <div class="energy-field-container">
-                                <div class="energy-field">
-                                    <div class="zodiac-markers">
-                                        <div class="zodiac-marker marker-1" data-lagna="1" data-symbol="♈"></div>
-                                        <div class="zodiac-marker marker-2" data-lagna="2" data-symbol="♉"></div>
-                                        <div class="zodiac-marker marker-3" data-lagna="3" data-symbol="♊"></div>
-                                        <div class="zodiac-marker marker-4" data-lagna="4" data-symbol="♋"></div>
-                                        <div class="zodiac-marker marker-5" data-lagna="5" data-symbol="♌"></div>
-                                        <div class="zodiac-marker marker-6" data-lagna="6" data-symbol="♍"></div>
-                                        <div class="zodiac-marker marker-7" data-lagna="7" data-symbol="♎"></div>
-                                        <div class="zodiac-marker marker-8" data-lagna="8" data-symbol="♏"></div>
-                                        <div class="zodiac-marker marker-9" data-lagna="9" data-symbol="♐"></div>
-                                        <div class="zodiac-marker marker-10" data-lagna="10" data-symbol="♑"></div>
-                                        <div class="zodiac-marker marker-11" data-lagna="11" data-symbol="♒"></div>
-                                        <div class="zodiac-marker marker-12" data-lagna="12" data-symbol="♓"></div>
-                                    </div>
-                                    <div class="energy-cursor"></div>
-                                </div>
-                                <div class="energy-readout">
-                                    <div class="readout-screen">
-                                        <span class="readout-label">ASCENDANT</span>
-                                        <span class="readout-value" id="lagna-readout">ARIES</span>
-                                    </div>
-                                </div>
+                        <!-- Lagna Slider: sleek mechanical replacement for gear-dial -->
+                        <div id="lagna-slider-casing" class="lagna-slider-casing" aria-label="Ascendant Slider">
+                            <!-- decorative mechanical screws -->
+                            <div id="lagna-s1" class="screw"></div>
+                            <div id="lagna-s2" class="screw"></div>
+                            <div id="lagna-s3" class="screw"></div>
+                            <div id="lagna-s4" class="screw"></div>
+
+                            <div id="lagna-slider-track" class="lagna-slider-track" tabindex="0" role="listbox" aria-label="Ascendant slider track">
+                                <div id="lagna-ruler-top" class="lagna-ruler ruler"></div>
+                                <div id="lagna-ruler-bottom" class="lagna-ruler ruler lag-bottom"></div>
+                                <div id="lagna-fixed-needle" class="lagna-fixed-needle" aria-hidden="true"></div>
+                                <div id="lagna-marker" class="lagna-marker" style="transition: transform 0.08s linear;"></div>
+                                <div id="lagna-zodiac-container" class="lagna-zodiac-container"></div>
                             </div>
+
+                            <div class="gear-dial-readout">
+                                <span class="readout-label">ASCENDANT</span>
+                                <span class="readout-value" id="lagna-readout">ARIES</span>
+                            </div>
+
+                                                        <style>
+                                                                /* Scoped slider styles (mechanical, sleek)
+                                                                     NOTE: Replaced older ascend/gear-dial with this mechanical slider per design change. See workshop/test .html for original reference.
+                                                                 */
+                                .lagna-slider-casing{width:100%;height:66px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));border:1px solid rgba(100,110,120,0.14);position:relative;padding:6px 10px;box-shadow:inset 0 1px 2px rgba(255,255,255,0.02);}
+                                .lagna-slider-track{position:relative;height:54px;width:100%;border-radius:6px;background:linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.6));box-shadow:inset 0 0 8px rgba(0,0,0,0.8);overflow:hidden;margin:0 6px}
+                                .lagna-slider-track:focus{outline:none;box-shadow:0 0 0 4px rgba(109,40,217,0.06)}
+                                .lagna-zodiac-container{height:100%;position:absolute;left:12px;display:flex;flex-direction:row;width:calc(12 * 70px);}
+                                .lagna-zodiac-container .zodiac-item{width:70px;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:rgba(140,150,160,0.8);position:absolute;transition:all 0.2s;cursor:pointer}
+                                .lagna-zodiac-container .zodiac-item.active{color:var(--accent-glow);font-size:1.8rem;text-shadow:0 0 8px var(--accent-glow)}
+                                .lagna-marker{position:absolute;left:0;top:0;bottom:0;width:70px;background:linear-gradient(90deg, rgba(109,40,217,0.04), rgba(109,40,217,0.02));border:1px solid rgba(139,92,246,0.14);box-shadow:0 0 6px rgba(109,40,217,0.05);z-index:12;border-radius:4px}
+                                .lagna-marker.snapping{transition:transform 0.39s cubic-bezier(0.19, 1, 0.22, 1)}
+                                .lagna-fixed-needle{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg, transparent, var(--accent-glow), transparent);transform:translateX(-50%);pointer-events:none;z-index:11}
+                                .ruler{position:absolute;height:3px;width:100%;left:0;opacity:0.2;background-image:repeating-linear-gradient(to right,#888 0px,#888 1px,transparent 1px,transparent 10px)}
+                                .lagna-ruler{top:0}
+                                .lagna-ruler.lag-bottom{bottom:0}
+                                .screw{width:5px;height:5px;background:#444;border-radius:50%;position:absolute;border:1px solid rgba(0,0,0,0.5)}
+                                #lagna-s1{top:6px;left:6px}#lagna-s2{top:6px;right:6px}#lagna-s3{bottom:6px;left:6px}#lagna-s4{bottom:6px;right:6px}
+                                /* Responsive tweaks */
+                                @media (max-width:760px){.lagna-zodiac-container .zodiac-item{width:56px;font-size:1rem}.lagna-marker{width:56px}}
+                            </style>
                         </div>
                         <div class="nakshatra-stellar-navigator">
                             <label for="nakshatra-navigator">Nakshatra</label>
@@ -3561,6 +3594,8 @@
             // renderVedicChart();
             // Trigger per-house content updates rather than rotating the entire chart
             animateHouseContentChangeForAll(previous, currentLagna);
+            // Notify external components (like the lagna slider) that the lagna changed
+            try { window.dispatchEvent(new CustomEvent('lagna-rotated', { detail: { lagna: currentLagna } })); } catch (e) { /* ignore */ }
         }
 
         function updateLagnaInfo() {
@@ -3665,8 +3700,14 @@
                                 <div class="house-word">House</div>
                             </div>
                             <div class="sign-indicator" data-element="${sign.element.toLowerCase()}">
-                                <div class="sign-logo">${getSignSymbol(sign.sign)}</div>
-                                <div class="sign-label">${getSignShortName(sign.sign)}</div>
+                                <div class="sign-logo">
+                                    <span class="sign-current">${getSignSymbol(sign.sign)}</span>
+                                    <span class="sign-next" aria-hidden="true"></span>
+                                </div>
+                                <div class="sign-label">
+                                    <span class="sign-current">${getSignShortName(sign.sign)}</span>
+                                    <span class="sign-next" aria-hidden="true"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3733,10 +3774,28 @@
                     // Update the sign content after a brief delay
                     setTimeout(() => {
                         signIndicator.setAttribute('data-element', newSign.element.toLowerCase());
-                        signIndicator.innerHTML = `
-                            <div class="sign-logo">${getSignSymbol(newSign.sign)}</div>
-                            <div class="sign-label">${getSignShortName(newSign.sign)}</div>
-                        `;
+                        // Update existing current/next sign slots if present, otherwise fallback to replace
+                        const lCurrent = signIndicator.querySelector('.sign-logo .sign-current');
+                        const lNext = signIndicator.querySelector('.sign-logo .sign-next');
+                        const lblCurrent = signIndicator.querySelector('.sign-label .sign-current');
+                        const lblNext = signIndicator.querySelector('.sign-label .sign-next');
+                        if (lCurrent && lblCurrent) {
+                            lCurrent.textContent = getSignSymbol(newSign.sign);
+                            lblCurrent.textContent = getSignShortName(newSign.sign);
+                            if (lNext) lNext.textContent = '';
+                            if (lblNext) lblNext.textContent = '';
+                        } else {
+                            signIndicator.innerHTML = `
+                                <div class="sign-logo">
+                                    <span class="sign-current">${getSignSymbol(newSign.sign)}</span>
+                                    <span class="sign-next" aria-hidden="true"></span>
+                                </div>
+                                <div class="sign-label">
+                                    <span class="sign-current">${getSignShortName(newSign.sign)}</span>
+                                    <span class="sign-next" aria-hidden="true"></span>
+                                </div>
+                            `;
+                        }
                         signIndicator.classList.remove('sign-transitioning');
                     }, 150);
                 }
@@ -4164,6 +4223,190 @@
             }
         }
 
+        // === Lagna Slider initializer ===
+        function initLagnaSlider() {
+            const track = document.getElementById('lagna-slider-track');
+            const container = document.getElementById('lagna-zodiac-container');
+            const marker = document.getElementById('lagna-marker');
+            const readout = document.getElementById('lagna-readout');
+            if (!track || !container || !marker) return;
+
+            const ITEM_WIDTH = 70;
+            const TOTAL_ITEMS = (Array.isArray(LAGNA_NAMES) && LAGNA_NAMES.length) ? LAGNA_NAMES.length : 12;
+            const CYCLE_WIDTH = ITEM_WIDTH * TOTAL_ITEMS;
+            const TRACK_PADDING = 12; // matches CSS left offset
+
+            // Setup container
+            container.style.left = `${TRACK_PADDING}px`;
+            container.style.width = `${CYCLE_WIDTH}px`;
+
+            // Render signs
+            container.innerHTML = '';
+            LAGNA_NAMES.forEach((l, idx) => {
+                const short = l.sign.split(' ')[0];
+                const symbol = (typeof getSignSymbol === 'function') ? getSignSymbol(l.sign) : (l.sign.match(/[♈-♓]/u) || [''])[0];
+                const div = document.createElement('div');
+                div.className = 'zodiac-item';
+                div.style.left = `${idx * ITEM_WIDTH}px`;
+                div.innerHTML = symbol || short;
+                div.setAttribute('data-index', idx);
+                div.setAttribute('role', 'option');
+                div.addEventListener('click', () => snapToPosition(idx));
+                container.appendChild(div);
+            });
+
+            const items = Array.from(container.querySelectorAll('.zodiac-item'));
+
+            let markerX = TRACK_PADDING;
+            let isDragging = false;
+            let startX = 0;
+            let startMarkerX = 0;
+            let lastFractionalMain = 0;
+
+            function getSelectedIndex(currentMarkerX) {
+                let contentPos = currentMarkerX - TRACK_PADDING;
+                while (contentPos >= CYCLE_WIDTH) contentPos -= CYCLE_WIDTH;
+                while (contentPos < 0) contentPos += CYCLE_WIDTH;
+                const trueIndex = Math.floor(contentPos / ITEM_WIDTH);
+                return Math.min(Math.max(trueIndex, 0), TOTAL_ITEMS - 1);
+            }
+
+            function getFractional(markerX) {
+                let contentPos = markerX - TRACK_PADDING;
+                while (contentPos >= CYCLE_WIDTH) contentPos -= CYCLE_WIDTH;
+                while (contentPos < 0) contentPos += CYCLE_WIDTH;
+                const fractional = contentPos / ITEM_WIDTH; // e.g., 0..12
+                return { floor: Math.floor(fractional), fraction: fractional - Math.floor(fractional) };
+            }
+
+            function updateVisuals() {
+                const f = getFractional(markerX);
+                const idx = f.floor;
+                // Apply fractional offset as a CSS variable on the vedic chart
+                const vedicChart = document.getElementById('vedic-chart');
+                if (vedicChart) vedicChart.style.setProperty('--lagna-offset', f.fraction.toString());
+
+                // Update per-house fractional offset for a more granular reaction across the chart
+                if (vedicChart) {
+                    HOUSES.forEach(house => {
+                        const houseEl = vedicChart.querySelector(`.house[data-house-id='${house.id}']`);
+                        if (!houseEl) return;
+                        const fractionalLagna = (markerX - TRACK_PADDING) / ITEM_WIDTH; // raw fractional
+                        let houseFloat = ((house.id - 1) + fractionalLagna) % 12;
+                        if (houseFloat < 0) houseFloat += 12;
+                        const houseFrac = (houseFloat - Math.floor(houseFloat));
+                        houseEl.style.setProperty('--house-offset', houseFrac.toString());
+                        // Compute and set sign-current and sign-next for crossfade
+                        const oldSignIndex = (house.id - 1 + idx) % 12;
+                        let direction = (f.fraction - lastFractionalMain);
+                        // normalize direction between -1..1
+                        direction = Math.sign(direction) || 1;
+                        const nextSignIndex = ((oldSignIndex + (direction >= 0 ? 1 : -1)) + 12) % 12;
+                        const signLogoCurrent = houseEl.querySelector('.sign-logo .sign-current');
+                        const signLogoNext = houseEl.querySelector('.sign-logo .sign-next');
+                        const signLabelCurrent = houseEl.querySelector('.sign-label .sign-current');
+                        const signLabelNext = houseEl.querySelector('.sign-label .sign-next');
+                        if (signLogoCurrent) signLogoCurrent.textContent = getSignSymbol(LAGNA_NAMES[oldSignIndex].sign);
+                        if (signLogoNext) signLogoNext.textContent = getSignSymbol(LAGNA_NAMES[nextSignIndex].sign);
+                        if (signLabelCurrent) signLabelCurrent.textContent = getSignShortName(LAGNA_NAMES[oldSignIndex].sign);
+                        if (signLabelNext) signLabelNext.textContent = getSignShortName(LAGNA_NAMES[nextSignIndex].sign);
+                    });
+                }
+                items.forEach((it, i) => it.classList.toggle('active', i === idx));
+                if (readout) readout.textContent = LAGNA_NAMES[idx].sign.split(' ')[0].toUpperCase();
+                if (currentLagna !== idx + 1) {
+                    currentLagna = idx + 1;
+                    if (typeof rotateLagna === 'function') rotateLagna(currentLagna);
+                    window.dispatchEvent(new CustomEvent('lagnachange', { detail: { index: currentLagna, data: LAGNA_NAMES[idx] } }));
+                }
+                marker.style.transform = `translateX(${markerX}px)`;
+                // update lastFractionalMain for direction detection
+                lastFractionalMain = f.fraction;
+            }
+
+            function loopCheck(currentX) {
+                const minX = TRACK_PADDING - (ITEM_WIDTH / 2);
+                const maxX = TRACK_PADDING + CYCLE_WIDTH + (ITEM_WIDTH / 2);
+                let jumpedX = currentX;
+                let shouldJump = false;
+                if (currentX >= maxX) { jumpedX -= CYCLE_WIDTH; shouldJump = true; }
+                if (currentX < minX) { jumpedX += CYCLE_WIDTH; shouldJump = true; }
+                if (shouldJump) marker.style.transition = 'none';
+                return jumpedX;
+            }
+
+            function snapToPosition(targetIndex = null) {
+                marker.classList.add('snapping');
+                let finalIndex = targetIndex !== null ? targetIndex : getSelectedIndex(markerX);
+                const targetXBase = TRACK_PADDING + (finalIndex * ITEM_WIDTH);
+                let correctedTargetX = targetXBase;
+                let diff = correctedTargetX - markerX;
+                if (diff < -(CYCLE_WIDTH / 2)) correctedTargetX += CYCLE_WIDTH;
+                else if (diff > (CYCLE_WIDTH / 2)) correctedTargetX -= CYCLE_WIDTH;
+                markerX = correctedTargetX;
+                updateVisuals();
+                setTimeout(() => {
+                    marker.classList.remove('snapping');
+                    let normalizedX = markerX;
+                    while (normalizedX >= TRACK_PADDING + CYCLE_WIDTH) normalizedX -= CYCLE_WIDTH;
+                    while (normalizedX < TRACK_PADDING) normalizedX += CYCLE_WIDTH;
+                    markerX = normalizedX;
+                    marker.style.transition = 'transform 0.08s linear';
+                    updateVisuals();
+                }, 400);
+            }
+
+            function handleStart(clientX) { isDragging = true; startX = clientX; startMarkerX = markerX; marker.classList.remove('snapping'); marker.style.cursor = 'grabbing'; marker.style.transition = 'transform 0.08s linear'; }
+            function handleMove(clientX) { if (!isDragging) return; const deltaX = clientX - startX; let newX = startMarkerX + deltaX; newX = loopCheck(newX); markerX = newX; updateVisuals(); }
+            function handleEnd() { if (!isDragging) return; isDragging = false; marker.style.cursor = 'grab'; snapToPosition(null); }
+
+            marker.addEventListener('mousedown', (e) => { e.preventDefault(); handleStart(e.clientX); });
+            document.addEventListener('mousemove', (e) => { if (isDragging) e.preventDefault(); handleMove(e.clientX); }); document.addEventListener('mouseup', handleEnd);
+            marker.addEventListener('touchstart', (e) => { e.preventDefault(); handleStart(e.touches[0].clientX); }, { passive: false });
+            document.addEventListener('touchmove', (e) => handleMove(e.touches[0].clientX), { passive: false }); document.addEventListener('touchend', handleEnd); document.addEventListener('touchcancel', handleEnd);
+
+            // Keyboard navigation on the track (left/right) for accessibility
+            track.addEventListener('keydown', (e) => {
+                const activeIndex = items.findIndex(it => it.classList.contains('active'));
+                if (e.key === 'ArrowRight' || e.key === 'Right') {
+                    const next = items[activeIndex + 1] || items[0];
+                    if (next) snapToPosition(parseInt(next.dataset.index, 10));
+                    e.preventDefault();
+                } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                    const prev = items[activeIndex - 1] || items[items.length - 1];
+                    if (prev) snapToPosition(parseInt(prev.dataset.index, 10));
+                    e.preventDefault();
+                }
+            });
+
+            let wheelTimeout;
+            track.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                marker.classList.remove('snapping');
+                const rawScroll = e.deltaX !== 0 ? e.deltaX : e.deltaY;
+                const scrollAmount = rawScroll * 0.35;
+                let newX = markerX + scrollAmount;
+                newX = loopCheck(newX);
+                markerX = newX;
+                updateVisuals();
+                clearTimeout(wheelTimeout);
+                wheelTimeout = setTimeout(() => snapToPosition(null), 150);
+                marker.style.transition = 'transform 0.08s linear';
+            }, { passive: false });
+
+            // Sync with external lagna changes
+            window.addEventListener('lagna-rotated', (e) => {
+                if (!e?.detail?.lagna) return;
+                const idx = parseInt(e.detail.lagna, 10) - 1;
+                if (!isNaN(idx)) snapToPosition(idx);
+            });
+
+            // Initialize to currentLagna position
+            markerX = TRACK_PADDING + ((currentLagna - 1) * ITEM_WIDTH);
+            marker.style.transform = `translateX(${markerX}px)`;
+            updateVisuals();
+        }
+
         // === INITIALIZATION ===
         console.log('🚀 Cosmic Card Creator initialized');
         console.log('📱 Viewport:', window.innerWidth, 'x', window.innerHeight);
@@ -4175,6 +4418,8 @@
             loadOwnedSkills();
             checkAchievements();
             initJotyshEngine();
+            // Initialize the new Lagna Slider
+            if (typeof initLagnaSlider === 'function') initLagnaSlider();
             
             // Start ambient sound on first user interaction
             document.body.addEventListener('click', () => {

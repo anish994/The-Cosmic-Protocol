@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Zodiac Instrument</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define Sleek/Matte Tool Colors */
+        :root {
+            --silver-matte: #c0c0c0;
+            --silver-shine: #f0f0f0;
+            --cool-glow: #99eeff; /* Light blue/cyan for modern tech look */
+            --off-black: #0d1117;
+        }
+
+        /* Base styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-black); 
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            user-select: none;
+            cursor: default; 
+        }
+
+        /* The main horizontal structure (The Sleek Matte Casing) */
+        #slider-casing {
+            width: 900px; 
+            height: 60px; /* Thinner profile */
+            border-radius: 6px;
+            /* Matte Silver Look - very subtle depth */
+            background: linear-gradient(90deg, var(--silver-matte) 0%, #e0e0e0 50%, var(--silver-matte) 100%);
+            /* Solid 2.5D, lightweight shadow */
+            box-shadow: 
+                0 0 15px rgba(153, 238, 255, 0.05), /* Subtle outer cool glow */
+                0 3px 8px rgba(0, 0, 0, 0.4), /* Reduced lift shadow */
+                inset 0 0 5px rgba(255, 255, 255, 0.3); /* Soft inner surface highlight */
+            
+            position: relative;
+            padding: 5px 15px; 
+            border: 1px solid #a0a0a0; 
+            display: flex; 
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px; 
+        }
+
+        /* --- Mechanical Details (Subtle Recessed Screws) --- */
+        .screw {
+            width: 4px; /* Smaller */
+            height: 4px;
+            background: #555; 
+            border: 1px solid #777;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+            z-index: 20;
+            border-radius: 50%; 
+            position: absolute; 
+        }
+        .screw::before {
+            content: none; 
+        }
+        #s1 { top: 6px; left: 6px; }
+        #s2 { top: 6px; right: 6px; }
+        #s3 { bottom: 6px; left: 6px; }
+        #s4 { bottom: 6px; right: 6px; }
+        /* --------------------------------------------------- */
+
+        /* The Track (Central Mechanism) */
+        #slider-track {
+            position: relative;
+            height: 50px; 
+            width: 100%; 
+            border-radius: 4px;
+            background: #1a1a1a; /* Dark track for contrast */
+            /* Recessed, smooth look */
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.9);
+            overflow: hidden; 
+            margin: 0 10px;
+        }
+
+        /* Container for all Zodiac Signs (FIXED CONTENT) */
+        #zodiac-container {
+            height: 100%;
+            position: absolute; 
+            left: 30px; 
+            width: 840px; /* 12 * 70px */
+            display: flex; 
+            flex-direction: row;
+            transition: none; 
+        }
+        
+        /* Individual Zodiac Element */
+        .zodiac-item {
+            width: 70px; 
+            height: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem; 
+            color: #444; 
+            position: absolute; 
+            transition: color 0.3s, font-size 0.3s;
+            cursor: pointer; /* Indicate clickability */
+        }
+
+        /* Highlighted/Selected Zodiac Element */
+        .zodiac-item.active {
+            color: var(--cool-glow); 
+            font-size: 2.2rem; 
+            text-shadow: 0 0 6px var(--cool-glow), 0 0 12px rgba(153, 238, 255, 0.6);
+        }
+
+        /* The MOVING SELECTOR BOX */
+        #marker {
+            position: absolute;
+            left: 0; 
+            top: 0;
+            bottom: 0;
+            width: 70px; 
+            background: rgba(153, 238, 255, 0.05); 
+            border: 1px solid var(--cool-glow); 
+            box-shadow: 0 0 8px var(--cool-glow);
+            transform: translateX(0); 
+            z-index: 20; 
+            border-radius: 4px;
+            /* Allow the marker itself to be the drag target */
+            cursor: grab; 
+        }
+        #marker.snapping {
+            /* Increased duration and smooth cubic-bezier for a premium settling feel */
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); 
+        }
+
+        /* The Fixed Needle (Center reference) */
+        #fixed-needle {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px; 
+            background: #555; 
+            transform: translateX(-50%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Subtle ticks/rulers */
+        .ruler {
+            position: absolute;
+            height: 3px; 
+            width: 100%;
+            left: 0;
+            opacity: 0.4;
+            pointer-events: none;
+            background-image: repeating-linear-gradient(to right, 
+                #888 0px, 
+                #888 1px, 
+                transparent 1px, 
+                transparent 10px); 
+        }
+        #ruler-top { top: 0; }
+        #ruler-bottom { bottom: 0; }
+
+        /* --- Lagna Display Below Slider --- */
+        #lagna-display {
+            width: 300px; 
+            height: 40px;
+            background-color: #1a1a1a; 
+            border: 1px solid var(--cool-glow);
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(153, 238, 255, 0.5), inset 0 0 5px rgba(153, 238, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lagna-name {
+            color: var(--cool-glow);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 0 0 5px var(--cool-glow);
+            letter-spacing: 3px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="slider-casing">
+        <!-- Mechanical details (Subtle Screws) -->
+        <div id="s1" class="screw"></div>
+        <div id="s2" class="screw"></div>
+        <div id="s3" class="screw"></div>
+        <div id="s4" class="screw"></div>
+
+        <div id="slider-track">
+            <div id="ruler-top" class="ruler"></div>
+            <div id="ruler-bottom" class="ruler"></div>
+
+            <!-- New Fixed Needle for center reference -->
+            <div id="fixed-needle"></div> 
+
+            <!-- #marker is now the MOVING SELECTOR BOX -->
+            <div id="marker" style="transition: transform 0.08s linear;"></div>
+
+            <!-- #zodiac-container holds the FIXED signs -->
+            <div id="zodiac-container">
+                <!-- Zodiac items will be injected here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lagna Name Display below the tool -->
+    <div id="lagna-display">
+        <span id="lagna-name">LAGNA: ARIES</span>
+    </div>
+
+    <script>
+        const zodiacSigns = [
+            { name: "Aries", symbol: "♈" },
+            { name: "Taurus", symbol: "♉" },
+            { name: "Gemini", symbol: "♊" },
+            { name: "Cancer", symbol: "♋" },
+            { name: "Leo", symbol: "♌" },
+            { name: "Virgo", symbol: "♍" },
+            { name: "Libra", symbol: "♎" },
+            { name: "Scorpio", symbol: "♏" },
+            { name: "Sagittarius", symbol: "♐" },
+            { name: "Capricorn", symbol: "♑" },
+            { name: "Aquarius", symbol: "♒" },
+            { name: "Pisces", symbol: "♓" }
+        ];
+
+        const CONTAINER = document.getElementById('zodiac-container');
+        const TRACK = document.getElementById('slider-track');
+        const MARKER = document.getElementById('marker');
+        const LAGNA_NAME = document.getElementById('lagna-name');
+        
+        const ITEM_WIDTH = 70; 
+        const TOTAL_ITEMS = zodiacSigns.length;
+        const CYCLE_WIDTH = TOTAL_ITEMS * ITEM_WIDTH; // 840px
+        const TRACK_WIDTH = 900; // From CSS
+        const TRACK_START_PADDING = (TRACK_WIDTH - CYCLE_WIDTH) / 2; // 30px
+        
+        // markerX tracks the position of the selector's LEFT edge, relative to the track's left edge (0)
+        let markerX = 0; 
+        let isDragging = false;
+        let startX = 0; 
+        let startMarkerX = 0; 
+
+        // --- Core Slider Logic ---
+
+        /**
+         * Renders only the 12 signs, fixed and centered in the track, and attaches click handlers.
+         */
+        function renderZodiacs() {
+            // Set up static container position
+            CONTAINER.style.left = `${TRACK_START_PADDING}px`;
+            CONTAINER.style.width = `${CYCLE_WIDTH}px`;
+            
+            // Render the 12 signs
+            zodiacSigns.forEach((sign, index) => {
+                const div = document.createElement('div');
+                div.className = 'zodiac-item';
+                // Position each item absolutely within the static CONTAINER
+                div.style.left = `${index * ITEM_WIDTH}px`; 
+                div.innerHTML = sign.symbol;
+                
+                // Add click handler for direct selection
+                div.addEventListener('click', () => handleSignClick(index));
+
+                CONTAINER.appendChild(div);
+            });
+            
+            // Initialize markerX to the center of the first sign (Aries)
+            markerX = TRACK_START_PADDING; 
+            
+            updateVisuals();
+        }
+
+        /**
+         * Determines the selected sign based on the marker's X position.
+         * Note: This calculation is independent of the marker's visual loops/wrapping.
+         */
+        function getSelectedIndex(currentMarkerX) { 
+            // Normalize the position to be within the 0 to CYCLE_WIDTH range
+            let contentPos = currentMarkerX - TRACK_START_PADDING;
+
+            // Handle positive cycles
+            while (contentPos >= CYCLE_WIDTH) {
+                contentPos -= CYCLE_WIDTH;
+            }
+            // Handle negative cycles
+            while (contentPos < 0) {
+                contentPos += CYCLE_WIDTH;
+            }
+
+            // True index (0 to 11) based on the normalized content position
+            let trueIndex = Math.floor(contentPos / ITEM_WIDTH);
+            
+            return Math.min(Math.max(trueIndex, 0), TOTAL_ITEMS - 1);
+        }
+
+        /**
+         * Updates the marker position, highlight class, and the displayed name.
+         */
+        function updateVisuals() {
+            const trueIndex = getSelectedIndex(markerX);
+            
+            // Update selected name (Lagna)
+            LAGNA_NAME.textContent = `LAGNA: ${zodiacSigns[trueIndex].name.toUpperCase()}`;
+            
+            // Update active class on the fixed signs
+            document.querySelectorAll('.zodiac-item').forEach((item, index) => {
+                item.classList.toggle('active', index === trueIndex);
+            });
+            
+            // Move the marker (selector) using its calculated X position
+            MARKER.style.transform = `translateX(${markerX}px)`; 
+        }
+
+        /**
+         * Implements the seamless loop by instantly resetting markerX when it goes out of bounds.
+         */
+        function loopCheck(currentX) {
+            // Check slightly outside bounds to trigger jump before user notices the end
+            const minX = TRACK_START_PADDING - (ITEM_WIDTH / 2); 
+            const maxX = TRACK_START_PADDING + CYCLE_WIDTH + (ITEM_WIDTH / 2); 
+            
+            let shouldJump = false;
+            let jumpedX = currentX;
+
+            // If dragged past the end (too far right)
+            if (currentX >= maxX) { 
+                 // Reset to the start (minX equivalent)
+                jumpedX -= CYCLE_WIDTH;
+                shouldJump = true;
+            }
+            
+            // If dragged past the start (too far left)
+            if (currentX < minX) {
+                // Reset to the end (maxX equivalent)
+                jumpedX += CYCLE_WIDTH;
+                shouldJump = true;
+            }
+
+            if (shouldJump) {
+                // Temporarily disable CSS transition for the instant jump
+                MARKER.style.transition = 'none';
+            }
+
+            return jumpedX;
+        }
+
+        /**
+         * Snaps the marker to the center of the specified index or the nearest index,
+         * ensuring the shortest path is taken around the loop.
+         * @param {number | null} targetIndex - The desired zodiac index (0-11). If null, snap to nearest.
+         */
+        function snapToPosition(targetIndex = null) {
+            MARKER.classList.add('snapping');
+            
+            let finalIndex;
+            
+            if (targetIndex !== null) {
+                // Click interaction: Use the provided index
+                finalIndex = targetIndex;
+            } else {
+                // Drag/Scroll end: Calculate the nearest index based on current marker position
+                // We calculate index based on the center of the marker
+                finalIndex = getSelectedIndex(markerX + (ITEM_WIDTH / 2)); 
+            }
+
+            // 1. Calculate the target X position (left edge of the target sign) within the base range (30px to 870px)
+            const targetXBase = TRACK_START_PADDING + (finalIndex * ITEM_WIDTH);
+            
+            // 2. Determine the rotational equivalent of targetXBase that is closest to the current markerX
+            let correctedTargetX = targetXBase;
+            
+            // Calculate the difference between the base target and the current position
+            let diff = correctedTargetX - markerX;
+            
+            // Check if jumping one cycle right (adding CYCLE_WIDTH) is shorter
+            if (diff < -(CYCLE_WIDTH / 2)) {
+                correctedTargetX += CYCLE_WIDTH;
+            } 
+            // Check if jumping one cycle left (subtracting CYCLE_WIDTH) is shorter
+            else if (diff > (CYCLE_WIDTH / 2)) {
+                correctedTargetX -= CYCLE_WIDTH;
+            }
+
+            markerX = correctedTargetX;
+            
+            // 3. Set up the final transition (the smooth snap)
+            updateVisuals(); 
+            
+            // 4. After the smooth snap completes (0.4s), normalize markerX back into the base range 
+            // so the next drag/scroll starts from a clean state.
+            setTimeout(() => {
+                MARKER.classList.remove('snapping');
+                
+                let normalizedX = markerX;
+                while (normalizedX >= TRACK_START_PADDING + CYCLE_WIDTH) {
+                    normalizedX -= CYCLE_WIDTH;
+                }
+                while (normalizedX < TRACK_START_PADDING) {
+                    normalizedX += CYCLE_WIDTH;
+                }
+                markerX = normalizedX;
+                
+                // Set transition back to the quick drag speed
+                MARKER.style.transition = 'transform 0.08s linear';
+                updateVisuals(); 
+            }, 400); 
+        }
+
+        function handleSignClick(index) {
+            // Initiate snap to the specific index
+            snapToPosition(index);
+        }
+
+        // --- Event Handlers ---
+
+        function handleStart(clientX) { 
+            isDragging = true;
+            startX = clientX; 
+            startMarkerX = markerX; 
+            MARKER.classList.remove('snapping');
+            // Change the marker's cursor while being held
+            MARKER.style.cursor = 'grabbing'; 
+            MARKER.style.transition = 'transform 0.08s linear';
+        }
+
+        function handleMove(clientX) { 
+            if (!isDragging) return;
+
+            const deltaX = clientX - startX; 
+            let newX = startMarkerX + deltaX; 
+            
+            // Apply the instant loop jump (if we crossed the boundary)
+            newX = loopCheck(newX);
+            
+            markerX = newX; 
+            
+            updateVisuals();
+        }
+
+        function handleEnd() {
+            if (!isDragging) return;
+            isDragging = false;
+            // Restore default marker cursor
+            MARKER.style.cursor = 'grab';
+            // Snap to the nearest position (null means calculate nearest)
+            snapToPosition(null); 
+        }
+
+        // MOUSE DRAG START: Attaching only to the MARKER.
+        MARKER.addEventListener('mousedown', (e) => {
+            // Crucial: Prevent default actions (like text selection) immediately for successful drag.
+            e.preventDefault(); 
+            handleStart(e.clientX); 
+        });
+        
+        // MOUSE MOVE/END: Attached globally so drag continues even if mouse leaves the marker.
+        document.addEventListener('mousemove', (e) => {
+            // Prevent text selection while dragging
+            if (isDragging) e.preventDefault(); 
+            handleMove(e.clientX)
+        }); 
+        document.addEventListener('mouseup', handleEnd);
+
+        // TOUCH DRAG START: Attaching only to the MARKER.
+        MARKER.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            handleStart(e.touches[0].clientX); 
+        }, { passive: false });
+        
+        // TOUCH MOVE/END: Attached globally for continuous touch drag.
+        document.addEventListener('touchmove', (e) => handleMove(e.touches[0].clientX), { passive: false }); 
+        document.addEventListener('touchend', handleEnd);
+        document.addEventListener('touchcancel', handleEnd);
+
+        // WHEEL EVENT for scrolling: Attaching to document.body for scrolling from anywhere (global scroll).
+        document.body.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            MARKER.classList.remove('snapping');
+            
+            // Use deltaX for standard horizontal scroll, or deltaY for vertical wheel scroll as fallback.
+            const rawScroll = e.deltaX !== 0 ? e.deltaX : e.deltaY;
+            
+            // Increased sensitivity (0.35) for better control with vertical scrolling
+            const scrollAmount = rawScroll * 0.35; 
+            let newX = markerX + scrollAmount;
+
+            newX = loopCheck(newX);
+            
+            markerX = newX; 
+            
+            updateVisuals();
+
+            // Set a timeout to snap after scrolling stops
+            clearTimeout(window.snapTimeout);
+            // Snap to the nearest position (null)
+            window.snapTimeout = setTimeout(() => snapToPosition(null), 150);
+            
+            // Ensure the smooth drag transition is re-enabled if loopCheck disabled it
+            MARKER.style.transition = 'transform 0.08s linear';
+        });
+
+        // Initialize on window load
+        window.onload = renderZodiacs;
+    </script>
+
+</body>
+</html>
