@@ -269,20 +269,31 @@
             align-items: center;
             gap: 0.4rem;
             padding: 0.8rem 1.2rem;
-            background: linear-gradient(135deg,
-                rgba(45,50,55,0.98) 0%,
-                rgba(35,40,45,0.95) 30%,
-                rgba(55,60,65,0.97) 70%,
-                rgba(45,50,55,0.98) 100%);
-            border: 2px solid rgba(80,90,100,0.9);
-            border-radius: 10px;
+            background:
+                /* Base rocky texture */
+                radial-gradient(circle at 30% 30%, rgba(60,65,70,0.8) 0%, transparent 40%),
+                radial-gradient(circle at 70% 70%, rgba(50,55,60,0.7) 0%, transparent 40%),
+                radial-gradient(circle at 50% 20%, rgba(65,70,75,0.6) 0%, transparent 30%),
+                /* Silvery metallic base */
+                linear-gradient(135deg,
+                    rgba(70,75,80,0.95) 0%,
+                    rgba(55,60,65,0.98) 25%,
+                    rgba(75,80,85,0.96) 50%,
+                    rgba(60,65,70,0.97) 75%,
+                    rgba(70,75,80,0.95) 100%);
+            border: 2px solid rgba(110,120,130,0.9);
+            border-radius: 12px;
             position: relative;
             width: 100%;
             box-shadow:
-                0 6px 20px rgba(0,0,0,0.5),
-                inset 0 1px 0 rgba(120,130,140,0.3),
-                inset 0 -1px 0 rgba(20,25,30,0.5),
-                0 0 30px rgba(90,100,110,0.2);
+                /* Ancient stone shadows */
+                0 8px 24px rgba(0,0,0,0.6),
+                inset 0 2px 4px rgba(30,35,40,0.4),
+                inset 0 1px 0 rgba(140,150,160,0.4),
+                inset 0 -2px 0 rgba(25,30,35,0.6),
+                /* Silvery metallic glow */
+                0 0 40px rgba(120,130,140,0.3),
+                0 0 80px rgba(110,120,130,0.1);
             overflow: hidden;
         }
 
@@ -294,15 +305,31 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 20% 20%, rgba(100,110,120,0.2) 0%, transparent 60%),
-                radial-gradient(circle at 80% 80%, rgba(80,90,100,0.15) 0%, transparent 60%),
-                linear-gradient(135deg, rgba(120,130,140,0.1) 0%, transparent 50%, rgba(60,70,80,0.1) 100%),
+                /* Ancient crystalline patterns */
+                radial-gradient(circle at 15% 15%, rgba(130,140,150,0.3) 0%, transparent 25%),
+                radial-gradient(circle at 85% 85%, rgba(120,130,140,0.25) 0%, transparent 25%),
+                radial-gradient(circle at 45% 75%, rgba(135,145,155,0.2) 0%, transparent 20%),
+                radial-gradient(circle at 75% 25%, rgba(125,135,145,0.25) 0%, transparent 20%),
+                /* Rocky mineral veins */
+                linear-gradient(45deg,
+                    transparent 0%,
+                    rgba(110,120,130,0.15) 20%,
+                    transparent 40%,
+                    rgba(115,125,135,0.1) 60%,
+                    transparent 80%),
+                /* Silvery metallic sheen */
+                linear-gradient(135deg,
+                    rgba(150,160,170,0.1) 0%,
+                    transparent 30%,
+                    rgba(140,150,160,0.08) 70%,
+                    rgba(155,165,175,0.12) 100%),
+                /* Ancient stone texture */
                 repeating-linear-gradient(
                     45deg,
                     transparent,
-                    transparent 3px,
-                    rgba(90,100,110,0.05) 3px,
-                    rgba(90,100,110,0.05) 6px
+                    transparent 2px,
+                    rgba(100,110,120,0.08) 2px,
+                    rgba(100,110,120,0.08) 4px
                 );
             pointer-events: none;
         }
@@ -310,32 +337,42 @@
         .lagna-energy-selector::after {
             content: '';
             position: absolute;
-            top: 8px;
-            left: 8px;
-            right: 8px;
-            bottom: 8px;
-            border: 1px solid rgba(100,110,120,0.6);
-            border-radius: 6px;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(130,140,150,0.7);
+            border-radius: 8px;
             pointer-events: none;
-            box-shadow: inset 0 1px 2px rgba(20,25,30,0.3);
+            box-shadow:
+                inset 0 2px 4px rgba(25,30,35,0.5),
+                inset 0 1px 0 rgba(160,170,180,0.3),
+                inset 0 -1px 0 rgba(30,35,40,0.7),
+                0 0 20px rgba(140,150,160,0.2);
         }
 
         .lagna-energy-selector label {
-            font-weight: 600;
-            font-size: 0.7rem;
-            color: rgba(180,190,200,0.95);
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: rgba(200,210,220,0.98);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             white-space: nowrap;
             z-index: 2;
             text-shadow:
-                0 0 4px rgba(120,140,160,0.6),
-                0 1px 2px rgba(60,70,80,0.8);
+                0 0 6px rgba(140,150,160,0.8),
+                0 1px 3px rgba(70,80,90,0.9),
+                0 0 12px rgba(160,170,180,0.4);
             font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, rgba(160,170,180,0.9), rgba(140,150,160,0.8));
+            background: linear-gradient(135deg,
+                rgba(180,190,200,0.95) 0%,
+                rgba(200,210,220,1) 30%,
+                rgba(190,200,210,0.98) 70%,
+                rgba(180,190,200,0.95) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 0 8px rgba(160,170,180,0.3));
         }
 
         .energy-field-container {
@@ -352,68 +389,89 @@
             position: relative;
             width: 100%;
             height: 24px;
-            background: linear-gradient(135deg,
-                rgba(50,55,60,0.95) 0%,
-                rgba(40,45,50,0.98) 30%,
-                rgba(60,65,70,0.96) 70%,
-                rgba(50,55,60,0.95) 100%);
+            background:
+                /* Rocky ancient texture */
+                radial-gradient(circle at 25% 25%, rgba(55,60,65,0.9) 0%, transparent 35%),
+                radial-gradient(circle at 75% 75%, rgba(65,70,75,0.8) 0%, transparent 35%),
+                /* Silvery metallic base */
+                linear-gradient(135deg,
+                    rgba(75,80,85,0.96) 0%,
+                    rgba(60,65,70,0.98) 30%,
+                    rgba(85,90,95,0.97) 70%,
+                    rgba(75,80,85,0.96) 100%);
             border-radius: 12px;
-            border: 2px solid rgba(90,100,110,0.8);
+            border: 2px solid rgba(120,130,140,0.9);
             overflow: hidden;
             cursor: pointer;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow:
-                inset 0 2px 4px rgba(20,25,30,0.5),
-                inset 0 1px 0 rgba(120,130,140,0.4),
-                inset 0 -1px 0 rgba(30,35,40,0.6),
-                0 0 15px rgba(70,80,90,0.3);
+                inset 0 3px 6px rgba(25,30,35,0.6),
+                inset 0 1px 0 rgba(150,160,170,0.5),
+                inset 0 -2px 0 rgba(35,40,45,0.7),
+                0 0 20px rgba(100,110,120,0.4),
+                0 2px 12px rgba(0,0,0,0.5);
         }
 
         .energy-field::before {
             content: '';
             position: absolute;
-            top: -4px;
+            top: -6px;
             left: 0;
             right: 0;
-            height: 4px;
-            background: repeating-linear-gradient(
-                90deg,
-                rgba(110,120,130,0.9) 0px,
-                rgba(110,120,130,0.9) 2px,
-                transparent 2px,
-                transparent 6px
-            );
-            border-radius: 2px 2px 0 0;
-            box-shadow: 0 1px 2px rgba(40,50,60,0.4);
+            height: 6px;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(130,140,150,0.9) 0px,
+                    rgba(130,140,150,0.9) 2px,
+                    transparent 2px,
+                    transparent 8px
+                ),
+                linear-gradient(90deg,
+                    rgba(110,120,130,0.6) 0%,
+                    rgba(140,150,160,0.8) 50%,
+                    rgba(110,120,130,0.6) 100%);
+            border-radius: 3px 3px 0 0;
+            box-shadow:
+                0 2px 4px rgba(50,60,70,0.5),
+                inset 0 1px 0 rgba(160,170,180,0.4);
         }
 
         .energy-field::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             left: 0;
             right: 0;
-            height: 4px;
-            background: repeating-linear-gradient(
-                90deg,
-                rgba(90,100,110,0.8) 0px,
-                rgba(90,100,110,0.8) 2px,
-                transparent 2px,
-                transparent 6px
-            );
-            border-radius: 0 0 2px 2px;
-            box-shadow: 0 -1px 2px rgba(20,25,30,0.4);
+            height: 6px;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(110,120,130,0.8) 0px,
+                    rgba(110,120,130,0.8) 2px,
+                    transparent 2px,
+                    transparent 8px
+                ),
+                linear-gradient(90deg,
+                    rgba(100,110,120,0.5) 0%,
+                    rgba(130,140,150,0.7) 50%,
+                    rgba(100,110,120,0.5) 100%);
+            border-radius: 0 0 3px 3px;
+            box-shadow:
+                0 -2px 4px rgba(30,40,50,0.5),
+                inset 0 -1px 0 rgba(80,90,100,0.6);
         }
 
         .energy-field:hover {
-            transform: scale(1.01);
+            transform: scale(1.02);
             box-shadow:
-                inset 0 2px 6px rgba(25,30,35,0.6),
-                inset 0 1px 0 rgba(130,140,150,0.5),
-                inset 0 -1px 0 rgba(35,40,45,0.7),
-                0 0 20px rgba(90,100,110,0.5),
-                0 2px 8px rgba(0,0,0,0.4);
-            border-color: rgba(110,120,130,1);
+                inset 0 3px 8px rgba(30,35,40,0.7),
+                inset 0 1px 0 rgba(160,170,180,0.6),
+                inset 0 -2px 0 rgba(40,45,50,0.8),
+                0 0 30px rgba(120,130,140,0.6),
+                0 0 60px rgba(110,120,130,0.3),
+                0 4px 16px rgba(0,0,0,0.6);
+            border-color: rgba(140,150,160,1);
         }
 
         .zodiac-markers {
@@ -431,19 +489,23 @@
         .zodiac-marker {
             width: 3px;
             height: 16px;
-            background: linear-gradient(135deg,
-                rgba(90,100,110,0.95) 0%,
-                rgba(110,120,130,1) 30%,
-                rgba(100,110,120,0.98) 70%,
-                rgba(90,100,110,0.95) 100%);
+            background:
+                /* Rocky ancient texture */
+                radial-gradient(circle at 50% 30%, rgba(120,130,140,0.9) 0%, rgba(100,110,120,0.8) 100%),
+                /* Silvery metallic base */
+                linear-gradient(135deg,
+                    rgba(130,140,150,0.95) 0%,
+                    rgba(150,160,170,1) 30%,
+                    rgba(140,150,160,0.98) 70%,
+                    rgba(130,140,150,0.95) 100%);
             border-radius: 2px;
             position: relative;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             box-shadow:
-                0 1px 2px rgba(40,50,60,0.4),
-                inset 0 1px 0 rgba(130,140,150,0.3),
-                inset 0 -1px 0 rgba(60,70,80,0.5);
+                0 2px 4px rgba(50,60,70,0.5),
+                inset 0 1px 0 rgba(160,170,180,0.4),
+                inset 0 -1px 0 rgba(80,90,100,0.6);
             clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
         }
 
@@ -470,16 +532,20 @@
         }
 
         .zodiac-marker.active {
-            background: linear-gradient(135deg,
-                rgba(130,140,150,1) 0%,
-                rgba(150,160,170,1) 30%,
-                rgba(140,150,160,0.98) 70%,
-                rgba(130,140,150,1) 100%);
+            background:
+                /* Enhanced rocky ancient texture */
+                radial-gradient(circle at 50% 25%, rgba(160,170,180,1) 0%, rgba(140,150,160,0.9) 100%),
+                /* Premium silvery metallic */
+                linear-gradient(135deg,
+                    rgba(170,180,190,1) 0%,
+                    rgba(190,200,210,1) 30%,
+                    rgba(180,190,200,0.98) 70%,
+                    rgba(170,180,190,1) 100%);
             box-shadow:
-                0 0 12px rgba(100,120,140,0.8),
-                0 0 20px rgba(110,130,150,0.5),
-                inset 0 1px 0 rgba(160,170,180,0.4),
-                inset 0 -1px 0 rgba(80,90,100,0.6);
+                0 0 16px rgba(130,140,150,0.9),
+                0 0 32px rgba(140,150,160,0.6),
+                inset 0 1px 0 rgba(200,210,220,0.5),
+                inset 0 -1px 0 rgba(100,110,120,0.7);
             animation: gearPulse 1.5s ease-in-out infinite;
             clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
         }
@@ -525,20 +591,25 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 16px;
-            height: 16px;
-            background: linear-gradient(135deg,
-                rgba(110,120,130,0.95) 0%,
-                rgba(130,140,150,1) 30%,
-                rgba(120,130,140,0.98) 70%,
-                rgba(110,120,130,0.95) 100%);
+            width: 18px;
+            height: 18px;
+            background:
+                /* Rocky ancient texture */
+                radial-gradient(circle at 30% 30%, rgba(140,150,160,0.9) 0%, rgba(120,130,140,0.8) 100%),
+                /* Premium silvery metallic */
+                linear-gradient(135deg,
+                    rgba(150,160,170,0.96) 0%,
+                    rgba(170,180,190,1) 30%,
+                    rgba(160,170,180,0.98) 70%,
+                    rgba(150,160,170,0.96) 100%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             box-shadow:
-                0 0 8px rgba(90,100,110,0.6),
-                inset 0 1px 2px rgba(50,60,70,0.4),
-                inset 0 -1px 0 rgba(80,90,100,0.5);
-            border: 1px solid rgba(140,150,160,0.9);
+                0 0 12px rgba(120,130,140,0.7),
+                inset 0 2px 4px rgba(60,70,80,0.5),
+                inset 0 1px 0 rgba(180,190,200,0.4),
+                inset 0 -1px 0 rgba(90,100,110,0.6);
+            border: 2px solid rgba(160,170,180,0.9);
         }
 
         .energy-cursor::after {
@@ -546,17 +617,20 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 8px;
-            height: 8px;
-            background: radial-gradient(circle,
-                rgba(150,160,170,1) 0%,
-                rgba(130,140,150,0.9) 50%,
-                rgba(110,120,130,0.8) 100%);
+            width: 10px;
+            height: 10px;
+            background:
+                radial-gradient(circle,
+                    rgba(180,190,200,1) 0%,
+                    rgba(160,170,180,0.9) 40%,
+                    rgba(140,150,160,0.8) 70%,
+                    rgba(120,130,140,0.7) 100%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             box-shadow:
-                0 0 6px rgba(110,120,130,0.7),
-                inset 0 1px 1px rgba(80,90,100,0.4);
+                0 0 8px rgba(140,150,160,0.8),
+                0 0 16px rgba(130,140,150,0.5),
+                inset 0 1px 2px rgba(100,110,120,0.5);
             animation: gearRotate 4s linear infinite;
         }
 
@@ -617,60 +691,69 @@
         }
 
         .readout-screen {
-            background: linear-gradient(135deg,
-                rgba(35,40,45,0.96) 0%,
-                rgba(25,30,35,0.98) 30%,
-                rgba(45,50,55,0.97) 70%,
-                rgba(35,40,45,0.96) 100%);
-            border: 2px solid rgba(80,90,100,0.8);
-            border-radius: 8px;
+            background:
+                /* Rocky ancient texture */
+                radial-gradient(circle at 20% 20%, rgba(45,50,55,0.9) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(55,60,65,0.8) 0%, transparent 50%),
+                /* Premium silvery metallic */
+                linear-gradient(135deg,
+                    rgba(55,60,65,0.97) 0%,
+                    rgba(45,50,55,0.98) 30%,
+                    rgba(65,70,75,0.96) 70%,
+                    rgba(55,60,65,0.97) 100%);
+            border: 2px solid rgba(100,110,120,0.9);
+            border-radius: 10px;
             padding: 6px 12px;
             display: flex;
             align-items: center;
             gap: 8px;
             box-shadow:
-                0 2px 10px rgba(0,0,0,0.5),
-                inset 0 1px 3px rgba(50,60,70,0.3),
-                inset 0 -1px 0 rgba(20,30,40,0.4),
-                0 0 12px rgba(60,70,80,0.2);
+                0 4px 16px rgba(0,0,0,0.6),
+                inset 0 2px 6px rgba(35,40,45,0.4),
+                inset 0 1px 0 rgba(130,140,150,0.3),
+                inset 0 -1px 0 rgba(25,30,35,0.5),
+                0 0 20px rgba(80,90,100,0.3);
             position: relative;
         }
 
         .readout-screen::before {
             content: '';
             position: absolute;
-            top: 3px;
-            left: 3px;
-            right: 3px;
-            bottom: 3px;
-            border: 1px solid rgba(90,100,110,0.6);
-            border-radius: 5px;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 2px solid rgba(120,130,140,0.7);
+            border-radius: 6px;
             pointer-events: none;
-            box-shadow: inset 0 1px 2px rgba(30,40,50,0.4);
+            box-shadow:
+                inset 0 2px 4px rgba(35,40,45,0.5),
+                inset 0 1px 0 rgba(150,160,170,0.3),
+                0 0 12px rgba(100,110,120,0.2);
         }
 
         .readout-label {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             font-weight: 700;
-            color: rgba(140,150,160,0.9);
+            color: rgba(160,170,180,0.9);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-family: 'Courier New', monospace;
             text-shadow:
-                0 0 2px rgba(100,110,120,0.5),
-                0 1px 1px rgba(60,70,80,0.6);
+                0 0 4px rgba(120,130,140,0.6),
+                0 1px 2px rgba(70,80,90,0.7);
         }
 
         .readout-value {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 800;
-            color: rgba(170,180,190,0.95);
+            color: rgba(190,200,210,0.98);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-family: 'Courier New', monospace;
             text-shadow:
-                0 0 3px rgba(120,130,140,0.6),
-                0 1px 1px rgba(80,90,100,0.7);
+                0 0 6px rgba(140,150,160,0.7),
+                0 1px 3px rgba(90,100,110,0.8);
             min-width: 55px;
             text-align: center;
             animation: readoutGlow 3s ease-in-out infinite alternate;
@@ -679,15 +762,15 @@
         @keyframes readoutGlow {
             0% {
                 text-shadow:
-                    0 0 3px rgba(120,130,140,0.6),
-                    0 1px 1px rgba(80,90,100,0.7);
-                color: rgba(170,180,190,0.95);
+                    0 0 6px rgba(140,150,160,0.7),
+                    0 1px 3px rgba(90,100,110,0.8);
+                color: rgba(190,200,210,0.98);
             }
             100% {
                 text-shadow:
-                    0 0 5px rgba(140,150,160,0.7),
-                    0 1px 1px rgba(90,100,110,0.8);
-                color: rgba(180,190,200,1);
+                    0 0 10px rgba(160,170,180,0.8),
+                    0 1px 4px rgba(100,110,120,0.9);
+                color: rgba(200,210,220,1);
             }
         }
 
@@ -2955,30 +3038,31 @@
             const currentName = document.getElementById('current-lagna-name');
             const readout = document.getElementById('lagna-readout');
 
-            if (!markers.length || !cursor || !currentSign || !currentName || !readout) return;
-
-            // Get the energy field width
-            const field = document.querySelector('.lagna-energy-selector .energy-field');
-            if (!field) return;
-            const fieldWidth = field.offsetWidth;
-            const markerSpacing = (fieldWidth - 24) / 11; // 12 markers, 11 intervals
-
-            // Update active state for markers
-            markers.forEach((marker, index) => {
-                const lagnaNum = index + 1;
-                marker.classList.toggle('active', lagnaNum === currentLagna);
-            });
-
-            // Position cursor based on current lagna
-            const cursorPos = 12 + ((currentLagna - 1) * markerSpacing);
-            cursor.style.left = `${cursorPos}px`;
-
-            // Update displays
+            // Update displays even if some elements are missing
             const lagnaData = LAGNA_NAMES[currentLagna - 1];
             if (lagnaData) {
-                currentSign.textContent = getSignSymbol(lagnaData.sign);
-                currentName.textContent = getSignShortName(lagnaData.sign);
-                readout.textContent = getSignShortName(lagnaData.sign).toUpperCase();
+                if (currentSign) currentSign.textContent = getSignSymbol(lagnaData.sign);
+                if (currentName) currentName.textContent = getSignShortName(lagnaData.sign);
+                if (readout) readout.textContent = getSignShortName(lagnaData.sign).toUpperCase();
+            }
+
+            // Update visual elements if they exist
+            if (markers.length && cursor) {
+                // Get the energy field width
+                const field = document.querySelector('.lagna-energy-selector .energy-field');
+                if (!field) return;
+                const fieldWidth = field.offsetWidth;
+                const markerSpacing = (fieldWidth - 24) / 11; // 12 markers, 11 intervals
+
+                // Update active state for markers
+                markers.forEach((marker, index) => {
+                    const lagnaNum = index + 1;
+                    marker.classList.toggle('active', lagnaNum === currentLagna);
+                });
+
+                // Position cursor based on current lagna
+                const cursorPos = 12 + ((currentLagna - 1) * markerSpacing);
+                cursor.style.left = `${cursorPos}px`;
             }
         }
 
@@ -3279,6 +3363,14 @@
             saveLagnaToStorage();
             updateLagnaInfo();
             updateGearDial();
+            // Debug: directly update readout
+            const readout = document.getElementById('lagna-readout');
+            if (readout) {
+                const lagnaData = LAGNA_NAMES[currentLagna - 1];
+                if (lagnaData) {
+                    readout.textContent = getSignShortName(lagnaData.sign).toUpperCase();
+                }
+            }
             // renderVedicChart();
             // Trigger per-house content updates rather than rotating the entire chart
             animateHouseContentChangeForAll(previous, currentLagna);
@@ -3359,7 +3451,10 @@
         }
 
         function getSignShortName(signName) {
-            return signName.replace(/\s+♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓$/, '').replace(/the.*$/, '').trim();
+            // Remove zodiac symbols and "the ..." suffix
+            let result = signName.replace(/ ♈| ♉| ♊| ♋| ♌| ♍| ♎| ♏| ♐| ♑| ♒| ♓/, '');
+            result = result.replace(/ the.*$/, '');
+            return result.trim();
         }
 
         function renderVedicChart() {
