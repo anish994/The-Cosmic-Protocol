@@ -164,8 +164,8 @@
         }
         
         /* === PANEL BASE STYLES === */
-        .cosmic-panel {
-            background: var(--panel-bg);
+          .cosmic-panel {
+              background: var(--panel-bg);
             border: none;
             border-radius: 0;
             overflow: hidden;
@@ -176,6 +176,29 @@
             transform: translateZ(0);
             will-change: transform;
         }
+
+        /* Top-centered smaller badge showing sign and name (ensure this is top-level CSS) */
+        .house-sign { position:absolute; top:8px; left:50%; transform:translateX(calc(-50% + 15px)); display:flex; flex-direction:row; align-items:center; gap:8px; z-index:100; pointer-events:auto; padding: 0.15rem 0.4rem; border-radius:10px; }
+        .house .house-sign .sign-logo { width:18px; height:18px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,0.02); font-size:0.9rem; padding-left: 4px; }
+        /* Ensure only the top badge shows the sign name (hide any other sign-labels within houses) */
+        .house .sign-label { display:none; }
+        .house .house-sign .sign-label { display:flex; font-size:0.68rem; font-weight:700; color:var(--text-main); letter-spacing:0.4px; margin:0; max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; align-items:center; gap:6px; }
+
+        /* Override crossfade absolute positioning for top badge so label remains visible */
+        .house .house-sign .sign-label .sign-current, .house .house-sign .sign-label .sign-next {
+            position: static !important;
+            inset: auto !important;
+            opacity: 1 !important;
+            transform: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        /* Color the top label to match the element */
+        .house[data-element="fire"] .house-sign .sign-label, .house[data-element="fire"] .house-sign .sign-logo { color: #ff6b35; }
+        .house[data-element="earth"] .house-sign .sign-label, .house[data-element="earth"] .house-sign .sign-logo { color: #32cd32; }
+        .house[data-element="air"] .house-sign .sign-label, .house[data-element="air"] .house-sign .sign-logo { color: #87ceeb; }
+        .house[data-element="water"] .house-sign .sign-label, .house[data-element="water"] .house-sign .sign-logo { color: #ba55d3; }
         
         /* === PANEL HEADERS === */
         .panel-header {
@@ -399,7 +422,7 @@
                 /* Mechanical scale with 12 distinct sections */
                 linear-gradient(90deg,
                     /* Section 1 - Aries */
-                    rgba(60,70,80,0.8) 0%,
+                    rgba(60, 70, 80, 0.8) 0%,
                     rgba(60,70,80,0.8) 8.25%,
                     rgba(40,50,60,0.9) 8.25%,
                     rgba(40,50,60,0.9) 8.5%,
@@ -1406,16 +1429,14 @@
             background: rgba(255,255,255,0.02);
             transition: transform var(--anim-medium) var(--easing-smooth), border var(--anim-fast) var(--easing-smooth), box-shadow var(--anim-medium) var(--easing-smooth);
             cursor: pointer;
-            min-height: 160px;
+            min-height: 172px; /* Taller to allow room for top badge */
             -webkit-transform: translateZ(0); /* Hardware acceleration */
             transform: translateZ(0);
             will-change: transform, border-color, box-shadow;
         }
 
         /* soft micro-shift on sign indicators when lagna slider is moving (fractional progress) */
-        .house .sign-indicator { transition: transform 120ms var(--easing-smooth), filter 120ms var(--easing-smooth); transform: translateY(calc(var(--lagna-offset) * -6px)); filter: blur(calc(var(--lagna-offset) * 0.2px)); }
         .house { --house-offset: 0; }
-        .house .sign-indicator { transform: translateY(calc(var(--house-offset) * -12px)); opacity: calc(0.75 + var(--house-offset) * 0.25); }
 
         /* Crossfade between current and next sign/logo while slider moves */
         .sign-logo .sign-current, .sign-logo .sign-next, .sign-label .sign-current, .sign-label .sign-next{
@@ -1464,11 +1485,14 @@
             position: relative;
         }
 
+
+
         .house-title-row {
             display: flex;
             align-items: center;
-            gap: 0.75rem; /* Golden ratio inspired spacing */
+            gap: 0.25rem; /* Further reduced spacing to move house label more to the left */
             width: 100%;
+            margin-left: -0.5rem; /* Move the entire title row more to the left */
         }
 
         .house-label {
@@ -1478,6 +1502,7 @@
             justify-content: center;
             cursor: help;
             min-width: 0;
+            margin-left: -0.5rem; /* Move house label further to the left */
         }
 
         .house-number {
@@ -1528,53 +1553,7 @@
         }
 
         .house-logo { width: 28px; height: 28px; display:flex; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.02); font-size:0.9rem; }
-        .sign-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem; /* slightly larger so label isn't close to the logo */
-            padding: 0.2rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.02);
-            min-width: fit-content;
-            margin-left: 1rem;
-            transition: all var(--anim-medium) var(--easing-smooth);
-            transform: translateZ(0);
-            will-change: transform, opacity, background-color, border-color, color;
-        }
-
-        .sign-indicator[data-element="fire"] {
-            background: linear-gradient(135deg, rgba(255,69,0,0.08), rgba(255,140,0,0.05));
-            border-color: rgba(255,69,0,0.3);
-            color: #ff6b35;
-        }
-
-        .sign-indicator[data-element="earth"] {
-            background: linear-gradient(135deg, rgba(34,139,34,0.08), rgba(50,205,50,0.05));
-            border-color: rgba(34,139,34,0.3);
-            color: #32cd32;
-        }
-
-        .sign-indicator[data-element="air"] {
-            background: linear-gradient(135deg, rgba(70,130,180,0.08), rgba(135,206,235,0.05));
-            border-color: rgba(70,130,180,0.3);
-            color: #87ceeb;
-        }
-
-        .sign-indicator[data-element="water"] {
-            background: linear-gradient(135deg, rgba(138,43,226,0.08), rgba(186,85,211,0.05));
-            border-color: rgba(138,43,226,0.3);
-            color: #ba55d3;
-        }
-
-        .sign-indicator.sign-transitioning {
-            opacity: 0.3;
-            transform: scale(0.95) translateZ(0);
-        }
+        
 
         .sign-logo {
             font-size: 1.15rem;
@@ -1589,7 +1568,7 @@
             background: rgba(255,255,255,0.02);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
         }
-        .sign-label { 
+        .slot-state-badge .slot-badge-label { 
             font-size: 0.72rem; 
             opacity: 0.9; 
             font-weight: 600;
@@ -1644,6 +1623,7 @@
             width: 22px;
             flex: 0 0 22px;
             height: 16px;
+        }
         .sign-label { 
             font-size: 0.65rem;
             display: flex;
@@ -3688,15 +3668,28 @@
         }
 
         function getSignSymbol(signName) {
-            const symbolMatch = signName.match(/♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓/);
-            return symbolMatch ? symbolMatch[0] : '♈';
+            const symbolMap = {
+                'Aries': '🐏',
+                'Taurus': '🐂',
+                'Gemini': '👯',
+                'Cancer': '🦀',
+                'Leo': '🦁',
+                'Virgo': '👩',
+                'Libra': '⚖️',
+                'Scorpio': '🦂',
+                'Sagittarius': '🏹',
+                'Capricorn': '🐐',
+                'Aquarius': '🏺',
+                'Pisces': '🐟'
+            };
+            // Extract the sign name before ' the'
+            const signKey = signName.split(' the')[0];
+            return symbolMap[signKey] || '🐏';
         }
 
         function getSignShortName(signName) {
-            // Remove zodiac symbols and "the ..." suffix
-            let result = signName.replace(/ ♈| ♉| ♊| ♋| ♌| ♍| ♎| ♏| ♐| ♑| ♒| ♓/, '');
-            result = result.replace(/ the.*$/, '');
-            return result.trim();
+            // Return just the zodiac sign name
+            return signName.split(' ')[0];
         }
 
         function renderVedicChart() {
@@ -3712,6 +3705,14 @@
                 houseEl.dataset.houseId = house.id;
                 houseEl.setAttribute('tabindex','0');
                 houseEl.innerHTML = `
+                    <div class="house-sign">
+                        <div class="sign-logo">
+                            <span class="sign-current">${getSignSymbol(sign.sign)}</span>
+                        </div>
+                        <div class="sign-label">
+                            <span class="sign-current">${getSignShortName(sign.sign)}</span>
+                        </div>
+                    </div>
                     <div class="house-header">
                         <div class="house-title-row">
                             <div class="house-logo">🏠</div>
@@ -3719,16 +3720,7 @@
                                 <div class="house-number">${house.number}</div>
                                 <div class="house-word">House</div>
                             </div>
-                            <div class="sign-indicator" data-element="${sign.element.toLowerCase()}">
-                                <div class="sign-logo">
-                                    <span class="sign-current">${getSignSymbol(sign.sign)}</span>
-                                    <span class="sign-next" aria-hidden="true"></span>
-                                </div>
-                                <div class="sign-label">
-                                    <span class="sign-current">${getSignShortName(sign.sign)}</span>
-                                    <span class="sign-next" aria-hidden="true"></span>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="house-slot" id="slot-${index}" data-slot-index="${index}">
@@ -3785,39 +3777,18 @@
                 const oldNak = getNakshatraForDegree(oldSign.id, 0);
                 const newNak = getNakshatraForDegree(newSign.id, 0);
 
-                // Smoothly transition sign indicator if sign changed
-                const signIndicator = houseEl.querySelector('.sign-indicator');
-                if (signIndicator && oldSign.id !== newSign.id) {
-                    // Add transition class for smooth change
-                    signIndicator.classList.add('sign-transitioning');
-
-                    // Update the sign content after a brief delay
-                    setTimeout(() => {
-                        signIndicator.setAttribute('data-element', newSign.element.toLowerCase());
-                        // Update existing current/next sign slots if present, otherwise fallback to replace
-                        const lCurrent = signIndicator.querySelector('.sign-logo .sign-current');
-                        const lNext = signIndicator.querySelector('.sign-logo .sign-next');
-                        const lblCurrent = signIndicator.querySelector('.sign-label .sign-current');
-                        const lblNext = signIndicator.querySelector('.sign-label .sign-next');
-                        if (lCurrent && lblCurrent) {
-                            lCurrent.textContent = getSignSymbol(newSign.sign);
-                            lblCurrent.textContent = getSignShortName(newSign.sign);
-                            if (lNext) lNext.textContent = '';
-                            if (lblNext) lblNext.textContent = '';
-                        } else {
-                            signIndicator.innerHTML = `
-                                <div class="sign-logo">
-                                    <span class="sign-current">${getSignSymbol(newSign.sign)}</span>
-                                    <span class="sign-next" aria-hidden="true"></span>
-                                </div>
-                                <div class="sign-label">
-                                    <span class="sign-current">${getSignShortName(newSign.sign)}</span>
-                                    <span class="sign-next" aria-hidden="true"></span>
-                                </div>
-                            `;
-                        }
-                        signIndicator.classList.remove('sign-transitioning');
-                    }, 150);
+                // If sign changed, update house element & top badge only (avoid duplication of symbol)
+                if (oldSign.id !== newSign.id) {
+                    // update house element dataset so CSS coloring updates for the top badge
+                    houseEl.dataset.element = newSign.element.toLowerCase();
+                    // Update the top badge content (logo + label)
+                    const houseSign = houseEl.querySelector('.house-sign');
+                    if (houseSign) {
+                        const hsLogoEls = houseSign.querySelectorAll('.sign-logo .sign-current');
+                        const hsLblEls = houseSign.querySelectorAll('.sign-label .sign-current');
+                        hsLogoEls.forEach(el => el.textContent = getSignSymbol(newSign.sign));
+                        hsLblEls.forEach(el => el.textContent = getSignShortName(newSign.sign));
+                    }
                 }
 
                 // fade nakshatra if changed
@@ -4322,14 +4293,14 @@
                         // normalize direction between -1..1
                         direction = Math.sign(direction) || 1;
                         const nextSignIndex = ((oldSignIndex + (direction >= 0 ? 1 : -1)) + 12) % 12;
-                        const signLogoCurrent = houseEl.querySelector('.sign-logo .sign-current');
-                        const signLogoNext = houseEl.querySelector('.sign-logo .sign-next');
-                        const signLabelCurrent = houseEl.querySelector('.sign-label .sign-current');
-                        const signLabelNext = houseEl.querySelector('.sign-label .sign-next');
-                        if (signLogoCurrent) signLogoCurrent.textContent = getSignSymbol(LAGNA_NAMES[oldSignIndex].sign);
-                        if (signLogoNext) signLogoNext.textContent = getSignSymbol(LAGNA_NAMES[nextSignIndex].sign);
-                        if (signLabelCurrent) signLabelCurrent.textContent = getSignShortName(LAGNA_NAMES[oldSignIndex].sign);
-                        if (signLabelNext) signLabelNext.textContent = getSignShortName(LAGNA_NAMES[nextSignIndex].sign);
+                        const signLogoCurrentEls = houseEl.querySelectorAll('.house-sign .sign-logo .sign-current');
+                        const signLogoNextEls = houseEl.querySelectorAll('.house-sign .sign-logo .sign-next');
+                        const signLabelCurrentEls = houseEl.querySelectorAll('.house-sign .sign-label .sign-current');
+                        const signLabelNextEls = houseEl.querySelectorAll('.house-sign .sign-label .sign-next');
+                        signLogoCurrentEls.forEach(el => el.textContent = getSignSymbol(LAGNA_NAMES[oldSignIndex].sign));
+                        signLogoNextEls.forEach(el => el.textContent = getSignSymbol(LAGNA_NAMES[nextSignIndex].sign));
+                        signLabelCurrentEls.forEach(el => el.textContent = getSignShortName(LAGNA_NAMES[oldSignIndex].sign));
+                        signLabelNextEls.forEach(el => el.textContent = getSignShortName(LAGNA_NAMES[nextSignIndex].sign));
                     });
                 }
                 items.forEach((it, i) => it.classList.toggle('active', i === idx));
