@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +23,11 @@
             --legendary-grad: linear-gradient(135deg, #f59e0b 0%, #b91c1c 100%);
             --rare-grad: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             --common-grad: linear-gradient(135deg, #475569 0%, #1e293b 100%);
+            --anim-fast: 160ms;
+            --anim-medium: 220ms;
+            --anim-slow: 420ms;
+            --easing-smooth: cubic-bezier(0.2, 0.9, 0.2, 1);
+            --neon: 0 12px 32px rgba(109,40,217,0.18), inset 0 0 8px rgba(139,92,246,0.06);
         }
 
         * {
@@ -83,7 +87,7 @@
             background: var(--bg-dark);
             color: var(--text-main);
             overflow: hidden;
-            touch-action: pan-x pan-y;
+            touch-action: manipulation; /* Better touch handling */
             height: 100vh;
             height: 100dvh; /* Dynamic viewport height for mobile */
             width: 100vw;
@@ -91,6 +95,11 @@
             user-select: none;
             overscroll-behavior: none;
             position: fixed;
+            -webkit-font-smoothing: antialiased; /* Crisp text on mobile */
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            -webkit-transform: translateZ(0); /* Force hardware acceleration */
+            transform: translateZ(0);
         }
         
         /* === MAIN WORKSPACE LAYOUT === */
@@ -105,32 +114,49 @@
             width: 100vw;
             overflow: hidden;
             background: var(--panel-border);
+            -webkit-transform: translateZ(0); /* Hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform; /* Optimize for animations */
         }
         
         /* === RESPONSIVE BREAKPOINTS === */
+        /* Ultra-wide Landscape (Large Desktop) */
+        @media (min-width: 1800px) and (orientation: landscape) {
+            .cosmic-workspace {
+                grid-template-columns: 360px 1fr 420px;
+            }
+        }
+
         /* Large Landscape (Desktop) */
-        @media (min-width: 1400px) and (orientation: landscape) {
+        @media (min-width: 1400px) and (max-width: 1799px) and (orientation: landscape) {
             .cosmic-workspace {
                 grid-template-columns: 320px 1fr 380px;
             }
         }
-        
-        /* Standard Landscape (Tablets) */
+
+        /* Standard Landscape (Tablets/Large Mobile) */
         @media (min-width: 1024px) and (max-width: 1399px) and (orientation: landscape) {
             .cosmic-workspace {
                 grid-template-columns: 280px 1fr 340px;
             }
         }
-        
+
+        /* Medium Landscape (Tablets) */
+        @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+            .cosmic-workspace {
+                grid-template-columns: 240px 1fr 280px;
+            }
+        }
+
         /* Small Landscape (Mobile) */
-        @media (max-width: 1023px) and (orientation: landscape) {
+        @media (min-width: 568px) and (max-width: 767px) and (orientation: landscape) {
             .cosmic-workspace {
                 grid-template-columns: 200px 1fr 240px;
             }
         }
-        
+
         /* Tiny Landscape (Small Mobile) */
-        @media (max-width: 767px) and (orientation: landscape) {
+        @media (max-width: 567px) and (orientation: landscape) {
             .cosmic-workspace {
                 grid-template-columns: 180px 1fr 200px;
             }
@@ -145,6 +171,9 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            -webkit-transform: translateZ(0); /* Hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform;
         }
         
         /* === PANEL HEADERS === */
@@ -222,6 +251,901 @@
             background: rgba(139,92,246,0.5);
         }
         
+        /* === JOTYSH ENGINE STYLES === */
+        .jotysh-scroll {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            padding: 0.9rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .lagna-gear-dial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.5rem 1rem;
+            background: rgba(139,92,246,0.08);
+            border: 1px solid rgba(139,92,246,0.2);
+            border-radius: 8px;
+            position: relative;
+            width: 100%;
+        }
+
+        .lagna-gear-dial label {
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: var(--accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .gear-slider-container {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .gear-slider-track {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(59,130,246,0.2));
+            border: 1px solid rgba(139,92,246,0.4);
+            border-radius: 3px;
+            box-shadow:
+                inset 0 1px 2px rgba(0,0,0,0.3),
+                0 2px 4px rgba(139,92,246,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gear-slider-track:hover {
+            transform: scaleY(1.2);
+            box-shadow:
+                inset 0 1px 2px rgba(0,0,0,0.4),
+                0 4px 8px rgba(139,92,246,0.3);
+        }
+
+        .gear-teeth-track {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(139,92,246,0.6) 2px,
+                rgba(139,92,246,0.6) 4px
+            );
+            border-radius: 3px;
+            pointer-events: none;
+        }
+
+        .gear-slider-marks {
+            position: absolute;
+            top: -18px;
+            left: 0;
+            right: 0;
+            height: 18px;
+            pointer-events: none;
+        }
+
+        .gear-mark {
+            position: absolute;
+            top: 0;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            cursor: pointer;
+            user-select: none;
+            transform: translateX(-50%);
+        }
+
+        .gear-mark:hover {
+            color: var(--accent-glow);
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        .gear-mark.active {
+            color: var(--accent-glow);
+            text-shadow: 0 0 8px rgba(139,92,246,0.8);
+        }
+
+        .gear-slider-handle {
+            position: absolute;
+            top: -12px;
+            left: 0;
+            width: 24px;
+            height: 30px;
+            cursor: grab;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .gear-slider-handle:active {
+            cursor: grabbing;
+        }
+
+        .handle-indicator {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .handle-indicator::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid var(--accent-glow);
+            filter: drop-shadow(0 2px 4px rgba(139,92,246,0.5));
+        }
+
+        .current-lagna-sign {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-glow);
+            text-shadow: 0 2px 4px rgba(139,92,246,0.5);
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .current-lagna-name {
+            font-size: 0.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            line-height: 1;
+            margin-top: 1px;
+        }
+
+        .nakshatra-gear-dial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.5rem 1rem;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 8px;
+            position: relative;
+            width: 100%;
+        }
+
+        .nakshatra-gear-dial label {
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: rgba(59,130,246,0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .current-nakshatra-name {
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: rgba(59,130,246,0.9);
+            text-shadow: 0 2px 4px rgba(59,130,246,0.5);
+            transition: all 0.3s ease;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .current-nakshatra-ruling {
+            font-size: 0.45rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            line-height: 1;
+            margin-top: 1px;
+            text-align: center;
+        }
+
+        .view-toggle-bar {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 0.5rem;
+        }
+
+        .view-toggle-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 0.45rem 0.8rem;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 6px;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .view-toggle-btn.active {
+            color: var(--accent-glow);
+            border-color: rgba(139,92,246,0.6);
+            background: rgba(139,92,246,0.12);
+            box-shadow: inset 0 0 8px rgba(139,92,246,0.15);
+        }
+
+        .astro-info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .lagna-info-panel,
+        .nakshatra-info-panel {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lagna-info-header,
+        .nakshatra-info-header {
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lagna-info-title,
+        .nakshatra-info-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .lagna-info-body,
+        .nakshatra-info-body {
+            padding: 0.9rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .lagna-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.6rem;
+        }
+
+        .lagna-stat-card {
+            padding: 0.6rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .lagna-section-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--accent-glow);
+            margin-bottom: 0.4rem;
+        }
+
+        .lagna-synergy-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .lagna-synergy-tag {
+            padding: 0.2rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.65rem;
+            border: 1px solid rgba(0,227,214,0.5);
+            color: #00e3d6;
+            background: rgba(0,227,214,0.1);
+            letter-spacing: 0.4px;
+        }
+
+        .nakshatra-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .nakshatra-detail-card {
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .nakshatra-description {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: var(--text-dim);
+        }
+
+        .vedic-chart {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-rows: repeat(3, minmax(120px, 1fr));
+            gap: 0.6rem;
+            transition: transform var(--anim-medium) var(--easing-smooth);
+            transform-origin: center center;
+            perspective: 900px;
+        }
+        .vedic-chart:hover { box-shadow: 0 20px 70px rgba(109,40,217,0.08), inset 0 0 40px rgba(139,92,246,0.03); }
+
+        .house {
+            border: 2px solid rgba(0,195,255,0.25);
+            border-radius: 10px;
+            padding: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: relative;
+            background: rgba(255,255,255,0.02);
+            transition: transform var(--anim-medium) var(--easing-smooth), border var(--anim-fast) var(--easing-smooth), box-shadow var(--anim-medium) var(--easing-smooth);
+            cursor: pointer;
+            min-height: 160px;
+            -webkit-transform: translateZ(0); /* Hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform, border-color, box-shadow;
+        }
+
+        .house[data-element="fire"] { border-color: rgba(255,140,0,0.45); box-shadow: 0 0 10px rgba(255,140,0,0.15); }
+        .house[data-element="earth"] { border-color: rgba(107,142,35,0.45); box-shadow: 0 0 10px rgba(107,142,35,0.15); }
+        .house[data-element="air"] { border-color: rgba(135,206,250,0.45); box-shadow: 0 0 10px rgba(135,206,250,0.15); }
+        .house[data-element="water"] { border-color: rgba(70,130,180,0.45); box-shadow: 0 0 10px rgba(70,130,180,0.15); }
+
+        .house.filled {
+            background: rgba(139,92,246,0.12);
+            border-color: rgba(139,92,246,0.6);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: var(--neon);
+        }
+        .house.applied { border-color: rgba(34,197,94,0.36); box-shadow: 0 10px 40px rgba(34,197,94,0.08); }
+        .house.applied .house-nakshatra { color: var(--success); font-weight:700; }
+
+        .applied-nakshatra {
+            font-size: 0.68rem;
+            color: var(--success);
+            border: 1px solid rgba(34,197,94,0.12);
+            background: rgba(34,197,94,0.05);
+            padding: 0.18rem 0.4rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-left: 0.35rem;
+        }
+        .house.slot-animated { animation: house-pulse var(--anim-medium) var(--easing-smooth); }
+        @keyframes house-pulse { 0% { transform: translateY(-2px) scale(0.98); } 50% { transform: translateY(-6px) scale(1.04); } 100% { transform: translateY(-2px) scale(1.01); } }
+
+        .house-header {
+            display: flex;
+            gap: 0.5rem;
+            padding-bottom: 0.4rem;
+            padding-right: 1.4rem; /* make room for badge */
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            align-items: center;
+            position: relative;
+        }
+
+        .house-title-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem; /* Golden ratio inspired spacing */
+            width: 100%;
+        }
+
+        .house-label {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            cursor: help;
+            min-width: 0;
+        }
+
+        .house-number {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--text-main) 0%, rgba(139,92,246,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .house-word {
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            color: var(--text-main);
+            line-height: 1;
+            margin-top: 0.1rem;
+        }
+
+        .house-nakshatra {
+            font-size: 0.65rem;
+            color: #00e3d6;
+            opacity: 0.8;
+        }
+
+        .planet-badge {
+            position: absolute;
+            top: 0.45rem;
+            right: 0.4rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.12rem 0.35rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(0,0,0,0.4);
+            font-size: 0.65rem;
+            min-width: 36px;
+            line-height: 1;
+            transform: translateY(-1px);
+            z-index: 4;
+        }
+
+        .house-logo { width: 28px; height: 28px; display:flex; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.02); font-size:0.9rem; }
+        .sign-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.02);
+            min-width: fit-content;
+            margin-left: 1rem;
+            transition: all var(--anim-medium) var(--easing-smooth);
+            transform: translateZ(0);
+            will-change: transform, opacity, background-color, border-color, color;
+        }
+
+        .sign-indicator[data-element="fire"] {
+            background: linear-gradient(135deg, rgba(255,69,0,0.08), rgba(255,140,0,0.05));
+            border-color: rgba(255,69,0,0.3);
+            color: #ff6b35;
+        }
+
+        .sign-indicator[data-element="earth"] {
+            background: linear-gradient(135deg, rgba(34,139,34,0.08), rgba(50,205,50,0.05));
+            border-color: rgba(34,139,34,0.3);
+            color: #32cd32;
+        }
+
+        .sign-indicator[data-element="air"] {
+            background: linear-gradient(135deg, rgba(70,130,180,0.08), rgba(135,206,235,0.05));
+            border-color: rgba(70,130,180,0.3);
+            color: #87ceeb;
+        }
+
+        .sign-indicator[data-element="water"] {
+            background: linear-gradient(135deg, rgba(138,43,226,0.08), rgba(186,85,211,0.05));
+            border-color: rgba(138,43,226,0.3);
+            color: #ba55d3;
+        }
+
+        .sign-indicator.sign-transitioning {
+            opacity: 0.3;
+            transform: scale(0.95) translateZ(0);
+        }
+
+        .sign-logo {
+            font-size: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+        }
+        .sign-label { 
+            font-size: 0.65rem; 
+            opacity: 0.9; 
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .house-slot {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 72px;
+            padding: 0.35rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.01);
+        }
+
+        .house-placeholder { font-size: 0.72rem; color: var(--text-dim); opacity: 0.9; }
+
+        .house-footer { display:flex; gap: 0.35rem; align-items:center; justify-content:flex-start; padding-top:0.45rem; }
+
+        .slotted-glyph {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(139,92,246,0.4);
+            padding: 0.5rem;
+            background: rgba(139,92,246,0.15);
+            text-align: center;
+            font-size: 0.75rem;
+            transform-origin: center center;
+            animation: glyph-entry 360ms var(--easing-smooth) both;
+        }
+
+        @keyframes glyph-entry {
+            0% { transform: scale(0.6); opacity: 0; filter: blur(2px); }
+            60% { transform: scale(1.06); opacity: 1; filter: blur(0); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .slot-state-badge {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            font-size: 0.65rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .planet-tooltip {
+            position: fixed;
+            width: min(340px, 92vw);
+            background: rgba(10,10,18,0.98);
+            border: 2px solid rgba(139,92,246,0.7);
+            border-radius: 18px;
+            padding: 1.2rem;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.75);
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            transform: translateY(8px);
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 999;
+        }
+
+        .planet-tooltip.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Drag & Drop highlight */
+        .house.dragover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 18px 48px rgba(109,40,217,0.22), 0 6px 18px rgba(34,197,94,0.06);
+            border-color: rgba(34,197,94,0.7);
+        }
+            .house.recommended { box-shadow: 0 12px 40px rgba(34,197,94,0.12), 0 6px 22px rgba(99,102,241,0.06); transform: translateY(-4px) scale(1.01); border-color: rgba(34,197,94,0.35); }
+            .house.recommended::before {
+                content: '★';
+                position: absolute;
+                left: 10px;
+                top: -8px;
+                background: linear-gradient(90deg, rgba(34,197,94,0.12), rgba(34,197,94,0.08));
+                color: var(--success);
+                padding: 0.1rem 0.4rem;
+                border-radius: 6px;
+                font-size: 0.75rem;
+                border: 1px solid rgba(34,197,94,0.22);
+            }
+
+        /* Preview fade/slide */
+        .blueprint-preview { opacity: 0; transform: translateY(6px); transition: opacity var(--anim-medium) var(--easing-smooth), transform var(--anim-medium) var(--easing-smooth); }
+        .blueprint-preview.show { opacity: 1; transform: translateY(0); }
+
+        /* === JOTYSH BLUEPRINT MODAL === */
+        .jotysh-blueprint-modal {
+            position: fixed;
+            inset: 10vh auto 10vh auto;
+            display: none;
+            width: min(900px, 92vw);
+            max-width: 1200px;
+            max-height: calc(80vh - 40px);
+            left: 50%;
+            transform: translateX(-50%) translateZ(0);
+            transition: transform var(--anim-medium) var(--easing-smooth), height var(--anim-medium) var(--easing-smooth), width var(--anim-medium) var(--easing-smooth), opacity var(--anim-fast) var(--easing-smooth);
+            background: linear-gradient(180deg, rgba(10,10,18,0.98), rgba(6,6,12,0.98));
+            border: 2px solid rgba(139,92,246,0.6);
+            border-radius: 14px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+            padding: 1rem;
+            z-index: 1200;
+            color: var(--text-main);
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            -webkit-transform: translateX(-50%) translateZ(0);
+            will-change: transform, opacity, height, width;
+        }
+        .jotysh-blueprint-modal.visible { display: block; opacity:1; }
+        .jotysh-blueprint-modal.minimized { height: auto; max-height: none; width: min(320px, 92vw); bottom: auto; top: auto; left: 12px; transform:none; position: fixed; right: 12px; border-radius: 14px; }
+        .jotysh-blueprint-modal.minimized .jotysh-blueprint-grid { display:none; }
+        .jotysh-blueprint-modal.minimized .blueprint-legend { display:none; }
+        .jotysh-blueprint-modal.minimized .jotysh-blueprint-header { padding: 0.45rem 0.6rem; }
+        .jotysh-blueprint-modal.maximized { width: min(98vw, 1000px); height: calc(94vh); left:50%; transform: translateX(-50%); top:3vh; }
+        .jotysh-blueprint-header { display:flex; gap:0.8rem; align-items:center; justify-content:space-between; padding: 0.6rem 0.8rem; border-bottom:1px solid rgba(255,255,255,0.04); }
+        .jotysh-blueprint-title { font-size:1.05rem; font-weight:700; }
+        .jotysh-blueprint-close,
+        .jotysh-blueprint-minimize,
+        .jotysh-blueprint-maximize { background:transparent; border:1px solid rgba(255,255,255,0.08); padding:0.4rem; border-radius:6px; cursor:pointer; margin-left:0.35rem; }
+        .jotysh-sm { font-size:0.78rem; color:var(--text-dim); }
+        .jotysh-blueprint-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:0.6rem; padding:0.8rem; }
+        .blueprint-house { border:1px solid rgba(255,255,255,0.06); border-radius:8px; background:rgba(255,255,255,0.02); padding:0.6rem; display:flex; flex-direction:column; gap:0.45rem; }
+        .blueprint-house .house-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.6px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--text-main) 0%, rgba(139,92,246,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: help;
+            min-width: 0;
+        }
+
+        .blueprint-house .house-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--text-main) 0%, rgba(139,92,246,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .blueprint-house .house-word {
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            color: var(--text-main);
+            line-height: 1;
+            margin-top: 0.1rem;
+        }
+        .blueprint-house { transition: transform var(--anim-fast) var(--easing-smooth), box-shadow var(--anim-fast) var(--easing-smooth); -webkit-transform: translateZ(0); transform: translateZ(0); will-change: transform, box-shadow; }
+        .blueprint-house:hover { transform: translateY(-4px) translateZ(0); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+        .blueprint-house.expanded { box-shadow: 0 14px 50px rgba(0,0,0,0.7); transform: translateY(-6px) translateZ(0); }
+        .blueprint-body { transition: all var(--anim-fast) var(--easing-smooth); padding-top:0.4rem; border-top:1px solid rgba(255,255,255,0.02); -webkit-transform: translateZ(0); transform: translateZ(0); will-change: transform, opacity; }
+        .blueprint-section { padding-top:0.4rem; font-size:0.82rem; color:var(--text-dim); }
+        .nakshatra-btn { 
+            padding:0.25rem 0.5rem; 
+            border-radius: 6px; 
+            border:1px solid rgba(255,255,255,0.06); 
+            background:rgba(0,0,0,0.15); 
+            cursor:pointer; 
+            color:var(--text-main); 
+            margin-right:0.25rem; 
+            margin-bottom:0.25rem; 
+            transition: all var(--anim-fast) var(--easing-smooth);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform, background-color, border-color;
+            min-height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nakshatra-btn:hover, .nakshatra-btn:focus { border-color: rgba(139,92,246,0.5); background: rgba(139,92,246,0.06); transform: translateY(-1px) translateZ(0); }
+        .applied-badge { padding: 0.3rem 0.5rem; border-radius: 6px; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.18); font-weight:700; font-size:0.8rem; }
+        .blueprint-preview { padding:0.6rem; border-radius:8px; border:1px dashed rgba(255,255,255,0.04); background:rgba(255,255,255,0.01); margin-top:0.45rem; }
+        .blueprint-sm { font-size:0.72rem; color:var(--text-dim); }
+        .blueprint-planet { display:flex; gap:0.6rem; align-items:center; }
+        .blueprint-planet .symbol { font-size:1.0rem; }
+        .blueprint-keywords { display:flex; gap:0.3rem; flex-wrap:wrap; }
+        .blueprint-tag { padding:0.2rem 0.45rem; border-radius:999px; font-size:0.66rem; border:1px solid rgba(255,255,255,0.06); }
+        .blueprint-legend { padding:0.6rem 0.4rem; margin-top:0.6rem; border-top:1px dashed rgba(255,255,255,0.04); color:var(--text-dim); font-size:0.8rem; }
+        .blueprint-applied-count { font-size:0.82rem; color:var(--success); }
+
+        @media (max-width: 640px) {
+            .jotysh-blueprint-modal { inset: 0; width: 100vw; height: 100vh; left: 0; transform:none; top: 0; border-radius: 0; }
+            .jotysh-blueprint-grid { grid-template-columns: repeat(2, 1fr); }
+            .jotysh-blueprint-header { padding: 0.8rem; }
+            .jotysh-blueprint-minimize, .jotysh-blueprint-maximize { display: none; }
+        }
+
+        .planet-tooltip-close {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.6rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .planet-tooltip-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .planet-tooltip-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .planet-tooltip-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .planet-lore {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            padding: 0.75rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .planet-stat-section {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 0.75rem;
+        }
+
+        .planet-section-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.6px;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+        }
+
+        .planet-stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .planet-stat-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .planet-tooltip-header {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .planet-tooltip-symbol {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        .planet-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+        }
+
+        .planet-stat-box {
+            padding: 0.6rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            text-align: center;
+        }
+
+        .planet-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+
+        .planet-keyword-tag {
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.65rem;
+        }
+
+        .jotysh-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .element-matrix {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .base-element-pill {
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .cosmic-btn.full {
+            width: 100%;
+            justify-content: center;
+        }
+
         /* === PLACEHOLDER TEXT === */
         .placeholder {
             display: flex;
@@ -237,18 +1161,26 @@
         
         /* === ACTION BUTTONS === */
         .cosmic-btn {
-            padding: 0.4rem 0.8rem;
+            padding: 0.5rem 1rem; /* Larger touch targets for mobile */
             background: rgba(139,92,246,0.1);
             color: var(--accent-glow);
             border: 1px solid rgba(139,92,246,0.3);
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all var(--anim-fast) var(--easing-smooth);
             white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-transform: translateZ(0); /* Hardware acceleration */
+            transform: translateZ(0);
+            will-change: transform, background-color;
+            min-height: 44px; /* iOS touch target minimum */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .cosmic-btn:hover {
@@ -365,6 +1297,11 @@
             animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards;
             position: relative;
             overflow: hidden;
+        }
+
+        .skill-card.selected {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 14px rgba(139,92,246,0.35);
         }
 
         .skill-card.legendary {
@@ -562,6 +1499,83 @@
             0%, 100% { opacity: 0.5; }
             50% { opacity: 0.8; }
         }
+
+        #current-sign-display, #lagna-title-display {
+            transition: all var(--anim-fast) var(--easing-smooth);
+            transform: translateZ(0);
+            will-change: transform, opacity;
+        }
+        .house-label[title], .blueprint-house .house-name[title] {
+            cursor: help;
+            position: relative;
+        }
+
+        .house-label[title]:hover::after, .blueprint-house .house-name[title]:hover::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(10,10,18,0.95), rgba(20,20,30,0.95));
+            border: 1px solid rgba(139,92,246,0.5);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: var(--text-main);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+            white-space: nowrap;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: tooltipFadeIn 0.2s ease-out;
+            pointer-events: none;
+        }
+
+        .house-label[title]:hover::before, .blueprint-house .house-name[title]:hover::before {
+            content: '';
+            position: absolute;
+            bottom: calc(100% - 5px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid rgba(139,92,246,0.5);
+            z-index: 1001;
+        }
+
+        @keyframes tooltipFadeIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Prevent text selection on touch devices */
+        .cosmic-btn, .nakshatra-btn, .jotysh-blueprint-close, .jotysh-blueprint-minimize, .jotysh-blueprint-maximize {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Optimize scrolling on iOS */
+        .jotysh-blueprint-modal {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Better touch feedback for interactive elements */
+        @media (hover: none) and (pointer: coarse) {
+            .blueprint-house:hover { transform: none; box-shadow: none; }
+            .nakshatra-btn:hover { transform: none; }
+        }
     </style>
 </head>
 <body>
@@ -600,14 +1614,87 @@
                     <span>Jotysh Engine</span>
                 </div>
                 <div class="panel-actions">
-                    <button class="cosmic-btn primary" title="Invoke card">🎴 Invoke</button>
+                    <button class="cosmic-btn primary" id="invoke-card-btn" title="Invoke card">🎴 Invoke</button>
                     <button class="cosmic-btn" title="Reset">🔄</button>
+                    <!-- Blueprint info (opens modal) -->
+                    <button class="cosmic-btn" id="jotysh-blueprint-btn" title="Jotysh Blueprint" aria-controls="jotysh-blueprint-modal" aria-haspopup="dialog">ℹ️</button>
                 </div>
             </div>
             <div class="panel-content">
-                <div class="placeholder">
-                    12-House Vedic Chart will appear here...
-                </div>
+                    <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:0.8rem;">
+                        <div class="lagna-gear-dial">
+                            <label for="lagna-dial">Ascendant</label>
+                            <div class="gear-slider-container">
+                                <div class="gear-slider-track">
+                                    <div class="gear-teeth-track"></div>
+                                    <div class="gear-slider-marks">
+                                        <div class="gear-mark" data-lagna="1">♈</div>
+                                        <div class="gear-mark" data-lagna="2">♉</div>
+                                        <div class="gear-mark" data-lagna="3">♊</div>
+                                        <div class="gear-mark" data-lagna="4">♋</div>
+                                        <div class="gear-mark" data-lagna="5">♌</div>
+                                        <div class="gear-mark" data-lagna="6">♍</div>
+                                        <div class="gear-mark" data-lagna="7">♎</div>
+                                        <div class="gear-mark" data-lagna="8">♏</div>
+                                        <div class="gear-mark" data-lagna="9">♐</div>
+                                        <div class="gear-mark" data-lagna="10">♑</div>
+                                        <div class="gear-mark" data-lagna="11">♒</div>
+                                        <div class="gear-mark" data-lagna="12">♓</div>
+                                    </div>
+                                    <div class="gear-slider-handle">
+                                        <div class="handle-indicator">
+                                            <div class="current-lagna-sign" id="current-lagna-sign">♈</div>
+                                            <div class="current-lagna-name" id="current-lagna-name">Aries</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nakshatra-gear-dial">
+                            <label for="nakshatra-dial">Nakshatra</label>
+                            <div class="gear-slider-container">
+                                <div class="gear-slider-track">
+                                    <div class="gear-teeth-track"></div>
+                                    <div class="gear-slider-marks">
+                                        <div class="gear-mark" data-nakshatra="1">Ashw</div>
+                                        <div class="gear-mark" data-nakshatra="2">Bhar</div>
+                                        <div class="gear-mark" data-nakshatra="3">Krit</div>
+                                        <div class="gear-mark" data-nakshatra="4">Rohi</div>
+                                        <div class="gear-mark" data-nakshatra="5">Mrig</div>
+                                        <div class="gear-mark" data-nakshatra="6">Ardr</div>
+                                        <div class="gear-mark" data-nakshatra="7">Puna</div>
+                                        <div class="gear-mark" data-nakshatra="8">Push</div>
+                                        <div class="gear-mark" data-nakshatra="9">Ashl</div>
+                                        <div class="gear-mark" data-nakshatra="10">Magh</div>
+                                        <div class="gear-mark" data-nakshatra="11">PPha</div>
+                                        <div class="gear-mark" data-nakshatra="12">UPha</div>
+                                        <div class="gear-mark" data-nakshatra="13">Hast</div>
+                                        <div class="gear-mark" data-nakshatra="14">Chit</div>
+                                        <div class="gear-mark" data-nakshatra="15">Swat</div>
+                                        <div class="gear-mark" data-nakshatra="16">Vish</div>
+                                        <div class="gear-mark" data-nakshatra="17">Anur</div>
+                                        <div class="gear-mark" data-nakshatra="18">Jyes</div>
+                                        <div class="gear-mark" data-nakshatra="19">Mool</div>
+                                        <div class="gear-mark" data-nakshatra="20">PAsh</div>
+                                        <div class="gear-mark" data-nakshatra="21">UAsh</div>
+                                        <div class="gear-mark" data-nakshatra="22">Shra</div>
+                                        <div class="gear-mark" data-nakshatra="23">Dhan</div>
+                                        <div class="gear-mark" data-nakshatra="24">Shat</div>
+                                        <div class="gear-mark" data-nakshatra="25">PBha</div>
+                                        <div class="gear-mark" data-nakshatra="26">UBha</div>
+                                        <div class="gear-mark" data-nakshatra="27">Reva</div>
+                                    </div>
+                                    <div class="gear-slider-handle">
+                                        <div class="handle-indicator">
+                                            <div class="current-nakshatra-name" id="current-nakshatra-name">Ashwini</div>
+                                            <div class="current-nakshatra-ruling" id="current-nakshatra-ruling">Ketu</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="vedic-chart" class="vedic-chart" style="height:calc(100% - 160px);"></div>
             </div>
         </div>
 
@@ -960,6 +2047,11 @@
                     selectSkill(skill);
                     renderSkillArchive(); // Re-render to update mastery
                 };
+                // Drag support
+                skillCard.draggable = true;
+                skillCard.addEventListener('dragstart', (ev) => {
+                    ev.dataTransfer.setData('text/skill-id', skill.id);
+                });
 
                 skillList.appendChild(skillCard);
             });
@@ -1008,8 +2100,23 @@
 
         function selectSkill(skill) {
             console.log('🎯 Selected skill:', skill.name);
-            // TODO: Update chart and card preview with selected skill
+            // Map selected skill into a glyph and highlight recommended houses
+            selectedGlyph = mapSkillToGlyph(skill);
+            highlightRecommendedHouses(selectedGlyph);
             showSkillDetails(skill);
+        }
+
+        function highlightRecommendedHouses(glyph) {
+            // Remove previous highlights
+            document.querySelectorAll('.house.recommended').forEach(h => h.classList.remove('recommended'));
+            if (!glyph) return;
+            document.querySelectorAll('.house').forEach(h => {
+                const houseId = parseInt(h.dataset.houseId, 10);
+                const house = HOUSES.find(x => x.id === houseId);
+                if (!house) return;
+                const match = (house.optimal || []).some(opt => (glyph.tags || []).includes(opt));
+                if (match) h.classList.add('recommended');
+            });
         }
 
         function showSkillDetails(skill) {
@@ -1064,6 +2171,1151 @@
             `;
         }
 
+        // === JOTYSH ENGINE STATE ===
+        const JOTYSH_KEYS = {
+            lagna: 'cosmic_lagna',
+            slots: 'cosmic_jotysh_slots'
+        };
+
+        let activeSkillId = null;
+        let selectedGlyph = null;
+        let slottedGlyphs = new Array(12).fill(null);
+        let invokedCard = null;
+        let currentBaseElement = null;
+        let currentLagna = 1;
+        let currentNakshatra = 1;
+        let currentViewMode = 'separate';
+
+        const LAGNA_NAMES = [
+            { id: 1, sign: 'Aries the Celestial Ram ♈', element: 'Fire', ruling: 'Mars' },
+            { id: 2, sign: 'Taurus the Cosmic Bull ♉', element: 'Earth', ruling: 'Venus' },
+            { id: 3, sign: 'Gemini the Twin Stars ♊', element: 'Air', ruling: 'Mercury' },
+            { id: 4, sign: 'Cancer the Mystic Crab ♋', element: 'Water', ruling: 'Moon' },
+            { id: 5, sign: 'Leo the Solar Lion ♌', element: 'Fire', ruling: 'Sun' },
+            { id: 6, sign: 'Virgo the Sacred Maiden ♍', element: 'Earth', ruling: 'Mercury' },
+            { id: 7, sign: 'Libra the Harmonic Scales ♎', element: 'Air', ruling: 'Venus' },
+            { id: 8, sign: 'Scorpio the Eternal Phoenix ♏', element: 'Water', ruling: 'Mars' },
+            { id: 9, sign: 'Sagittarius the Archer\'s Flame ♐', element: 'Fire', ruling: 'Jupiter' },
+            { id: 10, sign: 'Capricorn the Mountain Goat ♑', element: 'Earth', ruling: 'Saturn' },
+            { id: 11, sign: 'Aquarius the Water Bearer ♒', element: 'Air', ruling: 'Saturn' },
+            { id: 12, sign: 'Pisces the Sacred Fish ♓', element: 'Water', ruling: 'Jupiter' }
+        ];
+
+        const NAKSHATRA_DATA = [
+            { id: 1, name: 'Ashwini', ruling: 'Ketu', deity: 'Ashwini Kumaras', symbol: 'Horse Head', quality: 'Light' },
+            { id: 2, name: 'Bharani', ruling: 'Venus', deity: 'Yama', symbol: 'Yoni', quality: 'Fierce' },
+            { id: 3, name: 'Krittika', ruling: 'Sun', deity: 'Agni', symbol: 'Razor/Flame', quality: 'Mixed' },
+            { id: 4, name: 'Rohini', ruling: 'Moon', deity: 'Brahma', symbol: 'Chariot', quality: 'Fixed' },
+            { id: 5, name: 'Mrigashira', ruling: 'Mars', deity: 'Soma', symbol: 'Deer Head', quality: 'Soft' },
+            { id: 6, name: 'Ardra', ruling: 'Rahu', deity: 'Rudra', symbol: 'Teardrop', quality: 'Sharp' },
+            { id: 7, name: 'Punarvasu', ruling: 'Jupiter', deity: 'Aditi', symbol: 'Quiver/Bow', quality: 'Movable' },
+            { id: 8, name: 'Pushya', ruling: 'Saturn', deity: 'Brihaspati', symbol: 'Cow Udder', quality: 'Light' },
+            { id: 9, name: 'Ashlesha', ruling: 'Mercury', deity: 'Nagas', symbol: 'Coiled Serpent', quality: 'Sharp' },
+            { id: 10, name: 'Magha', ruling: 'Ketu', deity: 'Pitrs', symbol: 'Throne', quality: 'Fierce' },
+            { id: 11, name: 'Purva Phalguni', ruling: 'Venus', deity: 'Bhaga', symbol: 'Hammock', quality: 'Fierce' },
+            { id: 12, name: 'Uttara Phalguni', ruling: 'Sun', deity: 'Aryaman', symbol: 'Fig Tree', quality: 'Fixed' },
+            { id: 13, name: 'Hasta', ruling: 'Moon', deity: 'Savitar', symbol: 'Hand/Fist', quality: 'Light' },
+            { id: 14, name: 'Chitra', ruling: 'Mars', deity: 'Tvashtar', symbol: 'Bright Jewel', quality: 'Soft' },
+            { id: 15, name: 'Swati', ruling: 'Rahu', deity: 'Vayu', symbol: 'Coral/Sword', quality: 'Movable' },
+            { id: 16, name: 'Vishakha', ruling: 'Jupiter', deity: 'Indra-Agni', symbol: 'Triumphal Gate', quality: 'Mixed' },
+            { id: 17, name: 'Anuradha', ruling: 'Saturn', deity: 'Mitra', symbol: 'Lotus', quality: 'Soft' },
+            { id: 18, name: 'Jyeshtha', ruling: 'Mercury', deity: 'Indra', symbol: 'Umbrella/Earring', quality: 'Sharp' },
+            { id: 19, name: 'Moola', ruling: 'Ketu', deity: 'Nirrti', symbol: 'Tied Roots', quality: 'Sharp' },
+            { id: 20, name: 'Purva Ashadha', ruling: 'Venus', deity: 'Apas', symbol: 'Elephant Tusk', quality: 'Fierce' },
+            { id: 21, name: 'Uttara Ashadha', ruling: 'Sun', deity: 'Vishvadevas', symbol: 'Planks', quality: 'Fixed' },
+            { id: 22, name: 'Shravana', ruling: 'Moon', deity: 'Vishnu', symbol: 'Three Footprints', quality: 'Movable' },
+            { id: 23, name: 'Dhanishta', ruling: 'Mars', deity: 'Vasus', symbol: 'Drum/Flute', quality: 'Movable' },
+            { id: 24, name: 'Shatabhisha', ruling: 'Rahu', deity: 'Varuna', symbol: 'Empty Circle', quality: 'Movable' },
+            { id: 25, name: 'Purva Bhadrapada', ruling: 'Jupiter', deity: 'Aja Ekapada', symbol: 'Funeral Cot', quality: 'Fierce' },
+            { id: 26, name: 'Uttara Bhadrapada', ruling: 'Saturn', deity: 'Ahir Budhnya', symbol: 'Twins/Back Legs', quality: 'Fixed' },
+            { id: 27, name: 'Revati', ruling: 'Mercury', deity: 'Pushan', symbol: 'Fish/Drum', quality: 'Soft' }
+        ];
+
+        const HOUSES = [
+            { id: 1, name: '1st House', number: '1st', fullName: 'Sovereign Essence', bonus: 1.2, planet: 'Mars', desc: 'The Core of Identity & Vital Force', optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative'] },
+            { id: 2, name: '2nd House', number: '2nd', fullName: 'Vault of Abundance', bonus: 1.0, planet: 'Venus', desc: 'The Treasury of Wealth & Possessions', optimal: ['Gold Generation', 'Loot Skills'] },
+            { id: 3, name: '3rd House', number: '3rd', fullName: 'Bridge of Expression', bonus: 1.0, planet: 'Mercury', desc: 'The Channel of Speed & Versatility', optimal: ['Quick-Cast', 'Multi-Hit'] },
+            { id: 4, name: '4th House', number: '4th', fullName: 'Roots of Stability', bonus: 1.1, planet: 'Moon', desc: 'The Foundation of Roots & Security', optimal: ['Healing', 'Shield', 'Sustain'] },
+            { id: 5, name: '5th House', number: '5th', fullName: 'Forge of Innovation', bonus: 1.15, planet: 'Sun', desc: 'The Crucible of Expression & Power', optimal: ['High Power', 'AoE'] },
+            { id: 6, name: '6th House', number: '6th', fullName: 'Arena of Conflict', bonus: 1.0, planet: 'Mercury', desc: 'The Battlefield of Combat & Rivalry', optimal: ['Anti-Enemy', 'Debuffs'] },
+            { id: 7, name: '7th House', number: '7th', fullName: 'Harmony of Bonds', bonus: 1.0, planet: 'Venus', desc: 'The Equilibrium of Balance & Alliance', optimal: ['Support', 'Reflect'] },
+            { id: 8, name: '8th House', number: '8th', fullName: 'Cradle of Change', bonus: 1.1, planet: 'Mars', desc: 'The Catalyst of Transformation & Rebirth', optimal: ['DoT', 'Transform'] },
+            { id: 9, name: '9th House', number: '9th', fullName: 'Wheel of Destiny', bonus: 1.2, planet: 'Jupiter', desc: 'The Vortex of Luck & Expansion', optimal: ['XP Gain', 'Wisdom'] },
+            { id: 10, name: '10th House', number: '10th', fullName: 'Throne of Command', bonus: 1.0, planet: 'Saturn', desc: 'The Citadel of Discipline & Authority', optimal: ['Defense', 'CC'] },
+            { id: 11, name: '11th House', number: '11th', fullName: 'Harvest of Rewards', bonus: 1.0, planet: 'Saturn', desc: 'The Bounty of Achievement & Networks', optimal: ['Reward Skills', 'Multipliers'] },
+            { id: 12, name: '12th House', number: '12th', fullName: 'Portal of Transcendence', bonus: 1.3, planet: 'Jupiter', desc: 'The Gateway of Spirit & Liberation', optimal: ['Ultimate Skills', 'Cleanse'] }
+        ];
+
+        const PLANET_SYNERGIES = {
+            'Sun': { color: '#ffd700', symbol: '☉', keywords: ['Power', 'Leadership', 'Crit'], bonus: { power: 15, crit: 10 }, title: 'The Radiant Sovereign', lore: 'Solar energy ignites raw dominance and dazzling crits.' },
+            'Moon': { color: '#c0c0c0', symbol: '☽', keywords: ['Heal', 'Shield', 'Regen'], bonus: { healing: 20, cooldown: 15 }, title: 'The Silver Guardian', lore: 'Lunar tides restore and protect.' },
+            'Mars': { color: '#ff4444', symbol: '♂', keywords: ['Physical', 'Attack', 'Bleed'], bonus: { attackSpeed: 20, bleed: 10 }, title: 'The Crimson Warlord', lore: 'Aggression rewarded with relentless pressure.' },
+            'Mercury': { color: '#00ff88', symbol: '☿', keywords: ['Speed', 'Versatile', 'Combo'], bonus: { cooldown: -15, versatility: 15 }, title: 'The Quicksilver Trickster', lore: 'Swift minds chain skills effortlessly.' },
+            'Jupiter': { color: '#9966ff', symbol: '♃', keywords: ['XP', 'Wisdom', 'Ultimate'], bonus: { xp: 25, rewards: 10 }, title: 'The Sage King', lore: 'Fortune favors the enlightened.' },
+            'Venus': { color: '#ff69b4', symbol: '♀', keywords: ['Gold', 'Charm', 'Support'], bonus: { gold: 20, charm: 15 }, title: 'The Enchantress', lore: 'Beauty alchemizes struggle into rewards.' },
+            'Saturn': { color: '#4169e1', symbol: '♄', keywords: ['Defense', 'CC', 'Slow'], bonus: { defense: 20, dotResist: 15 }, title: 'The Iron Judge', lore: 'Discipline endures all onslaughts.' },
+            'Rahu': { color: '#8b008b', symbol: '☊', keywords: ['Chaos', 'Shadow'], bonus: { chaos: 25, stealth: 10 }, title: 'The Devouring Shadow', lore: 'Unorthodox tactics thrive in darkness.' },
+            'Ketu': { color: '#f0f0f0', symbol: '☋', keywords: ['Mystic', 'Transcend'], bonus: { spiritual: 20, immunity: 15 }, title: 'The Liberating Flame', lore: 'Transcend limits through detachment.' }
+        };
+
+        function showPlanetInfo(planetName, event) {
+            const data = PLANET_SYNERGIES[planetName];
+            const tooltip = document.getElementById('planet-tooltip');
+            if (!data || !tooltip) return;
+            tooltip.innerHTML = `
+                <div class="planet-tooltip-close" onclick="closePlanetTooltip()">×</div>
+                <div class="planet-tooltip-header" style="border-color:${data.color};">
+                    <div class="planet-tooltip-symbol" style="color:${data.color};">${data.symbol}</div>
+                    <div>
+                        <div class="planet-tooltip-name">${planetName}</div>
+                        <div class="planet-tooltip-subtitle">${data.title}</div>
+                    </div>
+                </div>
+                <div class="planet-tooltip-body">
+                    <div class="planet-lore" style="border-color:${data.color};">${data.lore}</div>
+                    <div class="planet-stat-section">
+                        <div class="planet-section-title">Bonuses</div>
+                        <div class="planet-stat-grid">
+                            ${Object.entries(data.bonus).map(([key,val]) => `
+                                <div class="planet-stat-box">
+                                    <div class="planet-stat-value" style="color:${data.color};">${val > 0 ? '+' : ''}${val}</div>
+                                    <div class="planet-stat-label">${key}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="planet-stat-section">
+                        <div class="planet-section-title">Keywords</div>
+                        <div class="planet-keywords">
+                            ${data.keywords.map(kw => `<span class="planet-keyword-tag" style="border-color:${data.color}; color:${data.color};">${kw}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            const x = event?.clientX || window.innerWidth / 2;
+            const y = event?.clientY || window.innerHeight / 2;
+            tooltip.style.left = `${Math.min(x, window.innerWidth - 340)}px`;
+            tooltip.style.top = `${Math.min(y, window.innerHeight - 360)}px`;
+            tooltip.classList.add('visible');
+        }
+
+        function closePlanetTooltip() {
+            document.getElementById('planet-tooltip')?.classList.remove('visible');
+        }
+
+        const LAGNA_GAME_DATA = {
+            1: { stats: { power: 25, speed: 20, defense: 10 }, passives: [
+                { name: 'Pioneer Spirit', desc: '+15% first strike damage.' },
+                { name: 'Berserker Rage', desc: 'Every 3rd attack grants +20% attack speed.' }
+            ], synergies: ['Fire Skills', 'Physical Attacks', 'Bleed'], strategy: 'Lead with aggression and capitalize on opening blows.' },
+            2: { stats: { power: 15, speed: 5, defense: 30 }, passives: [
+                { name: 'Immovable Force', desc: '+25% Max HP, immune to knockback.' },
+                { name: 'Resource Magnet', desc: '+30% gold/material drops.' }
+            ], synergies: ['Earth Skills', 'Defensive', 'Healing'], strategy: 'Anchor teams with sustain and economic advantages.' },
+            3: { stats: { power: 15, speed: 25, defense: 10 }, passives: [
+                { name: 'Dual Nature', desc: '20% chance to double cast.' },
+                { name: 'Quick Learner', desc: '+35% XP gain.' }
+            ], synergies: ['Air Skills', 'Combos', 'Utility'], strategy: 'Chain rapid strikes and flexible responses.' },
+            4: { stats: { power: 10, speed: 10, defense: 25 }, passives: [
+                { name: 'Lunar Shield', desc: '+30% shield effectiveness.' },
+                { name: 'Emotional Strength', desc: '+20% healing received.' }
+            ], synergies: ['Water Skills', 'Support'], strategy: 'Lean into sustain-heavy play and protective roles.' },
+            5: { stats: { power: 30, speed: 15, defense: 10 }, passives: [
+                { name: 'Solar Radiance', desc: '+25% AoE damage.' },
+                { name: 'Majestic Presence', desc: '+15% crit chance.' }
+            ], synergies: ['Fire Skills', 'AoE', 'Crit'], strategy: 'Amplify showcase moves and empower nearby allies.' },
+            6: { stats: { power: 18, speed: 18, defense: 12 }, passives: [
+                { name: 'Battle Analyst', desc: 'Expose enemy weaknesses every 10s.' },
+                { name: 'Tactical Grind', desc: '+10% damage vs elites.' }
+            ], synergies: ['Debuff', 'Execute'], strategy: 'Apply pressure to bosses and rival builds.' },
+            7: { stats: { power: 15, speed: 12, defense: 18 }, passives: [
+                { name: 'Mirror Pact', desc: 'Reflect 10% damage taken.' },
+                { name: 'Alliance Keeper', desc: 'Buffs last +20% longer on allies.' }
+            ], synergies: ['Support', 'Reflect'], strategy: 'Balance offense/defense and keep allies fortified.' },
+            8: { stats: { power: 22, speed: 12, defense: 16 }, passives: [
+                { name: 'Phoenix Pulse', desc: 'Revives grant +20% power for 10s.' },
+                { name: 'Venom Engine', desc: '+15% DoT potency.' }
+            ], synergies: ['DoT', 'Transform'], strategy: 'Reward risky, metamorphic playstyles.' },
+            9: { stats: { power: 24, speed: 14, defense: 12 }, passives: [
+                { name: 'Fortune Surge', desc: '+40% XP when exploring.' },
+                { name: 'Pilgrim’s Insight', desc: '+10% rare drop rate.' }
+            ], synergies: ['XP', 'Wisdom'], strategy: 'Snowball with knowledge and expedition rewards.' },
+            10:{ stats: { power: 18, speed: 10, defense: 24 }, passives: [
+                { name: 'Command Aura', desc: 'Allies gain +8% defense.' },
+                { name: 'Time Anchor', desc: 'Enemies slowed by 12% in zones.' }
+            ], synergies: ['Defense', 'CC'], strategy: 'Stabilize battles with control and structure.' },
+            11:{ stats: { power: 16, speed: 18, defense: 16 }, passives: [
+                { name: 'Network Amplifier', desc: '+1 stack cap for buff effects.' },
+                { name: 'Chain Dividend', desc: '+5% damage per active ally buff.' }
+            ], synergies: ['Reward', 'Stack'], strategy: 'Thrive in ensemble builds and combo loops.' },
+            12:{ stats: { power: 20, speed: 12, defense: 18 }, passives: [
+                { name: 'Ethereal Cleanse', desc: 'Cleanse also grants 1s invulnerability.' },
+                { name: 'Astral Drift', desc: '+15% ultimate charge speed.' }
+            ], synergies: ['Mystic', 'Ultimate'], strategy: 'Transcend fights with spiritual finishers.' }
+        };
+
+        function initJotyshEngine() {
+            loadLagnaFromStorage();
+            loadSlotsFromStorage();
+            loadBlueprintFromStorage();
+            syncLagnaSelector();
+            populateLagnaOptions();
+            updateLagnaInfo();
+            // renderVedicChart();
+            renderVedicChart();
+            commitBlueprintToChart();
+            wireJotyshUI();
+            updateInvokeButtonState();
+        }
+
+        function populateLagnaOptions() {
+            // Update gear marks positions and current display
+            updateGearDial();
+            updateNakshatraDial();
+        }
+
+        function updateGearDial() {
+            const marks = document.querySelectorAll('.lagna-gear-dial .gear-mark');
+            const handle = document.querySelector('.lagna-gear-dial .gear-slider-handle');
+            const currentSign = document.getElementById('current-lagna-sign');
+            const currentName = document.getElementById('current-lagna-name');
+
+            if (!marks.length || !handle || !currentSign || !currentName) return;
+
+            // Get the actual width of the slider track
+            const track = document.querySelector('.lagna-gear-dial .gear-slider-track');
+            if (!track) return;
+            const trackWidth = track.offsetWidth;
+            const handleWidth = 24; // Match CSS width
+
+            // Position marks horizontally along the slider
+            marks.forEach((mark, index) => {
+                const position = (index / 11) * (trackWidth - handleWidth); // 11 intervals for 12 positions
+                mark.style.left = `${position + handleWidth / 2}px`; // Center on handle width
+                mark.classList.toggle('active', parseInt(mark.dataset.lagna) === currentLagna);
+            });
+
+            // Position handle based on current lagna
+            const handlePosition = ((currentLagna - 1) / 11) * (trackWidth - handleWidth);
+            handle.style.left = `${handlePosition}px`;
+
+            // Update center display
+            const lagnaData = LAGNA_NAMES[currentLagna - 1];
+            if (lagnaData) {
+                currentSign.textContent = getSignSymbol(lagnaData.sign);
+                currentName.textContent = getSignShortName(lagnaData.sign);
+            }
+        }
+
+        function updateNakshatraDial() {
+            const marks = document.querySelectorAll('.nakshatra-gear-dial .gear-mark');
+            const handle = document.querySelector('.nakshatra-gear-dial .gear-slider-handle');
+            const currentName = document.getElementById('current-nakshatra-name');
+            const currentRuling = document.getElementById('current-nakshatra-ruling');
+
+            if (!marks.length || !handle || !currentName || !currentRuling) return;
+
+            // Get the actual width of the slider track
+            const track = document.querySelector('.nakshatra-gear-dial .gear-slider-track');
+            if (!track) return;
+            const trackWidth = track.offsetWidth;
+            const handleWidth = 24; // Match CSS width
+
+            // Position marks horizontally along the slider (27 nakshatras)
+            marks.forEach((mark, index) => {
+                const position = (index / 26) * (trackWidth - handleWidth); // 26 intervals for 27 positions
+                mark.style.left = `${position + handleWidth / 2}px`; // Center on handle width
+                mark.classList.toggle('active', parseInt(mark.dataset.nakshatra) === currentNakshatra);
+            });
+
+            // Position handle based on current nakshatra
+            const handlePosition = ((currentNakshatra - 1) / 26) * (trackWidth - handleWidth);
+            handle.style.left = `${handlePosition}px`;
+
+            // Update center display
+            const nakshatraData = NAKSHATRA_DATA[currentNakshatra - 1];
+            if (nakshatraData) {
+                currentName.textContent = nakshatraData.name;
+                currentRuling.textContent = nakshatraData.ruling;
+            }
+        }
+
+        function rotateNakshatra(newNakshatra) {
+            if (isNaN(newNakshatra) || newNakshatra < 1 || newNakshatra > 27) return;
+            currentNakshatra = newNakshatra;
+            updateNakshatraDial();
+            // Update any nakshatra-dependent displays
+            updateNakshatraInfo();
+        }
+
+        function wireJotyshUI() {
+            // Wire gear slider interactions
+            const gearSlider = document.querySelector('.gear-slider-track');
+            const gearHandle = document.querySelector('.gear-slider-handle');
+
+            if (gearSlider && gearHandle) {
+                let isDragging = false;
+                let startX = 0;
+                let currentX = 0;
+                const handleWidth = 24; // Match CSS width
+
+                const getTrackWidth = () => gearSlider.offsetWidth;
+
+                const getPosition = (clientX) => {
+                    const rect = gearSlider.getBoundingClientRect();
+                    const relativeX = clientX - rect.left;
+                    const trackWidth = getTrackWidth();
+                    return Math.max(0, Math.min(trackWidth - handleWidth, relativeX - handleWidth / 2));
+                };
+
+                const handleSliderChange = (position) => {
+                    // Convert position to lagna (12 positions)
+                    const trackWidth = getTrackWidth();
+                    const lagnaIndex = Math.round((position / (trackWidth - handleWidth)) * 11);
+                    const newLagna = lagnaIndex + 1;
+
+                    if (newLagna !== currentLagna && newLagna >= 1 && newLagna <= 12) {
+                        rotateLagna(newLagna);
+                    }
+                };
+
+                const updateHandlePosition = (position) => {
+                    gearHandle.style.left = `${position}px`;
+                };
+
+                gearSlider.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.clientX;
+                    const rect = gearSlider.getBoundingClientRect();
+                    currentX = e.clientX - rect.left - handleWidth / 2;
+                    gearSlider.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    const newX = getPosition(e.clientX);
+                    updateHandlePosition(newX);
+                    currentX = newX;
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    gearSlider.style.cursor = 'pointer';
+
+                    // Snap to nearest lagna position
+                    const trackWidth = getTrackWidth();
+                    const snappedPosition = Math.round((currentX / (trackWidth - handleWidth)) * 11) / 11 * (trackWidth - handleWidth);
+                    updateHandlePosition(snappedPosition);
+                    handleSliderChange(snappedPosition);
+                });
+
+                // Click on track to jump to position
+                gearSlider.addEventListener('click', (e) => {
+                    if (isDragging) return;
+                    const position = getPosition(e.clientX);
+                    updateHandlePosition(position);
+                    handleSliderChange(position);
+                });
+
+                // Handle direct interaction
+                gearHandle.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.clientX;
+                    gearHandle.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+            }
+
+            // Wire gear marks for lagna
+            document.querySelectorAll('.lagna-gear-dial .gear-mark').forEach(mark => {
+                mark.addEventListener('click', () => {
+                    const lagna = parseInt(mark.dataset.lagna);
+                    rotateLagna(lagna);
+                });
+            });
+
+            // Wire nakshatra slider interactions
+            const nakshatraSlider = document.querySelector('.nakshatra-gear-dial .gear-slider-track');
+            const nakshatraHandle = document.querySelector('.nakshatra-gear-dial .gear-slider-handle');
+
+            if (nakshatraSlider && nakshatraHandle) {
+                let isDraggingNak = false;
+                let startXNak = 0;
+                let currentXNak = 0;
+                const handleWidthNak = 24; // Match CSS width
+
+                const getTrackWidthNak = () => nakshatraSlider.offsetWidth;
+
+                const getPositionNak = (clientX) => {
+                    const rect = nakshatraSlider.getBoundingClientRect();
+                    const relativeX = clientX - rect.left;
+                    const trackWidth = getTrackWidthNak();
+                    return Math.max(0, Math.min(trackWidth - handleWidthNak, relativeX - handleWidthNak / 2));
+                };
+
+                const handleNakSliderChange = (position) => {
+                    // Convert position to nakshatra (27 positions)
+                    const trackWidth = getTrackWidthNak();
+                    const nakshatraIndex = Math.round((position / (trackWidth - handleWidthNak)) * 26);
+                    const newNakshatra = nakshatraIndex + 1;
+
+                    if (newNakshatra !== currentNakshatra && newNakshatra >= 1 && newNakshatra <= 27) {
+                        rotateNakshatra(newNakshatra);
+                    }
+                };
+
+                const updateNakHandlePosition = (position) => {
+                    nakshatraHandle.style.left = `${position}px`;
+                };
+
+                nakshatraSlider.addEventListener('mousedown', (e) => {
+                    isDraggingNak = true;
+                    startXNak = e.clientX;
+                    const rect = nakshatraSlider.getBoundingClientRect();
+                    currentXNak = e.clientX - rect.left - handleWidthNak / 2;
+                    nakshatraSlider.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDraggingNak) return;
+                    const newX = getPositionNak(e.clientX);
+                    updateNakHandlePosition(newX);
+                    currentXNak = newX;
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (!isDraggingNak) return;
+                    isDraggingNak = false;
+                    nakshatraSlider.style.cursor = 'pointer';
+
+                    // Snap to nearest nakshatra position
+                    const trackWidth = getTrackWidthNak();
+                    const snappedPosition = Math.round((currentXNak / (trackWidth - handleWidthNak)) * 26) / 26 * (trackWidth - handleWidthNak);
+                    updateNakHandlePosition(snappedPosition);
+                    handleNakSliderChange(snappedPosition);
+                });
+
+                // Click on track to jump to position
+                nakshatraSlider.addEventListener('click', (e) => {
+                    if (isDraggingNak) return;
+                    const position = getPositionNak(e.clientX);
+                    updateNakHandlePosition(position);
+                    handleNakSliderChange(position);
+                });
+
+                // Handle direct interaction
+                nakshatraHandle.addEventListener('mousedown', (e) => {
+                    isDraggingNak = true;
+                    startXNak = e.clientX;
+                    nakshatraHandle.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+            }
+
+            // Wire gear marks for nakshatra
+            document.querySelectorAll('.nakshatra-gear-dial .gear-mark').forEach(mark => {
+                mark.addEventListener('click', () => {
+                    const nakshatra = parseInt(mark.dataset.nakshatra);
+                    rotateNakshatra(nakshatra);
+                });
+            });
+
+            document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+                btn.addEventListener('click', () => setViewMode(btn.dataset.view));
+            });
+
+            const lagnaHeader = document.querySelector('#lagna-info-panel .lagna-info-header');
+            if (lagnaHeader) lagnaHeader.addEventListener('click', toggleLagnaInfo);
+            const nakshatraHeader = document.querySelector('#nakshatra-info-panel .nakshatra-info-header');
+            if (nakshatraHeader) nakshatraHeader.addEventListener('click', toggleNakshatraInfo);
+
+            const matrixBtn = document.getElementById('element-matrix-btn');
+            if (matrixBtn) matrixBtn.addEventListener('click', imbueWithRandomElement);
+
+            const blueprintBtn = document.getElementById('jotysh-blueprint-btn');
+            if (blueprintBtn) blueprintBtn.addEventListener('click', (e) => openJotyshBlueprint(e));
+            // Also support right-click+hold and keyboard opening
+            if (blueprintBtn) blueprintBtn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') openJotyshBlueprint(ev); });
+
+            const invokeBtn = document.getElementById('invoke-card-btn');
+            if (invokeBtn) invokeBtn.addEventListener('click', invokeCardFromJotysh);
+
+            const battleBtn = document.getElementById('battle-btn');
+            if (battleBtn) battleBtn.addEventListener('click', enterBattleSimulation);
+
+            const blueprintClose = document.getElementById('jotysh-blueprint-close');
+            if (blueprintClose) blueprintClose.addEventListener('click', closeJotyshBlueprint);
+            const blueprintMinimize = document.getElementById('jotysh-blueprint-minimize');
+            if (blueprintMinimize) blueprintMinimize.addEventListener('click', toggleMinimizeJotyshBlueprint);
+            const blueprintMaximize = document.getElementById('jotysh-blueprint-maximize');
+            if (blueprintMaximize) blueprintMaximize.addEventListener('click', toggleMaximizeJotyshBlueprint);
+            const commitBtn = document.getElementById('jotysh-blueprint-commit');
+            if (commitBtn) commitBtn.addEventListener('click', () => { commitBlueprintToChart(); });
+            const clearBtn = document.getElementById('jotysh-blueprint-clear');
+            if (clearBtn) clearBtn.addEventListener('click', () => { clearBlueprint(); });
+        }
+
+        function syncLagnaSelector() {
+            updateGearDial();
+            updateNakshatraDial();
+        }
+
+        function loadLagnaFromStorage() {
+            const storedLagna = parseInt(localStorage.getItem(JOTYSH_KEYS.lagna) || '1', 10);
+            if (!isNaN(storedLagna) && storedLagna >= 1 && storedLagna <= 12) currentLagna = storedLagna;
+        }
+
+        function saveLagnaToStorage() {
+            localStorage.setItem(JOTYSH_KEYS.lagna, currentLagna.toString());
+        }
+
+        function loadSlotsFromStorage() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(JOTYSH_KEYS.slots) || '[]');
+                if (Array.isArray(stored) && stored.length === 12) {
+                    slottedGlyphs = stored;
+                }
+            } catch (err) {
+                console.warn('⚠️ Unable to load stored slots', err);
+            }
+        }
+
+        function saveSlotsToStorage() {
+            localStorage.setItem(JOTYSH_KEYS.slots, JSON.stringify(slottedGlyphs));
+        }
+
+        function setViewMode(mode) {
+            currentViewMode = mode;
+            document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.view === mode);
+            });
+            if (mode === 'all') {
+                document.getElementById('lagna-info-panel')?.classList.add('expanded');
+                document.getElementById('nakshatra-info-panel')?.classList.add('expanded');
+            }
+        }
+
+        function toggleLagnaInfo() {
+            document.getElementById('lagna-info-panel')?.classList.toggle('expanded');
+        }
+
+        function toggleNakshatraInfo() {
+            document.getElementById('nakshatra-info-panel')?.classList.toggle('expanded');
+        }
+
+        function rotateLagna(newLagna) {
+            if (isNaN(newLagna) || newLagna < 1 || newLagna > 12) return;
+            const previous = currentLagna;
+            currentLagna = newLagna;
+            saveLagnaToStorage();
+            updateLagnaInfo();
+            updateGearDial();
+            // renderVedicChart();
+            // Trigger per-house content updates rather than rotating the entire chart
+            animateHouseContentChangeForAll(previous, currentLagna);
+        }
+
+        function updateLagnaInfo() {
+            const info = LAGNA_GAME_DATA[currentLagna];
+            if (!info) return;
+            const statGrid = document.getElementById('lagna-stat-grid');
+            if (statGrid) {
+                statGrid.innerHTML = Object.entries(info.stats).map(([label, value]) => `
+                    <div class="lagna-stat-card">
+                        <div style="font-size:0.65rem; text-transform:uppercase; color:var(--text-dim);">${label}</div>
+                        <div style="font-size:1rem; font-weight:700;">${value}</div>
+                    </div>
+                `).join('');
+            }
+
+            const passives = document.getElementById('lagna-passives-list');
+            if (passives) {
+                passives.innerHTML = info.passives.map(passive => `
+                    <div style="padding:0.5rem; border:1px solid rgba(255,255,255,0.08); border-radius:6px; margin-bottom:0.4rem;">
+                        <div style="font-weight:700; font-size:0.8rem;">${passive.name}</div>
+                        <div style="font-size:0.7rem; color:var(--text-dim);">${passive.desc}</div>
+                    </div>
+                `).join('');
+            }
+
+            const synergyTags = document.getElementById('lagna-synergy-tags');
+            if (synergyTags) {
+                synergyTags.innerHTML = info.synergies.map(tag => `<span class="lagna-synergy-tag">${tag}</span>`).join('');
+            }
+
+            const strategy = document.getElementById('lagna-strategy');
+            if (strategy) strategy.textContent = info.strategy;
+
+            const titleDisplay = document.getElementById('lagna-title-display');
+            if (titleDisplay) {
+                const sign = LAGNA_NAMES[currentLagna - 1];
+                titleDisplay.textContent = `${sign.sign} - ${sign.element} Sign`;
+            }
+        }
+
+        function updateNakshatraDetails(info) {
+            const detailGrid = document.getElementById('nakshatra-detail-grid');
+            if (!detailGrid) return;
+            const { nakshatra, pada } = info;
+            detailGrid.innerHTML = `
+                <div class="nakshatra-detail-card"><strong>Ruling:</strong> ${nakshatra.ruling}</div>
+                <div class="nakshatra-detail-card"><strong>Deity:</strong> ${nakshatra.deity}</div>
+                <div class="nakshatra-detail-card"><strong>Symbol:</strong> ${nakshatra.symbol}</div>
+                <div class="nakshatra-detail-card"><strong>Pada:</strong> ${pada}</div>
+            `;
+            const description = document.getElementById('nakshatra-description');
+            if (description) {
+                description.innerHTML = `${nakshatra.name} carries ${nakshatra.quality.toLowerCase()} quality. Align skills that echo ${nakshatra.ruling} to amplify resonance.`;
+            }
+        }
+
+        function getNakshatraForDegree(signId, degree) {
+            const absoluteDegree = ((signId - 1) * 30) + degree;
+            const nakshatraSize = 360 / 27;
+            const nakshatraIndex = Math.floor(absoluteDegree / nakshatraSize) % NAKSHATRA_DATA.length;
+            const degreeInNakshatra = absoluteDegree % nakshatraSize;
+            const padaSize = nakshatraSize / 4;
+            const pada = Math.floor(degreeInNakshatra / padaSize) + 1;
+            return { nakshatra: NAKSHATRA_DATA[nakshatraIndex], pada };
+        }
+
+        function getSignForHouse(houseNumber) {
+            const signIndex = (houseNumber - 1 + currentLagna - 1) % 12;
+            return LAGNA_NAMES[signIndex];
+        }
+
+        function getSignSymbol(signName) {
+            const symbolMatch = signName.match(/♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓/);
+            return symbolMatch ? symbolMatch[0] : '♈';
+        }
+
+        function getSignShortName(signName) {
+            return signName.replace(/\s+♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓$/, '').replace(/the.*$/, '').trim();
+        }
+
+        function renderVedicChart() {
+            const container = document.getElementById('vedic-chart');
+            if (!container) return;
+            container.innerHTML = '';
+
+            HOUSES.forEach((house, index) => {
+                const sign = getSignForHouse(house.id);
+                const houseEl = document.createElement('div');
+                houseEl.className = 'house';
+                houseEl.dataset.element = sign.element.toLowerCase();
+                houseEl.dataset.houseId = house.id;
+                houseEl.setAttribute('tabindex','0');
+                houseEl.innerHTML = `
+                    <div class="house-header">
+                        <div class="house-title-row">
+                            <div class="house-logo">🏠</div>
+                            <div class="house-label" title="${house.fullName} - ${house.desc}">
+                                <div class="house-number">${house.number}</div>
+                                <div class="house-word">House</div>
+                            </div>
+                            <div class="sign-indicator" data-element="${sign.element.toLowerCase()}">
+                                <div class="sign-logo">${getSignSymbol(sign.sign)}</div>
+                                <div class="sign-label">${getSignShortName(sign.sign)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="house-slot" id="slot-${index}" data-slot-index="${index}">
+                    </div>
+                    <div class="house-footer">
+                    </div>
+                `;
+                // Click to slot (for click-to-slot UI)
+                houseEl.addEventListener('click', () => handleHouseClick(index));
+                // Planet info clickable within the house
+                const planetBadge = houseEl.querySelector('.planet-badge');
+                if (planetBadge) planetBadge.addEventListener('click', (ev) => { ev.stopPropagation(); showPlanetInfo(house.planet, ev); });
+                // Drag and drop
+                const slotEl = houseEl.querySelector('.house-slot');
+                if (slotEl) {
+                    slotEl.addEventListener('dragenter', e => { e.preventDefault(); houseEl.classList.add('dragover'); });
+                    slotEl.addEventListener('dragover', e => { e.preventDefault(); });
+                    slotEl.addEventListener('dragleave', e => { e.preventDefault(); houseEl.classList.remove('dragover'); });
+                    slotEl.addEventListener('drop', e => {
+                    e.preventDefault(); houseEl.classList.remove('dragover');
+                    const skillId = e.dataTransfer.getData('text/skill-id');
+                    if (skillId) {
+                        // find skill from ownedSkills
+                        const skill = ownedSkills.find(s => s.id === skillId);
+                        if (skill) {
+                            selectedGlyph = mapSkillToGlyph(skill);
+                            handleHouseClick(index);
+                            renderSkillArchive();
+                        }
+                    }
+                    });
+                }
+                container.appendChild(houseEl);
+                if (house.appliedNakshatra) houseEl.classList.add('applied');
+            });
+
+            // No wheel rotation — keep the 3x4 grid static, animate content updates instead
+
+            // Render existing slotted glyphs
+            slottedGlyphs.forEach((glyph, index) => renderHouseSlot(index, glyph));
+        }
+
+        // Animate sign/nakshatra content for all houses (change triggered by Lagna rotation)
+        function animateHouseContentChangeForAll(oldLagna, newLagna) {
+            const container = document.getElementById('vedic-chart');
+            if (!container) return;
+
+            HOUSES.forEach(house => {
+                const houseEl = container.querySelector(`.house[data-house-id='${house.id}']`);
+                if (!houseEl) return;
+
+                const oldSign = LAGNA_NAMES[(house.id - 1 + oldLagna - 1 + 12) % 12];
+                const newSign = LAGNA_NAMES[(house.id - 1 + newLagna - 1 + 12) % 12];
+                const oldNak = getNakshatraForDegree(oldSign.id, 0);
+                const newNak = getNakshatraForDegree(newSign.id, 0);
+
+                // Smoothly transition sign indicator if sign changed
+                const signIndicator = houseEl.querySelector('.sign-indicator');
+                if (signIndicator && oldSign.id !== newSign.id) {
+                    // Add transition class for smooth change
+                    signIndicator.classList.add('sign-transitioning');
+
+                    // Update the sign content after a brief delay
+                    setTimeout(() => {
+                        signIndicator.setAttribute('data-element', newSign.element.toLowerCase());
+                        signIndicator.innerHTML = `
+                            <div class="sign-logo">${getSignSymbol(newSign.sign)}</div>
+                            <div class="sign-label">${getSignShortName(newSign.sign)}</div>
+                        `;
+                        signIndicator.classList.remove('sign-transitioning');
+                    }, 150);
+                }
+
+                // fade nakshatra if changed
+                const nakEl = houseEl.querySelector('.nakshatra-fade');
+                if (nakEl && oldNak.nakshatra.name !== newNak.nakshatra.name) {
+                    nakEl.classList.add('fade');
+                    setTimeout(() => { nakEl.textContent = newNak.nakshatra.name; nakEl.classList.remove('fade'); }, 220);
+                }
+            });
+        }
+
+        // Animate only nakshatra label updates for all houses (triggered by degree change)
+        function animateNakshatraUpdateForAll() {
+            const container = document.getElementById('vedic-chart');
+            if (!container) return;
+            HOUSES.forEach(house => {
+                const houseEl = container.querySelector(`.house[data-house-id='${house.id}']`);
+                if (!houseEl) return;
+                const sign = getSignForHouse(house.id);
+                const newNak = getNakshatraForDegree(sign.id, 0);
+                const nakEl = houseEl.querySelector('.nakshatra-fade');
+                if (nakEl && nakEl.textContent !== newNak.nakshatra.name) {
+                    nakEl.classList.add('fade');
+                    setTimeout(() => { nakEl.textContent = newNak.nakshatra.name; nakEl.classList.remove('fade'); }, 180);
+                }
+            });
+        }
+
+        // animateLagnaRotation was removed: we now update per-house content visually using animateHouseContentChangeForAll
+
+        function renderHouseSlot(index, glyph = slottedGlyphs[index]) {
+            const slot = document.getElementById(`slot-${index}`);
+            if (!slot) return;
+            if (!glyph) {
+                slot.innerHTML = '';
+                const houseEl = slot.closest('.house'); if (houseEl) houseEl.classList.remove('filled');
+                return;
+            }
+            slot.innerHTML = `
+                <div class="slotted-glyph">
+                    <button class="remove-btn" onclick="removeGlyph(${index}); event.stopPropagation();">×</button>
+                    <div style="font-weight:700; font-size:0.85rem;">${glyph.name}</div>
+                    <div style="font-size:0.7rem; color:var(--text-dim);">KP ${glyph.kp || 0} • CD ${glyph.cooldown || 0}s</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.2rem; margin-top:0.2rem;">
+                        ${(glyph.tags || []).slice(0,3).map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            const houseEl = slot.closest('.house'); if (houseEl) houseEl.classList.add('filled');
+        }
+
+        function handleHouseClick(index) {
+            if (!selectedGlyph) {
+                showNotification('Select a skill in the Neural Archive first.', 'info');
+                return;
+            }
+            slottedGlyphs[index] = { ...selectedGlyph };
+            renderHouseSlot(index);
+            saveSlotsToStorage();
+            updateInvokeButtonState();
+            playSound('select');
+            // brief animated pulse for the house to show slotted state
+            const houseEl = document.querySelector(`.house[data-house-id='${index+1}']`);
+            if (houseEl) {
+                houseEl.classList.add('slot-animated');
+                setTimeout(() => houseEl.classList.remove('slot-animated'), 440);
+            }
+        }
+
+        function removeGlyph(index) {
+            slottedGlyphs[index] = null;
+            renderHouseSlot(index);
+            saveSlotsToStorage();
+            updateInvokeButtonState();
+        }
+
+        function mapSkillToGlyph(skill) {
+            const stats = skill.stats || {};
+            return {
+                id: skill.id,
+                name: skill.name,
+                tier: skill.tier || 'COMMON',
+                tags: Array.isArray(skill.tags) ? skill.tags : [],
+                kp: stats.cost || stats.kp || 0,
+                cooldown: stats.cooldown || 0,
+                power: stats.damage || stats.powerScore || 0
+            };
+        }
+
+        function updateInvokeButtonState() {
+            const filled = slottedGlyphs.filter(Boolean).length;
+            const invokeBtn = document.getElementById('invoke-card-btn');
+            if (invokeBtn) {
+                invokeBtn.disabled = filled === 0;
+                invokeBtn.textContent = filled ? `🎴 Invoke Card (${filled}/12)` : '🎴 Invoke Card';
+            }
+            const battleBtn = document.getElementById('battle-btn');
+            if (battleBtn) battleBtn.disabled = !invokedCard;
+        }
+
+        function imbueWithRandomElement() {
+            const elements = ['Fire', 'Water', 'Earth', 'Air', 'Void', 'Solar'];
+            currentBaseElement = elements[Math.floor(Math.random() * elements.length)];
+            const pill = document.getElementById('base-element-pill');
+            if (pill) {
+                pill.textContent = `${currentBaseElement} resonance active`;
+                pill.hidden = false;
+            }
+            showNotification(`Element Matrix tuned to ${currentBaseElement}`, 'info');
+        }
+
+        function invokeCardFromJotysh() {
+            const filledSlots = slottedGlyphs.filter(Boolean);
+            if (!filledSlots.length) {
+                showNotification('Slot at least one skill before invoking.', 'info');
+                return;
+            }
+            const totalPower = filledSlots.reduce((sum, glyph) => sum + (glyph.power || 0), 0);
+            const totalKP = filledSlots.reduce((sum, glyph) => sum + (glyph.kp || 0), 0);
+            invokedCard = {
+                timestamp: Date.now(),
+                baseElement: currentBaseElement,
+                slots: filledSlots,
+                stats: { power: totalPower, kp: totalKP }
+            };
+            updateInvokeButtonState();
+            showNotification(`Invocation complete • Power ${totalPower} • KP ${totalKP}`, 'achievement');
+        }
+
+        function enterBattleSimulation() {
+            if (!invokedCard) {
+                showNotification('Invoke a card before entering battle.', 'info');
+                return;
+            }
+            showNotification('Battle sim loading... (coming soon)', 'info');
+        }
+
+        function smoothScrollWrapperTo(wrapper, targetPixel, duration = 400) {
+            if (!wrapper) return;
+            const start = wrapper.scrollLeft;
+            const change = targetPixel - start;
+            const startTime = performance.now();
+            function anim(now) {
+                const elapsed = now - startTime;
+                const t = Math.min(1, elapsed / duration);
+                const ease = (t < 0.5) ? (2 * t * t) : (-1 + (4 - 2 * t) * t); // easeInOutQuad
+                wrapper.scrollLeft = start + change * ease;
+                if (t < 1) window.requestAnimationFrame(anim);
+            }
+            window.requestAnimationFrame(anim);
+        }
+
+        // === JOTYSH BLUEPRINT RENDERING ===
+        function getRecommendedNakshatrasForHouse(house) {
+            // Try direct rulership match first
+            const direct = NAKSHATRA_DATA.filter(n => n.ruling === house.planet);
+            if (direct.length) return direct.slice(0,3);
+            // Fallback: match by element->quality mapping
+            const map = {
+                'Fire': ['Fierce', 'Mixed', 'Movable'],
+                'Earth': ['Fixed', 'Light'],
+                'Air': ['Movable', 'Light'],
+                'Water': ['Soft', 'Light']
+            };
+            const sign = getSignForHouse(house.id);
+            const qualities = map[sign.element] || ['Light'];
+            return NAKSHATRA_DATA.filter(n => qualities.includes(n.quality)).slice(0,3);
+        }
+
+        function renderJotyshBlueprint() {
+            const container = document.getElementById('jotysh-blueprint-content');
+            if (!container) return;
+            container.innerHTML = '';
+            HOUSES.forEach(house => {
+                const sign = getSignForHouse(house.id);
+                const planet = PLANET_SYNERGIES[house.planet] || { color: '#fff', symbol: '•', title: house.planet };
+                const nakshatras = getRecommendedNakshatrasForHouse(house);
+                const houseEl = document.createElement('div');
+                houseEl.className = 'blueprint-house';
+                houseEl.dataset.houseId = house.id;
+                houseEl.innerHTML = `
+                    <div class="house-head">
+                        <div class="house-name" title="${house.fullName} - ${house.desc}">
+                            <div class="house-number">${house.number}</div>
+                            <div class="house-word">House</div>
+                        </div>
+                        <div class="blueprint-sm">${house.desc}</div>
+                        <div class="blueprint-sm">Sign: <strong>${sign.sign} (${sign.element})</strong></div>
+                    </div>
+                    <div class="blueprint-body" style="display:none;">
+                        <div class="blueprint-preview" id="blueprint-preview-${house.id}" style="display:none;">
+                            <div style="font-weight:700;">Preview</div>
+                            <div class="blueprint-sm" id="blueprint-preview-text-${house.id}"></div>
+                            <div style="margin-top:0.4rem;"><button class="cosmic-btn" data-apply="${house.id}" id="apply-btn-${house.id}">Apply to Blueprint</button></div>
+                        </div>
+                    </div>
+                `;
+                houseEl.addEventListener('click', (ev) => {
+                    // Toggle inline expansion on the card
+                    ev.stopPropagation();
+                    toggleHouseExpand(house.id);
+                });
+                houseEl.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') toggleHouseExpand(house.id); });
+                container.appendChild(houseEl);
+                // Show applied nakshatra badge if present
+                if (house.appliedNakshatra) {
+                    const body = houseEl.querySelector('.blueprint-body');
+                    if (body) {
+                        const appliedBadge = document.createElement('div');
+                        appliedBadge.className = 'applied-badge blueprint-sm';
+                        appliedBadge.style.marginTop = '0.4rem';
+                        appliedBadge.textContent = `Applied: ${house.appliedNakshatra.name}`;
+                        body.appendChild(appliedBadge);
+                    }
+                }
+                // Hook up nakshatra buttons
+                setTimeout(() => {
+                    houseEl.querySelectorAll('.nakshatra-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => { e.stopPropagation(); const nid = parseInt(btn.dataset.nid); previewNakshatraOnHouse(house.id, nid); });
+                    });
+                    const applyBtn = document.getElementById(`apply-btn-${house.id}`);
+                    if (applyBtn) applyBtn.addEventListener('click', () => { const picked = modalChosenNakshatras[house.id] || null; if (picked) applyNakshatraToHouse(house.id, picked); else showNotification('Select a nakshatra to apply.', 'info'); });
+                }, 20);
+            });
+            updateBlueprintAppliedCount();
+        }
+
+        // Modal state for chosen nakshatra per house (UI-only blueprint)
+        const modalChosenNakshatras = {};
+
+        function toggleHouseExpand(houseId) {
+            const el = document.querySelector(`.blueprint-house[data-house-id='${houseId}']`);
+            if (!el) return;
+            const body = el.querySelector('.blueprint-body');
+            if (!body) return;
+            const isOpen = body.style.display !== 'none';
+            if (isOpen) {
+                body.style.display = 'none';
+                // remove any active preview show class
+                body.querySelectorAll('.blueprint-preview.show').forEach(p => { p.classList.remove('show'); p.style.display = 'none'; });
+                el.classList.remove('expanded');
+            } else {
+                // collapse others
+                document.querySelectorAll('.blueprint-house .blueprint-body').forEach(b => { b.style.display = 'none'; b.parentElement?.classList?.remove('expanded'); });
+                body.style.display = 'block';
+                el.classList.add('expanded');
+            }
+        }
+
+        function previewNakshatraOnHouse(houseId, nakshatraId) {
+            const house = HOUSES.find(h => h.id === houseId);
+            const nak = NAKSHATRA_DATA.find(n => n.id === nakshatraId);
+            if (!house || !nak) return;
+            modalChosenNakshatras[houseId] = nak.id;
+            const planet = PLANET_SYNERGIES[house.planet] || { keywords: [], title: house.planet };
+            const sign = getSignForHouse(house.id);
+            const text = `When slotted into ${house.name}, the skill receives a subtle ${planet.keywords?.[0] || 'cosmic'} hint and ${nak.quality.toLowerCase()} influence (preview).`;
+            const previewEl = document.getElementById(`blueprint-preview-${houseId}`);
+            const previewTextEl = document.getElementById(`blueprint-preview-text-${houseId}`);
+            if (previewEl && previewTextEl) {
+                previewTextEl.textContent = text;
+                previewEl.style.display = 'block';
+                previewEl.classList.add('show');
+            }
+        }
+
+        function applyNakshatraToHouse(houseId, nakshatraId) {
+            const house = HOUSES.find(h => h.id === houseId);
+            const nak = NAKSHATRA_DATA.find(n => n.id === nakshatraId);
+            if (!house || !nak) return;
+            house.appliedNakshatra = nak; // UI only
+            const container = document.querySelector(`.blueprint-house[data-house-id='${houseId}'] .blueprint-body`);
+            if (container) {
+                const prev = container.querySelector('.applied-badge'); if (prev) prev.remove();
+                const appliedBadge = document.createElement('div');
+                appliedBadge.className = 'applied-badge blueprint-sm';
+                appliedBadge.style.marginTop = '0.4rem';
+                appliedBadge.style.color = 'var(--success)';
+                appliedBadge.textContent = `Applied: ${nak.name}`;
+                container.appendChild(appliedBadge);
+            }
+            showNotification(`${nak.name} applied to ${house.name} (blueprint only)`, 'achievement');
+            updateBlueprintAppliedCount();
+        }
+
+        function updateBlueprintAppliedCount() {
+            const count = HOUSES.filter(h => !!h.appliedNakshatra).length;
+            const el = document.getElementById('blueprint-applied-count');
+            if (el) el.textContent = `Applied: ${count}`;
+        }
+
+        function commitBlueprintToChart() {
+            HOUSES.forEach(house => {
+                const applied = house.appliedNakshatra || null;
+                const houseEl = document.querySelector(`.house[data-house-id='${house.id}']`);
+                if (houseEl) {
+                    if (applied) {
+                        houseEl.classList.add('applied');
+                    } else {
+                        houseEl.classList.remove('applied');
+                    }
+                }
+            });
+            // Persist blueprint to localStorage (house->nakshatra mapping)
+            const mapping = HOUSES.reduce((acc, h) => { acc[h.id] = h.appliedNakshatra ? h.appliedNakshatra.id : null; return acc; }, {});
+            localStorage.setItem('cosmic_blueprint_applied', JSON.stringify(mapping));
+            showNotification('Blueprint committed to chart', 'achievement');
+            renderVedicChart(); // refresh to ensure consistent state
+        }
+
+        function loadBlueprintFromStorage() {
+            try {
+                const map = JSON.parse(localStorage.getItem('cosmic_blueprint_applied') || '{}');
+                if (map && typeof map === 'object') {
+                    HOUSES.forEach(h => {
+                        const nid = map[h.id] || null;
+                        if (nid) {
+                            const nak = NAKSHATRA_DATA.find(n => n.id === nid);
+                            if (nak) h.appliedNakshatra = nak;
+                        } else {
+                            delete h.appliedNakshatra;
+                        }
+                    });
+                }
+            } catch (err) { /* ignore */ }
+        }
+
+        function clearBlueprint() {
+            HOUSES.forEach(h => { delete h.appliedNakshatra; });
+            localStorage.removeItem('cosmic_blueprint_applied');
+            renderJotyshBlueprint();
+            commitBlueprintToChart();
+            showNotification('Blueprint cleared', 'info');
+        }
+
+        function openJotyshBlueprint(e) {
+            const modal = document.getElementById('jotysh-blueprint-modal');
+            if (!modal) return;
+            renderJotyshBlueprint();
+            modal.classList.add('visible');
+            modal.setAttribute('aria-hidden', 'false');
+            // Ensure it's centered (user-optimized): use maximize/minimize classes: default is centered
+            modal.classList.remove('minimized');
+            modal.classList.remove('maximized');
+            modal.style.left = '50%';
+            modal.style.top = '12vh';
+            modal.style.transform = 'translateX(-50%)';
+            // set focus in modal for keyboard users
+            setTimeout(() => {
+                const closeBtn = document.getElementById('jotysh-blueprint-close');
+                if (closeBtn) closeBtn.focus();
+            }, 40);
+            const blueprintBtnEl = document.getElementById('jotysh-blueprint-btn');
+            if (blueprintBtnEl) blueprintBtnEl.setAttribute('aria-expanded', 'true');
+            // close on escape
+            function esc(e) { if (e.key === 'Escape') closeJotyshBlueprint(); }
+            document.addEventListener('keydown', esc);
+            modal._escHandler = esc;
+            // click outside to close
+            setTimeout(() => {
+                const outside = (e) => { if (e.target === modal) closeJotyshBlueprint(); };
+                modal.addEventListener('click', outside);
+                modal._outsideClickHandler = outside;
+            }, 50);
+        }
+
+        function closeJotyshBlueprint() {
+            const modal = document.getElementById('jotysh-blueprint-modal');
+            if (!modal) return;
+            modal.classList.remove('visible');
+            modal.setAttribute('aria-hidden', 'true');
+            if (modal._escHandler) document.removeEventListener('keydown', modal._escHandler);
+            if (modal._outsideClickHandler) modal.removeEventListener('click', modal._outsideClickHandler);
+            modal.style.left = '';
+            modal.style.top = '';
+            modal.style.transform = '';
+            modal.classList.remove('minimized');
+            modal.classList.remove('maximized');
+            // Reset control icons
+            const minBtn = document.getElementById('jotysh-blueprint-minimize');
+            const maxBtn = document.getElementById('jotysh-blueprint-maximize');
+            if (minBtn) { minBtn.textContent = '—'; minBtn.setAttribute('aria-expanded', 'true'); }
+            if (maxBtn) { maxBtn.textContent = '▢'; maxBtn.setAttribute('aria-expanded', 'false'); }
+            const blueprintBtnEl = document.getElementById('jotysh-blueprint-btn');
+            if (blueprintBtnEl) blueprintBtnEl.setAttribute('aria-expanded', 'false');
+        }
+
+        function toggleMinimizeJotyshBlueprint() {
+            const modal = document.getElementById('jotysh-blueprint-modal');
+            if (!modal) return;
+            const minBtn = document.getElementById('jotysh-blueprint-minimize');
+            if (modal.classList.contains('minimized')) {
+                modal.classList.remove('minimized');
+                modal.style.left = '50%';
+                modal.style.transform = 'translateX(-50%)';
+                if (minBtn) { minBtn.textContent = '—'; minBtn.setAttribute('aria-expanded', 'true'); }
+            } else {
+                modal.classList.add('minimized');
+                modal.classList.remove('maximized');
+                modal.style.left = '';
+                modal.style.transform = '';
+                if (minBtn) { minBtn.textContent = '▣'; minBtn.setAttribute('aria-expanded', 'false'); }
+            }
+        }
+
+        function toggleMaximizeJotyshBlueprint() {
+            const modal = document.getElementById('jotysh-blueprint-modal');
+            if (!modal) return;
+            const maxBtn = document.getElementById('jotysh-blueprint-maximize');
+            if (modal.classList.contains('maximized')) {
+                modal.classList.remove('maximized');
+                modal.style.left = '50%';
+                modal.style.top = '12vh';
+                modal.style.transform = 'translateX(-50%)';
+                if (maxBtn) { maxBtn.textContent = '▢'; maxBtn.setAttribute('aria-expanded', 'false'); }
+            } else {
+                modal.classList.add('maximized');
+                modal.classList.remove('minimized');
+                modal.style.left = '50%';
+                modal.style.top = '3vh';
+                modal.style.transform = 'translateX(-50%)';
+                if (maxBtn) { maxBtn.textContent = '🗖'; maxBtn.setAttribute('aria-expanded', 'true'); }
+            }
+        }
+
         // === INITIALIZATION ===
         console.log('🚀 Cosmic Card Creator initialized');
         console.log('📱 Viewport:', window.innerWidth, 'x', window.innerHeight);
@@ -1074,6 +3326,7 @@
             createParticles();
             loadOwnedSkills();
             checkAchievements();
+            initJotyshEngine();
             
             // Start ambient sound on first user interaction
             document.body.addEventListener('click', () => {
@@ -1128,6 +3381,29 @@
             }, 100);
         };
     </script>
+
+    <!-- Jotysh Blueprint Modal -->
+    <div id="planet-tooltip" class="planet-tooltip"></div>
+    <div id="jotysh-blueprint-modal" class="jotysh-blueprint-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="jotysh-blueprint-header">
+            <div>
+                <div class="jotysh-blueprint-title">Jotysh Blueprint — 12 Houses</div>
+                <div class="jotysh-sm">Shows mapping of Houses → Planet Ruler → Sign (current) → Suggested Nakshatra influences</div>
+            </div>
+            <div style="display:flex; gap:0.5rem; align-items:center;">
+                <div id="blueprint-applied-count" class="blueprint-applied-count" style="font-weight:700; color:var(--success);">Applied: 0</div>
+                <button class="cosmic-btn" id="jotysh-blueprint-commit" title="Apply Blueprint to Chart" aria-label="Apply blueprint to main chart">Apply to Chart</button>
+                <button class="cosmic-btn" id="jotysh-blueprint-clear" title="Clear Blueprint" aria-label="Clear applied blueprint">Clear</button>
+                <button class="jotysh-blueprint-minimize" id="jotysh-blueprint-minimize" title="Minimize" aria-expanded="true" aria-label="Minimize blueprint">—</button>
+                <button class="jotysh-blueprint-maximize" id="jotysh-blueprint-maximize" title="Expand" aria-expanded="false" aria-label="Expand blueprint">▢</button>
+                <button class="jotysh-blueprint-close" id="jotysh-blueprint-close" aria-label="Close blueprint">Close</button>
+            </div>
+        </div>
+        <div id="jotysh-blueprint-content" class="jotysh-blueprint-grid" aria-live="polite"></div>
+        <div class="blueprint-legend">
+            Tip: Click any house to expand inline details. Click a suggested nakshatra to preview and press "Apply to Blueprint" to pin it (UI-only). Use Minimize/Expand to keep this blueprint open while you work.
+        </div>
+    </div>
 
 </body>
 </html>
