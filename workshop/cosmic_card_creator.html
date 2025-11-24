@@ -269,11 +269,20 @@
             align-items: center;
             gap: 0.4rem;
             padding: 0.8rem 1.2rem;
-            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.05));
-            border: 1px solid rgba(139,92,246,0.3);
-            border-radius: 12px;
+            background: linear-gradient(135deg,
+                rgba(45,50,55,0.98) 0%,
+                rgba(35,40,45,0.95) 30%,
+                rgba(55,60,65,0.97) 70%,
+                rgba(45,50,55,0.98) 100%);
+            border: 2px solid rgba(80,90,100,0.9);
+            border-radius: 10px;
             position: relative;
             width: 100%;
+            box-shadow:
+                0 6px 20px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(120,130,140,0.3),
+                inset 0 -1px 0 rgba(20,25,30,0.5),
+                0 0 30px rgba(90,100,110,0.2);
             overflow: hidden;
         }
 
@@ -284,93 +293,130 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.1) 0%, transparent 70%);
+            background:
+                radial-gradient(circle at 20% 20%, rgba(100,110,120,0.2) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(80,90,100,0.15) 0%, transparent 60%),
+                linear-gradient(135deg, rgba(120,130,140,0.1) 0%, transparent 50%, rgba(60,70,80,0.1) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(90,100,110,0.05) 3px,
+                    rgba(90,100,110,0.05) 6px
+                );
             pointer-events: none;
+        }
+
+        .lagna-energy-selector::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid rgba(100,110,120,0.6);
+            border-radius: 6px;
+            pointer-events: none;
+            box-shadow: inset 0 1px 2px rgba(20,25,30,0.3);
         }
 
         .lagna-energy-selector label {
             font-weight: 600;
             font-size: 0.7rem;
-            color: var(--accent-glow);
+            color: rgba(180,190,200,0.95);
             text-transform: uppercase;
             letter-spacing: 1px;
             white-space: nowrap;
             z-index: 2;
-            text-shadow: 0 0 8px rgba(139,92,246,0.6);
+            text-shadow:
+                0 0 4px rgba(120,140,160,0.6),
+                0 1px 2px rgba(60,70,80,0.8);
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, rgba(160,170,180,0.9), rgba(140,150,160,0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .energy-field-container {
             position: relative;
             width: 100%;
-            height: 80px;
+            height: 48px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
 
         .energy-field {
             position: relative;
             width: 100%;
-            height: 50px;
-            background: linear-gradient(90deg,
-                rgba(139,92,246,0.1) 0%,
-                rgba(59,130,246,0.15) 25%,
-                rgba(139,92,246,0.1) 50%,
-                rgba(59,130,246,0.15) 75%,
-                rgba(139,92,246,0.1) 100%);
-            border-radius: 25px;
-            border: 1px solid rgba(139,92,246,0.4);
+            height: 24px;
+            background: linear-gradient(135deg,
+                rgba(50,55,60,0.95) 0%,
+                rgba(40,45,50,0.98) 30%,
+                rgba(60,65,70,0.96) 70%,
+                rgba(50,55,60,0.95) 100%);
+            border-radius: 12px;
+            border: 2px solid rgba(90,100,110,0.8);
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                inset 0 2px 4px rgba(20,25,30,0.5),
+                inset 0 1px 0 rgba(120,130,140,0.4),
+                inset 0 -1px 0 rgba(30,35,40,0.6),
+                0 0 15px rgba(70,80,90,0.3);
+        }
+
+        .energy-field::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(110,120,130,0.9) 0px,
+                rgba(110,120,130,0.9) 2px,
+                transparent 2px,
+                transparent 6px
+            );
+            border-radius: 2px 2px 0 0;
+            box-shadow: 0 1px 2px rgba(40,50,60,0.4);
+        }
+
+        .energy-field::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(90,100,110,0.8) 0px,
+                rgba(90,100,110,0.8) 2px,
+                transparent 2px,
+                transparent 6px
+            );
+            border-radius: 0 0 2px 2px;
+            box-shadow: 0 -1px 2px rgba(20,25,30,0.4);
         }
 
         .energy-field:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
             box-shadow:
-                0 8px 32px rgba(139,92,246,0.3),
-                inset 0 0 32px rgba(139,92,246,0.1);
+                inset 0 2px 6px rgba(25,30,35,0.6),
+                inset 0 1px 0 rgba(130,140,150,0.5),
+                inset 0 -1px 0 rgba(35,40,45,0.7),
+                0 0 20px rgba(90,100,110,0.5),
+                0 2px 8px rgba(0,0,0,0.4);
+            border-color: rgba(110,120,130,1);
         }
 
-        .energy-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 20% 80%, rgba(139,92,246,0.6) 1px, transparent 1px),
-                radial-gradient(circle at 80% 20%, rgba(59,130,246,0.6) 1px, transparent 1px),
-                radial-gradient(circle at 40% 40%, rgba(139,92,246,0.4) 1px, transparent 1px);
-            background-size: 60px 60px, 80px 80px, 100px 100px;
-            animation: particleFlow 8s linear infinite;
-        }
-
-        @keyframes particleFlow {
-            0% { transform: translateX(-100px) translateY(-50px); }
-            100% { transform: translateX(calc(100% + 100px)) translateY(calc(100% + 50px)); }
-        }
-
-        .energy-waves {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg,
-                transparent 30%,
-                rgba(139,92,246,0.2) 50%,
-                transparent 70%);
-            animation: wavePulse 3s ease-in-out infinite;
-        }
-
-        @keyframes wavePulse {
-            0%, 100% { opacity: 0.3; transform: scaleX(1); }
-            50% { opacity: 0.8; transform: scaleX(1.2); }
-        }
-
-        .cosmic-portals {
+        .zodiac-markers {
             position: absolute;
             top: 0;
             left: 0;
@@ -379,180 +425,275 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 15px;
+            padding: 0 12px;
         }
 
-        .portal {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.6);
-            background: radial-gradient(circle, rgba(139,92,246,0.3) 0%, rgba(139,92,246,0.1) 70%);
-            border-radius: 50%;
-            border: 1px solid rgba(139,92,246,0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+        .zodiac-marker {
+            width: 3px;
+            height: 16px;
+            background: linear-gradient(135deg,
+                rgba(90,100,110,0.95) 0%,
+                rgba(110,120,130,1) 30%,
+                rgba(100,110,120,0.98) 70%,
+                rgba(90,100,110,0.95) 100%);
+            border-radius: 2px;
             position: relative;
-            z-index: 3;
-        }
-
-        .portal:hover {
-            transform: scale(1.3);
-            color: var(--accent-glow);
-            background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(139,92,246,0.4) 70%);
-            box-shadow: 0 0 20px rgba(139,92,246,0.6);
-        }
-
-        .portal.active {
-            color: var(--accent-glow);
-            background: radial-gradient(circle, rgba(139,92,246,1) 0%, rgba(139,92,246,0.6) 70%);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
             box-shadow:
-                0 0 30px rgba(139,92,246,0.8),
-                inset 0 0 10px rgba(255,255,255,0.3);
-            animation: portalPulse 2s ease-in-out infinite;
+                0 1px 2px rgba(40,50,60,0.4),
+                inset 0 1px 0 rgba(130,140,150,0.3),
+                inset 0 -1px 0 rgba(60,70,80,0.5);
+            clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
         }
 
-        @keyframes portalPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .zodiac-marker::before {
+            content: attr(data-symbol);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: rgba(130,150,170,0.8);
+            opacity: 0;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            text-shadow: 0 0 2px rgba(80,100,120,0.4);
+            font-family: serif;
+        }
+
+        .zodiac-marker:hover::before {
+            opacity: 1;
+            color: rgba(160,180,200,0.9);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .zodiac-marker.active {
+            background: linear-gradient(135deg,
+                rgba(130,140,150,1) 0%,
+                rgba(150,160,170,1) 30%,
+                rgba(140,150,160,0.98) 70%,
+                rgba(130,140,150,1) 100%);
+            box-shadow:
+                0 0 12px rgba(100,120,140,0.8),
+                0 0 20px rgba(110,130,150,0.5),
+                inset 0 1px 0 rgba(160,170,180,0.4),
+                inset 0 -1px 0 rgba(80,90,100,0.6);
+            animation: gearPulse 1.5s ease-in-out infinite;
+            clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
+        }
+
+        .zodiac-marker.active::before {
+            opacity: 1;
+            color: rgba(160,180,200,1);
+            text-shadow:
+                0 0 4px rgba(100,120,140,0.8),
+                0 0 8px rgba(110,130,150,0.4);
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        @keyframes gearPulse {
+            0%, 100% {
+                transform: scaleY(1);
+                box-shadow:
+                    0 0 8px rgba(80,100,120,0.6),
+                    0 0 16px rgba(90,110,130,0.3);
+            }
+            50% {
+                transform: scaleY(1.1);
+                box-shadow:
+                    0 0 12px rgba(100,120,140,0.8),
+                    0 0 20px rgba(110,130,150,0.5);
+            }
         }
 
         .energy-cursor {
             position: absolute;
             top: 50%;
-            left: 15px;
+            left: 12px;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 20px;
+            height: 20px;
             z-index: 5;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
 
-        .cursor-core {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--accent-glow);
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(139,92,246,0.8);
-            animation: coreGlow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes coreGlow {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.5); opacity: 0.7; }
-        }
-
-        .cursor-rings {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .ring {
+        .energy-cursor::before {
+            content: '';
             position: absolute;
             top: 50%;
             left: 50%;
-            border: 1px solid rgba(139,92,246,0.4);
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg,
+                rgba(110,120,130,0.95) 0%,
+                rgba(130,140,150,1) 30%,
+                rgba(120,130,140,0.98) 70%,
+                rgba(110,120,130,0.95) 100%);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            animation: ringExpand 3s ease-in-out infinite;
+            box-shadow:
+                0 0 8px rgba(90,100,110,0.6),
+                inset 0 1px 2px rgba(50,60,70,0.4),
+                inset 0 -1px 0 rgba(80,90,100,0.5);
+            border: 1px solid rgba(140,150,160,0.9);
         }
 
-        .ring-1 {
-            width: 20px;
-            height: 20px;
-            animation-delay: 0s;
+        .energy-cursor::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle,
+                rgba(150,160,170,1) 0%,
+                rgba(130,140,150,0.9) 50%,
+                rgba(110,120,130,0.8) 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow:
+                0 0 6px rgba(110,120,130,0.7),
+                inset 0 1px 1px rgba(80,90,100,0.4);
+            animation: gearRotate 4s linear infinite;
         }
 
-        .ring-2 {
-            width: 30px;
-            height: 30px;
-            animation-delay: 1s;
-        }
-
-        .ring-3 {
-            width: 40px;
-            height: 40px;
-            animation-delay: 2s;
-        }
-
-        @keyframes ringExpand {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        @keyframes gearRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .cursor-display {
             position: absolute;
-            top: -35px;
+            top: -32px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 2px;
-            background: rgba(0,0,0,0.8);
+            background: linear-gradient(135deg,
+                rgba(30,35,40,0.95) 0%,
+                rgba(25,30,35,0.98) 100%);
             padding: 4px 8px;
             border-radius: 6px;
-            border: 1px solid rgba(139,92,246,0.5);
-            backdrop-filter: blur(8px);
+            border: 2px solid rgba(60,70,80,0.6);
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.4),
+                inset 0 1px 2px rgba(40,50,60,0.2);
         }
 
         .energy-cursor:hover .cursor-display {
             opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
+            transform: translateX(-50%) translateY(-4px);
         }
 
         .display-symbol {
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            color: var(--accent-glow);
-            text-shadow: 0 0 8px rgba(139,92,246,0.8);
+            color: rgba(140,160,180,0.9);
+            font-family: serif;
+            text-shadow: 0 0 2px rgba(100,120,140,0.4);
         }
 
         .display-name {
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             font-weight: 600;
-            color: var(--text-main);
+            color: rgba(120,140,160,0.8);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: 'Courier New', monospace;
         }
 
         .energy-readout {
             width: 100%;
             display: flex;
             justify-content: center;
+            margin-top: 0.3rem;
         }
 
         .readout-screen {
-            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,30,0.9));
-            border: 1px solid rgba(139,92,246,0.4);
+            background: linear-gradient(135deg,
+                rgba(35,40,45,0.96) 0%,
+                rgba(25,30,35,0.98) 30%,
+                rgba(45,50,55,0.97) 70%,
+                rgba(35,40,45,0.96) 100%);
+            border: 2px solid rgba(80,90,100,0.8);
             border-radius: 8px;
             padding: 6px 12px;
             display: flex;
             align-items: center;
             gap: 8px;
-            backdrop-filter: blur(10px);
             box-shadow:
-                0 4px 16px rgba(0,0,0,0.3),
-                inset 0 0 16px rgba(139,92,246,0.1);
+                0 2px 10px rgba(0,0,0,0.5),
+                inset 0 1px 3px rgba(50,60,70,0.3),
+                inset 0 -1px 0 rgba(20,30,40,0.4),
+                0 0 12px rgba(60,70,80,0.2);
+            position: relative;
+        }
+
+        .readout-screen::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            border: 1px solid rgba(90,100,110,0.6);
+            border-radius: 5px;
+            pointer-events: none;
+            box-shadow: inset 0 1px 2px rgba(30,40,50,0.4);
         }
 
         .readout-label {
-            font-size: 0.5rem;
-            font-weight: 600;
-            color: rgba(139,92,246,0.7);
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: rgba(140,150,160,0.9);
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: 'Courier New', monospace;
+            text-shadow:
+                0 0 2px rgba(100,110,120,0.5),
+                0 1px 1px rgba(60,70,80,0.6);
+        }
+
+        .readout-value {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: rgba(170,180,190,0.95);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Courier New', monospace;
+            text-shadow:
+                0 0 3px rgba(120,130,140,0.6),
+                0 1px 1px rgba(80,90,100,0.7);
+            min-width: 55px;
+            text-align: center;
+            animation: readoutGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes readoutGlow {
+            0% {
+                text-shadow:
+                    0 0 3px rgba(120,130,140,0.6),
+                    0 1px 1px rgba(80,90,100,0.7);
+                color: rgba(170,180,190,0.95);
+            }
+            100% {
+                text-shadow:
+                    0 0 5px rgba(140,150,160,0.7),
+                    0 1px 1px rgba(90,100,110,0.8);
+                color: rgba(180,190,200,1);
+            }
+        }
+
+        @keyframes readoutGlow {
+            0% { text-shadow: 0 0 8px rgba(139,92,246,1), 0 0 16px rgba(139,92,246,0.8); }
+            100% { text-shadow: 0 0 12px rgba(139,92,246,1), 0 0 24px rgba(139,92,246,0.8), 0 0 32px rgba(255,0,0,0.3); }
         }
 
         .readout-value {
@@ -1813,6 +1954,20 @@
             letter-spacing: 0.5px;
         }
 
+        .unowned-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.2rem 0.5rem;
+            background: linear-gradient(135deg, rgba(100,100,100,0.2), rgba(80,80,80,0.2));
+            border: 1px solid rgba(100,100,100,0.3);
+            border-radius: 3px;
+            color: var(--text-dim);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 0.5px;
+        }
+
         /* === PARTICLE EFFECTS === */
         .particle-container {
             position: fixed;
@@ -2033,34 +2188,21 @@
                             <label for="lagna-selector">Ascendant</label>
                             <div class="energy-field-container">
                                 <div class="energy-field">
-                                    <div class="energy-particles"></div>
-                                    <div class="energy-waves"></div>
-                                    <div class="cosmic-portals">
-                                        <div class="portal portal-1" data-lagna="1">♈</div>
-                                        <div class="portal portal-2" data-lagna="2">♉</div>
-                                        <div class="portal portal-3" data-lagna="3">♊</div>
-                                        <div class="portal portal-4" data-lagna="4">♋</div>
-                                        <div class="portal portal-5" data-lagna="5">♌</div>
-                                        <div class="portal portal-6" data-lagna="6">♍</div>
-                                        <div class="portal portal-7" data-lagna="7">♎</div>
-                                        <div class="portal portal-8" data-lagna="8">♏</div>
-                                        <div class="portal portal-9" data-lagna="9">♐</div>
-                                        <div class="portal portal-10" data-lagna="10">♑</div>
-                                        <div class="portal portal-11" data-lagna="11">♒</div>
-                                        <div class="portal portal-12" data-lagna="12">♓</div>
+                                    <div class="zodiac-markers">
+                                        <div class="zodiac-marker marker-1" data-lagna="1" data-symbol="♈"></div>
+                                        <div class="zodiac-marker marker-2" data-lagna="2" data-symbol="♉"></div>
+                                        <div class="zodiac-marker marker-3" data-lagna="3" data-symbol="♊"></div>
+                                        <div class="zodiac-marker marker-4" data-lagna="4" data-symbol="♋"></div>
+                                        <div class="zodiac-marker marker-5" data-lagna="5" data-symbol="♌"></div>
+                                        <div class="zodiac-marker marker-6" data-lagna="6" data-symbol="♍"></div>
+                                        <div class="zodiac-marker marker-7" data-lagna="7" data-symbol="♎"></div>
+                                        <div class="zodiac-marker marker-8" data-lagna="8" data-symbol="♏"></div>
+                                        <div class="zodiac-marker marker-9" data-lagna="9" data-symbol="♐"></div>
+                                        <div class="zodiac-marker marker-10" data-lagna="10" data-symbol="♑"></div>
+                                        <div class="zodiac-marker marker-11" data-lagna="11" data-symbol="♒"></div>
+                                        <div class="zodiac-marker marker-12" data-lagna="12" data-symbol="♓"></div>
                                     </div>
-                                    <div class="energy-cursor">
-                                        <div class="cursor-core"></div>
-                                        <div class="cursor-rings">
-                                            <div class="ring ring-1"></div>
-                                            <div class="ring ring-2"></div>
-                                            <div class="ring ring-3"></div>
-                                        </div>
-                                        <div class="cursor-display">
-                                            <div class="display-symbol" id="current-lagna-sign">♈</div>
-                                            <div class="display-name" id="current-lagna-name">Aries</div>
-                                        </div>
-                                    </div>
+                                    <div class="energy-cursor"></div>
                                 </div>
                                 <div class="energy-readout">
                                     <div class="readout-screen">
@@ -2352,8 +2494,8 @@
                 const stored = localStorage.getItem('cosmic_skills');
                 if (stored) {
                     const allSkills = JSON.parse(stored);
-                    // Filter for owned skills only (fused or marked as owned)
-                    ownedSkills = allSkills.filter(skill => 
+                    // Filter for owned skills only (fused or marked as owned) - same as workshop_phase3.html owned skills tab
+                    ownedSkills = allSkills.filter(skill =>
                         skill.fusionIngredients || skill.owned === true
                     );
                     console.log(`✅ Loaded ${ownedSkills.length} owned skills from Fusion Laboratory`);
@@ -2366,9 +2508,7 @@
                 console.error('❌ Error loading skills:', error);
                 renderEmptyState();
             }
-        }
-
-        function renderSkillArchive() {
+        }        function renderSkillArchive() {
             const container = document.querySelector('#left-panel .panel-content');
             
             if (ownedSkills.length === 0) {
@@ -2809,32 +2949,28 @@
         }
 
         function updateGearDial() {
-            const portals = document.querySelectorAll('.lagna-energy-selector .portal');
+            const markers = document.querySelectorAll('.lagna-energy-selector .zodiac-marker');
             const cursor = document.querySelector('.lagna-energy-selector .energy-cursor');
             const currentSign = document.getElementById('current-lagna-sign');
             const currentName = document.getElementById('current-lagna-name');
             const readout = document.getElementById('lagna-readout');
 
-            if (!portals.length || !cursor || !currentSign || !currentName || !readout) return;
+            if (!markers.length || !cursor || !currentSign || !currentName || !readout) return;
 
             // Get the energy field width
             const field = document.querySelector('.lagna-energy-selector .energy-field');
             if (!field) return;
             const fieldWidth = field.offsetWidth;
-            const portalSpacing = (fieldWidth - 30) / 11; // 12 portals, 11 intervals
+            const markerSpacing = (fieldWidth - 24) / 11; // 12 markers, 11 intervals
 
-            // Position portals and update active state
-            portals.forEach((portal, index) => {
+            // Update active state for markers
+            markers.forEach((marker, index) => {
                 const lagnaNum = index + 1;
-                portal.classList.toggle('active', lagnaNum === currentLagna);
-
-                // Position portals evenly across the field
-                const leftPos = 15 + (index * portalSpacing);
-                portal.style.left = `${leftPos}px`;
+                marker.classList.toggle('active', lagnaNum === currentLagna);
             });
 
             // Position cursor based on current lagna
-            const cursorPos = 15 + ((currentLagna - 1) * portalSpacing);
+            const cursorPos = 12 + ((currentLagna - 1) * markerSpacing);
             cursor.style.left = `${cursorPos}px`;
 
             // Update displays
@@ -2901,18 +3037,18 @@
                 let currentX = 0;
 
                 const getFieldWidth = () => energyField.offsetWidth;
-                const portalSpacing = () => (getFieldWidth() - 30) / 11; // 12 portals, 11 intervals
+                const markerSpacing = () => (getFieldWidth() - 24) / 11; // 12 markers, 11 intervals, 12px padding on each side, 10px padding on each side
 
                 const getPosition = (clientX) => {
                     const rect = energyField.getBoundingClientRect();
                     const relativeX = clientX - rect.left;
-                    return Math.max(15, Math.min(getFieldWidth() - 15, relativeX));
+                    return Math.max(12, Math.min(getFieldWidth() - 12, relativeX));
                 };
 
                 const handleFieldChange = (position) => {
                     // Convert position to lagna (12 positions)
-                    const spacing = portalSpacing();
-                    const lagnaIndex = Math.round((position - 15) / spacing);
+                    const spacing = markerSpacing();
+                    const lagnaIndex = Math.round((position - 12) / spacing);
                     const newLagna = Math.max(1, Math.min(12, lagnaIndex + 1));
 
                     if (newLagna !== currentLagna) {
@@ -2946,11 +3082,11 @@
                     isDragging = false;
                     energyField.style.cursor = 'pointer';
 
-                    // Snap to nearest portal position
-                    const spacing = portalSpacing();
-                    const snappedIndex = Math.round((currentX - 15) / spacing);
-                    const snappedPosition = 15 + (snappedIndex * spacing);
-                    const clampedPosition = Math.max(15, Math.min(getFieldWidth() - 15, snappedPosition));
+                    // Snap to nearest marker position
+                    const spacing = markerSpacing();
+                    const snappedIndex = Math.round((currentX - 12) / spacing);
+                    const snappedPosition = 12 + (snappedIndex * spacing);
+                    const clampedPosition = Math.max(12, Math.min(getFieldWidth() - 12, snappedPosition));
                     updateCursorPosition(clampedPosition);
                     handleFieldChange(clampedPosition);
                 });
@@ -2964,10 +3100,10 @@
                 });
             }
 
-            // Wire cosmic portals for direct lagna selection
-            document.querySelectorAll('.lagna-energy-selector .portal').forEach(portal => {
-                portal.addEventListener('click', () => {
-                    const lagna = parseInt(portal.dataset.lagna);
+            // Wire zodiac markers for direct lagna selection
+            document.querySelectorAll('.lagna-energy-selector .zodiac-marker').forEach(marker => {
+                marker.addEventListener('click', () => {
+                    const lagna = parseInt(marker.dataset.lagna);
                     rotateLagna(lagna);
                 });
             });
