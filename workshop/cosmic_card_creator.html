@@ -565,48 +565,312 @@
             text-align: center;
         }
 
-        .nakshatra-gear-dial {
+        .nakshatra-stellar-navigator {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.5rem 1rem;
-            background: rgba(59,130,246,0.08);
-            border: 1px solid rgba(59,130,246,0.2);
-            border-radius: 8px;
+            gap: 0.4rem;
+            padding: 0.8rem 1.2rem;
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(147,51,234,0.05));
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 12px;
             position: relative;
             width: 100%;
+            overflow: hidden;
         }
 
-        .nakshatra-gear-dial label {
+        .nakshatra-stellar-navigator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(59,130,246,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(147,51,234,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .nakshatra-stellar-navigator label {
             font-weight: 600;
             font-size: 0.7rem;
             color: rgba(59,130,246,0.9);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             white-space: nowrap;
+            z-index: 2;
+            text-shadow: 0 0 8px rgba(59,130,246,0.6);
         }
 
-        .current-nakshatra-name {
-            font-size: 1.0rem;
+        .stellar-field-container {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stellar-field {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(90deg,
+                rgba(59,130,246,0.1) 0%,
+                rgba(147,51,234,0.15) 25%,
+                rgba(59,130,246,0.1) 50%,
+                rgba(147,51,234,0.15) 75%,
+                rgba(59,130,246,0.1) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(59,130,246,0.4);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stellar-field:hover {
+            transform: scale(1.02);
+            box-shadow:
+                0 8px 32px rgba(59,130,246,0.3),
+                inset 0 0 32px rgba(59,130,246,0.1);
+        }
+
+        .starfield-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 1px, transparent 1px),
+                radial-gradient(circle at 30% 70%, rgba(59,130,246,0.6) 1px, transparent 1px),
+                radial-gradient(circle at 60% 40%, rgba(147,51,234,0.6) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.8) 1px, transparent 1px),
+                radial-gradient(circle at 90% 10%, rgba(59,130,246,0.4) 1px, transparent 1px);
+            background-size: 40px 40px, 60px 60px, 80px 80px, 50px 50px, 70px 70px;
+            animation: starTwinkle 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes starTwinkle {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .constellation-web {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                transparent 40%,
+                rgba(59,130,246,0.2) 45%,
+                rgba(59,130,246,0.2) 55%,
+                transparent 60%);
+            animation: webPulse 6s ease-in-out infinite;
+        }
+
+        @keyframes webPulse {
+            0%, 100% { opacity: 0.3; transform: scaleX(0.9); }
+            50% { opacity: 0.7; transform: scaleX(1.1); }
+        }
+
+        .stellar-nodes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .stellar-node {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
             font-weight: 700;
-            color: rgba(59,130,246,0.9);
-            text-shadow: 0 2px 4px rgba(59,130,246,0.5);
-            transition: all 0.3s ease;
-            line-height: 1;
-            text-align: center;
+            color: rgba(255,255,255,0.6);
+            background: radial-gradient(circle, rgba(59,130,246,0.4) 0%, rgba(59,130,246,0.1) 70%);
+            border-radius: 50%;
+            border: 1px solid rgba(59,130,246,0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            z-index: 3;
+            backdrop-filter: blur(2px);
         }
 
-        .current-nakshatra-ruling {
+        .stellar-node:hover {
+            transform: scale(1.4);
+            color: rgba(59,130,246,0.9);
+            background: radial-gradient(circle, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.5) 70%);
+            box-shadow: 0 0 20px rgba(59,130,246,0.8);
+        }
+
+        .stellar-node.active {
+            color: rgba(59,130,246,0.9);
+            background: radial-gradient(circle, rgba(59,130,246,1) 0%, rgba(59,130,246,0.7) 70%);
+            box-shadow:
+                0 0 30px rgba(59,130,246,1),
+                inset 0 0 10px rgba(255,255,255,0.3);
+            animation: nodePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes nodePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .celestial-orb {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .orb-core {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(59,130,246,0.9);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(59,130,246,0.9);
+            animation: orbGlow 1.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbGlow {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0.8; }
+        }
+
+        .orb-rings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .orb-rings .ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(59,130,246,0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbRingExpand 4s ease-in-out infinite;
+        }
+
+        .orb-rings .ring-1 {
+            width: 16px;
+            height: 16px;
+            animation-delay: 0s;
+        }
+
+        .orb-rings .ring-2 {
+            width: 24px;
+            height: 24px;
+            animation-delay: 1.3s;
+        }
+
+        .orb-rings .ring-3 {
+            width: 32px;
+            height: 32px;
+            animation-delay: 2.6s;
+        }
+
+        @keyframes orbRingExpand {
+            0% { transform: translate(-50%, -50%) scale(0.7); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+        }
+
+        .orb-trail {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.6), transparent);
+            transform: translateX(-100%);
+            animation: orbTrail 3s ease-in-out infinite;
+        }
+
+        @keyframes orbTrail {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
+        .constellation-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .stellar-readout {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stellar-screen {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(10,10,20,0.9));
+            border: 1px solid rgba(59,130,246,0.4);
+            border-radius: 8px;
+            padding: 6px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            backdrop-filter: blur(10px);
+            box-shadow:
+                0 4px 16px rgba(0,0,0,0.3),
+                inset 0 0 16px rgba(59,130,246,0.1);
+        }
+
+        .screen-header {
             font-size: 0.45rem;
             font-weight: 600;
-            color: var(--text-main);
+            color: rgba(59,130,246,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .screen-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .screen-name {
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: rgba(59,130,246,0.9);
+            text-shadow: 0 0 8px rgba(59,130,246,0.6);
+        }
+
+        .screen-ruling {
+            font-size: 0.5rem;
+            font-weight: 600;
+            color: rgba(147,51,234,0.8);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            line-height: 1;
-            margin-top: 1px;
-            text-align: center;
         }
 
         .view-toggle-bar {
@@ -1806,44 +2070,58 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="nakshatra-gear-dial">
-                            <label for="nakshatra-dial">Nakshatra</label>
-                            <div class="gear-slider-container">
-                                <div class="gear-slider-track">
-                                    <div class="gear-teeth-track"></div>
-                                    <div class="gear-slider-marks">
-                                        <div class="gear-mark" data-nakshatra="1">Ashw</div>
-                                        <div class="gear-mark" data-nakshatra="2">Bhar</div>
-                                        <div class="gear-mark" data-nakshatra="3">Krit</div>
-                                        <div class="gear-mark" data-nakshatra="4">Rohi</div>
-                                        <div class="gear-mark" data-nakshatra="5">Mrig</div>
-                                        <div class="gear-mark" data-nakshatra="6">Ardr</div>
-                                        <div class="gear-mark" data-nakshatra="7">Puna</div>
-                                        <div class="gear-mark" data-nakshatra="8">Push</div>
-                                        <div class="gear-mark" data-nakshatra="9">Ashl</div>
-                                        <div class="gear-mark" data-nakshatra="10">Magh</div>
-                                        <div class="gear-mark" data-nakshatra="11">PPha</div>
-                                        <div class="gear-mark" data-nakshatra="12">UPha</div>
-                                        <div class="gear-mark" data-nakshatra="13">Hast</div>
-                                        <div class="gear-mark" data-nakshatra="14">Chit</div>
-                                        <div class="gear-mark" data-nakshatra="15">Swat</div>
-                                        <div class="gear-mark" data-nakshatra="16">Vish</div>
-                                        <div class="gear-mark" data-nakshatra="17">Anur</div>
-                                        <div class="gear-mark" data-nakshatra="18">Jyes</div>
-                                        <div class="gear-mark" data-nakshatra="19">Mool</div>
-                                        <div class="gear-mark" data-nakshatra="20">PAsh</div>
-                                        <div class="gear-mark" data-nakshatra="21">UAsh</div>
-                                        <div class="gear-mark" data-nakshatra="22">Shra</div>
-                                        <div class="gear-mark" data-nakshatra="23">Dhan</div>
-                                        <div class="gear-mark" data-nakshatra="24">Shat</div>
-                                        <div class="gear-mark" data-nakshatra="25">PBha</div>
-                                        <div class="gear-mark" data-nakshatra="26">UBha</div>
-                                        <div class="gear-mark" data-nakshatra="27">Reva</div>
+                        <div class="nakshatra-stellar-navigator">
+                            <label for="nakshatra-navigator">Nakshatra</label>
+                            <div class="stellar-field-container">
+                                <div class="stellar-field">
+                                    <div class="starfield-background"></div>
+                                    <div class="constellation-web"></div>
+                                    <div class="stellar-nodes">
+                                        <div class="stellar-node node-1" data-nakshatra="1">Ashw</div>
+                                        <div class="stellar-node node-2" data-nakshatra="2">Bhar</div>
+                                        <div class="stellar-node node-3" data-nakshatra="3">Krit</div>
+                                        <div class="stellar-node node-4" data-nakshatra="4">Rohi</div>
+                                        <div class="stellar-node node-5" data-nakshatra="5">Mrig</div>
+                                        <div class="stellar-node node-6" data-nakshatra="6">Ardr</div>
+                                        <div class="stellar-node node-7" data-nakshatra="7">Puna</div>
+                                        <div class="stellar-node node-8" data-nakshatra="8">Push</div>
+                                        <div class="stellar-node node-9" data-nakshatra="9">Ashl</div>
+                                        <div class="stellar-node node-10" data-nakshatra="10">Magh</div>
+                                        <div class="stellar-node node-11" data-nakshatra="11">PPha</div>
+                                        <div class="stellar-node node-12" data-nakshatra="12">UPha</div>
+                                        <div class="stellar-node node-13" data-nakshatra="13">Hast</div>
+                                        <div class="stellar-node node-14" data-nakshatra="14">Chit</div>
+                                        <div class="stellar-node node-15" data-nakshatra="15">Swat</div>
+                                        <div class="stellar-node node-16" data-nakshatra="16">Vish</div>
+                                        <div class="stellar-node node-17" data-nakshatra="17">Anur</div>
+                                        <div class="stellar-node node-18" data-nakshatra="18">Jyes</div>
+                                        <div class="stellar-node node-19" data-nakshatra="19">Mool</div>
+                                        <div class="stellar-node node-20" data-nakshatra="20">PAsh</div>
+                                        <div class="stellar-node node-21" data-nakshatra="21">UAsh</div>
+                                        <div class="stellar-node node-22" data-nakshatra="22">Shra</div>
+                                        <div class="stellar-node node-23" data-nakshatra="23">Dhan</div>
+                                        <div class="stellar-node node-24" data-nakshatra="24">Shat</div>
+                                        <div class="stellar-node node-25" data-nakshatra="25">PBha</div>
+                                        <div class="stellar-node node-26" data-nakshatra="26">UBha</div>
+                                        <div class="stellar-node node-27" data-nakshatra="27">Reva</div>
                                     </div>
-                                    <div class="gear-slider-handle">
-                                        <div class="handle-indicator">
-                                            <div class="current-nakshatra-name" id="current-nakshatra-name">Ashwini</div>
-                                            <div class="current-nakshatra-ruling" id="current-nakshatra-ruling">Ketu</div>
+                                    <div class="celestial-orb">
+                                        <div class="orb-core"></div>
+                                        <div class="orb-rings">
+                                            <div class="ring ring-1"></div>
+                                            <div class="ring ring-2"></div>
+                                            <div class="ring ring-3"></div>
+                                        </div>
+                                        <div class="orb-trail"></div>
+                                    </div>
+                                    <div class="constellation-lines"></div>
+                                </div>
+                                <div class="stellar-readout">
+                                    <div class="stellar-screen">
+                                        <div class="screen-header">NAKSHATRA</div>
+                                        <div class="screen-content">
+                                            <span class="screen-name" id="current-nakshatra-name">Ashwini</span>
+                                            <span class="screen-ruling" id="current-nakshatra-ruling">Ketu</span>
                                         </div>
                                     </div>
                                 </div>
@@ -2569,31 +2847,34 @@
         }
 
         function updateNakshatraDial() {
-            const marks = document.querySelectorAll('.nakshatra-gear-dial .gear-mark');
-            const handle = document.querySelector('.nakshatra-gear-dial .gear-slider-handle');
+            const nodes = document.querySelectorAll('.nakshatra-stellar-navigator .stellar-node');
+            const orb = document.querySelector('.nakshatra-stellar-navigator .celestial-orb');
             const currentName = document.getElementById('current-nakshatra-name');
             const currentRuling = document.getElementById('current-nakshatra-ruling');
 
-            if (!marks.length || !handle || !currentName || !currentRuling) return;
+            if (!nodes.length || !orb || !currentName || !currentRuling) return;
 
-            // Get the actual width of the slider track
-            const track = document.querySelector('.nakshatra-gear-dial .gear-slider-track');
-            if (!track) return;
-            const trackWidth = track.offsetWidth;
-            const handleWidth = 24; // Match CSS width
+            // Get the stellar field width
+            const field = document.querySelector('.nakshatra-stellar-navigator .stellar-field');
+            if (!field) return;
+            const fieldWidth = field.offsetWidth;
+            const nodeSpacing = (fieldWidth - 30) / 26; // 27 nodes, 26 intervals
 
-            // Position marks horizontally along the slider (27 nakshatras)
-            marks.forEach((mark, index) => {
-                const position = (index / 26) * (trackWidth - handleWidth); // 26 intervals for 27 positions
-                mark.style.left = `${position + handleWidth / 2}px`; // Center on handle width
-                mark.classList.toggle('active', parseInt(mark.dataset.nakshatra) === currentNakshatra);
+            // Position nodes and update active state
+            nodes.forEach((node, index) => {
+                const nakshatraNum = index + 1;
+                node.classList.toggle('active', nakshatraNum === currentNakshatra);
+
+                // Position nodes evenly across the field
+                const leftPos = 15 + (index * nodeSpacing);
+                node.style.left = `${leftPos}px`;
             });
 
-            // Position handle based on current nakshatra
-            const handlePosition = ((currentNakshatra - 1) / 26) * (trackWidth - handleWidth);
-            handle.style.left = `${handlePosition}px`;
+            // Position orb based on current nakshatra
+            const orbPos = 15 + ((currentNakshatra - 1) * nodeSpacing);
+            orb.style.left = `${orbPos}px`;
 
-            // Update center display
+            // Update displays
             const nakshatraData = NAKSHATRA_DATA[currentNakshatra - 1];
             if (nakshatraData) {
                 currentName.textContent = nakshatraData.name;
@@ -2691,89 +2972,83 @@
                 });
             });
 
-            // Wire nakshatra slider interactions
-            const nakshatraSlider = document.querySelector('.nakshatra-gear-dial .gear-slider-track');
-            const nakshatraHandle = document.querySelector('.nakshatra-gear-dial .gear-slider-handle');
+            // Wire stellar field interactions
+            const stellarField = document.querySelector('.nakshatra-stellar-navigator .stellar-field');
+            const celestialOrb = document.querySelector('.nakshatra-stellar-navigator .celestial-orb');
 
-            if (nakshatraSlider && nakshatraHandle) {
-                let isDraggingNak = false;
-                let startXNak = 0;
-                let currentXNak = 0;
-                const handleWidthNak = 24; // Match CSS width
+            if (stellarField && celestialOrb) {
+                let isDraggingStellar = false;
+                let startXStellar = 0;
+                let currentXStellar = 0;
 
-                const getTrackWidthNak = () => nakshatraSlider.offsetWidth;
+                const getFieldWidthStellar = () => stellarField.offsetWidth;
+                const nodeSpacingStellar = () => (getFieldWidthStellar() - 30) / 26; // 27 nodes, 26 intervals
 
-                const getPositionNak = (clientX) => {
-                    const rect = nakshatraSlider.getBoundingClientRect();
+                const getPositionStellar = (clientX) => {
+                    const rect = stellarField.getBoundingClientRect();
                     const relativeX = clientX - rect.left;
-                    const trackWidth = getTrackWidthNak();
-                    return Math.max(0, Math.min(trackWidth - handleWidthNak, relativeX - handleWidthNak / 2));
+                    return Math.max(15, Math.min(getFieldWidthStellar() - 15, relativeX));
                 };
 
-                const handleNakSliderChange = (position) => {
+                const handleStellarFieldChange = (position) => {
                     // Convert position to nakshatra (27 positions)
-                    const trackWidth = getTrackWidthNak();
-                    const nakshatraIndex = Math.round((position / (trackWidth - handleWidthNak)) * 26);
-                    const newNakshatra = nakshatraIndex + 1;
+                    const spacing = nodeSpacingStellar();
+                    const nakshatraIndex = Math.round((position - 15) / spacing);
+                    const newNakshatra = Math.max(1, Math.min(27, nakshatraIndex + 1));
 
-                    if (newNakshatra !== currentNakshatra && newNakshatra >= 1 && newNakshatra <= 27) {
+                    if (newNakshatra !== currentNakshatra) {
                         rotateNakshatra(newNakshatra);
                     }
                 };
 
-                const updateNakHandlePosition = (position) => {
-                    nakshatraHandle.style.left = `${position}px`;
+                const updateOrbPosition = (position) => {
+                    celestialOrb.style.left = `${position}px`;
                 };
 
-                nakshatraSlider.addEventListener('mousedown', (e) => {
-                    isDraggingNak = true;
-                    startXNak = e.clientX;
-                    const rect = nakshatraSlider.getBoundingClientRect();
-                    currentXNak = e.clientX - rect.left - handleWidthNak / 2;
-                    nakshatraSlider.style.cursor = 'grabbing';
+                // Mouse interactions
+                stellarField.addEventListener('mousedown', (e) => {
+                    isDraggingStellar = true;
+                    startXStellar = e.clientX;
+                    const rect = stellarField.getBoundingClientRect();
+                    currentXStellar = e.clientX - rect.left;
+                    stellarField.style.cursor = 'grabbing';
                     e.preventDefault();
                 });
 
                 document.addEventListener('mousemove', (e) => {
-                    if (!isDraggingNak) return;
-                    const newX = getPositionNak(e.clientX);
-                    updateNakHandlePosition(newX);
-                    currentXNak = newX;
+                    if (!isDraggingStellar) return;
+                    const newX = getPositionStellar(e.clientX);
+                    updateOrbPosition(newX);
+                    currentXStellar = newX;
                 });
 
                 document.addEventListener('mouseup', () => {
-                    if (!isDraggingNak) return;
-                    isDraggingNak = false;
-                    nakshatraSlider.style.cursor = 'pointer';
+                    if (!isDraggingStellar) return;
+                    isDraggingStellar = false;
+                    stellarField.style.cursor = 'pointer';
 
-                    // Snap to nearest nakshatra position
-                    const trackWidth = getTrackWidthNak();
-                    const snappedPosition = Math.round((currentXNak / (trackWidth - handleWidthNak)) * 26) / 26 * (trackWidth - handleWidthNak);
-                    updateNakHandlePosition(snappedPosition);
-                    handleNakSliderChange(snappedPosition);
+                    // Snap to nearest node position
+                    const spacing = nodeSpacingStellar();
+                    const snappedIndex = Math.round((currentXStellar - 15) / spacing);
+                    const snappedPosition = 15 + (snappedIndex * spacing);
+                    const clampedPosition = Math.max(15, Math.min(getFieldWidthStellar() - 15, snappedPosition));
+                    updateOrbPosition(clampedPosition);
+                    handleStellarFieldChange(clampedPosition);
                 });
 
-                // Click on track to jump to position
-                nakshatraSlider.addEventListener('click', (e) => {
-                    if (isDraggingNak) return;
-                    const position = getPositionNak(e.clientX);
-                    updateNakHandlePosition(position);
-                    handleNakSliderChange(position);
-                });
-
-                // Handle direct interaction
-                nakshatraHandle.addEventListener('mousedown', (e) => {
-                    isDraggingNak = true;
-                    startXNak = e.clientX;
-                    nakshatraHandle.style.cursor = 'grabbing';
-                    e.preventDefault();
+                // Click on field to jump to position
+                stellarField.addEventListener('click', (e) => {
+                    if (isDraggingStellar) return;
+                    const position = getPositionStellar(e.clientX);
+                    updateOrbPosition(position);
+                    handleStellarFieldChange(position);
                 });
             }
 
-            // Wire gear marks for nakshatra
-            document.querySelectorAll('.nakshatra-gear-dial .gear-mark').forEach(mark => {
-                mark.addEventListener('click', () => {
-                    const nakshatra = parseInt(mark.dataset.nakshatra);
+            // Wire stellar nodes for direct nakshatra selection
+            document.querySelectorAll('.nakshatra-stellar-navigator .stellar-node').forEach(node => {
+                node.addEventListener('click', () => {
+                    const nakshatra = parseInt(node.dataset.nakshatra);
                     rotateNakshatra(nakshatra);
                 });
             });
