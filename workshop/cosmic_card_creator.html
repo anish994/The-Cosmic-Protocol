@@ -29,6 +29,12 @@
             --anim-slow: 420ms;
             --easing-smooth: cubic-bezier(0.2, 0.9, 0.2, 1);
             --neon: 0 12px 32px rgba(109,40,217,0.18), inset 0 0 8px rgba(139,92,246,0.06);
+            /* House sign sizing - keeps the top-right sign and label slightly smaller than default */
+            --house-sign-logo-size: 24px; /* used for width/height of sign logo */
+            --house-sign-logo-font-size: 0.95rem; /* emoji or glyph inside logo */
+            --house-sign-label-font-size: 0.62rem; /* label text size */
+            --house-sign-padding: 0.2rem 0.5rem; /* container padding */
+            --house-sign-min-width: 44px; /* min width for container */
         }
 
         * {
@@ -178,11 +184,17 @@
         }
 
         /* Top-centered smaller badge showing sign and name (ensure this is top-level CSS) */
-        .house-sign { position:absolute; top:12px; left:50%; transform:translateX(calc(-50% + 12px)); display:flex; flex-direction:row; align-items:center; gap:8px; z-index:100; pointer-events:auto; padding: 0.15rem 0.4rem; border-radius:10px; }
-        .house .house-sign .sign-logo { width:18px; height:18px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,0.02); font-size:0.9rem; padding-left: 4px; }
+        /* Move the top badge (symbol+name) to the top-right of each house */
+        /* Badge aligned to top-right; align symbol and name horizontally (house header style) */
+        /* Badge: top-right, symbol above name, match style and size of house symbol */
+        /* Move the zodiac sign and name slightly higher to sit visually closer to house top */
+        /* Move the zodiac sign and name slightly higher to sit visually closer to house top */
+        /* Move the zodiac sign and name slightly higher to sit visually closer to house top */
+        .house-sign { position:absolute; top:2px; right:18px; left:auto; transform:none; display:flex; flex-direction:column; align-items:center; gap:4px; z-index:100; pointer-events:auto; padding: var(--house-sign-padding); border-radius:10px; justify-content:flex-end; min-width:var(--house-sign-min-width); }
+        .house .house-sign .sign-logo { width:var(--house-sign-logo-size); height:var(--house-sign-logo-size); display:flex; align-items:center; justify-content:center; border-radius:8px; background:rgba(255,255,255,0.02); font-size:var(--house-sign-logo-font-size); padding: 0px; margin:0; }
         /* Ensure only the top badge shows the sign name (hide any other sign-labels within houses) */
         .house .sign-label { display:none; }
-        .house .house-sign .sign-label { display:flex; font-size:0.68rem; font-weight:700; color:var(--text-main); letter-spacing:0.4px; margin:0; max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; align-items:center; gap:6px; }
+        .house .house-sign .sign-label { display:block; font-size:var(--house-sign-label-font-size); font-weight:700; color:var(--text-main); letter-spacing:0.3px; margin:0; max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:center; line-height:1.05; }
 
         /* Override crossfade absolute positioning for top badge so label remains visible */
         .house .house-sign .sign-label .sign-current, .house .house-sign .sign-label .sign-next {
@@ -1484,7 +1496,7 @@
             display: flex;
             gap: 0.65rem;
             padding-bottom: 0.4rem;
-            padding-right: 1.4rem; /* make room for badge */
+            padding-right: 3rem; /* increased to make room for top-right badge */
             border-bottom: 1px solid rgba(255,255,255,0.06);
             align-items: center;
             position: relative;
@@ -1561,14 +1573,14 @@
         
 
         .sign-logo {
-            font-size: 1.15rem;
+            font-size: var(--house-sign-logo-font-size);
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 28px;
-            flex: 0 0 28px;
-            height: 28px;
+            width: var(--house-sign-logo-size);
+            flex: 0 0 var(--house-sign-logo-size);
+            height: var(--house-sign-logo-size);
             border-radius: 8px;
             background: rgba(255,255,255,0.02);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
@@ -1630,17 +1642,17 @@
             height: 16px;
         }
         .sign-label { 
-            font-size: 0.65rem;
+            font-size: var(--house-sign-label-font-size);
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(0,0,0,0.7);
             border: 1px solid rgba(255,255,255,0.25);
             /* Make label flexible and prevent overlap with symbol */
-            margin-left: 6px;
+            margin-left: 4px;
             flex: 1 1 auto;
             min-width: 0; /* allow text-overflow to work in flex */
-            max-width: calc(100% - 28px);
+            max-width: calc(100% - var(--house-sign-logo-size));
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
