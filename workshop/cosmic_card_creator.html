@@ -263,163 +263,306 @@
             scroll-behavior: smooth;
         }
 
-        .lagna-gear-dial {
+        .lagna-energy-selector {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.5rem 1rem;
-            background: rgba(139,92,246,0.08);
-            border: 1px solid rgba(139,92,246,0.2);
-            border-radius: 8px;
+            gap: 0.4rem;
+            padding: 0.8rem 1.2rem;
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(59,130,246,0.05));
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 12px;
             position: relative;
             width: 100%;
+            overflow: hidden;
         }
 
-        .lagna-gear-dial label {
+        .lagna-energy-selector::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .lagna-energy-selector label {
             font-weight: 600;
             font-size: 0.7rem;
             color: var(--accent-glow);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             white-space: nowrap;
+            z-index: 2;
+            text-shadow: 0 0 8px rgba(139,92,246,0.6);
         }
 
-        .gear-slider-container {
+        .energy-field-container {
             position: relative;
             width: 100%;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .energy-field {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(90deg,
+                rgba(139,92,246,0.1) 0%,
+                rgba(59,130,246,0.15) 25%,
+                rgba(139,92,246,0.1) 50%,
+                rgba(59,130,246,0.15) 75%,
+                rgba(139,92,246,0.1) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(139,92,246,0.4);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .energy-field:hover {
+            transform: scale(1.02);
+            box-shadow:
+                0 8px 32px rgba(139,92,246,0.3),
+                inset 0 0 32px rgba(139,92,246,0.1);
+        }
+
+        .energy-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(139,92,246,0.6) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, rgba(59,130,246,0.6) 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, rgba(139,92,246,0.4) 1px, transparent 1px);
+            background-size: 60px 60px, 80px 80px, 100px 100px;
+            animation: particleFlow 8s linear infinite;
+        }
+
+        @keyframes particleFlow {
+            0% { transform: translateX(-100px) translateY(-50px); }
+            100% { transform: translateX(calc(100% + 100px)) translateY(calc(100% + 50px)); }
+        }
+
+        .energy-waves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                transparent 30%,
+                rgba(139,92,246,0.2) 50%,
+                transparent 70%);
+            animation: wavePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes wavePulse {
+            0%, 100% { opacity: 0.3; transform: scaleX(1); }
+            50% { opacity: 0.8; transform: scaleX(1.2); }
+        }
+
+        .cosmic-portals {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .portal {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.6);
+            background: radial-gradient(circle, rgba(139,92,246,0.3) 0%, rgba(139,92,246,0.1) 70%);
+            border-radius: 50%;
+            border: 1px solid rgba(139,92,246,0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            z-index: 3;
+        }
+
+        .portal:hover {
+            transform: scale(1.3);
+            color: var(--accent-glow);
+            background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(139,92,246,0.4) 70%);
+            box-shadow: 0 0 20px rgba(139,92,246,0.6);
+        }
+
+        .portal.active {
+            color: var(--accent-glow);
+            background: radial-gradient(circle, rgba(139,92,246,1) 0%, rgba(139,92,246,0.6) 70%);
+            box-shadow:
+                0 0 30px rgba(139,92,246,0.8),
+                inset 0 0 10px rgba(255,255,255,0.3);
+            animation: portalPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes portalPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .energy-cursor {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            width: 40px;
             height: 40px;
             display: flex;
             align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .gear-slider-track {
-            position: relative;
+        .cursor-core {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(139,92,246,0.8);
+            animation: coreGlow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes coreGlow {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+        .cursor-rings {
+            position: absolute;
             width: 100%;
-            height: 6px;
-            background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(59,130,246,0.2));
+            height: 100%;
+        }
+
+        .ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
             border: 1px solid rgba(139,92,246,0.4);
-            border-radius: 3px;
-            box-shadow:
-                inset 0 1px 2px rgba(0,0,0,0.3),
-                0 2px 4px rgba(139,92,246,0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ringExpand 3s ease-in-out infinite;
         }
 
-        .gear-slider-track:hover {
-            transform: scaleY(1.2);
-            box-shadow:
-                inset 0 1px 2px rgba(0,0,0,0.4),
-                0 4px 8px rgba(139,92,246,0.3);
+        .ring-1 {
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
         }
 
-        .gear-teeth-track {
+        .ring-2 {
+            width: 30px;
+            height: 30px;
+            animation-delay: 1s;
+        }
+
+        .ring-3 {
+            width: 40px;
+            height: 40px;
+            animation-delay: 2s;
+        }
+
+        @keyframes ringExpand {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+        }
+
+        .cursor-display {
             position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            bottom: -1px;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(139,92,246,0.6) 2px,
-                rgba(139,92,246,0.6) 4px
-            );
-            border-radius: 3px;
-            pointer-events: none;
-        }
-
-        .gear-slider-marks {
-            position: absolute;
-            top: -18px;
-            left: 0;
-            right: 0;
-            height: 18px;
-            pointer-events: none;
-        }
-
-        .gear-mark {
-            position: absolute;
-            top: 0;
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-            cursor: pointer;
-            user-select: none;
+            top: -35px;
+            left: 50%;
             transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            background: rgba(0,0,0,0.8);
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(139,92,246,0.5);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
 
-        .gear-mark:hover {
-            color: var(--accent-glow);
-            transform: translateX(-50%) scale(1.2);
+        .energy-cursor:hover .cursor-display {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
         }
 
-        .gear-mark.active {
+        .display-symbol {
+            font-size: 1.2rem;
+            font-weight: 700;
             color: var(--accent-glow);
             text-shadow: 0 0 8px rgba(139,92,246,0.8);
         }
 
-        .gear-slider-handle {
-            position: absolute;
-            top: -12px;
-            left: 0;
-            width: 24px;
-            height: 30px;
-            cursor: grab;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .gear-slider-handle:active {
-            cursor: grabbing;
-        }
-
-        .handle-indicator {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .handle-indicator::before {
-            content: '';
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 6px solid var(--accent-glow);
-            filter: drop-shadow(0 2px 4px rgba(139,92,246,0.5));
-        }
-
-        .current-lagna-sign {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-glow);
-            text-shadow: 0 2px 4px rgba(139,92,246,0.5);
-            transition: all 0.3s ease;
-            line-height: 1;
-        }
-
-        .current-lagna-name {
-            font-size: 0.5rem;
+        .display-name {
+            font-size: 0.6rem;
             font-weight: 600;
             color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            line-height: 1;
-            margin-top: 1px;
+        }
+
+        .energy-readout {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .readout-screen {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,30,0.9));
+            border: 1px solid rgba(139,92,246,0.4);
+            border-radius: 8px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow:
+                0 4px 16px rgba(0,0,0,0.3),
+                inset 0 0 16px rgba(139,92,246,0.1);
+        }
+
+        .readout-label {
+            font-size: 0.5rem;
+            font-weight: 600;
+            color: rgba(139,92,246,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .readout-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-glow);
+            text-shadow: 0 0 8px rgba(139,92,246,0.6);
+            min-width: 60px;
+            text-align: center;
         }
 
         .nakshatra-gear-dial {
@@ -1622,30 +1765,43 @@
             </div>
             <div class="panel-content">
                     <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:0.8rem;">
-                        <div class="lagna-gear-dial">
-                            <label for="lagna-dial">Ascendant</label>
-                            <div class="gear-slider-container">
-                                <div class="gear-slider-track">
-                                    <div class="gear-teeth-track"></div>
-                                    <div class="gear-slider-marks">
-                                        <div class="gear-mark" data-lagna="1">♈</div>
-                                        <div class="gear-mark" data-lagna="2">♉</div>
-                                        <div class="gear-mark" data-lagna="3">♊</div>
-                                        <div class="gear-mark" data-lagna="4">♋</div>
-                                        <div class="gear-mark" data-lagna="5">♌</div>
-                                        <div class="gear-mark" data-lagna="6">♍</div>
-                                        <div class="gear-mark" data-lagna="7">♎</div>
-                                        <div class="gear-mark" data-lagna="8">♏</div>
-                                        <div class="gear-mark" data-lagna="9">♐</div>
-                                        <div class="gear-mark" data-lagna="10">♑</div>
-                                        <div class="gear-mark" data-lagna="11">♒</div>
-                                        <div class="gear-mark" data-lagna="12">♓</div>
+                        <div class="lagna-energy-selector">
+                            <label for="lagna-selector">Ascendant</label>
+                            <div class="energy-field-container">
+                                <div class="energy-field">
+                                    <div class="energy-particles"></div>
+                                    <div class="energy-waves"></div>
+                                    <div class="cosmic-portals">
+                                        <div class="portal portal-1" data-lagna="1">♈</div>
+                                        <div class="portal portal-2" data-lagna="2">♉</div>
+                                        <div class="portal portal-3" data-lagna="3">♊</div>
+                                        <div class="portal portal-4" data-lagna="4">♋</div>
+                                        <div class="portal portal-5" data-lagna="5">♌</div>
+                                        <div class="portal portal-6" data-lagna="6">♍</div>
+                                        <div class="portal portal-7" data-lagna="7">♎</div>
+                                        <div class="portal portal-8" data-lagna="8">♏</div>
+                                        <div class="portal portal-9" data-lagna="9">♐</div>
+                                        <div class="portal portal-10" data-lagna="10">♑</div>
+                                        <div class="portal portal-11" data-lagna="11">♒</div>
+                                        <div class="portal portal-12" data-lagna="12">♓</div>
                                     </div>
-                                    <div class="gear-slider-handle">
-                                        <div class="handle-indicator">
-                                            <div class="current-lagna-sign" id="current-lagna-sign">♈</div>
-                                            <div class="current-lagna-name" id="current-lagna-name">Aries</div>
+                                    <div class="energy-cursor">
+                                        <div class="cursor-core"></div>
+                                        <div class="cursor-rings">
+                                            <div class="ring ring-1"></div>
+                                            <div class="ring ring-2"></div>
+                                            <div class="ring ring-3"></div>
                                         </div>
+                                        <div class="cursor-display">
+                                            <div class="display-symbol" id="current-lagna-sign">♈</div>
+                                            <div class="display-name" id="current-lagna-name">Aries</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="energy-readout">
+                                    <div class="readout-screen">
+                                        <span class="readout-label">ASCENDANT</span>
+                                        <span class="readout-value" id="lagna-readout">ARIES</span>
                                     </div>
                                 </div>
                             </div>
@@ -2375,35 +2531,40 @@
         }
 
         function updateGearDial() {
-            const marks = document.querySelectorAll('.lagna-gear-dial .gear-mark');
-            const handle = document.querySelector('.lagna-gear-dial .gear-slider-handle');
+            const portals = document.querySelectorAll('.lagna-energy-selector .portal');
+            const cursor = document.querySelector('.lagna-energy-selector .energy-cursor');
             const currentSign = document.getElementById('current-lagna-sign');
             const currentName = document.getElementById('current-lagna-name');
+            const readout = document.getElementById('lagna-readout');
 
-            if (!marks.length || !handle || !currentSign || !currentName) return;
+            if (!portals.length || !cursor || !currentSign || !currentName || !readout) return;
 
-            // Get the actual width of the slider track
-            const track = document.querySelector('.lagna-gear-dial .gear-slider-track');
-            if (!track) return;
-            const trackWidth = track.offsetWidth;
-            const handleWidth = 24; // Match CSS width
+            // Get the energy field width
+            const field = document.querySelector('.lagna-energy-selector .energy-field');
+            if (!field) return;
+            const fieldWidth = field.offsetWidth;
+            const portalSpacing = (fieldWidth - 30) / 11; // 12 portals, 11 intervals
 
-            // Position marks horizontally along the slider
-            marks.forEach((mark, index) => {
-                const position = (index / 11) * (trackWidth - handleWidth); // 11 intervals for 12 positions
-                mark.style.left = `${position + handleWidth / 2}px`; // Center on handle width
-                mark.classList.toggle('active', parseInt(mark.dataset.lagna) === currentLagna);
+            // Position portals and update active state
+            portals.forEach((portal, index) => {
+                const lagnaNum = index + 1;
+                portal.classList.toggle('active', lagnaNum === currentLagna);
+
+                // Position portals evenly across the field
+                const leftPos = 15 + (index * portalSpacing);
+                portal.style.left = `${leftPos}px`;
             });
 
-            // Position handle based on current lagna
-            const handlePosition = ((currentLagna - 1) / 11) * (trackWidth - handleWidth);
-            handle.style.left = `${handlePosition}px`;
+            // Position cursor based on current lagna
+            const cursorPos = 15 + ((currentLagna - 1) * portalSpacing);
+            cursor.style.left = `${cursorPos}px`;
 
-            // Update center display
+            // Update displays
             const lagnaData = LAGNA_NAMES[currentLagna - 1];
             if (lagnaData) {
                 currentSign.textContent = getSignSymbol(lagnaData.sign);
                 currentName.textContent = getSignShortName(lagnaData.sign);
+                readout.textContent = getSignShortName(lagnaData.sign).toUpperCase();
             }
         }
 
@@ -2449,89 +2610,83 @@
         }
 
         function wireJotyshUI() {
-            // Wire gear slider interactions
-            const gearSlider = document.querySelector('.gear-slider-track');
-            const gearHandle = document.querySelector('.gear-slider-handle');
+            // Wire energy field interactions
+            const energyField = document.querySelector('.lagna-energy-selector .energy-field');
+            const energyCursor = document.querySelector('.lagna-energy-selector .energy-cursor');
 
-            if (gearSlider && gearHandle) {
+            if (energyField && energyCursor) {
                 let isDragging = false;
                 let startX = 0;
                 let currentX = 0;
-                const handleWidth = 24; // Match CSS width
 
-                const getTrackWidth = () => gearSlider.offsetWidth;
+                const getFieldWidth = () => energyField.offsetWidth;
+                const portalSpacing = () => (getFieldWidth() - 30) / 11; // 12 portals, 11 intervals
 
                 const getPosition = (clientX) => {
-                    const rect = gearSlider.getBoundingClientRect();
+                    const rect = energyField.getBoundingClientRect();
                     const relativeX = clientX - rect.left;
-                    const trackWidth = getTrackWidth();
-                    return Math.max(0, Math.min(trackWidth - handleWidth, relativeX - handleWidth / 2));
+                    return Math.max(15, Math.min(getFieldWidth() - 15, relativeX));
                 };
 
-                const handleSliderChange = (position) => {
+                const handleFieldChange = (position) => {
                     // Convert position to lagna (12 positions)
-                    const trackWidth = getTrackWidth();
-                    const lagnaIndex = Math.round((position / (trackWidth - handleWidth)) * 11);
-                    const newLagna = lagnaIndex + 1;
+                    const spacing = portalSpacing();
+                    const lagnaIndex = Math.round((position - 15) / spacing);
+                    const newLagna = Math.max(1, Math.min(12, lagnaIndex + 1));
 
-                    if (newLagna !== currentLagna && newLagna >= 1 && newLagna <= 12) {
+                    if (newLagna !== currentLagna) {
                         rotateLagna(newLagna);
                     }
                 };
 
-                const updateHandlePosition = (position) => {
-                    gearHandle.style.left = `${position}px`;
+                const updateCursorPosition = (position) => {
+                    energyCursor.style.left = `${position}px`;
                 };
 
-                gearSlider.addEventListener('mousedown', (e) => {
+                // Mouse interactions
+                energyField.addEventListener('mousedown', (e) => {
                     isDragging = true;
                     startX = e.clientX;
-                    const rect = gearSlider.getBoundingClientRect();
-                    currentX = e.clientX - rect.left - handleWidth / 2;
-                    gearSlider.style.cursor = 'grabbing';
+                    const rect = energyField.getBoundingClientRect();
+                    currentX = e.clientX - rect.left;
+                    energyField.style.cursor = 'grabbing';
                     e.preventDefault();
                 });
 
                 document.addEventListener('mousemove', (e) => {
                     if (!isDragging) return;
                     const newX = getPosition(e.clientX);
-                    updateHandlePosition(newX);
+                    updateCursorPosition(newX);
                     currentX = newX;
                 });
 
                 document.addEventListener('mouseup', () => {
                     if (!isDragging) return;
                     isDragging = false;
-                    gearSlider.style.cursor = 'pointer';
+                    energyField.style.cursor = 'pointer';
 
-                    // Snap to nearest lagna position
-                    const trackWidth = getTrackWidth();
-                    const snappedPosition = Math.round((currentX / (trackWidth - handleWidth)) * 11) / 11 * (trackWidth - handleWidth);
-                    updateHandlePosition(snappedPosition);
-                    handleSliderChange(snappedPosition);
+                    // Snap to nearest portal position
+                    const spacing = portalSpacing();
+                    const snappedIndex = Math.round((currentX - 15) / spacing);
+                    const snappedPosition = 15 + (snappedIndex * spacing);
+                    const clampedPosition = Math.max(15, Math.min(getFieldWidth() - 15, snappedPosition));
+                    updateCursorPosition(clampedPosition);
+                    handleFieldChange(clampedPosition);
                 });
 
-                // Click on track to jump to position
-                gearSlider.addEventListener('click', (e) => {
+                // Click on field to jump to position
+                energyField.addEventListener('click', (e) => {
                     if (isDragging) return;
                     const position = getPosition(e.clientX);
-                    updateHandlePosition(position);
-                    handleSliderChange(position);
-                });
-
-                // Handle direct interaction
-                gearHandle.addEventListener('mousedown', (e) => {
-                    isDragging = true;
-                    startX = e.clientX;
-                    gearHandle.style.cursor = 'grabbing';
-                    e.preventDefault();
+                    updateCursorPosition(position);
+                    handleFieldChange(position);
                 });
             }
 
-            // Wire gear marks for lagna
-            document.querySelectorAll('.lagna-gear-dial .gear-mark').forEach(mark => {
-                mark.addEventListener('click', () => {
-                    const lagna = parseInt(mark.dataset.lagna);
+            // Wire cosmic portals for direct lagna selection
+            document.querySelectorAll('.lagna-energy-selector .portal').forEach(portal => {
+                portal.addEventListener('click', () => {
+                    const lagna = parseInt(portal.dataset.lagna);
                     rotateLagna(lagna);
                 });
             });
