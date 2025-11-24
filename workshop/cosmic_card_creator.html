@@ -37,6 +37,8 @@
             --house-sign-min-width: 44px; /* min width for container */
         }
 
+        
+
         * {
             margin: 0;
             padding: 0;
@@ -2406,6 +2408,86 @@
             .blueprint-house:hover { transform: none; box-shadow: none; }
             .nakshatra-btn:hover { transform: none; }
         }
+
+        /* ===== TEST NAKSHATRA SLIDER (Copied exactly from test .html, scoped) ===== */
+        #nakshatra-test-wrapper {
+            width: 100%;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* MAIN CASING */
+        #nakshatra-test-wrapper #nakshatra-test-slider-casing {
+            width: 900px; /* literally copied size */
+            height: 50px; /* literal */
+            border-radius: 6px;
+            padding: 5px 15px; /* literal */
+            border: 1px solid #a0a0a0; /* literal */
+            background: linear-gradient(90deg, var(--silver-matte, #c0c0c0) 0%, #e0e0e0 50%, var(--silver-matte, #c0c0c0) 100%);
+            box-shadow: 0 0 15px rgba(255, 204, 153, 0.05), 0 3px 8px rgba(0, 0, 0, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.3);
+            position: relative;
+            padding: 6px 10px; /* keep internal padding */
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Decorative screws */
+        #nakshatra-test-wrapper .nakshatra-test-screw {
+            width: 4px; height: 4px; background: #555; border: 1px solid #777; border-radius: 50%; position: absolute; z-index: 20; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        #nakshatra-test-wrapper .nak-s1 { top: 6px; left: 6px; }
+        #nakshatra-test-wrapper .nak-s2 { top: 6px; right: 6px; }
+        #nakshatra-test-wrapper .nak-s3 { bottom: 6px; left: 6px; }
+        #nakshatra-test-wrapper .nak-s4 { bottom: 6px; right: 6px; }
+
+        #nakshatra-test-wrapper #nakshatra-test-slider-track {
+            position: relative; height: 40px; width: 100%; border-radius: 4px; background-color: var(--dark-track, #141414); box-shadow: inset 0 0 8px rgba(0,0,0,0.9);
+            margin: 0 10px; overflow: hidden;
+            background-image: linear-gradient(to right, #2c2c2c 0.5px, transparent 0.5px), linear-gradient(to bottom, #2c2c2c 0.5px, transparent 0.5px); background-size: 5px 5px;
+            opacity: 0.9;
+        }
+
+        #nakshatra-test-wrapper .nakshatra-test-ruler { position: absolute; height: 2px; width: 100%; left: 0; opacity: 0.4; pointer-events: none; background-image: repeating-linear-gradient(to right, #888 0px, #888 1px, transparent 1px, transparent 10px); }
+        #nakshatra-test-wrapper #nakshatra-test-ruler-top { top: 0; }
+        #nakshatra-test-wrapper #nakshatra-test-ruler-bottom { bottom: 0; }
+        #nakshatra-test-wrapper #nakshatra-test-nakshatra-container { position: absolute; left: 0; top: 0; height: 100%; display: flex; flex-direction: row; }
+
+        #nakshatra-test-wrapper .nakshatra-item {
+            width: 30px; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 0.75rem; color: #666; position: absolute; transition: color 0.3s, font-size 0.3s; cursor: pointer; font-weight: 700; user-select: none;
+        }
+
+        #nakshatra-test-wrapper .nakshatra-item.active { color: var(--cool-glow, #ffcc99); font-size: 1.1rem; text-shadow: 0 0 4px var(--cool-glow, #ffcc99), 0 0 8px rgba(255, 204, 153, 0.6); }
+
+        /* Marker */
+        #nakshatra-test-wrapper #nakshatra-test-marker { position: absolute; left: 0; top: 0; bottom: 0; width: 30px; background: rgba(255, 204, 153, 0.05); border: 1px solid var(--cool-glow, #ffcc99); box-shadow: 0 0 8px var(--cool-glow, #ffcc99); transform: translateX(0); z-index: 20; border-radius: 4px; cursor: grab; }
+        #nakshatra-test-wrapper #nakshatra-test-marker.snapping { transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
+
+        /* Fixed Needle */
+        #nakshatra-test-wrapper .fixed-needle { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: #555; transform: translateX(-50%); z-index: 10; pointer-events: none; }
+
+        /* Display box below */
+        #nakshatra-test-wrapper .stellar-readout { margin-left: 12px; }
+        #nakshatra-test-wrapper .screen-name { color: var(--cool-glow, #ffcc99); font-weight: 700; letter-spacing: 2px; }
+
+        #nakshatra-test-wrapper #nakshatra-test-marker {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 30px;
+            background: rgba(139,92,246,0.06);
+            border: 1px solid rgba(139,92,246,0.14);
+            box-shadow: 0 0 8px rgba(139,92,246,0.06);
+            z-index: 30;
+            transform: translateX(0);
+            border-radius: 4px;
+            cursor: grab;
+        }
+
+        #nakshatra-test-wrapper .nakshatra-marker { display:none; }
+
+        #nakshatra-test-wrapper #nakshatra-test-display-box { display:none; }
+
     </style>
 </head>
 <body>
@@ -2495,41 +2577,50 @@
                                 @media (max-width:760px){.lagna-zodiac-container .zodiac-item{width:56px;font-size:1rem}.lagna-marker{width:56px}}
                             </style>
                         </div>
-                        <div class="nakshatra-stellar-navigator">
+                        <!-- Replaced original Nakshatra Navigator with scoped test slider -->
+                        <div id="nakshatra-test-wrapper">
                             <label for="nakshatra-navigator">Nakshatra</label>
-                            <div class="stellar-field-container">
-                                <div class="stellar-field">
+                            <div id="nakshatra-test-slider-casing" class="stellar-field-container">
+                                <div class="nakshatra-test-screw nak-s1"></div>
+                                <div class="nakshatra-test-screw nak-s2"></div>
+                                <div class="nakshatra-test-screw nak-s3"></div>
+                                <div class="nakshatra-test-screw nak-s4"></div>
+                                <div id="nakshatra-test-ruler-top" class="nakshatra-test-ruler"></div>
+                                <div id="nakshatra-test-ruler-bottom" class="nakshatra-test-ruler"></div>
+                                <div id="nakshatra-test-slider-track" class="stellar-field">
                                     <div class="starfield-background"></div>
                                     <div class="constellation-web"></div>
-                                    <div class="stellar-nodes">
-                                        <div class="stellar-node node-1" data-nakshatra="1">Ashw</div>
-                                        <div class="stellar-node node-2" data-nakshatra="2">Bhar</div>
-                                        <div class="stellar-node node-3" data-nakshatra="3">Krit</div>
-                                        <div class="stellar-node node-4" data-nakshatra="4">Rohi</div>
-                                        <div class="stellar-node node-5" data-nakshatra="5">Mrig</div>
-                                        <div class="stellar-node node-6" data-nakshatra="6">Ardr</div>
-                                        <div class="stellar-node node-7" data-nakshatra="7">Puna</div>
-                                        <div class="stellar-node node-8" data-nakshatra="8">Push</div>
-                                        <div class="stellar-node node-9" data-nakshatra="9">Ashl</div>
-                                        <div class="stellar-node node-10" data-nakshatra="10">Magh</div>
-                                        <div class="stellar-node node-11" data-nakshatra="11">PPha</div>
-                                        <div class="stellar-node node-12" data-nakshatra="12">UPha</div>
-                                        <div class="stellar-node node-13" data-nakshatra="13">Hast</div>
-                                        <div class="stellar-node node-14" data-nakshatra="14">Chit</div>
-                                        <div class="stellar-node node-15" data-nakshatra="15">Swat</div>
-                                        <div class="stellar-node node-16" data-nakshatra="16">Vish</div>
-                                        <div class="stellar-node node-17" data-nakshatra="17">Anur</div>
-                                        <div class="stellar-node node-18" data-nakshatra="18">Jyes</div>
-                                        <div class="stellar-node node-19" data-nakshatra="19">Mool</div>
-                                        <div class="stellar-node node-20" data-nakshatra="20">PAsh</div>
-                                        <div class="stellar-node node-21" data-nakshatra="21">UAsh</div>
-                                        <div class="stellar-node node-22" data-nakshatra="22">Shra</div>
-                                        <div class="stellar-node node-23" data-nakshatra="23">Dhan</div>
-                                        <div class="stellar-node node-24" data-nakshatra="24">Shat</div>
-                                        <div class="stellar-node node-25" data-nakshatra="25">PBha</div>
-                                        <div class="stellar-node node-26" data-nakshatra="26">UBha</div>
-                                        <div class="stellar-node node-27" data-nakshatra="27">Reva</div>
+                                    <div id="nakshatra-test-nakshatra-container" class="stellar-nodes">
+                                        <div class="nakshatra-item" data-index="0">As</div>
+                                        <div class="nakshatra-item" data-index="1">Bh</div>
+                                        <div class="nakshatra-item" data-index="2">Kr</div>
+                                        <div class="nakshatra-item" data-index="3">Ro</div>
+                                        <div class="nakshatra-item" data-index="4">Mr</div>
+                                        <div class="nakshatra-item" data-index="5">Ar</div>
+                                        <div class="nakshatra-item" data-index="6">Pu</div>
+                                        <div class="nakshatra-item" data-index="7">Ps</div>
+                                        <div class="nakshatra-item" data-index="8">Ah</div>
+                                        <div class="nakshatra-item" data-index="9">Ma</div>
+                                        <div class="nakshatra-item" data-index="10">PP</div>
+                                        <div class="nakshatra-item" data-index="11">UP</div>
+                                        <div class="nakshatra-item" data-index="12">Ha</div>
+                                        <div class="nakshatra-item" data-index="13">Ch</div>
+                                        <div class="nakshatra-item" data-index="14">Sw</div>
+                                        <div class="nakshatra-item" data-index="15">Vi</div>
+                                        <div class="nakshatra-item" data-index="16">An</div>
+                                        <div class="nakshatra-item" data-index="17">Jy</div>
+                                        <div class="nakshatra-item" data-index="18">Mu</div>
+                                        <div class="nakshatra-item" data-index="19">PA</div>
+                                        <div class="nakshatra-item" data-index="20">UA</div>
+                                        <div class="nakshatra-item" data-index="21">Sr</div>
+                                        <div class="nakshatra-item" data-index="22">Dh</div>
+                                        <div class="nakshatra-item" data-index="23">Sa</div>
+                                        <div class="nakshatra-item" data-index="24">PB</div>
+                                        <div class="nakshatra-item" data-index="25">UB</div>
+                                        <div class="nakshatra-item" data-index="26">Re</div>
                                     </div>
+                                    <div id="nakshatra-test-marker" class="nakshatra-marker" style="transition: transform 0.08s linear;"></div>
+                                    <div id="nakshatra-test-fixed-needle" class="fixed-needle"></div>
                                     <div class="celestial-orb">
                                         <div class="orb-core"></div>
                                         <div class="orb-rings">
@@ -2546,12 +2637,14 @@
                                         <div class="screen-header">NAKSHATRA</div>
                                         <div class="screen-content">
                                             <span class="screen-name" id="current-nakshatra-name">Ashwini</span>
+                                            <!-- Optional test display for single-line name -->
+                                            <div id="nakshatra-test-display-box" style="display:none;"><span id="nakshatra-test-name"></span></div>
                                             <span class="screen-ruling" id="current-nakshatra-ruling">Ketu</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> <!-- /#nakshatra-test-wrapper -->
                     </div>
                     <div id="vedic-chart" class="vedic-chart" style="height:calc(100% - 160px);"></div>
             </div>
@@ -4415,6 +4508,135 @@
             updateVisuals();
         }
 
+        // Test slider data & initializer (copied and adapted from test.html)
+        function initTestNakshatraSlider() {
+            const containerEl = document.getElementById('nakshatra-test-nakshatra-container');
+            const markerEl = document.getElementById('nakshatra-test-marker');
+            const casingEl = document.getElementById('nakshatra-test-slider-casing');
+            const displayEl = document.getElementById('nakshatra-test-name');
+            const globalNameEl = document.getElementById('current-nakshatra-name');
+            if (!containerEl || !markerEl || !casingEl) return;
+
+            // local nakshatra definitions to match test.html symbols
+            const nakshatras = [
+                { name: "Ashwini", symbol: "As" },
+                { name: "Bharani", symbol: "Bh" },
+                { name: "Krittika", symbol: "Kr" },
+                { name: "Rohini", symbol: "Ro" },
+                { name: "Mrigashira", symbol: "Mr" },
+                { name: "Ardra", symbol: "Ar" },
+                { name: "Punarvasu", symbol: "Pu" },
+                { name: "Pushya", symbol: "Ps" },
+                { name: "Ashlesha", symbol: "Ah" },
+                { name: "Magha", symbol: "Ma" },
+                { name: "Purva Phalguni", symbol: "PP" },
+                { name: "Uttara Phalguni", symbol: "UP" },
+                { name: "Hasta", symbol: "Ha" },
+                { name: "Chitra", symbol: "Ch" },
+                { name: "Swati", symbol: "Sw" },
+                { name: "Vishakha", symbol: "Vi" },
+                { name: "Anuradha", symbol: "An" },
+                { name: "Jyeshtha", symbol: "Jy" },
+                { name: "Moola", symbol: "Mu" },
+                { name: "Purva Ashadha", symbol: "PA" },
+                { name: "Uttara Ashadha", symbol: "UA" },
+                { name: "Shravana", symbol: "Sr" },
+                { name: "Dhanishta", symbol: "Dh" },
+                { name: "Shatabhisha", symbol: "Sa" },
+                { name: "Purva Bhadrapada", symbol: "PB" },
+                { name: "Uttara Bhadrapada", symbol: "UB" },
+                { name: "Revati", symbol: "Re" }
+            ];
+
+            const ITEM_WIDTH = 30; // px
+            const TOTAL_ITEMS = nakshatras.length; // 27
+            const CYCLE_WIDTH = ITEM_WIDTH * TOTAL_ITEMS; // 810 px
+            const TRACK_WIDTH = 900; // match test.html exact size for parity
+            const TRACK_START_PADDING = (TRACK_WIDTH - CYCLE_WIDTH) / 2;
+            const PRE_POST_COUNT = 5; // clones on both sides as in test.html
+            const TOTAL_RENDER_ITEMS = TOTAL_ITEMS + 2 * PRE_POST_COUNT;
+            const CLONED_WIDTH = TOTAL_RENDER_ITEMS * ITEM_WIDTH;
+            const START_OFFSET = PRE_POST_COUNT * ITEM_WIDTH;
+            const ASHWINI_BASE_X = TRACK_START_PADDING;
+
+            let markerX = 0;
+            let isDragging = false;
+            let startX = 0;
+            let startMarkerX = 0;
+            let prevIndex = -1;
+
+            // Render cloned items
+            containerEl.innerHTML = '';
+            containerEl.style.position = 'absolute';
+            containerEl.style.left = `${TRACK_START_PADDING - START_OFFSET}px`;
+            containerEl.style.width = `${CLONED_WIDTH}px`;
+            for (let i = 0; i < TOTAL_RENDER_ITEMS; i++) {
+                const actualIndex = (i - PRE_POST_COUNT + TOTAL_ITEMS) % TOTAL_ITEMS;
+                const n = nakshatras[actualIndex];
+                const div = document.createElement('div');
+                div.className = 'nakshatra-item';
+                div.style.left = `${i * ITEM_WIDTH}px`;
+                div.textContent = n.symbol;
+                div.dataset.index = actualIndex;
+                div.addEventListener('click', () => snapToPosition(actualIndex));
+                containerEl.appendChild(div);
+            }
+
+            function getSelectedIndex(currentMarkerX) {
+                let contentPos = currentMarkerX - ASHWINI_BASE_X;
+                while (contentPos >= CYCLE_WIDTH) contentPos -= CYCLE_WIDTH;
+                while (contentPos < 0) contentPos += CYCLE_WIDTH;
+                let trueIndex = Math.floor(contentPos / ITEM_WIDTH);
+                return Math.min(Math.max(trueIndex, 0), TOTAL_ITEMS - 1);
+            }
+
+            function updateVisuals() {
+                const trueIndex = getSelectedIndex(markerX);
+                const itemEls = containerEl.querySelectorAll('.nakshatra-item');
+                itemEls.forEach(it => { it.classList.toggle('active', parseInt(it.dataset.index, 10) === trueIndex); });
+                if (markerEl) markerEl.style.transform = `translateX(${markerX}px)`;
+                if (globalNameEl) globalNameEl.textContent = (typeof NAKSHATRA_DATA !== 'undefined' && NAKSHATRA_DATA && NAKSHATRA_DATA[trueIndex]) ? NAKSHATRA_DATA[trueIndex].name : nakshatras[trueIndex].name;
+                if (displayEl) displayEl.textContent = ((typeof NAKSHATRA_DATA !== 'undefined' && NAKSHATRA_DATA && NAKSHATRA_DATA[trueIndex]) ? NAKSHATRA_DATA[trueIndex].name : nakshatras[trueIndex].name).toUpperCase();
+                if (prevIndex !== trueIndex) { prevIndex = trueIndex; try { rotateNakshatra(trueIndex + 1); } catch (e) { /* ignore if missing */ } }
+            }
+
+            function loopCheck(currentX) {
+                let jumpedX = currentX; let shouldJump = false;
+                const TELEPORT_THRESHOLD_WIDTH = (PRE_POST_COUNT - 2) * ITEM_WIDTH;
+                const MIN_TELEPORT_X = ASHWINI_BASE_X - TELEPORT_THRESHOLD_WIDTH;
+                const MAX_TELEPORT_X = ASHWINI_BASE_X + CYCLE_WIDTH + TELEPORT_THRESHOLD_WIDTH;
+                if (currentX >= MAX_TELEPORT_X) { jumpedX -= CYCLE_WIDTH; shouldJump = true; }
+                if (currentX < MIN_TELEPORT_X) { jumpedX += CYCLE_WIDTH; shouldJump = true; }
+                if (shouldJump && markerEl) markerEl.style.transition = 'none';
+                else if (markerEl && markerEl.style.transition === 'none' && !isDragging) markerEl.style.transition = 'transform 0.08s linear';
+                return jumpedX;
+            }
+
+            function snapToPosition(targetIndex = null) {
+                markerEl.classList.add('snapping');
+                let finalIndex = targetIndex !== null ? targetIndex : getSelectedIndex(markerX + (ITEM_WIDTH / 2));
+                const targetXBase = ASHWINI_BASE_X + (finalIndex * ITEM_WIDTH);
+                let correctedTargetX = targetXBase; let diff = correctedTargetX - markerX;
+                if (diff < -(CYCLE_WIDTH / 2)) correctedTargetX += CYCLE_WIDTH; else if (diff > (CYCLE_WIDTH / 2)) correctedTargetX -= CYCLE_WIDTH;
+                markerX = correctedTargetX; updateVisuals();
+                setTimeout(() => { markerEl.classList.remove('snapping'); let normalizedX = markerX; while (normalizedX >= ASHWINI_BASE_X + CYCLE_WIDTH) normalizedX -= CYCLE_WIDTH; while (normalizedX < ASHWINI_BASE_X) normalizedX += CYCLE_WIDTH; markerX = normalizedX; if (markerEl) markerEl.style.transition = 'transform 0.08s linear'; updateVisuals(); }, 400);
+            }
+
+            function handleStart(clientX) { isDragging = true; startX = clientX; startMarkerX = markerX; markerEl.classList.remove('snapping'); markerEl.style.cursor = 'grabbing'; markerEl.style.transition = 'transform 0.08s linear'; }
+            function handleMove(clientX) { if (!isDragging) return; const deltaX = clientX - startX; let newX = startMarkerX + deltaX; newX = loopCheck(newX); markerX = newX; updateVisuals(); }
+            function handleEnd() { if (!isDragging) return; isDragging = false; markerEl.style.cursor = 'grab'; snapToPosition(null); }
+
+            markerEl.addEventListener('mousedown', (e) => { e.preventDefault(); handleStart(e.clientX); });
+            document.addEventListener('mousemove', (e) => { if (isDragging) e.preventDefault(); handleMove(e.clientX); }); document.addEventListener('mouseup', handleEnd);
+            markerEl.addEventListener('touchstart', (e) => { e.preventDefault(); handleStart(e.touches[0].clientX); }, { passive: false });
+            document.addEventListener('touchmove', (e) => handleMove(e.touches[0].clientX), { passive: false }); document.addEventListener('touchend', handleEnd); document.addEventListener('touchcancel', handleEnd);
+
+            casingEl.addEventListener('wheel', (e) => { e.preventDefault(); markerEl.classList.remove('snapping'); const rawScroll = e.deltaX !== 0 ? e.deltaX : e.deltaY; const scrollAmount = rawScroll * 0.2; let newX = markerX + scrollAmount; newX = loopCheck(newX); markerX = newX; updateVisuals(); clearTimeout(window.nakshatraSnapTimeout); window.nakshatraSnapTimeout = setTimeout(() => snapToPosition(null), 150); markerEl.style.transition = 'transform 0.08s linear'; }, { passive: false });
+
+            // initialize
+            markerX = ASHWINI_BASE_X; markerEl.style.transform = `translateX(${markerX}px)`; updateVisuals();
+        }
+
         // === INITIALIZATION ===
         console.log('🚀 Cosmic Card Creator initialized');
         console.log('📱 Viewport:', window.innerWidth, 'x', window.innerHeight);
@@ -4428,6 +4650,8 @@
             initJotyshEngine();
             // Initialize the new Lagna Slider
             if (typeof initLagnaSlider === 'function') initLagnaSlider();
+            // Initialize the test Nakshatra Slider
+            if (typeof initTestNakshatraSlider === 'function') initTestNakshatraSlider();
             
             // Start ambient sound on first user interaction
             document.body.addEventListener('click', () => {
