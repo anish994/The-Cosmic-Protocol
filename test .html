@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleek Zodiac Instrument</title>
+    <title>Nakshatra Mechanical Instrument</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -11,8 +11,9 @@
         :root {
             --silver-matte: #c0c0c0;
             --silver-shine: #f0f0f0;
-            --cool-glow: #99eeff; /* Light blue/cyan for modern tech look */
+            --cool-glow: #ffcc99; /* Changed glow to a warm, astronomical orange/gold */
             --off-black: #0d1117;
+            --dark-track: #141414;
         }
 
         /* Base styling */
@@ -32,15 +33,15 @@
         /* The main horizontal structure (The Sleek Matte Casing) */
         #slider-casing {
             width: 900px; 
-            height: 60px; /* Thinner profile */
+            height: 50px; /* Even thinner profile for precision */
             border-radius: 6px;
-            /* Matte Silver Look - very subtle depth */
+            /* Matte Silver Look */
             background: linear-gradient(90deg, var(--silver-matte) 0%, #e0e0e0 50%, var(--silver-matte) 100%);
             /* Solid 2.5D, lightweight shadow */
             box-shadow: 
-                0 0 15px rgba(153, 238, 255, 0.05), /* Subtle outer cool glow */
-                0 3px 8px rgba(0, 0, 0, 0.4), /* Reduced lift shadow */
-                inset 0 0 5px rgba(255, 255, 255, 0.3); /* Soft inner surface highlight */
+                0 0 15px rgba(255, 204, 153, 0.05), /* Subtle outer warm glow */
+                0 3px 8px rgba(0, 0, 0, 0.4), 
+                inset 0 0 5px rgba(255, 255, 255, 0.3); 
             
             position: relative;
             padding: 5px 15px; 
@@ -53,7 +54,7 @@
 
         /* --- Mechanical Details (Subtle Recessed Screws) --- */
         .screw {
-            width: 4px; /* Smaller */
+            width: 4px; 
             height: 4px;
             background: #555; 
             border: 1px solid #777;
@@ -62,58 +63,60 @@
             border-radius: 50%; 
             position: absolute; 
         }
-        .screw::before {
-            content: none; 
-        }
         #s1 { top: 6px; left: 6px; }
         #s2 { top: 6px; right: 6px; }
         #s3 { bottom: 6px; left: 6px; }
         #s4 { bottom: 6px; right: 6px; }
-        /* --------------------------------------------------- */
 
         /* The Track (Central Mechanism) */
         #slider-track {
             position: relative;
-            height: 50px; 
+            height: 40px; 
             width: 100%; 
             border-radius: 4px;
-            background: #1a1a1a; /* Dark track for contrast */
+            background-color: var(--dark-track); /* Dark track for contrast */
             /* Recessed, smooth look */
             box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.9);
             overflow: hidden; 
             margin: 0 10px;
+            
+            /* Enhanced Look: Subtle grid pattern for a mechanical feel */
+            background-image: 
+                linear-gradient(to right, #2c2c2c 0.5px, transparent 0.5px),
+                linear-gradient(to bottom, #2c2c2c 0.5px, transparent 0.5px);
+            background-size: 5px 5px; /* Tighter grid for high precision */
+            opacity: 0.9;
         }
 
-        /* Container for all Zodiac Signs (FIXED CONTENT) */
-        #zodiac-container {
+        /* Container for all Nakshatras (FIXED CONTENT - includes clones) */
+        #nakshatra-container {
             height: 100%;
             position: absolute; 
-            left: 30px; 
-            width: 840px; /* 12 * 70px */
             display: flex; 
             flex-direction: row;
             transition: none; 
         }
         
-        /* Individual Zodiac Element */
-        .zodiac-item {
-            width: 70px; 
+        /* Individual Nakshatra Element */
+        .nakshatra-item {
+            width: 30px; /* Smaller width for 27 items */
             height: 100%; 
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem; 
-            color: #444; 
+            font-size: 0.75rem; /* Smaller font for abbreviations */
+            color: #666; 
             position: absolute; 
             transition: color 0.3s, font-size 0.3s;
-            cursor: pointer; /* Indicate clickability */
+            cursor: pointer; 
+            font-weight: 700;
         }
 
-        /* Highlighted/Selected Zodiac Element */
-        .zodiac-item.active {
+        /* Highlighted/Selected Nakshatra Element */
+        .nakshatra-item.active {
             color: var(--cool-glow); 
-            font-size: 2.2rem; 
-            text-shadow: 0 0 6px var(--cool-glow), 0 0 12px rgba(153, 238, 255, 0.6);
+            font-size: 1.1rem; /* Significantly larger when active */
+            text-shadow: 0 0 4px var(--cool-glow), 0 0 8px rgba(255, 204, 153, 0.6);
         }
 
         /* The MOVING SELECTOR BOX */
@@ -122,18 +125,16 @@
             left: 0; 
             top: 0;
             bottom: 0;
-            width: 70px; 
-            background: rgba(153, 238, 255, 0.05); 
+            width: 30px; /* Matches item width */
+            background: rgba(255, 204, 153, 0.05); 
             border: 1px solid var(--cool-glow); 
             box-shadow: 0 0 8px var(--cool-glow);
             transform: translateX(0); 
             z-index: 20; 
             border-radius: 4px;
-            /* Allow the marker itself to be the drag target */
             cursor: grab; 
         }
         #marker.snapping {
-            /* Increased duration and smooth cubic-bezier for a premium settling feel */
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); 
         }
 
@@ -153,7 +154,7 @@
         /* Subtle ticks/rulers */
         .ruler {
             position: absolute;
-            height: 3px; 
+            height: 2px; /* Thinner ruler */
             width: 100%;
             left: 0;
             opacity: 0.4;
@@ -167,20 +168,20 @@
         #ruler-top { top: 0; }
         #ruler-bottom { bottom: 0; }
 
-        /* --- Lagna Display Below Slider --- */
-        #lagna-display {
-            width: 300px; 
+        /* --- Display Below Slider --- */
+        #display-box {
+            width: 450px; 
             height: 40px;
-            background-color: #1a1a1a; 
+            background-color: var(--dark-track); 
             border: 1px solid var(--cool-glow);
             border-radius: 6px;
-            box-shadow: 0 0 10px rgba(153, 238, 255, 0.5), inset 0 0 5px rgba(153, 238, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 204, 153, 0.5), inset 0 0 5px rgba(255, 204, 153, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        #lagna-name {
+        #nakshatra-name {
             color: var(--cool-glow);
             font-size: 1.2rem;
             font-weight: 700;
@@ -203,52 +204,77 @@
             <div id="ruler-top" class="ruler"></div>
             <div id="ruler-bottom" class="ruler"></div>
 
-            <!-- New Fixed Needle for center reference -->
+            <!-- Fixed Needle for center reference -->
             <div id="fixed-needle"></div> 
 
-            <!-- #marker is now the MOVING SELECTOR BOX -->
+            <!-- #marker is the MOVING SELECTOR BOX -->
             <div id="marker" style="transition: transform 0.08s linear;"></div>
 
-            <!-- #zodiac-container holds the FIXED signs -->
-            <div id="zodiac-container">
-                <!-- Zodiac items will be injected here -->
+            <!-- #nakshatra-container holds the signs (including clones for loop) -->
+            <div id="nakshatra-container">
+                <!-- Nakshatra items will be injected here -->
             </div>
         </div>
     </div>
     
-    <!-- Lagna Name Display below the tool -->
-    <div id="lagna-display">
-        <span id="lagna-name">LAGNA: ARIES</span>
+    <!-- Nakshatra Name Display below the tool -->
+    <div id="display-box">
+        <span id="nakshatra-name">NAKSHATRA: ASHWINI</span>
     </div>
 
     <script>
-        const zodiacSigns = [
-            { name: "Aries", symbol: "♈" },
-            { name: "Taurus", symbol: "♉" },
-            { name: "Gemini", symbol: "♊" },
-            { name: "Cancer", symbol: "♋" },
-            { name: "Leo", symbol: "♌" },
-            { name: "Virgo", symbol: "♍" },
-            { name: "Libra", symbol: "♎" },
-            { name: "Scorpio", symbol: "♏" },
-            { name: "Sagittarius", symbol: "♐" },
-            { name: "Capricorn", symbol: "♑" },
-            { name: "Aquarius", symbol: "♒" },
-            { name: "Pisces", symbol: "♓" }
+        const nakshatras = [
+            { name: "Ashwini", symbol: "As" },
+            { name: "Bharani", symbol: "Bh" },
+            { name: "Krittika", symbol: "Kr" },
+            { name: "Rohini", symbol: "Ro" },
+            { name: "Mrigashirsha", symbol: "Mr" },
+            { name: "Ardra", symbol: "Ar" },
+            { name: "Punarvasu", symbol: "Pu" },
+            { name: "Pushya", symbol: "Ps" },
+            { name: "Ashlesha", symbol: "Ah" },
+            { name: "Magha", symbol: "Ma" },
+            { name: "Purva Phalguni", symbol: "PP" },
+            { name: "Uttara Phalguni", symbol: "UP" },
+            { name: "Hasta", symbol: "Ha" },
+            { name: "Chitra", symbol: "Ch" },
+            { name: "Swati", symbol: "Sw" },
+            { name: "Vishakha", symbol: "Vi" },
+            { name: "Anuradha", symbol: "An" },
+            { name: "Jyeshtha", symbol: "Jy" },
+            { name: "Mula", symbol: "Mu" },
+            { name: "Purva Ashadha", symbol: "PA" },
+            { name: "Uttara Ashadha", symbol: "UA" },
+            { name: "Shravana", symbol: "Sr" },
+            { name: "Dhanishta", symbol: "Dh" },
+            { name: "Shatabhisha", symbol: "Sa" },
+            { name: "Purva Bhadrapada", symbol: "PB" },
+            { name: "Uttara Bhadrapada", symbol: "UB" },
+            { name: "Revati", symbol: "Re" }
         ];
 
-        const CONTAINER = document.getElementById('zodiac-container');
-        const TRACK = document.getElementById('slider-track');
+        const CONTAINER = document.getElementById('nakshatra-container');
         const MARKER = document.getElementById('marker');
-        const LAGNA_NAME = document.getElementById('lagna-name');
+        const NAKSHATRA_NAME = document.getElementById('nakshatra-name');
+        // Get reference to the casing for restricted scrolling
+        const SLIDER_CASING = document.getElementById('slider-casing');
         
-        const ITEM_WIDTH = 70; 
-        const TOTAL_ITEMS = zodiacSigns.length;
-        const CYCLE_WIDTH = TOTAL_ITEMS * ITEM_WIDTH; // 840px
+        const ITEM_WIDTH = 30; 
+        const TOTAL_ITEMS = nakshatras.length; // 27
+        const CYCLE_WIDTH = TOTAL_ITEMS * ITEM_WIDTH; // 810px 
         const TRACK_WIDTH = 900; // From CSS
-        const TRACK_START_PADDING = (TRACK_WIDTH - CYCLE_WIDTH) / 2; // 30px
+        const TRACK_START_PADDING = (TRACK_WIDTH - CYCLE_WIDTH) / 2; // 45px
         
-        // markerX tracks the position of the selector's LEFT edge, relative to the track's left edge (0)
+        // --- Constants for Visual Looping (ensuring symmetry) ---
+        const PRE_POST_COUNT = 5; // Number of cloned nakshatras on each side (5 for a deep look)
+        const TOTAL_RENDER_ITEMS = TOTAL_ITEMS + 2 * PRE_POST_COUNT; // 27 + 10 = 37 items rendered
+        const CLONED_WIDTH = TOTAL_RENDER_ITEMS * ITEM_WIDTH; // 37 * 30 = 1110px
+        const START_OFFSET = PRE_POST_COUNT * ITEM_WIDTH; // 5 * 30 = 150px
+        
+        // ASHWINI_BASE_X is the visual start position of Nakshatra 0 in the track (45px)
+        const ASHWINI_BASE_X = TRACK_START_PADDING; // 45px
+        // ---------------------------------------------------------
+
         let markerX = 0; 
         let isDragging = false;
         let startX = 0; 
@@ -257,40 +283,46 @@
         // --- Core Slider Logic ---
 
         /**
-         * Renders only the 12 signs, fixed and centered in the track, and attaches click handlers.
+         * Renders the 27 main Nakshatras plus clones on either side to create a visual loop.
          */
-        function renderZodiacs() {
-            // Set up static container position
-            CONTAINER.style.left = `${TRACK_START_PADDING}px`;
-            CONTAINER.style.width = `${CYCLE_WIDTH}px`;
+        function renderNakshatras() {
+            // 1. Set container size to hold all clones (37 items)
+            CONTAINER.style.width = `${CLONED_WIDTH}px`;
             
-            // Render the 12 signs
-            zodiacSigns.forEach((sign, index) => {
-                const div = document.createElement('div');
-                div.className = 'zodiac-item';
-                // Position each item absolutely within the static CONTAINER
-                div.style.left = `${index * ITEM_WIDTH}px`; 
-                div.innerHTML = sign.symbol;
+            // 2. Shift the container LEFT so the main 27 signs start correctly in the track.
+            CONTAINER.style.left = `${TRACK_START_PADDING - START_OFFSET}px`; // 45 - 150 = -105px
+
+            // Inject all 37 items (5 clones, 27 main, 5 clones)
+            for (let i = 0; i < TOTAL_RENDER_ITEMS; i++) {
+                // Calculate the actual nakshatra index (0-26) for cloning
+                const actualIndex = (i - PRE_POST_COUNT + TOTAL_ITEMS) % TOTAL_ITEMS;
                 
-                // Add click handler for direct selection
-                div.addEventListener('click', () => handleSignClick(index));
+                const nakshatra = nakshatras[actualIndex];
+
+                const div = document.createElement('div');
+                div.className = 'nakshatra-item';
+                div.style.left = `${i * ITEM_WIDTH}px`; 
+                div.textContent = nakshatra.symbol; 
+                
+                // Use a data attribute to store the actual index (0-26) for snapping
+                div.dataset.index = actualIndex; 
+                div.addEventListener('click', (e) => handleNakshatraClick(parseInt(e.currentTarget.dataset.index)));
 
                 CONTAINER.appendChild(div);
-            });
+            }
             
-            // Initialize markerX to the center of the first sign (Aries)
-            markerX = TRACK_START_PADDING; 
+            // Initial markerX position is set to the visual start of Ashwini (index 0) in the track.
+            markerX = ASHWINI_BASE_X; 
             
             updateVisuals();
         }
 
         /**
-         * Determines the selected sign based on the marker's X position.
-         * Note: This calculation is independent of the marker's visual loops/wrapping.
+         * Determines the selected nakshatra based on the marker's X position.
          */
         function getSelectedIndex(currentMarkerX) { 
-            // Normalize the position to be within the 0 to CYCLE_WIDTH range
-            let contentPos = currentMarkerX - TRACK_START_PADDING;
+            // Normalize position relative to the start of the first *main* Ashwini sign (ASHWINI_BASE_X)
+            let contentPos = currentMarkerX - ASHWINI_BASE_X; 
 
             // Handle positive cycles
             while (contentPos >= CYCLE_WIDTH) {
@@ -301,7 +333,7 @@
                 contentPos += CYCLE_WIDTH;
             }
 
-            // True index (0 to 11) based on the normalized content position
+            // True index (0 to 26) based on the normalized content position
             let trueIndex = Math.floor(contentPos / ITEM_WIDTH);
             
             return Math.min(Math.max(trueIndex, 0), TOTAL_ITEMS - 1);
@@ -313,12 +345,13 @@
         function updateVisuals() {
             const trueIndex = getSelectedIndex(markerX);
             
-            // Update selected name (Lagna)
-            LAGNA_NAME.textContent = `LAGNA: ${zodiacSigns[trueIndex].name.toUpperCase()}`;
+            // Update selected name (Nakshatra)
+            NAKSHATRA_NAME.textContent = `NAKSHATRA: ${nakshatras[trueIndex].name.toUpperCase()}`;
             
-            // Update active class on the fixed signs
-            document.querySelectorAll('.zodiac-item').forEach((item, index) => {
-                item.classList.toggle('active', index === trueIndex);
+            // Update active class on all rendered items whose index matches the true index
+            document.querySelectorAll('.nakshatra-item').forEach((item) => {
+                const itemIndex = parseInt(item.dataset.index);
+                item.classList.toggle('active', itemIndex === trueIndex);
             });
             
             // Move the marker (selector) using its calculated X position
@@ -326,33 +359,38 @@
         }
 
         /**
-         * Implements the seamless loop by instantly resetting markerX when it goes out of bounds.
+         * Implements the seamless loop by instantly resetting markerX when it goes out of the safe visible zone.
          */
         function loopCheck(currentX) {
-            // Check slightly outside bounds to trigger jump before user notices the end
-            const minX = TRACK_START_PADDING - (ITEM_WIDTH / 2); 
-            const maxX = TRACK_START_PADDING + CYCLE_WIDTH + (ITEM_WIDTH / 2); 
-            
-            let shouldJump = false;
             let jumpedX = currentX;
+            let shouldJump = false;
 
-            // If dragged past the end (too far right)
-            if (currentX >= maxX) { 
-                 // Reset to the start (minX equivalent)
-                jumpedX -= CYCLE_WIDTH;
+            // Define the teleport zone: when the marker moves into the space of the 3rd clone (or beyond the -3rd clone).
+            // We use 2 items of buffer (90px) to ensure the transition is hidden behind the visible clones.
+            const TELEPORT_THRESHOLD_WIDTH = (PRE_POST_COUNT - 2) * ITEM_WIDTH; // 3 items of buffer (90px)
+            
+            // Calculate MIN/MAX based on ASHWINI_BASE_X (45px) and the cycle.
+            const MIN_TELEPORT_X = ASHWINI_BASE_X - TELEPORT_THRESHOLD_WIDTH; // 45 - 90 = -45px
+            const MAX_TELEPORT_X = ASHWINI_BASE_X + CYCLE_WIDTH + TELEPORT_THRESHOLD_WIDTH; // 45 + 810 + 90 = 945px
+
+            // If dragged past the visible clones on the right
+            if (currentX >= MAX_TELEPORT_X) { 
+                jumpedX -= CYCLE_WIDTH; // Teleport back one full cycle
                 shouldJump = true;
             }
             
-            // If dragged past the start (too far left)
-            if (currentX < minX) {
-                // Reset to the end (maxX equivalent)
-                jumpedX += CYCLE_WIDTH;
+            // If dragged past the visible clones on the left
+            if (currentX < MIN_TELEPORT_X) {
+                jumpedX += CYCLE_WIDTH; // Teleport forward one full cycle
                 shouldJump = true;
             }
 
             if (shouldJump) {
                 // Temporarily disable CSS transition for the instant jump
                 MARKER.style.transition = 'none';
+            } else if (MARKER.style.transition === 'none' && !isDragging) {
+                 // Re-enable transition if we didn't jump and drag is over
+                 MARKER.style.transition = 'transform 0.08s linear';
             }
 
             return jumpedX;
@@ -360,8 +398,7 @@
 
         /**
          * Snaps the marker to the center of the specified index or the nearest index,
-         * ensuring the shortest path is taken around the loop.
-         * @param {number | null} targetIndex - The desired zodiac index (0-11). If null, snap to nearest.
+         * ensuring the shortest rotational path.
          */
         function snapToPosition(targetIndex = null) {
             MARKER.classList.add('snapping');
@@ -369,21 +406,17 @@
             let finalIndex;
             
             if (targetIndex !== null) {
-                // Click interaction: Use the provided index
                 finalIndex = targetIndex;
             } else {
-                // Drag/Scroll end: Calculate the nearest index based on current marker position
-                // We calculate index based on the center of the marker
+                // Calculate the nearest index based on marker's center position
                 finalIndex = getSelectedIndex(markerX + (ITEM_WIDTH / 2)); 
             }
 
-            // 1. Calculate the target X position (left edge of the target sign) within the base range (30px to 870px)
-            const targetXBase = TRACK_START_PADDING + (finalIndex * ITEM_WIDTH);
+            // 1. Calculate the target X position relative to the first main Ashwini (ASHWINI_BASE_X)
+            const targetXBase = ASHWINI_BASE_X + (finalIndex * ITEM_WIDTH);
             
             // 2. Determine the rotational equivalent of targetXBase that is closest to the current markerX
             let correctedTargetX = targetXBase;
-            
-            // Calculate the difference between the base target and the current position
             let diff = correctedTargetX - markerX;
             
             // Check if jumping one cycle right (adding CYCLE_WIDTH) is shorter
@@ -400,39 +433,38 @@
             // 3. Set up the final transition (the smooth snap)
             updateVisuals(); 
             
-            // 4. After the smooth snap completes (0.4s), normalize markerX back into the base range 
-            // so the next drag/scroll starts from a clean state.
+            // 4. After the smooth snap completes (0.4s), normalize markerX back into the main range.
             setTimeout(() => {
                 MARKER.classList.remove('snapping');
                 
+                // Normalize markerX to the range [ASHWINI_BASE_X, ASHWINI_BASE_X + CYCLE_WIDTH)
                 let normalizedX = markerX;
-                while (normalizedX >= TRACK_START_PADDING + CYCLE_WIDTH) {
+
+                while (normalizedX >= ASHWINI_BASE_X + CYCLE_WIDTH) {
                     normalizedX -= CYCLE_WIDTH;
                 }
-                while (normalizedX < TRACK_START_PADDING) {
+                while (normalizedX < ASHWINI_BASE_X) {
                     normalizedX += CYCLE_WIDTH;
                 }
                 markerX = normalizedX;
                 
-                // Set transition back to the quick drag speed
+                // Set transition back to the quick drag speed and update to normalized position
                 MARKER.style.transition = 'transform 0.08s linear';
                 updateVisuals(); 
             }, 400); 
         }
 
-        function handleSignClick(index) {
-            // Initiate snap to the specific index
+        function handleNakshatraClick(index) {
             snapToPosition(index);
         }
 
-        // --- Event Handlers ---
+        // --- Event Handlers (Drag/Scroll Logic) ---
 
         function handleStart(clientX) { 
             isDragging = true;
             startX = clientX; 
             startMarkerX = markerX; 
             MARKER.classList.remove('snapping');
-            // Change the marker's cursor while being held
             MARKER.style.cursor = 'grabbing'; 
             MARKER.style.transition = 'transform 0.08s linear';
         }
@@ -443,7 +475,6 @@
             const deltaX = clientX - startX; 
             let newX = startMarkerX + deltaX; 
             
-            // Apply the instant loop jump (if we crossed the boundary)
             newX = loopCheck(newX);
             
             markerX = newX; 
@@ -454,48 +485,43 @@
         function handleEnd() {
             if (!isDragging) return;
             isDragging = false;
-            // Restore default marker cursor
             MARKER.style.cursor = 'grab';
-            // Snap to the nearest position (null means calculate nearest)
             snapToPosition(null); 
         }
 
-        // MOUSE DRAG START: Attaching only to the MARKER.
+        // MOUSE DRAG START
         MARKER.addEventListener('mousedown', (e) => {
-            // Crucial: Prevent default actions (like text selection) immediately for successful drag.
             e.preventDefault(); 
             handleStart(e.clientX); 
         });
         
-        // MOUSE MOVE/END: Attached globally so drag continues even if mouse leaves the marker.
+        // MOUSE MOVE/END
         document.addEventListener('mousemove', (e) => {
-            // Prevent text selection while dragging
             if (isDragging) e.preventDefault(); 
             handleMove(e.clientX)
         }); 
         document.addEventListener('mouseup', handleEnd);
 
-        // TOUCH DRAG START: Attaching only to the MARKER.
+        // TOUCH DRAG START
         MARKER.addEventListener('touchstart', (e) => {
             e.preventDefault();
             handleStart(e.touches[0].clientX); 
         }, { passive: false });
         
-        // TOUCH MOVE/END: Attached globally for continuous touch drag.
+        // TOUCH MOVE/END
         document.addEventListener('touchmove', (e) => handleMove(e.touches[0].clientX), { passive: false }); 
         document.addEventListener('touchend', handleEnd);
         document.addEventListener('touchcancel', handleEnd);
 
-        // WHEEL EVENT for scrolling: Attaching to document.body for scrolling from anywhere (global scroll).
-        document.body.addEventListener('wheel', (e) => {
+        // WHEEL EVENT for scrolling (Now restricted to the slider casing)
+        SLIDER_CASING.addEventListener('wheel', (e) => {
             e.preventDefault();
             MARKER.classList.remove('snapping');
             
-            // Use deltaX for standard horizontal scroll, or deltaY for vertical wheel scroll as fallback.
             const rawScroll = e.deltaX !== 0 ? e.deltaX : e.deltaY;
             
-            // Increased sensitivity (0.35) for better control with vertical scrolling
-            const scrollAmount = rawScroll * 0.35; 
+            // Increased sensitivity for finer control
+            const scrollAmount = rawScroll * 0.2; 
             let newX = markerX + scrollAmount;
 
             newX = loopCheck(newX);
@@ -506,15 +532,13 @@
 
             // Set a timeout to snap after scrolling stops
             clearTimeout(window.snapTimeout);
-            // Snap to the nearest position (null)
             window.snapTimeout = setTimeout(() => snapToPosition(null), 150);
             
-            // Ensure the smooth drag transition is re-enabled if loopCheck disabled it
             MARKER.style.transition = 'transform 0.08s linear';
         });
 
         // Initialize on window load
-        window.onload = renderZodiacs;
+        window.onload = renderNakshatras;
     </script>
 
 </body>

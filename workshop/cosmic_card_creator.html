@@ -37,6 +37,17 @@
             --house-sign-min-width: 44px; /* min width for container */
         }
 
+        /* Mobile landscape optimization for house signs */
+        @media (max-width: 767px) and (orientation: landscape) {
+            :root {
+                --house-sign-logo-size: 20px;
+                --house-sign-logo-font-size: 0.8rem;
+                --house-sign-label-font-size: 0.55rem;
+                --house-sign-padding: 0.15rem 0.4rem;
+                --house-sign-min-width: 36px;
+            }
+        }
+
         
 
         * {
@@ -192,7 +203,7 @@
         /* Move the zodiac sign and name slightly higher to sit visually closer to house top */
         /* Move the zodiac sign and name slightly higher to sit visually closer to house top */
         /* Move the zodiac sign and name slightly higher to sit visually closer to house top */
-        .house-sign { position:absolute; top:2px; right:18px; left:auto; transform:none; display:flex; flex-direction:column; align-items:center; gap:4px; z-index:100; pointer-events:auto; padding: var(--house-sign-padding); border-radius:10px; justify-content:flex-end; min-width:var(--house-sign-min-width); }
+        .house-sign { position:absolute; top:2px; right:18px; left:auto; transform:none; display:flex; flex-direction:column; align-items:center; gap:4px; z-index:6; pointer-events:auto; padding: var(--house-sign-padding); border-radius:10px; justify-content:flex-end; min-width:var(--house-sign-min-width); }
         .house .house-sign .sign-logo { width:var(--house-sign-logo-size); height:var(--house-sign-logo-size); display:flex; align-items:center; justify-content:center; border-radius:8px; background:rgba(255,255,255,0.02); font-size:var(--house-sign-logo-font-size); padding: 0px; margin:0; }
         /* Ensure only the top badge shows the sign name (hide any other sign-labels within houses) */
         .house .sign-label { display:none; }
@@ -209,10 +220,18 @@
             justify-content: center !important;
         }
         /* Color the top label to match the element */
-        .house[data-element="fire"] .house-sign .sign-label, .house[data-element="fire"] .house-sign .sign-logo { color: #ff6b35; }
-        .house[data-element="earth"] .house-sign .sign-label, .house[data-element="earth"] .house-sign .sign-logo { color: #32cd32; }
-        .house[data-element="air"] .house-sign .sign-label, .house[data-element="air"] .house-sign .sign-logo { color: #87ceeb; }
-        .house[data-element="water"] .house-sign .sign-label, .house[data-element="water"] .house-sign .sign-logo { color: #ba55d3; }
+        /* Element colors: use slightly desaturated tones and subtle tints for premium look */
+        .house[data-element="fire"] .house-sign .sign-label, .house[data-element="fire"] .house-sign .sign-logo { color: rgba(255,107,53,0.92); }
+        .house[data-element="earth"] .house-sign .sign-label, .house[data-element="earth"] .house-sign .sign-logo { color: rgba(50,205,50,0.85); }
+        .house[data-element="air"] .house-sign .sign-label, .house[data-element="air"] .house-sign .sign-logo { color: rgba(135,206,235,0.5); }
+        .house[data-element="water"] .house-sign .sign-label, .house[data-element="water"] .house-sign .sign-logo { color: rgba(186,85,211,0.78); }
+
+        /* Subtle tint and border on the sign logo to remove high-contrast color spikes */
+        .house .house-sign .sign-logo { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); }
+        .house[data-element="fire"] .house-sign .sign-logo { background: linear-gradient(180deg, rgba(255,107,53,0.06), rgba(255,107,53,0.03)); }
+        .house[data-element="earth"] .house-sign .sign-logo { background: linear-gradient(180deg, rgba(50,205,50,0.05), rgba(50,205,50,0.02)); }
+        .house[data-element="air"] .house-sign .sign-logo { background: linear-gradient(180deg, rgba(135,206,235,0.05), rgba(135,206,235,0.02)); }
+        .house[data-element="water"] .house-sign .sign-logo { background: linear-gradient(180deg, rgba(186,85,211,0.05), rgba(186,85,211,0.02)); }
         
         /* === PANEL HEADERS === */
         .panel-header {
@@ -242,6 +261,17 @@
             background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
             opacity: 0.3;
         }
+
+        /* Mobile landscape optimization for panel headers */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .panel-header {
+                padding: 0.7rem 0.9rem;
+                font-size: 0.7rem;
+            }
+            .panel-icon {
+                font-size: 1rem;
+            }
+        }
         
         .panel-title {
             display: flex;
@@ -270,6 +300,9 @@
             scroll-behavior: smooth;
             position: relative;
         }
+
+        /* Extra breathing for the center panel chart to avoid it being visually cut off */
+        #center-panel .panel-content { padding-bottom: 1.2rem; }
         
         /* Custom Scrollbar */
         .panel-content::-webkit-scrollbar {
@@ -518,6 +551,8 @@
             position: absolute;
             top: 0;
             height: 100%;
+            box-sizing: border-box;
+            overflow: auto; /* allow internal scroll if content exceeds the cell height */
             left: 0;
             width: 0;
             background: linear-gradient(90deg, rgba(90,120,140,0.14), rgba(70,90,110,0.08));
@@ -977,312 +1012,121 @@
             text-align: center;
         }
 
-        .nakshatra-stellar-navigator {
+        .nakshatra-sign-scale {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.8rem 1.2rem;
-            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(147,51,234,0.05));
-            border: 1px solid rgba(59,130,246,0.3);
-            border-radius: 12px;
-            position: relative;
-            width: 100%;
-            overflow: hidden;
+            gap: 0.2rem;
+            padding: 0.2rem 0.3rem;
+            border-radius: 8px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
         }
 
-        .nakshatra-stellar-navigator::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(59,130,246,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 30%, rgba(147,51,234,0.1) 0%, transparent 50%);
-            pointer-events: none;
+        .nakshatra-scale-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
         }
 
-        .nakshatra-stellar-navigator label {
-            font-weight: 600;
-            font-size: 0.7rem;
-            color: rgba(59,130,246,0.9);
+        .nakshatra-scale-label {
+            font-size: 0.6rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            white-space: nowrap;
-            z-index: 2;
-            text-shadow: 0 0 8px rgba(59,130,246,0.6);
+            letter-spacing: 0.6px;
+            color: rgba(148,163,184,0.9);
+            margin-bottom: 0.1rem;
         }
 
-        .stellar-field-container {
-            position: relative;
-            width: 100%;
-            height: 80px;
+        .nakshatra-scale-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-glow);
+        }
+
+        .nakshatra-scale-hint {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            max-width: 320px;
+        }
+
+        .nakshatra-scale-options {
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+            cursor: pointer;
+        }
+
+        .nakshatra-scale-option {
+            flex: 1;
+            min-width: 100px;
+            padding: 0.25rem 0.4rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            color: var(--text);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .stellar-field {
-            position: relative;
-            width: 100%;
-            height: 50px;
-            background: linear-gradient(90deg,
-                rgba(59,130,246,0.1) 0%,
-                rgba(147,51,234,0.15) 25%,
-                rgba(59,130,246,0.1) 50%,
-                rgba(147,51,234,0.15) 75%,
-                rgba(59,130,246,0.1) 100%);
-            border-radius: 25px;
-            border: 1px solid rgba(59,130,246,0.4);
-            overflow: hidden;
+            gap: 0.1rem;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.18s ease;
         }
 
-        .stellar-field:hover {
-            transform: scale(1.02);
-            box-shadow:
-                0 8px 32px rgba(59,130,246,0.3),
-                inset 0 0 32px rgba(59,130,246,0.1);
+        .nakshatra-scale-option .option-name {
+            font-weight: 600;
+            font-size: 0.65rem;
         }
 
-        .starfield-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.8) 1px, transparent 1px),
-                radial-gradient(circle at 30% 70%, rgba(59,130,246,0.6) 1px, transparent 1px),
-                radial-gradient(circle at 60% 40%, rgba(147,51,234,0.6) 1px, transparent 1px),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.8) 1px, transparent 1px),
-                radial-gradient(circle at 90% 10%, rgba(59,130,246,0.4) 1px, transparent 1px);
-            background-size: 40px 40px, 60px 60px, 80px 80px, 50px 50px, 70px 70px;
-            animation: starTwinkle 4s ease-in-out infinite alternate;
+        .nakshatra-scale-option .option-ruling {
+            font-size: 0.5rem;
+            color: var(--text-dim);
+            letter-spacing: 0.3px;
         }
 
-        @keyframes starTwinkle {
-            0% { opacity: 0.6; }
-            100% { opacity: 1; }
+        .nakshatra-scale-option.active {
+            border-color: rgba(99,102,241,0.8);
+            background: linear-gradient(135deg, rgba(79,70,229,0.25), rgba(124,58,237,0.18));
+            box-shadow: 0 10px 28px rgba(79,70,229,0.25);
         }
 
-        .constellation-web {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg,
-                transparent 40%,
-                rgba(59,130,246,0.2) 45%,
-                rgba(59,130,246,0.2) 55%,
-                transparent 60%);
-            animation: webPulse 6s ease-in-out infinite;
+        .nakshatra-scale-option:focus-visible {
+            outline: 2px solid rgba(99,102,241,0.6);
+            outline-offset: 2px;
         }
 
-        @keyframes webPulse {
-            0%, 100% { opacity: 0.3; transform: scaleX(0.9); }
-            50% { opacity: 0.7; transform: scaleX(1.1); }
+        /* Mobile landscape optimization for Nakshatra options */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .nakshatra-scale-option {
+                min-width: 80px;
+                padding: 0.2rem 0.3rem;
+                font-size: 0.65rem;
+            }
+            .nakshatra-scale-option .option-name {
+                font-size: 0.6rem;
+            }
+            .nakshatra-scale-option .option-ruling {
+                font-size: 0.45rem;
+            }
         }
 
-        .stellar-nodes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        .nakshatra-scale-footer {
             display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
             align-items: center;
             justify-content: space-between;
-            padding: 0 15px;
         }
 
-        .stellar-node {
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .nakshatra-scale-selection {
+            font-weight: 700;
             font-size: 0.6rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.6);
-            background: radial-gradient(circle, rgba(59,130,246,0.4) 0%, rgba(59,130,246,0.1) 70%);
-            border-radius: 50%;
-            border: 1px solid rgba(59,130,246,0.5);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            z-index: 3;
-            backdrop-filter: blur(2px);
+            color: rgba(248,250,252,0.9);
         }
 
-        .stellar-node:hover {
-            transform: scale(1.4);
-            color: rgba(59,130,246,0.9);
-            background: radial-gradient(circle, rgba(59,130,246,0.9) 0%, rgba(59,130,246,0.5) 70%);
-            box-shadow: 0 0 20px rgba(59,130,246,0.8);
-        }
-
-        .stellar-node.active {
-            color: rgba(59,130,246,0.9);
-            background: radial-gradient(circle, rgba(59,130,246,1) 0%, rgba(59,130,246,0.7) 70%);
-            box-shadow:
-                0 0 30px rgba(59,130,246,1),
-                inset 0 0 10px rgba(255,255,255,0.3);
-            animation: nodePulse 2s ease-in-out infinite;
-        }
-
-        @keyframes nodePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        .celestial-orb {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-50%);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 5;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .orb-core {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(59,130,246,0.9);
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(59,130,246,0.9);
-            animation: orbGlow 1.2s ease-in-out infinite alternate;
-        }
-
-        @keyframes orbGlow {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.3); opacity: 0.8; }
-        }
-
-        .orb-rings {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .orb-rings .ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            border: 1px solid rgba(59,130,246,0.5);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            animation: orbRingExpand 4s ease-in-out infinite;
-        }
-
-        .orb-rings .ring-1 {
-            width: 16px;
-            height: 16px;
-            animation-delay: 0s;
-        }
-
-        .orb-rings .ring-2 {
-            width: 24px;
-            height: 24px;
-            animation-delay: 1.3s;
-        }
-
-        .orb-rings .ring-3 {
-            width: 32px;
-            height: 32px;
-            animation-delay: 2.6s;
-        }
-
-        @keyframes orbRingExpand {
-            0% { transform: translate(-50%, -50%) scale(0.7); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
-        }
-
-        .orb-trail {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.6), transparent);
-            transform: translateX(-100%);
-            animation: orbTrail 3s ease-in-out infinite;
-        }
-
-        @keyframes orbTrail {
-            0% { transform: translateX(-100%); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(100%); opacity: 0; }
-        }
-
-        .constellation-lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .stellar-readout {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .stellar-screen {
-            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(10,10,20,0.9));
-            border: 1px solid rgba(59,130,246,0.4);
-            border-radius: 8px;
-            padding: 6px 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            backdrop-filter: blur(10px);
-            box-shadow:
-                0 4px 16px rgba(0,0,0,0.3),
-                inset 0 0 16px rgba(59,130,246,0.1);
-        }
-
-        .screen-header {
-            font-size: 0.45rem;
-            font-weight: 600;
-            color: rgba(59,130,246,0.7);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .screen-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-
-        .screen-name {
-            font-family: 'Courier New', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: rgba(59,130,246,0.9);
-            text-shadow: 0 0 8px rgba(59,130,246,0.6);
-        }
-
-        .screen-ruling {
-            font-size: 0.5rem;
-            font-weight: 600;
-            color: rgba(147,51,234,0.8);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .nakshatra-scale-note {
+            font-size: 0.65rem;
+            color: var(--text-dim);
         }
 
         .view-toggle-bar {
@@ -1422,37 +1266,81 @@
         .vedic-chart {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            grid-template-rows: repeat(3, minmax(220px, 1fr));
-            gap: 1.25rem;
-            padding: 0.75rem;
+            grid-template-rows: repeat(3, minmax(140px, 1fr)); /* equal heights with a minimum */
+            gap: 0.5rem; /* slightly larger gap so houses feel separate but part of a single structure */
+            padding: 0.6rem 0.6rem 1.2rem; /* more bottom padding to avoid 'cut-off' look */
             transition: transform var(--anim-medium) var(--easing-smooth);
             transform-origin: center center;
             perspective: 900px;
             /* fractional offset set by lagna slider for fluid transitions */
             --lagna-offset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.06); /* thin outer border for depth */
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(6,10,20,0.45), inset 0 -6px 18px rgba(0,0,0,0.12);
+            overflow: hidden; /* ensure rounded corners and borders clip inner content */
+            align-items: stretch;
+            align-content: stretch;
+            box-sizing: border-box; /* include border & padding in height calculations */
+            /* height intentionally left auto so content and parent can determine available space */
+            min-height: 480px; /* allows larger minimum to prevent cut-off on small panel heights */
         }
         .vedic-chart:hover { box-shadow: 0 20px 70px rgba(109,40,217,0.08), inset 0 0 40px rgba(139,92,246,0.03); }
 
+        /* Mobile landscape optimization for Vedic chart */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .vedic-chart {
+                gap: 0.4rem; /* keep premium separation on mobile landscape */
+                padding: 0.4rem 0.4rem 0.75rem;
+                grid-template-rows: repeat(3, 1fr);
+            }
+        }
+
         .house {
-            border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 14px;
-            padding: 0.9rem;
+            border-radius: 10px; /* small rounding to feel premium and separate */
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 0.6rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.3rem;
             position: relative;
             background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
             backdrop-filter: blur(6px);
             transition: transform var(--anim-medium) var(--easing-smooth), border var(--anim-fast) var(--easing-smooth), box-shadow var(--anim-medium) var(--easing-smooth);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.02);
             cursor: pointer;
-            min-height: 220px; /* Taller to allow room for top badge and reduce overlap */
+            min-height: 0; /* let grid rows control height _equally_ */
+            height: 100%;
+            box-sizing: border-box;
+            overflow: hidden; /* clip any elements that overflow the house boundary */
+            align-self: stretch;
+            justify-content: flex-start;
             -webkit-transform: translateZ(0); /* Hardware acceleration */
             transform: translateZ(0);
             will-change: transform, border-color, box-shadow;
         }
 
-        .house:hover { transform: translateY(-3px) scale(1.005); box-shadow: 0 12px 36px rgba(0,0,0,0.28); }
+        .house:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.14); border-color: rgba(255,255,255,0.08); }
+        .house:focus, .house:focus-within { outline: none; border-color: rgba(139,92,246,0.28); box-shadow: 0 10px 24px rgba(139,92,246,0.06); }
+
+        /* House-level borders for a premium separated look */
+        .vedic-chart > .house { border: 1px solid rgba(255,255,255,0.06); }
+        /* Outer corners rounding handled by house rounding + container frame */
+
+        /* Mobile landscape optimization for houses */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .house {
+                padding: 0.4rem;
+                gap: 0.2rem;
+                min-height: 120px;
+                border-radius: 8px; /* maintain premium rounded look on mobile */
+            }
+            .house:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 6px 14px rgba(0,0,0,0.14);
+            }
+        }
 
         /* soft micro-shift on sign indicators when lagna slider is moving (fractional progress) */
         .house { --house-offset: 0; }
@@ -1492,7 +1380,7 @@
             margin-left: 0.35rem;
         }
         .house.slot-animated { animation: house-pulse var(--anim-medium) var(--easing-smooth); }
-        @keyframes house-pulse { 0% { transform: translateY(-2px) scale(0.98); } 50% { transform: translateY(-6px) scale(1.04); } 100% { transform: translateY(-2px) scale(1.01); } }
+        @keyframes house-pulse { 0% { transform: translateY(-1px) scale(0.99); } 50% { transform: translateY(-3px) scale(1.02); } 100% { transform: translateY(-1px) scale(1.00); } }
 
         .house-header {
             display: flex;
@@ -1502,6 +1390,15 @@
             border-bottom: 1px solid rgba(255,255,255,0.06);
             align-items: center;
             position: relative;
+        }
+
+        /* Mobile optimization for house headers */
+        @media (max-width: 767px) and (orientation: landscape) {
+            .house-header {
+                gap: 0.4rem;
+                padding-bottom: 0.3rem;
+                padding-right: 2.5rem;
+            }
         }
 
 
@@ -1559,7 +1456,7 @@
             right: 0.4rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.15rem;
             padding: 0.12rem 0.35rem;
             border-radius: 999px;
             border: 1px solid rgba(255,255,255,0.25);
@@ -1611,11 +1508,22 @@
             padding: 0.35rem;
             border-radius: 8px;
             background: rgba(255,255,255,0.01);
+            overflow: auto; /* allow internal content to scroll without overflowing the house */
         }
 
         .house-placeholder { font-size: 0.72rem; color: var(--text-dim); opacity: 0.9; }
 
-        .house-footer { display:flex; gap: 0.35rem; align-items:center; justify-content:flex-start; padding-top:0.45rem; }
+                    .house-footer { display:flex; gap: 0.35rem; align-items:center; justify-content:flex-start; padding-top:0.45rem; }
+                    /* Ensure planet badge used inside the footer is inline and not absolutely positioned
+                            (there is an older absolute-style rule elsewhere; this override makes the badge
+                            sit beside the planet name in the footer). */
+                    .house-footer .planet-badge { position: static; top: auto; right: auto; transform: none; padding: 0; min-width: 22px; background: rgba(255,255,255,0.02); border-radius:50%; }
+                .house-footer .house-nakshatra { margin-left: auto; font-size: 0.75rem; color: var(--text-main); display:flex; align-items:center; gap:0.4rem; }
+                .house-footer .house-nakshatra .nakshatra-fade { transition: all 200ms var(--easing-smooth); font-weight: 600; }
+                .house-footer .house-nakshatra .nakshatra-fade.fade { opacity: 0.4; transform: scale(0.95); }
+        .house-planet { display:flex; gap:0.45rem; align-items:center; font-size:0.82rem; }
+        .planet-badge{ font-size:1.05rem; width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(255,255,255,0.02); box-shadow:inset 0 1px 0 rgba(255,255,255,0.02); cursor:pointer }
+        .planet-name{ font-weight:700; color:var(--text); letter-spacing:0.02em }
 
         .slotted-glyph {
             width: 100%;
@@ -1684,11 +1592,11 @@
 
         /* Drag & Drop highlight */
         .house.dragover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 18px 48px rgba(109,40,217,0.22), 0 6px 18px rgba(34,197,94,0.06);
-            border-color: rgba(34,197,94,0.7);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 10px 26px rgba(109,40,217,0.12), 0 6px 18px rgba(34,197,94,0.06);
+            border-color: rgba(34,197,94,0.45);
         }
-            .house.recommended { box-shadow: 0 12px 40px rgba(34,197,94,0.12), 0 6px 22px rgba(99,102,241,0.06); transform: translateY(-4px) scale(1.01); border-color: rgba(34,197,94,0.35); }
+            .house.recommended { box-shadow: 0 8px 30px rgba(34,197,94,0.10), 0 4px 10px rgba(99,102,241,0.04); transform: translateY(-2px) scale(1.01); border-color: rgba(34,197,94,0.28); }
             .house.recommended::before {
                 content: '★';
                 position: absolute;
@@ -2358,6 +2266,9 @@
             letter-spacing: 0.3px;
             line-height: 1.4;
             white-space: nowrap;
+            max-width: 240px; /* clamp tooltip width so it doesn't extend across the whole house */
+            overflow: hidden;
+            text-overflow: ellipsis;
             z-index: 1000;
             box-shadow: 0 8px 25px rgba(0,0,0,0.8);
             backdrop-filter: blur(10px);
@@ -2366,7 +2277,12 @@
             pointer-events: none;
         }
 
-        .house-label[title]:hover::before, .blueprint-house .house-name[title]:hover::before {
+        /* Disable tooltip arrow + box for house labels (too intrusive when hovering house numbers) */
+        .house-label[title]:hover::before, .house-label[title]:hover::after {
+            display: none !important;
+        }
+
+        .blueprint-house .house-name[title]:hover::before {
             content: '';
             position: absolute;
             bottom: calc(100% - 5px);
@@ -2409,85 +2325,7 @@
             .nakshatra-btn:hover { transform: none; }
         }
 
-        /* ===== TEST NAKSHATRA SLIDER (Copied exactly from test .html, scoped) ===== */
-        #nakshatra-test-wrapper {
-            width: 100%;
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* MAIN CASING */
-        #nakshatra-test-wrapper #nakshatra-test-slider-casing {
-            width: 900px; /* literally copied size */
-            height: 50px; /* literal */
-            border-radius: 6px;
-            padding: 5px 15px; /* literal */
-            border: 1px solid #a0a0a0; /* literal */
-            background: linear-gradient(90deg, var(--silver-matte, #c0c0c0) 0%, #e0e0e0 50%, var(--silver-matte, #c0c0c0) 100%);
-            box-shadow: 0 0 15px rgba(255, 204, 153, 0.05), 0 3px 8px rgba(0, 0, 0, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.3);
-            position: relative;
-            padding: 6px 10px; /* keep internal padding */
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        /* Decorative screws */
-        #nakshatra-test-wrapper .nakshatra-test-screw {
-            width: 4px; height: 4px; background: #555; border: 1px solid #777; border-radius: 50%; position: absolute; z-index: 20; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
-        }
-        #nakshatra-test-wrapper .nak-s1 { top: 6px; left: 6px; }
-        #nakshatra-test-wrapper .nak-s2 { top: 6px; right: 6px; }
-        #nakshatra-test-wrapper .nak-s3 { bottom: 6px; left: 6px; }
-        #nakshatra-test-wrapper .nak-s4 { bottom: 6px; right: 6px; }
-
-        #nakshatra-test-wrapper #nakshatra-test-slider-track {
-            position: relative; height: 40px; width: 100%; border-radius: 4px; background-color: var(--dark-track, #141414); box-shadow: inset 0 0 8px rgba(0,0,0,0.9);
-            margin: 0 10px; overflow: hidden;
-            background-image: linear-gradient(to right, #2c2c2c 0.5px, transparent 0.5px), linear-gradient(to bottom, #2c2c2c 0.5px, transparent 0.5px); background-size: 5px 5px;
-            opacity: 0.9;
-        }
-
-        #nakshatra-test-wrapper .nakshatra-test-ruler { position: absolute; height: 2px; width: 100%; left: 0; opacity: 0.4; pointer-events: none; background-image: repeating-linear-gradient(to right, #888 0px, #888 1px, transparent 1px, transparent 10px); }
-        #nakshatra-test-wrapper #nakshatra-test-ruler-top { top: 0; }
-        #nakshatra-test-wrapper #nakshatra-test-ruler-bottom { bottom: 0; }
-        #nakshatra-test-wrapper #nakshatra-test-nakshatra-container { position: absolute; left: 0; top: 0; height: 100%; display: flex; flex-direction: row; }
-
-        #nakshatra-test-wrapper .nakshatra-item {
-            width: 30px; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 0.75rem; color: #666; position: absolute; transition: color 0.3s, font-size 0.3s; cursor: pointer; font-weight: 700; user-select: none;
-        }
-
-        #nakshatra-test-wrapper .nakshatra-item.active { color: var(--cool-glow, #ffcc99); font-size: 1.1rem; text-shadow: 0 0 4px var(--cool-glow, #ffcc99), 0 0 8px rgba(255, 204, 153, 0.6); }
-
-        /* Marker */
-        #nakshatra-test-wrapper #nakshatra-test-marker { position: absolute; left: 0; top: 0; bottom: 0; width: 30px; background: rgba(255, 204, 153, 0.05); border: 1px solid var(--cool-glow, #ffcc99); box-shadow: 0 0 8px var(--cool-glow, #ffcc99); transform: translateX(0); z-index: 20; border-radius: 4px; cursor: grab; }
-        #nakshatra-test-wrapper #nakshatra-test-marker.snapping { transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
-
-        /* Fixed Needle */
-        #nakshatra-test-wrapper .fixed-needle { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: #555; transform: translateX(-50%); z-index: 10; pointer-events: none; }
-
-        /* Display box below */
-        #nakshatra-test-wrapper .stellar-readout { margin-left: 12px; }
-        #nakshatra-test-wrapper .screen-name { color: var(--cool-glow, #ffcc99); font-weight: 700; letter-spacing: 2px; }
-
-        #nakshatra-test-wrapper #nakshatra-test-marker {
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 30px;
-            background: rgba(139,92,246,0.06);
-            border: 1px solid rgba(139,92,246,0.14);
-            box-shadow: 0 0 8px rgba(139,92,246,0.06);
-            z-index: 30;
-            transform: translateX(0);
-            border-radius: 4px;
-            cursor: grab;
-        }
-
-        #nakshatra-test-wrapper .nakshatra-marker { display:none; }
-
-        #nakshatra-test-wrapper #nakshatra-test-display-box { display:none; }
-
+        /* Nakshatra slider CSS removed — new slider will reuse Lagna slider styles for consistency */
     </style>
 </head>
 <body>
@@ -2526,29 +2364,17 @@
                     <span>Jotysh Engine</span>
                 </div>
                 <div class="panel-actions">
-                    <button class="cosmic-btn primary" id="invoke-card-btn" title="Invoke card">🎴 Invoke</button>
                     <button class="cosmic-btn" title="Reset">🔄</button>
+                    <button class="cosmic-btn primary" id="invoke-card-btn" title="Invoke card">🎴 Invoke Card</button>
                     <!-- Blueprint info (opens modal) -->
                     <button class="cosmic-btn" id="jotysh-blueprint-btn" title="Jotysh Blueprint" aria-controls="jotysh-blueprint-modal" aria-haspopup="dialog">ℹ️</button>
                 </div>
             </div>
             <div class="panel-content">
-                    <div style="display:flex; flex-direction:column; gap:0.6rem; margin-bottom:0.8rem;">
+                    <div style="display:flex; flex-direction:row; gap:0.3rem; margin-bottom:0.4rem;">
                         <!-- Lagna Slider: sleek mechanical replacement for gear-dial -->
-                        <div id="lagna-slider-casing" class="lagna-slider-casing" aria-label="Ascendant Slider">
-                            <!-- decorative mechanical screws -->
-                            <div id="lagna-s1" class="screw"></div>
-                            <div id="lagna-s2" class="screw"></div>
-                            <div id="lagna-s3" class="screw"></div>
-                            <div id="lagna-s4" class="screw"></div>
-
-                            <div id="lagna-slider-track" class="lagna-slider-track" tabindex="0" role="listbox" aria-label="Ascendant slider track">
-                                <div id="lagna-ruler-top" class="lagna-ruler ruler"></div>
-                                <div id="lagna-ruler-bottom" class="lagna-ruler ruler lag-bottom"></div>
-                                <div id="lagna-fixed-needle" class="lagna-fixed-needle" aria-hidden="true"></div>
-                                <div id="lagna-marker" class="lagna-marker" style="transition: transform 0.08s linear;"></div>
-                                <div id="lagna-zodiac-container" class="lagna-zodiac-container"></div>
-                            </div>
+                        <div id="lagna-slider-casing" class="lagna-grid-casing" aria-label="Ascendant Grid" style="flex: 1.4;">
+                            <div id="lagna-grid" class="lagna-grid"></div>
 
                             <div class="gear-dial-readout">
                                 <span class="readout-label">ASCENDANT</span>
@@ -2559,94 +2385,38 @@
                                                                 /* Scoped slider styles (mechanical, sleek)
                                                                      NOTE: Replaced older ascend/gear-dial with this mechanical slider per design change. See workshop/test .html for original reference.
                                                                  */
-                                .lagna-slider-casing{width:100%;height:66px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));border:1px solid rgba(100,110,120,0.14);position:relative;padding:6px 10px;box-shadow:inset 0 1px 2px rgba(255,255,255,0.02);}
-                                .lagna-slider-track{position:relative;height:54px;width:100%;border-radius:6px;background:linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.6));box-shadow:inset 0 0 8px rgba(0,0,0,0.8);overflow:hidden;margin:0 6px}
-                                .lagna-slider-track:focus{outline:none;box-shadow:0 0 0 4px rgba(109,40,217,0.06)}
-                                .lagna-zodiac-container{height:100%;position:absolute;left:12px;display:flex;flex-direction:row;width:calc(12 * 70px);}
-                                .lagna-zodiac-container .zodiac-item{width:70px;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:rgba(140,150,160,0.8);position:absolute;transition:all 0.2s;cursor:pointer}
-                                .lagna-zodiac-container .zodiac-item.active{color:var(--accent-glow);font-size:1.8rem;text-shadow:0 0 8px var(--accent-glow)}
-                                .lagna-marker{position:absolute;left:0;top:0;bottom:0;width:70px;background:linear-gradient(90deg, rgba(109,40,217,0.04), rgba(109,40,217,0.02));border:1px solid rgba(139,92,246,0.14);box-shadow:0 0 6px rgba(109,40,217,0.05);z-index:12;border-radius:4px}
-                                .lagna-marker.snapping{transition:transform 0.39s cubic-bezier(0.19, 1, 0.22, 1)}
-                                .lagna-fixed-needle{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg, transparent, var(--accent-glow), transparent);transform:translateX(-50%);pointer-events:none;z-index:11}
-                                .ruler{position:absolute;height:3px;width:100%;left:0;opacity:0.2;background-image:repeating-linear-gradient(to right,#888 0px,#888 1px,transparent 1px,transparent 10px)}
-                                .lagna-ruler{top:0}
-                                .lagna-ruler.lag-bottom{bottom:0}
+                                /* Lagna grid: 4x3 layout for 12 signs */
+                                .lagna-grid-casing{width:100%;border-radius:10px;position:relative;padding:0.25rem 0.4rem;box-shadow:0 18px 40px rgba(6,10,20,0.36), inset 0 1px 0 rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);background:linear-gradient(180deg,#07141f 0%, #0c1b28 45%, #07141f 100%);overflow:hidden}
+                                .lagna-grid{display:grid;grid-template-columns:repeat(6, 1fr);gap:0.2rem;cursor:pointer;}
+                                .lagna-grid-item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0.25rem 0.35rem;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:var(--text);cursor:pointer;transition:all 0.18s ease;font-size:0.6rem;text-align:center;}
+                                .lagna-grid-item .sign-symbol{font-size:0.8rem;margin-bottom:0.05rem;}
+                                .lagna-grid-item .sign-name{font-weight:600;}
+                                .lagna-grid-item.active{border-color:rgba(99,102,241,0.8);background:linear-gradient(135deg, rgba(79,70,229,0.25), rgba(124,58,237,0.18));box-shadow:0 10px 28px rgba(79,70,229,0.25);}
                                 .screw{width:5px;height:5px;background:#444;border-radius:50%;position:absolute;border:1px solid rgba(0,0,0,0.5)}
                                 #lagna-s1{top:6px;left:6px}#lagna-s2{top:6px;right:6px}#lagna-s3{bottom:6px;left:6px}#lagna-s4{bottom:6px;right:6px}
-                                /* Responsive tweaks */
-                                @media (max-width:760px){.lagna-zodiac-container .zodiac-item{width:56px;font-size:1rem}.lagna-marker{width:56px}}
+                                /* Mobile landscape optimization */
+                                @media (max-width: 767px) and (orientation: landscape) {
+                                    .lagna-grid { grid-template-columns: repeat(4, 1fr); gap: 0.15rem; }
+                                    .lagna-grid-item { padding: 0.2rem 0.25rem; font-size: 0.55rem; }
+                                    .lagna-grid-item .sign-symbol { font-size: 0.7rem; }
+                                }
                             </style>
                         </div>
-                        <!-- Replaced original Nakshatra Navigator with scoped test slider -->
-                        <div id="nakshatra-test-wrapper">
-                            <label for="nakshatra-navigator">Nakshatra</label>
-                            <div id="nakshatra-test-slider-casing" class="stellar-field-container">
-                                <div class="nakshatra-test-screw nak-s1"></div>
-                                <div class="nakshatra-test-screw nak-s2"></div>
-                                <div class="nakshatra-test-screw nak-s3"></div>
-                                <div class="nakshatra-test-screw nak-s4"></div>
-                                <div id="nakshatra-test-ruler-top" class="nakshatra-test-ruler"></div>
-                                <div id="nakshatra-test-ruler-bottom" class="nakshatra-test-ruler"></div>
-                                <div id="nakshatra-test-slider-track" class="stellar-field">
-                                    <div class="starfield-background"></div>
-                                    <div class="constellation-web"></div>
-                                    <div id="nakshatra-test-nakshatra-container" class="stellar-nodes">
-                                        <div class="nakshatra-item" data-index="0">As</div>
-                                        <div class="nakshatra-item" data-index="1">Bh</div>
-                                        <div class="nakshatra-item" data-index="2">Kr</div>
-                                        <div class="nakshatra-item" data-index="3">Ro</div>
-                                        <div class="nakshatra-item" data-index="4">Mr</div>
-                                        <div class="nakshatra-item" data-index="5">Ar</div>
-                                        <div class="nakshatra-item" data-index="6">Pu</div>
-                                        <div class="nakshatra-item" data-index="7">Ps</div>
-                                        <div class="nakshatra-item" data-index="8">Ah</div>
-                                        <div class="nakshatra-item" data-index="9">Ma</div>
-                                        <div class="nakshatra-item" data-index="10">PP</div>
-                                        <div class="nakshatra-item" data-index="11">UP</div>
-                                        <div class="nakshatra-item" data-index="12">Ha</div>
-                                        <div class="nakshatra-item" data-index="13">Ch</div>
-                                        <div class="nakshatra-item" data-index="14">Sw</div>
-                                        <div class="nakshatra-item" data-index="15">Vi</div>
-                                        <div class="nakshatra-item" data-index="16">An</div>
-                                        <div class="nakshatra-item" data-index="17">Jy</div>
-                                        <div class="nakshatra-item" data-index="18">Mu</div>
-                                        <div class="nakshatra-item" data-index="19">PA</div>
-                                        <div class="nakshatra-item" data-index="20">UA</div>
-                                        <div class="nakshatra-item" data-index="21">Sr</div>
-                                        <div class="nakshatra-item" data-index="22">Dh</div>
-                                        <div class="nakshatra-item" data-index="23">Sa</div>
-                                        <div class="nakshatra-item" data-index="24">PB</div>
-                                        <div class="nakshatra-item" data-index="25">UB</div>
-                                        <div class="nakshatra-item" data-index="26">Re</div>
-                                    </div>
-                                    <div id="nakshatra-test-marker" class="nakshatra-marker" style="transition: transform 0.08s linear;"></div>
-                                    <div id="nakshatra-test-fixed-needle" class="fixed-needle"></div>
-                                    <div class="celestial-orb">
-                                        <div class="orb-core"></div>
-                                        <div class="orb-rings">
-                                            <div class="ring ring-1"></div>
-                                            <div class="ring ring-2"></div>
-                                            <div class="ring ring-3"></div>
-                                        </div>
-                                        <div class="orb-trail"></div>
-                                    </div>
-                                    <div class="constellation-lines"></div>
-                                </div>
-                                <div class="stellar-readout">
-                                    <div class="stellar-screen">
-                                        <div class="screen-header">NAKSHATRA</div>
-                                        <div class="screen-content">
-                                            <span class="screen-name" id="current-nakshatra-name">Ashwini</span>
-                                            <!-- Optional test display for single-line name -->
-                                            <div id="nakshatra-test-display-box" style="display:none;"><span id="nakshatra-test-name"></span></div>
-                                            <span class="screen-ruling" id="current-nakshatra-ruling">Ketu</span>
-                                        </div>
-                                    </div>
+                        <!-- Nakshatra selector — sign-aware scale tied to Lagna -->
+                        <div class="nakshatra-sign-scale" id="nakshatra-sign-scale" aria-live="polite" style="flex: 0.6;">
+                            <div class="nakshatra-scale-header">
+                                <div>
+                                    <div class="nakshatra-scale-title" id="nakshatra-scale-title">Select a Lagna first</div>
                                 </div>
                             </div>
-                        </div> <!-- /#nakshatra-test-wrapper -->
+                            <div class="nakshatra-scale-options" id="nakshatra-scale-options" role="group" aria-label="Sign-specific nakshatras"></div>
+                            <div class="nakshatra-scale-footer">
+                                <div class="nakshatra-scale-selection" id="nakshatra-scale-selection">No nakshatra selected</div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="vedic-chart" class="vedic-chart" style="height:calc(100% - 160px);"></div>
+                    <div id="vedic-chart" class="vedic-chart"></div>
+                    
             </div>
         </div>
 
@@ -3135,6 +2905,12 @@
         let currentLagna = 1;
         let currentNakshatra = 1;
         let currentViewMode = 'separate';
+        let isDraggingLagna = false;
+        let isDraggingNakshatra = false;
+        let currentNakshatraMembers = [];
+        let lagnaGridListenersAdded = false;
+        let nakshatraListenersAdded = false;
+        const houseNakshatraMap = {};
 
         const LAGNA_NAMES = [
             { id: 1, sign: 'Aries the Celestial Ram ♈', element: 'Fire', ruling: 'Mars' },
@@ -3180,6 +2956,8 @@
             { id: 26, name: 'Uttara Bhadrapada', ruling: 'Saturn', deity: 'Ahir Budhnya', symbol: 'Twins/Back Legs', quality: 'Fixed' },
             { id: 27, name: 'Revati', ruling: 'Mercury', deity: 'Pushan', symbol: 'Fish/Drum', quality: 'Soft' }
         ];
+
+        const NAKSHATRA_SPAN = 360 / 27;
 
         const HOUSES = [
             { id: 1, name: '1st House', number: '1st', fullName: 'Sovereign Essence', bonus: 1.2, planet: 'Mars', desc: 'The Core of Identity & Vital Force', optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative'] },
@@ -3313,283 +3091,197 @@
             updateLagnaInfo();
             // renderVedicChart();
             renderVedicChart();
+            updateNakshatraDetails(getNakshatraFromAbsoluteDegree(getAnchoredNakshatraDegree()));
             commitBlueprintToChart();
             wireJotyshUI();
             updateInvokeButtonState();
         }
 
         function populateLagnaOptions() {
-            // Update gear marks positions and current display
-            updateGearDial();
-            updateNakshatraDial();
+            populateLagnaGrid();
+            updateNakshatraScale();
         }
 
-        function updateGearDial() {
-            const markers = document.querySelectorAll('.lagna-energy-selector .zodiac-marker');
-            const cursor = document.querySelector('.lagna-energy-selector .energy-cursor');
-            const currentSign = document.getElementById('current-lagna-sign');
-            const currentName = document.getElementById('current-lagna-name');
-            const readout = document.getElementById('lagna-readout');
-
-            // Update displays even if some elements are missing
-            const lagnaData = LAGNA_NAMES[currentLagna - 1];
-            if (lagnaData) {
-                if (currentSign) currentSign.textContent = getSignSymbol(lagnaData.sign);
-                if (currentName) currentName.textContent = getSignShortName(lagnaData.sign);
-                if (readout) readout.textContent = getSignShortName(lagnaData.sign).toUpperCase();
-            }
-
-            // Update visual elements if they exist
-            if (markers.length && cursor) {
-                // Get the energy field width
-                const field = document.querySelector('.lagna-energy-selector .energy-field');
-                if (!field) return;
-                const fieldWidth = field.offsetWidth;
-                const markerSpacing = (fieldWidth - 24) / 11; // 12 markers, 11 intervals
-
-                // Update active state for markers
-                markers.forEach((marker, index) => {
-                    const lagnaNum = index + 1;
-                    marker.classList.toggle('active', lagnaNum === currentLagna);
-                });
-
-                // Position cursor based on current lagna
-                const cursorPos = 12 + ((currentLagna - 1) * markerSpacing);
-                cursor.style.left = `${cursorPos}px`;
-            }
-        }
-
-        function updateNakshatraDial() {
-            const nodes = document.querySelectorAll('.nakshatra-stellar-navigator .stellar-node');
-            const orb = document.querySelector('.nakshatra-stellar-navigator .celestial-orb');
-            const currentName = document.getElementById('current-nakshatra-name');
-            const currentRuling = document.getElementById('current-nakshatra-ruling');
-
-            if (!nodes.length || !orb || !currentName || !currentRuling) return;
-
-            // Get the stellar field width
-            const field = document.querySelector('.nakshatra-stellar-navigator .stellar-field');
-            if (!field) return;
-            const fieldWidth = field.offsetWidth;
-            const nodeSpacing = (fieldWidth - 30) / 26; // 27 nodes, 26 intervals
-
-            // Position nodes and update active state
-            nodes.forEach((node, index) => {
-                const nakshatraNum = index + 1;
-                node.classList.toggle('active', nakshatraNum === currentNakshatra);
-
-                // Position nodes evenly across the field
-                const leftPos = 15 + (index * nodeSpacing);
-                node.style.left = `${leftPos}px`;
+        function populateLagnaGrid() {
+            const grid = document.getElementById('lagna-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            LAGNA_NAMES.forEach((sign, index) => {
+                const item = document.createElement('div');
+                item.className = 'lagna-grid-item';
+                item.dataset.lagna = index + 1;
+                if (index + 1 === currentLagna) item.classList.add('active');
+                item.innerHTML = `
+                    <div class="sign-symbol">${getSignSymbol(sign.sign)}</div>
+                    <div class="sign-name">${getSignShortName(sign.sign)}</div>
+                `;
+                item.addEventListener('click', () => rotateLagna(index + 1));
+                grid.appendChild(item);
             });
 
-            // Position orb based on current nakshatra
-            const orbPos = 15 + ((currentNakshatra - 1) * nodeSpacing);
-            orb.style.left = `${orbPos}px`;
-
-            // Update displays
-            const nakshatraData = NAKSHATRA_DATA[currentNakshatra - 1];
-            if (nakshatraData) {
-                currentName.textContent = nakshatraData.name;
-                currentRuling.textContent = nakshatraData.ruling;
+            // Add drag and scroll functionality only once
+            if (!lagnaGridListenersAdded) {
+                grid.addEventListener('mousedown', (e) => {
+                    isDraggingLagna = true;
+                    updateLagnaFromMouse(e, grid);
+                });
+                grid.addEventListener('mousemove', (e) => {
+                    if (isDraggingLagna) {
+                        updateLagnaFromMouse(e, grid);
+                    }
+                });
+                grid.addEventListener('mouseup', () => {
+                    isDraggingLagna = false;
+                });
+                grid.addEventListener('mouseleave', () => {
+                    isDraggingLagna = false;
+                });
+                grid.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const delta = e.deltaY > 0 ? 1 : -1;
+                    const newLagna = ((currentLagna - 1 + delta + 12) % 12) + 1;
+                    rotateLagna(newLagna);
+                });
+                lagnaGridListenersAdded = true;
             }
         }
 
-        function rotateNakshatra(newNakshatra) {
+
+
+        function updateLagnaFromMouse(e, grid) {
+            const rect = grid.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const col = Math.floor((x / rect.width) * 6);
+            const row = Math.floor((y / rect.height) * 2);
+            const index = row * 6 + col;
+            if (index >= 0 && index < 12) {
+                const lagna = index + 1;
+                if (lagna !== currentLagna) {
+                    rotateLagna(lagna);
+                }
+            }
+        }
+
+        function updateNakshatraFromMouse(e, container) {
+            const options = container.querySelectorAll('.nakshatra-scale-option');
+            for (const option of options) {
+                const rect = option.getBoundingClientRect();
+                if (e.clientX >= rect.left && e.clientX <= rect.right &&
+                    e.clientY >= rect.top && e.clientY <= rect.bottom) {
+                    const nakshatraId = parseInt(option.dataset.nakshatraId);
+                    if (nakshatraId !== currentNakshatra) {
+                        rotateNakshatra(nakshatraId);
+                    }
+                    break;
+                }
+            }
+        }
+
+        function updateNakshatraScale() {
+            const optionsWrap = document.getElementById('nakshatra-scale-options');
+            if (!optionsWrap) return;
+            const titleEl = document.getElementById('nakshatra-scale-title');
+            const hintEl = document.getElementById('nakshatra-scale-hint');
+            const sign = getSignForHouse(1);
+
+            if (titleEl) titleEl.textContent = sign ? `${getSignShortName(sign.sign)} Nakshatras` : 'Select a Lagna first';
+            if (hintEl) {
+                hintEl.textContent = sign ? 'Anchors House 1' : 'House 1 sets the rhythm. Pick a Lagna to reveal choices.';
+            }
+
+            if (!sign) {
+                optionsWrap.innerHTML = '<span class="nakshatra-scale-note">Select a Lagna to reveal its nakshatra choices.</span>';
+                updateNakshatraScaleSelection();
+                return;
+            }
+
+            const members = getNakshatrasForSign(sign.id);
+            currentNakshatraMembers = members;
+            optionsWrap.innerHTML = '';
+            if (!members.length) {
+                optionsWrap.innerHTML = '<span class="nakshatra-scale-note">No nakshatras mapped to this sign yet.</span>';
+                updateNakshatraScaleSelection();
+                return;
+            }
+
+            if (!members.some(n => n.id === currentNakshatra)) {
+                rotateNakshatra(members[0].id, { skipScaleRefresh: true });
+            }
+
+            members.forEach(member => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'nakshatra-scale-option';
+                btn.dataset.nakshatraId = String(member.id);
+                if (member.id === currentNakshatra) btn.classList.add('active');
+                btn.innerHTML = `
+                    <span class="option-name">${member.name}</span>
+                    <span class="option-ruling">${member.ruling}</span>
+                `;
+                btn.addEventListener('click', () => rotateNakshatra(member.id));
+                optionsWrap.appendChild(btn);
+            });
+
+            // Add drag and scroll functionality only once
+            if (!nakshatraListenersAdded) {
+                optionsWrap.addEventListener('mousedown', (e) => {
+                    isDraggingNakshatra = true;
+                    updateNakshatraFromMouse(e, optionsWrap);
+                });
+                optionsWrap.addEventListener('mousemove', (e) => {
+                    if (isDraggingNakshatra) {
+                        updateNakshatraFromMouse(e, optionsWrap);
+                    }
+                });
+                optionsWrap.addEventListener('mouseup', () => {
+                    isDraggingNakshatra = false;
+                });
+                optionsWrap.addEventListener('mouseleave', () => {
+                    isDraggingNakshatra = false;
+                });
+                optionsWrap.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    if (currentNakshatraMembers.length === 0) return;
+                    const currentIndex = currentNakshatraMembers.findIndex(m => m.id === currentNakshatra);
+                    const delta = e.deltaY > 0 ? 1 : -1;
+                    const newIndex = (currentIndex + delta + currentNakshatraMembers.length) % currentNakshatraMembers.length;
+                    rotateNakshatra(currentNakshatraMembers[newIndex].id);
+                });
+                nakshatraListenersAdded = true;
+            }
+
+            updateNakshatraScaleSelection();
+        }
+
+        function updateNakshatraScaleSelection(detail) {
+            const selectionEl = document.getElementById('nakshatra-scale-selection');
+            if (!selectionEl) return;
+            const info = detail || getNakshatraFromAbsoluteDegree(getAnchoredNakshatraDegree());
+            if (!info?.nakshatra) {
+                selectionEl.textContent = 'No nakshatra selected';
+                return;
+            }
+            selectionEl.textContent = `${info.nakshatra.name} • ${info.nakshatra.ruling}`;
+        }
+
+        function rotateNakshatra(newNakshatra, options = {}) {
             if (isNaN(newNakshatra) || newNakshatra < 1 || newNakshatra > 27) return;
             currentNakshatra = newNakshatra;
-            updateNakshatraDial();
-            // Update any nakshatra-dependent displays
-            updateNakshatraInfo();
+            const detail = getNakshatraFromAbsoluteDegree(getAnchoredNakshatraDegree());
+            if (detail?.nakshatra) {
+                updateNakshatraScaleSelection(detail);
+                updateNakshatraDetails(detail);
+            } else {
+                updateNakshatraScaleSelection();
+            }
+            cascadeNakshatraAcrossHouses();
+            try { refreshHouseNakshatraSets(); } catch (e) {}
+            if (!options.skipScaleRefresh) updateNakshatraScale();
         }
 
         function wireJotyshUI() {
-            // Wire energy field interactions
-            const energyField = document.querySelector('.lagna-energy-selector .energy-field');
-            const energyCursor = document.querySelector('.lagna-energy-selector .energy-cursor');
-
-            if (energyField && energyCursor) {
-                let isDragging = false;
-                let startX = 0;
-                let currentX = 0;
-
-                // Create a segment highlight overlay to emphasize hovered segments
-                let segmentHighlight = energyField.querySelector('.segment-highlight');
-                if (!segmentHighlight) {
-                    segmentHighlight = document.createElement('div');
-                    segmentHighlight.className = 'segment-highlight';
-                    energyField.appendChild(segmentHighlight);
-                }
-
-                const getFieldWidth = () => energyField.offsetWidth;
-                const markerSpacing = () => (getFieldWidth() - 24) / 11; // 12 markers, 11 intervals, 12px padding on each side, 10px padding on each side
-
-                const getPosition = (clientX) => {
-                    const rect = energyField.getBoundingClientRect();
-                    const relativeX = clientX - rect.left;
-                    return Math.max(12, Math.min(getFieldWidth() - 12, relativeX));
-                };
-
-                const handleFieldChange = (position) => {
-                    // Convert position to lagna (12 positions)
-                    const spacing = markerSpacing();
-                    const lagnaIndex = Math.round((position - 12) / spacing);
-                    const newLagna = Math.max(1, Math.min(12, lagnaIndex + 1));
-
-                    if (newLagna !== currentLagna) {
-                        rotateLagna(newLagna);
-                    }
-                };
-
-                const updateCursorPosition = (position) => {
-                    energyCursor.style.left = `${position}px`;
-                };
-
-                // Mouse interactions
-                energyField.addEventListener('mousedown', (e) => {
-                    isDragging = true;
-                    startX = e.clientX;
-                    const rect = energyField.getBoundingClientRect();
-                    currentX = e.clientX - rect.left;
-                    energyField.style.cursor = 'grabbing';
-                    e.preventDefault();
-                });
-
-                document.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    const newX = getPosition(e.clientX);
-                    updateCursorPosition(newX);
-                    currentX = newX;
-                });
-
-                document.addEventListener('mouseup', () => {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    energyField.style.cursor = 'pointer';
-
-                    // Snap to nearest marker position
-                    const spacing = markerSpacing();
-                    const snappedIndex = Math.round((currentX - 12) / spacing);
-                    const snappedPosition = 12 + (snappedIndex * spacing);
-                    const clampedPosition = Math.max(12, Math.min(getFieldWidth() - 12, snappedPosition));
-                    updateCursorPosition(clampedPosition);
-                    handleFieldChange(clampedPosition);
-                });
-
-                // Click on field to jump to position
-                energyField.addEventListener('click', (e) => {
-                    if (isDragging) return;
-                    const position = getPosition(e.clientX);
-                    updateCursorPosition(position);
-                    handleFieldChange(position);
-                });
-            }
-
-                // Wire zodiac markers for direct lagna selection
-            document.querySelectorAll('.lagna-energy-selector .zodiac-marker').forEach(marker => {
-                marker.addEventListener('click', () => {
-                    const lagna = parseInt(marker.dataset.lagna);
-                    rotateLagna(lagna);
-                });
-                    // Hover highlights the entire section for clarity
-                    marker.addEventListener('mouseenter', () => {
-                        const spacing = markerSpacing();
-                        const idx = parseInt(marker.dataset.lagna || '1', 10) - 1;
-                        const leftEdge = Math.max(12, 12 + (idx * spacing) - (spacing / 2));
-                        const widthEdge = spacing;
-                        segmentHighlight.style.left = `${leftEdge}px`;
-                        segmentHighlight.style.width = `${Math.max(10, widthEdge)}px`;
-                        segmentHighlight.style.display = 'block';
-                    });
-                    marker.addEventListener('mouseleave', () => {
-                        // Keep it visible if this marker is active; hide otherwise
-                        const lagna = parseInt(marker.dataset.lagna || '0', 10);
-                        if (lagna !== currentLagna) {
-                            segmentHighlight.style.display = 'none';
-                        }
-                    });
-            });
-
-            // Wire stellar field interactions
-            const stellarField = document.querySelector('.nakshatra-stellar-navigator .stellar-field');
-            const celestialOrb = document.querySelector('.nakshatra-stellar-navigator .celestial-orb');
-
-            if (stellarField && celestialOrb) {
-                let isDraggingStellar = false;
-                let startXStellar = 0;
-                let currentXStellar = 0;
-
-                const getFieldWidthStellar = () => stellarField.offsetWidth;
-                const nodeSpacingStellar = () => (getFieldWidthStellar() - 30) / 26; // 27 nodes, 26 intervals
-
-                const getPositionStellar = (clientX) => {
-                    const rect = stellarField.getBoundingClientRect();
-                    const relativeX = clientX - rect.left;
-                    return Math.max(15, Math.min(getFieldWidthStellar() - 15, relativeX));
-                };
-
-                const handleStellarFieldChange = (position) => {
-                    // Convert position to nakshatra (27 positions)
-                    const spacing = nodeSpacingStellar();
-                    const nakshatraIndex = Math.round((position - 15) / spacing);
-                    const newNakshatra = Math.max(1, Math.min(27, nakshatraIndex + 1));
-
-                    if (newNakshatra !== currentNakshatra) {
-                        rotateNakshatra(newNakshatra);
-                    }
-                };
-
-                const updateOrbPosition = (position) => {
-                    celestialOrb.style.left = `${position}px`;
-                };
-
-                // Mouse interactions
-                stellarField.addEventListener('mousedown', (e) => {
-                    isDraggingStellar = true;
-                    startXStellar = e.clientX;
-                    const rect = stellarField.getBoundingClientRect();
-                    currentXStellar = e.clientX - rect.left;
-                    stellarField.style.cursor = 'grabbing';
-                    e.preventDefault();
-                });
-
-                document.addEventListener('mousemove', (e) => {
-                    if (!isDraggingStellar) return;
-                    const newX = getPositionStellar(e.clientX);
-                    updateOrbPosition(newX);
-                    currentXStellar = newX;
-                });
-
-                document.addEventListener('mouseup', () => {
-                    if (!isDraggingStellar) return;
-                    isDraggingStellar = false;
-                    stellarField.style.cursor = 'pointer';
-
-                    // Snap to nearest node position
-                    const spacing = nodeSpacingStellar();
-                    const snappedIndex = Math.round((currentXStellar - 15) / spacing);
-                    const snappedPosition = 15 + (snappedIndex * spacing);
-                    const clampedPosition = Math.max(15, Math.min(getFieldWidthStellar() - 15, snappedPosition));
-                    updateOrbPosition(clampedPosition);
-                    handleStellarFieldChange(clampedPosition);
-                });
-
-                // Click on field to jump to position
-                stellarField.addEventListener('click', (e) => {
-                    if (isDraggingStellar) return;
-                    const position = getPositionStellar(e.clientX);
-                    updateOrbPosition(position);
-                    handleStellarFieldChange(position);
-                });
-            }
-
-            // Wire stellar nodes for direct nakshatra selection
-            document.querySelectorAll('.nakshatra-stellar-navigator .stellar-node').forEach(node => {
-                node.addEventListener('click', () => {
-                    const nakshatra = parseInt(node.dataset.nakshatra);
-                    rotateNakshatra(nakshatra);
-                });
-            });
+            // Nakshatra scale buttons are generated dynamically; pointer listeners get attached in updateNakshatraScale()
 
             document.querySelectorAll('.view-toggle-btn').forEach(btn => {
                 btn.addEventListener('click', () => setViewMode(btn.dataset.view));
@@ -3627,8 +3319,15 @@
         }
 
         function syncLagnaSelector() {
-            updateGearDial();
-            updateNakshatraDial();
+            updateLagnaGrid();
+            updateNakshatraScale();
+        }
+
+        function updateLagnaGrid() {
+            const items = document.querySelectorAll('.lagna-grid-item');
+            items.forEach((item, index) => {
+                item.classList.toggle('active', index + 1 === currentLagna);
+            });
         }
 
         function loadLagnaFromStorage() {
@@ -3680,19 +3379,7 @@
             currentLagna = newLagna;
             saveLagnaToStorage();
             updateLagnaInfo();
-            updateGearDial();
-            // Update segment highlight to the selected segment
-            const field = document.querySelector('.lagna-energy-selector .energy-field');
-            const highlight = document.querySelector('.lagna-energy-selector .segment-highlight');
-            if (field && highlight) {
-                const fieldWidth = field.offsetWidth;
-                const spacing = (fieldWidth - 24) / 11;
-                const idx = currentLagna - 1;
-                const leftEdge = Math.max(12, 12 + (idx * spacing) - (spacing / 2));
-                highlight.style.left = `${leftEdge}px`;
-                highlight.style.width = `${Math.max(10, spacing)}px`;
-                highlight.classList.add('active');
-            }
+            updateLagnaGrid();
             // Debug: directly update readout
             const readout = document.getElementById('lagna-readout');
             if (readout) {
@@ -3704,6 +3391,9 @@
             // renderVedicChart();
             // Trigger per-house content updates rather than rotating the entire chart
             animateHouseContentChangeForAll(previous, currentLagna);
+            cascadeNakshatraAcrossHouses();
+            refreshHouseNakshatraSets();
+            updateNakshatraScale();
             // Notify external components (like the lagna slider) that the lagna changed
             try { window.dispatchEvent(new CustomEvent('lagna-rotated', { detail: { lagna: currentLagna } })); } catch (e) { /* ignore */ }
         }
@@ -3749,6 +3439,12 @@
         function updateNakshatraDetails(info) {
             const detailGrid = document.getElementById('nakshatra-detail-grid');
             if (!detailGrid) return;
+            if (!info || !info.nakshatra) {
+                detailGrid.innerHTML = '<div class="nakshatra-detail-card">Choose a nakshatra to reveal its traits.</div>';
+                const description = document.getElementById('nakshatra-description');
+                if (description) description.textContent = 'Awaiting nakshatra selection.';
+                return;
+            }
             const { nakshatra, pada } = info;
             detailGrid.innerHTML = `
                 <div class="nakshatra-detail-card"><strong>Ruling:</strong> ${nakshatra.ruling}</div>
@@ -3771,6 +3467,138 @@
             const pada = Math.floor(degreeInNakshatra / padaSize) + 1;
             return { nakshatra: NAKSHATRA_DATA[nakshatraIndex], pada };
         }
+
+        // Return array of nakshatras that overlap the given sign window (handles wrap-around gracefully)
+        function getNakshatrasForSign(signRef) {
+            if (!Array.isArray(NAKSHATRA_DATA) || !Array.isArray(LAGNA_NAMES)) return [];
+            const duration = NAKSHATRA_SPAN;
+            let signIndex = -1;
+            if (typeof signRef === 'number') signIndex = (signRef - 1 + 12) % 12;
+            else if (typeof signRef === 'object' && signRef.id) signIndex = (signRef.id - 1 + 12) % 12;
+            else if (typeof signRef === 'string') {
+                const found = LAGNA_NAMES.findIndex(s => s.sign && s.sign.toLowerCase().includes(signRef.toLowerCase()));
+                signIndex = found >= 0 ? found : -1;
+            }
+            if (signIndex < 0) return [];
+
+            const signStart = signIndex * 30;
+            const signEnd = signStart + 30;
+            const members = [];
+
+            NAKSHATRA_DATA.forEach((n, idx) => {
+                const nakStart = idx * duration;
+                const nakEnd = nakStart + duration;
+
+                const overlapsSign = (segmentStart, segmentEnd) => {
+                    const overlapStart = Math.max(signStart, segmentStart);
+                    const overlapEnd = Math.min(signEnd, segmentEnd);
+                    return overlapEnd - overlapStart > 0;
+                };
+
+                let overlaps = overlapsSign(nakStart, nakEnd);
+                if (!overlaps && nakEnd > 360) {
+                    overlaps = overlapsSign(0, nakEnd - 360);
+                }
+                if (overlaps) {
+                    members.push({ ...n, id: n.id || idx + 1 });
+                }
+            });
+
+            return members;
+        }
+
+        // Refresh the nakshatra display shown in each house footer
+        function refreshHouseNakshatraSets() {
+            const container = document.getElementById('vedic-chart');
+            if (!container) return;
+            HOUSES.forEach(house => {
+                const houseEl = container.querySelector(`.house[data-house-id='${house.id}']`);
+                if (!houseEl) return;
+                const nakCurrentEl = houseEl.querySelector('.nakshatra-fade');
+                const activeInfo = houseNakshatraMap[house.id];
+
+                if (nakCurrentEl) {
+                    if (activeInfo?.nakshatra) {
+                        nakCurrentEl.textContent = `${activeInfo.nakshatra.name}`;
+                        nakCurrentEl.dataset.nakshatraId = activeInfo.nakshatra.id;
+                    } else {
+                        nakCurrentEl.textContent = '—';
+                        nakCurrentEl.dataset.nakshatraId = '';
+                    }
+                }
+            });
+        }
+
+        function cascadeNakshatraAcrossHouses() {
+            const container = document.getElementById('vedic-chart');
+            if (!container) return;
+            const anchorDegree = getAnchoredNakshatraDegree();
+            HOUSES.forEach(house => {
+                const houseEl = container.querySelector(`.house[data-house-id='${house.id}']`);
+                if (!houseEl) return;
+                const offset = ((house.id - 1) + 12) % 12;
+                const spreadDegree = (anchorDegree + (offset * 30)) % 360;
+                const detail = getNakshatraFromAbsoluteDegree(spreadDegree);
+                houseNakshatraMap[house.id] = detail;
+                updateHouseNakshatraLabel(houseEl, detail);
+            });
+        }
+
+        function getAnchoredNakshatraDegree() {
+            const sign = getSignForHouse(1);
+            const safeNakshatra = Math.min(27, Math.max(1, currentNakshatra || 1));
+            const nakStart = (safeNakshatra - 1) * NAKSHATRA_SPAN;
+            const nakEnd = nakStart + NAKSHATRA_SPAN;
+            if (!sign) return nakStart;
+            const signStart = (sign.id - 1) * 30;
+            const signEnd = signStart + 30;
+            const overlap = getSegmentOverlapStart(signStart, signEnd, nakStart, nakEnd);
+            if (overlap !== null) return overlap;
+            if (nakEnd > 360) {
+                const wrapOverlap = getSegmentOverlapStart(signStart, signEnd, 0, nakEnd - 360);
+                if (wrapOverlap !== null) return wrapOverlap;
+            }
+            return ((nakStart % 360) + 360) % 360;
+        }
+
+        function getSegmentOverlapStart(signStart, signEnd, segmentStart, segmentEnd) {
+            const overlapStart = Math.max(signStart, segmentStart);
+            const overlapEnd = Math.min(signEnd, segmentEnd);
+            return overlapEnd > overlapStart ? overlapStart : null;
+        }
+
+        function getNakshatraFromAbsoluteDegree(absoluteDegree) {
+            const normalized = ((absoluteDegree % 360) + 360) % 360;
+            const index = Math.floor(normalized / NAKSHATRA_SPAN) % NAKSHATRA_DATA.length;
+            const degreeWithin = normalized - (index * NAKSHATRA_SPAN);
+            const pada = Math.floor(degreeWithin / (NAKSHATRA_SPAN / 4)) + 1;
+            const nakshatra = { ...NAKSHATRA_DATA[index], id: NAKSHATRA_DATA[index].id || index + 1 };
+            return { nakshatra, pada, absoluteDegree: normalized };
+        }
+
+        function updateHouseNakshatraLabel(houseEl, detail) {
+            const label = houseEl.querySelector('.nakshatra-fade');
+            if (label) {
+                if (detail?.nakshatra) {
+                    label.textContent = `${detail.nakshatra.name}`;
+                } else {
+                    label.textContent = '—';
+                }
+            }
+            const chips = houseEl.querySelectorAll('.house-nak');
+            chips.forEach(chip => {
+                const id = Number(chip.dataset.nakshatraId);
+                chip.classList.toggle('active', detail?.nakshatra && id === detail.nakshatra.id);
+            });
+        }
+
+        // when the lagna changes, the houses' signs shift — rebuild the sets shortly after
+        window.addEventListener('lagnachange', () => {
+            try {
+                cascadeNakshatraAcrossHouses();
+                setTimeout(() => { refreshHouseNakshatraSets(); updateNakshatraScale(); }, 40);
+            } catch (e) {}
+        });
 
         function getSignForHouse(houseNumber) {
             const signIndex = (houseNumber - 1 + currentLagna - 1) % 12;
@@ -3840,9 +3668,49 @@
                 `;
                 // Click to slot (for click-to-slot UI)
                 houseEl.addEventListener('click', () => handleHouseClick(index));
-                // Planet info clickable within the house
-                const planetBadge = houseEl.querySelector('.planet-badge');
-                if (planetBadge) planetBadge.addEventListener('click', (ev) => { ev.stopPropagation(); showPlanetInfo(house.planet, ev); });
+                // Planet info: create a small planet badge + name in the footer (click opens planet tooltip)
+                const footerEl = houseEl.querySelector('.house-footer');
+                if (footerEl) {
+                    const planetName = house.planet || '';
+                    const pdata = (typeof PLANET_SYNERGIES !== 'undefined' && PLANET_SYNERGIES[planetName]) ? PLANET_SYNERGIES[planetName] : null;
+                    const badgeWrap = document.createElement('div');
+                    badgeWrap.className = 'house-planet';
+                    const badge = document.createElement('span');
+                    badge.className = 'planet-badge';
+                    badge.title = planetName;
+                    badge.style.color = pdata ? pdata.color : '#ddd';
+                    badge.textContent = pdata ? pdata.symbol : '•';
+                    const nameEl = document.createElement('span');
+                    nameEl.className = 'planet-name';
+                    nameEl.style.color = pdata ? pdata.color : '#ddd';
+                    nameEl.textContent = planetName;
+                    badgeWrap.appendChild(nameEl);
+                    badgeWrap.appendChild(badge);
+                    footerEl.appendChild(badgeWrap);
+                    // add a nakshatra display (current + the set for this house's sign)
+                    try {
+                        const nakContainer = document.createElement('div');
+                        nakContainer.className = 'house-nakshatra';
+                        // current/fading name
+                        const nakCurrent = document.createElement('span');
+                        nakCurrent.className = 'nakshatra-fade';
+                        // determine current nakshatra for this house's sign (deg 0)
+                        let currentName = '';
+                        if (typeof getSignForHouse === 'function' && typeof getNakshatraForDegree === 'function') {
+                            const signObj = getSignForHouse(house.id);
+                            if (signObj) {
+                                const cur = getNakshatraForDegree(signObj.id, 0);
+                                if (cur && cur.nakshatra) currentName = cur.nakshatra.name;
+                            }
+                        }
+                        nakCurrent.textContent = currentName;
+                        nakContainer.appendChild(nakCurrent);
+                        nakContainer.style.marginLeft = 'auto';
+                        footerEl.appendChild(nakContainer);
+                    } catch (e) {}
+
+                    badge.addEventListener('click', (ev) => { ev.stopPropagation(); try { showPlanetInfo(planetName, ev); } catch (e) {} });
+                }
                 // Drag and drop
                 const slotEl = houseEl.querySelector('.house-slot');
                 if (slotEl) {
@@ -3871,6 +3739,9 @@
 
             // Render existing slotted glyphs
             slottedGlyphs.forEach((glyph, index) => renderHouseSlot(index, glyph));
+
+            cascadeNakshatraAcrossHouses();
+            refreshHouseNakshatraSets();
         }
 
         // Animate sign/nakshatra content for all houses (change triggered by Lagna rotation)
@@ -3906,23 +3777,6 @@
                 if (nakEl && oldNak.nakshatra.name !== newNak.nakshatra.name) {
                     nakEl.classList.add('fade');
                     setTimeout(() => { nakEl.textContent = newNak.nakshatra.name; nakEl.classList.remove('fade'); }, 220);
-                }
-            });
-        }
-
-        // Animate only nakshatra label updates for all houses (triggered by degree change)
-        function animateNakshatraUpdateForAll() {
-            const container = document.getElementById('vedic-chart');
-            if (!container) return;
-            HOUSES.forEach(house => {
-                const houseEl = container.querySelector(`.house[data-house-id='${house.id}']`);
-                if (!houseEl) return;
-                const sign = getSignForHouse(house.id);
-                const newNak = getNakshatraForDegree(sign.id, 0);
-                const nakEl = houseEl.querySelector('.nakshatra-fade');
-                if (nakEl && nakEl.textContent !== newNak.nakshatra.name) {
-                    nakEl.classList.add('fade');
-                    setTimeout(() => { nakEl.textContent = newNak.nakshatra.name; nakEl.classList.remove('fade'); }, 180);
                 }
             });
         }
@@ -4509,132 +4363,130 @@
         }
 
         // Test slider data & initializer (copied and adapted from test.html)
-        function initTestNakshatraSlider() {
-            const containerEl = document.getElementById('nakshatra-test-nakshatra-container');
-            const markerEl = document.getElementById('nakshatra-test-marker');
-            const casingEl = document.getElementById('nakshatra-test-slider-casing');
-            const displayEl = document.getElementById('nakshatra-test-name');
+        function initNakshatraSlider() {
+            // Uses the same interaction model as the Lagna (ascendant) slider but renders 27 items
+            const containerEl = document.getElementById('nakshatra-zodiac-container');
+            const markerEl = document.getElementById('nakshatra-marker');
+            const casingEl = document.getElementById('nakshatra-slider-casing');
+            const displayEl = document.getElementById('nakshatra-readout');
             const globalNameEl = document.getElementById('current-nakshatra-name');
             if (!containerEl || !markerEl || !casingEl) return;
 
-            // local nakshatra definitions to match test.html symbols
             const nakshatras = [
-                { name: "Ashwini", symbol: "As" },
-                { name: "Bharani", symbol: "Bh" },
-                { name: "Krittika", symbol: "Kr" },
-                { name: "Rohini", symbol: "Ro" },
-                { name: "Mrigashira", symbol: "Mr" },
-                { name: "Ardra", symbol: "Ar" },
-                { name: "Punarvasu", symbol: "Pu" },
-                { name: "Pushya", symbol: "Ps" },
-                { name: "Ashlesha", symbol: "Ah" },
-                { name: "Magha", symbol: "Ma" },
-                { name: "Purva Phalguni", symbol: "PP" },
-                { name: "Uttara Phalguni", symbol: "UP" },
-                { name: "Hasta", symbol: "Ha" },
-                { name: "Chitra", symbol: "Ch" },
-                { name: "Swati", symbol: "Sw" },
-                { name: "Vishakha", symbol: "Vi" },
-                { name: "Anuradha", symbol: "An" },
-                { name: "Jyeshtha", symbol: "Jy" },
-                { name: "Moola", symbol: "Mu" },
-                { name: "Purva Ashadha", symbol: "PA" },
-                { name: "Uttara Ashadha", symbol: "UA" },
-                { name: "Shravana", symbol: "Sr" },
-                { name: "Dhanishta", symbol: "Dh" },
-                { name: "Shatabhisha", symbol: "Sa" },
-                { name: "Purva Bhadrapada", symbol: "PB" },
-                { name: "Uttara Bhadrapada", symbol: "UB" },
-                { name: "Revati", symbol: "Re" }
+                { name: "Ashwini", symbol: "As" },{ name: "Bharani", symbol: "Bh" },{ name: "Krittika", symbol: "Kr" },{ name: "Rohini", symbol: "Ro" },{ name: "Mrigashira", symbol: "Mr" },{ name: "Ardra", symbol: "Ar" },{ name: "Punarvasu", symbol: "Pu" },{ name: "Pushya", symbol: "Ps" },{ name: "Ashlesha", symbol: "Ah" },{ name: "Magha", symbol: "Ma" },{ name: "Purva Phalguni", symbol: "PP" },{ name: "Uttara Phalguni", symbol: "UP" },{ name: "Hasta", symbol: "Ha" },{ name: "Chitra", symbol: "Ch" },{ name: "Swati", symbol: "Sw" },{ name: "Vishakha", symbol: "Vi" },{ name: "Anuradha", symbol: "An" },{ name: "Jyeshtha", symbol: "Jy" },{ name: "Moola", symbol: "Mu" },{ name: "Purva Ashadha", symbol: "PA" },{ name: "Uttara Ashadha", symbol: "UA" },{ name: "Shravana", symbol: "Sr" },{ name: "Dhanishta", symbol: "Dh" },{ name: "Shatabhisha", symbol: "Sa" },{ name: "Purva Bhadrapada", symbol: "PB" },{ name: "Uttara Bhadrapada", symbol: "UB" },{ name: "Revati", symbol: "Re" }
             ];
 
-            const ITEM_WIDTH = 30; // px
             const TOTAL_ITEMS = nakshatras.length; // 27
-            const CYCLE_WIDTH = ITEM_WIDTH * TOTAL_ITEMS; // 810 px
-            const TRACK_WIDTH = 900; // match test.html exact size for parity
-            const TRACK_START_PADDING = (TRACK_WIDTH - CYCLE_WIDTH) / 2;
-            const PRE_POST_COUNT = 5; // clones on both sides as in test.html
-            const TOTAL_RENDER_ITEMS = TOTAL_ITEMS + 2 * PRE_POST_COUNT;
-            const CLONED_WIDTH = TOTAL_RENDER_ITEMS * ITEM_WIDTH;
-            const START_OFFSET = PRE_POST_COUNT * ITEM_WIDTH;
-            const ASHWINI_BASE_X = TRACK_START_PADDING;
+            // compute item width to fit all symbols visibly in the casing (min 26px)
+            const casingWidth = casingEl.offsetWidth || Math.round(casingEl.getBoundingClientRect().width) || 900;
+            const ITEM_WIDTH = Math.max(30, Math.floor((casingWidth - 20) / TOTAL_ITEMS));
+            const GAP = 6; // visual gap between boxed tiles
+            const INNER_WIDTH = Math.max(24, ITEM_WIDTH - GAP);
+            const CYCLE_WIDTH = ITEM_WIDTH * TOTAL_ITEMS;
+            const TRACK_PADDING = Math.max(6, Math.floor((casingWidth - CYCLE_WIDTH) / 2));
 
-            let markerX = 0;
+            // layout: render three cycles (left, center, right) so we can loop smoothly
+            containerEl.innerHTML = '';
+            containerEl.style.position = 'absolute';
+            containerEl.style.left = `${TRACK_PADDING}px`;
+            containerEl.style.top = '0';
+            containerEl.style.width = `${CYCLE_WIDTH * 3}px`;
+
+            // ensure marker matches inner item width (lines up with boxed tile)
+            markerEl.style.width = `${INNER_WIDTH}px`;
+
+            // gridify the visible track: draw vertical separators aligned to ITEM_WIDTH
+            const trackEl = document.getElementById('nakshatra-slider-track');
+            if (trackEl) {
+                trackEl.classList.add('gridified');
+                trackEl.style.backgroundImage = `linear-gradient(180deg, rgba(6,10,18,0.04), rgba(200,220,255,0.02)), repeating-linear-gradient(to right, rgba(180,200,255,0.03) 0px, rgba(180,200,255,0.03) 1px, transparent 1px, transparent ${ITEM_WIDTH}px)`;
+                trackEl.style.backgroundSize = `100% 100%, ${ITEM_WIDTH}px 100%`;
+                trackEl.style.backgroundBlendMode = 'overlay';
+            }
+
+            // render symbols (three cycles). dataset.index is base index 0..TOTAL_ITEMS-1
+            for (let cycle = 0; cycle < 3; cycle++) {
+                for (let i = 0; i < TOTAL_ITEMS; i++) {
+                    const n = nakshatras[i];
+                    const idx = cycle * TOTAL_ITEMS + i;
+                    const div = document.createElement('div');
+                    div.className = 'zodiac-item';
+                    div.style.position = 'absolute';
+                    div.style.left = `${idx * ITEM_WIDTH + (GAP/2)}px`;
+                    div.style.width = `${INNER_WIDTH}px`;
+                    div.style.lineHeight = '40px';
+                    div.style.textAlign = 'center';
+                    div.textContent = n.symbol;
+                    div.dataset.index = i; // base index
+                    div.addEventListener('click', (ev) => { ev.stopPropagation(); snapToPosition(parseInt(div.dataset.index, 10)); });
+                    containerEl.appendChild(div);
+                }
+            }
+
+            // state
+            // start the marker in the middle cycle so user can scroll left/right freely
+            let markerX = TRACK_PADDING + CYCLE_WIDTH + ((currentNakshatra - 1) * ITEM_WIDTH) + (GAP / 2);
             let isDragging = false;
             let startX = 0;
             let startMarkerX = 0;
-            let prevIndex = -1;
 
-            // Render cloned items
-            containerEl.innerHTML = '';
-            containerEl.style.position = 'absolute';
-            containerEl.style.left = `${TRACK_START_PADDING - START_OFFSET}px`;
-            containerEl.style.width = `${CLONED_WIDTH}px`;
-            for (let i = 0; i < TOTAL_RENDER_ITEMS; i++) {
-                const actualIndex = (i - PRE_POST_COUNT + TOTAL_ITEMS) % TOTAL_ITEMS;
-                const n = nakshatras[actualIndex];
-                const div = document.createElement('div');
-                div.className = 'nakshatra-item';
-                div.style.left = `${i * ITEM_WIDTH}px`;
-                div.textContent = n.symbol;
-                div.dataset.index = actualIndex;
-                div.addEventListener('click', () => snapToPosition(actualIndex));
-                containerEl.appendChild(div);
-            }
-
-            function getSelectedIndex(currentMarkerX) {
-                let contentPos = currentMarkerX - ASHWINI_BASE_X;
-                while (contentPos >= CYCLE_WIDTH) contentPos -= CYCLE_WIDTH;
-                while (contentPos < 0) contentPos += CYCLE_WIDTH;
-                let trueIndex = Math.floor(contentPos / ITEM_WIDTH);
-                return Math.min(Math.max(trueIndex, 0), TOTAL_ITEMS - 1);
+            function getSelectedIndex(x) {
+                const rel = x - TRACK_PADDING;
+                const relMod = ((rel % CYCLE_WIDTH) + CYCLE_WIDTH) % CYCLE_WIDTH; // normalized to [0, CYCLE_WIDTH)
+                return Math.floor(relMod / ITEM_WIDTH);
             }
 
             function updateVisuals() {
-                const trueIndex = getSelectedIndex(markerX);
-                const itemEls = containerEl.querySelectorAll('.nakshatra-item');
-                itemEls.forEach(it => { it.classList.toggle('active', parseInt(it.dataset.index, 10) === trueIndex); });
-                if (markerEl) markerEl.style.transform = `translateX(${markerX}px)`;
-                if (globalNameEl) globalNameEl.textContent = (typeof NAKSHATRA_DATA !== 'undefined' && NAKSHATRA_DATA && NAKSHATRA_DATA[trueIndex]) ? NAKSHATRA_DATA[trueIndex].name : nakshatras[trueIndex].name;
-                if (displayEl) displayEl.textContent = ((typeof NAKSHATRA_DATA !== 'undefined' && NAKSHATRA_DATA && NAKSHATRA_DATA[trueIndex]) ? NAKSHATRA_DATA[trueIndex].name : nakshatras[trueIndex].name).toUpperCase();
-                if (prevIndex !== trueIndex) { prevIndex = trueIndex; try { rotateNakshatra(trueIndex + 1); } catch (e) { /* ignore if missing */ } }
+                const idx = getSelectedIndex(markerX);
+                containerEl.querySelectorAll('.zodiac-item').forEach(it => it.classList.toggle('active', parseInt(it.dataset.index, 10) === idx));
+                markerEl.style.transform = `translateX(${markerX}px)`;
+                const name = (typeof NAKSHATRA_DATA !== 'undefined' && NAKSHATRA_DATA && NAKSHATRA_DATA[idx]) ? NAKSHATRA_DATA[idx].name : nakshatras[idx].name;
+                if (globalNameEl) globalNameEl.textContent = name;
+                if (displayEl) displayEl.textContent = name.toUpperCase();
+                if (currentNakshatra !== idx + 1) { currentNakshatra = idx + 1; try { rotateNakshatra(currentNakshatra); } catch (e) {} }
             }
 
-            function loopCheck(currentX) {
-                let jumpedX = currentX; let shouldJump = false;
-                const TELEPORT_THRESHOLD_WIDTH = (PRE_POST_COUNT - 2) * ITEM_WIDTH;
-                const MIN_TELEPORT_X = ASHWINI_BASE_X - TELEPORT_THRESHOLD_WIDTH;
-                const MAX_TELEPORT_X = ASHWINI_BASE_X + CYCLE_WIDTH + TELEPORT_THRESHOLD_WIDTH;
-                if (currentX >= MAX_TELEPORT_X) { jumpedX -= CYCLE_WIDTH; shouldJump = true; }
-                if (currentX < MIN_TELEPORT_X) { jumpedX += CYCLE_WIDTH; shouldJump = true; }
-                if (shouldJump && markerEl) markerEl.style.transition = 'none';
-                else if (markerEl && markerEl.style.transition === 'none' && !isDragging) markerEl.style.transition = 'transform 0.08s linear';
-                return jumpedX;
+            function normalizePosition() {
+                // keep markerX within the middle cycle region by shifting by CYCLE_WIDTH when crossing edges
+                const min = TRACK_PADDING;
+                const leftEdge = TRACK_PADDING + CYCLE_WIDTH * 0.5;
+                const rightEdge = TRACK_PADDING + CYCLE_WIDTH * 2.5;
+                while (markerX < leftEdge) markerX += CYCLE_WIDTH;
+                while (markerX > rightEdge) markerX -= CYCLE_WIDTH;
             }
 
             function snapToPosition(targetIndex = null) {
                 markerEl.classList.add('snapping');
-                let finalIndex = targetIndex !== null ? targetIndex : getSelectedIndex(markerX + (ITEM_WIDTH / 2));
-                const targetXBase = ASHWINI_BASE_X + (finalIndex * ITEM_WIDTH);
-                let correctedTargetX = targetXBase; let diff = correctedTargetX - markerX;
-                if (diff < -(CYCLE_WIDTH / 2)) correctedTargetX += CYCLE_WIDTH; else if (diff > (CYCLE_WIDTH / 2)) correctedTargetX -= CYCLE_WIDTH;
-                markerX = correctedTargetX; updateVisuals();
-                setTimeout(() => { markerEl.classList.remove('snapping'); let normalizedX = markerX; while (normalizedX >= ASHWINI_BASE_X + CYCLE_WIDTH) normalizedX -= CYCLE_WIDTH; while (normalizedX < ASHWINI_BASE_X) normalizedX += CYCLE_WIDTH; markerX = normalizedX; if (markerEl) markerEl.style.transition = 'transform 0.08s linear'; updateVisuals(); }, 400);
+                const final = (targetIndex !== null) ? targetIndex : getSelectedIndex(markerX + ITEM_WIDTH / 2);
+                // snap to the center cycle for consistency (and align with box gap)
+                markerX = TRACK_PADDING + CYCLE_WIDTH + final * ITEM_WIDTH + (GAP / 2);
+                updateVisuals();
+                setTimeout(() => { markerEl.classList.remove('snapping'); if (markerEl) markerEl.style.transition = 'transform 0.08s linear'; updateVisuals(); }, 260);
             }
 
-            function handleStart(clientX) { isDragging = true; startX = clientX; startMarkerX = markerX; markerEl.classList.remove('snapping'); markerEl.style.cursor = 'grabbing'; markerEl.style.transition = 'transform 0.08s linear'; }
-            function handleMove(clientX) { if (!isDragging) return; const deltaX = clientX - startX; let newX = startMarkerX + deltaX; newX = loopCheck(newX); markerX = newX; updateVisuals(); }
+            function handleStart(cx) { isDragging = true; startX = cx; startMarkerX = markerX; markerEl.classList.remove('snapping'); markerEl.style.cursor = 'grabbing'; markerEl.style.transition = 'transform 0.08s linear'; }
+            function handleMove(cx) { if (!isDragging) return; const dx = cx - startX; markerX = startMarkerX + dx; normalizePosition(); updateVisuals(); }
             function handleEnd() { if (!isDragging) return; isDragging = false; markerEl.style.cursor = 'grab'; snapToPosition(null); }
 
+            // events
             markerEl.addEventListener('mousedown', (e) => { e.preventDefault(); handleStart(e.clientX); });
-            document.addEventListener('mousemove', (e) => { if (isDragging) e.preventDefault(); handleMove(e.clientX); }); document.addEventListener('mouseup', handleEnd);
+            document.addEventListener('mousemove', (e) => { if (isDragging) e.preventDefault(); handleMove(e.clientX); });
+            document.addEventListener('mouseup', handleEnd);
             markerEl.addEventListener('touchstart', (e) => { e.preventDefault(); handleStart(e.touches[0].clientX); }, { passive: false });
-            document.addEventListener('touchmove', (e) => handleMove(e.touches[0].clientX), { passive: false }); document.addEventListener('touchend', handleEnd); document.addEventListener('touchcancel', handleEnd);
+            document.addEventListener('touchmove', (e) => handleMove(e.touches[0].clientX), { passive: false });
+            document.addEventListener('touchend', handleEnd); document.addEventListener('touchcancel', handleEnd);
 
-            casingEl.addEventListener('wheel', (e) => { e.preventDefault(); markerEl.classList.remove('snapping'); const rawScroll = e.deltaX !== 0 ? e.deltaX : e.deltaY; const scrollAmount = rawScroll * 0.2; let newX = markerX + scrollAmount; newX = loopCheck(newX); markerX = newX; updateVisuals(); clearTimeout(window.nakshatraSnapTimeout); window.nakshatraSnapTimeout = setTimeout(() => snapToPosition(null), 150); markerEl.style.transition = 'transform 0.08s linear'; }, { passive: false });
+            casingEl.addEventListener('wheel', (e) => { e.preventDefault(); markerEl.classList.remove('snapping'); const raw = e.deltaX !== 0 ? e.deltaX : e.deltaY; const amount = raw * 0.2; markerX += amount; normalizePosition(); updateVisuals(); clearTimeout(window.nakshatraSnapTimeout); window.nakshatraSnapTimeout = setTimeout(() => snapToPosition(null), 150); markerEl.style.transition = 'transform 0.08s linear'; }, { passive: false });
+
+            // keyboard accessibility
+            casingEl.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'Right') { snapToPosition(Math.min(TOTAL_ITEMS - 1, getSelectedIndex(markerX) + 1)); e.preventDefault(); }
+                if (e.key === 'ArrowLeft' || e.key === 'Left') { snapToPosition(Math.max(0, getSelectedIndex(markerX) - 1)); e.preventDefault(); }
+            });
 
             // initialize
-            markerX = ASHWINI_BASE_X; markerEl.style.transform = `translateX(${markerX}px)`; updateVisuals();
+            markerEl.style.transform = `translateX(${markerX}px)`;
+            updateVisuals();
         }
 
         // === INITIALIZATION ===
@@ -4650,8 +4502,8 @@
             initJotyshEngine();
             // Initialize the new Lagna Slider
             if (typeof initLagnaSlider === 'function') initLagnaSlider();
-            // Initialize the test Nakshatra Slider
-            if (typeof initTestNakshatraSlider === 'function') initTestNakshatraSlider();
+            // Initialize the Nakshatra Slider
+            if (typeof initNakshatraSlider === 'function') initNakshatraSlider();
             
             // Start ambient sound on first user interaction
             document.body.addEventListener('click', () => {
