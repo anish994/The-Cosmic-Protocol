@@ -1,0 +1,327 @@
+[
+  {
+    "id": "5a99617e-ee90-4a91-9545-c8e2116f5634",
+    "context": "Skill: Ice Shard",
+    "input": "Tell me about Ice Shard.",
+    "output": "A sharp projectile of frozen water. Lore: Cold enough to freeze the soul. Fusion: Ice + Wind Evolution: Becomes Glacial Spike.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "ice",
+      "piercing"
+    ]
+  },
+  {
+    "id": "a688fa14-a923-47e0-a6ce-be15d52156e7",
+    "context": "Skill: Ice Shard",
+    "input": "Tell me about Ice Shard.",
+    "output": "A sharp projectile of frozen water. Lore: Cold enough to freeze the soul. Fusion: Ice + Wind Evolution: Becomes Glacial Spike.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "ice",
+      "piercing"
+    ]
+  },
+  {
+    "id": "460f4ef5-fc9a-4d50-b52b-a475448e1a38",
+    "context": "Skill: Solar Flare",
+    "input": "Tell me about Solar Flare.",
+    "output": "A burst of radiant energy. Lore: The sun's anger made manifest. Fusion: Solar + Fire Evolution: Becomes Supernova.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "solar",
+      "fire"
+    ]
+  },
+  {
+    "id": "6568c73b-4b1d-4528-ac1a-8fda421955cb",
+    "context": "Skill: Ice Shard",
+    "input": "Tell me about Ice Shard.",
+    "output": "A sharp projectile of frozen water. Lore: Cold enough to freeze the soul. Fusion: Ice + Wind Evolution: Becomes Glacial Spike.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "ice",
+      "piercing"
+    ]
+  },
+  {
+    "id": "0cdf2425-f593-43d9-bfcf-87d880166254",
+    "context": "Skill: Ice Shard",
+    "input": "Tell me about Ice Shard.",
+    "output": "A sharp projectile of frozen water. Lore: Cold enough to freeze the soul. Fusion: Ice + Wind Evolution: Becomes Glacial Spike.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "ice",
+      "piercing"
+    ]
+  },
+  {
+    "id": "2b19fc55-41f6-4bf7-8df3-99c66099e414",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "aba78261-df61-4118-bc54-8516b67a27af",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "bf604b2a-cc73-4495-acd5-fc044485a6c9",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "9790698c-bdb2-47df-8f31-ac386a217650",
+    "context": "Skill: Solar Flare",
+    "input": "Tell me about Solar Flare.",
+    "output": "A burst of radiant energy. Lore: The sun's anger made manifest. Fusion: Solar + Fire Evolution: Becomes Supernova.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "solar",
+      "fire"
+    ]
+  },
+  {
+    "id": "34c659d8-d9db-49aa-8071-63e52c31550e",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "01203766-8189-4816-b4b4-3d92a0e6bbc8",
+    "context": "Skill: Solar Flare",
+    "input": "Tell me about Solar Flare.",
+    "output": "A burst of radiant energy. Lore: The sun's anger made manifest. Fusion: Solar + Fire Evolution: Becomes Supernova.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "solar",
+      "fire"
+    ]
+  },
+  {
+    "id": "fbf032eb-4f02-4967-b9bf-65f522f24ebe",
+    "context": "Skill: Solar Flare",
+    "input": "Tell me about Solar Flare.",
+    "output": "A burst of radiant energy. Lore: The sun's anger made manifest. Fusion: Solar + Fire Evolution: Becomes Supernova.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "solar",
+      "fire"
+    ]
+  },
+  {
+    "id": "48f2a03c-c5c8-45a4-ab8a-aec085eef179",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "ca5c9be1-60c6-4fad-9594-8defa6bf78dc",
+    "context": "Skill: Void Step",
+    "input": "Tell me about Void Step.",
+    "output": "Teleport through the shadows. Lore: To walk where light cannot follow. Fusion: Void + Wind Evolution: Becomes Rift Walk.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "movement"
+    ]
+  },
+  {
+    "id": "b05ea739-cf98-4e5e-98b1-24b88c158d33",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "ac0460cd-c76c-4832-a376-a51af416e8eb",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "05e64900-ae59-497b-8982-49d293ee2164",
+    "context": "Skill: Solar Flare",
+    "input": "Tell me about Solar Flare.",
+    "output": "A burst of radiant energy. Lore: The sun's anger made manifest. Fusion: Solar + Fire Evolution: Becomes Supernova.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "solar",
+      "fire"
+    ]
+  },
+  {
+    "id": "d1618e90-863b-4ccb-a291-34c466e19fff",
+    "context": "Skill: Shadow Bloom",
+    "input": "Tell me about Shadow Bloom.",
+    "output": "A forbidden flower that drains light. Lore: Born from the union of darkness and life. Fusion: Void + Nature Evolution: Becomes Eclipse Lotus.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "nature"
+    ]
+  },
+  {
+    "id": "33417ddc-719d-4acd-840d-2326423fe802",
+    "context": "Skill: Ice Shard",
+    "input": "Tell me about Ice Shard.",
+    "output": "A sharp projectile of frozen water. Lore: Cold enough to freeze the soul. Fusion: Ice + Wind Evolution: Becomes Glacial Spike.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "ice",
+      "piercing"
+    ]
+  },
+  {
+    "id": "23a43c51-cf80-4364-b432-eaf607db9356",
+    "context": "Skill: Solar Flare",
+    "input": "Tell me about Solar Flare.",
+    "output": "A burst of radiant energy. Lore: The sun's anger made manifest. Fusion: Solar + Fire Evolution: Becomes Supernova.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "solar",
+      "fire"
+    ]
+  },
+  {
+    "id": "e7c38dd7-8c56-47e9-ac52-c85a161e2184",
+    "context": "Skill: Void Step",
+    "input": "Tell me about Void Step.",
+    "output": "Teleport through the shadows. Lore: To walk where light cannot follow. Fusion: Void + Wind Evolution: Becomes Rift Walk.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "movement"
+    ]
+  },
+  {
+    "id": "7535c02d-b419-4725-ab19-b13f8fcc8287",
+    "context": "Skill: Blood Pact",
+    "input": "Tell me about Blood Pact.",
+    "output": "Sacrifice health for power. Lore: A deal with the crimson devils. Fusion: Blood + Void Evolution: Becomes Sanguine Bond.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "blood",
+      "forbidden"
+    ]
+  },
+  {
+    "id": "4f26b782-437d-4df8-b444-f6c0042bdd93",
+    "context": "Skill: Void Step",
+    "input": "Tell me about Void Step.",
+    "output": "Teleport through the shadows. Lore: To walk where light cannot follow. Fusion: Void + Wind Evolution: Becomes Rift Walk.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "movement"
+    ]
+  },
+  {
+    "id": "669b5e83-988c-4df3-81f2-8b8f2e043101",
+    "context": "Skill: Void Step",
+    "input": "Tell me about Void Step.",
+    "output": "Teleport through the shadows. Lore: To walk where light cannot follow. Fusion: Void + Wind Evolution: Becomes Rift Walk.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "void",
+      "movement"
+    ]
+  },
+  {
+    "id": "56b90c71-03d7-4191-87e9-c37a41277b68",
+    "context": "Skill: Blood Pact",
+    "input": "Tell me about Blood Pact.",
+    "output": "Sacrifice health for power. Lore: A deal with the crimson devils. Fusion: Blood + Void Evolution: Becomes Sanguine Bond.",
+    "emotion": "curious",
+    "style": "detailed",
+    "tags": [
+      "skill",
+      "blood",
+      "forbidden"
+    ]
+  }
+]

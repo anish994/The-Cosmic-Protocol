@@ -1,0 +1,6002 @@
+[
+  {
+    "id": "aab3cc2c-d108-48f7-921d-8f96f869587a",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ffad3d4c-0530-40b7-b07a-543f597f6bc9",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2d0f8dda-54e7-4ab3-8ce4-58c1d6d9ce95",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "207c3a36-16bd-442c-9eb2-a9e7ca931d46",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2db1d82d-7099-4c28-8e04-12724071e3ba",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1a64f4ed-e208-43f5-bc10-ba788678f8f1",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "79f0d45f-61f8-4a30-b8ed-ebe0c74f40fe",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "29cc7f90-750a-420d-9f75-e71b1e15ceb1",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7d32f235-c3ae-471a-a794-d06ea1360884",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "29874f77-ce2b-4048-a672-5c7c7be9b044",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "45ffb440-c6f6-4caf-81ae-b7e0e48dec96",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3cb03deb-f70b-48b9-a74a-90851bad7285",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7c70da6a-4c41-4063-86a5-6a59877b4b6f",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e047651a-3b1a-47db-900c-f46d7d3a0d4e",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b6d520a1-44e1-4479-bc7b-40ecc25dca0a",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1a327907-ff56-4f26-92fa-ee396aa34af6",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ea9651c8-0339-4859-aebb-584f8e308c19",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "596dab7d-9e82-4dcc-9556-770e8f005cd4",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8bd7269a-7b10-455e-9e54-5ad830a7a446",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "af47ff95-6153-42c6-b3b0-c6e8770e2958",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "64446907-83c7-4b53-ba2c-b82f94145fd4",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5caf3787-5426-4d93-a069-a5d69a4aaf79",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1c46f7cd-9f00-4d5b-8530-efa6f7e0db58",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fac9b76b-08a6-44e8-808a-02a720244b64",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8b441c6c-76c2-4b5d-95c4-0cf84969d190",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f26699bf-f4d4-45fd-b708-9268e80d3628",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f370cc13-2760-4034-8629-aed7cba0657c",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6bc081f9-1356-4347-914e-3d97a2c62a7b",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2098c3a7-b7cb-4e42-97c7-d0aa37a19649",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4eb29c36-47e3-4890-8756-d53a5fceecec",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "91b20067-683f-462e-9aa9-a5f3f25a2a35",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7ae26cfe-ad2b-4be8-9ff2-ffab040660ff",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8ed9b6b8-e033-41e2-a3dd-91ff972c4104",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e2731bd7-eaf5-4431-aba3-ec3803bc10b9",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9b0c56ff-3f3c-4eb3-b137-26c3a647d166",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1a893175-f4b6-434e-a99a-c50df93048d8",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2a349dcd-6f9c-4675-98d8-2578253de353",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6f53ef21-8070-4e92-97a4-265bf1d4f431",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b670ca06-ca18-4148-8700-30e70cceec97",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5e56c776-58ac-4a46-a5a0-c1e8f9d7590b",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d3808ce4-21ce-4eb3-b533-16e0c95b21e9",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "41376656-dd93-4bd3-9e9d-5131d43989f2",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "38c565db-0c06-4332-a1c5-b30f2638dd79",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e71d36e8-3736-44cb-a22f-0a8df1ab8196",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d33f49a5-d087-46cf-b07c-6f7f164da077",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "979e7040-ec07-4bc8-b8b9-fb9c056bd92a",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0d9b6da5-df2a-4517-a953-2611ebdb5be0",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a028c691-5830-4cd4-bf1b-2029b3ad7c90",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fc5fe7fd-f62c-48fc-b44a-22c57ba54197",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1846ad63-8078-4aaf-8877-bfdfbc2723e1",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c04b7bdb-942a-4fbc-94a3-a96be0cc2404",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c24db966-3ee9-4cfb-8a6e-0b40335c0f37",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7ed6c3d7-af96-4d15-a65c-2da527328e05",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "87847bff-c766-4eed-bd70-f0d5d0c55615",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6ba267b7-7055-45db-9c4c-95b883e2efc9",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "edec23e4-6f7f-4fe0-820f-43007bb0f18b",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "62023993-6e88-437c-8c41-15c421551e27",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b45cd799-954f-4c4b-9022-2b546c23c9f6",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "15747e8f-942d-4b05-a2c3-b4b84c1390e6",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "07c19b88-bc75-4985-99ce-06d7caaaae68",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2dfffe50-eff9-4a2d-b69d-3a89d315efbe",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b6572ee9-4218-4c69-9316-3cca5f2270bd",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "dba4a0bd-d285-4d91-8f0b-ea220bb0386c",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b5629b5d-3df8-421a-96ac-42f8a5dfadad",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7a9672d4-e75d-4c51-b68a-adaccc8e2237",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4483599c-e883-4394-ac47-0a78c982cc1f",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ed9dae8d-1899-4c67-ba36-1713bb9b55a6",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b24beef3-2751-4c03-8d87-79f0dfb33488",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6a567fbd-0bdc-4f71-bed1-d415eda14a47",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e91b8522-c97e-4e36-9889-5933d74a361d",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e38927e8-09c0-44ce-a3c8-4188a1bcecd7",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0528466c-047e-46c4-83e1-22b21c754255",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8cfae6c1-468c-468a-a491-e083550f4dee",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7ae2fe0e-9bf0-4a80-a9ed-7ac6039d888b",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5825d458-d05a-4436-9116-adcc1363dd22",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a8f14d96-a2a5-48ae-b18d-448050943853",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "60c81928-b959-4fa4-b5be-11c3f0d81948",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "19ce3b74-e071-4972-87da-229cfe843a8d",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7edb1a76-b655-4f68-9c42-73a750c35ba8",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "58be8392-09ec-4ad2-8a09-38b388dbfae2",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3f9007a1-9724-404e-a92d-60b67d28c23a",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0a953d43-cddf-49a3-a35c-8c72b5bc81bc",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b44b6a35-a38d-4c1f-aee3-1a94355904b5",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "93acd43d-327c-49e9-a2f4-a9c19cddc3c2",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e988623a-fc3b-454c-abf6-61d14ec70766",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "86eddfca-c915-4bd6-8983-ba311d2ed543",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bf3510de-1c25-4c8c-8008-e072714ade4c",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c2a5942d-8258-49eb-b1fe-ca1db471a6e3",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "aa9a49c7-be1e-45c9-99fd-1913a050b871",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "738bba56-b795-4cc4-9fc9-5cb9dde69abe",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "01bfe0f6-e788-4aa2-8ad5-830ec9cc51f5",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b754a2a7-7fdc-4440-bb5c-34d1ba9ccba7",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c87b1672-99be-4a67-8134-ac497628d3f0",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b05830f8-f7cf-41a3-9cb2-49fa741de7ba",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "153159e5-044e-45f5-9e03-be83daa3ed66",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "740067bd-040f-42d8-ba7e-2e1944133f38",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "591f7d6e-1a77-49de-bfd6-c2b578588208",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4019a44a-662a-4ad4-b8bd-b71ec4f98797",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e995ba21-432b-4a61-ace3-2606f72a9e94",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "07042045-205d-4186-a8da-584f7e5de789",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0b0f7450-598c-4e69-ba13-dc908ee3a951",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e1c2e14b-c9f1-4d21-94a7-6bc376313806",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2d62a591-8c16-49ff-9977-a588ab1710a9",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "560a4ccf-2829-4a81-95fa-59bb84d1aad2",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1375eb67-e527-475b-baab-b8ba8bc5a3cb",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e6772161-7a1f-4108-8a0c-c5adf82b3851",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ab5f89f9-0dce-445e-9694-93e5086da445",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a8b44d81-d137-46d1-959b-0ec82de7d759",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4a494e93-cbef-472b-953a-2e38efa6cfa2",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "225aca72-5be5-4e44-b26a-6249f01cc1d6",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e780b410-1c18-427f-8ae6-2202a71f8789",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "76cf8908-f88a-497f-a3b5-e7bb30daf83d",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d6d96c56-cb8d-4a41-815a-6415646b0937",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f44d3a6c-344b-4aad-a215-8cfb756c74fc",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "dfc023a9-ee0c-4ca2-b70b-9df37ceb6f53",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1852b919-de09-4fc7-8c6f-096673224a32",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "590d2f69-c8d4-4ad5-ba6c-bfa3a581cb7d",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8ffc5a52-a98c-4ec9-b822-6ee3739b7c61",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "dfa24b53-ba39-4b9f-84d4-862565fc6ea9",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7e74087c-98c6-4ed6-bacd-1b4183c7c927",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cc23e10f-659c-45d2-9324-caa3d60970cb",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4f3509f5-74f7-40d3-93d8-3bc9c37d1a98",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "535913cc-fbc6-4fc0-bae7-b572ccb3dd46",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8b56771c-84db-441e-9167-c744a96a9bbd",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7f15f654-7231-4214-808e-8385f10d7893",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b359c630-95f2-4693-af45-f91197687159",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9d0834bc-3f7e-484f-ae66-46ecce4e1231",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cf55dce7-7676-452c-acd0-ff24e7c00689",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "26e90d59-1c61-45c1-8ecc-bd12f3208003",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bb584fdb-7d72-4302-bc9a-d99dc4ab4379",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "63576dcc-bb57-4ee5-993e-c523c2a53ccb",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "eeee6b2b-b0f0-4b4c-8049-7a1b33418d5d",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ad22061c-0b94-4a1d-ad7c-28f216290c51",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bd832fb4-fd18-44e7-af64-2259f0207b9a",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a696290c-ae75-4f88-82a0-5630cd82516a",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d79e50dc-76ff-4476-8cf9-c45bd68092e9",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4e5409ce-3b99-4a4e-a6fc-503a9c07bd7c",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "30a18a37-6227-4abd-bf70-6b75eddf6064",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "49a81383-4fb3-466a-82d3-b1c7211c62dd",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8db1efe7-e72a-4911-8ab5-9e84aa2a932a",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d79d936b-f8cc-4e44-9f11-c34714af5383",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4fadee52-3ac4-4054-b29c-106f6fc5f122",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "37eb849c-0480-42d1-b23b-9c92ca370f40",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ba3b7a4d-50f3-4e28-a04e-119bd40f7998",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "78e8e798-c622-44f6-a409-cdb26c86e195",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3f4f8b5c-f22f-464f-8c0d-a0273ca7d952",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "405ad0e9-0402-4e1b-8da1-891b7061162b",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "552c1158-df49-4405-b967-7859bb14b7a2",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c26cf9ce-6d09-4e4c-bd40-d995a61aec97",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0f2678a8-2126-4cd4-b7cd-0ba2ebe0dc25",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7e2eff18-212a-4d19-a863-9097d2f95522",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3f74f50c-0e73-4b5a-a081-d6ac70a2cb7d",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2457ab6e-caf0-495e-9180-b108018d70ec",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3f9d55b4-a81f-40a7-929b-2dcce3db3c92",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2f5579a4-add2-4187-863a-5c725c4b833f",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ea5fbee8-edbe-443a-9f4e-c15da50fbbcf",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9a5504bf-1ee3-41d0-9c8e-8d4479e4595c",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "516f0c91-fcf4-479b-99ec-aea53d8db1be",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9991b3f5-b643-470d-868c-d67c8c4e23ad",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "40e3a2eb-bae9-4644-82a5-a39e16d1fd70",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d8c0311a-b4d1-499f-8f24-accd809b1a2c",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7cf71613-d290-44f9-a9ae-05bc81b67dd4",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "232fd99a-5f91-4128-86a3-baaf5b11fba5",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bd346306-9439-4818-99bd-9fe2fe2b3fe6",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d19c866f-a661-4f07-b94c-8638dd2eb979",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b539ca43-c0ed-4793-acd9-d90f9f101f46",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d9733510-c75f-4849-b2fd-1886b71fa72d",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2611c69e-b089-476b-91c8-6a638a06e52b",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5997a6c9-ca3f-439b-a3b4-232208244f61",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6d0afdf6-4e67-4b42-8ae8-2646a7aa3a17",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3d46195c-c7de-4414-acae-826a1139b99f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4316bc8a-8816-4c5a-b1d0-87c5cfa99c21",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7aac6ae0-c111-41a6-913c-68a32467f79a",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e99cde32-da68-48f4-919a-83f91b145bf2",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7cad2df8-a62b-4387-b460-12b47cd8c61b",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "99cd6bbe-5dac-434d-b5ab-c7229e572e40",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "51cdc963-f045-4d26-947d-4b9547135b10",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "44550e74-f441-4493-9128-5d3447c75fa2",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ed6b90e4-f9da-417d-a715-268c192e722b",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bf0188b4-a8f1-43c2-8699-7f6351508a12",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1602f537-7259-4594-9412-ddd1c83672b1",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8637dd3c-f585-4191-8781-93e42b3d072f",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "243084f8-cb68-4dd7-aa4e-9360610fa09b",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a504e8a9-a6ff-4d09-8909-8928f8e0e7bc",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5dd96224-6643-41f7-94cc-68cf2cd5d6f0",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "32cc9f38-4e47-4fe7-b6d9-27ad290af964",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2c6e67dd-5bb9-444d-8216-f8b685bd5cd7",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "686ac8ba-4404-483e-9bfe-1cbc6ea5484d",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9510c010-bfe8-494b-b79b-c89632a53df4",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7f40661c-af0b-44f1-8ff0-b7e4f5904ee3",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cbbed2ac-9ae7-48f9-97d9-e279a685e8f6",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "43079b9f-b58c-4acc-a01a-7aecb751cd07",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1170d9c7-fabe-4a7a-9d1e-afd048ced0b7",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "602d3f4f-d41f-4c6c-aeba-8d774abe7dfc",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "77fc7e8f-9f13-46f3-868a-8a41380eadd6",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7d25dd33-e5c3-4fee-bf57-f465f88cced4",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "db9a85a7-18a2-411f-9eea-66fec29d58f0",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2fc6d820-7a8a-4abf-be3c-0b31fea5d75d",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fc6cbea8-23ba-4855-98e0-40e783bfca60",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6f57f96a-0389-4206-9810-353f07a0afd4",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "482c7a1e-c028-4f9a-9865-46afa3e271e8",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4a507c98-0034-40d6-8829-9915ef4868d1",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c0fc28cd-e59e-4026-bd94-eb7e1842324e",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "379e5f4b-8b7c-40cc-879a-fa15c3b05f21",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e6458dca-f5d9-48eb-9d2a-7e1cb9da7963",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a0587bb5-82f8-4d5a-bd4c-73fa98ddc3e0",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c4c4ecc2-5eef-492d-acbf-368f75c8011f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bfcf575f-6295-432e-bd7c-30d8de32fddb",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5ca39c74-f4db-48bb-a05e-f24447736f17",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "89a481d3-f188-4e75-b042-6c4367ba5ec6",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "098d8919-49d4-4f12-b532-f1a150487d07",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2d64a71d-203f-4d7c-9b6b-c7151ee1d55f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "baca80b3-1b03-48a8-b12d-0c946531b405",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "aa75c9da-e72b-454b-b558-cbacb25ac6af",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7212d67f-ef43-414f-913d-499b5d3d72d1",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4369f155-87bd-405a-8fac-4c0d9dfabafe",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c894d3e7-aadb-4fa9-8e5a-e0fe9409b395",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "510ea48b-6bc2-437e-9aac-795033cc0d6f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "404bfcc6-501a-4d24-a5f2-38acea403307",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "20495880-df9c-4534-b760-e8bed4469641",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6f7061fe-9e85-47a4-af93-4b7343d66e41",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fced4771-1d11-4a74-a8a6-c9465255a466",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7d2e28bd-9592-4691-ac19-ad961f6ab819",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cb93a094-50ff-4bf5-94c6-ff886db0f699",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "695ee4c1-a4aa-46cb-bbec-de424152f23d",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "98ef77c0-693e-4c8a-912a-ed431b2d8d7a",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cc7793e7-909d-42ac-ab4f-443c49283f18",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "07c440df-4918-4d0e-a7a3-962cb1cca0fd",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6b9633c3-1b95-47ce-9e1d-2a6a7bc56088",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "aaccfe3f-7d43-44a2-b5d9-602a33878348",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "93dc19c9-772f-46e2-af58-be0288ff63c2",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5ff9cb7e-c4ce-4225-8979-2c86ee7a986e",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c8edd1d1-da39-42ec-8afa-afea6ba521d7",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d027d782-a791-482a-9dc5-60a1fd30a50e",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "dc8808fc-9dce-4a8f-b431-b80540841e88",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ba827cd9-f4ba-4347-97e3-57b389f3dc4f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0ac3c338-15b3-4547-a82f-3d691154353a",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f047c485-5637-4847-8178-cc41f7c687d6",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "50e33371-b8fd-48d9-bc53-7f92c4a347c1",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fb1daf8d-3a7a-4778-94e3-d31032c07c66",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8c4812b7-d473-4d2d-a20f-d960e35b001c",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b60e3a27-9a7b-46db-b038-efb3efabc0c7",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8f506df8-1400-48fc-9d21-019726a47e2e",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7a4fd989-1dfd-4eae-8184-d2a6035c0662",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "929e1031-33a5-40bb-a020-8329079baa03",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2233d2b1-dbcd-4215-9a5c-151616a8f902",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "378d253a-3bba-4f58-82cd-b7bd99128ea4",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2e6eee9e-1b05-44c8-8dfe-a4c4e2f059a1",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c8abeddb-ad87-4300-b027-dea13b408ddc",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d974217f-ec66-4c22-b2c0-782f858372ba",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9ebc4d2d-b429-4fbb-afb6-ed45b707c114",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "95130834-b2dc-4162-85ac-37845611cac4",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "16436189-ee92-4198-95bc-f0c9ba70a2cd",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8406bf9f-9471-4416-8755-59e3c93df916",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3f41585e-ed34-4f96-b2ac-ef80f5fd7fae",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0f4270a3-a017-4498-98f1-037af5a57683",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ca39c482-92f3-437d-808b-d03b169347f4",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "97445615-0dcd-48de-9cac-82da39f3fc46",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4c0a67e7-ea39-48de-9318-427fe5d27b46",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "84bcdf71-5097-406e-a860-e3b6f9dd20fb",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1f2b36e0-213c-4c38-9a99-7e2fceb86ed1",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a39ee49a-eac9-499a-973f-ae3930c22128",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8bc63b4a-0ea0-441d-9d2c-efc6a2577b35",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e9a4976d-3199-4a36-a875-41b2a83fac6b",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d58c5eb6-5881-4015-ba1f-b5f4c7bb8f4a",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "15f198f7-3b6c-4773-8343-c64624811140",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "12022c6d-05a6-4f99-a9f7-3d7fe4749f2c",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b827b207-5127-407f-b6aa-2eef4aa78984",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "112c3f42-1ea7-4f4e-8371-6dec60a5c085",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "50c08958-fc8d-452a-ab9f-c224527149ed",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "49bc185f-deb6-4954-81a0-7d1cc35d6feb",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "458cb92d-0dda-48b6-a0e9-5d41e65e17f0",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "33bbdc74-e8d4-46cf-8d8e-84e46d6df1b3",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7658777e-1b4b-4634-83b8-5ed2137ff128",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5bf1a678-2a1e-42c2-b077-922439c2fb53",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "dcb77bff-8259-4a0a-986a-b38297f90ee8",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "694cea83-7b8e-42f6-a82e-47495a44046f",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9ec81a8c-b962-4446-8d31-a76f49cc5055",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2232e6db-450c-40e9-b570-2220cf271217",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "658c52e7-692b-4c40-b5d8-25ad61ceb4f0",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1435e082-351d-4fbf-9d07-2fdfb54f5924",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2d62ab44-9041-452d-ac31-181ffa12f426",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "442cbb13-941c-47b9-8021-b6f8f2881106",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2a670161-5ef3-48fa-9bd1-e7ae3aa980bb",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "06b5be51-4d66-40c7-a4a8-14795fa1b1fc",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8acb158c-6d57-4ed7-a2ea-da83e8b154e6",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "954bedc2-ff33-49e9-b672-118021b5a4a6",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bf309208-86f9-4972-a449-10436ee58fd0",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cfc4f157-90b3-40c1-9150-8368f5e6da4c",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a4cb4fb6-cb59-4c83-ac26-f73ed562d352",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f5c43eee-0257-4eab-b22f-d90c55524361",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "296d0dee-e164-4040-a9c8-e364d1b3d265",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a81f2309-92c8-46c5-9ea1-07d7a8c75c3f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f6508a79-12cc-4381-ab5c-3b4acb2e43f5",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "dd93ba42-7a21-4070-b2c0-552153977f74",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cd45a439-dcc9-483d-8558-87e8aa6d35df",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d1129266-95d2-4911-930b-91755a8ad988",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "33b0d7fc-ac11-460e-85ae-96403d0393ff",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9d7de47c-f078-468c-b4ea-040485ea3ba2",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "39eda482-52cd-4673-9285-8dd55502da9b",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0da09f31-b975-46e4-88c7-9644369e6205",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ad552285-b570-4daf-9d4f-4f606d696aef",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b90fb9ff-8eef-4258-a24d-a60860e96d63",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6b2eaa1d-dafe-4841-9b2d-600227d7255d",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "80918560-9064-4c21-a72d-c9e2f8f97b0b",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1bf84c9e-f021-4153-8d35-c0a582a66f6f",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2429f9bf-da71-4bfb-8669-d0fa37958aa9",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7ffaf4ad-bb72-4ead-8359-6f637372fca1",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b6475979-e5aa-4cd1-9104-5096e786c43a",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c4897150-f9dd-4e4d-ab4d-651d79c392c8",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ca28ac5f-f114-45ed-8423-8fc965c1f88c",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f81fae7a-e6bd-49b2-a952-457ec2c06380",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ebdf2453-d178-48ed-acac-ba6439cfc255",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6d09a671-af6b-4099-9a95-b2ace17d64d7",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4c800e7b-0f70-4730-8b27-89ffd4a8208b",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a250177e-5c56-4cd1-9588-14074afcbd65",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c136f6bd-1a12-4aa1-a8b8-916b54a9cc74",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4edcb23a-1c6d-4155-b32f-9282b48c2adb",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3d178e07-63cb-4832-a58c-647fb195ae51",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2f6ec032-2972-47a0-a669-0423a418e17d",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0f632a79-a922-461d-8788-11bd68622e88",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b4fc5503-f27c-4e76-8c08-35bcc483c56d",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "365a813b-fba4-46c8-9079-1841d6c11350",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "45c67259-8c0d-41de-8719-fc0236ff1777",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4846fc72-0fca-4488-8e08-9c9aa0acbfc2",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b0df190c-c09b-4416-933b-9188d874e1df",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3530a4a9-a219-497e-a879-3791077ff91a",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "078e753d-58ed-4a55-b280-5990048ea867",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "284fe442-2cf5-47b8-aaec-ae1a8ee2cbce",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4e4d01ae-7c84-42af-b3a1-f779110e81ef",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d1305200-9011-4d6a-a383-e931144bd53d",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f83cfed4-64df-4f45-bf2e-07386d04d28a",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c92ce7b0-1363-4f81-bd89-a9552e335cca",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5576de74-3968-43a4-b619-ad3adb85c72d",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "df684050-6b73-4b49-b85f-fdcbf87a6b87",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e372905d-51ec-46a0-ba88-3b024cbdb284",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "06b8a426-2840-4c6a-9891-40990853c3d5",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f9718bb5-602c-44f9-824f-e68b754141b4",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5ab1fb7c-9047-45bf-bbf9-71af27a54aae",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d2ab76d5-6f29-4e9b-8db9-a9f48ebb03c9",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7346c360-18cd-4bc3-9056-229f9ee6332b",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "76c07a02-75f6-408d-8d9a-177ee6dd8b2d",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bbf6211f-e4f2-4316-a8ec-f4026f8eda2c",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ceb3b359-0025-424f-9555-ea01876f84cb",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7869fcd5-fc0f-4340-b1b6-c0d1ecc3e096",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "45408420-3617-4470-bbf4-2b0e4073b60f",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0bc170ad-c058-4d88-a4b8-15b7a2a67bfe",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0365ad49-844c-4de8-a9b4-65b0771d13d3",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8725da5e-6cb8-424f-bc9a-afb5e5497e86",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3ba1545f-c476-4ee6-9f5e-0b1c125c7856",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d42612ef-129b-444f-acd3-2e4ed3e1a2a3",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e9119f27-f495-478b-8222-35ad3b0c8571",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "865feb4c-3f6d-43c1-a874-3a4a45187538",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4e489bdd-8722-4ebf-814d-67322c3e7ba5",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "eeadef4d-64f6-4073-8cb3-18e238d451dd",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8982e65f-07e9-43e8-8bfa-cc656016a6ee",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c5cc802a-258a-49d3-a252-a7f9954ccb6e",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2d432257-162a-45fe-8ca1-8084c36024c5",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "861dd85c-612f-4a26-8cc9-bf257973a919",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0a703a04-ba3b-4422-af15-6aa1b353bae5",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f490801f-c386-4e88-91e0-0a37e8adb183",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "df3c32fa-c9f8-47b6-b103-a8a2c7b0567d",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "02f792b8-f565-4f07-9ff4-2ffeba7f9b68",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ae5061d8-4d3a-49f8-b5c7-8c8dcd209b6b",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5cede30e-1a21-455a-8441-9180761031e9",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e53469cc-a456-4283-9a8a-5a48dd0ca427",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "15b42890-88d6-4c21-9bd0-bfc205adac60",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c73627db-1745-430a-bd0a-b1498b6b6c3e",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8e01f3c3-ce5a-4dc8-9da7-709d6669566d",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b745a3d0-aca0-4c7e-a0a2-23c779de6c78",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5dd4b198-af14-4328-a6dc-1e5b3775f4c8",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b1ba61cd-57fd-4a75-ad26-d60ccb56715e",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ca8919bd-e597-4ea7-87d0-4872733be063",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1af9e5c8-cc21-41b9-b300-7c0848e4696f",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1a60aab5-377a-4a25-94ff-33c59367e02b",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cb5c3c81-292c-4a92-a34a-0e008fdf413e",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e383122f-32bd-42f2-b420-747306c4a184",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "62c13678-0ad3-4d9a-9d96-b4d924a8ff4d",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9496ccc6-9e53-4673-bbd8-97d6b907fc73",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6262dcf9-cc84-404b-83d1-812809636594",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5c0a6480-96b3-4197-957e-df70a628050d",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c19de6c2-608a-4057-9648-d800c0188c58",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a5d46007-d821-485f-af28-ade15fae2427",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f426cd55-79d6-4976-b188-fe7e8dbb4426",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a132e3c2-d48d-431b-a755-5a17e9b3aeb1",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "377741e5-06fe-4521-b869-d05777f0efa1",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ed92e209-7b1b-453f-ba65-eca78a34ef81",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4c8dc5bf-f801-4a9b-8dad-a399fea1c3fa",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2c21da04-a192-419f-a383-7e1e240eea94",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6dc9eb2a-326c-4377-8b5b-4d893691438c",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "063101d5-1d15-4fdb-a9d6-0ef5a625e574",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "750a4757-dad0-4742-a8ea-1130c6f25ea5",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f0c89974-98b6-46c7-bcb0-b7fd6da9a7d0",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "62939c28-1a8f-4d00-9a27-e95db9a17d73",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ef4c907b-ebe2-44f2-b0f4-6a55ca625aeb",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9294f394-378e-44ac-ad44-92be2e7bb05e",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "e34ba3c2-c54d-4ec5-8364-ed21c1a807ce",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "7599450d-3880-40b7-97f6-8d4d796bdb3d",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "47e7951b-8119-4597-955b-1045089b47b1",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "64983756-1946-481b-8abf-0498ebeeba0a",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d3f52dfa-de2c-4f1c-84bf-a1637d497859",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fcb2400f-0669-4309-9b92-35940db4e656",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f7eba03f-f214-4576-8e24-2a29502a35c0",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "54f8baa4-3a2f-458b-8e52-5b8f814065b2",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "380caa2f-dc07-44a8-8582-cbecb96788f2",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cdba42e8-e959-4c5e-967f-cdf09bf0825f",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "53c9569a-d97c-4d37-a272-d58fe0bd420a",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b89aede9-d371-4323-a26a-bcd30dc9408b",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "eeedd5a2-15e7-43d0-8940-d3f64a57b6e1",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8765b122-de96-47e1-a5d3-bdec8dd925ec",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fefc118f-f540-4a22-994e-1ca72f15abac",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6dd83075-00f0-4cc5-ad1d-fd046eed903d",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b2b5a48d-54d5-43c4-867c-4f0eed5d5456",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "eece5333-a262-4da8-95ad-245bf84a6174",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "baa4a4d9-7761-483e-9bc4-7ccf823c6f24",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6067a5ec-f9b9-46eb-887a-9b5622386233",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8bba0c5a-0207-4d21-b108-660c2f43c328",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b5a165c2-5748-4d7f-8407-ef907abec7c3",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "06e671e9-7b6e-48a7-9b91-c591cf91b2db",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "961feb4a-bf99-4c41-b966-4a2102fa7c9c",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4b1742f0-14db-4010-b4e6-69d778395fa6",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "990753e6-9cf7-4ed7-a7de-2e587b808fe2",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b2a95f3e-8566-4dab-997c-924300c7109e",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2cf9d1d9-8c6e-4305-86ea-14c082ba03fc",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b3dd7f90-8415-49d8-82a3-92282ef65847",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "79679291-b0b1-40f6-8079-490c588e1fa3",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "66cea312-c03a-4e96-be44-5de5805e6dff",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "29c0e3bd-5977-463f-aa4d-a6d2dd312cb3",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "53b57420-281b-4fa0-b9ba-2bdf4dcebfb7",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5fafca3e-b2b1-4b08-99d9-9335d0d07b15",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b46404dc-a65a-44f4-a342-2dc551de344a",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "19b42809-4a42-4c9e-a6a3-aae04b002276",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ce069e47-bd0e-4e53-a50f-894c6862eb5a",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1afa1ebf-d896-4c0d-a86f-aedee9466b82",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bd309cce-380b-4f14-9641-f1fbd3fe4ac9",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "96a385a2-805e-41f1-8af0-604f98756c9b",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "169789ad-8738-4aa3-9d05-ec73a3939f9d",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "83bdb8ff-35d3-42dd-882e-9f902a56f165",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5f6ba2e5-e267-4984-acce-7cfa5516bd4a",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cfa4b33b-b588-46d8-a9e8-2ec6a9654f05",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "11fa0298-6c1d-4646-b0e7-a2ae13e40294",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1aaae1b2-8cf6-4838-96f2-09f7a22837fc",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "6bba3aea-d039-4d67-94d8-a148e59d06ab",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ed3804a4-b94a-430a-bf4d-4f66e7f71538",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a8f07f58-6e53-4f17-9ce2-4067a6ddc2fd",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9dccf718-28e7-432d-a83e-82cfad10eff3",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a3fefbd8-0045-49b4-af1a-4a2ecb369d8c",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "af2425eb-c3d8-44dd-8bcd-ceb84736722f",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5630b4d1-e206-479c-9526-8f78c88864d9",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d889b4f9-e591-4f96-8e65-ea116956a5d2",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4693da40-7ed5-4783-87a3-98da017bf285",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "43da1f41-167f-443e-bc23-91ec3cd02473",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4cc82351-64fe-4bdb-bd47-75d3ade57180",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "be7ec7dd-b539-421f-b0e0-db5ed1507cfb",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "597225cc-dbb9-4948-8739-601d39225983",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "2edd5184-6cc0-43b6-b9b1-d48236fd3336",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "41af43ae-239a-4b1a-955f-d8a12ce4dd19",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "323a3c03-b536-4da5-8ae5-4b06f3b828e3",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bfde9553-c5b1-4863-adc9-a7a1feed4e95",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "0e4ae0e2-cf00-4a72-96e4-c926ce739f6a",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "bcf9a043-b946-4533-9bc0-b6f626a95233",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "27dca99e-97d7-4cf7-9870-0d68fe86478f",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fe251241-7f39-47c7-afd8-5bdc53e0790e",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ecd3e3f1-024c-43f7-8e17-f56d9d1ece22",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1e6453fe-66bd-4f82-94ad-2220e58cfc6a",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "adb6a37b-0ae1-43b5-950b-31200347fac5",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "60f6a863-cc37-4d66-bbb9-10c9446ed6db",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9e90c234-9723-4aeb-bf42-72ee95ba0aed",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b94558f7-94fc-4b8e-acae-1114321c551f",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "361ba6e5-0053-47f3-bd88-7fedb68fb4c1",
+    "context": "Fuzzy Input Handling",
+    "input": "Sus",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "fe1ff4c6-dfc2-431d-bd26-fac8d2d549c3",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "293e927a-7f42-44f3-bdcb-ab654a0f0761",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3a3bc42e-c1d7-4d04-92f9-9a0c116331fe",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "b36180d0-d137-45cd-b411-9a334b778136",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5be37366-9b55-4a99-b8db-c8c761fb7c5e",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "ebe3cfdb-ae09-40ea-b207-921054b85ec8",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "11fca2d4-5dea-4b9e-9885-f936fd85ecc9",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "5e4b0e00-d667-42d8-bdd7-1b993482a62e",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "145fb175-26d2-43ef-b1ef-af99a425a1a6",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "578fc494-26b0-497a-8404-098825c8a546",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3518bacf-e9ba-4ce6-ad53-39479dbe31cd",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "833758bc-ff3b-48d7-86b9-1653e5688edb",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "8e83a59d-04ab-486f-8b29-215134f4e951",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "1b68145f-c969-41bd-a28e-91f6af7dfbdb",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "abc79dda-4338-4bfa-9df9-58a0da08e77d",
+    "context": "Fuzzy Input Handling",
+    "input": "Lol",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "d2997adc-e4be-4620-af86-bf0912a0c0ea",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "3201a0fe-f74b-4c57-9155-030a38effe97",
+    "context": "Fuzzy Input Handling",
+    "input": "Sup",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4f7a63c9-cb2d-49f1-915b-fe2fd62e3e06",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "4028be3f-f801-4b3a-9028-dcfbf0d5ad36",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "cc31e37d-c692-4971-aa2c-5b8a16a1a5dd",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "a6bcfd44-71ab-4c92-ad08-c2004966bd5f",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "c2521c51-d930-47ae-b039-457c1d0a6b42",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "041308b1-0200-458d-a4b0-8dad98fdf711",
+    "context": "Fuzzy Input Handling",
+    "input": "Yo",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "82ddbd34-4646-4394-8c1c-38631fb3caf7",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "9267731e-6dd9-4ddc-8d84-2d5583f5876b",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "98ed47d2-8276-4168-83b3-5c2b2587a7a1",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Your language is... colorful.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "49a630a2-9ee1-4c34-a8fc-39e116bff78e",
+    "context": "Fuzzy Input Handling",
+    "input": "Whatever",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "53c9179a-5d99-4059-9ade-c41988f99187",
+    "context": "Fuzzy Input Handling",
+    "input": "Yeet",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "f2fd6a6d-d943-45f1-89be-6e1ac189d620",
+    "context": "Fuzzy Input Handling",
+    "input": "Cool",
+    "output": "I believe that translates to 'affirmative'.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  },
+  {
+    "id": "acb62121-9a85-41ac-a220-d0330bff42bd",
+    "context": "Fuzzy Input Handling",
+    "input": "Bruh",
+    "output": "Interesting choice of words.",
+    "emotion": "playful",
+    "style": "casual",
+    "tags": [
+      "fuzzy",
+      "slang"
+    ]
+  }
+]

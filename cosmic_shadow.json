@@ -1,0 +1,67 @@
+[
+  {
+    "id": "9fd3129c-56e1-4207-acfe-182aecbff611",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7eaf9d93-456f-4fd9-8561-5d2b7fd25998",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3dbd68de-fa7a-4229-9e1c-94f736841d3b",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "34c06ae2-21ad-457b-8660-f02f4ae9a024",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a42d841b-8870-4c78-a60e-6ad4d5f57529",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  }
+]

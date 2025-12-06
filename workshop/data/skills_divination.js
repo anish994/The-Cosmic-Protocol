@@ -17,7 +17,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Reveal enemy's next 2 actions. Gain +3 Drishti per action revealed.\r\n   * **Evo A (Deep Reading):** Reveal 3 actions.\r\n   * **Evo B (Reactive Reading):** Also gain +15% evasion against revealed actions.\r\n   * **Note:** *Foundation foresight. Information advantage.*",
         "lore_quote": "** *Foundation foresight. Information advantage.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Thread Reader to leverage .  Reveal enemy's next 2 actions. Gain +3 Drishti per action r...",
         "mastery_perk": "Mastery Lvl 5: (Deep Reading): Reveal 3 actions.\r\n   * Evo B (Reactive Reading): Also gain +15% evasion against revealed actions.\r\n   * Note: *Foundation foresight. Information advantage.*",
         "gameplay_info": {
             "usage": [
@@ -60,7 +60,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Place [Sutra] on enemy. Their next harmful action targets themselves instead.\r\n   * **Evo A (Master Weaver):** Affects next 2 actions.\r\n   * **Evo B (Amplified Weaver):** Redirected actions deal +50% damage.\r\n   * **Note:** *Turn enemy power against them.*",
         "lore_quote": "** *Turn enemy power against them.*",
-        "tactical_brief": "Utilizes Divination mechanics. Sutra.",
+        "tactical_brief": "Deploy Fate Weaver to leverage SUTRA.  Place [Sutra] on enemy. Their next harmful action targets t...",
         "mastery_perk": "Mastery Lvl 5: (Master Weaver): Affects next 2 actions.\r\n   * Evo B (Amplified Weaver): Redirected actions deal +50% damage.\r\n   * Note: *Turn enemy power against them.*",
         "gameplay_info": {
             "usage": [
@@ -103,7 +103,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** When enemy uses ability, 30% chance to reverse its target/effect.\r\n   * **Evo A (Perfect Reversal):** 50% chance.\r\n   * **Evo B (Guaranteed Reversal):** 100% chance but costs 10 Drishti.\r\n   * **Note:** *Passive counter system. Chaos creation.*",
         "lore_quote": "** *Passive counter system. Chaos creation.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Karmic Reversal to leverage .  When enemy uses ability, 30% chance to reverse its target/e...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reversal): 50% chance.\r\n   * Evo B (Guaranteed Reversal): 100% chance but costs 10 Drishti.\r\n   * Note: *Passive counter system. Chaos creation.*",
         "gameplay_info": {
             "usage": [
@@ -146,7 +146,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Apply [Destiny Bound] for 3 turns: Enemy must use only basic attacks.\r\n   * **Evo A (Extended Lock):** Duration 4 turns.\r\n   * **Evo B (Complete Lock):** Cannot use any abilities.\r\n   * **Note:** *Hard lockdown. Ability denial.*",
         "lore_quote": "** *Hard lockdown. Ability denial.*",
-        "tactical_brief": "Utilizes Divination mechanics. Destiny Bound.",
+        "tactical_brief": "Deploy Destiny Lock to leverage DESTINY BOUND.  Apply [Destiny Bound] for 3 turns: Enemy must use only basi...",
         "mastery_perk": "Mastery Lvl 5: (Extended Lock): Duration 4 turns.\r\n   * Evo B (Complete Lock): Cannot use any abilities.\r\n   * Note: *Hard lockdown. Ability denial.*",
         "gameplay_info": {
             "usage": [
@@ -189,7 +189,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** See entire enemy hand/deck. Lasts until you take damage.\r\n   * **Evo A (Perfect Sight):** Also see enemy resources and cooldowns.\r\n   * **Evo B (Persistent Sight):** Doesn't end when damaged.\r\n   * **Note:** *Perfect information. Strategic dominance.*",
         "lore_quote": "** *Perfect information. Strategic dominance.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Future Sight to leverage .  See entire enemy hand/deck. Lasts until you take damage.   ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Sight): Also see enemy resources and cooldowns.\r\n   * Evo B (Persistent Sight): Doesn't end when damaged.\r\n   * Note: *Perfect information. Strategic dominance.*",
         "gameplay_info": {
             "usage": [
@@ -230,7 +230,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All random effects in your favor become best outcome, enemy random effects become worst outcome.\r\n   * **Evo A (Perfect Probability):** Duration 3 turns instead of 2.\r\n   * **Evo B (Controlled Probability):** Can choose specific outcomes instead of automatic best/worst.\r\n   * **Note:** *RNG control. Eliminate variance.*",
         "lore_quote": "** *RNG control. Eliminate variance.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Probability Shift to leverage .  All random effects in your favor become best outcome, enemy...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Probability): Duration 3 turns instead of 2.\r\n   * Evo B (Controlled Probability): Can choose specific outcomes instead of automatic best/worst.\r\n   * Note: *RNG control. Eliminate variance.*",
         "gameplay_info": {
             "usage": [
@@ -271,7 +271,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Cancel enemy combo/sequence. They lose 1 action and 10 resources.\r\n   * **Evo A (Perfect Break):** Lose 2 actions.\r\n   * **Evo B (Punishing Break):** Also deal 25 damage per action cancelled.\r\n   * **Note:** *Interrupt specialist. Tempo swing.*",
         "lore_quote": "** *Interrupt specialist. Tempo swing.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Causal Break to leverage .  Cancel enemy combo/sequence. They lose 1 action and 10 reso...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Break): Lose 2 actions.\r\n   * Evo B (Punishing Break): Also deal 25 damage per action cancelled.\r\n   * Note: *Interrupt specialist. Tempo swing.*",
         "gameplay_info": {
             "usage": [
@@ -312,7 +312,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Once per duel: Next 3 of your actions automatically succeed (cannot miss/be countered).\r\n   * **Evo A (Extended Victory):** 4 actions guaranteed.\r\n   * **Evo B (Perfect Victory):** Actions also deal +100% damage/healing.\r\n   * **Note:** *Guaranteed power spike. Ultimate momentum.*",
         "lore_quote": "** *Guaranteed power spike. Ultimate momentum.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Predetermined Victory to leverage .  Once per duel: Next 3 of your actions automatically succeed...",
         "mastery_perk": "Mastery Lvl 5: (Extended Victory): 4 actions guaranteed.\r\n   * Evo B (Perfect Victory): Actions also deal +100% damage/healing.\r\n   * Note: *Guaranteed power spike. Ultimate momentum.*",
         "gameplay_info": {
             "usage": [
@@ -353,7 +353,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Copy enemy's next action. You perform it first at +50% potency.\r\n   * **Evo A (Perfect Theft):** +100% potency.\r\n   * **Evo B (Double Theft):** Copy 2 actions.\r\n   * **Note:** *Predict and preempt. Action advantage.*",
         "lore_quote": "** *Predict and preempt. Action advantage.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Fate Steal to leverage .  Copy enemy's next action. You perform it first at +50% pote...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Theft): +100% potency.\r\n   * Evo B (Double Theft): Copy 2 actions.\r\n   * Note: *Predict and preempt. Action advantage.*",
         "gameplay_info": {
             "usage": [
@@ -396,7 +396,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Guess enemy's next action type (offense/defense/support). If correct, gain 20 Drishti and [Foreseen] buff. If wrong, lose 15 Drishti.\r\n    * **Evo A (Safe Gambit):** No penalty for wrong guess.\r\n    * **Evo B (High Stakes):** Correct guess grants +30 Drishti and full action copy.\r\n    * **Note:** *High-skill prediction game.*",
         "lore_quote": "** *High-skill prediction game.*",
-        "tactical_brief": "Utilizes Divination mechanics. Foreseen.",
+        "tactical_brief": "Deploy Oracle's Gambit to leverage FORESEEN.  Guess enemy's next action type (offense/defense/support). I...",
         "mastery_perk": "Mastery Lvl 5: (Safe Gambit): No penalty for wrong guess.\r\n    * Evo B (High Stakes): Correct guess grants +30 Drishti and full action copy.\r\n    * Note: *High-skill prediction game.*",
         "gameplay_info": {
             "usage": [
@@ -439,7 +439,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Enemy's last action repeats automatically next turn at 75% potency (uncontrollable).\r\n    * **Evo A (Perfect Echo):** 100% potency.\r\n    * **Evo B (Double Echo):** Repeats for 2 turns.\r\n    * **Note:** *Force repetition. Predictable exploitation.*",
         "lore_quote": "** *Force repetition. Predictable exploitation.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Karmic Echo to leverage .  Enemy's last action repeats automatically next turn at 75% ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Echo): 100% potency.\r\n    * Evo B (Double Echo): Repeats for 2 turns.\r\n    * Note: *Force repetition. Predictable exploitation.*",
         "gameplay_info": {
             "usage": [
@@ -480,7 +480,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Swap buffs and debuffs between two targets (friend or foe).\r\n    * **Evo A (Perfect Swap):** Swapped effects have +1 turn duration.\r\n    * **Evo B (Mass Swap):** Affects all allies and all enemies.\r\n    * **Note:** *Ultimate redistribution. Chaos control.*",
         "lore_quote": "** *Ultimate redistribution. Chaos control.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Destiny Swap to leverage .  Swap buffs and debuffs between two targets (friend or foe)....",
         "mastery_perk": "Mastery Lvl 5: (Perfect Swap): Swapped effects have +1 turn duration.\r\n    * Evo B (Mass Swap): Affects all allies and all enemies.\r\n    * Note: *Ultimate redistribution. Chaos control.*",
         "gameplay_info": {
             "usage": [
@@ -524,7 +524,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Mark enemy with [Prophecy]: \"Will take 50 damage in 3 turns.\" Cannot be prevented except by [Cleanse].\r\n    * **Evo A (Greater Prophecy):** 75 damage.\r\n    * **Evo B (Immediate Prophecy):** Triggers in 2 turns.\r\n    * **Note:** *Unavoidable damage. Countdown threat.*",
         "lore_quote": "** *Unavoidable damage. Countdown threat.*",
-        "tactical_brief": "Utilizes Divination mechanics. Prophecy, Cleanse.",
+        "tactical_brief": "Deploy Prophetic Strike to leverage PROPHECY, CLEANSE.  Mark enemy with [Prophecy]: \"Will take 50 damage in 3 turns...",
         "mastery_perk": "Mastery Lvl 5: (Greater Prophecy): 75 damage.\r\n    * Evo B (Immediate Prophecy): Triggers in 2 turns.\r\n    * Note: *Unavoidable damage. Countdown threat.*",
         "gameplay_info": {
             "usage": [
@@ -568,7 +568,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All active buffs/debuffs tick twice this turn (consume duration 2x faster).\r\n    * **Evo A (Selective Acceleration):** Only affects chosen effects.\r\n    * **Evo B (Triple Acceleration):** Tick three times.\r\n    * **Note:** *Fast-forward time. Expire enemy buffs.*",
         "lore_quote": "** *Fast-forward time. Expire enemy buffs.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Fate Acceleration to leverage .  All active buffs/debuffs tick twice this turn (consume dura...",
         "mastery_perk": "Mastery Lvl 5: (Selective Acceleration): Only affects chosen effects.\r\n    * Evo B (Triple Acceleration): Tick three times.\r\n    * Note: *Fast-forward time. Expire enemy buffs.*",
         "gameplay_info": {
             "usage": [
@@ -609,7 +609,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Next ability you use will repeat automatically every 3 turns for rest of duel (costs 0 resources to repeat).\r\n    * **Evo A (Rapid Loop):** Repeats every 2 turns.\r\n    * **Evo B (Perfect Loop):** Repeated casts have +50% potency.\r\n    * **Note:** *Infinite value engine. Long game dominance.*",
         "lore_quote": "** *Infinite value engine. Long game dominance.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Causality Loop to leverage .  Next ability you use will repeat automatically every 3 turn...",
         "mastery_perk": "Mastery Lvl 5: (Rapid Loop): Repeats every 2 turns.\r\n    * Evo B (Perfect Loop): Repeated casts have +50% potency.\r\n    * Note: *Infinite value engine. Long game dominance.*",
         "gameplay_info": {
             "usage": [
@@ -650,7 +650,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** When enemy declares action, you can spend 15 Drishti to act first with perfect counter ability.\r\n    * **Evo A (Cheap Counter):** Only costs 10 Drishti.\r\n    * **Evo B (Perfect Counter):** Counter deals +100% damage/effect.\r\n    * **Note:** *Instant speed interaction. Interrupt power.*",
         "lore_quote": "** *Instant speed interaction. Interrupt power.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Preemptive Counter to leverage .  When enemy declares action, you can spend 15 Drishti to act...",
         "mastery_perk": "Mastery Lvl 5: (Cheap Counter): Only costs 10 Drishti.\r\n    * Evo B (Perfect Counter): Counter deals +100% damage/effect.\r\n    * Note: *Instant speed interaction. Interrupt power.*",
         "gameplay_info": {
             "usage": [
@@ -691,7 +691,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Choose one: Create 3 timeline branches. One is real, others are illusions. Enemy must guess correctly or waste actions. Lasts 2 turns.\r\n    * **Evo A (Extended Fracture):** 3 turns duration.\r\n    * **Evo B (Perfect Fracture):** Create 4 branches instead.\r\n    * **Note:** *Mind games. Action economy advantage.*",
         "lore_quote": "** *Mind games. Action economy advantage.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Destiny Fracture to leverage .  Choose one: Create 3 timeline branches. One is real, others...",
         "mastery_perk": "Mastery Lvl 5: (Extended Fracture): 3 turns duration.\r\n    * Evo B (Perfect Fracture): Create 4 branches instead.\r\n    * Note: *Mind games. Action economy advantage.*",
         "gameplay_info": {
             "usage": [
@@ -733,10 +733,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 50,
             "damage": 54
         },
-        "description": "** Every action enemy takes adds 1 [Debt] stack. At 10 stacks, deal (stacks × 5) damage and [Stun] for 1 turn.\r\n    * **Evo A (Rapid Debt):** Triggers at 7 stacks.\r\n    * **Evo B (Perfect Debt):** Deal (stacks × 8) damage.\r\n    * **Note:** *Punishment timer. Pressure buildup.*",
+        "description": "** Every action enemy takes adds 1 [Debt] stack. At 10 stacks, deal (stacks \u00d7 5) damage and [Stun] for 1 turn.\r\n    * **Evo A (Rapid Debt):** Triggers at 7 stacks.\r\n    * **Evo B (Perfect Debt):** Deal (stacks \u00d7 8) damage.\r\n    * **Note:** *Punishment timer. Pressure buildup.*",
         "lore_quote": "** *Punishment timer. Pressure buildup.*",
-        "tactical_brief": "Utilizes Divination mechanics. Debt, Stun.",
-        "mastery_perk": "Mastery Lvl 5: (Rapid Debt): Triggers at 7 stacks.\r\n    * Evo B (Perfect Debt): Deal (stacks × 8) damage.\r\n    * Note: *Punishment timer. Pressure buildup.*",
+        "tactical_brief": "Deploy Karmic Debt to leverage DEBT, STUN.  Every action enemy takes adds 1 [Debt] stack. At 10 stacks,...",
+        "mastery_perk": "Mastery Lvl 5: (Rapid Debt): Triggers at 7 stacks.\r\n    * Evo B (Perfect Debt): Deal (stacks \u00d7 8) damage.\r\n    * Note: *Punishment timer. Pressure buildup.*",
         "gameplay_info": {
             "usage": [
                 "Cost: 50 Gnosis",
@@ -779,7 +779,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Enter superposition: Simultaneously in 2 positions. Enemy must target one (50% to hit wrong position and waste action).\r\n    * **Evo A (Triple State):** 3 positions (33% hit chance).\r\n    * **Evo B (Perfect State):** Also gain +50% evasion.\r\n    * **Note:** *Probability defense. Confusion tactic.*",
         "lore_quote": "** *Probability defense. Confusion tactic.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Quantum State to leverage .  Enter superposition: Simultaneously in 2 positions. Enemy m...",
         "mastery_perk": "Mastery Lvl 5: (Triple State): 3 positions (33% hit chance).\r\n    * Evo B (Perfect State): Also gain +50% evasion.\r\n    * Note: *Probability defense. Confusion tactic.*",
         "gameplay_info": {
             "usage": [
@@ -820,10 +820,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 80,
             "damage": 98
         },
-        "description": "** Mark enemy with [Prophecy]: \"Will be reduced to 1 Ojas in 5 turns.\" Costs 50 Drishti. Can only be prevented by winning duel before then.\r\n    * **Evo A (Rapid End):** 4 turns.\r\n    * **Evo B (Merciful End):** Costs only 40 Drishti.\r\n    * **Note:** *Win condition. Ultimate clock.*\r\n\r\n---\r\n\r\n### **TEMPORAL MANIPULATION — 20 Skills**",
-        "lore_quote": "** *Win condition. Ultimate clock.*\r\n\r\n---\r\n\r\n### **TEMPORAL MANIPULATION — 20 Skills**",
-        "tactical_brief": "Utilizes Divination mechanics. Prophecy.",
-        "mastery_perk": "Mastery Lvl 5: (Rapid End): 4 turns.\r\n    * Evo B (Merciful End): Costs only 40 Drishti.\r\n    * Note: *Win condition. Ultimate clock.*\r\n\r\n---\r\n\r\n### TEMPORAL MANIPULATION — 20 Skills",
+        "description": "** Mark enemy with [Prophecy]: \"Will be reduced to 1 Ojas in 5 turns.\" Costs 50 Drishti. Can only be prevented by winning duel before then.\r\n    * **Evo A (Rapid End):** 4 turns.\r\n    * **Evo B (Merciful End):** Costs only 40 Drishti.\r\n    * **Note:** *Win condition. Ultimate clock.*\r\n\r\n---\r\n\r\n### **TEMPORAL MANIPULATION \u2014 20 Skills**",
+        "lore_quote": "** *Win condition. Ultimate clock.*\r\n\r\n---\r\n\r\n### **TEMPORAL MANIPULATION \u2014 20 Skills**",
+        "tactical_brief": "Deploy Inevitable End to leverage PROPHECY.  Mark enemy with [Prophecy]: \"Will be reduced to 1 Ojas in 5...",
+        "mastery_perk": "Mastery Lvl 5: (Rapid End): 4 turns.\r\n    * Evo B (Merciful End): Costs only 40 Drishti.\r\n    * Note: *Win condition. Ultimate clock.*\r\n\r\n---\r\n\r\n### TEMPORAL MANIPULATION \u2014 20 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 80 Gnosis",
@@ -868,7 +868,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Spend 5 [Kshana]: Undo last enemy action completely.\r\n    * **Evo A (Efficient Rewind):** Only costs 3 [Kshana].\r\n    * **Evo B (Extended Rewind):** Can undo last 2 actions.\r\n    * **Note:** *Ultimate counter. Time control.*",
         "lore_quote": "** *Ultimate counter. Time control.*",
-        "tactical_brief": "Utilizes Divination mechanics. Kshana, Kshana.",
+        "tactical_brief": "Deploy Time Rewind to leverage KSHANA, KSHANA.  Spend 5 [Kshana]: Undo last enemy action completely.     * ...",
         "mastery_perk": "Mastery Lvl 5: (Efficient Rewind): Only costs 3 [Kshana].\r\n    * Evo B (Extended Rewind): Can undo last 2 actions.\r\n    * Note: *Ultimate counter. Time control.*",
         "gameplay_info": {
             "usage": [
@@ -912,7 +912,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Target cannot act for 2 turns but is also invulnerable during this time.\r\n    * **Evo A (Extended Stasis):** 3 turns.\r\n    * **Evo B (Vulnerable Stasis):** Target can be damaged but still cannot act.\r\n    * **Note:** *Remove threat temporarily. Setup time.*",
         "lore_quote": "** *Remove threat temporarily. Setup time.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Temporal Stasis to leverage .  Target cannot act for 2 turns but is also invulnerable duri...",
         "mastery_perk": "Mastery Lvl 5: (Extended Stasis): 3 turns.\r\n    * Evo B (Vulnerable Stasis): Target can be damaged but still cannot act.\r\n    * Note: *Remove threat temporarily. Setup time.*",
         "gameplay_info": {
             "usage": [
@@ -956,7 +956,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Gain +1 action this turn. Costs 2 [Kshana].\r\n    * **Evo A (Extended Haste):** +2 actions.\r\n    * **Evo B (Efficient Haste):** Only costs 1 [Kshana].\r\n    * **Note:** *Action advantage. Tempo boost.*",
         "lore_quote": "** *Action advantage. Tempo boost.*",
-        "tactical_brief": "Utilizes Divination mechanics. Kshana, Kshana.",
+        "tactical_brief": "Deploy Haste Field to leverage KSHANA, KSHANA.  Gain +1 action this turn. Costs 2 [Kshana].     * Evo A (Ex...",
         "mastery_perk": "Mastery Lvl 5: (Extended Haste): +2 actions.\r\n    * Evo B (Efficient Haste): Only costs 1 [Kshana].\r\n    * Note: *Action advantage. Tempo boost.*",
         "gameplay_info": {
             "usage": [
@@ -1000,7 +1000,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Enemy actions cost +2 resources and have +1 turn cooldown for 3 turns.\r\n    * **Evo A (Perfect Slow):** Cost +3 resources.\r\n    * **Evo B (Extended Slow):** Duration 4 turns.\r\n    * **Note:** *Economic warfare. Resource drain.*",
         "lore_quote": "** *Economic warfare. Resource drain.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Slow Aura to leverage .  Enemy actions cost +2 resources and have +1 turn cooldown f...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Slow): Cost +3 resources.\r\n    * Evo B (Extended Slow): Duration 4 turns.\r\n    * Note: *Economic warfare. Resource drain.*",
         "gameplay_info": {
             "usage": [
@@ -1041,7 +1041,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Become untargetable for 1 turn. When you reappear, gain +10 Drishti.\r\n    * **Evo A (Extended Skip):** 2 turns untargetable.\r\n    * **Evo B (Profitable Skip):** Gain +20 Drishti.\r\n    * **Note:** *Safety + value. Defensive economy.*",
         "lore_quote": "** *Safety + value. Defensive economy.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Time Skip to leverage .  Become untargetable for 1 turn. When you reappear, gain +10...",
         "mastery_perk": "Mastery Lvl 5: (Extended Skip): 2 turns untargetable.\r\n    * Evo B (Profitable Skip): Gain +20 Drishti.\r\n    * Note: *Safety + value. Defensive economy.*",
         "gameplay_info": {
             "usage": [
@@ -1082,7 +1082,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Your last action repeats automatically next turn at no cost.\r\n    * **Evo A (Perfect Loop):** Repeats at +50% potency.\r\n    * **Evo B (Extended Loop):** Repeats for 2 additional turns.\r\n    * **Note:** *Value multiplication. Efficient power.*",
         "lore_quote": "** *Value multiplication. Efficient power.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Temporal Loop to leverage .  Your last action repeats automatically next turn at no cost...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Loop): Repeats at +50% potency.\r\n    * Evo B (Extended Loop): Repeats for 2 additional turns.\r\n    * Note: *Value multiplication. Efficient power.*",
         "gameplay_info": {
             "usage": [
@@ -1125,7 +1125,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Apply [Decay of Time]: Enemy takes 5 damage per turn, increasing by +5 each turn (5, 10, 15, 20...). Lasts 5 turns.\r\n    * **Evo A (Perfect Acceleration):** Increases by +8 per turn.\r\n    * **Evo B (Extended Acceleration):** Lasts 6 turns.\r\n    * **Note:** *Exponential DoT. Late-game threat.*",
         "lore_quote": "** *Exponential DoT. Late-game threat.*",
-        "tactical_brief": "Utilizes Divination mechanics. Decay of Time.",
+        "tactical_brief": "Deploy Age Acceleration to leverage DECAY OF TIME.  Apply [Decay of Time]: Enemy takes 5 damage per turn, incre...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Acceleration): Increases by +8 per turn.\r\n    * Evo B (Extended Acceleration): Lasts 6 turns.\r\n    * Note: *Exponential DoT. Late-game threat.*",
         "gameplay_info": {
             "usage": [
@@ -1168,7 +1168,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Remove all buffs/debuffs from target and prevent any new effects for 2 turns.\r\n    * **Evo A (Extended Break):** 3 turns.\r\n    * **Evo B (Mass Break):** Affects all enemies.\r\n    * **Note:** *Reset button. Status immunity.*",
         "lore_quote": "** *Reset button. Status immunity.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Chronology Break to leverage .  Remove all buffs/debuffs from target and prevent any new ef...",
         "mastery_perk": "Mastery Lvl 5: (Extended Break): 3 turns.\r\n    * Evo B (Mass Break): Affects all enemies.\r\n    * Note: *Reset button. Status immunity.*",
         "gameplay_info": {
             "usage": [
@@ -1209,7 +1209,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Gain 3 extra actions this turn. At end of turn, take 30 damage and lose next turn.\r\n    * **Evo A (Safe Borrow):** Only take 15 damage.\r\n    * **Evo B (Perfect Borrow):** Only lose half of next turn.\r\n    * **Note:** *All-in burst. Decisive moment.*",
         "lore_quote": "** *All-in burst. Decisive moment.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Borrowed Time to leverage .  Gain 3 extra actions this turn. At end of turn, take 30 dam...",
         "mastery_perk": "Mastery Lvl 5: (Safe Borrow): Only take 15 damage.\r\n    * Evo B (Perfect Borrow): Only lose half of next turn.\r\n    * Note: *All-in burst. Decisive moment.*",
         "gameplay_info": {
             "usage": [
@@ -1250,7 +1250,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Set checkpoint. Once per duel, restore yourself to that checkpoint state (Ojas, resources, position).\r\n    * **Evo A (Perfect Anchor):** Can use twice per duel.\r\n    * **Evo B (Enhanced Anchor):** Restore at +20% Ojas.\r\n    * **Note:** *Safety net. Second chance.*",
         "lore_quote": "** *Safety net. Second chance.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Temporal Anchor to leverage .  Set checkpoint. Once per duel, restore yourself to that che...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Anchor): Can use twice per duel.\r\n    * Evo B (Enhanced Anchor): Restore at +20% Ojas.\r\n    * Note: *Safety net. Second chance.*",
         "gameplay_info": {
             "usage": [
@@ -1291,7 +1291,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All your active effects last +2 turns. Costs 15 Drishti.\r\n    * **Evo A (Perfect Dilation):** +3 turns.\r\n    * **Evo B (Efficient Dilation):** Costs only 10 Drishti.\r\n    * **Note:** *Extend advantage. Value maximization.*",
         "lore_quote": "** *Extend advantage. Value maximization.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Time Dilation to leverage .  All your active effects last +2 turns. Costs 15 Drishti.   ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Dilation): +3 turns.\r\n    * Evo B (Efficient Dilation): Costs only 10 Drishti.\r\n    * Note: *Extend advantage. Value maximization.*",
         "gameplay_info": {
             "usage": [
@@ -1332,7 +1332,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Enemy's next 3 abilities have their cooldowns doubled.\r\n    * **Evo A (Extended Aging):** Affects next 5 abilities.\r\n    * **Evo B (Perfect Aging):** Cooldowns tripled.\r\n    * **Note:** *Tempo destruction. Freeze strategy.*",
         "lore_quote": "** *Tempo destruction. Freeze strategy.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Rapid Aging to leverage .  Enemy's next 3 abilities have their cooldowns doubled.     ...",
         "mastery_perk": "Mastery Lvl 5: (Extended Aging): Affects next 5 abilities.\r\n    * Evo B (Perfect Aging): Cooldowns tripled.\r\n    * Note: *Tempo destruction. Freeze strategy.*",
         "gameplay_info": {
             "usage": [
@@ -1375,7 +1375,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Both you and enemy gain [Temporal Echo]: All actions repeat next turn uncontrollably.\r\n    * **Evo A (Controlled Paradox):** Only enemy affected.\r\n    * **Evo B (Perfect Paradox):** Your echoes deal +50% damage/healing.\r\n    * **Note:** *Mutual chaos. Skill expression.*",
         "lore_quote": "** *Mutual chaos. Skill expression.*",
-        "tactical_brief": "Utilizes Divination mechanics. Temporal Echo.",
+        "tactical_brief": "Deploy Paradox Creation to leverage TEMPORAL ECHO.  Both you and enemy gain [Temporal Echo]: All actions repeat...",
         "mastery_perk": "Mastery Lvl 5: (Controlled Paradox): Only enemy affected.\r\n    * Evo B (Perfect Paradox): Your echoes deal +50% damage/healing.\r\n    * Note: *Mutual chaos. Skill expression.*",
         "gameplay_info": {
             "usage": [
@@ -1420,7 +1420,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Reduce all enemy cooldowns by 2 turns. Gain +5 Drishti per cooldown reduced.\r\n    * **Evo A (Perfect Theft):** Gain +8 Drishti per cooldown.\r\n    * **Evo B (Enhanced Theft):** Also [Heal] 10 Ojas per cooldown.\r\n    * **Note:** *Turn disadvantage into advantage.*",
         "lore_quote": "** *Turn disadvantage into advantage.*",
-        "tactical_brief": "Utilizes Divination mechanics. Heal.",
+        "tactical_brief": "Deploy Time Theft to leverage HEAL.  Reduce all enemy cooldowns by 2 turns. Gain +5 Drishti per ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Theft): Gain +8 Drishti per cooldown.\r\n    * Evo B (Enhanced Theft): Also [Heal] 10 Ojas per cooldown.\r\n    * Note: *Turn disadvantage into advantage.*",
         "gameplay_info": {
             "usage": [
@@ -1463,7 +1463,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Perform action from 3 turns in the future now. That future turn skipped automatically.\r\n    * **Evo A (Perfect Echo):** Can use 2 future actions.\r\n    * **Evo B (Efficient Echo):** Future turn only half-skipped.\r\n    * **Note:** *Borrow future power. Complex timing.*",
         "lore_quote": "** *Borrow future power. Complex timing.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Future Echo to leverage .  Perform action from 3 turns in the future now. That future ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Echo): Can use 2 future actions.\r\n    * Evo B (Efficient Echo): Future turn only half-skipped.\r\n    * Note: *Borrow future power. Complex timing.*",
         "gameplay_info": {
             "usage": [
@@ -1504,7 +1504,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** For 1 turn, game state freezes completely except you can act freely (enemy can't respond). Costs 40 Drishti.\r\n    * **Evo A (Extended Moment):** Can act twice during frozen turn.\r\n    * **Evo B (Efficient Moment):** Costs only 30 Drishti.\r\n    * **Note:** *Ultimate control. Free turn.*",
         "lore_quote": "** *Ultimate control. Free turn.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Eternal Moment to leverage .  For 1 turn, game state freezes completely except you can ac...",
         "mastery_perk": "Mastery Lvl 5: (Extended Moment): Can act twice during frozen turn.\r\n    * Evo B (Efficient Moment): Costs only 30 Drishti.\r\n    * Note: *Ultimate control. Free turn.*",
         "gameplay_info": {
             "usage": [
@@ -1545,10 +1545,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 75,
             "damage": 97
         },
-        "description": "** Deal damage equal to (total cooldown time on all enemy abilities × 5).\r\n    * **Evo A (Perfect Collapse):** × 8 instead.\r\n    * **Evo B (Stunning Collapse):** Also [Stun] for 1 turn.\r\n    * **Note:** *Punish passive play. Cooldown counter.*",
+        "description": "** Deal damage equal to (total cooldown time on all enemy abilities \u00d7 5).\r\n    * **Evo A (Perfect Collapse):** \u00d7 8 instead.\r\n    * **Evo B (Stunning Collapse):** Also [Stun] for 1 turn.\r\n    * **Note:** *Punish passive play. Cooldown counter.*",
         "lore_quote": "** *Punish passive play. Cooldown counter.*",
-        "tactical_brief": "Utilizes Divination mechanics. Stun.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Collapse): × 8 instead.\r\n    * Evo B (Stunning Collapse): Also [Stun] for 1 turn.\r\n    * Note: *Punish passive play. Cooldown counter.*",
+        "tactical_brief": "Deploy Timeline Collapse to leverage STUN.  Deal damage equal to (total cooldown time on all enemy abil...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Collapse): \u00d7 8 instead.\r\n    * Evo B (Stunning Collapse): Also [Stun] for 1 turn.\r\n    * Note: *Punish passive play. Cooldown counter.*",
         "gameplay_info": {
             "usage": [
                 "Cost: 75 Gnosis",
@@ -1592,7 +1592,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Passive: Gain 1 [Kshana] every 3 turns (max 5 stored).\r\n    * **Evo A (Rapid Generation):** Every 2 turns.\r\n    * **Evo B (Perfect Generation):** Also gain +5 Drishti when generated.\r\n    * **Note:** *Resource engine. Long-game scaling.*",
         "lore_quote": "** *Resource engine. Long-game scaling.*",
-        "tactical_brief": "Utilizes Divination mechanics. Kshana.",
+        "tactical_brief": "Deploy Kshana Generator to leverage KSHANA.  Passive: Gain 1 [Kshana] every 3 turns (max 5 stored).     ...",
         "mastery_perk": "Mastery Lvl 5: (Rapid Generation): Every 2 turns.\r\n    * Evo B (Perfect Generation): Also gain +5 Drishti when generated.\r\n    * Note: *Resource engine. Long-game scaling.*",
         "gameplay_info": {
             "usage": [
@@ -1638,7 +1638,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All time-based abilities cost -50%. Start duel with 5 [Kshana].\r\n    * **Evo A (Perfect Mastery):** Cost -75%.\r\n    * **Evo B (Enhanced Mastery):** Start with 7 [Kshana] and max capacity +2.\r\n    * **Note:** *Temporal specialist. Ultimate efficiency.*",
         "lore_quote": "** *Temporal specialist. Ultimate efficiency.*",
-        "tactical_brief": "Utilizes Divination mechanics. Kshana, Kshana.",
+        "tactical_brief": "Deploy Temporal Mastery to leverage KSHANA, KSHANA.  All time-based abilities cost -50%. Start duel with 5 [Ksha...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Mastery): Cost -75%.\r\n    * Evo B (Enhanced Mastery): Start with 7 [Kshana] and max capacity +2.\r\n    * Note: *Temporal specialist. Ultimate efficiency.*",
         "gameplay_info": {
             "usage": [
@@ -1682,10 +1682,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 90,
             "damage": 100
         },
-        "description": "** Once per duel: Stop time for 3 turns. Only you can act. Costs all [Kshana] and 50 Drishti.\r\n    * **Evo A (Extended End):** 4 turns duration.\r\n    * **Evo B (Perfect End):** Actions during stopped time deal +100% damage.\r\n    * **Note:** *God-mode. Win condition.*\r\n\r\n---\r\n\r\n### **KNOWLEDGE EXTRACTION — 20 Skills**",
-        "lore_quote": "** *God-mode. Win condition.*\r\n\r\n---\r\n\r\n### **KNOWLEDGE EXTRACTION — 20 Skills**",
-        "tactical_brief": "Utilizes Divination mechanics. Kshana.",
-        "mastery_perk": "Mastery Lvl 5: (Extended End): 4 turns duration.\r\n    * Evo B (Perfect End): Actions during stopped time deal +100% damage.\r\n    * Note: *God-mode. Win condition.*\r\n\r\n---\r\n\r\n### KNOWLEDGE EXTRACTION — 20 Skills",
+        "description": "** Once per duel: Stop time for 3 turns. Only you can act. Costs all [Kshana] and 50 Drishti.\r\n    * **Evo A (Extended End):** 4 turns duration.\r\n    * **Evo B (Perfect End):** Actions during stopped time deal +100% damage.\r\n    * **Note:** *God-mode. Win condition.*\r\n\r\n---\r\n\r\n### **KNOWLEDGE EXTRACTION \u2014 20 Skills**",
+        "lore_quote": "** *God-mode. Win condition.*\r\n\r\n---\r\n\r\n### **KNOWLEDGE EXTRACTION \u2014 20 Skills**",
+        "tactical_brief": "Deploy End of Time to leverage KSHANA.  Once per duel: Stop time for 3 turns. Only you can act. Cos...",
+        "mastery_perk": "Mastery Lvl 5: (Extended End): 4 turns duration.\r\n    * Evo B (Perfect End): Actions during stopped time deal +100% damage.\r\n    * Note: *God-mode. Win condition.*\r\n\r\n---\r\n\r\n### KNOWLEDGE EXTRACTION \u2014 20 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 90 Gnosis",
@@ -1727,7 +1727,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Reveal enemy's entire hand/deck and current resources.\r\n    * **Evo A (Perfect Reading):** Also reveal their next 2 draw/actions.\r\n    * **Evo B (Persistent Reading):** Information doesn't expire until end of duel.\r\n    * **Note:** *Perfect information. Strategic advantage.*",
         "lore_quote": "** *Perfect information. Strategic advantage.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Mind Read to leverage .  Reveal enemy's entire hand/deck and current resources.     ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reading): Also reveal their next 2 draw/actions.\r\n    * Evo B (Persistent Reading): Information doesn't expire until end of duel.\r\n    * Note: *Perfect information. Strategic advantage.*",
         "gameplay_info": {
             "usage": [
@@ -1770,7 +1770,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Apply [Knowledge Drain]: Enemy's next ability deals -50% damage/healing.\r\n    * **Evo A (Perfect Drain):** -75% potency.\r\n    * **Evo B (Extended Drain):** Affects next 3 abilities.\r\n    * **Note:** *Weaken threats. Defensive tool.*",
         "lore_quote": "** *Weaken threats. Defensive tool.*",
-        "tactical_brief": "Utilizes Divination mechanics. Knowledge Drain.",
+        "tactical_brief": "Deploy Skill Drain to leverage KNOWLEDGE DRAIN.  Apply [Knowledge Drain]: Enemy's next ability deals -50% da...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Drain): -75% potency.\r\n    * Evo B (Extended Drain): Affects next 3 abilities.\r\n    * Note: *Weaken threats. Defensive tool.*",
         "gameplay_info": {
             "usage": [
@@ -1818,7 +1818,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Gain +20 [Darshan]. For each [Darshan], +1% all effects (caps at +20%).\r\n    * **Evo A (Perfect Access):** +2% per [Darshan].\r\n    * **Evo B (Deep Access):** Max [Darshan] increased to 30.\r\n    * **Note:** *Scaling engine. Knowledge as power.*",
         "lore_quote": "** *Scaling engine. Knowledge as power.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan, Darshan, Darshan.",
+        "tactical_brief": "Deploy Akashic Access to leverage DARSHAN, DARSHAN, DARSHAN, DARSHAN.  Gain +20 [Darshan]. For each [Darshan], +1% all effects (ca...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Access): +2% per [Darshan].\r\n    * Evo B (Deep Access): Max [Darshan] increased to 30.\r\n    * Note: *Scaling engine. Knowledge as power.*",
         "gameplay_info": {
             "usage": [
@@ -1864,7 +1864,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Copy enemy's last used ability. You can use it once this duel.\r\n    * **Evo A (Perfect Copy):** Can use it 3 times.\r\n    * **Evo B (Enhanced Copy):** Copied ability has +50% potency.\r\n    * **Note:** *Flexible toolkit. Adaptation.*",
         "lore_quote": "** *Flexible toolkit. Adaptation.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Ability Copy to leverage .  Copy enemy's last used ability. You can use it once this du...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Copy): Can use it 3 times.\r\n    * Evo B (Enhanced Copy): Copied ability has +50% potency.\r\n    * Note: *Flexible toolkit. Adaptation.*",
         "gameplay_info": {
             "usage": [
@@ -1905,7 +1905,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Mark enemy: They take +25% damage from all sources for 3 turns.\r\n    * **Evo A (Perfect Reveal):** +40% damage taken.\r\n    * **Evo B (Extended Reveal):** Duration 4 turns.\r\n    * **Note:** *Amplify damage. Team synergy.*",
         "lore_quote": "** *Amplify damage. Team synergy.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Weakness Reveal to leverage .  Mark enemy: They take +25% damage from all sources for 3 tu...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reveal): +40% damage taken.\r\n    * Evo B (Extended Reveal): Duration 4 turns.\r\n    * Note: *Amplify damage. Team synergy.*",
         "gameplay_info": {
             "usage": [
@@ -1949,7 +1949,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Steal 15 resources from enemy and gain +10 [Darshan].\r\n    * **Evo A (Perfect Extraction):** Steal 25 resources.\r\n    * **Evo B (Deep Extraction):** Gain +20 [Darshan].\r\n    * **Note:** *Economic warfare + knowledge gain.*",
         "lore_quote": "** *Economic warfare + knowledge gain.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Memory Extraction to leverage DARSHAN, DARSHAN.  Steal 15 resources from enemy and gain +10 [Darshan].     *...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Extraction): Steal 25 resources.\r\n    * Evo B (Deep Extraction): Gain +20 [Darshan].\r\n    * Note: *Economic warfare + knowledge gain.*",
         "gameplay_info": {
             "usage": [
@@ -1993,7 +1993,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** For 3 turns, see all hidden information (enemy hand, cooldowns, deck order, random outcomes).\r\n    * **Evo A (Extended Omniscience):** Duration 4 turns.\r\n    * **Evo B (Perfect Omniscience):** Also gain immunity to mind-affecting effects.\r\n    * **Note:** *Ultimate information. Perfect play.*",
         "lore_quote": "** *Ultimate information. Perfect play.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Omniscience to leverage .  For 3 turns, see all hidden information (enemy hand, cooldo...",
         "mastery_perk": "Mastery Lvl 5: (Extended Omniscience): Duration 4 turns.\r\n    * Evo B (Perfect Omniscience): Also gain immunity to mind-affecting effects.\r\n    * Note: *Ultimate information. Perfect play.*",
         "gameplay_info": {
             "usage": [
@@ -2038,7 +2038,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Deal 10 damage to all enemies per [Darshan] you have (max 200 damage).\r\n    * **Evo A (Perfect Bomb):** 15 damage per [Darshan].\r\n    * **Evo B (Stunning Bomb):** Also [Silence] all hit enemies for 1 turn.\r\n    * **Note:** *Knowledge as weapon. Scaling burst.*",
         "lore_quote": "** *Knowledge as weapon. Scaling burst.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan, Silence.",
+        "tactical_brief": "Deploy Knowledge Bomb to leverage DARSHAN, DARSHAN, SILENCE.  Deal 10 damage to all enemies per [Darshan] you have (max 2...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Bomb): 15 damage per [Darshan].\r\n    * Evo B (Stunning Bomb): Also [Silence] all hit enemies for 1 turn.\r\n    * Note: *Knowledge as weapon. Scaling burst.*",
         "gameplay_info": {
             "usage": [
@@ -2086,7 +2086,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Steal half of enemy's positive stacks/buffs and convert to [Darshan].\r\n    * **Evo A (Perfect Theft):** Steal all stacks.\r\n    * **Evo B (Double Theft):** Gain 2 [Darshan] per stack stolen.\r\n    * **Note:** *Punish buffs. Turn power against them.*",
         "lore_quote": "** *Punish buffs. Turn power against them.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Insight Theft to leverage DARSHAN, DARSHAN.  Steal half of enemy's positive stacks/buffs and convert to ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Theft): Steal all stacks.\r\n    * Evo B (Double Theft): Gain 2 [Darshan] per stack stolen.\r\n    * Note: *Punish buffs. Turn power against them.*",
         "gameplay_info": {
             "usage": [
@@ -2133,7 +2133,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Passive: Gain +1 [Darshan] every turn you don't attack.\r\n    * **Evo A (Rapid Scholarship):** +2 [Darshan] per turn.\r\n    * **Evo B (Perfect Patience):** Also gain +5 Drishti per turn.\r\n    * **Note:** *Defensive scaling. Long-game.*",
         "lore_quote": "** *Defensive scaling. Long-game.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Scholar's Patience to leverage DARSHAN, DARSHAN.  Passive: Gain +1 [Darshan] every turn you don't attack.    ...",
         "mastery_perk": "Mastery Lvl 5: (Rapid Scholarship): +2 [Darshan] per turn.\r\n    * Evo B (Perfect Patience): Also gain +5 Drishti per turn.\r\n    * Note: *Defensive scaling. Long-game.*",
         "gameplay_info": {
             "usage": [
@@ -2180,7 +2180,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Sacrifice 20 Ojas to gain +10 [Darshan] and reveal all enemy hidden abilities.\r\n    * **Evo A (Safe Knowledge):** Only sacrifice 10 Ojas.\r\n    * **Evo B (Perfect Knowledge):** Gain +15 [Darshan] instead.\r\n    * **Note:** *Pay life for power. Information advantage.*",
         "lore_quote": "** *Pay life for power. Information advantage.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Forbidden Knowledge to leverage DARSHAN, DARSHAN.  Sacrifice 20 Ojas to gain +10 [Darshan] and reveal all enem...",
         "mastery_perk": "Mastery Lvl 5: (Safe Knowledge): Only sacrifice 10 Ojas.\r\n    * Evo B (Perfect Knowledge): Gain +15 [Darshan] instead.\r\n    * Note: *Pay life for power. Information advantage.*",
         "gameplay_info": {
             "usage": [
@@ -2224,7 +2224,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Enemy must discard 2 random cards/abilities for 2 turns.\r\n    * **Evo A (Perfect Overload):** Discard 3 cards.\r\n    * **Evo B (Extended Overload):** Duration 3 turns.\r\n    * **Note:** *Hand disruption. Resource denial.*",
         "lore_quote": "** *Hand disruption. Resource denial.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Cognitive Overload to leverage .  Enemy must discard 2 random cards/abilities for 2 turns.   ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Overload): Discard 3 cards.\r\n    * Evo B (Extended Overload): Duration 3 turns.\r\n    * Note: *Hand disruption. Resource denial.*",
         "gameplay_info": {
             "usage": [
@@ -2263,10 +2263,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 40,
             "damage": 48
         },
-        "description": "** Gain (Darshan × 5) shield. Lasts 3 turns or until broken.\r\n    * **Evo A (Perfect Shield):** (Darshan × 8) shield.\r\n    * **Evo B (Persistent Shield):** Lasts 5 turns.\r\n    * **Note:** *Knowledge as defense. Scaling protection.*",
+        "description": "** Gain (Darshan \u00d7 5) shield. Lasts 3 turns or until broken.\r\n    * **Evo A (Perfect Shield):** (Darshan \u00d7 8) shield.\r\n    * **Evo B (Persistent Shield):** Lasts 5 turns.\r\n    * **Note:** *Knowledge as defense. Scaling protection.*",
         "lore_quote": "** *Knowledge as defense. Scaling protection.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Shield): (Darshan × 8) shield.\r\n    * Evo B (Persistent Shield): Lasts 5 turns.\r\n    * Note: *Knowledge as defense. Scaling protection.*",
+        "tactical_brief": "Deploy Wisdom Shield to leverage .  Gain (Darshan \u00d7 5) shield. Lasts 3 turns or until broken.  ...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Shield): (Darshan \u00d7 8) shield.\r\n    * Evo B (Persistent Shield): Lasts 5 turns.\r\n    * Note: *Knowledge as defense. Scaling protection.*",
         "gameplay_info": {
             "usage": [
                 "Cost: 40 Gnosis",
@@ -2306,7 +2306,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Force enemy to reveal their entire strategy (abilities they plan to use, order, targets). Lasts 2 turns.\r\n    * **Evo A (Extended Unveiling):** 3 turns.\r\n    * **Evo B (Perfect Unveiling):** Also prevents them from changing revealed strategy.\r\n    * **Note:** *Ultimate mind read. Forced transparency.*",
         "lore_quote": "** *Ultimate mind read. Forced transparency.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Secret Unveiling to leverage .  Force enemy to reveal their entire strategy (abilities they...",
         "mastery_perk": "Mastery Lvl 5: (Extended Unveiling): 3 turns.\r\n    * Evo B (Perfect Unveiling): Also prevents them from changing revealed strategy.\r\n    * Note: *Ultimate mind read. Forced transparency.*",
         "gameplay_info": {
             "usage": [
@@ -2349,7 +2349,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All allies gain [Darshan] equal to yours. Shared knowledge grants +10% effects to team.\r\n    * **Evo A (Perfect Network):** +20% effects.\r\n    * **Evo B (Deep Network):** Also share Drishti resources.\r\n    * **Note:** *Team buff. Multiplayer synergy.*",
         "lore_quote": "** *Team buff. Multiplayer synergy.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan.",
+        "tactical_brief": "Deploy Knowledge Network to leverage DARSHAN.  All allies gain [Darshan] equal to yours. Shared knowledge ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Network): +20% effects.\r\n    * Evo B (Deep Network): Also share Drishti resources.\r\n    * Note: *Team buff. Multiplayer synergy.*",
         "gameplay_info": {
             "usage": [
@@ -2392,7 +2392,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Enemy loses access to all abilities used this duel for 3 turns (can only use unused abilities).\r\n    * **Evo A (Extended Wipe):** Duration 4 turns.\r\n    * **Evo B (Perfect Wipe):** Also reset all their cooldowns to maximum.\r\n    * **Note:** *Ultimate disruption. Strategy reset.*",
         "lore_quote": "** *Ultimate disruption. Strategy reset.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Memory Wipe to leverage .  Enemy loses access to all abilities used this duel for 3 tu...",
         "mastery_perk": "Mastery Lvl 5: (Extended Wipe): Duration 4 turns.\r\n    * Evo B (Perfect Wipe): Also reset all their cooldowns to maximum.\r\n    * Note: *Ultimate disruption. Strategy reset.*",
         "gameplay_info": {
             "usage": [
@@ -2436,7 +2436,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Convert 10 [Darshan] into any resource type (Ojas/Drishti/Kshana/etc.) at 2:1 ratio.\r\n    * **Evo A (Perfect Stone):** 1:1 ratio conversion.\r\n    * **Evo B (Efficient Stone):** Only costs 5 [Darshan] to activate.\r\n    * **Note:** *Ultimate flexibility. Resource converter.*",
         "lore_quote": "** *Ultimate flexibility. Resource converter.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Philosopher's Stone to leverage DARSHAN, DARSHAN.  Convert 10 [Darshan] into any resource type (Ojas/Drishti/K...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Stone): 1:1 ratio conversion.\r\n    * Evo B (Efficient Stone): Only costs 5 [Darshan] to activate.\r\n    * Note: *Ultimate flexibility. Resource converter.*",
         "gameplay_info": {
             "usage": [
@@ -2480,7 +2480,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Passive: Cannot be affected by illusions, lies, or misdirection. Always see true game state.\r\n    * **Evo A (Perfect Truth):** Also immune to mind control effects.\r\n    * **Evo B (Shared Truth):** All allies gain this immunity.\r\n    * **Note:** *Anti-illusion. Clarity eternal.*",
         "lore_quote": "** *Anti-illusion. Clarity eternal.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Universal Truth to leverage .  Passive: Cannot be affected by illusions, lies, or misdirec...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Truth): Also immune to mind control effects.\r\n    * Evo B (Shared Truth): All allies gain this immunity.\r\n    * Note: *Anti-illusion. Clarity eternal.*",
         "gameplay_info": {
             "usage": [
@@ -2524,7 +2524,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Spend all [Darshan]: For each spent, gain +10% all effects for 3 turns. Max +200%.\r\n    * **Evo A (Perfect Overload):** +15% per [Darshan].\r\n    * **Evo B (Extended Overload):** Duration 4 turns.\r\n    * **Note:** *Cash in knowledge. Massive power spike.*",
         "lore_quote": "** *Cash in knowledge. Massive power spike.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Darshan Overload to leverage DARSHAN, DARSHAN.  Spend all [Darshan]: For each spent, gain +10% all effects ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Overload): +15% per [Darshan].\r\n    * Evo B (Extended Overload): Duration 4 turns.\r\n    * Note: *Cash in knowledge. Massive power spike.*",
         "gameplay_info": {
             "usage": [
@@ -2572,10 +2572,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 85,
             "damage": 107
         },
-        "description": "** Passive: [Darshan] has no cap. Gain +1 [Darshan] every turn. Start duel with 10 [Darshan].\r\n    * **Evo A (Perfect Library):** Gain +2 [Darshan] per turn.\r\n    * **Evo B (Deep Library):** Start with 20 [Darshan].\r\n    * **Note:** *Infinite scaling. Late-game god.*\r\n\r\n---\r\n\r\n### **CELESTIAL INFLUENCE (JYOTISH) — 15 Skills**",
-        "lore_quote": "** *Infinite scaling. Late-game god.*\r\n\r\n---\r\n\r\n### **CELESTIAL INFLUENCE (JYOTISH) — 15 Skills**",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan, Darshan, Darshan, Darshan.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Library): Gain +2 [Darshan] per turn.\r\n    * Evo B (Deep Library): Start with 20 [Darshan].\r\n    * Note: *Infinite scaling. Late-game god.*\r\n\r\n---\r\n\r\n### CELESTIAL INFLUENCE (JYOTISH) — 15 Skills",
+        "description": "** Passive: [Darshan] has no cap. Gain +1 [Darshan] every turn. Start duel with 10 [Darshan].\r\n    * **Evo A (Perfect Library):** Gain +2 [Darshan] per turn.\r\n    * **Evo B (Deep Library):** Start with 20 [Darshan].\r\n    * **Note:** *Infinite scaling. Late-game god.*\r\n\r\n---\r\n\r\n### **CELESTIAL INFLUENCE (JYOTISH) \u2014 15 Skills**",
+        "lore_quote": "** *Infinite scaling. Late-game god.*\r\n\r\n---\r\n\r\n### **CELESTIAL INFLUENCE (JYOTISH) \u2014 15 Skills**",
+        "tactical_brief": "Deploy Infinite Library to leverage DARSHAN, DARSHAN, DARSHAN, DARSHAN, DARSHAN.  Passive: [Darshan] has no cap. Gain +1 [Darshan] every turn...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Library): Gain +2 [Darshan] per turn.\r\n    * Evo B (Deep Library): Start with 20 [Darshan].\r\n    * Note: *Infinite scaling. Late-game god.*\r\n\r\n---\r\n\r\n### CELESTIAL INFLUENCE (JYOTISH) \u2014 15 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 85 Gnosis",
@@ -2621,7 +2621,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Every 3 turns, gain rotating buff: Turn 1: +20% damage | Turn 2: +20% healing | Turn 3: +20% defense.\r\n    * **Evo A (Perfect Alignment):** +35% bonuses.\r\n    * **Evo B (Rapid Alignment):** Cycles every 2 turns.\r\n    * **Note:** *Predictable power cycles. Planning reward.*",
         "lore_quote": "** *Predictable power cycles. Planning reward.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Planetary Alignment to leverage .  Every 3 turns, gain rotating buff: Turn 1: +20% damage | Tu...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Alignment): +35% bonuses.\r\n    * Evo B (Rapid Alignment): Cycles every 2 turns.\r\n    * Note: *Predictable power cycles. Planning reward.*",
         "gameplay_info": {
             "usage": [
@@ -2665,7 +2665,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Deal 40 damage to all enemies. Apply [Burn] (3 damage/turn for 3 turns).\r\n    * **Evo A (Perfect Flare):** 60 base damage.\r\n    * **Evo B (Lingering Flare):** [Burn] lasts 5 turns.\r\n    * **Note:** *AoE damage. Board clear.*",
         "lore_quote": "** *AoE damage. Board clear.*",
-        "tactical_brief": "Utilizes Divination mechanics. Burn, Burn.",
+        "tactical_brief": "Deploy Solar Flare to leverage BURN, BURN.  Deal 40 damage to all enemies. Apply [Burn] (3 damage/turn ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Flare): 60 base damage.\r\n    * Evo B (Lingering Flare): [Burn] lasts 5 turns.\r\n    * Note: *AoE damage. Board clear.*",
         "gameplay_info": {
             "usage": [
@@ -2713,7 +2713,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** [Heal] all allies for 30 Ojas. Gain [Darshan] equal to allies healed.\r\n    * **Evo A (Perfect Blessing):** 50 Ojas healed.\r\n    * **Evo B (Knowledge Blessing):** Gain 2 [Darshan] per ally.\r\n    * **Note:** *Team support + knowledge generation.*",
         "lore_quote": "** *Team support + knowledge generation.*",
-        "tactical_brief": "Utilizes Divination mechanics. Heal, Darshan, Darshan.",
+        "tactical_brief": "Deploy Lunar Blessing to leverage HEAL, DARSHAN, DARSHAN.  [Heal] all allies for 30 Ojas. Gain [Darshan] equal to alli...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Blessing): 50 Ojas healed.\r\n    * Evo B (Knowledge Blessing): Gain 2 [Darshan] per ally.\r\n    * Note: *Team support + knowledge generation.*",
         "gameplay_info": {
             "usage": [
@@ -2758,7 +2758,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Create darkness field for 3 turns: All enemies have -30% accuracy and cannot gain buffs.\r\n    * **Evo A (Perfect Eclipse):** -50% accuracy.\r\n    * **Evo B (Extended Eclipse):** Duration 4 turns.\r\n    * **Note:** *Zone control. Debuff field.*",
         "lore_quote": "** *Zone control. Debuff field.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Eclipse to leverage .  Create darkness field for 3 turns: All enemies have -30% ac...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Eclipse): -50% accuracy.\r\n    * Evo B (Extended Eclipse): Duration 4 turns.\r\n    * Note: *Zone control. Debuff field.*",
         "gameplay_info": {
             "usage": [
@@ -2799,7 +2799,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Swap positions of two enemies. Their next action targets wrong enemy.\r\n    * **Evo A (Perfect Trick):** Affects next 2 actions.\r\n    * **Evo B (Mass Trick):** Can swap 4 enemies total (2 pairs).\r\n    * **Note:** *Tactical manipulation. Positioning chaos.*",
         "lore_quote": "** *Tactical manipulation. Positioning chaos.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Mercury Trick to leverage .  Swap positions of two enemies. Their next action targets wr...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Trick): Affects next 2 actions.\r\n    * Evo B (Mass Trick): Can swap 4 enemies total (2 pairs).\r\n    * Note: *Tactical manipulation. Positioning chaos.*",
         "gameplay_info": {
             "usage": [
@@ -2842,7 +2842,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Apply [Subservience]: Enemy's next action targets their ally instead of yours.\r\n    * **Evo A (Perfect Charm):** Affects next 2 actions.\r\n    * **Evo B (Mass Charm):** Affects all enemies.\r\n    * **Note:** *Turn allies against each other.*",
         "lore_quote": "** *Turn allies against each other.*",
-        "tactical_brief": "Utilizes Divination mechanics. Subservience.",
+        "tactical_brief": "Deploy Venus Charm to leverage SUBSERVIENCE.  Apply [Subservience]: Enemy's next action targets their all...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Charm): Affects next 2 actions.\r\n    * Evo B (Mass Charm): Affects all enemies.\r\n    * Note: *Turn allies against each other.*",
         "gameplay_info": {
             "usage": [
@@ -2885,7 +2885,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** For 3 turns, all damage dealt by anyone increased by 50%.\r\n    * **Evo A (Perfect Wrath):** +75% damage.\r\n    * **Evo B (Selective Wrath):** Only your damage increased by +100%.\r\n    * **Note:** *Double-edged power. Aggression focus.*",
         "lore_quote": "** *Double-edged power. Aggression focus.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Mars Wrath to leverage .  For 3 turns, all damage dealt by anyone increased by 50%.  ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Wrath): +75% damage.\r\n    * Evo B (Selective Wrath): Only your damage increased by +100%.\r\n    * Note: *Double-edged power. Aggression focus.*",
         "gameplay_info": {
             "usage": [
@@ -2926,7 +2926,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** For 3 turns, all your random effects become best possible outcome.\r\n    * **Evo A (Extended Luck):** Duration 4 turns.\r\n    * **Evo B (Perfect Luck):** Also gain +20% all effects.\r\n    * **Note:** *RNG control. Variance elimination.*",
         "lore_quote": "** *RNG control. Variance elimination.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Jupiter's Luck to leverage .  For 3 turns, all your random effects become best possible o...",
         "mastery_perk": "Mastery Lvl 5: (Extended Luck): Duration 4 turns.\r\n    * Evo B (Perfect Luck): Also gain +20% all effects.\r\n    * Note: *RNG control. Variance elimination.*",
         "gameplay_info": {
             "usage": [
@@ -2967,7 +2967,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Mark enemy: In 5 turns, they take 100 damage. Cannot be prevented.\r\n    * **Evo A (Rapid Judgment):** 4 turns.\r\n    * **Evo B (Perfect Judgment):** 150 damage.\r\n    * **Note:** *Inevitable threat. Countdown pressure.*",
         "lore_quote": "** *Inevitable threat. Countdown pressure.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Saturn's Judgment to leverage .  Mark enemy: In 5 turns, they take 100 damage. Cannot be pre...",
         "mastery_perk": "Mastery Lvl 5: (Rapid Judgment): 4 turns.\r\n    * Evo B (Perfect Judgment): 150 damage.\r\n    * Note: *Inevitable threat. Countdown pressure.*",
         "gameplay_info": {
             "usage": [
@@ -3010,7 +3010,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Apply [Silence] to all enemies for 2 turns. They cannot use abilities.\r\n    * **Evo A (Extended Shadow):** 3 turns.\r\n    * **Evo B (Perfect Shadow):** Also drain 15 resources from each.\r\n    * **Note:** *Mass lockdown. Ultimate control.*",
         "lore_quote": "** *Mass lockdown. Ultimate control.*",
-        "tactical_brief": "Utilizes Divination mechanics. Silence.",
+        "tactical_brief": "Deploy Rahu's Shadow to leverage SILENCE.  Apply [Silence] to all enemies for 2 turns. They cannot use...",
         "mastery_perk": "Mastery Lvl 5: (Extended Shadow): 3 turns.\r\n    * Evo B (Perfect Shadow): Also drain 15 resources from each.\r\n    * Note: *Mass lockdown. Ultimate control.*",
         "gameplay_info": {
             "usage": [
@@ -3053,7 +3053,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Reveal all future events for next 3 turns (draws, random effects, enemy actions).\r\n    * **Evo A (Extended Insight):** 5 turns.\r\n    * **Evo B (Perfect Insight):** Can change 1 revealed outcome per turn.\r\n    * **Note:** *Perfect foresight. Strategic planning.*",
         "lore_quote": "** *Perfect foresight. Strategic planning.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Ketu's Insight to leverage .  Reveal all future events for next 3 turns (draws, random ef...",
         "mastery_perk": "Mastery Lvl 5: (Extended Insight): 5 turns.\r\n    * Evo B (Perfect Insight): Can change 1 revealed outcome per turn.\r\n    * Note: *Perfect foresight. Strategic planning.*",
         "gameplay_info": {
             "usage": [
@@ -3094,7 +3094,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All enemy buffs become debuffs for 3 turns. All their debuffs become buffs.\r\n    * **Evo A (Extended Curse):** Duration 4 turns.\r\n    * **Evo B (Perfect Curse):** Reversed effects have +50% potency.\r\n    * **Note:** *Inversion field. Turn power against them.*",
         "lore_quote": "** *Inversion field. Turn power against them.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Retrograde Curse to leverage .  All enemy buffs become debuffs for 3 turns. All their debuf...",
         "mastery_perk": "Mastery Lvl 5: (Extended Curse): Duration 4 turns.\r\n    * Evo B (Perfect Curse): Reversed effects have +50% potency.\r\n    * Note: *Inversion field. Turn power against them.*",
         "gameplay_info": {
             "usage": [
@@ -3135,7 +3135,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Random planetary effect triggers each turn for 5 turns (ally and enemy effects).\r\n    * **Evo A (Controlled Storm):** Only beneficial effects for you, harmful for enemy.\r\n    * **Evo B (Perfect Storm):** Effects doubled in potency.\r\n    * **Note:** *Chaos field. High variance.*",
         "lore_quote": "** *Chaos field. High variance.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Cosmic Storm to leverage .  Random planetary effect triggers each turn for 5 turns (all...",
         "mastery_perk": "Mastery Lvl 5: (Controlled Storm): Only beneficial effects for you, harmful for enemy.\r\n    * Evo B (Perfect Storm): Effects doubled in potency.\r\n    * Note: *Chaos field. High variance.*",
         "gameplay_info": {
             "usage": [
@@ -3176,7 +3176,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Each turn, rotate through 12 zodiac effects (damage, healing, control, etc.). Effects stack if wheel completes.\r\n    * **Evo A (Rapid Wheel):** Rotates 2 signs per turn.\r\n    * **Evo B (Perfect Wheel):** Completed wheel grants permanent +20% all effects.\r\n    * **Note:** *Long-term scaling. Patience reward.*",
         "lore_quote": "** *Long-term scaling. Patience reward.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Zodiac Wheel to leverage .  Each turn, rotate through 12 zodiac effects (damage, healin...",
         "mastery_perk": "Mastery Lvl 5: (Rapid Wheel): Rotates 2 signs per turn.\r\n    * Evo B (Perfect Wheel): Completed wheel grants permanent +20% all effects.\r\n    * Note: *Long-term scaling. Patience reward.*",
         "gameplay_info": {
             "usage": [
@@ -3215,10 +3215,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 80,
             "damage": 96
         },
-        "description": "** Once per duel: All planetary effects trigger simultaneously for 1 turn (massive mixed effects). Costs 50 Drishti.\r\n    * **Evo A (Extended Conjunction):** Lasts 2 turns.\r\n    * **Evo B (Perfect Conjunction):** Effects tripled in potency.\r\n    * **Note:** *Ultimate chaos power. Decisive moment.*\r\n\r\n---\r\n\r\n### **DIVINATION SPECIALIZATIONS — 15 Skills**",
-        "lore_quote": "** *Ultimate chaos power. Decisive moment.*\r\n\r\n---\r\n\r\n### **DIVINATION SPECIALIZATIONS — 15 Skills**",
-        "tactical_brief": "Utilizes Divination mechanics. .",
-        "mastery_perk": "Mastery Lvl 5: (Extended Conjunction): Lasts 2 turns.\r\n    * Evo B (Perfect Conjunction): Effects tripled in potency.\r\n    * Note: *Ultimate chaos power. Decisive moment.*\r\n\r\n---\r\n\r\n### DIVINATION SPECIALIZATIONS — 15 Skills",
+        "description": "** Once per duel: All planetary effects trigger simultaneously for 1 turn (massive mixed effects). Costs 50 Drishti.\r\n    * **Evo A (Extended Conjunction):** Lasts 2 turns.\r\n    * **Evo B (Perfect Conjunction):** Effects tripled in potency.\r\n    * **Note:** *Ultimate chaos power. Decisive moment.*\r\n\r\n---\r\n\r\n### **DIVINATION SPECIALIZATIONS \u2014 15 Skills**",
+        "lore_quote": "** *Ultimate chaos power. Decisive moment.*\r\n\r\n---\r\n\r\n### **DIVINATION SPECIALIZATIONS \u2014 15 Skills**",
+        "tactical_brief": "Deploy Grand Conjunction to leverage .  Once per duel: All planetary effects trigger simultaneously...",
+        "mastery_perk": "Mastery Lvl 5: (Extended Conjunction): Lasts 2 turns.\r\n    * Evo B (Perfect Conjunction): Effects tripled in potency.\r\n    * Note: *Ultimate chaos power. Decisive moment.*\r\n\r\n---\r\n\r\n### DIVINATION SPECIALIZATIONS \u2014 15 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 80 Gnosis",
@@ -3261,7 +3261,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Cannot use Temporal or Celestial paths. All fate manipulation effects +100%. Can have 5 active [Sutra].\r\n    * **Evo A (Perfect Fate):** +150% effects.\r\n    * **Evo B (Master Fate):** Can have 7 [Sutra].\r\n    * **Note:** *Pure fate manipulation. Destiny master.*",
         "lore_quote": "** *Pure fate manipulation. Destiny master.*",
-        "tactical_brief": "Utilizes Divination mechanics. Sutra, Sutra.",
+        "tactical_brief": "Deploy Fate Specialist to leverage SUTRA, SUTRA.  Cannot use Temporal or Celestial paths. All fate manipulati...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Fate): +150% effects.\r\n    * Evo B (Master Fate): Can have 7 [Sutra].\r\n    * Note: *Pure fate manipulation. Destiny master.*",
         "gameplay_info": {
             "usage": [
@@ -3308,7 +3308,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Cannot use Fate or Celestial paths. All temporal effects +100%. Start with 7 [Kshana].\r\n    * **Evo A (Perfect Time):** +150% effects.\r\n    * **Evo B (Master Time):** Max [Kshana] capacity +5.\r\n    * **Note:** *Pure temporal control. Time lord.*",
         "lore_quote": "** *Pure temporal control. Time lord.*",
-        "tactical_brief": "Utilizes Divination mechanics. Kshana, Kshana.",
+        "tactical_brief": "Deploy Time Specialist to leverage KSHANA, KSHANA.  Cannot use Fate or Celestial paths. All temporal effects +1...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Time): +150% effects.\r\n    * Evo B (Master Time): Max [Kshana] capacity +5.\r\n    * Note: *Pure temporal control. Time lord.*",
         "gameplay_info": {
             "usage": [
@@ -3356,7 +3356,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Cannot use other paths. All [Darshan] effects +100%. Start with 15 [Darshan], no cap.\r\n    * **Evo A (Perfect Knowledge):** +150% effects.\r\n    * **Evo B (Infinite Knowledge):** Gain +3 [Darshan] per turn automatically.\r\n    * **Note:** *Pure information warfare. Omniscient.*",
         "lore_quote": "** *Pure information warfare. Omniscient.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan, Darshan.",
+        "tactical_brief": "Deploy Knowledge Specialist to leverage DARSHAN, DARSHAN, DARSHAN.  Cannot use other paths. All [Darshan] effects +100%. Start ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Knowledge): +150% effects.\r\n    * Evo B (Infinite Knowledge): Gain +3 [Darshan] per turn automatically.\r\n    * Note: *Pure information warfare. Omniscient.*",
         "gameplay_info": {
             "usage": [
@@ -3401,7 +3401,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Cannot use other paths. All planetary effects +100%. Can trigger 2 planetary effects per turn.\r\n    * **Evo A (Perfect Celestial):** +150% effects.\r\n    * **Evo B (Master Celestial):** Trigger 3 effects per turn.\r\n    * **Note:** *Pure cosmic power. Astrology master.*",
         "lore_quote": "** *Pure cosmic power. Astrology master.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Celestial Specialist to leverage .  Cannot use other paths. All planetary effects +100%. Can tr...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Celestial): +150% effects.\r\n    * Evo B (Master Celestial): Trigger 3 effects per turn.\r\n    * Note: *Pure cosmic power. Astrology master.*",
         "gameplay_info": {
             "usage": [
@@ -3442,7 +3442,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Choose 2 Divination paths. Can only use those 2, but all costs -30%.\r\n    * **Evo A (Perfect Hybrid):** Cost -50%.\r\n    * **Evo B (Enhanced Hybrid):** Chosen paths have +30% effects.\r\n    * **Note:** *Two-path master. Focused power.*",
         "lore_quote": "** *Two-path master. Focused power.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Hybrid Prophet to leverage .  Choose 2 Divination paths. Can only use those 2, but all co...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Hybrid): Cost -50%.\r\n    * Evo B (Enhanced Hybrid): Chosen paths have +30% effects.\r\n    * Note: *Two-path master. Focused power.*",
         "gameplay_info": {
             "usage": [
@@ -3486,7 +3486,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Must use different Divination path each turn. Doing so grants +10 Drishti and +2 [Darshan].\r\n    * **Evo A (Perfect Chaos):** +15 Drishti and +3 [Darshan].\r\n    * **Evo B (Rewarding Chaos):** Also deal 15 damage to random enemy.\r\n    * **Note:** *Versatility reward. Anti-specialist.*",
         "lore_quote": "** *Versatility reward. Anti-specialist.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Chaos Seer to leverage DARSHAN, DARSHAN.  Must use different Divination path each turn. Doing so gran...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Chaos): +15 Drishti and +3 [Darshan].\r\n    * Evo B (Rewarding Chaos): Also deal 15 damage to random enemy.\r\n    * Note: *Versatility reward. Anti-specialist.*",
         "gameplay_info": {
             "usage": [
@@ -3533,7 +3533,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Can freely convert between Drishti, [Darshan], and [Kshana] at 2:1 ratio.\r\n    * **Evo A (Efficient Converter):** 1:1 ratio.\r\n    * **Evo B (Perfect Converter):** Also gain +10% bonus on conversion.\r\n    * **Note:** *Ultimate flexibility. Resource mastery.*",
         "lore_quote": "** *Ultimate flexibility. Resource mastery.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Kshana.",
+        "tactical_brief": "Deploy Resource Converter to leverage DARSHAN, KSHANA.  Can freely convert between Drishti, [Darshan], and [Kshana]...",
         "mastery_perk": "Mastery Lvl 5: (Efficient Converter): 1:1 ratio.\r\n    * Evo B (Perfect Converter): Also gain +10% bonus on conversion.\r\n    * Note: *Ultimate flexibility. Resource mastery.*",
         "gameplay_info": {
             "usage": [
@@ -3577,7 +3577,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Passive: For each revealed enemy secret, gain +5% all Divination effects (stacks infinitely).\r\n    * **Evo A (Perfect Amplifier):** +8% per secret.\r\n    * **Evo B (Enhanced Amplifier):** Also gain +5 Drishti per secret.\r\n    * **Note:** *Information as power. Scaling engine.*",
         "lore_quote": "** *Information as power. Scaling engine.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Vision Amplifier to leverage .  Passive: For each revealed enemy secret, gain +5% all Divin...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Amplifier): +8% per secret.\r\n    * Evo B (Enhanced Amplifier): Also gain +5 Drishti per secret.\r\n    * Note: *Information as power. Scaling engine.*",
         "gameplay_info": {
             "usage": [
@@ -3618,7 +3618,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** When you successfully predict enemy action, gain 30 Shield and counter for half their damage.\r\n    * **Evo A (Perfect Defense):** 50 Shield and full counter.\r\n    * **Evo B (Lasting Defense):** Shield lasts 2 turns.\r\n    * **Note:** *Reward prediction skill. Defensive offense.*",
         "lore_quote": "** *Reward prediction skill. Defensive offense.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Predictive Defense to leverage .  When you successfully predict enemy action, gain 30 Shield ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Defense): 50 Shield and full counter.\r\n    * Evo B (Lasting Defense): Shield lasts 2 turns.\r\n    * Note: *Reward prediction skill. Defensive offense.*",
         "gameplay_info": {
             "usage": [
@@ -3659,7 +3659,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Choose one outcome this turn. It will happen regardless of probability (within game rules).\r\n    * **Evo A (Extended Fate):** Can guarantee 2 outcomes.\r\n    * **Evo B (Perfect Fate):** Chosen outcome also has +100% potency.\r\n    * **Note:** *Cheat probability. Perfect control.*",
         "lore_quote": "** *Cheat probability. Perfect control.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Inevitable Fate to leverage .  Choose one outcome this turn. It will happen regardless of ...",
         "mastery_perk": "Mastery Lvl 5: (Extended Fate): Can guarantee 2 outcomes.\r\n    * Evo B (Perfect Fate): Chosen outcome also has +100% potency.\r\n    * Note: *Cheat probability. Perfect control.*",
         "gameplay_info": {
             "usage": [
@@ -3700,7 +3700,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Reveal your next 3 actions to enemy. If you execute them perfectly, gain +100% effects. If you deviate, lose 30 Ojas.\r\n    * **Evo A (Safe Burden):** No penalty for deviation.\r\n    * **Evo B (Perfect Burden):** +150% effects if successful.\r\n    * **Note:** *High skill ceiling. Commitment reward.*",
         "lore_quote": "** *High skill ceiling. Commitment reward.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Oracle's Burden to leverage .  Reveal your next 3 actions to enemy. If you execute them pe...",
         "mastery_perk": "Mastery Lvl 5: (Safe Burden): No penalty for deviation.\r\n    * Evo B (Perfect Burden): +150% effects if successful.\r\n    * Note: *High skill ceiling. Commitment reward.*",
         "gameplay_info": {
             "usage": [
@@ -3741,7 +3741,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Every 5 turns, repeat all actions from 5 turns ago automatically (free).\r\n    * **Evo A (Rapid Recursion):** Every 4 turns.\r\n    * **Evo B (Perfect Recursion):** Repeated actions have +50% potency.\r\n    * **Note:** *Self-combo machine. Planning reward.*",
         "lore_quote": "** *Self-combo machine. Planning reward.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Temporal Recursion to leverage .  Every 5 turns, repeat all actions from 5 turns ago automati...",
         "mastery_perk": "Mastery Lvl 5: (Rapid Recursion): Every 4 turns.\r\n    * Evo B (Perfect Recursion): Repeated actions have +50% potency.\r\n    * Note: *Self-combo machine. Planning reward.*",
         "gameplay_info": {
             "usage": [
@@ -3782,7 +3782,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** When you successfully manipulate fate, 50% chance to manipulate another fate automatically (chain triggers).\r\n    * **Evo A (Perfect Cascade):** 75% chance.\r\n    * **Evo B (Guaranteed Cascade):** Always chains but second effect at 75% potency.\r\n    * **Note:** *Chain reaction fate manipulation.*",
         "lore_quote": "** *Chain reaction fate manipulation.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Fate Cascade to leverage .  When you successfully manipulate fate, 50% chance to manipu...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Cascade): 75% chance.\r\n    * Evo B (Guaranteed Cascade): Always chains but second effect at 75% potency.\r\n    * Note: *Chain reaction fate manipulation.*",
         "gameplay_info": {
             "usage": [
@@ -3823,7 +3823,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Passive: See entire duel timeline. All hidden information revealed permanently. Immune to surprises.\r\n    * **Evo A (Perfect Vision):** Also gain +25% all effects.\r\n    * **Evo B (Shared Vision):** All allies gain vision benefits.\r\n    * **Note:** *God-tier information. Ultimate awareness.*",
         "lore_quote": "** *God-tier information. Ultimate awareness.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Omnipotent Vision to leverage .  Passive: See entire duel timeline. All hidden information r...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Vision): Also gain +25% all effects.\r\n    * Evo B (Shared Vision): All allies gain vision benefits.\r\n    * Note: *God-tier information. Ultimate awareness.*",
         "gameplay_info": {
             "usage": [
@@ -3866,10 +3866,10 @@ window.SKILL_DB_DIVINATION = [
             "cost": 85,
             "damage": 103
         },
-        "description": "** Passive: All Divination paths cost -50%. Gain +1 [Sutra], +3 [Kshana], +10 [Darshan] per turn.\r\n    * **Evo A (Perfect Mastery):** Cost -75%.\r\n    * **Evo B (Enhanced Mastery):** Triple resource generation.\r\n    * **Note:** *Ultimate Divination specialist. God of fate.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS — 10 Skills**",
-        "lore_quote": "** *Ultimate Divination specialist. God of fate.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS — 10 Skills**",
-        "tactical_brief": "Utilizes Divination mechanics. Sutra, Kshana, Darshan.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Mastery): Cost -75%.\r\n    * Evo B (Enhanced Mastery): Triple resource generation.\r\n    * Note: *Ultimate Divination specialist. God of fate.*\r\n\r\n---\r\n\r\n### UNIQUE BUILD ENABLERS — 10 Skills",
+        "description": "** Passive: All Divination paths cost -50%. Gain +1 [Sutra], +3 [Kshana], +10 [Darshan] per turn.\r\n    * **Evo A (Perfect Mastery):** Cost -75%.\r\n    * **Evo B (Enhanced Mastery):** Triple resource generation.\r\n    * **Note:** *Ultimate Divination specialist. God of fate.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS \u2014 10 Skills**",
+        "lore_quote": "** *Ultimate Divination specialist. God of fate.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS \u2014 10 Skills**",
+        "tactical_brief": "Deploy Master of Fate to leverage SUTRA, KSHANA, DARSHAN.  Passive: All Divination paths cost -50%. Gain +1 [Sutra], +...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Mastery): Cost -75%.\r\n    * Evo B (Enhanced Mastery): Triple resource generation.\r\n    * Note: *Ultimate Divination specialist. God of fate.*\r\n\r\n---\r\n\r\n### UNIQUE BUILD ENABLERS \u2014 10 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 85 Gnosis",
@@ -3913,7 +3913,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** -50% max Ojas, but all Divination effects +150%.\r\n    * **Evo A (Perfect Glass):** +200% effects.\r\n    * **Evo B (Tolerable Glass):** Only -30% max Ojas.\r\n    * **Note:** *Extreme offense. Glass cannon seer.*",
         "lore_quote": "** *Extreme offense. Glass cannon seer.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Glass Oracle to leverage .  -50% max Ojas, but all Divination effects +150%.     * Evo ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Glass): +200% effects.\r\n    * Evo B (Tolerable Glass): Only -30% max Ojas.\r\n    * Note: *Extreme offense. Glass cannon seer.*",
         "gameplay_info": {
             "usage": [
@@ -3954,7 +3954,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** +50% max Ojas, but all Divination effects -30%.\r\n    * **Evo A (Perfect Tank):** +75% max Ojas.\r\n    * **Evo B (Tolerable Tank):** Only -15% effect penalty.\r\n    * **Note:** *Defensive divination. Sustained foresight.*",
         "lore_quote": "** *Defensive divination. Sustained foresight.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Fortified Seer to leverage .  +50% max Ojas, but all Divination effects -30%.     * Evo A...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Tank): +75% max Ojas.\r\n    * Evo B (Tolerable Tank): Only -15% effect penalty.\r\n    * Note: *Defensive divination. Sustained foresight.*",
         "gameplay_info": {
             "usage": [
@@ -3995,7 +3995,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Can only use 5 Divination glyphs total, but they all cost -50% and have +50% effects.\r\n    * **Evo A (Perfect Minimalism):** +75% effects.\r\n    * **Evo B (Efficient Minimalism):** Cost -75%.\r\n    * **Note:** *Focused mastery. Simple power.*",
         "lore_quote": "** *Focused mastery. Simple power.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Minimalist Seer to leverage .  Can only use 5 Divination glyphs total, but they all cost -...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Minimalism): +75% effects.\r\n    * Evo B (Efficient Minimalism): Cost -75%.\r\n    * Note: *Focused mastery. Simple power.*",
         "gameplay_info": {
             "usage": [
@@ -4036,7 +4036,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Can use 20 Divination glyphs. For each over 10, gain +5% all effects.\r\n    * **Evo A (Perfect Maximalism):** +8% per glyph.\r\n    * **Evo B (Deep Maximalism):** Can use 25 glyphs.\r\n    * **Note:** *Infinite toolbox. Versatility master.*",
         "lore_quote": "** *Infinite toolbox. Versatility master.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Maximalist Prophet to leverage .  Can use 20 Divination glyphs. For each over 10, gain +5% al...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Maximalism): +8% per glyph.\r\n    * Evo B (Deep Maximalism): Can use 25 glyphs.\r\n    * Note: *Infinite toolbox. Versatility master.*",
         "gameplay_info": {
             "usage": [
@@ -4077,7 +4077,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** If no allies, all Divination effects +150%, immune to fate manipulation.\r\n    * **Evo A (Perfect Solo):** +200% effects.\r\n    * **Evo B (Enhanced Solo):** Also +50% max Drishti.\r\n    * **Note:** *Solo specialist. Independent power.*",
         "lore_quote": "** *Solo specialist. Independent power.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Solo Oracle to leverage .  If no allies, all Divination effects +150%, immune to fate ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Solo): +200% effects.\r\n    * Evo B (Enhanced Solo): Also +50% max Drishti.\r\n    * Note: *Solo specialist. Independent power.*",
         "gameplay_info": {
             "usage": [
@@ -4121,7 +4121,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** For each ally, gain +25% Divination effects and +10 [Darshan].\r\n    * **Evo A (Perfect Team):** +40% per ally.\r\n    * **Evo B (Deep Team):** +20 [Darshan] per ally.\r\n    * **Note:** *Team specialist. Collective power.*",
         "lore_quote": "** *Team specialist. Collective power.*",
-        "tactical_brief": "Utilizes Divination mechanics. Darshan, Darshan.",
+        "tactical_brief": "Deploy Team Seer to leverage DARSHAN, DARSHAN.  For each ally, gain +25% Divination effects and +10 [Darsha...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Team): +40% per ally.\r\n    * Evo B (Deep Team): +20 [Darshan] per ally.\r\n    * Note: *Team specialist. Collective power.*",
         "gameplay_info": {
             "usage": [
@@ -4165,7 +4165,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** All Divination effects have random potency (50%-200%).\r\n    * **Evo A (Controlled Gamble):** Range 75%-200%.\r\n    * **Evo B (Perfect Gamble):** Range 100%-300%.\r\n    * **Note:** *High variance. Big swings.*",
         "lore_quote": "** *High variance. Big swings.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Gambler's Fate to leverage .  All Divination effects have random potency (50%-200%).     ...",
         "mastery_perk": "Mastery Lvl 5: (Controlled Gamble): Range 75%-200%.\r\n    * Evo B (Perfect Gamble): Range 100%-300%.\r\n    * Note: *High variance. Big swings.*",
         "gameplay_info": {
             "usage": [
@@ -4204,9 +4204,9 @@ window.SKILL_DB_DIVINATION = [
             "cost": 60,
             "damage": 72
         },
-        "description": "** All Divination effects have exactly listed potency—no variance.\r\n    * **Evo A (Enhanced Prediction):** All effects +20% base.\r\n    * **Evo B (Stable Prediction):** Immune to anti-Divination.\r\n    * **Note:** *Reliable power. No surprises.*",
+        "description": "** All Divination effects have exactly listed potency\u2014no variance.\r\n    * **Evo A (Enhanced Prediction):** All effects +20% base.\r\n    * **Evo B (Stable Prediction):** Immune to anti-Divination.\r\n    * **Note:** *Reliable power. No surprises.*",
         "lore_quote": "** *Reliable power. No surprises.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Perfect Prediction to leverage .  All Divination effects have exactly listed potency\u2014no varia...",
         "mastery_perk": "Mastery Lvl 5: (Enhanced Prediction): All effects +20% base.\r\n    * Evo B (Stable Prediction): Immune to anti-Divination.\r\n    * Note: *Reliable power. No surprises.*",
         "gameplay_info": {
             "usage": [
@@ -4247,7 +4247,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** After enemy action, can immediately use Divination ability as reaction (costs +50% resources).\r\n    * **Evo A (Efficient Reactive):** Only +25% cost.\r\n    * **Evo B (Perfect Reactive):** Reactive abilities have +50% potency.\r\n    * **Note:** *Instant speed. Interrupt mastery.*",
         "lore_quote": "** *Instant speed. Interrupt mastery.*",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Reactive Seer to leverage .  After enemy action, can immediately use Divination ability ...",
         "mastery_perk": "Mastery Lvl 5: (Efficient Reactive): Only +25% cost.\r\n    * Evo B (Perfect Reactive): Reactive abilities have +50% potency.\r\n    * Note: *Instant speed. Interrupt mastery.*",
         "gameplay_info": {
             "usage": [
@@ -4288,7 +4288,7 @@ window.SKILL_DB_DIVINATION = [
         },
         "description": "** Passive: All your predictions/prophecies cannot be prevented. Fate you declare becomes absolute.\r\n     * **Evo A (Perfect Prophecy):** Declared fates trigger 1 turn earlier.\r\n     * **Evo B (Enhanced Prophecy):** Declared effects also +50% potency.\r\n     * **Note:** *Ultimate fate power. Reality control.*\r\n\r\n---",
         "lore_quote": "** *Ultimate fate power. Reality control.*\r\n\r\n---",
-        "tactical_brief": "Utilizes Divination mechanics. .",
+        "tactical_brief": "Deploy Prophecy Eternal to leverage .  Passive: All your predictions/prophecies cannot be prevente...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Prophecy): Declared fates trigger 1 turn earlier.\r\n     * Evo B (Enhanced Prophecy): Declared effects also +50% potency.\r\n     * Note: *Ultimate fate power. Reality control.*\r\n\r\n---",
         "gameplay_info": {
             "usage": [

@@ -147,6 +147,140 @@
         .skill-name { font-weight: bold; color: #fff; margin-bottom: 2px; font-size: 0.95rem; }
         .skill-type { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; }
 
+        /* Quick Filters */
+        .quick-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* Engine Row */
+        .engine-row {
+            display: flex;
+            gap: 0.25rem;
+            background: none;
+            border: none;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(139,92,246,0.3) transparent;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .engine-row::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .engine-row::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.3);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .engine-row {
+                scrollbar-width: none;
+            }
+            .engine-row::-webkit-scrollbar {
+                display: none;
+            }
+            .engine-block {
+                padding: 4px 8px;
+                font-size: 0.8em;
+            }
+            .engine-block .engine-icon {
+                font-size: 0.9em;
+            }
+            .engine-block .engine-label {
+                font-size: 0.7em;
+            }
+            .engine-block .engine-count {
+                font-size: 0.6em;
+            }
+        }
+
+        /* Engine Container */
+        .engine-container {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        .engine-block {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            min-width: 0;
+            flex-shrink: 0;
+            min-width: 100px;
+            justify-content: center;
+        }
+
+
+
+        .engine-block .engine-icon {
+            font-size: 1em;
+            flex-shrink: 0;
+        }
+
+        .engine-block .engine-label {
+            font-size: 0.8em;
+            font-weight: 600;
+            flex-shrink: 0;
+            hyphens: none;
+            word-break: keep-all;
+        }
+
+        .engine-block .engine-count {
+            font-size: 0.7em;
+            opacity: 0.8;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .engine-block.active, .engine-block:focus {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 2px 8px 0 rgba(139,92,246,0.10);
+        }
+
+        .engine-block:not(.active):hover {
+            background: rgba(139,92,246,0.18);
+            color: #fff;
+        }
+
         /* CENTER: FUSION CORE */
         .fusion-stage {
             flex: 1;
@@ -484,19 +618,54 @@
             width: 100%;
             aspect-ratio: 3/4;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.1);
             padding: 1.5rem;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
-        .schematic-card.legendary { border-color: #f59e0b; box-shadow: 0 0 30px rgba(245, 158, 11, 0.2); }
+        .schematic-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .schematic-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.05);
+            pointer-events: none;
+            margin: 6px;
+        }
+
+        .schematic-card.legendary { 
+            border-color: #f59e0b; 
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.3); 
+            background: linear-gradient(135deg, #451a03 0%, #0f172a 100%);
+        }
+
+        .schematic-card.legendary::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: sheen 4s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sheen {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            20% { transform: translateX(100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
         
         .card-icon-large {
             font-size: 5rem;
@@ -706,6 +875,47 @@
         }
         .action-btn:hover { background: var(--accent); border-color: var(--accent); }
 
+        /* Skill Online/Offline Indicator (dot + techno label) */
+        .status-btn {
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            width: 54px;
+            user-select: none;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ef4444;
+            box-shadow: 0 0 8px rgba(239,68,68,0.85);
+            transition: all 180ms ease-in-out;
+        }
+
+        .status-dot.online {
+            background: #10b981;
+            box-shadow: 0 0 10px rgba(16,185,129,0.95);
+        }
+
+        .status-label {
+            font-size: 0.68rem;
+            font-family: 'Courier New', monospace;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .status-label.online { color: #10b981; }
+        .status-label.offline { color: #ef4444; }
+
         .clear-btn {
             background: transparent;
             border: none;
@@ -717,6 +927,357 @@
         }
         .clear-btn:hover { color: #fff; }
 
+        /* --- SMART SEARCH BAR & MYSTIC UI --- */
+        .search-container-wrapper {
+            padding: 0.75rem;
+            background: linear-gradient(to bottom, rgba(15,15,22,0.95), rgba(15,15,22,0.8));
+            border-bottom: 1px solid var(--panel-border);
+            position: relative;
+            z-index: 100;
+        }
+
+        .smart-search-container {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .search-input-wrapper {
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(139,92,246,0.3);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .search-input-wrapper:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(139,92,246,0.2);
+            background: rgba(0,0,0,0.5);
+        }
+
+        .search-icon {
+            font-size: 1rem;
+            color: var(--text-dim);
+            margin-right: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .smart-search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .smart-search-input::placeholder {
+            color: rgba(255,255,255,0.3);
+            font-style: italic;
+        }
+
+        .search-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .search-action-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-action-btn:hover {
+            color: var(--accent-glow);
+            background: rgba(139,92,246,0.1);
+        }
+
+        .search-action-btn.active {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Massive Tooltip (Grid Results) */
+        .massive-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(15, 15, 22, 0.98);
+            border: 1px solid var(--accent);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            padding: 1rem;
+            z-index: 1000;
+            margin-top: 4px;
+            backdrop-filter: blur(10px);
+            max-height: 60vh;
+            overflow-y: auto;
+            animation: slideDown 0.2s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tooltip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .tooltip-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-glow);
+            font-weight: 700;
+        }
+
+        .tooltip-count {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .tooltip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .tooltip-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .tooltip-item:hover {
+            background: rgba(139,92,246,0.2);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .tooltip-item.selected {
+            background: rgba(139,92,246,0.28);
+            border-color: var(--accent);
+            box-shadow: 0 4px 18px rgba(139,92,246,0.18);
+            transform: translateY(-3px);
+        }
+
+        .tooltip-item-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tooltip-item-meta {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tooltip-footer {
+            margin-top: 0.75rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            font-style: italic;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 0.5rem;
+        }
+
+        /* Chat Interface */
+        .chat-interface {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, 0.98);
+            border: 1px solid var(--accent);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            padding: 1rem;
+            z-index: 1000;
+            margin-top: 4px;
+            min-height: 200px;
+            max-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding-right: 0.5rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 90%;
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .chat-message.ai {
+            align-self: flex-start;
+        }
+
+        .message-content {
+            background: rgba(255,255,255,0.05);
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .chat-message.ai .message-content {
+            background: rgba(139,92,246,0.15);
+            border-color: rgba(139,92,246,0.3);
+            border-top-left-radius: 2px;
+        }
+
+        .chat-message.user .message-content {
+            background: var(--accent);
+            color: #fff;
+            border-top-right-radius: 2px;
+        }
+
+        /* Controls Styling */
+        .search-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .mystic-select {
+            background: rgba(0,0,0,0.3);
+            color: var(--text-dim);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .mystic-select:hover {
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .mystic-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .mystic-checkbox input {
+            accent-color: var(--accent);
+        }
+
+        .mystic-checkbox:hover {
+            color: #fff;
+        }
+
+        /* TAG CHIPS */
+        .tag-chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .tag-chips-container.visible {
+            max-height: 120px; /* Approx 3 rows */
+            overflow-y: auto;
+            opacity: 1;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .tag-chip {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-dim);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tag-chip:hover {
+            background: rgba(139,92,246,0.15);
+            color: #fff;
+            border-color: rgba(139,92,246,0.3);
+        }
+
+        .tag-chip.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 10px rgba(139,92,246,0.2);
+        }
+
+        .tag-chip .count {
+            font-size: 0.6rem;
+            opacity: 0.6;
+            background: rgba(0,0,0,0.2);
+            padding: 0 4px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
@@ -725,6 +1286,7 @@
         <h1>Fusion Laboratory</h1>
         <div style="display:flex; gap:1rem; align-items:center;">
             <button onclick="clearStorage()" style="background:none; border:none; color:#ef4444; cursor:pointer; font-size:0.8rem;">Reset Data</button>
+            <button onclick="(function(){ try { runOneTimeEngineMigration(); renderEngineBlocks(); renderSkillList(); alert('Migration completed. Check console for details.'); } catch(e){ console.warn('Migration failed', e); } })()" style="background:none; border:none; color:#60a5fa; cursor:pointer; font-size:0.8rem;">Force Engine Migration</button>
             <div style="color: var(--text-dim); font-size: 0.8rem;">
                 <span style="color: #10b981">●</span> Online
             </div>
@@ -745,16 +1307,67 @@
                     <span id="owned-count" style="display:none;">0</span>
                 </div>
             </div>
-            <div style="padding: 0.5rem; display:flex; gap:0.5rem; align-items: center;">
-                <input type="text" class="search-bar" placeholder="Search..." onkeyup="renderSkillList()">
-                <select id="sort-select" onchange="renderSkillList()" style="background:#1e1e2e; color:#fff; border:1px solid #333; border-radius:4px;">
-                    <option value="tier">Tier</option>
-                    <option value="name">Name</option>
-                    <option value="type">Type</option>
-                </select>
-                <label style="display:flex; align-items:center; gap:4px; font-size:0.8rem; color:#aaa; cursor:pointer;">
-                    <input type="checkbox" id="fav-filter" onchange="renderSkillList()"> Favs
-                </label>
+            <div class="search-container-wrapper">
+                <div class="smart-search-container">
+                    <div class="search-input-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="smart-search-input" class="smart-search-input" placeholder="Ask the AI or search skills..." autocomplete="off">
+                        <div class="search-actions">
+                            <button id="search-mode-toggle" class="search-action-btn" title="Toggle AI Chat Mode">
+                                🤖
+                            </button>
+                            <button id="search-clear-btn" class="search-action-btn hidden" title="Clear">
+                                ✕
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Massive Tooltip Container (Grid Results) -->
+                    <div id="massive-tooltip" class="massive-tooltip hidden">
+                        <div class="tooltip-header">
+                            <span class="tooltip-title">Quick Results</span>
+                            <span class="tooltip-count">0 matches</span>
+                        </div>
+                        <div class="tooltip-grid" id="tooltip-grid"></div>
+                        <div class="tooltip-footer">Press Enter for full results</div>
+                    </div>
+
+                    <!-- Chat Interface Container -->
+                    <div id="chat-interface" class="chat-interface hidden">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="chat-message ai">
+                                <div class="message-content">Hello! I am your Mystic Assistant. Ask me about skill synergies, fusion recipes, or lore.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="search-controls">
+                    <select id="sort-select" onchange="renderSkillList()" class="mystic-select">
+                        <option value="tier">Tier</option>
+                        <option value="name">Name</option>
+                        <option value="type">Type</option>
+                    </select>
+                    <label class="mystic-checkbox">
+                        <input type="checkbox" id="fav-filter" onchange="renderSkillList()"> 
+                        <span>Favs</span>
+                    </label>
+                    <button id="tags-toggle-btn" class="search-action-btn" title="Toggle Tags" onclick="toggleTagsPanel()" style="margin-left:auto; font-size:0.8rem; padding:0.2rem 0.5rem;">
+                        # TAGS
+                    </button>
+                </div>
+                
+                <!-- Tag Chips Container -->
+                <div id="tag-chips-container" class="tag-chips-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <!-- Quick Filters removed per user request -->
+            <!-- Engine Row -->
+            <div class="engine-container">
+                <div class="engine-row" id="engineRow">
+                    <!-- Engine blocks will be populated by JS -->
+                </div>
             </div>
             <div id="skill-list" class="skill-list">
                 <!-- Populated by JS -->
@@ -853,15 +1466,33 @@
         // --- DEEP DATA DB ---
         // Initialize SKILL_DB by aggregating all loaded modules
         const SKILL_DB = [
-            ...(window.SKILL_DB_FOUNDATIONAL || []),
-            ...(window.SKILL_DB_INVOCATION || []),
-            ...(window.SKILL_DB_CHARACTER_ANALYSIS || []),
-            ...(window.SKILL_DB_CONSCIOUSNESS || []),
-            ...(window.SKILL_DB_DIVINATION || []),
-            ...(window.SKILL_DB_SINGULARITY || []),
-            ...(window.SKILL_DB_TANTRA || []),
-            ...(window.SKILL_DB_THERAPEUTIC || [])
+            ...(window.SKILL_DB_FOUNDATIONAL || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Foundational' })),
+            ...(window.SKILL_DB_INVOCATION || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Invocation' })),
+            ...(window.SKILL_DB_CHARACTER_ANALYSIS || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Character' })),
+            ...(window.SKILL_DB_CHARACTER || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Character' })),
+            ...(window.SKILL_DB_CONSCIOUSNESS || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Consciousness' })),
+            ...(window.SKILL_DB_DIVINATION || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Divination' })),
+            ...(window.SKILL_DB_SINGULARITY || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Singularity' })),
+            ...(window.SKILL_DB_TANTRA || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Tantra' })),
+            ...(window.SKILL_DB_THERAPEUTIC || []).map(s => ({ ...(s || {}), engine: s && s.engine ? s.engine : 'Therapeutic' }))
         ];
+
+        // Debug: Log sizes of module DBs to verify loading
+        try {
+            console.debug('SKILL_DB totals', SKILL_DB.length,
+                'FOUNDATIONAL:', (window.SKILL_DB_FOUNDATIONAL || []).length,
+                'INVOCATION:', (window.SKILL_DB_INVOCATION || []).length,
+                'CHARACTER_ANALYSIS:', (window.SKILL_DB_CHARACTER_ANALYSIS || []).length,
+                'CHARACTER:', (window.SKILL_DB_CHARACTER || []).length,
+                'CONSCIOUSNESS:', (window.SKILL_DB_CONSCIOUSNESS || []).length,
+                'DIVINATION:', (window.SKILL_DB_DIVINATION || []).length,
+                'SINGULARITY:', (window.SKILL_DB_SINGULARITY || []).length,
+                'TANTRA:', (window.SKILL_DB_TANTRA || []).length,
+                'THERAPEUTIC:', (window.SKILL_DB_THERAPEUTIC || []).length
+            );
+        } catch (e) {
+            console.debug('SKILL_DB debug log failed', e);
+        }
 
         // --- AUDIO SYSTEM ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -904,11 +1535,17 @@
         let storedSkills = localStorage.getItem('cosmic_skills');
         let knownSkills = storedSkills ? JSON.parse(storedSkills) : [];
 
+        // Online/offline state per-skill (persisted)
+        let onlineStateMap = JSON.parse(localStorage.getItem('cosmic_skill_online') || '{}');
+
         // Favorites State
         let favoriteSkills = new Set(JSON.parse(localStorage.getItem('cosmic_favorites') || '[]'));
         
         // History State
         let fusionHistory = JSON.parse(localStorage.getItem('cosmic_history') || '[]');
+
+        // Engine Filter State
+        let activeEngineFilter = null;
 
         function toggleFavorite(e, skillId) {
             e.stopPropagation(); // Prevent opening analysis
@@ -919,6 +1556,158 @@
             }
             localStorage.setItem('cosmic_favorites', JSON.stringify([...favoriteSkills]));
             renderSkillList();
+        }
+
+        // Quick filters removed; legacy function removed to avoid accidental use.
+
+        function setEngineFilter(engine) {
+            activeEngineFilter = activeEngineFilter === engine ? null : engine;
+            console.debug('Engine filter set to', activeEngineFilter);
+            document.querySelectorAll('.engine-block').forEach(block => block.classList.remove('active'));
+            if (activeEngineFilter) {
+                const el = document.querySelector(`.engine-block[data-engine="${activeEngineFilter}"]`);
+                if (el) el.classList.add('active');
+            }
+            renderSkillList();
+        }
+
+        // Engine categories shown on the filter row. These match the Card Creator clone's engine modules.
+        const ENGINES = [
+            { id: 'ALL', label: 'All', icon: '🌌' },
+            { id: 'FUSED', label: 'Fused', icon: '⚡' },
+            { id: 'Foundational', label: 'Foundational', icon: '🏛️' },
+            { id: 'Invocation', label: 'Invocation', icon: '🔥' },
+            { id: 'Tantra', label: 'Tantra', icon: '💧' },
+            { id: 'Therapeutic', label: 'Therapeutic', icon: '🌿' },
+            { id: 'Divination', label: 'Divination', icon: '🔮' },
+            { id: 'Singularity', label: 'Singularity', icon: '⚫' },
+            { id: 'Character', label: 'Character', icon: '🎭' },
+            { id: 'Consciousness', label: 'Consciousness', icon: '🧠' }
+        ];
+
+        const ENGINE_ALIAS_MAP = {
+            'character analysis': 'Character',
+            'character': 'Character',
+            'foundational': 'Foundational',
+            'invocation': 'Invocation',
+            'tantra': 'Tantra',
+            'therapeutic': 'Therapeutic',
+            'divination': 'Divination',
+            'singularity': 'Singularity',
+            'consciousness': 'Consciousness',
+            'fused': 'Fused',
+            'fusion': 'Fused'
+        };
+
+        function normalizeEngineAlias(name) {
+            if (!name) return null;
+            const n = String(name).trim().toLowerCase();
+            return ENGINE_ALIAS_MAP[n] || null;
+        }
+
+        function getEngineForSkill(skill) {
+            // Prefer explicit property if present
+            if (skill.engine) return String(skill.engine).trim();
+            if (skill._engine) {
+                const normalized = normalizeEngineAlias(skill._engine);
+                if (normalized) return normalized;
+                return String(skill._engine).trim();
+            }
+
+            // Otherwise try to detect by checking the module arrays
+            if (window.SKILL_DB_FOUNDATIONAL && window.SKILL_DB_FOUNDATIONAL.some(s => s.id === skill.id)) return 'Foundational';
+            if (window.SKILL_DB_INVOCATION && window.SKILL_DB_INVOCATION.some(s => s.id === skill.id)) return 'Invocation';
+            if (window.SKILL_DB_TANTRA && window.SKILL_DB_TANTRA.some(s => s.id === skill.id)) return 'Tantra';
+            if (window.SKILL_DB_THERAPEUTIC && window.SKILL_DB_THERAPEUTIC.some(s => s.id === skill.id)) return 'Therapeutic';
+            if (window.SKILL_DB_DIVINATION && window.SKILL_DB_DIVINATION.some(s => s.id === skill.id)) return 'Divination';
+            if (window.SKILL_DB_SINGULARITY && window.SKILL_DB_SINGULARITY.some(s => s.id === skill.id)) return 'Singularity';
+            if ((window.SKILL_DB_CHARACTER_ANALYSIS && window.SKILL_DB_CHARACTER_ANALYSIS.some(s => s.id === skill.id)) || (window.SKILL_DB_CHARACTER && window.SKILL_DB_CHARACTER.some(s => s.id === skill.id))) return 'Character';
+            if (window.SKILL_DB_CONSCIOUSNESS && window.SKILL_DB_CONSCIOUSNESS.some(s => s.id === skill.id)) return 'Consciousness';
+
+            // Not found — fallback to tag matching heuristics
+            if (skill.tags) {
+                const lowerTags = (skill.tags || []).map(t => String(t).toLowerCase());
+                if (lowerTags.includes('void')) return 'Singularity';
+                if (lowerTags.includes('solar') || lowerTags.includes('burn')) return 'Invocation';
+                if (lowerTags.includes('nature')) return 'Therapeutic';
+                if (lowerTags.includes('ice') || lowerTags.includes('stasis')) return 'Singularity';
+                // Character heuristics (persona, profile, emotion, npc, social)
+                if (lowerTags.includes('character') || lowerTags.includes('persona') || lowerTags.includes('profile') || lowerTags.includes('emotion') || lowerTags.includes('npc') || lowerTags.includes('social')) return 'Character';
+            }
+            return 'Unknown';
+        }
+
+        function skillMatchesEngine(skill, engine) {
+            if (!engine || engine === 'ALL') return true;
+            if (engine === 'FUSED') return !!((skill.fusionIngredients && skill.fusionIngredients.length) || skill.fused || skill.synthetic || skill.synthesized);
+
+            // Exact engine field match
+            if (skill.engine && String(skill.engine).toLowerCase() === String(engine).toLowerCase()) return true;
+            if (skill._engine && String(skill._engine).toLowerCase() === String(engine).toLowerCase()) return true;
+
+            // Module mapping
+            const detected = getEngineForSkill(skill);
+            if (detected && String(detected).toLowerCase() === String(engine).toLowerCase()) return true;
+
+            // Tag match fallback
+            if (skill.tags && skill.tags.some(t => String(t).toLowerCase() === String(engine).toLowerCase())) return true;
+            if (skill.tags && skill.tags.some(t => String(t).toLowerCase().includes(String(engine).toLowerCase()))) return true;
+
+            return false;
+        }
+
+        function renderEngineBlocks() {
+            const container = document.getElementById('engineRow');
+            if (!container) return;
+            console.debug('Rendering Engine Blocks. knownSkills length:', knownSkills.length);
+            container.innerHTML = '';
+            const engineCounts = {};
+            ENGINES.forEach(engineObj => {
+                let count = 0;
+                try {
+                    if (engineObj.id === 'ALL') {
+                        count = knownSkills.length;
+                    } else if (engineObj.id === 'FUSED') {
+                        count = knownSkills.filter(s => !!((s.fusionIngredients && s.fusionIngredients.length) || s.fused || s.synthetic || s.synthesized)).length;
+                    } else {
+                        count = knownSkills.filter(s => (s.engine && String(s.engine).toLowerCase() === String(engineObj.id).toLowerCase()) || skillMatchesEngine(s, engineObj.id)).length;
+                    }
+                } catch (e) { count = 0; }
+                const isActive = (activeEngineFilter === engineObj.id) || (!activeEngineFilter && engineObj.id === 'ALL');
+                const div = document.createElement('div');
+                div.className = 'engine-block' + (isActive ? ' active' : '');
+                div.dataset.engine = engineObj.id;
+                div.title = `${engineObj.label} — ${count} skills`;
+                div.innerHTML = `<span class="engine-icon">${engineObj.icon}</span><span class="engine-label">${engineObj.label}</span><span class="engine-count">${count}</span>`;
+                div.addEventListener('click', () => {
+                    setEngineFilter(engineObj.id);
+                    renderEngineBlocks();
+                });
+                container.appendChild(div);
+                engineCounts[engineObj.id] = count;
+            });
+            console.debug('Engine counts:', engineCounts);
+        }
+
+        function toggleOnline(e, skillId) {
+            e.stopPropagation();
+            const current = !!onlineStateMap[skillId];
+            onlineStateMap[skillId] = !current;
+            localStorage.setItem('cosmic_skill_online', JSON.stringify(onlineStateMap));
+
+            // Update button UI immediately
+            const btn = document.querySelector(`button.status-btn[data-skill-id="${skillId}"]`);
+            if (btn) {
+                const dot = btn.querySelector('.status-dot');
+                const label = btn.querySelector('.status-label');
+                if (onlineStateMap[skillId]) {
+                    if (dot) { dot.classList.add('online'); dot.classList.remove('offline'); }
+                    if (label) { label.classList.add('online'); label.classList.remove('offline'); label.innerText = 'Online'; }
+                } else {
+                    if (dot) { dot.classList.remove('online'); dot.classList.add('offline'); }
+                    if (label) { label.classList.remove('online'); label.classList.add('offline'); label.innerText = 'Offline'; }
+                }
+            }
         }
 
         function renderHistory() {
@@ -996,13 +1785,22 @@
                 el.onmouseenter = () => playSound('hover');
                 el.onclick = () => { playSound('click'); showAnalysis(skill); };
                 
+                const isOnline = !!onlineStateMap[skill.id];
                 el.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div class="skill-name">${skill.name}</div>
-                        <span onclick="toggleFavorite(event, '${skill.id}')" style="cursor:pointer; color:${isFav ? '#fbbf24' : '#444'}; font-size:1.2rem; line-height:1;">★</span>
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                        <div style="flex:1;">
+                            <div class="skill-name">${skill.name}</div>
+                            <div class="skill-type">${skill.tier} • ${skill.type}</div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+                            <button class="status-btn" data-skill-id="${skill.id}" onclick="toggleOnline(event, '${skill.id}')">
+                                <span class="status-dot ${isOnline ? 'online' : 'offline'}"></span>
+                                <div class="status-label ${isOnline ? 'online' : 'offline'}">${isOnline ? 'Online' : 'Offline'}</div>
+                            </button>
+                            <span onclick="toggleFavorite(event, '${skill.id}')" style="cursor:pointer; color:${isFav ? '#fbbf24' : '#444'}; font-size:1.2rem; line-height:1;">★</span>
+                        </div>
                     </div>
-                    <div class="skill-type">${skill.tier} • ${skill.type}</div>
-                    ${skill.fusionIngredients ? `<div style="font-size:0.7rem; color:#6d28d9; margin-top:0.25rem;">⚡ FUSED</div>` : ''}
+                    ${((skill.fusionIngredients && skill.fusionIngredients.length) || skill.fused) ? `<div style="font-size:0.7rem; color:#6d28d9; margin-top:0.25rem;">⚡ FUSED</div>` : ''}
                 `;
                 fragment.appendChild(el);
             });
@@ -1023,15 +1821,122 @@
              console.log("New User Detected: Seeding Database...");
              knownSkills = [...SKILL_DB];
         }
+
+        // Normalize knownSkills: retroactively mark fused skills and assign engine when obvious.
+        function normalizeSkillFlags() {
+            (knownSkills || []).forEach(s => {
+                try {
+                    if (s && typeof s.id === 'string' && s.id.startsWith('fusion_')) {
+                        if (!s.fused) s.fused = true;
+                        if (!s.origin) s.origin = 'fusion';
+                        if (!s.engine) s.engine = 'FUSED';
+                    }
+                    // Ensure tags exist
+                    s.tags = s.tags || [];
+                    const lowerTags = (s.tags || []).map(t => String(t).toLowerCase());
+                    if (!s.engine && (lowerTags.includes('character') || lowerTags.includes('persona') || lowerTags.includes('profile') || lowerTags.includes('npc'))) {
+                        s.engine = 'Character';
+                    }
+                    // If still missing engine, try detect via module arrays
+                    if (!s.engine) {
+                        const detected = getEngineForSkill(s);
+                        if (detected && detected !== 'Unknown') s.engine = detected;
+                    }
+                } catch (e) { /* ignore malformed skill */ }
+            });
+            // Persist normalized flags back to localStorage
+            try { localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills)); } catch (e) { console.warn('Failed to persist normalized knownSkills', e); }
+        }
+        normalizeSkillFlags();
+
+            // Ensure any skill entries loaded from SKILL_DB are given engine property if missing (also persist to storage)
+        function applyEngineToSeededDB() {
+            (SKILL_DB || []).forEach(s => {
+                try {
+                    if (s && !s.engine) {
+                        const detected = getEngineForSkill(s);
+                        if (detected && detected !== 'Unknown') s.engine = detected;
+                    }
+                } catch (e) { /* ignore */ }
+            });
+        }
+        applyEngineToSeededDB();
+        
+        // One-time migration: persist engine assignments on persisted skills
+        function runOneTimeEngineMigration() {
+            const FLAG = 'cosmic_engine_migration_v1';
+            if (localStorage.getItem(FLAG)) {
+                console.debug('Engine migration already applied');
+                return;
+            }
+            console.debug('Running one-time engine migration...');
+            let changed = false;
+            (knownSkills || []).forEach(s => {
+                try {
+                    if (!s) return;
+                    const before = s.engine || s._engine || null;
+                    // Normalize _engine if present
+                    if (s._engine && !s.engine) {
+                        const norm = normalizeEngineAlias(s._engine);
+                        s.engine = norm || s._engine;
+                    }
+                    // Fused detection
+                    if ((s.fusionIngredients && s.fusionIngredients.length) || s.fused || s.synthetic || s.synthesized || (s.id && String(s.id).startsWith('fusion_'))) {
+                        if (s.engine !== 'FUSED') s.engine = 'FUSED';
+                    }
+                    // If still missing engine, detect via module arrays and tags
+                    if (!s.engine) {
+                        const detected = getEngineForSkill(s);
+                        if (detected && detected !== 'Unknown') s.engine = detected;
+                    }
+                    if ((before || null) !== (s.engine || null)) changed = true;
+                } catch (e) { /* ignore */ }
+            });
+            if (changed) {
+                try {
+                    localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
+                    console.debug('Engine migration applied and changes persisted');
+                } catch (e) { console.warn('Engine migration: failed to persist', e); }
+            } else {
+                console.debug('Engine migration: no changes necessary');
+            }
+            // Apply to seeded DB too
+            try { applyEngineToSeededDB(); } catch (e) { /* ignore */ }
+            localStorage.setItem(FLAG, '1');
+        }
+
+            try { localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills)); } catch (e) { /* ignore */ }
+
+        // Debug: Print how many knownSkills have a Character engine after normalization
+        try {
+            const charCount = (knownSkills || []).filter(s => s.engine && String(s.engine).toLowerCase() === 'character').length;
+            console.debug('knownSkills Character engine count:', charCount);
+            const totalKS = (knownSkills || []).length;
+            console.debug('knownSkills total count:', totalKS);
+        } catch (e) { /* ignore */ }
+
+        // Initial render to populate UI
+        try {
+            // Re-run normalization after seeding and engine assignment
+            normalizeSkillFlags();
+            applyEngineToSeededDB();
+            // Run one-time migration to persist engine on persisted skills
+            try { runOneTimeEngineMigration(); } catch (e) { /* ignore */ }
+            renderEngineBlocks();
+            renderSkillList();
+        } catch (e) {
+            console.warn('Render initialization failed', e);
+        }
         
         let selectedSlots = [null, null];
         let pendingNewSkill = null;
 
-        // --- INIT ---
-        window.onload = () => {
-            renderSkillList();
-            renderHistory();
-        };
+        // Debounced search
+        let searchTimeout;
+        function debouncedSearch() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => renderSkillList(), 150);
+        }
 
         function resetDatabase() {
             if(confirm("Reset Database to factory settings? This will clear custom synthesized skills.")) {
@@ -1050,10 +1955,12 @@
             const list = document.getElementById('skill-list');
             list.innerHTML = "";
             document.getElementById('skill-count').innerText = knownSkills.length;
+            // keep engine blocks counts and active state in sync
+            renderEngineBlocks();
 
             // Search Logic
-            const searchInput = document.querySelector('.search-bar');
-            const filter = searchInput ? searchInput.value.toLowerCase() : "";
+            const searchInput = document.getElementById('smart-search-input');
+            const filter = searchInput ? searchInput.value.trim().toLowerCase() : "";
 
             // Favorites Logic
             const showFavsOnly = document.getElementById('fav-filter') && document.getElementById('fav-filter').checked;
@@ -1061,6 +1968,33 @@
             // Sorting Logic
             const sortMode = document.getElementById('sort-select') ? document.getElementById('sort-select').value : 'tier';
             let displaySkills = [...knownSkills];
+            // If the user typed a query and we're in search mode, rank and restrict by semantic search
+            if (filter && searchMode === 'search') {
+                const ranked = semanticSearch(filter, { selectedTags });
+                if (ranked && ranked.length) {
+                    // Use ranked skills directly
+                    displaySkills = ranked;
+                } else {
+                    // else leave displaySkills empty to show nothing
+                    displaySkills = [];
+                }
+            }
+
+            // Legacy quick filters removed. Use tag chips and engine filters instead.
+
+            // Apply Engine Filter
+            if (activeEngineFilter) {
+                displaySkills = displaySkills.filter(skill => skillMatchesEngine(skill, activeEngineFilter));
+            }
+
+            // Apply Tag Filter
+            if (selectedTags.size > 0) {
+                displaySkills = displaySkills.filter(skill => {
+                    if (!skill.tags) return false;
+                    // AND logic: must have ALL selected tags
+                    return Array.from(selectedTags).every(tag => skill.tags.includes(tag));
+                });
+            }
 
             if (sortMode === 'name') {
                 displaySkills.sort((a, b) => a.name.localeCompare(b.name));
@@ -1075,7 +2009,16 @@
             const fragment = document.createDocumentFragment();
 
             displaySkills.forEach(skill => {
-                if (filter && !skill.name.toLowerCase().includes(filter)) return;
+                // If filter is present and we used semantic search, skip brute-force token checks
+                if (filter && searchMode === 'search') {
+                    // displaySkills already came from ranked semantic search, so keep it
+                } else if (filter && !(
+                    skill.name.toLowerCase().includes(filter) ||
+                    (skill.tags || []).some(tag => tag.toLowerCase().includes(filter)) ||
+                    (skill.description || '').toLowerCase().includes(filter) ||
+                    (skill.tactical_brief || '').toLowerCase().includes(filter) ||
+                    (skill.lore_quote || '').toLowerCase().includes(filter)
+                )) return;
                 if (showFavsOnly && !favoriteSkills.has(skill.id)) return;
 
                 const isFav = favoriteSkills.has(skill.id);
@@ -1085,13 +2028,21 @@
                 el.ondragstart = (e) => drag(e, skill.id);
                 el.onmouseenter = () => playSound('hover');
                 el.onclick = () => { playSound('click'); showAnalysis(skill); };
-                
+                const isOnline = !!onlineStateMap[skill.id];
                 el.innerHTML = `
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div class="skill-name">${skill.name}</div>
-                        <span onclick="toggleFavorite(event, '${skill.id}')" style="cursor:pointer; color:${isFav ? '#fbbf24' : '#444'}; font-size:1.2rem; line-height:1;">★</span>
+                    <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                        <div style="flex:1;">
+                            <div class="skill-name">${skill.name}</div>
+                            <div class="skill-type">${skill.tier} • ${skill.type}</div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+                            <button class="status-btn" data-skill-id="${skill.id}" onclick="toggleOnline(event, '${skill.id}')">
+                                <span class="status-dot ${isOnline ? 'online' : 'offline'}"></span>
+                                <div class="status-label ${isOnline ? 'online' : 'offline'}">${isOnline ? 'Online' : 'Offline'}</div>
+                            </button>
+                            <span onclick="toggleFavorite(event, '${skill.id}')" style="cursor:pointer; color:${isFav ? '#fbbf24' : '#444'}; font-size:1.2rem; line-height:1;">★</span>
+                        </div>
                     </div>
-                    <div class="skill-type">${skill.tier} • ${skill.type}</div>
                 `;
                 fragment.appendChild(el);
             });
@@ -1545,11 +2496,30 @@
                         ? `<button class="btn-primary" onclick="collectSkill()">Integrate Paradigm</button>`
                         : `<button class="btn-secondary" onclick="document.getElementById('result-overlay').classList.remove('active')">Close Archive</button>`
                     }
+                    <button class="btn-secondary" onclick="downloadSkillData('${skill.id}')" style="margin-left: auto; border: none; font-size: 0.8rem; opacity: 0.7;">
+                        ⬇ JSON
+                    </button>
                 </div>
             `;
 
             overlay.classList.add('active');
         }
+
+        window.downloadSkillData = (id) => {
+            let skill = knownSkills.find(s => s.id === id);
+            if (!skill && pendingNewSkill && pendingNewSkill.id === id) {
+                skill = pendingNewSkill;
+            }
+            if (!skill) return;
+            
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(skill, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", `${skill.name.replace(/\s+/g, '_')}_card_data.json`);
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        };
 
         // --- HELPERS ---
         window.switchTab = (tabId) => {
@@ -1598,7 +2568,12 @@
                 SOLAR: "Oil Slick, Frozen Status",
                 NATURE: "Wet Status, Exposed Armor",
                 ICE: "Wet Status, Slowed",
-                BLOOD: "Bleed Stacks, Low HP"
+                BLOOD: "Bleed Stacks, Low HP",
+                STRUCTURE: "Fortified Position, High Ground",
+                DECAY: "Poisoned, Reduced Healing",
+                STASIS: "Slowed, Rooted",
+                DISCORD: "Confused, Silenced",
+                MIND: "Vulnerable, Exposed Weakness"
             };
             
             const aftermaths = {
@@ -1606,7 +2581,12 @@
                 SOLAR: "Applies 'Ignite' (DoT)",
                 NATURE: "Spawns 'Thorn Patch' (Zone)",
                 ICE: "Applies 'Brittle' (+Crit Dmg)",
-                BLOOD: "Grants 'Vampirism' (Self Buff)"
+                BLOOD: "Grants 'Vampirism' (Self Buff)",
+                STRUCTURE: "Creates 'Cover' (Defense Buff)",
+                DECAY: "Spreads 'Plague' to nearby units",
+                STASIS: "Freezes cooldowns for 1 turn",
+                DISCORD: "Randomizes enemy target selection",
+                MIND: "Reveals enemy stats/intent"
             };
 
             const counters = {
@@ -1614,7 +2594,12 @@
                 SOLAR: ["Fire Elementals", "Mirror Shields"],
                 NATURE: ["Flying Units", "Mechanical Armor"],
                 ICE: ["Frost Giants", "Energy Shields"],
-                BLOOD: ["Undead (Immune to Bleed)", "Constructs"]
+                BLOOD: ["Undead (Immune to Bleed)", "Constructs"],
+                STRUCTURE: ["Siege Breakers", "Explosives"],
+                DECAY: ["Constructs", "Cleansing Healers"],
+                STASIS: ["Time-Shifted Enemies", "Unstoppable"],
+                DISCORD: ["Mindless Drones", "Hive Minds"],
+                MIND: ["Psychic Shields", "Mindless Beasts"]
             };
 
             const targets = {
@@ -1622,7 +2607,12 @@
                 SOLAR: ["Swarm Types", "Regenerating Foes"],
                 NATURE: ["Casters (Interrupt)", "Groups"],
                 ICE: ["Fast Movers", "Melee Rushers"],
-                BLOOD: ["High HP Sponges", "Beasts"]
+                BLOOD: ["High HP Sponges", "Beasts"],
+                STRUCTURE: ["Choke Points", "Objective Defense"],
+                DECAY: ["Healers", "Regenerators"],
+                STASIS: ["Combo Casters", "Assassins"],
+                DISCORD: ["Buffers", "Commanders"],
+                MIND: ["Bosses", "High Value Targets"]
             };
 
             return {
@@ -1672,12 +2662,31 @@
         };
 
         function getIconForSkill(skill) {
+            // Elemental / Core
             if (skill.tags.includes('VOID')) return '🌌';
-            if (skill.tags.includes('SOLAR')) return '☀️';
+            if (skill.tags.includes('SOLAR') || skill.tags.includes('BURN')) return '☀️';
             if (skill.tags.includes('NATURE')) return '🌿';
-            if (skill.tags.includes('ICE')) return '❄️';
-            if (skill.tags.includes('BLOOD')) return '🩸';
+            if (skill.tags.includes('ICE') || skill.tags.includes('STASIS')) return '❄️';
+            if (skill.tags.includes('BLOOD') || skill.tags.includes('DECAY')) return '🩸';
             if (skill.tags.includes('STORM')) return '⚡';
+            
+            // Structural / Foundational
+            if (skill.tags.includes('STRUCTURE')) return '🏗️';
+            if (skill.tags.includes('SUPPORT')) return '🤝';
+            if (skill.tags.includes('FIELD')) return '🛡️';
+            
+            // Tantra / Control
+            if (skill.tags.includes('DISCORD')) return '🎭';
+            if (skill.tags.includes('SUBSERVIENCE')) return '⛓️';
+            if (skill.tags.includes('BANISH')) return '🚫';
+            if (skill.tags.includes('SILENCE')) return '🔇';
+            if (skill.tags.includes('STUN')) return '💫';
+            
+            // Analysis / Mind
+            if (skill.tags.includes('ANALYSIS')) return '👁️';
+            if (skill.tags.includes('MIND') || skill.tags.includes('PSYCHE')) return '🧠';
+            if (skill.tags.includes('HEAL')) return '💚';
+            
             return '⚡';
         }
 
@@ -1709,6 +2718,32 @@
                     adj: ["Crimson", "Sanguine", "Vital", "Cursed", "Weeping", "Visceral"],
                     noun: ["Pact", "Sacrifice", "Hemorrhage", "Vessel", "Rite", "Carnage"],
                     verb: ["drains", "corrupts", "spills", "transmutes", "boils"]
+                },
+                // NEW TAGS
+                STRUCTURE: {
+                    adj: ["Reinforced", "Architectural", "Geometric", "Solid", "Unbreaking", "Foundational"],
+                    noun: ["Pillar", "Bastion", "Grid", "Lattice", "Monolith", "Framework", "Scaffold"],
+                    verb: ["stabilizes", "fortifies", "constructs", "anchors", "orders", "aligns"]
+                },
+                DECAY: {
+                    adj: ["Rotting", "Withering", "Festering", "Corrosive", "Terminal", "Blighted"],
+                    noun: ["Blight", "Rot", "Corrosion", "Plague", "Decomposition", "Ruins"],
+                    verb: ["decays", "withers", "corrodes", "rots", "crumbles", "dissolves"]
+                },
+                STASIS: {
+                    adj: ["Timeless", "Frozen", "Static", "Eternal", "Paused", "Still"],
+                    noun: ["Pause", "Halt", "Lock", "Eternity", "Moment", "Stillness"],
+                    verb: ["halts", "freezes", "suspends", "locks", "pauses", "preserves"]
+                },
+                DISCORD: {
+                    adj: ["Dissonant", "Chaotic", "Jarring", "Broken", "Shattered", "Conflicting"],
+                    noun: ["Dissonance", "Chaos", "Noise", "Rupture", "Conflict", "Schism"],
+                    verb: ["disrupts", "shatters", "confuses", "breaks", "scrambles", "jars"]
+                },
+                MIND: {
+                    adj: ["Psionic", "Mental", "Cognitive", "Telepathic", "Lucid", "Dreaming"],
+                    noun: ["Thought", "Dream", "Nightmare", "Idea", "Concept", "Memory"],
+                    verb: ["perceives", "knows", "remembers", "dreams", "thinks", "analyzes"]
                 },
                 // Generic / Structural
                 GENERIC: {
@@ -1846,7 +2881,7 @@
                     advice.push("A balanced technique suitable for any engagement range.");
                 }
 
-                // 2. Add Elemental Flavor (Primary Tag)
+                // 2. Add Elemental Flavor (Prim ary Tag)
                 const primaryTag = tags[0];
                 if (this.tactics[primaryTag]) {
                     advice.push(this.tactics[primaryTag]);
@@ -1883,9 +2918,13 @@
         // --- SMART FUSION ALGORITHM ---
         function generateSmartFusion(s1, s2) {
             // 1. LEGENDARY CHECK (Hardcoded Recipes)
-            const isLegendary = (s1.tags.includes('VOID') && s2.tags.includes('SOLAR')) || (s2.tags.includes('VOID') && s1.tags.includes('SOLAR'));
+            const t1 = s1.tags;
+            const t2 = s2.tags;
             
-            if (isLegendary) {
+            const hasTag = (tags, target) => tags.includes(target);
+            
+            // RECIPE: Solar Void Singularity (Void + Solar)
+            if ((hasTag(t1, 'VOID') && hasTag(t2, 'SOLAR')) || (hasTag(t2, 'VOID') && hasTag(t1, 'SOLAR'))) {
                 return {
                     id: `fusion_${Date.now()}`,
                     name: "Solar Void Singularity",
@@ -1901,10 +2940,72 @@
                         usage: ["Target: Area (10m)", "Cast: 2s Channel"],
                         features: ["Instantly kills non-bosses", "Destroys terrain permanently", "Summons Void Horrors"]
                     },
+                    fusionIngredients: [s1.id, s2.id],
+                    fused: true,
+                    origin: 'fusion',
+                    engine: 'FUSED',
                     deep_data: {
                         environment: "Permanently alters the biome to 'Null Zone'.",
                         narrative: "Triggers the 'Cosmic Attention' event.",
                         evolution: null // Final form
+                    }
+                };
+            }
+
+            // RECIPE: Entropic Monolith (Structure + Decay)
+            if ((hasTag(t1, 'STRUCTURE') && hasTag(t2, 'DECAY')) || (hasTag(t2, 'STRUCTURE') && hasTag(t1, 'DECAY'))) {
+                return {
+                    id: `fusion_${Date.now()}`,
+                    name: "Entropic Monolith",
+                    tier: "LEGENDARY",
+                    type: "CONSTRUCT",
+                    tags: ["STRUCTURE", "DECAY", "CHAOS"],
+                    stats: { damage: 10, cooldown: 5, cost: 40, shield: 100 },
+                    description: "Summons a massive tower that constantly decays the reality around it, dealing damage to everything including itself.",
+                    lore_quote: "\"The Architects built it to last forever. The Ashram taught it how to die.\"",
+                    tactical_brief: "A self-destructing tank. Place it in the middle of enemies and let it rot them away.",
+                    mastery_perk: "Mastery Lvl 10: Explodes on death for massive damage.",
+                    gameplay_info: {
+                        usage: ["Target: Ground", "Cast: Instant"],
+                        features: ["High Health", "Aura of Decay", "Self-Damage"]
+                    },
+                    fusionIngredients: [s1.id, s2.id],
+                    fused: true,
+                    origin: 'fusion',
+                    engine: 'FUSED',
+                    deep_data: {
+                        environment: "Withers all plant life in 50m radius.",
+                        narrative: "Architects are horrified by this perversion of their tech.",
+                        evolution: null
+                    }
+                };
+            }
+
+            // RECIPE: Neural Collapse (Mind + Void)
+            if ((hasTag(t1, 'MIND') && hasTag(t2, 'VOID')) || (hasTag(t2, 'MIND') && hasTag(t1, 'VOID'))) {
+                return {
+                    id: `fusion_${Date.now()}`,
+                    name: "Neural Collapse",
+                    tier: "LEGENDARY",
+                    type: "PSYCHIC",
+                    tags: ["MIND", "VOID", "CONTROL"],
+                    stats: { damage: 80, cooldown: 12, cost: 60 },
+                    description: "Forces the target to comprehend the Void, instantly shattering their mind.",
+                    lore_quote: "\"To see the nothingness is to become it.\"",
+                    tactical_brief: "Single target execution. If it doesn't kill them, it leaves them permanently insane (Confused).",
+                    mastery_perk: "Mastery Lvl 10: Resets cooldown if target dies.",
+                    gameplay_info: {
+                        usage: ["Target: Unit", "Cast: 1s Channel"],
+                        features: ["Massive Damage", "Permanent Confusion", "Bypasses Shields"]
+                    },
+                    fusionIngredients: [s1.id, s2.id],
+                    fused: true,
+                    origin: 'fusion',
+                    engine: 'FUSED',
+                    deep_data: {
+                        environment: "Nearby NPCs may faint.",
+                        narrative: "The target's faction will hunt you for this war crime.",
+                        evolution: null
                     }
                 };
             }
@@ -1962,6 +3063,10 @@
                     usage: s1.gameplay_info.usage, 
                     features: [...new Set([...s1.gameplay_info.features, ...s2.gameplay_info.features])].slice(0, 3)
                 },
+                fusionIngredients: [s1.id, s2.id],
+                fused: true,
+                origin: 'fusion',
+                engine: 'FUSED',
                 deep_data: {
                     environment: env,
                     narrative: social,
@@ -1971,6 +3076,554 @@
             };
         }
 
+    // --- SMART SEARCH & AI ASSISTANT LOGIC ---
+
+    let searchIndex = []; // { id, skill, tokenScores: {token: score}, norm }
+    let searchMode = 'search'; // 'search' or 'chat'
+    let selectedTags = new Set();
+    
+    // Synonyms map to canonical tokens/tags
+    const SYNONYMS = {
+        'stun': 'control', 'stunning': 'control', 'immobilize': 'control', 'freeze': 'control', 'slow': 'control', 'cc': 'control', 'crowd': 'control',
+        'nuke': 'damage', 'burst': 'damage', 'dps': 'damage', 'hit': 'damage', 'strike': 'damage',
+        'heal': 'healing', 'restore': 'healing', 'regen': 'healing', 'mend': 'healing',
+        'aoe': 'area', 'area': 'area', 'area-of-effect': 'area', 'aoe-dmg': 'area',
+        'dot': 'dot', 'dotdps': 'dot', 'dotdmg': 'dot',
+        'taunt': 'taunt', 'aggro': 'taunt', 'shield': 'shield', 'barrier': 'shield'
+    };
+    
+    // Initialize
+    function initSmartSearch() {
+        const searchInput = document.getElementById('smart-search-input');
+        const searchModeBtn = document.getElementById('search-mode-toggle');
+        const searchClearBtn = document.getElementById('search-clear-btn');
+        const massiveTooltip = document.getElementById('massive-tooltip');
+        
+        if (!searchInput) return;
+
+        buildSearchIndex();
+        renderTagChips();
+        
+        // Event Listeners
+        searchInput.addEventListener('input', handleSearchInput);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                if (searchMode === 'chat') {
+                    handleChatSubmit();
+                } else {
+                    const massiveTooltipEl = document.getElementById('massive-tooltip');
+                    if (massiveTooltipEl && !massiveTooltipEl.classList.contains('hidden') && selectedTooltipIndex >= 0) {
+                        const tooltipGrid = document.getElementById('tooltip-grid');
+                        const items = Array.from(tooltipGrid.querySelectorAll('.tooltip-item'));
+                        const el = items[selectedTooltipIndex];
+                        if (el) el.click();
+                    } else {
+                        renderSkillList(); 
+                        massiveTooltip.classList.add('hidden');
+                    }
+                }
+            }
+            // Keyboard navigation for tooltip grid
+            if (searchMode === 'search' && !document.getElementById('massive-tooltip').classList.contains('hidden')) {
+                if (e.key === 'ArrowDown') { e.preventDefault(); selectNextTooltipItem(1); }
+                if (e.key === 'ArrowUp') { e.preventDefault(); selectNextTooltipItem(-1); }
+                if (e.key === 'Escape') { document.getElementById('massive-tooltip').classList.add('hidden'); }
+            }
+        });
+        
+        searchModeBtn.addEventListener('click', toggleSearchMode);
+        searchClearBtn.addEventListener('click', clearSearch);
+        
+        // Close tooltip when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.smart-search-container')) {
+                if (massiveTooltip) massiveTooltip.classList.add('hidden');
+                selectedTooltipIndex = -1;
+            }
+        });
+    }
+
+    // --- TAG CHIPS LOGIC ---
+    function toggleTagsPanel() {
+        const container = document.getElementById('tag-chips-container');
+        const btn = document.getElementById('tags-toggle-btn');
+        container.classList.toggle('visible');
+        btn.classList.toggle('active');
+    }
+
+    function renderTagChips() {
+        const container = document.getElementById('tag-chips-container');
+        if (!container) return;
+
+        // Collect all tags and count frequency
+        const tagCounts = {};
+        knownSkills.forEach(skill => {
+            if (skill.tags && Array.isArray(skill.tags)) {
+                skill.tags.forEach(tag => {
+                    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                });
+            }
+        });
+
+        // Sort by count desc
+        const sortedTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]);
+
+        container.innerHTML = sortedTags.map(tag => {
+            const isActive = selectedTags.has(tag);
+            return `
+                <div class="tag-chip ${isActive ? 'active' : ''}" onclick="toggleTag('${tag}')">
+                    ${tag} <span class="count">${tagCounts[tag]}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function toggleTag(tag) {
+        if (selectedTags.has(tag)) {
+            selectedTags.delete(tag);
+        } else {
+            selectedTags.add(tag);
+        }
+        renderTagChips();
+        renderSkillList();
+    }
+
+    function tokenizeText(text) {
+        if (!text) return [];
+        return String(text).toLowerCase().split(/[^\w\-]+/).filter(Boolean).map(t => t.trim());
+    }
+
+    function buildSearchIndex() {
+        if (!knownSkills || knownSkills.length === 0) return;
+
+        const docFreq = {};
+        const tokensPerDoc = [];
+        const weights = {
+            name: 3.0,
+            tags: 2.5,
+            type: 1.8,
+            tier: 1.5,
+            tactical: 1.2,
+            description: 1.0,
+            lore: 0.8,
+            engine: 1.0
+        };
+
+        // Build raw token frequency * weight per document
+        knownSkills.forEach(skill => {
+            const tokenScores = {};
+
+            // Helper to add field tokens
+            const addTokens = (text, w) => {
+                tokenizeText(text).forEach(tok => {
+                    // expand synonyms
+                    const canonical = SYNONYMS[tok] || tok;
+                    tokenScores[canonical] = (tokenScores[canonical] || 0) + w;
+                });
+            };
+
+            // compute scores
+            addTokens(skill.name, weights.name);
+            addTokens((skill.tags || []).join(' '), weights.tags);
+            addTokens(skill.type, weights.type);
+            addTokens(skill.tier, weights.tier);
+            addTokens(skill.tactical_brief, weights.tactical);
+            addTokens(skill.description, weights.description);
+            addTokens(skill.lore_quote, weights.lore);
+            addTokens(skill.engine, weights.engine);
+
+            // record docFreq
+            Object.keys(tokenScores).forEach(tok => {
+                docFreq[tok] = (docFreq[tok] || 0) + 1;
+            });
+            tokensPerDoc.push({id: skill.id, tokenScores, skill});
+        });
+
+        // Now convert to IDF & normalized scores
+        const N = tokensPerDoc.length || 1;
+        searchIndex = tokensPerDoc.map(doc => {
+            const tokenScores = {};
+            let norm = 0;
+            Object.entries(doc.tokenScores).forEach(([tok, tf]) => {
+                const idf = Math.log(1 + N / (docFreq[tok] || 1));
+                const val = tf * idf;
+                tokenScores[tok] = val;
+                norm += val * val;
+            });
+            norm = Math.sqrt(norm) || 1;
+            return { id: doc.id, skill: doc.skill, tokenScores, norm };
+        });
+
+        console.log(`Indexed ${searchIndex.length} skills (TF-IDF with weights).`);
+    }
+
+    function toggleSearchMode() {
+        const searchInput = document.getElementById('smart-search-input');
+        const searchModeBtn = document.getElementById('search-mode-toggle');
+        const massiveTooltip = document.getElementById('massive-tooltip');
+        const chatInterface = document.getElementById('chat-interface');
+
+        searchMode = searchMode === 'search' ? 'chat' : 'search';
+        
+        if (searchMode === 'chat') {
+            searchModeBtn.classList.add('active');
+            searchInput.placeholder = "Ask the Mystic AI...";
+            massiveTooltip.classList.add('hidden');
+            chatInterface.classList.remove('hidden');
+            searchInput.focus();
+        } else {
+            searchModeBtn.classList.remove('active');
+            searchInput.placeholder = "Search skills...";
+            chatInterface.classList.add('hidden');
+            searchInput.focus();
+            if (searchInput.value.trim()) {
+                handleSearchInput();
+            }
+        }
+    }
+
+    function clearSearch() {
+        const searchInput = document.getElementById('smart-search-input');
+        const searchClearBtn = document.getElementById('search-clear-btn');
+        const massiveTooltip = document.getElementById('massive-tooltip');
+
+        searchInput.value = '';
+        searchClearBtn.classList.add('hidden');
+        massiveTooltip.classList.add('hidden');
+        renderSkillList();
+        searchInput.focus();
+    }
+
+    function handleSearchInput() {
+        const searchInput = document.getElementById('smart-search-input');
+        const searchClearBtn = document.getElementById('search-clear-btn');
+        const massiveTooltip = document.getElementById('massive-tooltip');
+
+        const query = searchInput.value.trim().toLowerCase();
+        
+        if (query.length > 0) {
+            searchClearBtn.classList.remove('hidden');
+        } else {
+            searchClearBtn.classList.add('hidden');
+            massiveTooltip.classList.add('hidden');
+            renderSkillList();
+            return;
+        }
+
+        if (searchMode === 'chat') return;
+
+        const results = semanticSearch(query, { selectedTags });
+        renderMassiveTooltip(results);
+        renderSkillList(); 
+    }
+
+    function semanticSearch(rawQuery, options = {}) {
+        if (!searchIndex.length) buildSearchIndex();
+        const q = String(rawQuery || '').toLowerCase();
+        if (!q) return [];
+        const tokens = tokenizeText(q).map(t => SYNONYMS[t] || t).filter(Boolean);
+        if (!tokens.length) return [];
+
+        const scores = searchIndex.map(doc => {
+            let s = 0;
+            tokens.forEach(tok => {
+                if (doc.tokenScores && doc.tokenScores[tok]) s += doc.tokenScores[tok];
+                // also check prefix matches for single tokens
+                for (const [dt, val] of Object.entries(doc.tokenScores || {})) {
+                    if (dt.startsWith(tok) && dt.length > tok.length) s += val * 0.25; // partial match
+                }
+            });
+            // normalize by doc norm
+            s = s / doc.norm;
+            // personalization boosts
+            if (favoriteSkills && favoriteSkills.has && favoriteSkills.has(doc.skill.id)) s *= 1.15;
+            if (activeEngineFilter && doc.skill.engine && String(doc.skill.engine).toLowerCase() === String(activeEngineFilter).toLowerCase()) s *= 1.1;
+            if (selectedTags && selectedTags.size) {
+                const matches = Array.from(selectedTags).filter(t => (doc.skill.tags||[]).includes(t));
+                if (matches.length) s *= 1 + (matches.length * 0.08);
+            }
+            return { id: doc.id, skill: doc.skill, score: s };
+        }).filter(r => r.score > 0);
+
+        // Optionally apply tag filters (AND semantics)
+        if (options.selectedTags && options.selectedTags.size) {
+            const sel = options.selectedTags;
+            return scores.filter(r => {
+                const tags = r.skill.tags || [];
+                return Array.from(sel).every(t => tags.includes(t));
+            }).map(r => r.skill);
+        }
+
+        // sort
+        scores.sort((a,b) => b.score - a.score);
+        return scores.map(r => r.skill);
+    }
+
+    // Tooltip keyboard selection state
+    let selectedTooltipIndex = -1;
+
+    function selectNextTooltipItem(step) {
+        const tooltipGrid = document.getElementById('tooltip-grid');
+        if (!tooltipGrid) return;
+        const items = Array.from(tooltipGrid.querySelectorAll('.tooltip-item'));
+        if (!items.length) return;
+        selectedTooltipIndex = (selectedTooltipIndex + step + items.length) % items.length;
+        updateTooltipSelection(items);
+    }
+
+    function updateTooltipSelection(items) {
+        items.forEach((el, idx) => {
+            if (idx === selectedTooltipIndex) {
+                el.classList.add('selected');
+                el.scrollIntoView({block:'nearest'});
+            } else {
+                el.classList.remove('selected');
+            }
+        });
+    }
+
+    function renderMassiveTooltip(skills) {
+        const massiveTooltip = document.getElementById('massive-tooltip');
+        const tooltipGrid = document.getElementById('tooltip-grid');
+
+        if (skills.length === 0) {
+            massiveTooltip.classList.add('hidden');
+            return;
+        }
+
+        massiveTooltip.classList.remove('hidden');
+        const limit = 12;
+        const displaySkills = skills.slice(0, limit);
+        
+        document.querySelector('.tooltip-count').textContent = `${skills.length} matches`;
+        
+        tooltipGrid.innerHTML = displaySkills.map(skill => `
+            <div class="tooltip-item" onclick="selectSkillFromTooltip('${skill.id}')" data-skill-id="${skill.id}">
+                <div style="display:flex; justify-content:space-between; gap:8px; align-items:center;">
+                    <div style="flex:1; min-width:0;">
+                        <div class="tooltip-item-name">${skill.name}</div>
+                        <div class="tooltip-item-meta">
+                            <span>${skill.type}</span>
+                            <span style="color:${getTierColor(skill.tier)}">${skill.tier}</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <button class="search-action-btn" title="Favorite" onclick="event.stopPropagation(); toggleFavorite(event, '${skill.id}')">★</button>
+                        <button class="search-action-btn" title="Inspect" onclick="event.stopPropagation(); quickInspect('${skill.id}')">🔎</button>
+                        <button class="search-action-btn" title="Suggest" onclick="event.stopPropagation(); quickSuggest('${skill.id}')">⚡</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        // Reset keyboard selection
+        selectedTooltipIndex = 0;
+        const items = Array.from(tooltipGrid.querySelectorAll('.tooltip-item'));
+        updateTooltipSelection(items);
+    }
+
+    function selectSkillFromTooltip(skillId) {
+        const searchInput = document.getElementById('smart-search-input');
+        const massiveTooltip = document.getElementById('massive-tooltip');
+        
+        const skill = knownSkills.find(s => s.id === skillId);
+        if (skill) {
+            searchInput.value = skill.name;
+            massiveTooltip.classList.add('hidden');
+            renderSkillList();
+        }
+    }
+
+    function quickInspect(id) {
+        const skill = knownSkills.find(s => s.id === id);
+        if (skill) {
+            showAnalysis(skill);
+        }
+    }
+
+    function quickSuggest(id) {
+        const skill = knownSkills.find(s => s.id === id);
+        if (skill) {
+            Bloodsage.context.lastSkill = skill;
+            renderBlocksAsChat([Bloodsage._getSuggestBlock({}, skill.name)]);
+        }
+    }
+
+    function getTierColor(tier) {
+        switch(tier) {
+            case 'S': return '#f59e0b';
+            case 'A': return '#a855f7';
+            case 'B': return '#3b82f6';
+            default: return '#94a3b8';
+        }
+    }
+
+    // --- MYSTIC BOT (ADVANCED CHAT) ---
+    const MysticBot = {
+        context: {
+            lastSkill: null,
+            lastIntent: null,
+            conversationHistory: []
+        },
+
+        intents: {
+            COUNT: /how many|count|number of/i,
+            FIND: /find|show|search|where is/i,
+            EXPLAIN: /what is|tell me about|explain|analyze|lore/i,
+            SUGGEST: /suggest|recommend|what goes with|synergy|combo/i,
+            FUSION: /fuse|fusion|recipe/i,
+            GREETING: /hello|hi|hey|greetings/i
+        },
+
+        process: function(query) {
+            const lowerQuery = query.toLowerCase();
+            
+            // 1. Detect Intent
+            let intent = 'CHAT';
+            for (const [key, regex] of Object.entries(this.intents)) {
+                if (regex.test(lowerQuery)) {
+                    intent = key;
+                    break;
+                }
+            }
+            this.context.lastIntent = intent;
+
+            // 2. Extract Entities (Engine, Tier, Tag)
+            const entities = this.extractEntities(lowerQuery);
+
+            // 3. Generate Response
+            return this.generateResponse(intent, entities, lowerQuery);
+        },
+
+        extractEntities: function(query) {
+            const engines = ['void', 'solar', 'nature', 'ice', 'blood', 'structure', 'decay', 'stasis', 'discord', 'mind'];
+            const tiers = ['legendary', 'rare', 'common', 'forbidden', 's', 'a', 'b'];
+            
+            return {
+                engine: engines.find(e => query.includes(e)),
+                tier: tiers.find(t => query.includes(t)),
+                tag: Object.keys(this.getAllTags()).find(t => query.includes(t.toLowerCase()))
+            };
+        },
+
+        getAllTags: function() {
+            const tags = {};
+            knownSkills.forEach(s => (s.tags || []).forEach(t => tags[t] = true));
+            return tags;
+        },
+
+        generateResponse: function(intent, entities, query) {
+            // GREETING
+            if (intent === 'GREETING') {
+                return this.randomPhrase([
+                    "The Void listens.",
+                    "Systems online. Awaiting query.",
+                    "Greetings, Architect.",
+                    "The archives are open."
+                ]);
+            }
+
+            // COUNT
+            if (intent === 'COUNT') {
+                let skills = knownSkills;
+                let label = "skills";
+                
+                if (entities.engine) {
+                    skills = skills.filter(s => (s.engine || '').toLowerCase() === entities.engine);
+                    label = `${entities.engine} skills`;
+                }
+                if (entities.tier) {
+                    const tierMap = { 's': 'LEGENDARY', 'legendary': 'LEGENDARY', 'a': 'RARE', 'rare': 'RARE', 'b': 'COMMON', 'common': 'COMMON' };
+                    const targetTier = tierMap[entities.tier] || entities.tier.toUpperCase();
+                    skills = skills.filter(s => s.tier === targetTier);
+                    label += ` of ${targetTier} tier`;
+                }
+                
+                return `I detect <strong>${skills.length}</strong> ${label} in the database.`;
+            }
+
+            // EXPLAIN / LORE
+            if (intent === 'EXPLAIN') {
+                if (entities.engine) {
+                    const engineDesc = {
+                        'void': "The Void is the absence that consumes. It focuses on entropy, silence, and erasure.",
+                        'solar': "Solar is the radiant truth. It burns away impurity with overwhelming heat and light.",
+                        'nature': "Nature is the unbridled growth. It entangles, poisons, and reclaims what was lost.",
+                        'ice': "Ice is the absolute stasis. It preserves perfection by halting time and motion.",
+                        'blood': "Blood is the vital sacrifice. It trades essence for power, often at a steep cost."
+                    };
+                    return engineDesc[entities.engine] || `The ${entities.engine} engine is a fundamental force of the protocol.`;
+                }
+                
+                // Check for specific skill name match
+                const foundSkill = knownSkills.find(s => query.includes(s.name.toLowerCase()));
+                if (foundSkill) {
+                    this.context.lastSkill = foundSkill;
+                    return `<strong>${foundSkill.name}</strong><br><em>${foundSkill.description}</em><br><br>Tactical Note: ${foundSkill.tactical_brief || "No tactical data available."}`;
+                }
+
+                // Fallback to Lore Generation
+                const randomLore = NARRATIVE_ENGINE.lore_templates[Math.floor(Math.random() * NARRATIVE_ENGINE.lore_templates.length)];
+                const filledLore = randomLore.replace('[A]', 'The Code').replace('[B]', 'The Fusion');
+                return `Accessing archives... <br><em>"${filledLore}"</em>`;
+            }
+
+            // SUGGEST / SYNERGY
+            if (intent === 'SUGGEST') {
+                if (this.context.lastSkill) {
+                    const s = this.context.lastSkill;
+                    // Find skills with same tags but different engine
+                    const synergy = knownSkills.find(k => k.id !== s.id && k.tags && s.tags && k.tags.some(t => s.tags.includes(t)));
+                    if (synergy) {
+                        return `If you are using <strong>${s.name}</strong>, consider pairing it with <strong>${synergy.name}</strong>. They share the '${synergy.tags.find(t => s.tags.includes(t))}' vector.`;
+                    }
+                }
+                return "Specify a skill first, and I will calculate optimal synergies.";
+            }
+
+            // DEFAULT / CHAT
+            return this.randomPhrase([
+                "Query unclear. The Void is silent.",
+                "Please refine your parameters.",
+                "I am listening, Architect.",
+                "Data insufficient for meaningful answer."
+            ]);
+        },
+
+        randomPhrase: function(phrases) {
+            return phrases[Math.floor(Math.random() * phrases.length)];
+        }
+    };
+
+    function handleChatSubmit() {
+        const searchInput = document.getElementById('smart-search-input');
+        const query = searchInput.value.trim();
+        if (!query) return;
+        
+        addChatMessage(query, 'user');
+        searchInput.value = '';
+        
+        // Simulate "thinking" delay
+        const thinkingTime = 400 + Math.random() * 600;
+        
+        setTimeout(() => {
+            const response = MysticBot.process(query);
+            addChatMessage(response, 'ai');
+        }, thinkingTime);
+    }
+
+    function addChatMessage(text, sender) {
+        const chatMessages = document.getElementById('chat-messages');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `chat-message ${sender}`;
+        msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Removed old generateChatResponse in favor of MysticBot.process
+
+    // Initialize Smart Search
+    setTimeout(initSmartSearch, 1000); 
     </script>
 </body>
 </html>

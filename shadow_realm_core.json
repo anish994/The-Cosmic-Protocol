@@ -1,0 +1,327 @@
+[
+  {
+    "id": "63fb7aa9-7dc0-4319-a340-8ddb890e8038",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "38a21962-aa11-4260-8f3c-7b221f9c4f82",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3abe650b-5900-4435-a206-c505ab44a4a7",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f2b8b1d9-b112-466c-ad46-c4f05b0514af",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "The enemy is overwhelming us at the Astral Nexus!",
+    "output": "Let them come. We will paint the stones of the Astral Nexus with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "e5147016-5cf3-4958-afc4-16dc9460a22c",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f5118f64-1963-47e9-be75-6254f150ecbf",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c2e09a95-ab3c-4504-8ba5-2c13e6f4c515",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "de8e2208-0613-4a58-913a-c42ca860d572",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "786a6374-5d7d-4d05-8e83-c7c0f6ea5e1c",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "172f32ac-88eb-4df0-8cbd-d41f72d227ad",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "af1973e5-6dde-4b8f-8fd2-dd9fb23866c4",
+    "context": "A high-intensity scene involving lust themes in the Dream-Weaver's Den.",
+    "input": "What do you want from me?",
+    "output": "Everything. Your breath, your pulse, your very essence. I will leave nothing behind.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "404130b2-bab2-4d7d-bdff-cca3210dd935",
+    "context": "A high-intensity scene involving lust themes in the Shattered Citadel.",
+    "input": "What do you want from me?",
+    "output": "Everything. Your breath, your pulse, your very essence. I will leave nothing behind.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "3ba74ebf-ff33-4462-b892-b2405ccdcf3c",
+    "context": "A high-intensity scene involving lust themes in the Rotting Gardens.",
+    "input": "This feels dangerous.",
+    "output": "The best things always are. Fear is just the body's way of saying you are alive. Come closer.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "658323fb-2099-485e-ad59-70be6ffeec3c",
+    "context": "A high-intensity scene involving lust themes in the Abyssal Trench.",
+    "input": "What do you want from me?",
+    "output": "Everything. Your breath, your pulse, your very essence. I will leave nothing behind.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "3c4f3607-da79-4711-8b44-a05632eee121",
+    "context": "A high-intensity scene involving lust themes in the Sun-Spire.",
+    "input": "This feels dangerous.",
+    "output": "The best things always are. Fear is just the body's way of saying you are alive. Come closer.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "72008f3f-4996-4c12-92a9-4991083303d3",
+    "context": "A high-intensity scene involving lust themes in the Abyssal Trench.",
+    "input": "Your eyes... they draw me in.",
+    "output": "Be careful, mortal. To gaze into the abyss is to invite it into your soul. Do you accept the risk?",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "2e121f4d-4fad-43cd-a4da-9fed97fe3535",
+    "context": "A high-intensity scene involving lust themes in the Whispering Archives.",
+    "input": "What do you want from me?",
+    "output": "Everything. Your breath, your pulse, your very essence. I will leave nothing behind.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "61b8619f-5f77-42c7-a7bc-36521b47a174",
+    "context": "A high-intensity scene involving lust themes in the Dream-Weaver's Den.",
+    "input": "Your eyes... they draw me in.",
+    "output": "Be careful, mortal. To gaze into the abyss is to invite it into your soul. Do you accept the risk?",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "29d1cfd5-61ca-485a-a8e6-fb3a71de92f2",
+    "context": "A high-intensity scene involving lust themes in the Forgotten Crypt.",
+    "input": "Your eyes... they draw me in.",
+    "output": "Be careful, mortal. To gaze into the abyss is to invite it into your soul. Do you accept the risk?",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "cd69afd9-7192-434d-a235-d2ee3ae66d6d",
+    "context": "A high-intensity scene involving lust themes in the Shattered Citadel.",
+    "input": "What do you want from me?",
+    "output": "Everything. Your breath, your pulse, your very essence. I will leave nothing behind.",
+    "emotion": "seductive",
+    "style": "atmospheric",
+    "tags": [
+      "romance",
+      "seduction",
+      "tension"
+    ]
+  },
+  {
+    "id": "9fd3129c-56e1-4207-acfe-182aecbff611",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7eaf9d93-456f-4fd9-8561-5d2b7fd25998",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3dbd68de-fa7a-4229-9e1c-94f736841d3b",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "34c06ae2-21ad-457b-8660-f02f4ae9a024",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a42d841b-8870-4c78-a60e-6ad4d5f57529",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  }
+]

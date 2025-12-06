@@ -1,0 +1,2173 @@
+[
+  {
+    "id": "e556c379-43b3-4139-b7e7-da47d36bdeb8",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "The enemy is overwhelming us at the Void Edge!",
+    "output": "Let them come. We will paint the stones of the Void Edge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "de7d08bd-8921-497d-9df0-b4a8eb41b763",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "The enemy is overwhelming us at the Rotting Gardens!",
+    "output": "Let them come. We will paint the stones of the Rotting Gardens with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "44086efd-c7d2-4c5b-b129-0e47002db409",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "The enemy is overwhelming us at the Crimson Battlefield!",
+    "output": "Let them come. We will paint the stones of the Crimson Battlefield with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c5de2fc0-8cb7-4cc4-b56e-de62e4d00330",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "The enemy is overwhelming us at the Shattered Citadel!",
+    "output": "Let them come. We will paint the stones of the Shattered Citadel with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "2be96ba9-0d23-47b6-a6e2-99f4bb72c8bd",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "4d699334-4e85-42e0-a77e-b198d995eebf",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "The enemy is overwhelming us at the Astral Nexus!",
+    "output": "Let them come. We will paint the stones of the Astral Nexus with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "08c41111-eb44-48e3-94d5-81796243b26a",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "The enemy is overwhelming us at the Frozen Wastes!",
+    "output": "Let them come. We will paint the stones of the Frozen Wastes with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "2462d606-6c63-485d-a869-76b3b3f34477",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "79a29c5f-98be-4ebc-a35f-1c786921306e",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "The enemy is overwhelming us at the Whispering Archives!",
+    "output": "Let them come. We will paint the stones of the Whispering Archives with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8b7ab915-6c65-4acd-8f1e-dd019e2e51e9",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "26baada2-63d7-402a-944b-21ea1f499de8",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "The enemy is overwhelming us at the Crimson Battlefield!",
+    "output": "Let them come. We will paint the stones of the Crimson Battlefield with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8b758f6a-228c-4030-842c-c0afea88da53",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c4c08ec9-edc9-4eef-95d4-2e760d190c7f",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "The enemy is overwhelming us at the Rotting Gardens!",
+    "output": "Let them come. We will paint the stones of the Rotting Gardens with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "ef736581-d9b4-42c7-81e1-bddfd81269ad",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "67ddb937-4a69-4249-9666-f5aac145a994",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "The enemy is overwhelming us at the Rotting Gardens!",
+    "output": "Let them come. We will paint the stones of the Rotting Gardens with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "81bcf09e-bbf5-417a-a915-73f7ea095b94",
+    "context": "A high-intensity scene involving brutality themes in the Echo Chamber.",
+    "input": "The enemy is overwhelming us at the Echo Chamber!",
+    "output": "Let them come. We will paint the stones of the Echo Chamber with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3e7e6cab-c57b-4054-a141-f49742190dae",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "a5cb20d1-d859-4f9b-8ad9-e1460235ee92",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "b4db24f3-b72d-430d-90ef-061a51b9a23b",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "The enemy is overwhelming us at the Rotting Gardens!",
+    "output": "Let them come. We will paint the stones of the Rotting Gardens with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "69a099dd-0fb1-488e-9034-735988337a70",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0d28ab53-477c-4f15-8c52-e46d7429f868",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "5c8d74bc-91c6-423d-a11e-28b48d9a0b46",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "The enemy is overwhelming us at the Whispering Archives!",
+    "output": "Let them come. We will paint the stones of the Whispering Archives with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c4bf386d-359c-4f00-913e-6e74ab110041",
+    "context": "A high-intensity scene involving brutality themes in the Forgotten Crypt.",
+    "input": "The enemy is overwhelming us at the Forgotten Crypt!",
+    "output": "Let them come. We will paint the stones of the Forgotten Crypt with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0a3e0ff0-46f2-4264-9624-cf6d176c7d04",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "542eef27-0165-43b2-b37c-bf4f63e1b53f",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d4aa6e39-a341-410a-8fb5-97a302fc4fdb",
+    "context": "A high-intensity scene involving brutality themes in the Echo Chamber.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "78c80920-8cfb-4aed-81e0-880c52487f82",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "fe3073e2-da8c-4c9f-9168-91325e683b9f",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8b41a939-173d-455a-b497-e6e21941dbb3",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3141b8a4-733f-4176-9a28-d9a0e6888709",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "9023fd11-05a1-4abd-a26d-10dd8cb6cab5",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "The enemy is overwhelming us at the Shattered Citadel!",
+    "output": "Let them come. We will paint the stones of the Shattered Citadel with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "15c66d0b-8475-42c1-8d5c-36041bac6e68",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3bc358e9-b1b6-440b-8c2f-43060508e233",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "The enemy is overwhelming us at the Karmic Wheel!",
+    "output": "Let them come. We will paint the stones of the Karmic Wheel with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d1217802-9030-4ae1-8f99-b8470159edf5",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "7e45c594-a746-4e24-a5f0-61acf31a4c59",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "78ff0167-64cf-485e-aaa4-a42e241cbd1d",
+    "context": "A high-intensity scene involving brutality themes in the Echo Chamber.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "529788be-2c31-4614-bb07-ca5f9c8ab27f",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "The enemy is overwhelming us at the Veiled Market!",
+    "output": "Let them come. We will paint the stones of the Veiled Market with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8be322e5-a0ee-4aea-be74-3b2634800da5",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "The enemy is overwhelming us at the Soul Forge!",
+    "output": "Let them come. We will paint the stones of the Soul Forge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "ed89fcad-9304-45c0-9ecc-5b47f2957b40",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "b8783122-446a-495f-8e0c-233fbb4a21fe",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "The enemy is overwhelming us at the Dream-Weaver's Den!",
+    "output": "Let them come. We will paint the stones of the Dream-Weaver's Den with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "35f1c9b5-67b9-46cd-af97-09aa97a18332",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "16b4c570-f6c0-4e6a-a76c-7ab7380510d5",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "78fece1c-20f5-4300-bdf4-f691ca9f6aee",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "e5326bfe-5cea-483d-8af9-1550ea956a50",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0496b3e2-7074-4619-8c76-fe934e5eeb4e",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "71a2fb5f-3f9c-48c9-b54d-be1d175dd1e6",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3de92c3d-a4fb-414a-9e80-1436bc997e6a",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "917e904d-67c2-40f4-8407-02d4169ac153",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "30c784ba-6392-4cac-91d3-8dacaf24a9a6",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f4cb036f-2b0c-435b-b1b1-51e1ac73140b",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "5dc51db3-4a71-4aa4-b1e0-a8b5cac1203b",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "The enemy is overwhelming us at the Soul Forge!",
+    "output": "Let them come. We will paint the stones of the Soul Forge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "7c2cf6d0-cfa8-42d2-bb24-b4950395689c",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "071f44de-eccf-449e-8798-92fb56617652",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "7d573420-6158-4cb1-ad18-18cd68a4054f",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c2af8239-1847-4996-a777-3c916f437ef0",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "The enemy is overwhelming us at the Void Edge!",
+    "output": "Let them come. We will paint the stones of the Void Edge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8d083214-0b9f-4366-9391-8c7e231c355f",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "e2479a0e-312b-446b-b2d6-ee3dc7d58c22",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "682593e6-55d9-4c23-ba2e-f37487e45fe8",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "51649d69-8ea1-40c5-923f-01b39acc1bbe",
+    "context": "A high-intensity scene involving brutality themes in the Forgotten Crypt.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "6d476d62-0951-4f97-b9c8-4a4360713dd8",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "The enemy is overwhelming us at the Astral Nexus!",
+    "output": "Let them come. We will paint the stones of the Astral Nexus with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "4c0ebd83-0f60-43b8-8566-6ae73ab94e53",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8b9d436e-39d7-417b-ac7d-21d96413009d",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "29467a63-e0ff-4387-9515-076e918a524d",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "ca14b85f-100d-43cc-b9e6-5877b7ed56b6",
+    "context": "A high-intensity scene involving brutality themes in the Forgotten Crypt.",
+    "input": "The enemy is overwhelming us at the Forgotten Crypt!",
+    "output": "Let them come. We will paint the stones of the Forgotten Crypt with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "1db148cd-6cab-440b-985c-fdf088a0a295",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "023b90f0-ca21-4648-a339-81966bb1db44",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "28ff2364-a402-42c0-ba39-3ec116baf84d",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "58de84fa-34a0-4654-bd36-0fd254044e5c",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c8c7b9dd-0399-4014-bebf-a85b6f5d46be",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3cc465f7-5f09-455f-911a-a920c1779f8e",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "99db5afd-a135-4a00-9c37-33c2e9c9b5a9",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "The enemy is overwhelming us at the Astral Nexus!",
+    "output": "Let them come. We will paint the stones of the Astral Nexus with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "2c63f49e-3922-4b59-aa73-c52b14db891e",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3282eaef-1da8-45da-9010-357bd63feae7",
+    "context": "A high-intensity scene involving brutality themes in the Forgotten Crypt.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "930f352d-22e5-436d-bfc5-56ac15617bcb",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "af842b9c-a3a9-4d5e-acf9-cb02780172e7",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "52a67b80-0951-4f70-a996-cf7eec702ba4",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "6edd1dec-0bdd-4975-b53a-08b96b89a475",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "31367c39-8632-4a88-9348-720cc777eeca",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "509a428c-a9ec-40e6-9d8e-9ec449781e7a",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "aa1c6fec-c270-440a-8a8e-f24ab1a4995e",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "The enemy is overwhelming us at the Veiled Market!",
+    "output": "Let them come. We will paint the stones of the Veiled Market with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "81b3f5da-5fa1-4b6b-8753-de10ffa30880",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "The enemy is overwhelming us at the Abyssal Trench!",
+    "output": "Let them come. We will paint the stones of the Abyssal Trench with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "e5d7f13b-aae2-4cf5-bf34-2def7a9bd05d",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "378a26f0-5353-4c04-9d0c-b09f592bf5c6",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c374bd69-f21d-4f14-9849-a3f67d2ba867",
+    "context": "A high-intensity scene involving brutality themes in the Echo Chamber.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "40752c4c-4f14-4d2b-8b99-fee9997fc088",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "44674bc8-ffec-4383-85b9-5302710cd288",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "22a84754-3071-408e-ab4e-75e1e1bdadc3",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8732fb75-c323-4c06-8078-bac484a2c2a9",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "The enemy is overwhelming us at the Karmic Wheel!",
+    "output": "Let them come. We will paint the stones of the Karmic Wheel with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "93fd3027-1f4b-4536-b5e0-328440072023",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d8e4578f-dad5-468c-8571-854f43e1f0ed",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "83159cf7-33ed-4767-89a3-92229fc518a2",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "cfe91238-6f2e-427d-a428-6e746ed8b265",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "324b937a-3cd1-4204-997e-461ed96a4ad9",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "The enemy is overwhelming us at the Shattered Citadel!",
+    "output": "Let them come. We will paint the stones of the Shattered Citadel with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "895d4391-c27d-4399-ab1c-6fe68b40a9c6",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "The enemy is overwhelming us at the Frozen Wastes!",
+    "output": "Let them come. We will paint the stones of the Frozen Wastes with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "70cbbb61-2024-4df6-a113-509ea966177c",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "bf158277-d98c-4ae9-8ded-2546f1e94e4c",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "2b7d9bb7-374f-4772-95e0-3061347778d5",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "54854417-8b9b-476a-9ef2-8303e207ec86",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "The enemy is overwhelming us at the Soul Forge!",
+    "output": "Let them come. We will paint the stones of the Soul Forge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "5e3b0768-61b4-4144-9596-87b1969c36d3",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "814f7c8f-2a33-4e7c-a8d2-753645b8bdc2",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "dd788da2-2aad-47f7-bb4e-6688e6530201",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "a45cf971-6d96-4208-ae54-d9ed3f132bc6",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "9f2dc903-5285-4543-a777-182294643f46",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8aa00fa5-8b8a-42aa-9cbd-a9576fc67a72",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "The enemy is overwhelming us at the Void Edge!",
+    "output": "Let them come. We will paint the stones of the Void Edge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "462ee364-7cee-4e9d-82f5-6a4afc411d7a",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "781b23da-2deb-49a5-9d23-d466afbf7215",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "The enemy is overwhelming us at the Dream-Weaver's Den!",
+    "output": "Let them come. We will paint the stones of the Dream-Weaver's Den with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "c829fd37-c669-4f98-935f-f22dfb6b457f",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d24098ee-f95f-48ee-9570-518c118ce0f4",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f90ef5ec-3ee0-45cf-be44-83a9b286aeb8",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "The enemy is overwhelming us at the Obsidian Throne!",
+    "output": "Let them come. We will paint the stones of the Obsidian Throne with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "68391966-43ae-43b8-9e56-d50f01b3a5c9",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "The enemy is overwhelming us at the Dream-Weaver's Den!",
+    "output": "Let them come. We will paint the stones of the Dream-Weaver's Den with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "50d2ed62-0a3a-426a-a595-088727c7835e",
+    "context": "A high-intensity scene involving brutality themes in the Void Edge.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "9b3198d7-2743-47a5-8ec8-c3959424a6c8",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "27525154-e5a0-422e-8d63-394c065e7185",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "59438641-b4d5-4725-84ea-ea38172219f7",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "The enemy is overwhelming us at the Soul Forge!",
+    "output": "Let them come. We will paint the stones of the Soul Forge with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "94c3f10d-2317-432b-b210-a46d2478c150",
+    "context": "A high-intensity scene involving brutality themes in the Echo Chamber.",
+    "input": "The enemy is overwhelming us at the Echo Chamber!",
+    "output": "Let them come. We will paint the stones of the Echo Chamber with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "b5544013-e9b2-4fc7-9c20-c6c080fcebdb",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d1ffa5f7-54bf-44cf-af82-4c932d2c61c5",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f4e9263d-8b5d-42a7-9c40-bde8f4f6dafd",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "The enemy is overwhelming us at the Veiled Market!",
+    "output": "Let them come. We will paint the stones of the Veiled Market with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "95812f0c-34d7-4f64-a661-14b715044cda",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "302a67fa-1a75-4a8d-b92d-597a3e4662a1",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "The enemy is overwhelming us at the Sun-Spire!",
+    "output": "Let them come. We will paint the stones of the Sun-Spire with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "992a6c70-bd92-4dbf-a4ea-19798eaf78f0",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "The enemy is overwhelming us at the Dream-Weaver's Den!",
+    "output": "Let them come. We will paint the stones of the Dream-Weaver's Den with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "56292607-60f4-435e-a2b9-5ab633e1f2a0",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "580cb617-5f9f-44fa-b3c2-405aa86acbe0",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "45657cc4-8610-49c5-8d84-0bcdf35f648a",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "fc4a20e7-7071-4518-b205-9b67c846c213",
+    "context": "A high-intensity scene involving brutality themes in the Dream-Weaver's Den.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "1d817310-fafd-41d7-bcd4-49bdb48c8d27",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "The enemy is overwhelming us at the Abyssal Trench!",
+    "output": "Let them come. We will paint the stones of the Abyssal Trench with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "e7b67e9d-ee43-4f3d-89b8-4de67844c149",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "The enemy is overwhelming us at the Abyssal Trench!",
+    "output": "Let them come. We will paint the stones of the Abyssal Trench with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "51733a99-817f-483c-af03-4eaf2eb6e554",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0726af5a-086f-43fa-b112-8be958f1c58b",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "88d364af-71a8-497d-b7a6-0c787cea1d4e",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f9d7b44d-bea3-4484-9e4e-df2c1b562012",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "24dac7af-f3f2-4795-a680-3fe2216e4816",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "The enemy is overwhelming us at the Whispering Archives!",
+    "output": "Let them come. We will paint the stones of the Whispering Archives with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0101c438-ab3d-4ecc-a189-311b31a35842",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "bd5aa9e1-69e7-41fc-8736-03b15874c252",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "9ea895dd-7c76-417b-b3f3-edd00d36e2ad",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "3877cc02-7846-4248-8456-a91e05ef1391",
+    "context": "A high-intensity scene involving brutality themes in the Abyssal Trench.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0aab9159-c1fe-4b56-a128-344277cb59a4",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "db6e2163-bb3b-4e44-a8f8-4ad3eeb8a9bf",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "12215a89-8853-4005-a2a0-884ddc249464",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d000fb35-a41a-47ab-a22a-ffda29516ecd",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "86785656-a83f-45a0-acf7-51fb04bd75b2",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "8639a03a-53d0-432d-9842-a35a2386eea4",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "The enemy is overwhelming us at the Astral Nexus!",
+    "output": "Let them come. We will paint the stones of the Astral Nexus with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "16c6ecb1-5cb5-419e-b9b1-186623429f16",
+    "context": "A high-intensity scene involving brutality themes in the Echo Chamber.",
+    "input": "The enemy is overwhelming us at the Echo Chamber!",
+    "output": "Let them come. We will paint the stones of the Echo Chamber with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "d2e624ac-d9e4-4591-a992-b90d27d16cff",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "767e81b7-a989-41a9-8098-b4c26d5a71c8",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "7b77f65e-3e91-423f-8b88-6f40f069895c",
+    "context": "A high-intensity scene involving brutality themes in the Sun-Spire.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f0b2976f-987a-46f2-a61d-b119dbe2e912",
+    "context": "A high-intensity scene involving brutality themes in the Shattered Citadel.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "5a36eed6-de5f-41d9-ab10-900c6e4b2aab",
+    "context": "A high-intensity scene involving brutality themes in the Frozen Wastes.",
+    "input": "The enemy is overwhelming us at the Frozen Wastes!",
+    "output": "Let them come. We will paint the stones of the Frozen Wastes with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "e24ddfc3-0213-4f45-8556-a2b8bc367237",
+    "context": "A high-intensity scene involving brutality themes in the Rotting Gardens.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "221f0097-7f90-4614-9690-f95bab06a446",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "f4cad082-b328-4ba4-849b-c2a720a69f27",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "fb24b969-9f84-4c28-ba44-414089273060",
+    "context": "A high-intensity scene involving brutality themes in the Astral Nexus.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "70ed373f-7608-416e-81ad-afa536dc7200",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "0946acc6-1a04-4180-babf-c036fb0cf61c",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "69492322-5b84-4ce5-965b-f7284583c73f",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "2d33f2cf-9f0a-40c6-b52d-fee59e553784",
+    "context": "A high-intensity scene involving brutality themes in the Veiled Market.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "7ad2ee86-058d-49f0-a1d6-8e7b483d9b0b",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "a71d3e09-55f6-4326-8c66-6a94de25a49e",
+    "context": "A high-intensity scene involving brutality themes in the Soul Forge.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "5b29cc39-4a9c-434a-8cc8-d093267ea34d",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "89fe0e59-7e4c-49f2-b54f-d57438aa3aba",
+    "context": "A high-intensity scene involving brutality themes in the Crimson Battlefield.",
+    "input": "Look at the carnage...",
+    "output": "Beautiful, is it not? The silence of the dead is the only truth in this world.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "aa403394-ab16-40d4-9387-0a5df84f1bac",
+    "context": "A high-intensity scene involving brutality themes in the Forgotten Crypt.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "51ffaaba-16f2-471d-9e80-944b82e8389e",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "aef9f622-f79b-4c9a-b3b2-3fc5c4c34450",
+    "context": "A high-intensity scene involving brutality themes in the Karmic Wheel.",
+    "input": "The enemy is overwhelming us at the Karmic Wheel!",
+    "output": "Let them come. We will paint the stones of the Karmic Wheel with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "5eb18878-a7b1-436c-918b-ae8f9e45a8dd",
+    "context": "A high-intensity scene involving brutality themes in the Forgotten Crypt.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "9b69b80e-a726-4d1e-856e-cf6a935625a6",
+    "context": "A high-intensity scene involving brutality themes in the Obsidian Throne.",
+    "input": "I can't hold the line!",
+    "output": "You will hold, or you will die where you stand. Bleed for me, warrior!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "092f33e4-6af1-4b6f-ab4c-d053a57c05cb",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "The enemy is overwhelming us at the Whispering Archives!",
+    "output": "Let them come. We will paint the stones of the Whispering Archives with their regret. Strike now, without mercy!",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  },
+  {
+    "id": "6e4be4f7-d8bd-4035-bd61-526ed834b455",
+    "context": "A high-intensity scene involving brutality themes in the Whispering Archives.",
+    "input": "They are slaughtering everyone!",
+    "output": "Then we shall be the slaughter. Do not look away. Carve your path through the meat and bone.",
+    "emotion": "fierce",
+    "style": "brutal",
+    "tags": [
+      "combat",
+      "war",
+      "intensity"
+    ]
+  }
+]

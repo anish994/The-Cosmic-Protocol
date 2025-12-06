@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +39,68 @@
         }
 
         /* Mobile landscape optimization for house signs */
+
+        /* Lightweight 2.5D illusion button for Complete Schematics - more button-like */
+        .schematics-btn-illusion {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.25em 0.8em;
+            min-width: 70px;
+            font-size: 0.65em;
+            font-weight: 700;
+            color: var(--text-main);
+            background: linear-gradient(135deg, var(--engine-accent, #8b5cf6) 0%, var(--engine-accent, #8b5cf6) 50%, rgba(139,92,246,0.8) 100%);
+            border: 1px solid var(--engine-accent, #8b5cf6);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(139,92,246,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+            line-height: 1;
+            overflow: hidden;
+        }
+        .schematics-btn-illusion:hover {
+            background: linear-gradient(135deg, var(--engine-accent, #8b5cf6) 0%, rgba(139,92,246,0.9) 50%, rgba(139,92,246,0.7) 100%);
+            border-color: var(--engine-accent-glow, #a78bfa);
+            box-shadow: 0 3px 10px rgba(139,92,246,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+        .schematics-btn-illusion:active {
+            transform: translateY(0px) scale(0.97);
+            box-shadow: 0 1px 6px rgba(139,92,246,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
+        /* sheen that sweeps across on hover */
+        .schematics-btn-illusion::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -40%;
+            width: 22%;
+            height: 140%;
+            background: linear-gradient(90deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.4) 45%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0.0) 100%);
+            transform: skewX(-22deg) translateX(0);
+            transition: transform 0.3s ease;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        .schematics-btn-illusion:hover::after { transform: skewX(-22deg) translateX(300%); }
+        .schematics-btn-wrap { display:flex; align-items:center; justify-content:flex-end; margin-top:12px; }
+
+        /* stacked label inside button */
+        .schematics-btn-illusion .schem-top { font-size: 0.75em; font-weight:800; line-height:1; }
+        .schematics-btn-illusion .schem-bottom { font-size: 0.55em; font-weight:600; opacity:0.9; margin-top:1px; text-transform:none; }
+        /* Improve contrast and readability against colorful background */
+        .schematics-btn-illusion .schem-top,
+        .schematics-btn-illusion .schem-bottom {
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .schematics-btn-illusion .schem-bottom { opacity:0.9; font-weight:600; }
+
         @media (max-width: 767px) and (orientation: landscape) {
             :root {
                 --house-sign-logo-size: 20px;
@@ -183,13 +246,14 @@
         }
         
         /* === PANEL BASE STYLES === */
-          .cosmic-panel {
+                    .cosmic-panel {
               background: var(--panel-bg);
             border: none;
             border-radius: 0;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+                        min-height: 0; /* allow children to shrink inside grid cells */
             position: relative;
             -webkit-transform: translateZ(0); /* Hardware acceleration */
             transform: translateZ(0);
@@ -1615,6 +1679,45 @@
         .blueprint-preview.show { opacity: 1; transform: translateY(0); }
 
         /* === JOTYSH BLUEPRINT MODAL === */
+        /* Schematics: Use Cases / Versatility styles */
+        .schematics-usecases {
+            margin-top: 1.2em;
+            background: rgba(255,255,255,0.018);
+            border-radius: 10px;
+            padding: 0.7em;
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+        .usecases-header { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem; }
+        .usecases-icon { font-size:1.05rem; }
+        .usecases-title { font-weight:800; font-size:0.95rem; color:var(--accent-glow); }
+        .usecases-subtitle { font-size:0.76rem; color:var(--text-dim); margin-left:auto; }
+        .usecases-row { display:flex; gap:0.55em; flex-wrap:wrap; }
+        .usecase-card { flex: 1 1 0; min-width:100px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.006)); border-radius:8px; padding:0.55em; display:flex; flex-direction:column; justify-content:center; border:1px solid rgba(255,255,255,0.04); min-height:72px; position:relative; transition: box-shadow 160ms var(--easing-smooth), transform 160ms var(--easing-smooth); }
+        .usecase-card:hover { box-shadow: 0 6px 18px rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.18); transform: translateY(-4px); }
+        .usecase-accent { position:absolute; top:0; left:0; right:0; height:4px; border-radius:8px 8px 0 0; }
+        .usecase-inner { display:flex; align-items:center; gap:0.5rem; }
+        .usecase-icon { font-size:1.05rem; }
+        .usecase-hint { font-size:0.72em; color:var(--text); margin-top:0.35em; line-height:1.2; text-align:left; }
+        .usecases-note { margin-top:0.45em; font-size:0.72em; color:var(--text-dim); }
+
+        /* Schematics: Description block */
+        .schematics-desc-section {
+            margin-top: 1.2em;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 0.75em 0.85em;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .desc-header { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.25rem; }
+        .desc-icon { font-size:1.02rem; }
+        .desc-title { font-weight:800; font-size:0.95rem; color:var(--accent-glow); }
+        .desc-badge { font-size:0.72rem; color:#f59e0b; background:rgba(245,158,11,0.08); border-radius:4px; padding:0.08em 0.45em; font-weight:700; margin-left:auto; }
+        .desc-main { font-size:0.95rem; color:var(--text-main); margin-bottom:0.2rem; }
+        .desc-flavor { font-size:0.8rem; color:var(--accent-glow); font-style:italic; margin-bottom:0.15rem; }
+        .desc-intro { font-size:0.82rem; color:var(--text-dim); margin-bottom:0.25rem; }
+        .desc-tactical { font-size:0.82rem; color:var(--text-main); margin-bottom:0.25rem; }
+        .desc-mechanics { font-size:0.75rem; color:var(--text-dim); margin-top:0.25rem; }
+
         .jotysh-blueprint-modal {
             position: fixed;
             inset: 10vh auto 10vh auto;
@@ -1939,6 +2042,25 @@
             background: linear-gradient(180deg, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0.3) 100%);
         }
 
+        /* Allow the left panel to behave like a column layout where the list can grow and scroll on its own */
+        #left-panel .panel-content {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden; /* keep overall panel from growing beyond the grid cell */
+        }
+
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+
         .collection-stats {
             display: flex;
             gap: 0.8rem;
@@ -2023,99 +2145,248 @@
             animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards;
             position: relative;
             overflow: hidden;
+            /* Premium Card Styles */
+            background: linear-gradient(145deg, rgba(20, 25, 35, 0.95) 0%, rgba(15, 20, 30, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.2rem;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            border-color: rgba(139, 92, 246, 0.4);
+            z-index: 10;
         }
 
         .skill-card.selected {
             border-color: var(--accent-glow);
             box-shadow: 0 0 14px rgba(139,92,246,0.35);
+            background: linear-gradient(145deg, rgba(30, 35, 50, 0.95) 0%, rgba(20, 25, 40, 0.98) 100%);
         }
 
         .skill-card.legendary {
-            animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards, legendaryGlow 6s ease-in-out infinite;
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+        .skill-card.legendary:hover {
+            border-color: rgba(245, 158, 11, 0.8);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
         }
 
-        .skill-card.rare {
-            animation: skillAppear 0.5s cubic-bezier(0.2, 0, 0.1, 1) backwards, rareGlow 8s ease-in-out infinite;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);
-            animation: scanline 12s linear infinite;
-        }
-
-        /* Premium Skill Card Enhancements */
-        .skill-card-inner {
+        .skill-card-content {
+            padding: 0.9rem;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .skill-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.6rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        /* Expanded Details Styles */
+        .skill-details-expanded {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .skill-card-title {
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            line-height: 1.3;
-        }
-
-        .skill-card-icon {
-            font-size: 1.8rem;
-            opacity: 0.7;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .skill-card-icon {
+        .skill-details-expanded.open {
+            max-height: 600px;
             opacity: 1;
-            transform: scale(1.1) rotate(5deg);
+            padding: 0.8rem;
+            overflow-y: auto;
         }
-
-        .skill-tags {
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-tag {
-            background: rgba(139,92,246,0.15);
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            font-size: 0.65rem;
-            color: var(--accent-glow);
-            border: 1px solid rgba(139,92,246,0.2);
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            transition: all 0.2s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(139,92,246,0.25);
-            border-color: rgba(139,92,246,0.4);
-        }
-
-        .skill-meta {
+        .skill-expand-btn {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+            font-size: 0.7rem;
+            padding: 0.4rem;
+            cursor: pointer;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+        .skill-expand-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+        }
+        .detail-section-title {
             font-size: 0.65rem;
-            color: var(--text-dim);
+            text-transform: uppercase;
+            color: var(--accent-glow);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            padding-bottom: 0.1rem;
             margin-top: 0.6rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .detail-section-title:first-child { margin-top: 0; }
+        .detail-text {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        .attribute-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem;
+        }
+        .attribute-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            padding-bottom: 0.1rem;
+        }
+
+        /* Header: Icon + Name + Tier */
+        .skill-header-row {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-icon-large {
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .skill-title-group {
+            flex: 1;
+            min-width: 0; /* Text truncation fix */
+        }
+
+        .skill-name-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+            white-space: normal;
+            word-break: break-word;
+        }
+
+        .skill-tier-text {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .skill-narrative-intro {
+            font-size: 0.72rem;
+            line-height: 1.45;
+            color: rgba(226, 232, 240, 0.85);
+            margin-bottom: 0.7rem;
+        }
+
+        /* Stats Grid */
+        .skill-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.4rem 0.2rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-label {
+            font-size: 0.55rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 0.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-glow);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Tags & Badges */
+        .skill-footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .skill-tags-list {
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag-pill {
+            font-size: 0.6rem;
+            padding: 0.15rem 0.4rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 3px;
+            color: var(--text-dim);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .fused-badge-mini {
+            font-size: 0.6rem;
+            color: #fbbf24; /* Amber */
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            background: rgba(251, 191, 36, 0.08);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            white-space: nowrap;
+        }
+
+        /* Mastery Bar integrated */
+        .skill-mastery-line {
+            height: 3px;
+            background: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .skill-mastery-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-glow), #a78bfa);
+            box-shadow: 0 0 8px var(--accent-glow);
         }
 
         .fused-badge {
@@ -2319,6 +2590,540 @@
             -webkit-overflow-scrolling: touch;
         }
 
+        /* Owned Skills Revamp Styles */
+        .owned-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            flex: 1 1 0; /* Fill available panel space but stay flexible */
+            min-height: 0; /* allow nested scroll containers to function */
+            overflow: hidden;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+        }
+
+        .skill-search-input {
+            width: 100%;
+            margin-bottom: 0.6rem;
+            padding: 0.5em 2.5em 0.5em 0.8em;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(24, 24, 32, 0.8);
+            color: #eee;
+            font-size: 0.9em;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .skill-search-input:focus {
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 0.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        .search-clear:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .search-container {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .search-help {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(24, 24, 32, 0.8);
+            color: #eee;
+            font-size: 0.8em;
+            font-weight: bold;
+            cursor: help;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            margin-top: 0.3rem;
+        }
+        .search-help:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        /* Tag chips styles (replaces quick-filters) */
+        .tag-filters { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem; }
+        .tag-chips { display:flex; gap:0.4rem; flex-wrap:wrap; }
+        .tag-chip { padding:0.28em 0.56em; border-radius:12px; border:1px solid rgba(255,255,255,0.06); background:rgba(24,24,32,0.6); color:#ccc; font-size:0.75em; cursor:pointer; transition:all 0.12s; }
+        .tag-chip.active { background:rgba(139,92,246,0.36); border-color:rgba(139,92,246,0.48); color:#fff; }
+        .tag-chip:hover { transform:translateY(-1px); color:#fff; }
+        /* overflow dropdown removed; tag chips render inline */
+
+        mark {
+            background: rgba(255, 215, 0, 0.3);
+            color: #fff;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .engine-slider {
+            display: flex;
+            gap: 0.4rem;
+            overflow-x: auto;
+            padding-bottom: 0.8rem;
+            flex-shrink: 0;
+            scroll-behavior: smooth;
+            cursor: grab;
+        }
+        .engine-slider.active {
+            cursor: grabbing;
+        }
+        .engine-slider::-webkit-scrollbar {
+            height: 4px;
+        }
+        .engine-slider::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+        }
+        .engine-slider::-webkit-scrollbar-thumb {
+            background: rgba(139,92,246,0.3);
+            border-radius: 2px;
+        }
+        .engine-slider::-webkit-scrollbar-thumb:hover {
+            background: rgba(139,92,246,0.5);
+        }
+
+        .engine-pill {
+            flex: 0 0 auto;
+            padding: 0.4em 1.2em;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            background: rgba(24, 24, 32, 0.8);
+            color: #eee;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.3em;
+        }
+        .engine-pill:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .engine-pill.active {
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.8) 0%, rgba(59, 130, 246, 0.8) 100%);
+            color: #fff;
+            border-color: rgba(139, 92, 246, 0.8);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+        }
+
+        .owned-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0; /* Remove gap to connect list and preview */
+            min-height: 0; /* Important for nested flex scroll */
+        }
+
+        .skills-list {
+            overflow-y: auto;
+            padding: 0.5rem;
+            flex: 1;
+        }
+
+        .skill-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--panel-border);
+            padding: 0.8rem;
+            margin-bottom: 0.4rem;
+            cursor: grab;
+            transition: all 0.2s;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--accent);
+            transform: translateX(2px);
+        }
+
+        .skill-item.legendary {
+            border-color: #f59e0b;
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent);
+        }
+
+        .skill-name { font-weight: bold; color: #fff; margin-bottom: 2px; font-size: 0.95rem; }
+        .skill-type { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; }
+
+        /* Compact Skill Card */
+        .skill-card-compact {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 220px;
+            word-break: break-word;
+        }
+        .skill-card-compact:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 215, 0, 0.5);
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.3) 100%);
+            box-shadow: 0 0 16px rgba(255, 215, 0, 0.25);
+        }
+        .skill-card-compact.selected {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+        }
+        .skill-card-compact.legendary {
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+        .skill-card-compact.rare {
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        .compact-flavor {
+            font-size: 0.65rem;
+            color: var(--accent-glow);
+            margin-top: 2px;
+            font-style: italic;
+            white-space: normal;
+            opacity: 0.85;
+        }
+        .fused-badge {
+            font-size: 0.6rem;
+            color: #f59e0b;
+            background: rgba(245, 158, 11, 0.08);
+            border-radius: 3px;
+            padding: 0.1em 0.4em;
+            margin-left: 0.5em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .compact-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            justify-content: space-between;
+            position: relative;
+        }
+        .schematics-btn-wrap {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(calc(-50% + 19px));
+            z-index: 2;
+        }
+        .schematics-btn {
+            background: rgba(59,130,246,0.08);
+            color: var(--accent-glow);
+            border: none;
+            border-radius: 4px;
+            padding: 0.2em 0.7em;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .schematics-btn:hover {
+            background: rgba(59,130,246,0.18);
+        }
+
+        .compact-stats {
+            display: flex;
+            align-items: center;
+            gap: 0.2em;
+            font-size: 0.7rem;
+            background: rgba(0,0,0,0.15);
+            border-radius: 4px;
+            padding: 0.1em 0.4em;
+            margin-left: 0.5em;
+        }
+        .compact-icon {
+            font-size: 1.2rem;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            border-radius: 4px;
+        }
+        .compact-info {
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            word-break: break-word;
+            max-width: 180px;
+        }
+        .compact-name {
+            font-size: 0.65rem;
+            color: var(--accent-glow);
+            margin-top: 2px;
+            font-style: italic;
+            white-space: normal;
+            opacity: 0.85;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+        .compact-tier {
+            font-size: 1.05rem;
+            font-weight: 800;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text);
+            letter-spacing: 0.5px;
+            transition: color 0.3s, text-shadow 0.3s;
+            animation: engineVibe 2.2s infinite alternate;
+
+        }
+
+        @keyframes engineVibe {
+            0% { text-shadow: 0 0 2px var(--accent-glow), 0 0 8px rgba(0,0,0,0.1); }
+            50% { text-shadow: 0 0 8px var(--accent-glow), 0 0 16px rgba(0,0,0,0.18); }
+            100% { text-shadow: 0 0 2px var(--accent-glow), 0 0 8px rgba(0,0,0,0.1); }
+        }
+        .compact-tags {
+            display: flex;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+        }
+        /* Skill card engine/tier vibes */
+        .skill-card-compact {
+            position: relative;
+            overflow: hidden; /* ensure inner content stays inside compact card */
+            transition: transform 180ms var(--easing-smooth), box-shadow 220ms var(--easing-smooth);
+            border-radius: 10px;
+            padding: 0.45rem 0.6rem;
+            background: linear-gradient(180deg, rgba(6,8,12,0.02), rgba(6,8,12,0.02));
+        }
+        .skill-card-compact > * { position: relative; z-index: 1; }
+        .skill-card-compact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(180deg, var(--engine-accent-rgba, rgba(139,92,246,0.04)), rgba(6,8,12,0.02));
+            pointer-events: none;
+            z-index: 0;
+            transition: opacity 420ms ease, transform 420ms ease;
+            opacity: 1;
+        }
+        .skill-card-compact .compact-icon {
+            background: var(--engine-accent-rgba, rgba(139,92,246,0.06));
+            border: 1px solid var(--engine-accent, #8b5cf6);
+            color: var(--text-main);
+            border-radius: 8px;
+            width:48px; height:48px; display:flex; align-items:center; justify-content:center;
+        }
+        .skill-card-compact .compact-tag { background: var(--engine-accent-rgba, rgba(139,92,246,0.06)); color: var(--text-main); padding:0.2em 0.5em; border-radius:4px; font-size: 0.6rem; }
+        .skill-card-compact:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px var(--tier-color-rgba, rgba(59,130,246,0.08));
+        }
+        /* very subtle slow vibe across all cards */
+        @keyframes subtleVibe { 0% { transform: translateY(0); } 50% { transform: translateY(-1px); } 100% { transform: translateY(0); } }
+        .skill-card-compact { animation: subtleVibe 8s ease-in-out infinite; }
+        /* reduce animation intensity for small screens */
+        @media (max-width:800px) { .skill-card-compact { animation: none; } }
+        .compact-stats {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.1em;
+            font-size: 0.7rem;
+            background: rgba(0,0,0,0.15);
+            border-radius: 4px;
+            padding: 0.1em 0.4em;
+            margin-left: 0.5em;
+            min-width: 70px;
+            word-break: keep-all;
+        }
+        .mini-preview {
+            background: linear-gradient(180deg, rgba(10, 14, 20, 0.9) 0%, rgba(6, 8, 12, 0.95) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px 10px 0 0;
+            flex-shrink: 0;
+            backdrop-filter: blur(12px);
+            height: 50%; /* Increased height for more content */
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .preview-head {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .preview-icon-lg {
+            font-size: 2rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .preview-details { flex: 1; }
+        .preview-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+        .preview-subtitle { font-size: 0.7rem; color: var(--accent-glow); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .preview-desc {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+            padding: 0.6rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            border-left: 2px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .preview-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+        .p-stat-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 0.7rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .p-stat-icon {
+            font-size: 1.3rem;
+            opacity: 0.8;
+        }
+        .p-stat-label {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .p-stat-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+        }
+        .p-stat-desc {
+            font-size: 0.6rem;
+            color: var(--text-dim);
+            line-height: 1.3;
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        .preview-analysis-section {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 0.8rem;
+            border-left: 3px solid rgba(34, 197, 94, 0.4);
+        }
+        .analysis-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #22c55e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .analysis-text {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: var(--text-dim);
+        }
+
+        .preview-tags-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+        .fused-badge-preview {
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 6px;
+            padding: 0.5rem;
+        }
+        .mastery-section {
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            padding: 0.6rem;
+        }
+        .mastery-label {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .mastery-bar-bg {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .mastery-bar-fg {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
         /* Better touch feedback for interactive elements */
         @media (hover: none) and (pointer: coarse) {
             .blueprint-house:hover { transform: none; box-shadow: none; }
@@ -2329,10 +3134,7 @@
     </style>
 </head>
 <body data-clone="true">
-    <!-- Clone Banner: EXPERIMENTAL COPY — use for testing only -->
-    <div id="clone-banner" style="position:fixed; z-index:99999; inset: 0 auto auto 0; left: 12px; top: 12px; background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(139,92,246,0.06)); color: #fff; border: 1px solid rgba(139,92,246,0.12); padding: 0.35rem 0.6rem; font-weight: 700; border-radius: 8px; backdrop-filter: blur(6px); pointer-events: none; box-shadow: 0 8px 20px rgba(0,0,0,0.6);">
-        EXPERIMENTAL CLONE — SAFE TO MODIFY
-    </div>
+
 
     <!-- Ambient Overlay -->
     <div class="ambient-overlay"></div>
@@ -2350,7 +3152,9 @@
                     <span>Neural Archive</span>
                 </div>
                 <div class="panel-actions">
-                    <button class="cosmic-btn" title="Refresh skills">🔄</button>
+                    <button class="cosmic-btn" onclick="syncSkills()" title="Sync from Fusion Lab">🔄 Sync</button>
+                    <button class="cosmic-btn" onclick="document.getElementById('skill-import-input').click()" title="Import JSON">📥 Import</button>
+                    <input type="file" id="skill-import-input" style="display:none" accept=".json" onchange="importSkills(this)">
                 </div>
             </div>
             <div class="panel-content">
@@ -2636,6 +3440,53 @@
             return { ...mastery, progress };
         }
 
+        // === SYNC & IMPORT ===
+        function syncSkills() {
+            loadOwnedSkills();
+            showNotification('Skills synced from Fusion Lab', 'info');
+        }
+
+        function importSkills(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedSkills = JSON.parse(e.target.result);
+                    if (Array.isArray(importedSkills)) {
+                        // Merge with existing skills
+                        const currentSkills = JSON.parse(localStorage.getItem('cosmic_skills') || '[]');
+                        
+                        // Create a map of existing skills by ID for easy lookup
+                        const skillMap = new Map(currentSkills.map(s => [s.id, s]));
+                        
+                        let newCount = 0;
+                        importedSkills.forEach(skill => {
+                            if (!skillMap.has(skill.id)) {
+                                skillMap.set(skill.id, skill);
+                                newCount++;
+                            }
+                        });
+                        
+                        const mergedSkills = Array.from(skillMap.values());
+                        localStorage.setItem('cosmic_skills', JSON.stringify(mergedSkills));
+                        
+                        loadOwnedSkills();
+                        showNotification(`Imported ${newCount} new skills`, 'achievement');
+                    } else {
+                        showNotification('Invalid skill file format', 'error');
+                    }
+                } catch (err) {
+                    console.error('Import error:', err);
+                    showNotification('Failed to import skills', 'error');
+                }
+                // Reset input
+                input.value = '';
+            };
+            reader.readAsText(file);
+        }
+
         // === DATA LOADING ===
         let ownedSkills = [];
         
@@ -2658,129 +3509,759 @@
                 console.error('❌ Error loading skills:', error);
                 renderEmptyState();
             }
-        }        function renderSkillArchive() {
+        }
+
+        function getNarrativeRole(skill) {
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            const stats = skill.stats || {};
+            const hasHealing = !!stats.healing || tags.includes('HEAL') || tags.includes('NATURE');
+            const hasShield = !!stats.shield || tags.includes('SHIELD');
+            const heavyDamage = (stats.damage || stats.power || 0) >= 120 || tags.includes('FIRE') || tags.includes('STORM');
+            const controlTags = tags.includes('STASIS') || tags.includes('ICE') || tags.includes('DEBUFF');
+            const mindTags = tags.includes('MIND') || tags.includes('CHARM') || tags.includes('ILLUSION');
+            const voidTags = tags.includes('VOID') || tags.includes('DECAY') || tags.includes('DEATH');
+
+            if (hasHealing && hasShield) return 'LIFEWARDEN BASTION';
+            if (hasHealing) return 'PRESERVATION PROTOCOL';
+            if (hasShield) return 'REALITY ANCHOR';
+            if (mindTags) return 'COGNITIVE INFLUENCE';
+            if (voidTags) return 'ENTROPY INJECTION';
+            if (heavyDamage) return 'CATACLYSM VECTOR';
+            if (controlTags) return 'KINETIC DAMPENING';
+            if (tags.includes('TIME') || tags.includes('SPEED') || tags.includes('AIR')) return 'TEMPORAL SHIFT';
+            if (tags.includes('DISCORD') || tags.includes('CHAOS')) return 'CAUSALITY DISRUPTION';
+            return 'ADAPTIVE NARRATIVE INTERVENTION';
+        }
+
+        // Function to highlight search matches
+        function highlightText(text, search) {
+            if (!search) return text;
+            const regex = new RegExp(`(${search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        // === OWNED SKILLS REVAMP ===
+        let activeEngineFilter = 'ALL';
+        // Rich engine definitions: id, label and icon — used to render pills and counts
+        const ENGINES = [
+            { id: 'ALL', label: 'All', icon: '🌌' },
+            { id: 'FUSED', label: 'Fused', icon: '⚡' },
+            { id: 'Foundational', label: 'Foundational', icon: '🏛️' },
+            { id: 'Invocation', label: 'Invocation', icon: '🔥' },
+            { id: 'Tantra', label: 'Tantra', icon: '💧' },
+            { id: 'Therapeutic', label: 'Therapeutic', icon: '🌿' },
+            { id: 'Divination', label: 'Divination', icon: '🔮' },
+            { id: 'Singularity', label: 'Singularity', icon: '⚫' },
+            { id: 'Character', label: 'Character', icon: '🎭' },
+            { id: 'Consciousness', label: 'Consciousness', icon: '🧠' }
+        ];
+
+        // CATEGORY_TAGS and activeCategory removed — filtering is now tag-based via `selectedTags` and dynamic tag chips
+
+        // Scan all owned skills and return tags sorted by frequency
+        function scanAllTags() {
+            const counts = {};
+            (ownedSkills || []).forEach(skill => {
+                (skill.tags || []).forEach(tag => {
+                    if (!tag) return;
+                    const t = String(tag).trim().toLowerCase();
+                    if (!t) return;
+                    counts[t] = (counts[t] || 0) + 1;
+                });
+            });
+            return Object.keys(counts)
+                .map(tag => ({ tag, count: counts[tag] }))
+                .sort((a, b) => b.count - a.count);
+        }
+
+        function getSortedTagList() {
+            return scanAllTags().map(t => t.tag);
+        }
+
+        // Selected tags state for multi-select filtering
+        let selectedTags = new Set();
+
+        function toggleTag(tag) {
+            const t = String(tag).trim().toLowerCase();
+            if (!t) return;
+            if (selectedTags.has(t)) selectedTags.delete(t);
+            else selectedTags.add(t);
+            renderTagFilters();
+            renderSkillsGrid(document.getElementById('skill-search') ? document.getElementById('skill-search').value.trim().toLowerCase() : '');
+            updateQuickFilters();
+        }
+
+        function clearSelectedTags() {
+            selectedTags.clear();
+            renderTagFilters();
+            renderSkillsGrid(document.getElementById('skill-search') ? document.getElementById('skill-search').value.trim().toLowerCase() : '');
+            updateQuickFilters();
+        }
+
+        function renderTagFilters() {
+            const tags = getSortedTagList();
+            // ensure 'siddhi' is always visible as a primary tag
+            if (!tags.includes('siddhi')) tags.unshift('siddhi');
+            const chips = document.getElementById('tagChips');
+            if (!chips) return;
+            chips.innerHTML = '';
+            tags.forEach(tag => {
+                const btn = document.createElement('button');
+                btn.className = 'tag-chip';
+                btn.textContent = tag;
+                btn.dataset.tag = tag;
+                if (selectedTags.has(tag)) btn.classList.add('active');
+                btn.addEventListener('click', () => toggleTag(tag));
+                chips.appendChild(btn);
+            });
+        }
+
+        function renderSkillArchive() {
             const container = document.querySelector('#left-panel .panel-content');
             
-            if (ownedSkills.length === 0) {
-                renderEmptyState();
+            // Setup layout if not already present
+            if (!document.getElementById('owned-panel-layout')) {
+                container.innerHTML = `
+                    <div id="owned-panel-layout" class="owned-panel">
+                        <div class="search-container">
+                            <div class="search-input-wrapper">
+                                <input id="skill-search" type="text" placeholder="Search skills..." class="skill-search-input">
+                                <button class="search-clear" title="Clear search">×</button>
+                            </div>
+                            <button class="search-help" title="Search Help">?</button>
+                        </div>
+                        <div class="tag-filters">
+                            <div id="tagChips" class="tag-chips"></div>
+                        </div>
+                        <div class="engine-slider" id="engineRow"></div>
+                        <div class="owned-body">
+                            <div id="skillsList" class="skills-list"></div>
+                        </div>
+                    </div>
+                    <div id="schematicsModal" class="schematics-modal" style="display:none;"></div>
+                `;
+                renderEngineBlocks();
+                // Add search functionality
+                const searchInput = document.getElementById('skill-search');
+                searchInput.addEventListener('input', function() {
+                    renderSkillsGrid(this.value.trim().toLowerCase());
+                    updateQuickFilters();
+                });
+                // Clear search
+                document.querySelector('.search-clear').addEventListener('click', function() {
+                    searchInput.value = '';
+                    renderSkillsGrid();
+                    updateQuickFilters();
+                });
+                // Tag filters initialization
+                renderTagFilters();
+                // Function to highlight search matches
+        function highlightText(text, search) {
+            if (!search) return text;
+            const regex = new RegExp(`(${search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+                document.querySelector('.search-help').addEventListener('click', function() {
+                    alert(`Search Tips:
+• Search by skill name (e.g., "Fireball")
+• Search by tags (e.g., "Offensive", "Healing")
+• Search by flavor text or description
+• Use quick filters for common categories
+• Search is case-insensitive and real-time
+• Combine with engine filters for precise results`);
+                });
+                // Add drag functionality to engine slider
+                const slider = document.getElementById('engineRow');
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    slider.classList.add('active');
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.classList.remove('active');
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2; // Scroll speed
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+            }
+
+            renderSkillsGrid();
+        }
+
+        const ENGINE_ICONS = {
+            'ALL': '🌌',
+            'FUSED': '⚡',
+            'Foundational': '🏛️',
+            'Invocation': '🔥',
+            'Tantra': '💧',
+            'Therapeutic': '🌿',
+            'Divination': '🔮',
+            'Singularity': '⚫',
+            'Character': '🎭',
+            'Consciousness': '🧠'
+        };
+
+        function renderEngineBlocks() {
+            const row = document.getElementById('engineRow');
+            if (!row) return;
+            row.innerHTML = '';
+            ENGINES.forEach(engineObj => {
+                // compute count of skills matching this engine (respects FUSED logic in skillMatchesEngine)
+                let count = 0;
+                try {
+                    count = (ownedSkills || []).filter(s => skillMatchesEngine(s, engineObj.id)).length;
+                } catch (e) { count = 0; }
+
+                const btn = document.createElement('button');
+                btn.className = `engine-pill ${engineObj.id === activeEngineFilter ? 'active' : ''}`;
+                btn.setAttribute('data-engine-id', engineObj.id);
+                btn.setAttribute('title', `${engineObj.label} — ${count} skill${count === 1 ? '' : 's'}`);
+                btn.innerHTML = `<span class="engine-icon">${engineObj.icon || ''}</span> <span class="engine-label">${engineObj.label}</span> <span class="engine-count">${count}</span>`;
+                btn.onclick = () => {
+                    activeEngineFilter = engineObj.id;
+                    renderEngineBlocks(); // update active state and counts
+                    const searchVal = (document.getElementById('skill-search') || {}).value || '';
+                    renderSkillsGrid(searchVal.trim().toLowerCase());
+                };
+                row.appendChild(btn);
+            });
+        }
+
+        function updateQuickFilters() {
+            // Sync tag chip UI with `selectedTags`
+            document.querySelectorAll('.tag-chip').forEach(chip => {
+                const t = (chip.dataset.tag || '').toLowerCase();
+                chip.classList.toggle('active', selectedTags.has(t));
+            });
+            // (no overflow UI — tags are shown inline)
+        }
+
+        function renderSkillsGrid(search = '') {
+            const list = document.getElementById('skillsList');
+            if (!list) return;
+            
+            let filtered = ownedSkills.filter(s => skillMatchesEngine(s, activeEngineFilter));
+            
+            // Tag-based multi-select filter (selectedTags)
+            if (selectedTags && selectedTags.size > 0) {
+                filtered = filtered.filter(skill => {
+                    const skillTags = (skill.tags || []).map(t => String(t).toLowerCase());
+                    return skillTags.some(t => selectedTags.has(t));
+                });
+            }
+            
+            if (search) {
+                filtered = filtered.filter(skill =>
+                    skill.name.toLowerCase().includes(search) ||
+                    (skill.tags || []).some(tag => tag.toLowerCase().includes(search)) ||
+                    (skill.flavor || '').toLowerCase().includes(search) ||
+                    (skill.description || '').toLowerCase().includes(search)
+                );
+            }
+            
+            list.innerHTML = '';
+            if (filtered.length === 0) {
+                const tagText = (selectedTags && selectedTags.size > 0) ? ` with tags [${Array.from(selectedTags).join(', ')}]` : '';
+                const filterText = activeEngineFilter + tagText + (search ? ` matching "${search}"` : '');
+                list.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--text-dim); font-size:0.8rem;">No skills found for ${filterText}</div>`;
                 return;
             }
 
-            // Calculate collection stats
-            const tierCounts = {
-                LEGENDARY: ownedSkills.filter(s => s.tier === 'LEGENDARY').length,
-                RARE: ownedSkills.filter(s => s.tier === 'RARE').length,
-                COMMON: ownedSkills.filter(s => s.tier === 'COMMON').length
-            };
-
-            container.innerHTML = '';
-
-            // Add collection stats
-            const statsBar = document.createElement('div');
-            statsBar.className = 'collection-stats';
-            statsBar.innerHTML = `
-                <div class="stat-badge" title="Total Skills">
-                    <span>📦</span>
-                    <span class="stat-value">${ownedSkills.length}</span>
-                </div>
-                <div class="stat-badge" title="Legendary Skills">
-                    <span>⭐</span>
-                    <span class="stat-value">${tierCounts.LEGENDARY}</span>
-                </div>
-                <div class="stat-badge" title="Rare Skills">
-                    <span>💎</span>
-                    <span class="stat-value">${tierCounts.RARE}</span>
-                </div>
-                <div class="stat-badge" title="Common Skills">
-                    <span>🔹</span>
-                    <span class="stat-value">${tierCounts.COMMON}</span>
-                </div>
-            `;
-            container.appendChild(statsBar);
-
-            const skillList = document.createElement('div');
-            skillList.style.cssText = 'display:flex; flex-direction:column; gap:0.6rem; padding:0.8rem; overflow-y:auto; height:calc(100% - 50px);';
-
-            ownedSkills.forEach((skill, index) => {
-                const skillCard = document.createElement('div');
-                skillCard.className = `skill-card ${skill.tier === 'LEGENDARY' ? 'legendary' : skill.tier === 'RARE' ? 'rare' : ''}`;
-                skillCard.style.cssText = `
-                    background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(139, 92, 246, 0.03) 100%);
-                    border: 1px solid rgba(139, 92, 246, 0.2);
-                    border-radius: 8px;
-                    padding: 0.9rem;
-                    cursor: pointer;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    animation-delay: ${index * 0.04}s;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-                `;
-
-                // Icon based on type
+            filtered.forEach(skill => {
+                const card = document.createElement('div');
+                card.className = `skill-card-compact ${skill.tier === 'LEGENDARY' ? 'legendary' : skill.tier === 'RARE' ? 'rare' : ''}`;
                 const icon = getSkillIcon(skill.tags[0]);
                 const tierColor = getTierColor(skill.tier);
-                const mastery = getMasteryProgress(skill.id);
+                const stats = skill.stats || {};
+                const power = stats.damage || stats.powerScore || stats.power || 0;
+                const cost = stats.cost || stats.kp || 0;
+                const cooldown = stats.cooldown || 0;
+                const caps = computeGlobalStatCaps();
+                const effCd = computeEffectiveCooldown(skill, caps);
+                // Engine-based color for animation
+                let engineColor = '#a78bfa';
+                if (skill.engine === 'Invocation') engineColor = '#f59e42';
+                else if (skill.engine === 'Tantra') engineColor = '#22d3ee';
+                else if (skill.engine === 'Therapeutic') engineColor = '#34d399';
+                else if (skill.engine === 'Divination') engineColor = '#f472b6';
+                else if (skill.engine === 'Singularity') engineColor = '#f43f5e';
+                else if (skill.engine === 'Character') engineColor = '#fbbf24';
+                else if (skill.engine === 'Consciousness') engineColor = '#818cf8';
+                else if (skill.engine === 'Foundational') engineColor = '#60a5fa';
+                // Apply subtle engine-vibe background and tier-based border
+                try {
+                    card.style.background = `linear-gradient(180deg, ${hexToRgba(engineColor,0.06)} 0%, rgba(6,8,12,0.02) 100%)`;
+                    card.style.border = `1px solid ${hexToRgba(tierColor,0.16)}`;
+                    // Engine-based glow for edges
+                    let glowColor = skill.fusionIngredients ? '#fbbf24' : 
+                                   (skill.tier === 'LEGENDARY' ? '#f59e0b' : 
+                                   skill.tier === 'RARE' ? '#3b82f6' : engineColor);
+                    card.style.boxShadow = `0 0 12px ${hexToRgba(glowColor, 0.15)}`;
+                    card.style.borderRadius = '10px';
+                    // expose engine color as CSS variable for children (buttons, accents)
+                    card.style.setProperty('--engine-accent', engineColor);
+                    card.style.setProperty('--tier-color', tierColor);
+                    // also expose rgba variants for subtle backgrounds
+                    card.style.setProperty('--engine-accent-rgba', hexToRgba(engineColor, 0.10));
+                    card.style.setProperty('--tier-color-rgba', hexToRgba(tierColor, 0.08));
+                } catch (e) { /* ignore styling errors */ }
+                // Deepen mini detail: first line is context-aware, second line is a key stat/property
+                let miniDetail1 = '';
+                let miniDetail2 = '';
+                if (skill.tactical_brief) {
+                    miniDetail1 = skill.tactical_brief.split(/[.!?]/)[0].trim();
+                } else if (skill.flavor) {
+                    miniDetail1 = skill.flavor.split(/[.!?]/)[0].trim();
+                } else if (skill.description) {
+                    miniDetail1 = skill.description.split(/[.!?]/)[0].trim();
+                }
+                // Second line: show healing, shield, or fusion info if present
+                if (stats.healing) {
+                    miniDetail2 = `Healing: ${stats.healing}`;
+                } else if (stats.shield) {
+                    miniDetail2 = `Shield: ${stats.shield}`;
+                } else if (skill.fusionIngredients) {
+                    miniDetail2 = 'Fusion Skill';
+                } else if (stats.combo) {
+                    miniDetail2 = `Combo: ${stats.combo}`;
+                } else if (stats.versatility) {
+                    miniDetail2 = `Versatile: ${stats.versatility}`;
+                }
+                // prefer explicit tags, otherwise infer a few from content/stats
+                const displayTags = (skill.tags && skill.tags.length) ? skill.tags : inferTags(skill);
 
-                skillCard.innerHTML = `
-                    <div class="skill-card-inner">
-                        <div class="skill-card-header">
-                            <div style="flex: 1;">
-                                <div class="skill-card-title" style="color:${tierColor};">${skill.name}</div>
-                                <div style="font-size:0.7rem; color:var(--text-dim); margin-top:0.3rem; font-weight:600;">${skill.tier} • ${skill.type}</div>
-                            </div>
-                            <div class="skill-card-icon">${icon}</div>
+                card.innerHTML = `
+                    <div class="compact-header">
+                        <div class="compact-icon">${icon}</div>
+                        <div class="compact-info">
+                            <div class="compact-name" style="color:${engineColor}; font-size:0.85em; font-weight:500; line-height:1;">${highlightText(skill.name, search)}</div>
+                            <div class="compact-tier" style="color:${tierColor}; font-size:0.85em; font-weight:500; line-height:1;">${skill.tier}</div>
+                            ${miniDetail1 ? `<div class='compact-flavor'>${miniDetail1}</div>` : ''}
+                            ${miniDetail2 ? `<div class='compact-flavor' style='color:#3b82f6;'>${miniDetail2}</div>` : ''}
                         </div>
-                        
-                        <div class="skill-tags">
-                            ${skill.tags.slice(0, 3).map(tag => 
-                                `<span class="skill-tag">${tag}</span>`
-                            ).join('')}
+                        <div class="compact-stats">
+                            <span title="Potency" style="color:#ef4444;font-size:0.8em;">🌟 ${power}</span>
+                            <span title="Neural Load" style="color:#3b82f6;font-size:0.8em;margin-left:0.5em;">🧠 ${cost}</span>
+                            <span title="Recalibration" style="color:#f59e0b;font-size:0.8em;margin-left:0.5em;">⏳ ${effCd.effective}</span>
                         </div>
-                        
-                        ${skill.fusionIngredients ? '<div class="fused-badge">⚡ FUSED SKILL</div>' : ''}
-                        
-                        <div class="mastery-bar">
-                            <div class="mastery-fill" style="width: ${mastery.progress}%;"></div>
+                        <div class="schematics-btn-wrap">
+                            <button class="schematics-btn-illusion"><span class="schem-top">Complete</span><span class="schem-bottom">Schematics</span></button>
                         </div>
-                        
-                        <div class="skill-meta">
-                            <span style="font-weight:600; color:var(--accent-glow);">Lvl ${mastery.level}</span>
-                            <span>•</span>
-                            <span>${Math.floor(mastery.progress)}% Mastery</span>
-                        </div>
+                        ${skill.fusionIngredients ? `<span class='fused-badge'>FUSED</span>` : ''}
+                    </div>
+                    <div class="compact-tags">
+                        ${(displayTags || []).slice(0, 2).map(t => `<span class="compact-tag">${t}</span>`).join('')}
                     </div>
                 `;
+                const schemBtn = card.querySelector('.schematics-btn-illusion');
+                if (schemBtn) {
+                    schemBtn.onclick = (ev) => {
+                        ev.stopPropagation();
+                        showSchematicsModal(skill);
+                    };
+                }
+        function showSchematicsModal(skill) {
+            const modal = document.getElementById('schematicsModal');
+            if (!modal) return;
+            const displayTags = (skill.tags && skill.tags.length) ? skill.tags : inferTags(skill);
+            const icon = getSkillIcon(displayTags[0]);
+            const tierColor = getTierColor(skill.tier);
+            const stats = skill.stats || {};
+            const power = stats.damage || stats.powerScore || stats.power || 0;
+            const cost = stats.cost || stats.kp || 0;
+            const cooldown = stats.cooldown || 0;
+            const flavor = skill.flavor || skill.tactical_brief || '';
+            // Generate contextual examples (combat / exploration / social)
+            const examples = (typeof generateContextualExamples === 'function') ? generateContextualExamples(skill) : { combat: `Use <b>${skill.name}</b> to change the tide of fights.`, exploration: `Apply <b>${skill.name}</b> to bypass obstacles or reveal hidden lore.`, social: `Use <b>${skill.name}</b> to sway NPCs or unlock dialogue branches.` };
+            // Use creativity-first hints when available, otherwise fall back to examples
+            const hints = (typeof generateVersatilityHints === 'function') ? generateVersatilityHints(skill) : { combine: examples.combat, transform: examples.exploration, story: examples.social };
 
-                // Hover effects
-                skillCard.onmouseenter = () => {
-                    playSound('hover');
-                    skillCard.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.06) 100%)';
-                    skillCard.style.borderColor = 'var(--accent-glow)';
-                    skillCard.style.transform = 'translateX(4px) scale(1.02)';
-                    skillCard.style.boxShadow = '0 4px 16px rgba(139,92,246,0.3)';
-                };
-                skillCard.onmouseleave = () => {
-                    skillCard.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(139, 92, 246, 0.03) 100%)';
-                    skillCard.style.borderColor = 'rgba(139, 92, 246, 0.2)';
-                    skillCard.style.transform = 'translateX(0) scale(1)';
-                    skillCard.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
-                };
+            // compute contextual caps and render stat cards
+            const caps = computeGlobalStatCaps();
+            const potencyDesc = getGameplayDescriptor('potency', power, skill, caps);
+            const potencyHtml = renderStatCardHTML({ icon: '🌟', title: 'Potency', value: power, cap: caps.potencyCap, note: potencyDesc });
+            const neuralHtml = renderNeuralLoadUI(cost, skill, caps);
+            const effCd = computeEffectiveCooldown(skill, caps);
+            const cooldownDesc = getGameplayDescriptor('cooldown', effCd.effective, skill, caps) + (effCd.breakdown && effCd.breakdown.spamFactor > 0 ? ' • Anti-spam' : '');
+            const cooldownHtml = renderStatCardHTML({ icon: '⏳', title: 'Recalibration', value: effCd.effective, cap: caps.cooldownCap, unit: 'turns', note: cooldownDesc });
 
-                skillCard.onclick = () => {
+            modal.innerHTML = `
+                <div class="schematics-content" style="padding:1.2em; background:linear-gradient(180deg,rgba(10,14,20,0.97),rgba(6,8,12,0.98)); border-radius:12px; max-width:480px; margin:1.2em auto; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-height:70vh; overflow:auto; position:relative;">
+                    <div style="width:100%;display:flex;justify-content:flex-end;align-items:flex-start;">
+                        <button class="schematics-close" aria-label="Close schematics" title="Close schematics" style="position:static; margin-bottom:0.2em; margin-right:-0.2em;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto;">
+                                <circle cx="12" cy="12" r="10" fill="url(#xbtn-grad)"/>
+                                <defs>
+                                    <radialGradient id="xbtn-grad" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#fff" stop-opacity="0.13"/>
+                                        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.18"/>
+                                    </radialGradient>
+                                </defs>
+                                <line x1="8" y1="8" x2="16" y2="16" stroke="#e2e8f0"/>
+                                <line x1="16" y1="8" x2="8" y2="16" stroke="#e2e8f0"/>
+                            </svg>
+                        </button>
+                    </div>
+                            <style>
+                            .schematics-close {
+                                position: absolute;
+                                top: 18px;
+                                right: 18px;
+                                width: 44px;
+                                height: 44px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 50%;
+                                background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(139,92,246,0.10));
+                                border: 1.5px solid rgba(139,92,246,0.18);
+                                box-shadow: 0 4px 18px rgba(139,92,246,0.13), 0 1.5px 8px rgba(0,0,0,0.18);
+                                color: #e2e8f0;
+                                cursor: pointer;
+                                transition: box-shadow 0.18s, background 0.18s, transform 0.13s;
+                                z-index: 10;
+                            }
+                            .schematics-close:hover, .schematics-close:focus {
+                                background: linear-gradient(180deg, rgba(139,92,246,0.13), rgba(255,255,255,0.10));
+                                box-shadow: 0 8px 32px rgba(139,92,246,0.22), 0 2px 12px rgba(0,0,0,0.22);
+                                outline: 2.5px solid #8b5cf6;
+                                outline-offset: 1.5px;
+                                transform: scale(1.06);
+                            }
+                            .schematics-close svg {
+                                display: block;
+                                filter: drop-shadow(0 0 2px #8b5cf6cc);
+                            }
+                            </style>
+                    <div style="display:flex;align-items:center;gap:1.2em;">
+                        <div style="font-size:2.2em;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.07);border-radius:10px;border:1px solid rgba(255,255,255,0.12);">${icon}</div>
+                        <div style="flex:1;">
+                            <div style="font-size:1.2em;font-weight:700;color:${tierColor};">${skill.name}</div>
+                            <div style="font-size:0.8em;color:var(--accent-glow);text-transform:uppercase;letter-spacing:0.5px;">${skill.tier}</div>
+                            ${flavor ? `<div style='font-size:0.85em;color:var(--accent-glow);margin-top:2px;font-style:italic;opacity:0.85;'>${flavor}</div>` : ''}
+                        </div>
+                    </div>
+                    <div style="margin-top:1.2em;display:grid;grid-template-columns:repeat(3,1fr);gap:0.7em;">
+                        ${potencyHtml}
+                        ${neuralHtml}
+                        ${cooldownHtml}
+                    </div>
+                    <div class="schematics-desc-section">
+                        <div class="desc-header">
+                            <div class="desc-icon">📝</div>
+                            <div class="desc-title">Skill Description</div>
+                            ${skill.fusionIngredients ? `<span class="desc-badge">FUSED</span>` : ''}
+                        </div>
+                        <div class="desc-main">${skill.description || skill.tactical_brief || 'A mysterious skill awaiting its purpose to be revealed.'}</div>
+                        <div class="desc-intro">${generateNarrativeIntro(skill, { power, cost, cooldown, stats })}</div>
+                        <div class="desc-tactical">${generateTacticalTip(skill, { power, cost, cooldown })}</div>
+                        ${skill.flavor ? `<div class="desc-flavor">${skill.flavor}</div>` : ''}
+                        <div class="desc-mechanics">${generateMechanicsText(skill)}</div>
+                    </div>
+                    <div class="schematics-usecases">
+                        <div class="usecases-header">
+                            <div class="usecases-icon">❖</div>
+                            <div class="usecases-title">Versatility & Examples</div>
+                            <div class="usecases-subtitle">Creative directions — intentionally vague to inspire experimentation</div>
+                            <div class="usecases-info" title="Hints are intentionally vague — experiment to discover effects." style="color:var(--text-dim);">❖</div>
+                        </div>
+
+                        <div class="usecases-row">
+                            <div class="usecase-card" role="region" aria-label="Combine">
+                                <div class="usecase-accent" style="background:linear-gradient(90deg,var(--engine-accent, rgba(139,92,246,0.9)), ${tierColor});"></div>
+                                <div class="usecase-inner"><div class="usecase-icon">🔗</div><div style="font-weight:800;color:#ef4444;font-size:0.88em;">Combine</div></div>
+                                <div class="usecase-hint">${hints.combine}</div>
+                            </div>
+                            <div class="usecase-card" role="region" aria-label="Transform">
+                                <div class="usecase-accent" style="background:linear-gradient(90deg,var(--engine-accent, rgba(16,185,129,0.85)), ${tierColor});"></div>
+                                <div class="usecase-inner"><div class="usecase-icon">⚙</div><div style="font-weight:800;color:#10b981;font-size:0.88em;">Transform</div></div>
+                                <div class="usecase-hint">${hints.transform}</div>
+                            </div>
+                            <div class="usecase-card" role="region" aria-label="Story">
+                                <div class="usecase-accent" style="background:linear-gradient(90deg,var(--engine-accent, rgba(59,130,246,0.85)), ${tierColor});"></div>
+                                <div class="usecase-inner"><div class="usecase-icon">✦</div><div style="font-weight:800;color:#3b82f6;font-size:0.88em;">Story</div></div>
+                                <div class="usecase-hint">${hints.story}</div>
+                            </div>
+                        </div>
+
+                        <div class="usecases-note">Hints are intentionally vague — try small variations in timing, pairing, or targets to surface emergent effects.</div>
+
+                    </div>
+                    <div style="margin-top:0.8em;display:flex;flex-wrap:wrap;gap:0.3em;">
+                        ${(displayTags || []).map(t => `<span style='font-size:0.7em;padding:0.2em 0.6em;background:rgba(255,255,255,0.07);border-radius:3px;color:var(--text-dim);'>${t}</span>`).join('')}
+                    </div>
+                    ${skill.fusionIngredients ? `<div style='margin-top:1em;font-size:0.8em;color:#f59e0b;background:rgba(245,158,11,0.08);border-radius:3px;padding:0.3em 0.7em;font-weight:700;letter-spacing:0.5px;'>⚡ SYNTHESIZED SKILL</div>` : ''}
+                </div>
+            `;
+            modal.style.display = '';
+            modal.querySelector('.schematics-close').onclick = () => {
+                modal.style.display = 'none';
+            };
+        }
+
+                card.onmouseenter = () => updateMiniPreview(skill);
+                card.onclick = () => {
                     playSound('select');
-                    gainMasteryXP(skill.id, 1);
-                    selectSkill(skill);
-                    renderSkillArchive(); // Re-render to update mastery
+                    selectSkill(skill); // Existing selection logic
+                    updateMiniPreview(skill);
                 };
+                
                 // Drag support
-                skillCard.draggable = true;
-                skillCard.addEventListener('dragstart', (ev) => {
+                card.draggable = true;
+                card.addEventListener('dragstart', (ev) => {
                     ev.dataTransfer.setData('text/skill-id', skill.id);
                 });
 
-                skillList.appendChild(skillCard);
+                list.appendChild(card);
             });
+        }
 
-            container.appendChild(skillList);
+        function skillMatchesEngine(skill, engine) {
+            if (!engine) return true;
+            if (engine === 'ALL') return true;
+            if (engine === 'FUSED') return !!(skill.fusionIngredients && skill.fusionIngredients.length);
+            // Case-insensitive engine field match
+            if (skill.engine && String(skill.engine).toLowerCase() === String(engine).toLowerCase()) return true;
+            // Case-insensitive tag match (match tag exactly to engine name)
+            if (skill.tags && skill.tags.some(t => String(t).toLowerCase() === String(engine).toLowerCase())) return true;
+            // Fallback: if engine name appears inside a tag (looser match)
+            if (skill.tags && skill.tags.some(t => String(t).toLowerCase().includes(String(engine).toLowerCase()))) return true;
+            return false;
+        }
+
+        function updateMiniPreview(skill) {
+            const preview = document.getElementById('miniPreview');
+            if (!preview) return;
+
+            const displayTags = (skill.tags && skill.tags.length) ? skill.tags : inferTags(skill);
+            const icon = getSkillIcon(displayTags[0]);
+            const tierColor = getTierColor(skill.tier);
+            const stats = skill.stats || {};
+            const power = stats.damage || stats.powerScore || stats.power || 0;
+            const cost = stats.cost || stats.kp || 0;
+            const cooldown = stats.cooldown || 0;
+            const role = getNarrativeRole(skill);
+            const mastery = getMasteryProgress(skill.id);
+            const tacticalTip = generateTacticalTip(skill, { power, cost, cooldown });
+
+            const caps = computeGlobalStatCaps();
+            const previewPotencyDesc = getGameplayDescriptor('potency', power, skill, caps);
+            const previewNeuralDesc = getGameplayDescriptor('neural', cost, skill, caps);
+            const previewEffCd = computeEffectiveCooldown(skill, caps);
+            const previewCooldownDesc = getGameplayDescriptor('cooldown', previewEffCd.effective, skill, caps) + (previewEffCd.breakdown && previewEffCd.breakdown.spamFactor > 0 ? ' • Anti-spam' : '');
+            const previewPotencyHtml = renderStatCardHTML({ icon: '🌟', title: 'Potency', value: power, cap: caps.potencyCap, note: previewPotencyDesc });
+            const previewNeuralHtml = renderNeuralLoadUI(cost, skill, caps);
+            const previewCooldownHtml = renderStatCardHTML({ icon: '⏳', title: 'Recalibration', value: previewEffCd.effective, cap: caps.cooldownCap, unit: 'turns', note: previewCooldownDesc });
+
+            preview.innerHTML = `
+                <div class="preview-head">
+                    <div class="preview-icon-lg">${icon}</div>
+                    <div class="preview-details">
+                        <div class="preview-title" style="color:${tierColor}">${skill.name}</div>
+                        <div class="preview-subtitle">${role}</div>
+                    </div>
+                </div>
+
+                <div class="preview-desc">
+                    ${skill.description || skill.tactical_brief || 'A mysterious skill awaiting its purpose to be revealed.'}
+                </div>
+
+                <div class="preview-stats-grid">
+                    ${previewPotencyHtml}
+                    ${previewNeuralHtml}
+                    ${previewCooldownHtml}
+                </div>
+
+                <div class="preview-analysis-section">
+                    <div class="analysis-title">⚡ Tactical Analysis</div>
+                    <div class="analysis-text">${tacticalTip}</div>
+                </div>
+
+                <div class="preview-tags-section">
+                    ${(displayTags || []).map(t => `<span class="compact-tag">${t}</span>`).join('')}
+                </div>
+
+                ${skill.fusionIngredients ? `<div class="fused-badge-preview">⚡ SYNTHESIZED SKILL</div>` : ''}
+            `;
+        }
+
+        function generateTacticalTip(skill, context = {}) {
+            const { power = 0, cost = 0, cooldown = 0 } = context;
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            const stats = skill.stats || {};
+
+            // High damage, high cost analysis
+            if (power >= 120 && cost > 50) {
+                return `This is a <strong>high-impact finisher</strong>. Use it to eliminate priority targets or break through enemy defenses. The heavy neural load means you should reserve enough focus before casting. Best paired with low-cost skills to maintain momentum.`;
+            }
+
+            // High damage, low cost
+            if (power >= 100 && cost <= 30) {
+                return `A <strong>core damage dealer</strong> with excellent efficiency. Low neural cost allows for frequent use in your rotation. Weave it between movement and positioning for consistent DPS output.`;
+            }
+
+            // Healing skills
+            if (stats.healing || tags.includes('HEAL') || tags.includes('NATURE')) {
+                return `Primary <strong>sustain tool</strong>. Use reactively to counter incoming damage spikes or proactively before high-risk encounters. Time it with enemy attack patterns for maximum effectiveness.`;
+            }
+
+            // Shield/Defense skills
+            if (stats.shield || tags.includes('SHIELD')) {
+                return `Deploy this <strong>defensive barrier</strong> pre-emptively against telegraphed boss mechanics. The shield buys you an extra decision window and can prevent fatal damage. Stack with healing for maximum survivability.`;
+            }
+
+            // Control/Debuff skills
+            if (tags.includes('STASIS') || tags.includes('DEBUFF') || tags.includes('ICE')) {
+                return `A <strong>crowd control tool</strong>. Apply to high-priority targets to reduce their threat level. Effective against fast-moving enemies or to create openings for high-cost attacks.`;
+            }
+
+            // Long cooldown analysis
+            if (cooldown > 15) {
+                return `This skill has a <strong>lengthy recalibration period</strong>. Plan your rotation around it and use filler actions while it recharges. Make each use count by targeting optimal scenarios.`;
+            }
+
+            // Buff skills
+            if (tags.includes('BUFF') || tags.includes('ENHANCE')) {
+                return `A <strong>force multiplier</strong>. Cast before engaging to maximize combat efficiency. Pairs well with damage-focused skills to amplify their impact.`;
+            }
+
+            // High cost skills
+            if (cost > 60) {
+                return `The extreme neural load requires <strong>careful resource management</strong>. Avoid spamming to prevent instability. Reserve this for critical moments when its full power is needed.`;
+            }
+
+            // Low cost, utility
+            if (cost <= 20) {
+                return `<strong>Versatile utility skill</strong> with minimal resource drain. Can be woven between movement cancels without straining your focus. Excellent for maintaining combat flow.`;
+            }
+
+            // Default tactical advice
+            return `A <strong>balanced tactical option</strong>. Adapt usage based on current combat variables. Test different scenarios to discover optimal synergies with your other skills.`;
+        }
+        
+        function selectSkillById(id) {
+             const skill = ownedSkills.find(s => s.id === id);
+             if(skill) selectSkill(skill);
+        }
+        
+        function expandSkillDetails(id) {
+            // Placeholder for future expansion logic if needed, or just select
+            selectSkillById(id);
+        }
+
+
+        function toggleSkillDetails(skillId, event) {
+            event.stopPropagation();
+            const details = document.getElementById(`details-${skillId}`);
+            const btn = event.currentTarget;
+            if (details) {
+                const isOpen = details.classList.contains('open');
+                if (isOpen) {
+                    details.classList.remove('open');
+                    btn.querySelector('span').textContent = '▼ EXPAND ANALYSIS';
+                } else {
+                    details.classList.add('open');
+                    btn.querySelector('span').textContent = '▲ COLLAPSE DATA';
+                }
+            }
+        }
+
+        function generateNarrativeIntro(skill, context = {}) {
+            const { power = 0, cost = 0, cooldown = 0, stats = {} } = context;
+            const tier = (skill.tier || 'COMMON').toUpperCase();
+            const role = getNarrativeRole(skill).toLowerCase();
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            const focus = tags.slice(0, 2).join(' / ') || 'GENERALIST';
+
+            const potencySource = stats.healing ? `${stats.healing} restorative output` : stats.shield ? `${stats.shield} barrier strength` : power ? `${power} raw potency` : 'support utility';
+            const loadDescriptor = cost > 60 ? 'heavy neural tax' : cost > 30 ? 'moderate synaptic draw' : 'minimal resonance drain';
+            const tempoDescriptor = cooldown > 12 ? 'slow reinitialization cadence' : cooldown > 5 ? 'balanced firing window' : 'rapid redeployment cycle';
+
+            return `A ${tier} ${role} matrix aligned to ${focus}. Exerts ${potencySource} while sustaining ${tempoDescriptor} and ${loadDescriptor}.`;
+        }
+
+        function generateGameplayUse(skill) {
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            const stats = skill.stats || {};
+            const tips = [];
+
+            if (stats.damage && stats.damage >= 120) {
+                tips.push('Use as an opener to shatter elite defenses; the burst damage punishes exposed cores.');
+            } else if (stats.damage && stats.damage > 0) {
+                tips.push('Chain with crowd-control or debuff tools to stretch its consistent damage throughput.');
+            }
+
+            if (stats.healing) {
+                tips.push('Rotate onto the frontline carrier when attrition stacks; its restorative pulse stabilizes the squad.');
+            }
+
+            if (stats.shield) {
+                tips.push('Pre-cast before telegraphed boss mechanics; the barrier buys an extra decision cycle.');
+            }
+
+            if (stats.cooldown) {
+                tips.push(`Plan around a ${stats.cooldown}s reset — weave filler actions while it recharges.`);
+            }
+
+            if (stats.cost) {
+                tips.push(stats.cost > 40 ? 'Reserve enough focus orbs first; the neural load will spike instability if spammed.' : 'Low cost lets you weave it between movement cancels without resource strain.');
+            }
+
+            if (!tips.length) {
+                if (tags.includes('HEAL')) tips.push('Primary sustain tool. Use to blunt attrition spikes.');
+                if (tags.includes('DAMAGE') || tags.includes('FIRE')) tips.push('Reliable DPS filler. Slip it into any gap in the rotation.');
+            }
+
+            if (!tips.length) {
+                tips.push('Versatile utility module. Adapt usage based on current combat variables.');
+            }
+
+            return tips.join(' ');
+        }
+
+        function generateMechanicsText(skill) {
+            const stats = skill.stats || {};
+            let mechanics = [];
+            if (stats.damage) mechanics.push(`• Inflicts <span style="color:#ef4444">${stats.damage}</span> damage points.`);
+            if (stats.healing) mechanics.push(`• Restores <span style="color:#10b981">${stats.healing}</span> health points.`);
+            if (stats.shield) mechanics.push(`• Generates <span style="color:#3b82f6">${stats.shield}</span> point barrier.`);
+            if (stats.duration) mechanics.push(`• Effect persists for <span style="color:#f59e0b">${stats.duration}s</span>.`);
+            if (stats.range) mechanics.push(`• Effective range: <span style="color:#fff">${stats.range}m</span>.`);
+            
+            if (mechanics.length === 0) return "• Standard effect application.<br>• No complex variables detected.";
+            return mechanics.join('<br>');
+        }
+
+        // Generate three short, gameplay-focused contextual examples (combat / exploration / social)
+        function generateContextualExamples(skill) {
+            const name = skill.name || 'This skill';
+            const role = getNarrativeRole(skill) || 'utility';
+            const stats = skill.stats || {};
+            const power = stats.damage || stats.powerScore || stats.power || 0;
+            const cost = stats.cost || stats.kp || 0;
+
+            const combat = power > 100 ? `Use <b>${name}</b> as a decisive finisher on exposed elites; pair with crowd-control to ensure landing.` : `Weave <b>${name}</b> into your rotation to pressure enemies while maintaining momentum.`;
+            const exploration = cost <= 20 ? `Cast <b>${name}</b> during exploration to bypass minor locks, trigger environmental effects, or reveal hidden nodes.` : `Use <b>${name}</b> strategically to alter environmental states or solve layered puzzles.`;
+            const social = role.toLowerCase().includes('support') ? `Apply <b>${name}</b> to aid NPCs or calm tense encounters for alternative outcomes.` : `Invoke <b>${name}</b> creatively in dialogues to influence personalities, unlock new branches, or intimidate.`;
+
+            return { combat, exploration, social };
         }
 
         function renderEmptyState() {
@@ -2807,7 +4288,12 @@
                 'FIRE': '🔥',
                 'WATER': '💧',
                 'EARTH': '🪨',
-                'AIR': '💨'
+                'AIR': '💨',
+                'STRUCTURE': '🏗️',
+                'DECAY': '🧟',
+                'STASIS': '🧊',
+                'DISCORD': '🌩️',
+                'MIND': '🧠'
             };
             return icons[tag] || '⚡';
         }
@@ -2822,11 +4308,73 @@
             return colors[tier] || '#8b5cf6';
         }
 
+        function hexToRgba(hex, alpha) {
+            if (!hex) return `rgba(0,0,0,${alpha})`;
+            const h = hex.replace('#','');
+            const bigint = parseInt(h.length === 3 ? h.split('').map(c=>c+c).join('') : h, 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
+        // Infer sensible tags when a skill has no explicit tags array
+        function inferTags(skill) {
+            if (!skill) return [];
+            const tags = new Set();
+            const stats = skill.stats || {};
+            // direct signals
+            if (skill.fusionIngredients && skill.fusionIngredients.length) tags.add('FUSED');
+            if (stats.healing) tags.add('HEAL');
+            if (stats.shield) tags.add('SHIELD');
+            if (stats.combo) tags.add('COMBO');
+            if (stats.versatility) tags.add('VERSATILE');
+            if (stats.damage && stats.damage > 0) tags.add('OFFENSE');
+            if (stats.powerScore && stats.powerScore > 0) tags.add('POWER');
+
+            // textual signals (search tactical brief / flavor / description)
+            const text = ((skill.tactical_brief || '') + ' ' + (skill.flavor || '') + ' ' + (skill.description || '')).toLowerCase();
+            const keywordMap = {
+                'siddhi': 'SIDDHI',
+                'support': 'SUPPORT',
+                'buff': 'BUFF',
+                'heal': 'HEAL',
+                'shield': 'SHIELD',
+                'stun': 'STUN',
+                'debuff': 'DEBUFF',
+                'summon': 'SUMMON',
+                'stealth': 'STEALTH',
+                'aoe': 'AOE',
+                'area': 'AOE',
+                'dot': 'DOT',
+                'dot.': 'DOT',
+                'crowd': 'CC',
+                'control': 'CC',
+                'fusion': 'FUSION',
+                'combo': 'COMBO',
+                'versatile': 'VERSATILE',
+                'utility': 'UTILITY'
+            };
+            Object.keys(keywordMap).forEach(k => { if (text.includes(k)) tags.add(keywordMap[k]); });
+
+            return Array.from(tags).slice(0, 4); // limit to sensible number
+        }
+
         function selectSkill(skill) {
-            console.log('🎯 Selected skill:', skill.name);
-            // Map selected skill into a glyph and highlight recommended houses
-            selectedGlyph = mapSkillToGlyph(skill);
-            highlightRecommendedHouses(selectedGlyph);
+            // This function now only handles the mini-preview update.
+            // The right panel is for the full card preview.
+            updateMiniPreview(skill);
+            
+            // Highlight the selected skill in the list
+            const allCards = document.querySelectorAll('.skill-card-compact');
+            allCards.forEach(c => c.classList.remove('selected'));
+            
+            const cardToSelect = Array.from(allCards).find(c => c.innerHTML.includes(skill.name));
+            if (cardToSelect) {
+                cardToSelect.classList.add('selected');
+            }
+            
+            // Also update the right panel to show slotting guidance
             showSkillDetails(skill);
         }
 
@@ -2845,37 +4393,29 @@
 
         function showSkillDetails(skill) {
             const rightPanel = document.querySelector('#right-panel .panel-content');
+            // Smart Contextual Panel: Focus on Slotting/Action rather than redundant data
             rightPanel.innerHTML = `
-                <div style="padding:1rem;">
-                    <div style="font-size:1.4rem; font-weight:700; color:${getTierColor(skill.tier)}; margin-bottom:1rem;">
+                <div style="padding:1.5rem; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="font-size:3.5rem; margin-bottom:1rem; filter:drop-shadow(0 0 15px rgba(139,92,246,0.3)); animation: float 3s ease-in-out infinite;">
+                        ${getSkillIcon(skill.tags[0])}
+                    </div>
+                    <div style="font-size:1.2rem; font-weight:700; color:${getTierColor(skill.tier)}; margin-bottom:0.5rem;">
                         ${skill.name}
                     </div>
+                    <div style="color:var(--text-dim); font-size:0.85rem; margin-bottom:2rem; max-width:250px; line-height:1.4;">
+                        ${skill.description || 'Ready to be woven into the cosmic tapestry.'}
+                    </div>
                     
-                    <div style="display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;">
-                        ${skill.tags.map(tag => 
-                            `<span style="background:rgba(139,92,246,0.2); padding:0.3rem 0.6rem; border-radius:4px; font-size:0.7rem; color:var(--accent-glow);">${tag}</span>`
-                        ).join('')}
-                    </div>
-
-                    <div style="margin-bottom:1.5rem;">
-                        <div style="font-size:0.7rem; color:var(--text-dim); text-transform:uppercase; margin-bottom:0.5rem;">Description</div>
-                        <div style="font-size:0.85rem; line-height:1.6;">${skill.description || 'No description available.'}</div>
-                    </div>
-
-                    <div style="margin-bottom:1.5rem;">
-                        <div style="font-size:0.7rem; color:var(--text-dim); text-transform:uppercase; margin-bottom:0.5rem;">Stats</div>
-                        <div style="display:grid; gap:0.5rem;">
-                            ${renderStatBar('Damage', skill.stats.damage || 0, 60, '#ef4444')}
-                            ${renderStatBar('Cost', skill.stats.cost || 0, 30, '#3b82f6')}
-                            ${renderStatBar('Cooldown', skill.stats.cooldown || 0, 15, '#f59e0b')}
+                    <div style="background:linear-gradient(145deg, rgba(20,25,35,0.8), rgba(10,15,20,0.9)); padding:1.2rem; border-radius:12px; border:1px solid rgba(139,92,246,0.2); width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+                        <div style="font-size:0.75rem; color:var(--accent-glow); margin-bottom:0.8rem; text-transform:uppercase; letter-spacing:1px; font-weight:700;">
+                            ✨ Star Chart Guidance
+                        </div>
+                        <div style="font-size:0.8rem; line-height:1.6; color:var(--text-dim);">
+                            Select a <strong>House Slot</strong> to imbue this skill.
+                            <br>
+                            <span style="color:var(--text); opacity:0.8;">Optimal houses are highlighted in the chart.</span>
                         </div>
                     </div>
-
-                    ${skill.lore_quote ? `
-                        <div style="margin-top:1.5rem; padding:1rem; background:rgba(139,92,246,0.05); border-left:2px solid var(--accent); font-style:italic; font-size:0.8rem; color:var(--text-dim);">
-                            ${skill.lore_quote}
-                        </div>
-                    ` : ''}
                 </div>
             `;
         }
@@ -2893,6 +4433,182 @@
                     </div>
                 </div>
             `;
+        }
+
+        // Compute global caps based on owned skills (used to present Potency/Neural Load context)
+        function computeGlobalStatCaps() {
+            try {
+                const raw = JSON.parse(localStorage.getItem('cosmic_skills') || '[]');
+                if (!Array.isArray(raw) || raw.length === 0) {
+                    return { potencyCap: 150, neuralLoadCap: 100, cooldownCap: 20 };
+                }
+                let maxPot = 0, maxLoad = 0, maxCd = 0;
+                raw.forEach(s => {
+                    const st = s.stats || {};
+                    const p = st.damage || st.powerScore || st.power || 0;
+                    const l = st.cost || st.kp || 0;
+                    const c = st.cooldown || 0;
+                    if (p > maxPot) maxPot = p;
+                    if (l > maxLoad) maxLoad = l;
+                    if (c > maxCd) maxCd = c;
+                });
+                // Give a comfortable headroom
+                const potencyCap = Math.max(100, Math.ceil(maxPot * 1.25));
+                const neuralLoadCap = Math.max(50, Math.ceil(maxLoad * 1.4));
+                const cooldownCap = Math.max(10, Math.ceil(maxCd * 1.2));
+                return { potencyCap, neuralLoadCap, cooldownCap };
+            } catch (e) {
+                return { potencyCap: 150, neuralLoadCap: 100, cooldownCap: 20 };
+            }
+        }
+
+        function renderStatCardHTML({ icon = '•', title = '', value = 0, cap = 100, unit = '', note = '' } = {}) {
+            const pct = cap > 0 ? Math.min(100, Math.round((value / cap) * 100)) : 0;
+            const color = title.toLowerCase().includes('potency') ? '#ef4444' : title.toLowerCase().includes('neural') ? '#3b82f6' : '#f59e0b';
+            return `
+                <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.7em;text-align:center;">
+                    <div style="font-size:1.1em;">${icon}</div>
+                    <div style="font-size:0.8em;color:${color};font-weight:700;">${value}${unit ? ' ' + unit : ''}</div>
+                    <div style="font-size:0.7em;color:var(--text-dim);">${title}</div>
+                    <div style="margin-top:0.6em;">${renderStatBar('', value, cap, color)}</div>
+                    ${note ? `<div class="stat-descriptor" style="font-size:0.78em;color:var(--accent-glow);margin-top:0.45em;font-weight:700;">${note}</div>` : ''}
+                </div>
+            `;
+        }
+
+        // Return a short gameplay-focused descriptor word based on stat type, value and skill context
+        function getGameplayDescriptor(statType, value, skill = {}, caps = {}) {
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            const stats = skill.stats || {};
+            const tier = (skill.tier || 'COMMON').toUpperCase();
+
+            // Potency descriptors
+            if (statType === 'potency') {
+                if (value >= (caps.potencyCap || 150) * 0.9) return 'Finisher';
+                if (value >= (caps.potencyCap || 150) * 0.6) return 'Core';
+                if (stats.healing || tags.includes('HEAL')) return 'Sustain';
+                if (tags.includes('AOE') || tags.includes('DISCORD')) return 'Area';
+                return 'Support';
+            }
+
+            // Neural load descriptors
+            if (statType === 'neural') {
+                const pct = caps && caps.neuralLoadCap ? Math.round((value / caps.neuralLoadCap) * 100) : 0;
+                if (value === 0) return 'Free';
+                if (pct >= 90 || value > 100) return 'Risky';
+                if (pct >= 60) return 'Heavy';
+                if (pct >= 30) return 'Moderate';
+                return 'Light';
+            }
+
+            // Cooldown descriptors
+            if (statType === 'cooldown') {
+                if (value === 0) return 'Instant';
+                if (value >= (caps.cooldownCap || 20) * 0.75) return 'Slow';
+                if (value >= (caps.cooldownCap || 20) * 0.4) return 'Measured';
+                return 'Quick';
+            }
+
+            return '';
+        }
+
+        function computeNeuralLoadDisplay(cost, caps) {
+            const player = (() => {
+                try { return JSON.parse(localStorage.getItem('player_state') || '{}'); } catch (e) { return {}; }
+            })();
+            const maxKP = (player && player.maxKP) ? player.maxKP : 100;
+            const currentKP = (player && typeof player.currentKP === 'number') ? player.currentKP : maxKP;
+            const percentOfPlayer = maxKP > 0 ? Math.round((cost / maxKP) * 100) : 0;
+            const percentOfCap = caps && caps.neuralLoadCap ? Math.round((cost / caps.neuralLoadCap) * 100) : 0;
+            return { cost, maxKP, currentKP, percentOfPlayer, percentOfCap };
+        }
+
+        // Skill usage history helpers (used to prevent trivial-spam cooldown workarounds)
+        function _getSkillUsageMap() {
+            try { return JSON.parse(localStorage.getItem('skill_usage_history') || '{}'); } catch (e) { return {}; }
+        }
+
+        function _saveSkillUsageMap(map) {
+            try { localStorage.setItem('skill_usage_history', JSON.stringify(map)); } catch (e) {}
+        }
+
+        function recordSkillUse(skillId) {
+            if (!skillId) return;
+            const map = _getSkillUsageMap();
+            const arr = Array.isArray(map[skillId]) ? map[skillId] : [];
+            arr.push(Date.now());
+            // keep last 200 entries to bound storage
+            map[skillId] = arr.slice(-200);
+            _saveSkillUsageMap(map);
+        }
+
+        function getRecentUsageCount(skillId, windowMs = 60000) {
+            if (!skillId) return 0;
+            const map = _getSkillUsageMap();
+            const arr = Array.isArray(map[skillId]) ? map[skillId] : [];
+            const now = Date.now();
+            return arr.filter(t => now - t <= windowMs).length;
+        }
+
+        // Compute an effective cooldown based on skill potency, neural load, tags, game moment and recent usage
+        function computeEffectiveCooldown(skill, caps = {}) {
+            const stats = skill.stats || {};
+            const base = Math.max(0, stats.cooldown || 0);
+            const power = stats.damage || stats.powerScore || stats.power || 0;
+            const cost = stats.cost || stats.kp || 0;
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+
+            // Potency and neural load scaling
+            const potencyFactor = caps.potencyCap ? Math.min(1.5, (power / (caps.potencyCap || 150)) * 0.8) : 0;
+            const neuralFactor = caps.neuralLoadCap ? Math.min(1.0, (cost / (caps.neuralLoadCap || 100)) * 0.6) : 0;
+
+            // Tag-based adjustments
+            let tagFactor = 0;
+            if (tags.includes('AOE') || tags.includes('DISCORD')) tagFactor += 0.25;
+            if (tags.includes('FINISHER') || tags.includes('OFFENSE')) tagFactor += 0.35;
+            if (tags.includes('HEAL') || tags.includes('SHIELD')) tagFactor += 0.2;
+
+            // Moment-aware adjustments (reads lightweight 'game_moment' from localStorage if present)
+            let momentFactor = 0;
+            try {
+                const gm = JSON.parse(localStorage.getItem('game_moment') || '{}');
+                if (gm && gm.inCombat) {
+                    if (gm.isBoss && tags.includes('FINISHER')) momentFactor += 0.45;
+                    if ((gm.enemyCount || 1) >= 3 && tags.includes('AOE')) momentFactor += 0.3;
+                } else {
+                    // out-of-combat: discourage spamming by boosting cooldown modestly
+                    momentFactor += 0.25;
+                }
+            } catch (e) { /* ignore */ }
+
+            // Anti-spam: recent uses within a short window raise cooldown
+            const recent = getRecentUsageCount(skill.id, 60000); // last 60s window
+            const spamFactor = Math.min(2.0, recent * 0.25); // each recent use adds 25% up to +200%
+
+            const multiplier = 1 + potencyFactor + neuralFactor + tagFactor + momentFactor + spamFactor;
+            let effective = Math.max(1, Math.ceil(base * multiplier));
+            // If base was zero (instant), ensure a minimal gating cooldown
+            if (base === 0) effective = Math.max(1, Math.ceil(1 * multiplier));
+
+            // Provide breakdown for debugging/UI hints
+            return { effective, breakdown: { base, multiplier, potencyFactor, neuralFactor, tagFactor, momentFactor, spamFactor, recentUses: recent } };
+        }
+
+        function renderNeuralLoadUI(cost, skill, caps) {
+            const d = computeNeuralLoadDisplay(cost, caps);
+            const descriptor = getGameplayDescriptor('neural', d.cost, skill, caps);
+            // Keep the percent info but keep it compact next to the descriptor
+            const compactPercent = d.maxKP ? `${d.percentOfPlayer}%` : '';
+            const html = `
+                <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.7em;text-align:center;">
+                    <div style="font-size:1.1em;">🧠</div>
+                    <div style="font-size:0.9em;color:#3b82f6;font-weight:700;">${d.currentKP} / ${d.cost}</div>
+                    <div style="font-size:0.68em;color:var(--text-dim);">nural load / Cost</div>
+                    <div style="margin-top:0.6em;">${renderStatBar('', d.cost, caps.neuralLoadCap || Math.max(50, d.cost), '#3b82f6')}</div>
+                    <div style="font-size:0.78em;color:var(--accent-glow);margin-top:0.45em;font-weight:700;">${descriptor}${compactPercent ? ' • ' + compactPercent : ''}</div>
+                </div>
+            `;
+            return html;
         }
 
         // === JOTYSH ENGINE STATE ===
@@ -2964,18 +4680,18 @@
         const NAKSHATRA_SPAN = 360 / 27;
 
         const HOUSES = [
-            { id: 1, name: '1st House', number: '1st', fullName: 'Sovereign Essence', bonus: 1.2, planet: 'Mars', desc: 'The Core of Identity & Vital Force', optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative'] },
-            { id: 2, name: '2nd House', number: '2nd', fullName: 'Vault of Abundance', bonus: 1.0, planet: 'Venus', desc: 'The Treasury of Wealth & Possessions', optimal: ['Gold Generation', 'Loot Skills'] },
-            { id: 3, name: '3rd House', number: '3rd', fullName: 'Bridge of Expression', bonus: 1.0, planet: 'Mercury', desc: 'The Channel of Speed & Versatility', optimal: ['Quick-Cast', 'Multi-Hit'] },
-            { id: 4, name: '4th House', number: '4th', fullName: 'Roots of Stability', bonus: 1.1, planet: 'Moon', desc: 'The Foundation of Roots & Security', optimal: ['Healing', 'Shield', 'Sustain'] },
-            { id: 5, name: '5th House', number: '5th', fullName: 'Forge of Innovation', bonus: 1.15, planet: 'Sun', desc: 'The Crucible of Expression & Power', optimal: ['High Power', 'AoE'] },
-            { id: 6, name: '6th House', number: '6th', fullName: 'Arena of Conflict', bonus: 1.0, planet: 'Mercury', desc: 'The Battlefield of Combat & Rivalry', optimal: ['Anti-Enemy', 'Debuffs'] },
+            { id: 1, name: '1st House', number: '1st', fullName: 'Sovereign Essence', bonus: 1.2, planet: 'Mars', desc: 'The Core of Identity & Vital Force', optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative', 'STRUCTURE'] },
+            { id: 2, name: '2nd House', number: '2nd', fullName: 'Vault of Abundance', bonus: 1.0, planet: 'Venus', desc: 'The Treasury of Wealth & Possessions', optimal: ['Gold Generation', 'Loot Skills', 'STASIS'] },
+            { id: 3, name: '3rd House', number: '3rd', fullName: 'Bridge of Expression', bonus: 1.0, planet: 'Mercury', desc: 'The Channel of Speed & Versatility', optimal: ['Quick-Cast', 'Multi-Hit', 'MIND'] },
+            { id: 4, name: '4th House', number: '4th', fullName: 'Roots of Stability', bonus: 1.1, planet: 'Moon', desc: 'The Foundation of Roots & Security', optimal: ['Healing', 'Shield', 'Sustain', 'STRUCTURE'] },
+            { id: 5, name: '5th House', number: '5th', fullName: 'Forge of Innovation', bonus: 1.15, planet: 'Sun', desc: 'The Crucible of Expression & Power', optimal: ['High Power', 'AoE', 'DISCORD'] },
+            { id: 6, name: '6th House', number: '6th', fullName: 'Arena of Conflict', bonus: 1.0, planet: 'Mercury', desc: 'The Battlefield of Combat & Rivalry', optimal: ['Anti-Enemy', 'Debuffs', 'DECAY'] },
             { id: 7, name: '7th House', number: '7th', fullName: 'Harmony of Bonds', bonus: 1.0, planet: 'Venus', desc: 'The Equilibrium of Balance & Alliance', optimal: ['Support', 'Reflect'] },
-            { id: 8, name: '8th House', number: '8th', fullName: 'Cradle of Change', bonus: 1.1, planet: 'Mars', desc: 'The Catalyst of Transformation & Rebirth', optimal: ['DoT', 'Transform'] },
-            { id: 9, name: '9th House', number: '9th', fullName: 'Wheel of Destiny', bonus: 1.2, planet: 'Jupiter', desc: 'The Vortex of Luck & Expansion', optimal: ['XP Gain', 'Wisdom'] },
-            { id: 10, name: '10th House', number: '10th', fullName: 'Throne of Command', bonus: 1.0, planet: 'Saturn', desc: 'The Citadel of Discipline & Authority', optimal: ['Defense', 'CC'] },
-            { id: 11, name: '11th House', number: '11th', fullName: 'Harvest of Rewards', bonus: 1.0, planet: 'Saturn', desc: 'The Bounty of Achievement & Networks', optimal: ['Reward Skills', 'Multipliers'] },
-            { id: 12, name: '12th House', number: '12th', fullName: 'Portal of Transcendence', bonus: 1.3, planet: 'Jupiter', desc: 'The Gateway of Spirit & Liberation', optimal: ['Ultimate Skills', 'Cleanse'] }
+            { id: 8, name: '8th House', number: '8th', fullName: 'Cradle of Change', bonus: 1.1, planet: 'Mars', desc: 'The Catalyst of Transformation & Rebirth', optimal: ['DoT', 'Transform', 'DECAY'] },
+            { id: 9, name: '9th House', number: '9th', fullName: 'Wheel of Destiny', bonus: 1.2, planet: 'Jupiter', desc: 'The Vortex of Luck & Expansion', optimal: ['XP Gain', 'Wisdom', 'MIND'] },
+            { id: 10, name: '10th House', number: '10th', fullName: 'Throne of Command', bonus: 1.0, planet: 'Saturn', desc: 'The Citadel of Discipline & Authority', optimal: ['Defense', 'CC', 'STRUCTURE'] },
+            { id: 11, name: '11th House', number: '11th', fullName: 'Harvest of Rewards', bonus: 1.0, planet: 'Saturn', desc: 'The Bounty of Achievement & Networks', optimal: ['Reward Skills', 'Multipliers', 'DISCORD'] },
+            { id: 12, name: '12th House', number: '12th', fullName: 'Portal of Transcendence', bonus: 1.3, planet: 'Jupiter', desc: 'The Gateway of Spirit & Liberation', optimal: ['Ultimate Skills', 'Cleanse', 'STASIS'] }
         ];
 
         const PLANET_SYNERGIES = {
@@ -3858,7 +5574,7 @@
         }
 
         function imbueWithRandomElement() {
-            const elements = ['Fire', 'Water', 'Earth', 'Air', 'Void', 'Solar'];
+            const elements = ['Fire', 'Water', 'Earth', 'Air', 'Void', 'Solar', 'Structure', 'Decay', 'Stasis', 'Discord', 'Mind'];
             currentBaseElement = elements[Math.floor(Math.random() * elements.length)];
             const pill = document.getElementById('base-element-pill');
             if (pill) {

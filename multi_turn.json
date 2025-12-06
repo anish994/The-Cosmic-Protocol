@@ -1,0 +1,7890 @@
+[
+  {
+    "id": "bf8f6059-bf79-4a34-b246-7a09e42b492e",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "7be07e58-e103-4414-bd50-4116a801914e",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "1c1f1a86-7905-48bc-9b85-5744bca21508",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "aa122ef8-443c-48c6-ba2a-af6bcc157744",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "aff6d1df-0c89-442f-8591-f7577ef47bf2",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5b9b9c10-3f96-4c22-9673-f6cf6e59f4f8",
+    "context": "A multi-turn lesson on mind-linking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mind-linking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "176c66c7-fc65-442d-8a96-e7f660e8ceeb",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "e041878a-374a-4834-8391-9f36542ebb9d",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "6fe2b0dc-ba65-43c3-a362-67e0f077f85f",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "951f3c43-3a64-4e7d-ae4e-3027cd7be3e4",
+    "context": "A multi-turn lesson on astral projection.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with astral projection."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "301e0e0d-63ae-4b8c-a5a4-d9ecfb34fb5b",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ca3bb677-bfdf-46fc-9da3-cf3974b49e32",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b68e9491-7e95-4726-a144-aa10130b3376",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "202a6c3c-311c-4fb9-a391-035a12314e1c",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4d4817d4-212f-41ed-80a6-b3970ed28645",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "68a7a0d4-d3f4-4284-bfc7-07448fb79160",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0bb3ee05-0211-4ffc-8086-c370d2b3ffbb",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "50756f23-d23c-47d1-b19e-2886ad1e302c",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0e702a95-9486-4508-8e55-8e6c007f3522",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a3fceb0c-f9f3-4f84-aede-9563fd27a02d",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "65220b97-7a0f-44d8-9f81-5619dd8bac2c",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "1f552d0c-799a-460c-879c-a81871605c9e",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "346f46d7-5cff-4c32-9fee-73433fb1841b",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4152ddf8-ef9b-49bc-9a58-9acde8d28ec3",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "48552f95-4822-433d-abf6-084ca85fc229",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "c2b2baa2-1bac-4ed6-a59b-b0ea519658ee",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5fb279f8-f52f-488f-904c-7d7fc7514a27",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "33e87fdb-26c2-4b28-b277-dc82cbe5f9d8",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "44293ae1-4c32-45a0-8294-84fb50c34550",
+    "context": "A multi-turn lesson on mind-linking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mind-linking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "598bab83-da30-4897-b0ef-04a6c23497d4",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4691eb28-26fc-441c-ac8b-ab27b0596e7b",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9d7be8a0-be5d-4fa3-9f9f-8eecafc75273",
+    "context": "A multi-turn lesson on shadow binding.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with shadow binding."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "42908f34-ac5a-457e-ad5b-cae6de4ad47b",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4f63cc3b-7a3f-466d-b8b8-bd2880b5ea2c",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "3ba574aa-dc08-489e-9f9d-081d6aab72cb",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9bb6df0d-ce6b-4c93-99cf-19039fa7a123",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "e4d8b233-ff24-4cfb-85f0-02f594369562",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a36b7d66-c468-4daf-a6e1-561d45ab9eeb",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "234a4f4d-4ced-4b2d-b375-62a83136c690",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "8d74ceb3-4c39-46c6-adee-8d7416a7af2c",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "42b87399-2203-4f70-95ec-acca2a3258aa",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0560e7c4-254d-46ca-8e02-f6ffad19852f",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f0f6c418-f293-420b-b928-78d4e3c53473",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b7d6f9f6-0c02-46cf-8ec6-17839e92e720",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5988a102-2ec9-4d81-ab9a-9491828a9f4b",
+    "context": "A multi-turn lesson on elemental fury.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with elemental fury."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ab8603f3-3f92-4399-9e8e-57f6de77ce18",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d691fa10-69f0-49b0-85a5-4de64873d6b9",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "8fe44d11-b588-4914-b0ea-0be0c82354da",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "bbdfe535-c25b-4f8d-8974-3aab3e2bab33",
+    "context": "A multi-turn lesson on elemental fury.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with elemental fury."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "530c141b-4586-4e2c-bc88-085284c86db2",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "971d6677-a56f-4a94-bba5-cf51cdf24297",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ba8c4437-9bb5-449f-b450-27c6be018099",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4628916b-943b-45ac-947f-a0eda5f87575",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "cee284f8-dfc5-490f-a972-e0d0d4986aee",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "2926eab6-a7b9-460a-9d89-e7bc32a29c29",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "fda3c58b-e0da-4672-a2d8-9c6fd23f2732",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "835ed298-aaa9-4ff0-944a-ee02b11b100c",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9fe20453-9e7b-4d4f-a4b7-f9ab1f15279f",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4fbdf032-4702-4ed1-beb7-93e0e401b427",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b4612c0c-5240-4736-b241-23148658c313",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "68d85eb1-6f06-4d1d-974b-ba11649af7f2",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "be6ea281-fbfe-4c6b-8cb3-691ebdb92142",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "37a16933-da48-4e87-a144-8a682e81115a",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9079c08d-8bf5-4cc4-9977-91462a0df03e",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4ea188a0-1828-4337-a373-8bfeb324acc3",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "aa201722-01eb-45b0-ae6a-1a1dd708f7ea",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "63bb1a28-dd61-4beb-91b3-99c10fde70b4",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "be448e29-8f09-4bf9-911d-38f400cd0fac",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d4ad1db9-0f24-4ff4-af54-a511240bd003",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "3239b2a5-3a21-4448-ac6a-c80a61c288f4",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "e176bba8-2042-4398-af71-cc6bb22d6de1",
+    "context": "A multi-turn lesson on mind-linking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mind-linking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b4c0d335-c22e-4ddb-99c5-4e2c59e0b1d0",
+    "context": "A multi-turn lesson on shadow binding.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with shadow binding."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "292a52d2-c531-4bce-b21d-cc5d1b9b5baf",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "e3d2e1f3-8284-42d0-b487-a80d8c45e4d1",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "8fbd6e98-83fa-4a49-a580-b05ee2f155db",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d726a9bb-933a-47ac-b915-0936d54112bf",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0476ce86-6ac1-45c6-9583-0d08410af09e",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "1575233d-3d27-4e1a-a14e-b2a6e24a0560",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a58b8e7e-5636-4d98-8a39-85c8c3d7c9a0",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ef709dad-9f78-4f29-b630-ceff8451b798",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "901c2c87-567d-4cf9-802d-3aeb578b7a7c",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "7fc8a9fb-915e-4767-867c-e0d2d01c01f4",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "66cd08ff-6be6-4f2e-9959-e81f4ade2eb3",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0a7a7919-8d52-474f-ac17-0080e9b30185",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d2f015a3-b893-4442-bc71-e23b344df560",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "eba68f5b-0caf-4cd2-8245-c7869f46d97d",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "78e88094-6ddd-47dc-99a9-158385795aa7",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "859ddddd-3687-48c2-9346-6511f495792b",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "cc09fd11-7975-48f0-aeee-8db0423501e5",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f55344c5-82b1-4393-9c43-87748294fa76",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "83dcdc42-bf13-4eba-bb57-6d48eb30b154",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "2ea91db1-a5f8-43c8-b9b2-a019326dbcee",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "fc229ba5-261d-4c3f-a95c-e31f23cf17b9",
+    "context": "A multi-turn lesson on shadow binding.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with shadow binding."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "05b316ad-56f2-47b4-a771-be19e23f4816",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9080902e-9936-4d45-9579-7b4bc834064f",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ba187374-110b-469a-943f-a914826c7787",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d467b158-9e2b-4113-a27a-41b2f9077ceb",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "909ced4a-e830-44b0-9bee-377d7982aa3a",
+    "context": "A multi-turn lesson on elemental fury.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with elemental fury."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b7e9c3b5-735e-4316-bc29-538111c81c5e",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4aa75e47-2a3a-4e27-af8f-bd95db17dfe0",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "880ff1d5-fbbb-43fe-b6e6-27c4e7d80988",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d603b8b7-180f-4bec-8ebd-258c51ae3432",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "659d1395-f1d4-4166-9043-74854afee559",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "85883465-38b1-40df-b0e3-5d8b0eb8451c",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "bf2e06ee-0c80-4d62-8fa9-1dc2846f03ba",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9c9874bf-d3fa-4157-b06c-5053fafdf2d4",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "de8731e4-bce4-44dd-ac1f-1afb55c76147",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f6500604-02d3-4d28-b008-1222f01935fe",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4244c8bd-055c-461c-980a-f4310bb16445",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "16c72e14-26e8-43a6-80bc-43099858867f",
+    "context": "A multi-turn lesson on astral projection.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with astral projection."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a8e91493-c306-44d0-8fc0-28121c31cff8",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d71aa9a3-44cf-484c-ad46-53bf04a7509a",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "10b449bb-6d2e-4946-9283-4c4bf2993b95",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5728f54a-d61f-402c-90c1-c5d8a75aa039",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "3109530c-0779-4f74-9aaa-4b8280fe2dfa",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "96fb0f34-e854-4326-9478-ce96fe675293",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "409351f9-6211-4aeb-935c-a6aae5e7b47d",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "32d6107b-1d1f-4803-a702-294957fdefc5",
+    "context": "A multi-turn lesson on elemental fury.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with elemental fury."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "bb53f3f8-d979-4294-8e5d-4699f1af24c0",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "371c4805-4ce0-443f-9fe1-44acf3b44707",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "745cc845-cc4e-40ab-a214-8172de2b5f38",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "fb128042-627a-4331-9d8f-bae2937c8d80",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f1d51ce5-f5ad-4245-aa1a-df937e67abec",
+    "context": "A multi-turn lesson on shadow binding.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with shadow binding."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f779928e-1066-4522-900b-94fe7129f311",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "65d8bfac-dc71-4da0-9223-5efd5226b1a8",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5c3a29a0-fdb5-471a-95f5-61bbd76b61fb",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "62f95371-d04f-4423-ac20-2d310a84ed1a",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "6186b3ff-f54d-43e5-bfe1-9dba839c6fa5",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "6e38d2cc-d589-43e0-9ded-3ba0c3764963",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "eba381cb-94ee-4de0-8732-3708718bef6c",
+    "context": "A multi-turn lesson on astral projection.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with astral projection."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5c7b7910-a2a4-4853-bfca-1d1c6340eba1",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "acd7e495-7718-4610-badb-fc002a602870",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4d5a86c5-1130-4124-8905-3c72aff4acd2",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5d1018f7-2f84-4f81-900e-1177c698462e",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "e225eb0c-16e0-4e11-a635-5a406538e566",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0382d639-025e-44e3-b424-499f47eee643",
+    "context": "A multi-turn lesson on shadow binding.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with shadow binding."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5c6efe37-6ea7-4d8b-bfa9-c8828f9537aa",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9953df22-2622-460b-bd7f-aaea05d9ea49",
+    "context": "A multi-turn lesson on mind-linking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mind-linking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "dfcb8f80-bf61-4803-a9e5-c33baf161811",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "fb2bbc22-b000-45b0-82b6-6498899d15a0",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "dddecef3-3b85-4723-9f2b-d4d8ab358bf4",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "51b4616e-8403-49de-b130-d7157264e6be",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b4ceaf65-4174-44b1-905f-74293deb4edd",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ed268404-fab6-46ce-b7c3-b08e4b231cdd",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f82919f2-45f3-4dd2-9604-348af0ae4927",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "7dbade1b-9715-4249-9840-606c5c266b41",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "dc7d3865-9aa0-4a1e-aafe-910cb416f218",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4746a454-57e5-4ad8-86ef-48fd3f799aba",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0a2c4a40-c189-4f50-860e-d3a6f89f4b98",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "fe357d91-8095-4812-8835-2ee3a0e9b8ef",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "61d53547-494b-4f12-ba3c-aaae4235cbc0",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a8dfa30c-ab62-49cf-b19d-802cff24e41b",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "bade888f-5780-4d92-8eca-9287731c7b01",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "f4b65b23-d16b-4d39-96c2-d08c2f351cd5",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "96960f49-9ac9-49b3-8992-f25823f3fd20",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "1b56038d-9616-4377-8b7f-026ad699d63f",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a5856ce0-0f34-42a7-bae0-024f384acb45",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "10e9da10-efd1-4a06-927e-fc4245d6b41c",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "521a0ea7-659b-4bcd-8294-93e4de46ac20",
+    "context": "A multi-turn lesson on mind-linking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mind-linking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "c94724bf-7661-4d9d-bc37-8458d25da2b1",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4d72cfc5-40cf-4d93-9766-580c1f7e5c99",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "1978f522-c317-4b05-bd15-f744bebb5a9a",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "0fefd4c7-a6be-40ab-a86e-7800b6ccc7f1",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ac3fd361-5126-4051-84bb-ccacc6b9fd06",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "dab02a77-5d57-44b5-b908-13a99287835a",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4c6cc39a-b8a6-4d62-a096-fc2588e32e65",
+    "context": "A multi-turn lesson on dream logic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dream logic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "102a24f3-cd2c-4280-8718-e54898df8bb5",
+    "context": "A multi-turn lesson on crystal resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with crystal resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "8ec1209a-b4e4-4ad4-9cb7-610463a13c85",
+    "context": "A multi-turn lesson on astral projection.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with astral projection."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b83f439b-de11-4c7c-96bd-d2388037ba85",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "1351d58b-cbfb-4cbf-a216-d831cc322310",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ebc981d1-7b54-4504-8ba5-9f1b7ecd3588",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "232f6284-efba-4dbe-aa2f-e8c0a5cd9661",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b8fea2f5-b16a-47af-ad20-0d8223ea2079",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4a6bed45-0eec-48f2-9a75-15ed97fade64",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "e8854d74-37b0-435c-9377-eac254f634cb",
+    "context": "A multi-turn lesson on astral projection.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with astral projection."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "2ad8bf57-40df-43f4-9f4c-03e29c136fb2",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "7685b92e-c577-4ee4-9539-ec7ee5179f7d",
+    "context": "A multi-turn lesson on starlight weaving.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with starlight weaving."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "a6fe2090-fa20-4cd1-b170-3b7983385678",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "3a342951-2d8a-4cb1-8742-8d1a56fec17c",
+    "context": "A multi-turn lesson on flesh-crafting.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with flesh-crafting."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "db1a02d3-b4b9-4922-b2d6-65c1d4646863",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "d116216f-ae0a-44bf-b3ce-b3fcef3101a0",
+    "context": "A multi-turn lesson on dimensional rifts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with dimensional rifts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b21c406d-6ced-489a-8a78-99c5605edc19",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "ed92e1a8-9cac-4008-8888-a964f5cea69d",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "19bef586-d766-4609-9462-227eecd49664",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "4050df2c-623f-4f3b-af68-b8cad4b9f12f",
+    "context": "A multi-turn lesson on shadow binding.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with shadow binding."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "67afd2e7-c3e0-43fb-a672-28e54988df9e",
+    "context": "A multi-turn lesson on soul echoes.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with soul echoes."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "dfc3384f-831f-473a-9a7a-f890f298f94a",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "9c6fba03-834a-4442-b16b-9ebc620d4f0e",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "99d868ea-fc73-47f9-a1f1-db63b6e609b3",
+    "context": "A multi-turn lesson on tantric energy.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with tantric energy."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "be4cba64-b2de-4f48-bb5c-67cf65bde229",
+    "context": "A multi-turn lesson on Arcane flow.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Arcane flow."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "03eebd77-78df-4a22-ab0e-184dac87f310",
+    "context": "A multi-turn lesson on karmic threads.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with karmic threads."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "63dd805a-aa8d-4208-bba2-4161802d6bd8",
+    "context": "A multi-turn lesson on blood magic.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with blood magic."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "b88f44b9-e9b9-47e7-bfa6-5151e8b6219c",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "36c5a12e-1c06-4618-9884-b172684fd6d6",
+    "context": "A multi-turn lesson on temporal fractures.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with temporal fractures."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5accbea8-9b2f-40fa-b8cd-10dd3950528e",
+    "context": "A multi-turn lesson on ancient pacts.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with ancient pacts."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "52bc127e-05e8-487d-8500-f141bc7fd6d1",
+    "context": "A multi-turn lesson on the Void.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with the Void."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "5bcc08ba-e54e-4447-8813-6377b195d2e8",
+    "context": "A multi-turn lesson on elemental fury.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with elemental fury."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "019899c1-e228-4065-8d93-0b4b350e4807",
+    "context": "A multi-turn lesson on Solar resonance.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with Solar resonance."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "cde29bb3-37ef-462d-b83e-dfc5846a562e",
+    "context": "A multi-turn lesson on spirit-walking.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with spirit-walking."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  },
+  {
+    "id": "900281fe-a7e0-4857-b3a1-a332328ce87f",
+    "context": "A multi-turn lesson on mantra vibration.",
+    "conversation": [
+      {
+        "role": "user",
+        "content": "I'm having trouble with mantra vibration."
+      },
+      {
+        "role": "assistant",
+        "content": "Describe the difficulty. Is it the flow or the form?"
+      },
+      {
+        "role": "user",
+        "content": "The flow. It feels unstable."
+      },
+      {
+        "role": "assistant",
+        "content": "Unstable flow suggests a lack of grounding. Anchor yourself."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then you expand the resonance."
+      },
+      {
+        "role": "user",
+        "content": "I see. And then?"
+      }
+    ],
+    "tags": [
+      "multi_turn",
+      "teaching",
+      "magic"
+    ]
+  }
+]

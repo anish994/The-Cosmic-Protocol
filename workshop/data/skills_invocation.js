@@ -16,15 +16,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Target ally gains +2/+2 and First Strike until end of turn. Restore 2 Sanctity.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flash, Ward, Initiative.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Vehuiah to unleash FLASH, WARD, INITIATIVE effects. Target ally gains +2/+2 and First Strike until end...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -63,15 +64,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "End all combats. All creatures lose aggressive abilities until your next turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Pacify, Calm.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Jeliel to unleash PACIFY, CALM effects. End all combats. All creatures lose aggressive abi...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -109,15 +111,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 69
+            "damage": 69,
+            "cost": 41
         },
         "description": "Create two 2/2 Construct tokens. Your structures cost 1 less this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Builder, Permanence.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Sitael to unleash BUILDER, PERMANENCE effects. Create two 2/2 Construct tokens. Your structures c...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -155,15 +158,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Look at opponent's hand. Exile a card from it. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Revelation, Truth.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Elemiah to unleash REVELATION, TRUTH effects. Look at opponent's hand. Exile a card from it. Dra...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -201,15 +205,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Restore all resources to their maximum values. Gain 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Harmony, Balance.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Mahasiah to unleash HARMONY, BALANCE effects. Restore all resources to their maximum values. Gai...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -247,15 +252,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "heal": 78
+            "heal": 78,
+            "cost": 46
         },
         "description": "Target creature gains +3/+3 and Lifelink. Heal 4 damage to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Healing, Light.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Lelahel to unleash HEALING, LIGHT effects. Target creature gains +3/+3 and Lifelink. Heal 4 d...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -293,15 +299,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Your permanents gain Indestructible until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Patience, Endurance.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Achaiah to unleash PATIENCE, ENDURANCE effects. Your permanents gain Indestructible until end of t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -339,15 +346,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Double your mana production this turn. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Blessing, Abundance.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Cahetel to unleash BLESSING, ABUNDANCE effects. Double your mana production this turn. Draw 2 card...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -385,15 +393,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Return target creature from any graveyard to its owner's hand. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Mercy, Forgiveness.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Haziel to unleash MERCY, FORGIVENESS effects. Return target creature from any graveyard to its o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -431,15 +440,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "All your creatures gain +1/+1 and Flying until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Grace, Favor.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Aladiah to unleash GRACE, FAVOR effects. All your creatures gain +1/+1 and Flying until end...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -477,15 +487,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Destroy target attacking or blocking creature. Create a 3/3 Angel token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Victory, Triumph.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Lauviah to unleash VICTORY, TRIUMPH effects. Destroy target attacking or blocking creature. Cre...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -523,15 +534,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "Target permanent gains Hexproof and Indestructible until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Protection, Refuge.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Hahaiah to unleash PROTECTION, REFUGE effects. Target permanent gains Hexproof and Indestructible...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -569,15 +581,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 69
+            "damage": 69,
+            "cost": 41
         },
         "description": "Return all cards exiled this game to their owners' hands. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fidelity, Trust.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Iezalel to unleash FIDELITY, TRUST effects. Return all cards exiled this game to their owners'...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -615,15 +628,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Destroy target enchantment or artifact. Its controller loses 2 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Justice, Truth.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Mebahel to unleash JUSTICE, TRUTH effects. Destroy target enchantment or artifact. Its contro...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -661,15 +675,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Exile all enchantments. Gain 2 life for each exiled.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Purification, Cleansing.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Hariel to unleash PURIFICATION, CLEANSING effects. Exile all enchantments. Gain 2 life for each exile...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -707,15 +722,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Target creature you control fights target creature you don't control. If your creature wins, draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Loyalty, Devotion.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Hekamiah to unleash LOYALTY, DEVOTION effects. Target creature you control fights target creature...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -753,15 +769,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Scry 3, then draw 2 cards. Reduce Invocation costs by 1 this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Revelation, Inspiration.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Lauviah II to unleash REVELATION, INSPIRATION effects. Scry 3, then draw 2 cards. Reduce Invocation costs...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -799,15 +816,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Target opponent reveals their hand. Choose a nonland card. They discard it.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Truth, Justice.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Caliel to unleash TRUTH, JUSTICE effects. Target opponent reveals their hand. Choose a nonla...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -845,15 +863,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Return up to 3 cards from your graveyard to your hand. Gain 3 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Memory, Intelligence.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Leuviah to unleash MEMORY, INTELLIGENCE effects. Return up to 3 cards from your graveyard to your h...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -891,15 +910,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Exile target creature, then return it to the battlefield under your control.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Redemption, Liberation.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Pahaliah to unleash REDEMPTION, LIBERATION effects. Exile target creature, then return it to the battl...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -937,15 +957,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Look at the top 5 cards of your library. Put 2 into your hand and the rest on bottom.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Wisdom.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Nelchael to unleash KNOWLEDGE, WISDOM effects. Look at the top 5 cards of your library. Put 2 int...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -983,15 +1004,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "All your legendary creatures gain +2/+2 and can't be blocked this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fame, Renown.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Yeiayel to unleash FAME, RENOWN effects. All your legendary creatures gain +2/+2 and can't ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1029,15 +1051,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "heal": 69
+            "heal": 69,
+            "cost": 41
         },
         "description": "Restore all damage on all creatures. Gain life equal to damage restored.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Healing, Restoration.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Melahel to unleash HEALING, RESTORATION effects. Restore all damage on all creatures. Gain life equ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1075,15 +1098,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Creatures you control gain Hexproof and Vigilance until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Protection, Shelter.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Haheuiah to unleash PROTECTION, SHELTER effects. Creatures you control gain Hexproof and Vigilance ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1121,15 +1145,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Search your library for an Invocation card and put it into your hand. Shuffle.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wisdom, Magic.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Nith-Haiah to unleash WISDOM, MAGIC effects. Search your library for an Invocation card and put...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1167,15 +1192,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Prevent all combat damage this turn. Each player draws a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Politics, Diplomacy.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Haaiah to unleash POLITICS, DIPLOMACY effects. Prevent all combat damage this turn. Each player d...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1213,15 +1239,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Create three 1/1 Human tokens. Put a +1/+1 counter on each creature you control.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Civilization, Order.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Yerathel to unleash CIVILIZATION, ORDER effects. Create three 1/1 Human tokens. Put a +1/+1 counter...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1259,15 +1286,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Target creature gains +0/+5 and \"Prevent all damage that would be dealt to this creature\" until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Longevity, Health.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Seheiah to unleash LONGEVITY, HEALTH effects. Target creature gains +0/+5 and \"Prevent all damag...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1305,15 +1333,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "All creatures you control can't be blocked this turn. They gain Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Liberation, Freedom.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Reiyel to unleash LIBERATION, FREEDOM effects. All creatures you control can't be blocked this tu...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1351,15 +1380,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Put two +1/+1 counters on target creature. Create a Food token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fertility, Growth.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Omael to unleash FERTILITY, GROWTH effects. Put two +1/+1 counters on target creature. Create ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1397,15 +1427,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Target creature gains +4/+4 and Flying. It becomes legendary until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Talent, Brilliance.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Lecabel to unleash TALENT, BRILLIANCE effects. Target creature gains +4/+4 and Flying. It becomes...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1443,15 +1474,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "Destroy target creature with power 4 or greater. Its controller gains 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Justice, Mercy.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Vasariah to unleash JUSTICE, MERCY effects. Destroy target creature with power 4 or greater. I...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1489,15 +1521,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 69
+            "damage": 69,
+            "cost": 41
         },
         "description": "Gain control of target creature until end of turn. Untap it. It gains Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Obedience, Order.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Yehuiah to unleash OBEDIENCE, ORDER effects. Gain control of target creature until end of turn....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1535,15 +1568,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Tap all creatures. They don't untap during their controller's next untap step.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Calm, Peace.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Lehahiah to unleash CALM, PEACE effects. Tap all creatures. They don't untap during their c...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1581,15 +1615,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Each player returns a card from their graveyard to their hand. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Reconciliation, Harmony.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Chavakiah to unleash RECONCILIATION, HARMONY effects. Each player returns a card from their graveyard to...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1627,15 +1662,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Create two Treasure tokens. Your artifacts enter the battlefield untapped this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Work, Employment.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Menadel to unleash WORK, EMPLOYMENT effects. Create two Treasure tokens. Your artifacts enter t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1673,15 +1709,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Destroy target artifact or enchantment. Create a 2/2 Angel token with Flying.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Victory, Breakthrough.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Aniel to unleash VICTORY, BREAKTHROUGH effects. Destroy target artifact or enchantment. Create a 2...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1719,15 +1756,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Reduce the cost of your next Invocation by 3. Gain 2 Sanctity.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ritual, Ceremony.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Haamiah to unleash RITUAL, CEREMONY effects. Reduce the cost of your next Invocation by 3. Gain...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1765,15 +1803,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "heal": 87
+            "heal": 87,
+            "cost": 52
         },
         "description": "Return all creature cards with mana cost 3 or less from your graveyard to the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Healing, Family.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Rehael to unleash HEALING, FAMILY effects. Return all creature cards with mana cost 3 or less...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1811,15 +1850,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Target player gains 7 life. Draw a card for each opponent with more life than you.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Comfort, Consolation.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Ieiazel to unleash COMFORT, CONSOLATION effects. Target player gains 7 life. Draw a card for each o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1857,15 +1897,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Search your library for a legendary creature and put it onto the battlefield. Shuffle.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Mission, Calling.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Hahahel to unleash MISSION, CALLING effects. Search your library for a legendary creature and p...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1903,15 +1944,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "Return target nonland permanent to its owner's hand. Scry 2.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Politics, Travel.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Mikael to unleash POLITICS, TRAVEL effects. Return target nonland permanent to its owner's han...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1949,15 +1991,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 69
+            "damage": 69,
+            "cost": 41
         },
         "description": "Each player creates two Treasure tokens. You gain 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prosperity, Peace.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Veualiah to unleash PROSPERITY, PEACE effects. Each player creates two Treasure tokens. You gain ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -1995,15 +2038,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Target creature gains +3/+0, Double Strike, and Trample until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Warrior, Battle.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Yelahiah to unleash WARRIOR, BATTLE effects. Target creature gains +3/+0, Double Strike, and Tr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2041,15 +2085,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Untap all creatures you control. They gain Vigilance until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Motivation, Will.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Sealiah to unleash MOTIVATION, WILL effects. Untap all creatures you control. They gain Vigilan...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2087,15 +2132,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Look at the top 4 cards of your library. Put 2 into your hand and the rest into your graveyard.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Revelation, Perception.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Ariel to unleash REVELATION, PERCEPTION effects. Look at the top 4 cards of your library. Put 2 int...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2133,15 +2179,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Draw 3 cards, then put 2 cards from your hand on top of your library in any order.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Contemplation, Truth.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Asaliah to unleash CONTEMPLATION, TRUTH effects. Draw 3 cards, then put 2 cards from your hand on t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2179,15 +2226,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Create two 1/1 creature tokens. They gain +2/+2 if you control another creature with the same name.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fertility, Union.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Mihael to unleash FERTILITY, UNION effects. Create two 1/1 creature tokens. They gain +2/+2 if...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2225,15 +2273,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Target creature gains Flying and +2/+2. You gain life equal to its power.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Elevation, Wisdom.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Vehuel to unleash ELEVATION, WISDOM effects. Target creature gains Flying and +2/+2. You gain l...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2271,15 +2320,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Draw 2 cards. You may cast an instant or sorcery from your hand without paying its mana cost.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Eloquence, Communication.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Daniel to unleash ELOQUENCE, COMMUNICATION effects. Draw 2 cards. You may cast an instant or sorcery f...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2317,15 +2367,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Search your library for up to 2 artifact cards and put them into your hand. Shuffle.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Medicine, Science.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Hahasiah to unleash MEDICINE, SCIENCE effects. Search your library for up to 2 artifact cards and...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2363,15 +2414,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "Exile target nonland permanent. Its controller may search their library for a basic land and put it onto the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Atonement, Liberation.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Imamiah to unleash ATONEMENT, LIBERATION effects. Exile target nonland permanent. Its controller may...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2409,15 +2461,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 69
+            "damage": 69,
+            "cost": 41
         },
         "description": "Look at the top 7 cards of your library. Put up to 3 into your hand and the rest on bottom.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Teaching.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Nanael to unleash KNOWLEDGE, TEACHING effects. Look at the top 7 cards of your library. Put up to...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2455,15 +2508,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Target creature gets -3/-0 until end of turn. Another target creature gets +3/+3 until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Youth, Beauty.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Nithael to unleash YOUTH, BEAUTY effects. Target creature gets -3/-0 until end of turn. Anot...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2501,15 +2555,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Exile all creatures with power 4 or greater. They return to the battlefield at end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Morality, Ethics.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Mebahiah to unleash MORALITY, ETHICS effects. Exile all creatures with power 4 or greater. They ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2547,15 +2602,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Create three Treasure tokens. Target player draws 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fortune, Support.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Poyel to unleash FORTUNE, SUPPORT effects. Create three Treasure tokens. Target player draws ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2593,15 +2649,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Your creatures gain +2/+0 and First Strike until end of turn. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Courage, Strategy.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Nemamiah to unleash COURAGE, STRATEGY effects. Your creatures gain +2/+0 and First Strike until e...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2639,15 +2696,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Creatures you control gain Hexproof until end of turn. Prevent all damage that would be dealt to you.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Protection, Shield.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Yeialel to unleash PROTECTION, SHIELD effects. Creatures you control gain Hexproof until end of t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2685,15 +2743,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Create four Treasure tokens. You may cast an artifact or enchantment from your hand without paying its mana cost.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prosperity, Wealth.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Harachel to unleash PROSPERITY, WEALTH effects. Create four Treasure tokens. You may cast an artif...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2731,15 +2790,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Return up to 2 artifact or enchantment cards from your graveyard to your hand. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Repair, Restoration.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Mitzrael to unleash REPAIR, RESTORATION effects. Return up to 2 artifact or enchantment cards from ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2777,15 +2837,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Target player becomes your ally until end of turn. You both draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Friendship, Affinity.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Umabel to unleash FRIENDSHIP, AFFINITY effects. Target player becomes your ally until end of turn....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2823,15 +2884,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "Scry 3, then draw 2 cards. Reduce Consciousness costs by 1 this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Philosophy.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Iah-Hel to unleash KNOWLEDGE, PHILOSOPHY effects. Scry 3, then draw 2 cards. Reduce Consciousness co...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2869,15 +2931,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 69
+            "damage": 69,
+            "cost": 41
         },
         "description": "Each player creates two Treasure tokens. You create an additional two.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Commerce, Unity.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Anauel to unleash COMMERCE, UNITY effects. Each player creates two Treasure tokens. You creat...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 41 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2915,15 +2978,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Inspiration, Creativity.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Mehiel to unleash INSPIRATION, CREATIVITY effects. Copy target instant or sorcery spell. You may choo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -2961,15 +3025,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Gain 5 life. Draw a card for each 5 life you have above your starting life total.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fountain, Wisdom.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Damabiah to unleash FOUNTAIN, WISDOM effects. Gain 5 life. Draw a card for each 5 life you have ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3007,15 +3072,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Search your library for a Forest card and put it onto the battlefield. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Nature.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Manakel to unleash KNOWLEDGE, NATURE effects. Search your library for a Forest card and put it o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3053,15 +3119,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Transform target creature you control into a copy of another target creature. It gains Indestructible until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Transformation, Longevity.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Eyael to unleash TRANSFORMATION, LONGEVITY effects. Transform target creature you control into a copy ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3099,15 +3166,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "heal": 84
+            "heal": 84,
+            "cost": 50
         },
         "description": "Create two Food tokens and two Treasure tokens. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Healing, Agriculture.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Habuhiah to unleash HEALING, AGRICULTURE effects. Create two Food tokens and two Treasure tokens. Ga...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3145,15 +3213,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Return target permanent from a graveyard to its owner's hand. Its owner gains 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Justice, Restitution.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Rochel to unleash JUSTICE, RESTITUTION effects. Return target permanent from a graveyard to its ow...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3191,15 +3260,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Target creature gains \"Whenever this creature deals damage, you gain that much life\" until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Alchemy, Regeneration.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Jabamiah to unleash ALCHEMY, REGENERATION effects. Target creature gains \"Whenever this creature deal...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3237,15 +3307,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 63
+            "damage": 63,
+            "cost": 37
         },
         "description": "Your creatures gain +3/+0 and Haste until end of turn. They can't be blocked by more than one creature.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Courage, Victory.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Haiaiel to unleash COURAGE, VICTORY effects. Your creatures gain +3/+0 and Haste until end of t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 37 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3283,15 +3354,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 66
+            "damage": 66,
+            "cost": 39
         },
         "description": "Destroy target creature. Search your library for a creature with lesser mana cost and put it onto the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Endings, Rebirth.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Mumiah to unleash ENDINGS, REBIRTH effects. Destroy target creature. Search your library for a...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 39 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3330,15 +3402,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Exile all demons. Your creatures gain +3/+3, Flying, and Vigilance. Draw 3 cards. Restore 5 Sanctity.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Commander, Justice, Protection.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Michael to unleash COMMANDER, JUSTICE, PROTECTION effects. Exile all demons. Your creatures gain +3/+3, Flyin...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3378,15 +3451,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Look at the top 10 cards of your library. Put any number into your hand and the rest on bottom. Gain 5 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Messenger, Revelation, Prophecy.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Gabriel to unleash MESSENGER, REVELATION, PROPHECY effects. Look at the top 10 cards of your library. Put any ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3426,15 +3500,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "heal": 60
+            "heal": 60,
+            "cost": 36
         },
         "description": "Return all creatures from all graveyards to the battlefield under their owners' control. They gain Lifelink. You gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Healing, Protection, Travel.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Raphael to unleash HEALING, PROTECTION, TRAVEL effects. Return all creatures from all graveyards to the ba...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3474,15 +3549,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Deal 5 damage to each creature and planeswalker. Your creatures are unaffected. Exile all graveyards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flame, Judgment, Transformation.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Uriel to unleash FLAME, JUDGMENT, TRANSFORMATION effects. Deal 5 damage to each creature and planeswalker. Y...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3522,15 +3598,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Draw 5 cards. You have no maximum hand size. All your Invocations cost 3 less. Gain 3 in all resources.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Scribe, Ascension, Unity.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Metatron to unleash SCRIBE, ASCENSION, UNITY effects. Draw 5 cards. You have no maximum hand size. All y...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3570,15 +3647,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Search your library for up to 3 angel cards and put them onto the battlefield. They gain Haste. Shuffle.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prayer, Connection, Ascension.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Sandalphon to unleash PRAYER, CONNECTION, ASCENSION effects. Search your library for up to 3 angel cards and pu...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3618,15 +3696,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 60
+            "damage": 60,
+            "cost": 36
         },
         "description": "Destroy all creatures. For each creature destroyed this way, create a 1/1 Spirit token with Flying. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Death, Transition, Mercy.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Azrael to unleash DEATH, TRANSITION, MERCY effects. Destroy all creatures. For each creature destroyed...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 36 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3666,15 +3745,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Target creature you control gains Hexproof and can't be blocked. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Invisibility, Command, Cunning.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Bael to unleash INVISIBILITY, COMMAND, CUNNING effects. Target creature you control gains Hexproof and can...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3713,15 +3793,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy target land. Draw 2 cards. Gain 2 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Language, Earthquake.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Agares to unleash LANGUAGE, EARTHQUAKE effects. Destroy target land. Draw 2 cards. Gain 2 Consciou...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3759,15 +3840,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Look at target opponent's hand and exile a card from it. Scry 3.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Discovery, Prophecy.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Vassago to unleash DISCOVERY, PROPHECY effects. Look at target opponent's hand and exile a card fr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3805,15 +3887,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Return target creature from any graveyard to the battlefield under your control. It's a Zombie in addition to its other types.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Necromancy, Knowledge.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Samigina to unleash NECROMANCY, KNOWLEDGE effects. Return target creature from any graveyard to the b...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3851,15 +3934,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Transform target creature into a 0/1 creature with no abilities. It gains \"This creature can't attack or block.\"",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Transformation, Disease.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Marbas to unleash TRANSFORMATION, DISEASE effects. Transform target creature into a 0/1 creature with...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3897,15 +3981,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Gain control of target artifact or creature with mana cost 3 or less.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Theft, Temptation.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Valefor to unleash THEFT, TEMPTATION effects. Gain control of target artifact or creature with m...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3943,15 +4028,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 2 cards. Target opponent discards 2 cards. Deal 2 damage to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prophecy, Discord.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Amon to unleash PROPHECY, DISCORD effects. Draw 2 cards. Target opponent discards 2 cards. De...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -3989,15 +4075,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Search your library for up to 2 basic land cards and put them onto the battlefield tapped. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Communication, Nature.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Barbatos to unleash COMMUNICATION, NATURE effects. Search your library for up to 2 basic land cards a...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4036,15 +4123,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 4 cards. You may cast a spell from your hand without paying its mana cost. Gain 3 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Arts, Command.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Paimon to unleash KNOWLEDGE, ARTS, COMMAND effects. Draw 4 cards. You may cast a spell from your hand ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4083,15 +4171,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "heal": 0
+            "heal": 0,
+            "cost": 40
         },
         "description": "Restore all damage on target creature. Put a +1/+1 counter on it. Scry 2, then draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Healing, Philosophy.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Buer to unleash HEALING, PHILOSOPHY effects. Restore all damage on target creature. Put a +1/+1...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4129,15 +4218,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Look at the top 5 cards of any library. Put 2 into your hand and the rest on bottom.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Divination, Honor.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Gusion to unleash DIVINATION, HONOR effects. Look at the top 5 cards of any library. Put 2 into...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4175,15 +4265,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Gain control of target creature until end of turn. Untap it. It gains Haste and must attack if able.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Lust, Desire.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Sitri to unleash LUST, DESIRE effects. Gain control of target creature until end of turn....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4221,15 +4312,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Gain control of all creatures with total power 5 or less. They gain Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Love, Command.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Beleth to unleash LOVE, COMMAND effects. Gain control of all creatures with total power 5 o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4267,15 +4359,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Deal 3 damage to target creature or planeswalker. If it dies, deal 3 damage to another target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Archery, Battle.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Leraje to unleash ARCHERY, BATTLE effects. Deal 3 damage to target creature or planeswalker. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4313,15 +4406,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create two 2/2 Knight tokens with Vigilance. They gain First Strike until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. War, Knights.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Eligos to unleash WAR, KNIGHTS effects. Create two 2/2 Knight tokens with Vigilance. They ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4359,15 +4453,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Tap target creature. It doesn't untap during its controller's next untap step. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Barrenness, Love.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Zepar to unleash BARRENNESS, LOVE effects. Tap target creature. It doesn't untap during its c...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4405,15 +4500,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Scry 4, then draw 2 cards. Target opponent draws a card. Each player gains 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prophecy, Reconciliation.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Botis to unleash PROPHECY, RECONCILIATION effects. Scry 4, then draw 2 cards. Target opponent draws a...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4451,15 +4547,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Return target permanent you control to your hand. You may put a permanent card from your hand onto the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Herbs, Teleportation.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Bathin to unleash HERBS, TELEPORTATION effects. Return target permanent you control to your hand. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4497,15 +4594,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "End all combat. Each player creates a Treasure token. You create an additional Treasure token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Love, Peace.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Sallos to unleash LOVE, PEACE effects. End all combat. Each player creates a Treasure tok...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4543,15 +4641,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 3 cards. Create 3 Treasure tokens. Gain 3 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Treasure.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Purson to unleash KNOWLEDGE, TREASURE effects. Draw 3 cards. Create 3 Treasure tokens. Gain 3 Con...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4589,15 +4688,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Transform target creature into a 3/3 creature with Flying. Scry 3, then draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Astronomy, Transformation.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Marax to unleash ASTRONOMY, TRANSFORMATION effects. Transform target creature into a 3/3 creature with...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4635,15 +4735,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Target creature gains +3/+0, Haste, and \"This creature must be blocked if able\" until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wit, Boldness.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Ipos to unleash WIT, BOLDNESS effects. Target creature gains +3/+0, Haste, and \"This crea...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4681,15 +4782,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy up to 3 target lands. Deal 3 damage to each creature that was on those lands.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fire, Destruction.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Aim to unleash FIRE, DESTRUCTION effects. Destroy up to 3 target lands. Deal 3 damage to eac...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4727,15 +4829,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 3 cards. You may cast a spell with mana cost 3 or less from your hand without paying its cost.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Arts, Eloquence.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Naberius to unleash ARTS, ELOQUENCE effects. Draw 3 cards. You may cast a spell with mana cost ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4773,15 +4876,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy target creature. Look at target opponent's hand and exile a card from it. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Murder, Knowledge.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Glasya-Labolas to unleash MURDER, KNOWLEDGE effects. Destroy target creature. Look at target opponent's...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4819,15 +4923,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create 3 Treasure tokens. Draw a card. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wealth, Eloquence.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Bune to unleash WEALTH, ELOQUENCE effects. Create 3 Treasure tokens. Draw a card. Gain 3 life...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4865,15 +4970,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create two 2/1 Servant tokens. They gain Haste. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Languages, Servants.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Ronove to unleash LANGUAGES, SERVANTS effects. Create two 2/1 Servant tokens. They gain Haste. Dr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4911,15 +5017,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Target opponent reveals their hand. For each card revealed, create a Treasure token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Alchemy, Lies.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Berith to unleash ALCHEMY, LIES effects. Target opponent reveals their hand. For each card ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -4957,15 +5064,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 4 cards. Put up to 2 creature cards from your hand onto the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Creation.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Astaroth to unleash KNOWLEDGE, CREATION effects. Draw 4 cards. Put up to 2 creature cards from your...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5003,15 +5111,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 3 cards. Target opponent discards 2 cards. Gain 2 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Rhetoric, Languages.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Forneus to unleash RHETORIC, LANGUAGES effects. Draw 3 cards. Target opponent discards 2 cards. Ga...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5049,15 +5158,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Target creature gains Hexproof and can't be blocked. Scry 3, then draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Logic, Invisibility.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Foras to unleash LOGIC, INVISIBILITY effects. Target creature gains Hexproof and can't be blocke...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5096,15 +5206,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create 5 Treasure tokens. Draw 3 cards. All your creatures gain +2/+2 until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Treasure, Geometry, Command.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Asmoday to unleash TREASURE, GEOMETRY, COMMAND effects. Create 5 Treasure tokens. Draw 3 cards. All your c...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5143,15 +5254,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Return up to 2 target creatures to their owners' hands. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Teleportation, Philosophy.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Gaap to unleash TELEPORTATION, PHILOSOPHY effects. Return up to 2 target creatures to their owners' h...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5189,15 +5301,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Deal 3 damage to each creature. Target opponent reveals their hand. Choose a card from it and exile it.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thunder, Love.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Furfur to unleash THUNDER, LOVE effects. Deal 3 damage to each creature. Target opponent re...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5235,15 +5348,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create a 5/3 Wolf creature token with Haste and \"When this creature dies, deal 3 damage to any target.\"",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Battle, Fire.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Marchosias to unleash BATTLE, FIRE effects. Create a 5/3 Wolf creature token with Haste and \"W...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5281,15 +5395,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Scry 4. Search your library for a basic land and put it onto the battlefield. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Astronomy, Herbs.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Stolas to unleash ASTRONOMY, HERBS effects. Scry 4. Search your library for a basic land and p...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5327,15 +5442,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 4 cards. You have no maximum hand size until end of turn. Gain 2 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Poetry, Knowledge.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Phenex to unleash POETRY, KNOWLEDGE effects. Draw 4 cards. You have no maximum hand size until ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5373,15 +5489,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create two 2/2 Soldier tokens. Create a 0/5 Wall token with Defender.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. War, Fortification.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Halphas to unleash WAR, FORTIFICATION effects. Create two 2/2 Soldier tokens. Create a 0/5 Wall t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5419,15 +5536,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create three 1/1 Construct tokens. Target opponent reveals their hand. You may cast a spell from it without paying its cost.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Construction, Deception.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Malphas to unleash CONSTRUCTION, DECEPTION effects. Create three 1/1 Construct tokens. Target opponent...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5465,15 +5583,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Exile target artifact or enchantment. Create a Treasure token. Deal 2 damage to target creature or planeswalker.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Theft, Destruction.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Raum to unleash THEFT, DESTRUCTION effects. Exile target artifact or enchantment. Create a Tre...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5511,15 +5630,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy up to 2 target creatures. Their controllers may search their library for a basic land and put it onto the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Drowning, Wind.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Focalor to unleash DROWNING, WIND effects. Destroy up to 2 target creatures. Their controller...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5557,15 +5677,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy all creatures with Flying. Deal 2 damage to each opponent. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Seas, Death.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Vepar to unleash SEAS, DEATH effects. Destroy all creatures with Flying. Deal 2 damage t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5603,15 +5724,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create a 0/6 Wall with Defender. Deal 3 damage to target creature. If it survives, tap it and it doesn't untap.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fortification, Wounds.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Sabnock to unleash FORTIFICATION, WOUNDS effects. Create a 0/6 Wall with Defender. Deal 3 damage to ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5649,15 +5771,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Exile target artifact or enchantment. Target opponent can't cast spells until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Theft, Deafness.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Shax to unleash THEFT, DEAFNESS effects. Exile target artifact or enchantment. Target oppon...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5695,15 +5818,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy all lands. Each player searches their library for up to 3 basic lands and puts them onto the battlefield. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Storm, Discovery.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Vine to unleash STORM, DISCOVERY effects. Destroy all lands. Each player searches their libr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5741,15 +5865,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Return up to 2 creature cards from your graveyard to your hand. Scry 3, then draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Necromancy, Astronomy.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Bifrons to unleash NECROMANCY, ASTRONOMY effects. Return up to 2 creature cards from your graveyard ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5787,15 +5912,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Target player becomes your ally until end of turn. You both draw 2 cards and gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Love, Friendship.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Uvall to unleash LOVE, FRIENDSHIP effects. Target player becomes your ally until end of turn....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5833,15 +5959,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Exile target artifact. Create 3 Treasure tokens. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Transmutation, Wisdom.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Haagenti to unleash TRANSMUTATION, WISDOM effects. Exile target artifact. Create 3 Treasure tokens. D...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5879,15 +6006,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Search your library for up to 2 Island cards and put them onto the battlefield. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Geometry, Water.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Crocell to unleash GEOMETRY, WATER effects. Search your library for up to 2 Island cards and p...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5925,15 +6053,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Scry 3, then draw 2 cards. Gain 2 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Philosophy, Divination.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Furcas to unleash PHILOSOPHY, DIVINATION effects. Scry 3, then draw 2 cards. Gain 2 Consciousness to...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -5971,15 +6100,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Look at target opponent's hand and library. Exile 2 cards from each. Target creature gains Hexproof and can't be blocked.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prophecy, Invisibility.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Balam to unleash PROPHECY, INVISIBILITY effects. Look at target opponent's hand and library. Exile ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6017,15 +6147,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create three 2/1 Soldier tokens with Haste. Scry 3.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. War, Astronomy.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Alloces to unleash WAR, ASTRONOMY effects. Create three 2/1 Soldier tokens with Haste. Scry 3...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6063,15 +6194,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 3 cards. Target opponent reveals their hand. You may cast a spell from it without paying its cost.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Communication, Future.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Caim to unleash COMMUNICATION, FUTURE effects. Draw 3 cards. Target opponent reveals their hand. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6109,15 +6241,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Return all creature cards from all graveyards to the battlefield under your control.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Necromancy, Philosophy.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Murmur to unleash NECROMANCY, PHILOSOPHY effects. Return all creature cards from all graveyards to t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6155,15 +6288,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Target opponent reveals their hand and top 5 cards of library. Exile 2 cards from among them. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Truth, Divinity.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Orobas to unleash TRUTH, DIVINITY effects. Target opponent reveals their hand and top 5 cards...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6201,15 +6335,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create 3 Treasure tokens. Target opponent reveals their hand. You may take control of a creature they control.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Love, Treasure.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Gremory to unleash LOVE, TREASURE effects. Create 3 Treasure tokens. Target opponent reveals ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6247,15 +6382,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create a token copy of target creature. It gains Haste. Transform target creature into a 0/1 creature until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Illusion, Transformation.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Ose to unleash ILLUSION, TRANSFORMATION effects. Create a token copy of target creature. It gains H...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6293,15 +6429,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Scry 4, then draw 3 cards. Gain 3 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Astrology, Science.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Amy to unleash ASTROLOGY, SCIENCE effects. Scry 4, then draw 3 cards. Gain 3 Consciousness to...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6339,15 +6476,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Transform target creature you control into a copy of target creature you don't control. Scry 3, then draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Transformation, Astronomy.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Orias to unleash TRANSFORMATION, ASTRONOMY effects. Transform target creature you control into a copy ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6385,15 +6523,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Search your library for up to 2 artifact cards and put them into your hand. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Science, Crafts.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Vapula to unleash SCIENCE, CRAFTS effects. Search your library for up to 2 artifact cards and...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6431,15 +6570,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Exile all artifacts. For each artifact exiled, create 2 Treasure tokens. Draw 3 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Transmutation, Wisdom.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Zagan to unleash TRANSMUTATION, WISDOM effects. Exile all artifacts. For each artifact exiled, cre...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6477,15 +6617,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create 4 Treasure tokens. Create a 2/2 Snake token with Deathtouch for each opponent.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Treasure, Serpents.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Volac to unleash TREASURE, SERPENTS effects. Create 4 Treasure tokens. Create a 2/2 Snake token...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6523,15 +6664,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Destroy target creature. It can't be regenerated. Deal 3 damage to target opponent. They discard a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Murder, Discord.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Andras to unleash MURDER, DISCORD effects. Destroy target creature. It can't be regenerated. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6569,15 +6711,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Deal 4 damage to target creature or planeswalker. You gain life equal to damage dealt. Target creature you control gains Indestructible until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fire, Protection.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Haures to unleash FIRE, PROTECTION effects. Deal 4 damage to target creature or planeswalker. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6615,15 +6758,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 3 cards. Transform target creature into a 1/1 Bird with Flying.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Geometry, Transformation.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Andrealphus to unleash GEOMETRY, TRANSFORMATION effects. Draw 3 cards. Transform target creature into a 1/1...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6661,15 +6805,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Draw 3 cards. Target opponent discards 2 cards. Gain 2 Consciousness tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Grammar, Logic.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Cimejes to unleash GRAMMAR, LOGIC effects. Draw 3 cards. Target opponent discards 2 cards. Ga...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6707,15 +6852,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "All creatures get -2/-0 until end of turn. Create three 1/1 Elemental tokens. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Music, Nature.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Amdusias to unleash MUSIC, NATURE effects. All creatures get -2/-0 until end of turn. Create ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6753,15 +6899,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Gain control of all creatures. They gain Haste. Lose 5 Sanctity. Gain 5 Corruption.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Rebellion, Corruption.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Belial to unleash REBELLION, CORRUPTION effects. Gain control of all creatures. They gain Haste. Lo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6799,15 +6946,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Create three 1/1 Bird tokens with Flying. Search your library for a Forest and put it onto the battlefield. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Birds, Herbs.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Decarabia to unleash BIRDS, HERBS effects. Create three 1/1 Bird tokens with Flying. Search y...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6845,15 +6993,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Search your library for any card and put it into your hand. Shuffle. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Speed, Discovery.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Seere to unleash SPEED, DISCOVERY effects. Search your library for any card and put it into y...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6891,15 +7040,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Look at each opponent's hand. For each opponent, exile a card from their hand. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thoughts, Manipulation.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Dantalion to unleash THOUGHTS, MANIPULATION effects. Look at each opponent's hand. For each opponent, e...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6937,15 +7087,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 6,
-            "damage": 0
+            "damage": 0,
+            "cost": 40
         },
         "description": "Return target artifact or enchantment from any graveyard to your hand. Exile target card from an opponent's graveyard. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Theft, Discovery.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Andromalius to unleash THEFT, DISCOVERY effects. Return target artifact or enchantment from any gra...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 6 Turns"
             ],
             "features": [
@@ -6984,15 +7135,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Deal 3 damage to up to three targets; your creatures gain +1/+1 and Vigilance this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thunder, Leadership, Aegis.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Indra to unleash THUNDER, LEADERSHIP, AEGIS effects. Deal 3 damage to up to three targets; your creatur...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7032,15 +7184,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Sacrifice a permanent: Create two Treasure tokens and deal 2 damage to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flame, Offering, Transmute.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Agni to unleash FLAME, OFFERING, TRANSMUTE effects. Sacrifice a permanent: Create two Treasure tokens ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7080,15 +7233,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Tap up to three permanents. They don't untap during their next untap step. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Binding, Law, Flood.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Varuna to unleash BINDING, LAW, FLOOD effects. Tap up to three permanents. They don't untap durin...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7127,15 +7281,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Target creature gains +2/+0, Flying, and Haste until end of turn. Scry 2.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Haste, Evasion.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Vayu to unleash HASTE, EVASION effects. Target creature gains +2/+0, Flying, and Haste unt...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7174,15 +7329,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 70
+            "damage": 70,
+            "cost": 42
         },
         "description": "Deal 4 damage to each enemy creature. You gain life equal to damage dealt.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Illuminate, Radiance, Lifelink.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Surya to unleash ILLUMINATE, RADIANCE, LIFELINK effects. Deal 4 damage to each enemy creature. You gain lif...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7221,15 +7377,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Restore 4 life. Create a 1/1 Spirit with Flying for each 4 life you have above 20.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Soothing, Cycles.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Chandra to unleash SOOTHING, CYCLES effects. Restore 4 life. Create a 1/1 Spirit with Flying fo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7267,15 +7424,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Exile up to two target creatures. Return a creature from your graveyard to the battlefield tapped.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Judgment, Grave.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Yama to unleash JUDGMENT, GRAVE effects. Exile up to two target creatures. Return a creatur...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7313,15 +7471,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Create four Treasure tokens. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Treasure, Boon.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Kubera to unleash TREASURE, BOON effects. Create four Treasure tokens. Draw a card....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7360,15 +7519,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Exile target artifact or enchantment. Scry 3, then draw a card. Your next spell costs 2 less.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Remove, Wisdom, Shield.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Ganesha to unleash REMOVE, WISDOM, SHIELD effects. Exile target artifact or enchantment. Scry 3, then...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7407,15 +7567,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Create two 2/1 Warrior tokens with Haste. If you control Ganesha or Shiva, create two more.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Charge, Formation.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Skanda (Kartikeya) to unleash CHARGE, FORMATION effects. Create two 2/1 Warrior tokens with Haste. If you c...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7453,15 +7614,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Target creature gains +3/+3 and Indestructible this turn. Untap it.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Indestructible, Leap.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Hanuman to unleash INDESTRUCTIBLE, LEAP effects. Target creature gains +3/+3 and Indestructible thi...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7499,15 +7661,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Return up to two target creatures from your graveyard to your hand. Gain 4 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Nurture, Bond.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Parvati to unleash NURTURE, BOND effects. Return up to two target creatures from your gravey...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7545,15 +7708,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Destroy target creature with power 4+. Your creatures gain +1/+1 and Trample this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Overwhelm, Smite.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Durga to unleash OVERWHELM, SMITE effects. Destroy target creature with power 4+. Your creatu...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7591,15 +7755,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Destroy all nonlegendary creatures. For each destroyed, create a 1/1 Spirit under your control.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wipe, Rebirth.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Kali to unleash WIPE, REBIRTH effects. Destroy all nonlegendary creatures. For each destr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7638,15 +7803,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 70
+            "damage": 70,
+            "cost": 42
         },
         "description": "Gain control of up to two target creatures until end of turn. Untap them; they gain Haste. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Charm, Song, Avatar.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Krishna to unleash CHARM, SONG, AVATAR effects. Gain control of up to two target creatures until e...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7686,15 +7852,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Exile target tapped creature. Create a 2/2 Ally token (Hanuman synergy: that token gets +1/+1 and Haste).",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Precision, Exile, Avatar.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Rama to unleash PRECISION, EXILE, AVATAR effects. Exile target tapped creature. Create a 2/2 Ally to...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7734,15 +7901,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Destroy target creature. Prevent all damage that would be dealt to you this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Uncounterable, Rend, Avatar.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Narasimha to unleash UNCOUNTERABLE, REND, AVATAR effects. Destroy target creature. Prevent all damage that w...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7782,15 +7950,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Search your library for up to two lands and put them onto the battlefield tapped. Scry 1, draw 1.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Scale, Step, Avatar.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Vamana to unleash SCALE, STEP, AVATAR effects. Search your library for up to two lands and put th...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7830,15 +7999,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Destroy all artifacts and creatures with mana cost 3 or less.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Cull, Purify, Avatar.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Parashurama to unleash CULL, PURIFY, AVATAR effects. Destroy all artifacts and creatures with mana cost...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7878,15 +8048,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Return up to three target cards from your graveyard to your hand.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flood, Salvage, Avatar.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Matsya to unleash FLOOD, SALVAGE, AVATAR effects. Return up to three target cards from your graveyar...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7926,15 +8097,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Prevent all damage that would be dealt to your permanents this turn. Create a Treasure token for each prevented this way.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Shell, Stabilize, Avatar.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Kurma to unleash SHELL, STABILIZE, AVATAR effects. Prevent all damage that would be dealt to your per...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -7974,15 +8146,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Exile target graveyard. Return a permanent from your graveyard to the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Lift, Cleanse, Avatar.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Varaha to unleash LIFT, CLEANSE, AVATAR effects. Exile target graveyard. Return a permanent from yo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8022,15 +8195,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Counter target spell or ability. Its controller draws a card. You gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Silence, Pacify, Avatar.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Buddha to unleash SILENCE, PACIFY, AVATAR effects. Counter target spell or ability. Its controller dr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8070,15 +8244,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Exile all nonland permanents with mana cost 4 or less. Create two 3/3 Avatar tokens with Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Purge, Haste, Avatar.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Kalki to unleash PURGE, HASTE, AVATAR effects. Exile all nonland permanents with mana cost 4 or l...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8117,15 +8292,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "heal": 70
+            "heal": 70,
+            "cost": 42
         },
         "description": "Restore all damage on your creatures. You gain 8 life. Create a Food token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Heal, Elixir.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Dhanvantari to unleash HEAL, ELIXIR effects. Restore all damage on your creatures. You gain 8 l...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8163,15 +8339,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Your next Invocation costs 3 less. Scry 3, then draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Chant, Focus.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Gayatri to unleash CHANT, FOCUS effects. Your next Invocation costs 3 less. Scry 3, then dr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8209,15 +8386,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Untap up to three permanents. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Awaken, Tempo.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Ushas to unleash AWAKEN, TEMPO effects. Untap up to three permanents. Draw a card....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8255,15 +8433,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Your permanents gain Hexproof until your next turn. Scry 1.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Veil, Ward.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Ratri to unleash VEIL, WARD effects. Your permanents gain Hexproof until your next turn...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8301,15 +8480,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Target opponent becomes your ally until end of turn; both draw 2. Prevent all combat damage this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Accord, Pact.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Mitra to unleash ACCORD, PACT effects. Target opponent becomes your ally until end of tur...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8347,15 +8527,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Deal 4 damage to target creature or planeswalker. If it dies, draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Howl, Pierce.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Rudra to unleash HOWL, PIERCE effects. Deal 4 damage to target creature or planeswalker. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8393,15 +8574,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Copy target spell you control. You may choose new targets. Restore 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Twincast, Recover.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Ashvins to unleash TWINCAST, RECOVER effects. Copy target spell you control. You may choose new ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8439,15 +8621,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Draw 2 cards. Your maximum hand size is increased by 3 until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Draw, Trance.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Soma to unleash DRAW, TRANCE effects. Draw 2 cards. Your maximum hand size is increased ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8485,15 +8668,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Create two 1/1 Deva tokens with Ward 2. Gain 4 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Birth, Shield.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Aditi to unleash BIRTH, SHIELD effects. Create two 1/1 Deva tokens with Ward 2. Gain 4 lif...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8531,15 +8715,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Scry 4, then draw 2. Prevent all damage to a target this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Shield, Prophecy.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Frigg to unleash SHIELD, PROPHECY effects. Scry 4, then draw 2. Prevent all damage to a targe...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8577,15 +8762,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Exile target attacking creature. At end of turn, its controller creates a 2/2 Token. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Aegis, Return.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Baldr to unleash AEGIS, RETURN effects. Exile target attacking creature. At end of turn, i...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8623,15 +8809,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Target creature you control fights target creature you don't control. Your creature gains Vigilance.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fight, Vigilance.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Tyr to unleash FIGHT, VIGILANCE effects. Target creature you control fights target creature...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8669,15 +8856,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Look at each opponent's hand. Creatures you control gain Ward 2 until your next turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Reveal, Guard.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Heimdall to unleash REVEAL, GUARD effects. Look at each opponent's hand. Creatures you contro...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8715,15 +8903,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Scry 4, then draw 2. Prevent all damage to a target this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Shield, Prophecy.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Frigg to unleash SHIELD, PROPHECY effects. Scry 4, then draw 2. Prevent all damage to a targe...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8761,15 +8950,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Put two +1/+1 counters on each of up to two creatures. Create two Food tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Growth, Prosper.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Freyr to unleash GROWTH, PROSPER effects. Put two +1/+1 counters on each of up to two creatu...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8808,15 +8998,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 90
+            "damage": 90,
+            "cost": 54
         },
         "description": "Gain control of target creature until end of turn. Untap it; it gains Flying and Haste. Scry 2, draw 1.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Charm, Seidr, Fly.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Freyja to unleash CHARM, SEIDR, FLY effects. Gain control of target creature until end of turn....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8855,15 +9046,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Return target permanent to its owner's hand. Create two Treasure tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Tide, Treasure.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Njord to unleash TIDE, TREASURE effects. Return target permanent to its owner's hand. Creat...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8901,15 +9093,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Restore all damage to a creature; put two +1/+1 counters on it. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Restore, Renew.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Idunn to unleash RESTORE, RENEW effects. Restore all damage to a creature; put two +1/+1 co...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8947,15 +9140,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Create a Food token for each creature you control with power 2 or less. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Shield, Nourish.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Sif to unleash SHIELD, NOURISH effects. Create a Food token for each creature you control ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -8993,15 +9187,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Tap up to two target creatures. They don't untap during their controller's next untap step. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Snare, Frost.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Skadi to unleash SNARE, FROST effects. Tap up to two target creatures. They don't untap d...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9039,15 +9234,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Copy target instant or sorcery you control. You may choose new targets. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Inspire, Copy.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Bragi to unleash INSPIRE, COPY effects. Copy target instant or sorcery you control. You ma...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9085,15 +9281,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Target creature gains +2/+0 and can't be blocked this turn. Scry 2.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Precision, Evasion.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Ullr to unleash PRECISION, EVASION effects. Target creature gains +2/+0 and can't be blocked t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9131,15 +9328,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Each player may draw a card; then choose and discard a card. Exile target tapped permanent.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Arbitrate, Balance.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Forseti to unleash ARBITRATE, BALANCE effects. Each player may draw a card; then choose and disca...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9177,15 +9375,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Deal 2 damage to any target; if Baldr is on the field, exile that target instead.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Blindshot, Fate.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Hodr to unleash BLINDSHOT, FATE effects. Deal 2 damage to any target; if Baldr is on the fi...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9223,15 +9422,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Target creature gains +4/+4 and Indestructible until end of turn. It must be blocked if able.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Indestructible, Crush.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Vidar to unleash INDESTRUCTIBLE, CRUSH effects. Target creature gains +4/+4 and Indestructible unt...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9269,15 +9469,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 90
+            "damage": 90,
+            "cost": 54
         },
         "description": "Create a 3/3 Aesir token with Haste and \"When this dies, draw a card\".",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Haste, Reprisal.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Vali to unleash HASTE, REPRISAL effects. Create a 3/3 Aesir token with Haste and \"When this...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9315,15 +9516,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Each opponent exiles a card from their graveyard. Return a creature from your graveyard to the battlefield tapped.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Grave, Tax.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Hel to unleash GRAVE, TAX effects. Each opponent exiles a card from their graveyard. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9361,15 +9563,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Destroy target creature. Create a 4/4 Wolf token with Trample.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Berserk, Devour.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Fenrir to unleash BERSERK, DEVOUR effects. Destroy target creature. Create a 4/4 Wolf token w...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9407,15 +9610,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "All creatures get -2/-2 until end of turn. Create a 5/5 Serpent token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Coil, Poison.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Jormungandr to unleash COIL, POISON effects. All creatures get -2/-2 until end of turn. Create ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9453,15 +9657,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Destroy all nonland permanents. Create a 6/6 Fire Giant token with Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Conflagrate, Ragnarok.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Surtr to unleash CONFLAGRATE, RAGNAROK effects. Destroy all nonland permanents. Create a 6/6 Fire ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9499,15 +9704,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Draw 3 cards. Return up to two cards from your graveyard to your hand.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Drink, Recall.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Mimir to unleash DRINK, RECALL effects. Draw 3 cards. Return up to two cards from your gra...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9545,15 +9751,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Each player creates a Food token. Return up to two nonland permanents to their owners' hands.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flood, Banquet.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Aegir to unleash FLOOD, BANQUET effects. Each player creates a Food token. Return up to two...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9591,15 +9798,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Tap target creature and another target permanent. They don't untap during their controller's next untap step.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Snare, Drown.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Ran to unleash SNARE, DROWN effects. Tap target creature and another target permanent. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9638,15 +9846,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Reorder the top 7 cards of your library; you may exile any number of them. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Spin, Cut, Weave.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Norns (Urd, Verdandi, Skuld) to unleash SPIN, CUT, WEAVE effects. Reorder the top 7 cards of your library; you may e...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9685,15 +9894,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Return up to two target creatures from your graveyard to the battlefield with +1/+1 counters. They gain Flying until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Lift, Honor.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Valkyries to unleash LIFT, HONOR effects. Return up to two target creatures from your gravey...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9731,15 +9941,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Return up to two target creatures from your graveyard to the battlefield. Gain 4 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Revive, Judge.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Osiris to unleash REVIVE, JUDGE effects. Return up to two target creatures from your gravey...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9777,15 +9988,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Target creature gains +3/+3 and Flying until end of turn. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fly, Aegis.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Horus to unleash FLY, AEGIS effects. Target creature gains +3/+3 and Flying until end o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9823,15 +10035,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Destroy target creature or artifact. Each opponent discards a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Storm, Chaos.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Set to unleash STORM, CHAOS effects. Destroy target creature or artifact. Each opponent...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9869,15 +10082,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Creatures you control gain Hexproof until your next turn. Create a 1/1 Spirit with Flying.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ward, Veil.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Nephthys to unleash WARD, VEIL effects. Creatures you control gain Hexproof until your nex...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9915,15 +10129,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Draw 3 cards. You may return a card from your graveyard to your hand.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Record, Recall.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Thoth to unleash RECORD, RECALL effects. Draw 3 cards. You may return a card from your grav...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -9961,15 +10176,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Create a 2/2 Cat token with Ward 2. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Prowl, Guard.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Bastet to unleash PROWL, GUARD effects. Create a 2/2 Cat token with Ward 2. Gain 3 life....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10007,15 +10223,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 68
+            "damage": 68,
+            "cost": 40
         },
         "description": "Deal 4 damage to each other creature. You gain life equal to the number destroyed.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Scorch, Rage.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Sekhmet to unleash SCORCH, RAGE effects. Deal 4 damage to each other creature. You gain lif...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10053,15 +10270,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 70
+            "damage": 70,
+            "cost": 42
         },
         "description": "Create two 1/1 Construct tokens. Return target artifact from your graveyard to the battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Forge, Animate.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Ptah to unleash FORGE, ANIMATE effects. Create two 1/1 Construct tokens. Return target art...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10099,15 +10317,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Gain 5 life. Draw a card. Your next Invocation costs 2 less.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Charm, Nourish.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Hathor to unleash CHARM, NOURISH effects. Gain 5 life. Draw a card. Your next Invocation cos...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10145,15 +10364,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Each player draws 2 cards, then discards 1. Exile target permanent with mana cost 4+.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Weigh, Order.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Ma'at to unleash WEIGH, ORDER effects. Each player draws 2 cards, then discards 1. Exile ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10191,15 +10411,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Target creature you control gets +3/+0 and Trample this turn. Create a Food token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ambush, Reap.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Sobek to unleash AMBUSH, REAP effects. Target creature you control gets +3/+0 and Trample...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10237,15 +10458,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Create a 1/1 Clay Golem token; put a +1/+1 counter on up to two target creatures.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Mold, Breathe.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Khnum to unleash MOLD, BREATHE effects. Create a 1/1 Clay Golem token; put a +1/+1 counter...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10283,15 +10505,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Transform target creature you control into a copy of another target creature until end of turn. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Rise, Transform.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Khepri to unleash RISE, TRANSFORM effects. Transform target creature you control into a copy ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10329,15 +10552,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Target creature gains Hexproof and Deathtouch until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ward, Strike.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Wadjet to unleash WARD, STRIKE effects. Target creature gains Hexproof and Deathtouch unti...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10375,15 +10599,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Target creature gains Flying and Ward 2 until end of turn. Scry 1.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Aegis, Lift.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Nekhbet to unleash AEGIS, LIFT effects. Target creature gains Flying and Ward 2 until end ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10421,15 +10646,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Tap up to two permanents. Deal 2 damage to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Mist, Shock.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Tefnut to unleash MIST, SHOCK effects. Tap up to two permanents. Deal 2 damage to any tar...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10467,15 +10693,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 68
+            "damage": 68,
+            "cost": 40
         },
         "description": "Return target nonland permanent to its owner's hand. Scry 2.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Lift, Divide.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Shu to unleash LIFT, DIVIDE effects. Return target nonland permanent to its owner's han...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10513,15 +10740,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 70
+            "damage": 70,
+            "cost": 42
         },
         "description": "Search your library for a basic land and put it onto the battlefield tapped; put a +1/+1 counter on up to two creatures.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Stabilize, Grow.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Geb to unleash STABILIZE, GROW effects. Search your library for a basic land and put it on...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10559,15 +10787,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 72
+            "damage": 72,
+            "cost": 43
         },
         "description": "Creatures you control gain Ward 1. Draw a card for each legendary you control (max 2).",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Veil, Constellate.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Nut to unleash VEIL, CONSTELLATE effects. Creatures you control gain Ward 1. Draw a card for...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10605,15 +10834,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Create a Food token and a Treasure token. Gain 2 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flood, Bless.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Hapi to unleash FLOOD, BLESS effects. Create a Food token and a Treasure token. Gain 2 l...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10651,15 +10881,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "Destroy target creature with power 2 or less. You gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Antidote, Sting.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Serqet to unleash ANTIDOTE, STING effects. Destroy target creature with power 2 or less. You ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10697,15 +10928,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Look at the top five cards of your library; put two into your hand and the rest on bottom.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Record, Plan.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Seshat to unleash RECORD, PLAN effects. Look at the top five cards of your library; put tw...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10743,15 +10975,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Create a 2/1 Jackal token with Haste and \"can't be blocked by more than one creature\".",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Scout, Haste.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Wepwawet to unleash SCOUT, HASTE effects. Create a 2/1 Jackal token with Haste and \"can't be...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10789,15 +11022,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Creatures you control gain +2/+0 and Trample until end of turn. Create a 3/3 Bull token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Charge, Fury.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Montu to unleash CHARGE, FURY effects. Creatures you control gain +2/+0 and Trample until...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10835,15 +11069,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Target creature gains Ward 2; create a Food token. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ward, Cheer.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Bes to unleash WARD, CHEER effects. Target creature gains Ward 2; create a Food token....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10881,15 +11116,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Exile target nonland permanent. Create two Treasure tokens. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Veil, Glory.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Amun to unleash VEIL, GLORY effects. Exile target nonland permanent. Create two Treasur...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10927,15 +11163,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 68
+            "damage": 68,
+            "cost": 40
         },
         "description": "Deal 6 damage divided as you choose among any number of targets. You gain 6 life. Your next Invocation costs 3 less.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Radiance, Monotheon.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Aten to unleash RADIANCE, MONOTHEON effects. Deal 6 damage divided as you choose among any numb...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 40 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -10974,15 +11211,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Deal 6 damage to any target. Create three 2/2 Lightning tokens. You gain control of target creature until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Lightning, Authority, Storm.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Zeus to unleash LIGHTNING, AUTHORITY, STORM effects. Deal 6 damage to any target. Create three 2/2 Ligh...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11022,15 +11260,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Return all nonland permanents to owners' hands. Create a 5/5 Kraken token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Tsunami, Shake, Flood.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Poseidon to unleash TSUNAMI, SHAKE, FLOOD effects. Return all nonland permanents to owners' hands. Cr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11070,15 +11309,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Destroy all creatures. Exile them instead of putting them in graveyards. Create X 2/2 Shade tokens where X is creatures destroyed.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Death, Exile, Souls.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Hades to unleash DEATH, EXILE, SOULS effects. Destroy all creatures. Exile them instead of putti...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11118,15 +11358,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "All your creatures get +2/+2 and gain Lifelink. Destroy target enchantment.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Bond, Unity, Jealousy.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Hera to unleash BOND, UNITY, JEALOUSY effects. All your creatures get +2/+2 and gain Lifelink. De...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11166,15 +11407,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 85
+            "damage": 85,
+            "cost": 51
         },
         "description": "Counter target spell. Create two 3/3 Soldier tokens with Vigilance. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Strategy, Aegis, Wisdom.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Athena to unleash STRATEGY, AEGIS, WISDOM effects. Counter target spell. Create two 3/3 Soldier token...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11214,15 +11456,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Deal 4 damage divided among any targets. Scry 4, then draw 2 cards. Heal 4 damage to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Light, Oracle, Music.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Apollo to unleash LIGHT, ORACLE, MUSIC effects. Deal 4 damage divided among any targets. Scry 4, t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11262,15 +11505,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Destroy target creature with flying. Create three 2/2 Wolf tokens. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Hunt, Precision, Wild.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Artemis to unleash HUNT, PRECISION, WILD effects. Destroy target creature with flying. Create three ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11310,15 +11554,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 91
+            "damage": 91,
+            "cost": 54
         },
         "description": "All creatures get +3/+0 and gain First Strike and Menace until end of turn. Deal 3 damage to each player.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Rage, Battle, Slaughter.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Ares to unleash RAGE, BATTLE, SLAUGHTER effects. All creatures get +3/+0 and gain First Strike and ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11358,15 +11603,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 93
+            "damage": 93,
+            "cost": 55
         },
         "description": "Gain control of up to three target creatures until end of turn. They gain Haste. Draw a card for each.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Charm, Allure, Passion.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Aphrodite to unleash CHARM, ALLURE, PASSION effects. Gain control of up to three target creatures until...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 55 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11406,15 +11652,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Create three 3/3 Artifact Creature tokens with Haste. Search library for an artifact and put it onto battlefield.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Forge, Craft, Automation.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Hephaestus to unleash FORGE, CRAFT, AUTOMATION effects. Create three 3/3 Artifact Creature tokens with Has...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11454,15 +11701,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Target creature gains +2/+0, Flying, Haste, and 'When this attacks, draw a card.' Take an extra turn after this one.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Haste, Steal, Swift.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Hermes to unleash HASTE, STEAL, SWIFT effects. Target creature gains +2/+0, Flying, Haste, and 'W...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11502,15 +11750,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Each player discards their hand, then draws 7 cards. All creatures attack this turn if able, chosen randomly.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Frenzy, Chaos, Revel.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Dionysus to unleash FRENZY, CHAOS, REVEL effects. Each player discards their hand, then draws 7 card...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11550,15 +11799,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Take two extra turns after this one. Exile all graveyards. Deal 10 damage divided among any targets.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Time, Devour, Ages.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Kronos to unleash TIME, DEVOUR, AGES effects. Take two extra turns after this one. Exile all gra...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11598,15 +11848,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "Return all creature cards from your graveyard to battlefield. They gain Haste. You gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Birth, Protect, Nurture.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Rhea to unleash BIRTH, PROTECT, NURTURE effects. Return all creature cards from your graveyard to b...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11646,15 +11897,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 85
+            "damage": 85,
+            "cost": 51
         },
         "description": "Sacrifice a permanent: Draw 3 cards and create three Treasure tokens. Repeat this twice.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fire, Gift, Sacrifice.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Prometheus to unleash FIRE, GIFT, SACRIFICE effects. Sacrifice a permanent: Draw 3 cards and create thr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11694,15 +11946,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "All your permanents gain Indestructible until your next turn. You can't lose the game and opponents can't win this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Burden, Strength, Endure.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Atlas to unleash BURDEN, STRENGTH, ENDURE effects. All your permanents gain Indestructible until your...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11742,15 +11995,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Copy target instant or sorcery three times. You may choose new targets for the copies.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Witchcraft, Choice, Night.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Hecate to unleash WITCHCRAFT, CHOICE, NIGHT effects. Copy target instant or sorcery three times. You ma...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11790,15 +12044,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 91
+            "damage": 91,
+            "cost": 54
         },
         "description": "All your creatures gain +2/+2, Flying, and Double Strike until end of turn. You can't lose this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Victory, Triumph, Glory.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Nike to unleash VICTORY, TRIUMPH, GLORY effects. All your creatures gain +2/+2, Flying, and Double ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11838,15 +12093,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 93
+            "damage": 93,
+            "cost": 55
         },
         "description": "Destroy target permanent that dealt damage to you this turn. Deal damage equal to your life lost this turn to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Vengeance, Justice, Balance.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Nemesis to unleash VENGEANCE, JUSTICE, BALANCE effects. Destroy target permanent that dealt damage to you ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 55 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11886,15 +12142,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Create five 1/1 Satyr tokens with Haste. All creatures you control gain Trample. Opponents discard a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wild, Panic, Nature.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Pan to unleash WILD, PANIC, NATURE effects. Create five 1/1 Satyr tokens with Haste. All creat...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11934,15 +12191,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Return target creature from any graveyard to battlefield under your control. Create three Food tokens. Heal 5 damage.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Rebirth, Seasons, Death.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Persephone to unleash REBIRTH, SEASONS, DEATH effects. Return target creature from any graveyard to battl...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -11982,15 +12240,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Search library for up to three lands and put them onto battlefield. Create five Food tokens. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Growth, Abundance, Harvest.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Demeter to unleash GROWTH, ABUNDANCE, HARVEST effects. Search library for up to three lands and put them ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12030,15 +12289,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Deal 5 damage to each creature and each opponent. Reveal all face-down cards. Draw a card for each revealed.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Light, Burn, Reveal.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Helios to unleash LIGHT, BURN, REVEAL effects. Deal 5 damage to each creature and each opponent. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12078,15 +12338,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "All your permanents gain Hexproof and Shroud until your next turn. Opponents skip their next combat phase.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Darkness, Dreams, Hide.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Nyx to unleash DARKNESS, DREAMS, HIDE effects. All your permanents gain Hexproof and Shroud until...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12126,15 +12387,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 85
+            "damage": 85,
+            "cost": 51
         },
         "description": "Create three 5/5 Elemental tokens. All your lands become 3/3 creatures until end of turn. They're still lands. Gain 15 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Earth, Creation, Life.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Gaia to unleash EARTH, CREATION, LIFE effects. Create three 5/5 Elemental tokens. All your lands ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12174,15 +12436,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Gain control of target creature until end of turn. Untap it and it gains Haste. Create a copy of it.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Love, Control, Charm.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Eros to unleash LOVE, CONTROL, CHARM effects. Gain control of target creature until end of turn....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12222,15 +12485,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Exile all creatures with power 3 or less. Opponents can't cast creature spells this turn. Gain life equal to creatures exiled.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Death, Peaceful, End.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Thanatos to unleash DEATH, PEACEFUL, END effects. Exile all creatures with power 3 or less. Opponent...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12270,15 +12534,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 91
+            "damage": 91,
+            "cost": 54
         },
         "description": "Tap all creatures opponents control. They don't untap during their next untap step. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Sleep, Dreams, Rest.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Hypnos to unleash SLEEP, DREAMS, REST effects. Tap all creatures opponents control. They don't un...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12318,15 +12583,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 93
+            "damage": 93,
+            "cost": 55
         },
         "description": "Each player sacrifices half their permanents rounded up. Each player discards their hand. Chaos reigns.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Chaos, Strife, Discord.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Eris to unleash CHAOS, STRIFE, DISCORD effects. Each player sacrifices half their permanents round...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 55 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12366,15 +12632,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Flip five coins. For each heads, draw 2 cards and create a Treasure. For each tails, deal 3 damage to any target.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Luck, Chance, Fate.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Tyche to unleash LUCK, CHANCE, FATE effects. Flip five coins. For each heads, draw 2 cards and ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12414,15 +12681,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "You become the Monarch. Draw 3 cards. Create three 4/4 Celestial tokens. Your life total becomes 50.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Authority, Heaven, Decree.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Jade Emperor to unleash AUTHORITY, HEAVEN, DECREE effects. You become the Monarch. Draw 3 cards. Create three...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12462,15 +12730,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Create five copies of target creature you control. They gain Haste and 'When this dies, deal 3 damage to any target.'",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Immortal, Clone, Chaos.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Sun Wukong to unleash IMMORTAL, CLONE, CHAOS effects. Create five copies of target creature you control....",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12510,15 +12779,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Deal 5 damage to target creature. If it dies, create two 3/3 Warrior tokens. All Warriors you control gain +2/+2.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Honor, Valor, Strike.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Guan Yu to unleash HONOR, VALOR, STRIKE effects. Deal 5 damage to target creature. If it dies, crea...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12558,15 +12828,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Deal 4 damage to each opponent. Create two 2/2 Fire Spirit tokens with Haste and Flying.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fire, Youth, Wheels.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Nezha to unleash FIRE, YOUTH, WHEELS effects. Deal 4 damage to each opponent. Create two 2/2 Fir...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12606,15 +12877,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "Destroy target creature or enchantment. Look at target opponent's hand and exile a card from it. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Third Eye, Truth, Hunt.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Erlang Shen to unleash THIRD EYE, TRUTH, HUNT effects. Destroy target creature or enchantment. Look at ta...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12654,15 +12926,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 85
+            "damage": 85,
+            "cost": 51
         },
         "description": "All your creatures gain Flying and Lifelink until end of turn. Gain 5 life. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Moon, Immortality, Beauty.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Chang'e to unleash MOON, IMMORTALITY, BEAUTY effects. All your creatures gain Flying and Lifelink until ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12702,15 +12975,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Return all nonland permanents to owners' hands. Create a 7/7 Dragon token with Flying. Draw 3 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Storm, Flood, Dragon.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Dragon King to unleash STORM, FLOOD, DRAGON effects. Return all nonland permanents to owners' hands. Cr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12740,7 +13014,7 @@ window.SKILL_DB_INVOCATION = [
     },
     {
         "id": "skill_invocation_chinese_chn_008",
-        "name": "Nüwa",
+        "name": "N\u00fcwa",
         "type": "ACTIVE",
         "tier": "RARE",
         "tags": [
@@ -12750,15 +13024,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Return all creature cards from your graveyard to hand. Create three 2/2 Human tokens. Gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Create, Repair, Mother.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke N\u00fcwa to unleash CREATE, REPAIR, MOTHER effects. Return all creature cards from your graveyard to h...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12798,15 +13073,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 91
+            "damage": 91,
+            "cost": 54
         },
         "description": "Destroy target creature with power 4 or greater. Scry 4, then draw 2 cards. Create a Food token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Hunt, Knowledge, Trap.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Fuxi to unleash HUNT, KNOWLEDGE, TRAP effects. Destroy target creature with power 4 or greater. S...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12846,15 +13122,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "heal": 73
+            "heal": 73,
+            "cost": 43
         },
         "description": "Search library for three lands and put them onto battlefield. Heal all damage from all creatures. Gain 8 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Heal, Growth, Herbs.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Shennong to unleash HEAL, GROWTH, HERBS effects. Search library for three lands and put them onto b...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12894,15 +13171,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "All your permanents gain Indestructible and Hexproof until your next turn. Create a 5/5 Tortoise token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Shield, Turtle, Snake.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Xuanwu to unleash SHIELD, TURTLE, SNAKE effects. All your permanents gain Indestructible and Hexpro...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12942,15 +13220,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Deal 7 damage divided among any targets. All your creatures gain +3/+0 and First Strike until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fire, Burn, Rage.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Zhurong to unleash FIRE, BURN, RAGE effects. Deal 7 damage divided among any targets. All your ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -12990,15 +13269,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Return three target nonland permanents to owners' hands. Draw 2 cards. Opponents discard a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flood, Chaos, Destruction.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Gonggong to unleash FLOOD, CHAOS, DESTRUCTION effects. Return three target nonland permanents to owners' ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13038,15 +13318,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Create five Treasure tokens. Draw cards equal to treasures you control. Gain 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wealth, Fortune, Gold.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Caishen to unleash WEALTH, FORTUNE, GOLD effects. Create five Treasure tokens. Draw cards equal to t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13086,15 +13367,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "All your creatures gain Indestructible until end of turn. Counter target spell. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Protection, Safe, Guide.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Mazu to unleash PROTECTION, SAFE, GUIDE effects. All your creatures gain Indestructible until end o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13134,15 +13416,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "heal": 85
+            "heal": 85,
+            "cost": 51
         },
         "description": "Heal all damage from all permanents. Remove all poison counters. All players gain 10 life. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Mercy, Heal, Peace.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Guanyin to unleash MERCY, HEAL, PEACE effects. Heal all damage from all permanents. Remove all po...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13182,15 +13465,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Exile all permanents, then return all lands to battlefield. Each player draws 7 cards. Reset all life totals to 40.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Creation, Separation, Giant.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Pangu to unleash CREATION, SEPARATION, GIANT effects. Exile all permanents, then return all lands to bat...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13230,15 +13514,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Deal 4 damage to each creature. If a creature dealt damage this way would die, exile it instead.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thunder, Justice, Drum.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Lei Gong to unleash THUNDER, JUSTICE, DRUM effects. Deal 4 damage to each creature. If a creature deal...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13278,15 +13563,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 91
+            "damage": 91,
+            "cost": 54
         },
         "description": "Deal 5 damage to target creature or planeswalker. If it dies, you may cast this again without paying mana cost.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Lightning, Flash, Strike.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Dian Mu to unleash LIGHTNING, FLASH, STRIKE effects. Deal 5 damage to target creature or planeswalker. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13326,15 +13612,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 73
+            "damage": 73,
+            "cost": 43
         },
         "description": "Create three Food tokens. Draw a card for each Food you control. Gain 3 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Food, Home, Report.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Zao Jun to unleash FOOD, HOME, REPORT effects. Create three Food tokens. Draw a card for each Foo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13374,15 +13661,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Draw 4 cards. You have no maximum hand size this turn. Scry 3.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Knowledge, Study, Wisdom.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Wen Chang to unleash KNOWLEDGE, STUDY, WISDOM effects. Draw 4 cards. You have no maximum hand size this t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13422,15 +13710,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Return target creature from graveyard to battlefield. Create two 2/2 Spirit tokens. Gain 7 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Dawn, Life, Protection.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Bixia Yuanjun to unleash DAWN, LIFE, PROTECTION effects. Return target creature from graveyard to battlefie...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13470,15 +13759,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Search library for up to two basic lands and put them onto battlefield tapped. Create two Treasure tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Earth, Growth, Local.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Tu Di Gong to unleash EARTH, GROWTH, LOCAL effects. Search library for up to two basic lands and put t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13518,15 +13808,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Destroy all creatures with power 4 or greater. Exile all graveyards. Each opponent loses 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Judge, Death, Karma.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Yan Wang to unleash JUDGE, DEATH, KARMA effects. Destroy all creatures with power 4 or greater. Exi...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13566,15 +13857,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "Create a 5/5 White Tiger token with First Strike and Vigilance. All creatures you control gain +1/+1 and Vigilance.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Tiger, West, Metal.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Bai Hu to unleash TIGER, WEST, METAL effects. Create a 5/5 White Tiger token with First Strike a...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13614,15 +13906,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 73
+            "damage": 73,
+            "cost": 43
         },
         "description": "Deal 6 damage to each opponent. All your creatures gain +3/+3 and Lifelink. You gain 15 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Sun, Light, Divine.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Amaterasu to unleash SUN, LIGHT, DIVINE effects. Deal 6 damage to each opponent. All your creatures...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13662,15 +13955,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Destroy all artifacts and enchantments. Deal 5 damage divided among any targets. Create a 6/6 Dragon token with Flying.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Storm, Sword, Chaos.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Susanoo to unleash STORM, SWORD, CHAOS effects. Destroy all artifacts and enchantments. Deal 5 dam...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13710,15 +14004,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Tap all creatures. They don't untap during their next untap step. Take an extra turn after this one.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Moon, Night, Time.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Tsukuyomi to unleash MOON, NIGHT, TIME effects. Tap all creatures. They don't untap during their n...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13758,15 +14053,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Create five 2/2 Fox Spirit tokens. Create three Food tokens. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fox, Prosperity, Shape.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Inari to unleash FOX, PROSPERITY, SHAPE effects. Create five 2/2 Fox Spirit tokens. Create three Fo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13806,15 +14102,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Deal 4 damage to each creature. Create three 2/2 Lightning Spirit tokens with Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thunder, Drums, Storm.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Raijin to unleash THUNDER, DRUMS, STORM effects. Deal 4 damage to each creature. Create three 2/2 L...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13854,15 +14151,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "Return three target nonland permanents to owners' hands. All your creatures gain Flying until end of turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wind, Bag, Storm.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Fujin to unleash WIND, BAG, STORM effects. Return three target nonland permanents to owners' ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13902,15 +14200,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 85
+            "damage": 85,
+            "cost": 51
         },
         "description": "Deal 5 damage to any target. Create three 3/3 Samurai tokens with First Strike. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. War, Victory, Archery.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Hachiman to unleash WAR, VICTORY, ARCHERY effects. Deal 5 damage to any target. Create three 3/3 Samu...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13950,15 +14249,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Draw 3 cards. You may play an additional land this turn. All your spells cost 1 less this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Music, Flow, Beauty.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Benzaiten to unleash MUSIC, FLOW, BEAUTY effects. Draw 3 cards. You may play an additional land this...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -13998,15 +14298,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Create five 3/3 Spirit tokens. Return all creatures from your graveyard to hand. Gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Creation, Life, Father.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Izanagi to unleash CREATION, LIFE, FATHER effects. Create five 3/3 Spirit tokens. Return all creature...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14046,15 +14347,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 71
+            "damage": 71,
+            "cost": 42
         },
         "description": "Destroy all creatures. Exile them. Create X 2/2 Spirit tokens where X is creatures destroyed.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Death, Underworld, Mother.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Izanami to unleash DEATH, UNDERWORLD, MOTHER effects. Destroy all creatures. Exile them. Create X 2/2 Sp...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14094,15 +14396,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 73
+            "damage": 73,
+            "cost": 43
         },
         "description": "Return all nonland permanents to owners' hands. Create a 8/8 Dragon token with Flying. Draw 4 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Dragon, Sea, Storm.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Ryujin to unleash DRAGON, SEA, STORM effects. Return all nonland permanents to owners' hands. Cr...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14142,15 +14445,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Create three 3/3 Tengu tokens with Flying and First Strike. Draw a card for each.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Flight, Martial, Trick.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Tengu to unleash FLIGHT, MARTIAL, TRICK effects. Create three 3/3 Tengu tokens with Flying and Firs...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14190,15 +14494,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Create a copy of target creature you control. It gains Haste. At end of turn, create another copy.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fox, Illusion, Nine Tails.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Kitsune to unleash FOX, ILLUSION, NINE TAILS effects. Create a copy of target creature you control. It g...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14238,15 +14543,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Create two 5/5 Demon tokens with Menace. Deal 5 damage divided among any targets.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Demon, Rage, Club.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Oni to unleash DEMON, RAGE, CLUB effects. Create two 5/5 Demon tokens with Menace. Deal 5 da...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14286,15 +14592,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "Tap all creatures opponents control. They don't untap during their next two untap steps. Gain 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ice, Cold, Freeze.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Yuki-Onna to unleash ICE, COLD, FREEZE effects. Tap all creatures opponents control. They don't un...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14334,15 +14641,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 83
+            "damage": 83,
+            "cost": 49
         },
         "description": "Create a copy of target artifact or enchantment you control. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Shape, Trick, Leaf.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Tanuki to unleash SHAPE, TRICK, LEAF effects. Create a copy of target artifact or enchantment yo...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14382,15 +14690,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 85
+            "damage": 85,
+            "cost": 51
         },
         "description": "Create a 10/10 Skeleton token. Each opponent sacrifices three permanents.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Undead, Giant, Hunger.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Gashadokuro to unleash UNDEAD, GIANT, HUNGER effects. Create a 10/10 Skeleton token. Each opponent sacri...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14430,15 +14739,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 87
+            "damage": 87,
+            "cost": 52
         },
         "description": "Return target permanent to owner's hand. Draw 2 cards. Create a Food token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Water, Trick, Cucumber.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Kappa to unleash WATER, TRICK, CUCUMBER effects. Return target permanent to owner's hand. Draw 2 ca...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14468,7 +14778,7 @@ window.SKILL_DB_INVOCATION = [
     },
     {
         "id": "skill_invocation_japanese_jpn_019",
-        "name": "Jorōgumo",
+        "name": "Jor\u014dgumo",
         "type": "ACTIVE",
         "tier": "RARE",
         "tags": [
@@ -14478,15 +14788,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 89
+            "damage": 89,
+            "cost": 53
         },
         "description": "Destroy target creature with Flying. Create three 2/2 Spider tokens with Reach. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Spider, Web, Deceit.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Jor\u014dgumo to unleash SPIDER, WEB, DECEIT effects. Destroy target creature with Flying. Create three ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 53 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14526,15 +14837,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 71
+            "damage": 71,
+            "cost": 42
         },
         "description": "Create an 8/8 Dragon Hydra token with 'When this enters, deal 8 damage divided among any targets.' Draw 4 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Dragon, Hydra, Heads.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Yamata no Orochi to unleash DRAGON, HYDRA, HEADS effects. Create an 8/8 Dragon Hydra token with 'When this e...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 42 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14574,15 +14886,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 73
+            "damage": 73,
+            "cost": 43
         },
         "description": "All your creatures gain +2/+2 and Haste until end of turn. Draw 2 cards. Gain 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Dance, Joy, Light.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Ame-no-Uzume to unleash DANCE, JOY, LIGHT effects. All your creatures gain +2/+2 and Haste until end ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 43 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14622,15 +14935,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 75
+            "damage": 75,
+            "cost": 45
         },
         "description": "Deal 5 damage to target creature. If it dies, create a 4/4 Samurai token. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thunder, Blade, Victory.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Takemikazuchi to unleash THUNDER, BLADE, VICTORY effects. Deal 5 damage to target creature. If it dies, crea...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14670,15 +14984,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 77
+            "damage": 77,
+            "cost": 46
         },
         "description": "Search library for up to three lands and put them onto battlefield. Heal 10 damage divided. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Medicine, Magic, Build.",
+        "lore_quote": "\"Fear not the dark, for you are the flame.\"",
+        "tactical_brief": "Invoke Okuninushi to unleash MEDICINE, MAGIC, BUILD effects. Search library for up to three lands and put them ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14718,15 +15033,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 79
+            "damage": 79,
+            "cost": 47
         },
         "description": "Create four Treasure tokens. Create two 3/3 Warrior tokens. Draw a card for each treasure.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Fortune, Warrior, Treasure.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Bishamon to unleash FORTUNE, WARRIOR, TREASURE effects. Create four Treasure tokens. Create two 3/3 Warrio...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 47 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14766,15 +15082,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 81
+            "damage": 81,
+            "cost": 48
         },
         "description": "All your permanents gain Indestructible until your next turn. Deal 6 damage divided. You can't lose this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Immovable, Fire, Sword.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Fudo Myoo to unleash IMMOVABLE, FIRE, SWORD effects. All your permanents gain Indestructible until your...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14814,15 +15131,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 76
+            "damage": 76,
+            "cost": 45
         },
         "description": "You become the Monarch. Create five 4/4 Spirit tokens. Your life total becomes 60. Draw 5 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Creation, Supreme, Wisdom.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Olodumare to unleash CREATION, SUPREME, WISDOM effects. You become the Monarch. Create five 4/4 Spirit tok...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14862,15 +15180,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Deal 6 damage divided among any targets. Create three 3/3 Warrior tokens with First Strike. All artifacts cost 2 less.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Iron, War, Forge.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Ogun to unleash IRON, WAR, FORGE effects. Deal 6 damage divided among any targets. Create th...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14910,15 +15229,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Deal 7 damage divided among any targets. Create three 2/2 Lightning tokens with Haste.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Thunder, Fire, Dance.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Shango to unleash THUNDER, FIRE, DANCE effects. Deal 7 damage divided among any targets. Create th...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -14958,15 +15278,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Gain control of target creature. Create three 2/2 River Spirit tokens. Heal 8 damage. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Love, River, Beauty.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Oshun to unleash LOVE, RIVER, BEAUTY effects. Gain control of target creature. Create three 2/2 ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15006,15 +15327,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Return all creatures from your graveyard to hand. Create five 2/2 Fish tokens. Gain 15 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Mother, Ocean, Life.",
+        "lore_quote": "\"The light reveals all truth.\"",
+        "tactical_brief": "Invoke Yemoja to unleash MOTHER, OCEAN, LIFE effects. Return all creatures from your graveyard to hand. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15054,15 +15376,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "Each player draws 3 cards, then discards 2 cards. Each player creates two Treasure tokens. Chaos ensues.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Trick, Chaos, Choice.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Eshu to unleash TRICK, CHAOS, CHOICE effects. Each player draws 3 cards, then discards 2 cards. ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15102,15 +15425,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Return three target permanents to owners' hands. Deal 4 damage to any target. Draw 2 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wind, Storm, Transformation.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Oya to unleash WIND, STORM, TRANSFORMATION effects. Return three target permanents to owners' hands. D...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15150,15 +15474,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 90
+            "damage": 90,
+            "cost": 54
         },
         "description": "Exile all enchantments. Create five 2/2 Human tokens. All your creatures gain Lifelink. Gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Pure, Create, White.",
+        "lore_quote": "\"Sanctity is not given, it is forged.\"",
+        "tactical_brief": "Invoke Obatala to unleash PURE, CREATE, WHITE effects. Exile all enchantments. Create five 2/2 Human toke...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15198,15 +15523,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 92
+            "damage": 92,
+            "cost": 55
         },
         "description": "Scry 5, then draw 4 cards. Look at top 5 cards of opponent's library. You may rearrange them.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Wisdom, Oracle, Fate.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Orunmila to unleash WISDOM, ORACLE, FATE effects. Scry 5, then draw 4 cards. Look at top 5 cards of ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 55 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15246,15 +15572,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Search library for a land and put it onto battlefield. Draw a card. Create a Treasure token.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Path, Open, Key.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Elegua to unleash PATH, OPEN, KEY effects. Search library for a land and put it onto battlefi...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15294,15 +15621,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "heal": 76
+            "heal": 76,
+            "cost": 45
         },
         "description": "Destroy all creatures with power 2 or less. Heal all damage from remaining creatures. Gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Heal, Disease, Transform.",
+        "lore_quote": "\"Wings of judgment span the horizon.\"",
+        "tactical_brief": "Invoke Babaluaye to unleash HEAL, DISEASE, TRANSFORM effects. Destroy all creatures with power 2 or less. Heal a...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 45 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15342,15 +15670,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 78
+            "damage": 78,
+            "cost": 46
         },
         "description": "Create three 2/2 Spider tokens with Reach. Draw 3 cards. You may play an additional land this turn.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Spider, Story, Trick.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Anansi to unleash SPIDER, STORY, TRICK effects. Create three 2/2 Spider tokens with Reach. Draw 3 ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 46 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15390,15 +15719,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 80
+            "damage": 80,
+            "cost": 48
         },
         "description": "Create five Treasure tokens. Draw cards equal to treasures you control. Gain 5 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Water, Beauty, Wealth.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Mami Wata to unleash WATER, BEAUTY, WEALTH effects. Create five Treasure tokens. Draw cards equal to t...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 48 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15438,15 +15768,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 82
+            "damage": 82,
+            "cost": 49
         },
         "description": "Exile all nonland permanents, then return all your permanents from exile. Draw 5 cards. Gain 20 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Supreme, Chi, Creator.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Chukwu to unleash SUPREME, CHI, CREATOR effects. Exile all nonland permanents, then return all your...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 49 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15486,15 +15817,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 84
+            "damage": 84,
+            "cost": 50
         },
         "description": "Destroy target creature with flying or power 4+. Create two 3/3 Hunter tokens. Draw a card.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Hunt, War, Iron.",
+        "lore_quote": "\"The celestial choir sings of victory.\"",
+        "tactical_brief": "Invoke Ogun to unleash HUNT, WAR, IRON effects. Destroy target creature with flying or power 4+. C...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 50 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15534,15 +15866,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 86
+            "damage": 86,
+            "cost": 51
         },
         "description": "You become the Monarch. All your creatures gain Flying. Deal 5 damage to each opponent. Draw 3 cards.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Sky, Father, Supreme.",
+        "lore_quote": "\"Order must be maintained at all costs.\"",
+        "tactical_brief": "Invoke Nyame to unleash SKY, FATHER, SUPREME effects. You become the Monarch. All your creatures gain Fl...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 51 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15582,15 +15915,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 88
+            "damage": 88,
+            "cost": 52
         },
         "description": "Search library for up to four lands and put them onto battlefield. Create four Food tokens. Gain 10 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Earth, Fertility, Mother.",
+        "lore_quote": "\"A whisper from the heavens shatters the earth.\"",
+        "tactical_brief": "Invoke Asase Ya to unleash EARTH, FERTILITY, MOTHER effects. Search library for up to four lands and put them o...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 52 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15630,15 +15964,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 90
+            "damage": 90,
+            "cost": 54
         },
         "description": "Draw 3 cards. You may cast spells from your hand without paying their mana costs until end of turn (max 3).",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Speak, Messenger, Gate.",
+        "lore_quote": "\"Divine intervention is a precise art.\"",
+        "tactical_brief": "Invoke Legba to unleash SPEAK, MESSENGER, GATE effects. Draw 3 cards. You may cast spells from your hand w...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 54 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15678,15 +16013,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 92
+            "damage": 92,
+            "cost": 55
         },
         "description": "Create the universe anew: Reset all graveyards, exile zones, and hands. Each player draws 7 cards. Gain 30 life.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Ancient, Creator, Primordial.",
+        "lore_quote": "\"Grace descends upon the worthy.\"",
+        "tactical_brief": "Invoke Nana Buluku to unleash ANCIENT, CREATOR, PRIMORDIAL effects. Create the universe anew: Reset all graveyards, ex...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 55 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [
@@ -15726,15 +16062,16 @@ window.SKILL_DB_INVOCATION = [
         ],
         "stats": {
             "cooldown": 7,
-            "damage": 74
+            "damage": 74,
+            "cost": 44
         },
         "description": "Deal 5 damage to each creature. Heal 5 damage to each player. Draw 3 cards. Create three 3/3 tokens.",
-        "lore_quote": "\"A technique from the Invocation engine.\"",
-        "tactical_brief": "Utilizes Invocation mechanics. Dual, Balance, Eclipse.",
+        "lore_quote": "\"The seal is broken, the power unleashed.\"",
+        "tactical_brief": "Invoke Mawu-Lisa to unleash DUAL, BALANCE, ECLIPSE effects. Deal 5 damage to each creature. Heal 5 damage to e...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 44 Gnosis",
                 "Cooldown: 7 Turns"
             ],
             "features": [

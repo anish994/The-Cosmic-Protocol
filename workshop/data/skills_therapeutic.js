@@ -18,8 +18,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 4
         },
         "description": "** [Heal] 8 Ojas, +1% Integrity.\r\n    * **Evo A (Quick Mend):** 0 cooldown but heals only 6 Ojas.\r\n    * **Evo B (Integrity Focus):** +3% Integrity instead of +1%.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Minor Restoration to leverage HEAL.  [Heal] 8 Ojas, +1% Integrity.     * Evo A (Quick Mend): 0 c...",
         "mastery_perk": "Mastery Lvl 5: (Quick Mend): 0 cooldown but heals only 6 Ojas.\r\n    * Evo B (Integrity Focus): +3% Integrity instead of +1%.",
         "gameplay_info": {
             "usage": [
@@ -64,8 +64,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 51
         },
         "description": "** [Heal] 30 Ojas instantly. If target is below 30% Ojas, heal 45 instead.\r\n    * **Evo A (Emergency Surge):** Threshold becomes 40% Ojas.\r\n    * **Evo B (Cascading Surge):** Also [Heal] adjacent ally for 15 Ojas.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Heal.",
+        "lore_quote": "\"Mend the spirit, and the resistance grows.\"",
+        "tactical_brief": "Deploy Vital Surge to leverage HEAL, HEAL.  [Heal] 30 Ojas instantly. If target is below 30% Ojas, heal...",
         "mastery_perk": "Mastery Lvl 5: (Emergency Surge): Threshold becomes 40% Ojas.\r\n    * Evo B (Cascading Surge): Also [Heal] adjacent ally for 15 Ojas.",
         "gameplay_info": {
             "usage": [
@@ -108,8 +108,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 48
         },
         "description": "** Apply HoT to all allies: Restore 4 Ojas per turn for 3 turns.\r\n    * **Evo A (Extended Pulse):** Duration 4 turns.\r\n    * **Evo B (Potent Pulse):** 6 Ojas per turn instead of 4.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Regenerative Pulse to leverage .  Apply HoT to all allies: Restore 4 Ojas per turn for 3 turn...",
         "mastery_perk": "Mastery Lvl 5: (Extended Pulse): Duration 4 turns.\r\n    * Evo B (Potent Pulse): 6 Ojas per turn instead of 4.",
         "gameplay_info": {
             "usage": [
@@ -149,8 +149,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 26
         },
         "description": "** For the next 2 turns, all HoT effects you cast have +50% potency.\r\n    * **Evo A (Deep Lifewell):** Duration 3 turns.\r\n    * **Evo B (Perfect Lifewell):** HoT effects +100% potency.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Lifewell Protocol to leverage .  For the next 2 turns, all HoT effects you cast have +50% po...",
         "mastery_perk": "Mastery Lvl 5: (Deep Lifewell): Duration 3 turns.\r\n    * Evo B (Perfect Lifewell): HoT effects +100% potency.",
         "gameplay_info": {
             "usage": [
@@ -190,8 +190,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 49
         },
         "description": "** For 3 turns, 75% of overhealing converts to temporary Ojas Shield.\r\n    * **Evo A (Perfect Reservoir):** 100% conversion rate.\r\n    * **Evo B (Extended Reservoir):** Duration 4 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Mend the spirit, and the resistance grows.\"",
+        "tactical_brief": "Deploy Overhealing Reservoir to leverage .  For 3 turns, 75% of overhealing converts to temporary Ojas ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reservoir): 100% conversion rate.\r\n    * Evo B (Extended Reservoir): Duration 4 turns.",
         "gameplay_info": {
             "usage": [
@@ -234,8 +234,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 54
         },
         "description": "** [Heal] all allies for 15 Ojas and grant +2% Integrity.\r\n    * **Evo A (Tidal Wave):** Heal 25 Ojas instead.\r\n    * **Evo B (Purifying Wave):** Also [Cleanse] 1 debuff from each ally.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Cleanse.",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Revitalization Wave to leverage HEAL, CLEANSE.  [Heal] all allies for 15 Ojas and grant +2% Integrity.     ...",
         "mastery_perk": "Mastery Lvl 5: (Tidal Wave): Heal 25 Ojas instead.\r\n    * Evo B (Purifying Wave): Also [Cleanse] 1 debuff from each ally.",
         "gameplay_info": {
             "usage": [
@@ -280,8 +280,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 49
         },
         "description": "** Sacrifice 15 of your Ojas to [Heal] target ally for 30 Ojas.\r\n    * **Evo A (Efficient Transfusion):** Sacrifice only 10 Ojas to heal 30.\r\n    * **Evo B (Double Transfusion):** Heal two allies for 30 each (sacrifice 15 total).",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "lore_quote": "\"The Architects break; we mend.\"",
+        "tactical_brief": "Deploy Life Transfusion to leverage HEAL.  Sacrifice 15 of your Ojas to [Heal] target ally for 30 Ojas...",
         "mastery_perk": "Mastery Lvl 5: (Efficient Transfusion): Sacrifice only 10 Ojas to heal 30.\r\n    * Evo B (Double Transfusion): Heal two allies for 30 each (sacrifice 15 total).",
         "gameplay_info": {
             "usage": [
@@ -323,8 +323,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 72
         },
         "description": "** Reset target's Ojas to what it was 2 turns ago. Once per duel.\r\n    * **Evo A (Deep Rewind):** 3 turns ago instead of 2.\r\n    * **Evo B (Selective Rewind):** Can target ally or enemy.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Wholeness is our weapon against their fragmentation.\"",
+        "tactical_brief": "Deploy Cellular Rewind to leverage .  Reset target's Ojas to what it was 2 turns ago. Once per du...",
         "mastery_perk": "Mastery Lvl 5: (Deep Rewind): 3 turns ago instead of 2.\r\n    * Evo B (Selective Rewind): Can target ally or enemy.",
         "gameplay_info": {
             "usage": [
@@ -366,8 +366,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 50
         },
         "description": "** For 2 turns, your first [Heal] each turn is automatically repeated at 50% potency.\r\n    * **Evo A (Perfect Echo):** Repeated heal is at 75% potency.\r\n    * **Evo B (Sustained Echo):** Duration 3 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "lore_quote": "\"Healing is the ultimate act of rebellion.\"",
+        "tactical_brief": "Deploy Vitality Echo to leverage HEAL.  For 2 turns, your first [Heal] each turn is automatically r...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Echo): Repeated heal is at 75% potency.\r\n    * Evo B (Sustained Echo): Duration 3 turns.",
         "gameplay_info": {
             "usage": [
@@ -410,10 +410,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 70,
             "heal": 76
         },
-        "description": "** If an ally Yantra would be destroyed this turn, prevent it and [Heal] it to 30% Ojas instead. Cooldown: 4 turns.\r\n    * **Evo A (Full Phoenix):** Yantra restored to 50% Ojas.\r\n    * **Evo B (Cascading Phoenix):** Can save up to 2 Yantras in the same turn.\r\n\r\n---\r\n\r\n### **Energetic Field Modulation (Prevention Path) — 10 Skills**",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
-        "mastery_perk": "Mastery Lvl 5: (Full Phoenix): Yantra restored to 50% Ojas.\r\n    * Evo B (Cascading Phoenix): Can save up to 2 Yantras in the same turn.\r\n\r\n---\r\n\r\n### Energetic Field Modulation (Prevention Path) — 10 Skills",
+        "description": "** If an ally Yantra would be destroyed this turn, prevent it and [Heal] it to 30% Ojas instead. Cooldown: 4 turns.\r\n    * **Evo A (Full Phoenix):** Yantra restored to 50% Ojas.\r\n    * **Evo B (Cascading Phoenix):** Can save up to 2 Yantras in the same turn.\r\n\r\n---\r\n\r\n### **Energetic Field Modulation (Prevention Path) \u2014 10 Skills**",
+        "lore_quote": "\"The Ashram's legacy is preservation.\"",
+        "tactical_brief": "Deploy Phoenix Renewal to leverage HEAL.  If an ally Yantra would be destroyed this turn, prevent it ...",
+        "mastery_perk": "Mastery Lvl 5: (Full Phoenix): Yantra restored to 50% Ojas.\r\n    * Evo B (Cascading Phoenix): Can save up to 2 Yantras in the same turn.\r\n\r\n---\r\n\r\n### Energetic Field Modulation (Prevention Path) \u2014 10 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 70 Gnosis",
@@ -454,8 +454,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 3
         },
         "description": "** Grant 10 Shield.\r\n    * **Evo A (Stacking Ward):** Shield stacks if recast.\r\n    * **Evo B (Reflective Surface):** 15% damage reflect.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Barrier Protocol to leverage .  Grant 10 Shield.     * Evo A (Stacking Ward): Shield stacks...",
         "mastery_perk": "Mastery Lvl 5: (Stacking Ward): Shield stacks if recast.\r\n    * Evo B (Reflective Surface): 15% damage reflect.",
         "gameplay_info": {
             "usage": [
@@ -497,8 +497,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 50
         },
         "description": "** Grant 3 separate 10-point shields (each must be broken individually).\r\n    * **Evo A (Fortified Layers):** Each shield is 15 points.\r\n    * **Evo B (Reactive Layers):** When a layer breaks, [Heal] 5 Ojas.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "lore_quote": "\"Mend the spirit, and the resistance grows.\"",
+        "tactical_brief": "Deploy Layered Defense to leverage HEAL.  Grant 3 separate 10-point shields (each must be broken indi...",
         "mastery_perk": "Mastery Lvl 5: (Fortified Layers): Each shield is 15 points.\r\n    * Evo B (Reactive Layers): When a layer breaks, [Heal] 5 Ojas.",
         "gameplay_info": {
             "usage": [
@@ -542,8 +542,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 49
         },
         "description": "** Grant 20 Shield. Shield gains +5 for each debuff on the target.\r\n    * **Evo A (Deep Adaptation):** +8 per debuff instead.\r\n    * **Evo B (Cleansing Adaptation):** When shield breaks, [Cleanse] 1 debuff.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Adaptive Shielding to leverage CLEANSE.  Grant 20 Shield. Shield gains +5 for each debuff on the tar...",
         "mastery_perk": "Mastery Lvl 5: (Deep Adaptation): +8 per debuff instead.\r\n    * Evo B (Cleansing Adaptation): When shield breaks, [Cleanse] 1 debuff.",
         "gameplay_info": {
             "usage": [
@@ -585,8 +585,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 26
         },
         "description": "** For 2 turns, reduce all incoming damage by 25%.\r\n    * **Evo A (Stone Form):** 40% reduction but only 1 turn.\r\n    * **Evo B (Extended Dampener):** Duration 3 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Mend the spirit, and the resistance grows.\"",
+        "tactical_brief": "Deploy Damage Dampener to leverage .  For 2 turns, reduce all incoming damage by 25%.     * Evo A...",
         "mastery_perk": "Mastery Lvl 5: (Stone Form): 40% reduction but only 1 turn.\r\n    * Evo B (Extended Dampener): Duration 3 turns.",
         "gameplay_info": {
             "usage": [
@@ -628,8 +628,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 27
         },
         "description": "** Grant 30 Shield, but it loses 5 points at the start of each turn.\r\n    * **Evo A (Hardened Coating):** Loses only 3 points per turn.\r\n    * **Evo B (Reactive Coating):** When shield fully decays naturally, [Heal] 15 Ojas.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Ablative Coating to leverage HEAL.  Grant 30 Shield, but it loses 5 points at the start of each...",
         "mastery_perk": "Mastery Lvl 5: (Hardened Coating): Loses only 3 points per turn.\r\n    * Evo B (Reactive Coating): When shield fully decays naturally, [Heal] 15 Ojas.",
         "gameplay_info": {
             "usage": [
@@ -671,8 +671,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 49
         },
         "description": "** Grant 15 Shield. Reflect 30% of all absorbed damage back to attacker.\r\n    * **Evo A (Perfect Reflection):** Reflect 50% instead.\r\n    * **Evo B (Amplified Ward):** Shield becomes 25 points.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Balance must be restored.\"",
+        "tactical_brief": "Deploy Reflective Ward to leverage .  Grant 15 Shield. Reflect 30% of all absorbed damage back to...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reflection): Reflect 50% instead.\r\n    * Evo B (Amplified Ward): Shield becomes 25 points.",
         "gameplay_info": {
             "usage": [
@@ -712,8 +712,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 50
         },
         "description": "** Create a 3x3 zone for 2 turns: All allies inside gain 10 Shield at the start of their turn.\r\n    * **Evo A (Extended Dome):** Duration 3 turns.\r\n    * **Evo B (Fortified Dome):** Grant 15 Shield instead of 10.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Balance must be restored.\"",
+        "tactical_brief": "Deploy Sanctuary Dome to leverage .  Create a 3x3 zone for 2 turns: All allies inside gain 10 Sh...",
         "mastery_perk": "Mastery Lvl 5: (Extended Dome): Duration 3 turns.\r\n    * Evo B (Fortified Dome): Grant 15 Shield instead of 10.",
         "gameplay_info": {
             "usage": [
@@ -753,8 +753,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 48
         },
         "description": "** Merge all active shields on a target into one larger shield (+20% total value).\r\n    * **Evo A (Perfect Synthesis):** +40% total value.\r\n    * **Evo B (Cascading Synthesis):** Also grant +3% Integrity.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Shield Synthesis to leverage .  Merge all active shields on a target into one larger shield...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Synthesis): +40% total value.\r\n    * Evo B (Cascading Synthesis): Also grant +3% Integrity.",
         "gameplay_info": {
             "usage": [
@@ -794,8 +794,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 47
         },
         "description": "** At the start of enemy turn, if they would deal damage, automatically grant 15 Shield to the target.\r\n    * **Evo A (Perfect Timing):** Shield becomes 25 points.\r\n    * **Evo B (Multi-Barrier):** Can trigger twice per turn.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Preemptive Barrier to leverage .  At the start of enemy turn, if they would deal damage, auto...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Timing): Shield becomes 25 points.\r\n    * Evo B (Multi-Barrier): Can trigger twice per turn.",
         "gameplay_info": {
             "usage": [
@@ -836,10 +836,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 60,
             "damage": 74
         },
-        "description": "** Grant 50 Shield and immunity to [Sunder] for 2 turns.\r\n    * **Evo A (Impenetrable):** Shield becomes 70 points.\r\n    * **Evo B (Extended Fortress):** Duration 3 turns.\r\n\r\n---\r\n\r\n### **Healing Protocols (Purification Path) — 10 Skills**",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Sunder.",
-        "mastery_perk": "Mastery Lvl 5: (Impenetrable): Shield becomes 70 points.\r\n    * Evo B (Extended Fortress): Duration 3 turns.\r\n\r\n---\r\n\r\n### Healing Protocols (Purification Path) — 10 Skills",
+        "description": "** Grant 50 Shield and immunity to [Sunder] for 2 turns.\r\n    * **Evo A (Impenetrable):** Shield becomes 70 points.\r\n    * **Evo B (Extended Fortress):** Duration 3 turns.\r\n\r\n---\r\n\r\n### **Healing Protocols (Purification Path) \u2014 10 Skills**",
+        "lore_quote": "\"Balance must be restored.\"",
+        "tactical_brief": "Deploy Fortress Protocol to leverage SUNDER.  Grant 50 Shield and immunity to [Sunder] for 2 turns.     *...",
+        "mastery_perk": "Mastery Lvl 5: (Impenetrable): Shield becomes 70 points.\r\n    * Evo B (Extended Fortress): Duration 3 turns.\r\n\r\n---\r\n\r\n### Healing Protocols (Purification Path) \u2014 10 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 60 Gnosis",
@@ -882,8 +882,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 26
         },
         "description": "** [Cleanse] 1 debuff from self.\r\n    * **Evo A (Area Cleanse):** Also cleanses adjacent ally.\r\n    * **Evo B (Preventative Dose):** Grants 1-turn immunity to next debuff.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Purity Pulse to leverage CLEANSE.  [Cleanse] 1 debuff from self.     * Evo A (Area Cleanse): A...",
         "mastery_perk": "Mastery Lvl 5: (Area Cleanse): Also cleanses adjacent ally.\r\n    * Evo B (Preventative Dose): Grants 1-turn immunity to next debuff.",
         "gameplay_info": {
             "usage": [
@@ -929,8 +929,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 55
         },
         "description": "** [Cleanse] 1 debuff from all allies.\r\n    * **Evo A (Deep Purification):** [Cleanse] 2 debuffs instead.\r\n    * **Evo B (Healing Purification):** Also [Heal] 10 Ojas per debuff removed.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Cleanse, Heal.",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Mass Purification to leverage CLEANSE, CLEANSE, HEAL.  [Cleanse] 1 debuff from all allies.     * Evo A (Deep Purif...",
         "mastery_perk": "Mastery Lvl 5: (Deep Purification): [Cleanse] 2 debuffs instead.\r\n    * Evo B (Healing Purification): Also [Heal] 10 Ojas per debuff removed.",
         "gameplay_info": {
             "usage": [
@@ -976,8 +976,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 52
         },
         "description": "** Grant immunity to all [Debuff] effects for 2 turns. Any blocked debuff grants +1% Integrity.\r\n    * **Evo A (Extended Immunity):** Duration 3 turns.\r\n    * **Evo B (Offensive Immunity):** Blocked debuffs reflect 10 damage to caster.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Debuff.",
+        "lore_quote": "\"Healing is the ultimate act of rebellion.\"",
+        "tactical_brief": "Deploy Debuff Immunity to leverage DEBUFF.  Grant immunity to all [Debuff] effects for 2 turns. Any blo...",
         "mastery_perk": "Mastery Lvl 5: (Extended Immunity): Duration 3 turns.\r\n    * Evo B (Offensive Immunity): Blocked debuffs reflect 10 damage to caster.",
         "gameplay_info": {
             "usage": [
@@ -1023,8 +1023,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 54
         },
         "description": "** [Cleanse] all debuffs with 1 turn or less remaining duration.\r\n    * **Evo A (Extended Purge):** [Cleanse] debuffs with 2 turns or less.\r\n    * **Evo B (Healing Purge):** [Heal] 5 Ojas per debuff removed.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Cleanse, Heal.",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Purging Light to leverage CLEANSE, CLEANSE, HEAL.  [Cleanse] all debuffs with 1 turn or less remaining duratio...",
         "mastery_perk": "Mastery Lvl 5: (Extended Purge): [Cleanse] debuffs with 2 turns or less.\r\n    * Evo B (Healing Purge): [Heal] 5 Ojas per debuff removed.",
         "gameplay_info": {
             "usage": [
@@ -1070,8 +1070,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 49
         },
         "description": "** For 2 turns, the first debuff applied to you is immediately [Cleansed].\r\n    * **Evo A (Multi-Lock):** Cleanses first 2 debuffs instead.\r\n    * **Evo B (Perfect Lock):** Duration 3 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleansed.",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Status Lock to leverage CLEANSED.  For 2 turns, the first debuff applied to you is immediately...",
         "mastery_perk": "Mastery Lvl 5: (Multi-Lock): Cleanses first 2 debuffs instead.\r\n    * Evo B (Perfect Lock): Duration 3 turns.",
         "gameplay_info": {
             "usage": [
@@ -1113,8 +1113,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 71
         },
         "description": "** Target a negative Dosha. Its effect is inverted into a positive buff for 2 turns.\r\n    * **Evo A (Sustained Reversal):** Duration 3 turns.\r\n    * **Evo B (Amplified Reversal):** Positive buff is +50% stronger than original debuff.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Dosha Reversal to leverage .  Target a negative Dosha. Its effect is inverted into a posi...",
         "mastery_perk": "Mastery Lvl 5: (Sustained Reversal): Duration 3 turns.\r\n    * Evo B (Amplified Reversal): Positive buff is +50% stronger than original debuff.",
         "gameplay_info": {
             "usage": [
@@ -1158,8 +1158,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 55
         },
         "description": "** [Cleanse] 1 debuff from target. If successful, [Cleanse] 1 from an adjacent ally.\r\n    * **Evo A (Perfect Cascade):** Chains to up to 3 allies total.\r\n    * **Evo B (Healing Cascade):** Each cleanse also [Heals] 8 Ojas.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Cleanse, Heals.",
+        "lore_quote": "\"Balance must be restored.\"",
+        "tactical_brief": "Deploy Cleansing Cascade to leverage CLEANSE, CLEANSE, HEALS.  [Cleanse] 1 debuff from target. If successful, [Cleanse] 1 ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Cascade): Chains to up to 3 allies total.\r\n    * Evo B (Healing Cascade): Each cleanse also [Heals] 8 Ojas.",
         "gameplay_info": {
             "usage": [
@@ -1205,8 +1205,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 52
         },
         "description": "** Create a 3x3 aura for 2 turns: Debuffs cannot be applied to allies inside.\r\n    * **Evo A (Extended Aura):** Duration 3 turns.\r\n    * **Evo B (Purging Aura):** On creation, [Cleanse] all debuffs from allies inside.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "lore_quote": "\"Balance must be restored.\"",
+        "tactical_brief": "Deploy Purity Aura to leverage CLEANSE.  Create a 3x3 aura for 2 turns: Debuffs cannot be applied to...",
         "mastery_perk": "Mastery Lvl 5: (Extended Aura): Duration 3 turns.\r\n    * Evo B (Purging Aura): On creation, [Cleanse] all debuffs from allies inside.",
         "gameplay_info": {
             "usage": [
@@ -1250,8 +1250,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "heal": 27
         },
         "description": "** If target is below 30% Ojas, [Heal] 20 and grant 15 Shield. Once per duel.\r\n    * **Evo A (Emergency Protocol):** Usable at <40% Ojas.\r\n    * **Evo B (Defensive Surge):** Also grants +20% damage reduction for 1 turn.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "lore_quote": "\"Mend the spirit, and the resistance grows.\"",
+        "tactical_brief": "Deploy Stabilize to leverage HEAL.  If target is below 30% Ojas, [Heal] 20 and grant 15 Shield....",
         "mastery_perk": "Mastery Lvl 5: (Emergency Protocol): Usable at <40% Ojas.\r\n    * Evo B (Defensive Surge): Also grants +20% damage reduction for 1 turn.",
         "gameplay_info": {
             "usage": [
@@ -1302,10 +1302,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 70,
             "heal": 92
         },
-        "description": "** [Cleanse] all debuffs from all allies and grant them immunity to debuffs for 1 turn.\r\n    * **Evo A (Extended Rite):** Immunity lasts 2 turns.\r\n    * **Evo B (Healing Rite):** Also [Heal] all allies for 15 Ojas.\r\n\r\n---\r\n\r\n### **Vitality Weaving (Woven States) — 6 New Sequences**\r\n\r\n31. **Woven State: Aegis** (Shield→Shield→Heal)\r\n    * **Core Function:** +40% Shields, immune to [Sunder] for 3 turns.\r\n    * **Evo A (Impenetrable):** Duration 4 turns.\r\n    * **Evo B (Reactive Aegis):** Breaking a shield [Stuns] attacker 1 turn.\r\n\r\n32. **Woven State: Renewal** (Heal→Heal→Cleanse)\r\n    * **Core Function:** Double HoT potency for 3 turns.\r\n    * **Evo A (Persistent Renewal):** Duration 4 turns.\r\n    * **Evo B (Cleansing Bloom):** Also [Cleanse] 1 debuff per turn.\r\n\r\n33. **Woven State: Symbiosis** (Cleanse→Heal→Shield)\r\n    * **Core Function:** Healing also applies 50% as Shield for 2 turns.\r\n    * **Evo A (Full Conversion):** 100% heal→shield conversion.\r\n    * **Evo B (Aura Symbiosis):** Affects all allies in range.\r\n\r\n34. **Woven State: Retribution** (Shield→Cleanse→Shield)\r\n    * **Core Function:** Shields reflect 25% damage for 3 turns.\r\n    * **Evo A (Aggressive Defense):** Reflect 40%.\r\n    * **Evo B (Cleansing Vengeance):** Reflected damage also applies [Vulnerable] to attacker.\r\n\r\n35. **Woven State: Tranquility** (Heal→Shield→Cleanse)\r\n    * **Core Function:** Immune to [Burn]/[Decay] for 3 turns.\r\n    * **Evo A (Perfect Calm):** Also immune to [Stun].\r\n    * **Evo B (Serenity Aura):** Affects adjacent allies.\r\n\r\n36. **Woven State: Bastion** (Shield→Shield→Shield)\r\n    * **Core Function:** Triple stacking shields for 2 turns.\r\n    * **Evo A (Fortress Core):** Stacks up to 5×.\r\n    * **Evo B (Overloaded Barrier):** Each stack grants +2% Integrity.\r\n\r\n---\r\n\r\n### **Ojas Integrity Threshold Skills — 4 Skills**",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Heal, Sunder, Stuns, Cleanse, Vulnerable, Burn, Decay, Stun.",
-        "mastery_perk": "Mastery Lvl 5: (Extended Rite): Immunity lasts 2 turns.\r\n    * Evo B (Healing Rite): Also [Heal] all allies for 15 Ojas.\r\n\r\n---\r\n\r\n### Vitality Weaving (Woven States) — 6 New Sequences\r\n\r\n31. Woven State: Aegis (Shield→Shield→Heal)\r\n    * Core Function: +40% Shields, immune to [Sunder] for 3 turns.\r\n    * Evo A (Impenetrable): Duration 4 turns.\r\n    * Evo B (Reactive Aegis): Breaking a shield [Stuns] attacker 1 turn.\r\n\r\n32. Woven State: Renewal (Heal→Heal→Cleanse)\r\n    * Core Function: Double HoT potency for 3 turns.\r\n    * Evo A (Persistent Renewal): Duration 4 turns.\r\n    * Evo B (Cleansing Bloom): Also [Cleanse] 1 debuff per turn.\r\n\r\n33. Woven State: Symbiosis (Cleanse→Heal→Shield)\r\n    * Core Function: Healing also applies 50% as Shield for 2 turns.\r\n    * Evo A (Full Conversion): 100% heal→shield conversion.\r\n    * Evo B (Aura Symbiosis): Affects all allies in range.\r\n\r\n34. Woven State: Retribution (Shield→Cleanse→Shield)\r\n    * Core Function: Shields reflect 25% damage for 3 turns.\r\n    * Evo A (Aggressive Defense): Reflect 40%.\r\n    * Evo B (Cleansing Vengeance): Reflected damage also applies [Vulnerable] to attacker.\r\n\r\n35. Woven State: Tranquility (Heal→Shield→Cleanse)\r\n    * Core Function: Immune to [Burn]/[Decay] for 3 turns.\r\n    * Evo A (Perfect Calm): Also immune to [Stun].\r\n    * Evo B (Serenity Aura): Affects adjacent allies.\r\n\r\n36. Woven State: Bastion (Shield→Shield→Shield)\r\n    * Core Function: Triple stacking shields for 2 turns.\r\n    * Evo A (Fortress Core): Stacks up to 5×.\r\n    * Evo B (Overloaded Barrier): Each stack grants +2% Integrity.\r\n\r\n---\r\n\r\n### Ojas Integrity Threshold Skills — 4 Skills",
+        "description": "** [Cleanse] all debuffs from all allies and grant them immunity to debuffs for 1 turn.\r\n    * **Evo A (Extended Rite):** Immunity lasts 2 turns.\r\n    * **Evo B (Healing Rite):** Also [Heal] all allies for 15 Ojas.\r\n\r\n---\r\n\r\n### **Vitality Weaving (Woven States) \u2014 6 New Sequences**\r\n\r\n31. **Woven State: Aegis** (Shield\u2192Shield\u2192Heal)\r\n    * **Core Function:** +40% Shields, immune to [Sunder] for 3 turns.\r\n    * **Evo A (Impenetrable):** Duration 4 turns.\r\n    * **Evo B (Reactive Aegis):** Breaking a shield [Stuns] attacker 1 turn.\r\n\r\n32. **Woven State: Renewal** (Heal\u2192Heal\u2192Cleanse)\r\n    * **Core Function:** Double HoT potency for 3 turns.\r\n    * **Evo A (Persistent Renewal):** Duration 4 turns.\r\n    * **Evo B (Cleansing Bloom):** Also [Cleanse] 1 debuff per turn.\r\n\r\n33. **Woven State: Symbiosis** (Cleanse\u2192Heal\u2192Shield)\r\n    * **Core Function:** Healing also applies 50% as Shield for 2 turns.\r\n    * **Evo A (Full Conversion):** 100% heal\u2192shield conversion.\r\n    * **Evo B (Aura Symbiosis):** Affects all allies in range.\r\n\r\n34. **Woven State: Retribution** (Shield\u2192Cleanse\u2192Shield)\r\n    * **Core Function:** Shields reflect 25% damage for 3 turns.\r\n    * **Evo A (Aggressive Defense):** Reflect 40%.\r\n    * **Evo B (Cleansing Vengeance):** Reflected damage also applies [Vulnerable] to attacker.\r\n\r\n35. **Woven State: Tranquility** (Heal\u2192Shield\u2192Cleanse)\r\n    * **Core Function:** Immune to [Burn]/[Decay] for 3 turns.\r\n    * **Evo A (Perfect Calm):** Also immune to [Stun].\r\n    * **Evo B (Serenity Aura):** Affects adjacent allies.\r\n\r\n36. **Woven State: Bastion** (Shield\u2192Shield\u2192Shield)\r\n    * **Core Function:** Triple stacking shields for 2 turns.\r\n    * **Evo A (Fortress Core):** Stacks up to 5\u00d7.\r\n    * **Evo B (Overloaded Barrier):** Each stack grants +2% Integrity.\r\n\r\n---\r\n\r\n### **Ojas Integrity Threshold Skills \u2014 4 Skills**",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Resurrection Rite to leverage CLEANSE, HEAL, SUNDER, STUNS, CLEANSE, VULNERABLE, BURN, DECAY, STUN.  [Cleanse] all debuffs from all allies and grant them immuni...",
+        "mastery_perk": "Mastery Lvl 5: (Extended Rite): Immunity lasts 2 turns.\r\n    * Evo B (Healing Rite): Also [Heal] all allies for 15 Ojas.\r\n\r\n---\r\n\r\n### Vitality Weaving (Woven States) \u2014 6 New Sequences\r\n\r\n31. Woven State: Aegis (Shield\u2192Shield\u2192Heal)\r\n    * Core Function: +40% Shields, immune to [Sunder] for 3 turns.\r\n    * Evo A (Impenetrable): Duration 4 turns.\r\n    * Evo B (Reactive Aegis): Breaking a shield [Stuns] attacker 1 turn.\r\n\r\n32. Woven State: Renewal (Heal\u2192Heal\u2192Cleanse)\r\n    * Core Function: Double HoT potency for 3 turns.\r\n    * Evo A (Persistent Renewal): Duration 4 turns.\r\n    * Evo B (Cleansing Bloom): Also [Cleanse] 1 debuff per turn.\r\n\r\n33. Woven State: Symbiosis (Cleanse\u2192Heal\u2192Shield)\r\n    * Core Function: Healing also applies 50% as Shield for 2 turns.\r\n    * Evo A (Full Conversion): 100% heal\u2192shield conversion.\r\n    * Evo B (Aura Symbiosis): Affects all allies in range.\r\n\r\n34. Woven State: Retribution (Shield\u2192Cleanse\u2192Shield)\r\n    * Core Function: Shields reflect 25% damage for 3 turns.\r\n    * Evo A (Aggressive Defense): Reflect 40%.\r\n    * Evo B (Cleansing Vengeance): Reflected damage also applies [Vulnerable] to attacker.\r\n\r\n35. Woven State: Tranquility (Heal\u2192Shield\u2192Cleanse)\r\n    * Core Function: Immune to [Burn]/[Decay] for 3 turns.\r\n    * Evo A (Perfect Calm): Also immune to [Stun].\r\n    * Evo B (Serenity Aura): Affects adjacent allies.\r\n\r\n36. Woven State: Bastion (Shield\u2192Shield\u2192Shield)\r\n    * Core Function: Triple stacking shields for 2 turns.\r\n    * Evo A (Fortress Core): Stacks up to 5\u00d7.\r\n    * Evo B (Overloaded Barrier): Each stack grants +2% Integrity.\r\n\r\n---\r\n\r\n### Ojas Integrity Threshold Skills \u2014 4 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 70 Gnosis",
@@ -1354,8 +1354,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 48
         },
         "description": "** At 100% Integrity, all glyphs cost -1 Prana.\r\n    * **Evo A (Perfect State):** Cost reduction -2.\r\n    * **Evo B (Integrity Shield):** Gain permanent 10 Shield while at 100%.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Integrity Milestone: 100% to leverage .  At 100% Integrity, all glyphs cost -1 Prana.     * Evo A (P...",
         "mastery_perk": "Mastery Lvl 5: (Perfect State): Cost reduction -2.\r\n    * Evo B (Integrity Shield): Gain permanent 10 Shield while at 100%.",
         "gameplay_info": {
             "usage": [
@@ -1397,8 +1397,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 52
         },
         "description": "** At 75%+, first [Shield] each turn is doubled.\r\n    * **Evo A (Sustained Defense):** Threshold lowered to 70%.\r\n    * **Evo B (Shield Resonance):** Also grants +10% Shield to allies.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Shield.",
+        "lore_quote": "\"The Architects break; we mend.\"",
+        "tactical_brief": "Deploy Integrity Milestone: 75%+ to leverage SHIELD.  At 75%+, first [Shield] each turn is doubled.     * Evo A (...",
         "mastery_perk": "Mastery Lvl 5: (Sustained Defense): Threshold lowered to 70%.\r\n    * Evo B (Shield Resonance): Also grants +10% Shield to allies.",
         "gameplay_info": {
             "usage": [
@@ -1444,8 +1444,8 @@ window.SKILL_DB_THERAPEUTIC = [
             "damage": 77
         },
         "description": "** At 50%+, [Cleanse] also [Heals] 5 Ojas.\r\n    * **Evo A (Restorative Cleanse):** Heal increased to 10.\r\n    * **Evo B (Cascading Purity):** [Cleanse] 2 debuffs instead of 1.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Heals, Cleanse.",
+        "lore_quote": "\"Healing is the ultimate act of rebellion.\"",
+        "tactical_brief": "Deploy Integrity Milestone: 50%+ to leverage CLEANSE, HEALS, CLEANSE.  At 50%+, [Cleanse] also [Heals] 5 Ojas.     * Evo A (Restor...",
         "mastery_perk": "Mastery Lvl 5: (Restorative Cleanse): Heal increased to 10.\r\n    * Evo B (Cascading Purity): [Cleanse] 2 debuffs instead of 1.",
         "gameplay_info": {
             "usage": [
@@ -1490,10 +1490,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 70,
             "damage": 76
         },
-        "description": "** If Integrity would exceed 100%, convert excess to [Shield] (1% = 5 Shield).\r\n    * **Evo A (Efficient Overflow):** 1% = 10 Shield.\r\n    * **Evo B (Cascading Overflow):** Overflow also grants +5 Bandwidth.\r\n\r\n---\r\n\r\n### **HEALING SPECIALIZATIONS — 15 Skills**",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Shield.",
-        "mastery_perk": "Mastery Lvl 5: (Efficient Overflow): 1% = 10 Shield.\r\n    * Evo B (Cascading Overflow): Overflow also grants +5 Bandwidth.\r\n\r\n---\r\n\r\n### HEALING SPECIALIZATIONS — 15 Skills",
+        "description": "** If Integrity would exceed 100%, convert excess to [Shield] (1% = 5 Shield).\r\n    * **Evo A (Efficient Overflow):** 1% = 10 Shield.\r\n    * **Evo B (Cascading Overflow):** Overflow also grants +5 Bandwidth.\r\n\r\n---\r\n\r\n### **HEALING SPECIALIZATIONS \u2014 15 Skills**",
+        "lore_quote": "\"Mend the spirit, and the resistance grows.\"",
+        "tactical_brief": "Deploy Integrity Overflow to leverage SHIELD.  If Integrity would exceed 100%, convert excess to [Shield] ...",
+        "mastery_perk": "Mastery Lvl 5: (Efficient Overflow): 1% = 10 Shield.\r\n    * Evo B (Cascading Overflow): Overflow also grants +5 Bandwidth.\r\n\r\n---\r\n\r\n### HEALING SPECIALIZATIONS \u2014 15 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 70 Gnosis",
@@ -1538,7 +1538,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot use [Shield] glyphs. All [Heal] effects +75%. Start duel with +20% max Ojas.\r\n    * **Evo A (Perfect Purist):** +100% healing instead.\r\n    * **Evo B (Ascetic Healer):** Also gain +25% Ojas Integrity generation.\r\n    * **Note:** *Pure healing specialist vs hybrid builds. Vastly different optimization.*",
         "lore_quote": "** *Pure healing specialist vs hybrid builds. Vastly different optimization.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Shield, Heal.",
+        "tactical_brief": "Deploy Healing Purist to leverage SHIELD, HEAL.  Cannot use [Shield] glyphs. All [Heal] effects +75%. Start ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Purist): +100% healing instead.\r\n    * Evo B (Ascetic Healer): Also gain +25% Ojas Integrity generation.\r\n    * Note: *Pure healing specialist vs hybrid builds. Vastly different optimization.*",
         "gameplay_info": {
             "usage": [
@@ -1580,9 +1580,9 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 50,
             "damage": 50
         },
-        "description": "** Overhealing no longer wastes value—converts to permanent max Ojas increase (10 overheal = +1 max Ojas, cap +50).\r\n    * **Evo A (Perfect Master):** Conversion rate 8:1 instead of 10:1.\r\n    * **Evo B (Unlimited Master):** No cap on max Ojas increase.\r\n    * **Note:** *Long-game scaling vs immediate value. Greedy healer build.*",
+        "description": "** Overhealing no longer wastes value\u2014converts to permanent max Ojas increase (10 overheal = +1 max Ojas, cap +50).\r\n    * **Evo A (Perfect Master):** Conversion rate 8:1 instead of 10:1.\r\n    * **Evo B (Unlimited Master):** No cap on max Ojas increase.\r\n    * **Note:** *Long-game scaling vs immediate value. Greedy healer build.*",
         "lore_quote": "** *Long-game scaling vs immediate value. Greedy healer build.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Overheal Master to leverage .  Overhealing no longer wastes value\u2014converts to permanent ma...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Master): Conversion rate 8:1 instead of 10:1.\r\n    * Evo B (Unlimited Master): No cap on max Ojas increase.\r\n    * Note: *Long-game scaling vs immediate value. Greedy healer build.*",
         "gameplay_info": {
             "usage": [
@@ -1625,7 +1625,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Deal 20 damage to enemy, [Heal] ally for 30. Can target same unit.\r\n    * **Evo A (Perfect Drain):** Damage 30, Heal 50.\r\n    * **Evo B (Mass Drain):** Affects 2 enemies and 2 allies.\r\n    * **Note:** *Offensive healer vs passive support. Completely different playstyle.*",
         "lore_quote": "** *Offensive healer vs passive support. Completely different playstyle.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Draining Touch to leverage HEAL.  Deal 20 damage to enemy, [Heal] ally for 30. Can target sam...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Drain): Damage 30, Heal 50.\r\n    * Evo B (Mass Drain): Affects 2 enemies and 2 allies.\r\n    * Note: *Offensive healer vs passive support. Completely different playstyle.*",
         "gameplay_info": {
             "usage": [
@@ -1670,7 +1670,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Heal] target for 25. Chains to adjacent allies at 50% potency (up to 3 chains).\r\n    * **Evo A (Perfect Chain):** Chains at 75% potency.\r\n    * **Evo B (Extended Chain):** Up to 5 chains total.\r\n    * **Note:** *Position-dependent healing. Rewards tactical placement.*",
         "lore_quote": "** *Position-dependent healing. Rewards tactical placement.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Healing Chain to leverage HEAL.  [Heal] target for 25. Chains to adjacent allies at 50% pote...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Chain): Chains at 75% potency.\r\n    * Evo B (Extended Chain): Up to 5 chains total.\r\n    * Note: *Position-dependent healing. Rewards tactical placement.*",
         "gameplay_info": {
             "usage": [
@@ -1715,7 +1715,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** For 3 turns, lose 10 Ojas per turn but all allies [Heal] 15 per turn.\r\n    * **Evo A (Perfect Sacrifice):** Allies heal 25 per turn.\r\n    * **Evo B (Tolerable Sacrifice):** You only lose 7 Ojas per turn.\r\n    * **Note:** *Self-damage for team gain. Risk/reward specialist.*",
         "lore_quote": "** *Self-damage for team gain. Risk/reward specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Sacrificial Healer to leverage HEAL.  For 3 turns, lose 10 Ojas per turn but all allies [Heal] 15...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Sacrifice): Allies heal 25 per turn.\r\n    * Evo B (Tolerable Sacrifice): You only lose 7 Ojas per turn.\r\n    * Note: *Self-damage for team gain. Risk/reward specialist.*",
         "gameplay_info": {
             "usage": [
@@ -1758,10 +1758,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 50,
             "heal": 52
         },
-        "description": "** [Heal] target for (current Ojas Integrity × 2). Resets Integrity to 0.\r\n    * **Evo A (Perfect Burst):** ×3 instead of ×2.\r\n    * **Evo B (Partial Burst):** Only lose 50% of Integrity.\r\n    * **Note:** *All-in healing moment vs sustained Integrity management.*",
+        "description": "** [Heal] target for (current Ojas Integrity \u00d7 2). Resets Integrity to 0.\r\n    * **Evo A (Perfect Burst):** \u00d73 instead of \u00d72.\r\n    * **Evo B (Partial Burst):** Only lose 50% of Integrity.\r\n    * **Note:** *All-in healing moment vs sustained Integrity management.*",
         "lore_quote": "** *All-in healing moment vs sustained Integrity management.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Burst): ×3 instead of ×2.\r\n    * Evo B (Partial Burst): Only lose 50% of Integrity.\r\n    * Note: *All-in healing moment vs sustained Integrity management.*",
+        "tactical_brief": "Deploy Burst Heal Protocol to leverage HEAL.  [Heal] target for (current Ojas Integrity \u00d7 2). Resets Inte...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Burst): \u00d73 instead of \u00d72.\r\n    * Evo B (Partial Burst): Only lose 50% of Integrity.\r\n    * Note: *All-in healing moment vs sustained Integrity management.*",
         "gameplay_info": {
             "usage": [
                 "Cost: 50 Gnosis",
@@ -1805,7 +1805,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** For 3 turns, all [Heal] glyphs trigger twice at 60% potency each.\r\n    * **Evo A (Perfect Echo):** 80% potency each.\r\n    * **Evo B (Extended Echo):** Duration 4 turns.\r\n    * **Note:** *Double-casting healer specialist. Combo-focused build.*",
         "lore_quote": "** *Double-casting healer specialist. Combo-focused build.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Healing Echo Chamber to leverage HEAL.  For 3 turns, all [Heal] glyphs trigger twice at 60% potency...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Echo): 80% potency each.\r\n    * Evo B (Extended Echo): Duration 4 turns.\r\n    * Note: *Double-casting healer specialist. Combo-focused build.*",
         "gameplay_info": {
             "usage": [
@@ -1848,7 +1848,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot heal targets more than 2 spaces away. All healing +50% potency.\r\n    * **Evo A (Perfect Proximity):** +75% potency.\r\n    * **Evo B (Extended Proximity):** Range 3 spaces.\r\n    * **Note:** *Positioning restriction for power. Melee healer archetype.*",
         "lore_quote": "** *Positioning restriction for power. Melee healer archetype.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Proximity Healer to leverage .  Cannot heal targets more than 2 spaces away. All healing +5...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Proximity): +75% potency.\r\n    * Evo B (Extended Proximity): Range 3 spaces.\r\n    * Note: *Positioning restriction for power. Melee healer archetype.*",
         "gameplay_info": {
             "usage": [
@@ -1889,7 +1889,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot heal adjacent targets. Healing +40% potency, range unlimited.\r\n    * **Evo A (Perfect Remote):** +60% potency.\r\n    * **Evo B (Efficient Remote):** Cost -2 KP for distant heals.\r\n    * **Note:** *Opposite of proximity. Backline support specialist.*",
         "lore_quote": "** *Opposite of proximity. Backline support specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Remote Healer to leverage .  Cannot heal adjacent targets. Healing +40% potency, range u...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Remote): +60% potency.\r\n    * Evo B (Efficient Remote): Cost -2 KP for distant heals.\r\n    * Note: *Opposite of proximity. Backline support specialist.*",
         "gameplay_info": {
             "usage": [
@@ -1932,7 +1932,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Each consecutive [Heal] on same target gets +15% potency (stacks 5x, resets if target switches).\r\n    * **Evo A (Perfect Amplifier):** +25% per stack.\r\n    * **Evo B (Sustained Amplifier):** Stacks up to 8x.\r\n    * **Note:** *Rewards focus-fire healing vs spreading heals.*",
         "lore_quote": "** *Rewards focus-fire healing vs spreading heals.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Healing Amplifier to leverage HEAL.  Each consecutive [Heal] on same target gets +15% potency (s...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Amplifier): +25% per stack.\r\n    * Evo B (Sustained Amplifier): Stacks up to 8x.\r\n    * Note: *Rewards focus-fire healing vs spreading heals.*",
         "gameplay_info": {
             "usage": [
@@ -1975,7 +1975,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot cast instant heals. All HoT effects +100% potency and last +1 turn.\r\n    * **Evo A (Perfect Master):** +150% potency.\r\n    * **Evo B (Extended Master):** Last +2 turns instead.\r\n    * **Note:** *Pure HoT build vs burst healing. Different tempo entirely.*",
         "lore_quote": "** *Pure HoT build vs burst healing. Different tempo entirely.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Heal-over-Time Master to leverage .  Cannot cast instant heals. All HoT effects +100% potency an...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Master): +150% potency.\r\n    * Evo B (Extended Master): Last +2 turns instead.\r\n    * Note: *Pure HoT build vs burst healing. Different tempo entirely.*",
         "gameplay_info": {
             "usage": [
@@ -2016,7 +2016,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Healing potency increases based on target's missing Ojas (+1% per 1% missing, up to +100%).\r\n    * **Evo A (Perfect Desperation):** Up to +150% potency.\r\n    * **Evo B (Safe Desperation):** Bonus starts at 80% missing instead of scaling.\r\n    * **Note:** *Rewards letting allies get low. High-risk gameplay.*",
         "lore_quote": "** *Rewards letting allies get low. High-risk gameplay.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Desperation Heal to leverage .  Healing potency increases based on target's missing Ojas (+...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Desperation): Up to +150% potency.\r\n    * Evo B (Safe Desperation): Bonus starts at 80% missing instead of scaling.\r\n    * Note: *Rewards letting allies get low. High-risk gameplay.*",
         "gameplay_info": {
             "usage": [
@@ -2057,7 +2057,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Healing potency decreases based on target's missing Ojas (full health = +50%, low health = +0%).\r\n    * **Evo A (Perfect Prevention):** Full health bonus +100%.\r\n    * **Evo B (Extended Prevention):** Bonus applies up to 80% health.\r\n    * **Note:** *Opposite of desperation. Keep everyone topped off.*",
         "lore_quote": "** *Opposite of desperation. Keep everyone topped off.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Preventive Healer to leverage .  Healing potency decreases based on target's missing Ojas (f...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Prevention): Full health bonus +100%.\r\n    * Evo B (Extended Prevention): Bonus applies up to 80% health.\r\n    * Note: *Opposite of desperation. Keep everyone topped off.*",
         "gameplay_info": {
             "usage": [
@@ -2098,10 +2098,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 60,
             "heal": 74
         },
-        "description": "** [Heal] all allies for (10 × number of allies). More allies = stronger heals.\r\n    * **Evo A (Perfect Therapy):** 15 × number instead.\r\n    * **Evo B (Enhanced Therapy):** Also grant 10 Shield per ally.\r\n    * **Note:** *Scales with team size. Multiplayer specialist.*",
+        "description": "** [Heal] all allies for (10 \u00d7 number of allies). More allies = stronger heals.\r\n    * **Evo A (Perfect Therapy):** 15 \u00d7 number instead.\r\n    * **Evo B (Enhanced Therapy):** Also grant 10 Shield per ally.\r\n    * **Note:** *Scales with team size. Multiplayer specialist.*",
         "lore_quote": "** *Scales with team size. Multiplayer specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Therapy): 15 × number instead.\r\n    * Evo B (Enhanced Therapy): Also grant 10 Shield per ally.\r\n    * Note: *Scales with team size. Multiplayer specialist.*",
+        "tactical_brief": "Deploy Group Therapy to leverage HEAL.  [Heal] all allies for (10 \u00d7 number of allies). More allies ...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Therapy): 15 \u00d7 number instead.\r\n    * Evo B (Enhanced Therapy): Also grant 10 Shield per ally.\r\n    * Note: *Scales with team size. Multiplayer specialist.*",
         "gameplay_info": {
             "usage": [
                 "Cost: 60 Gnosis",
@@ -2144,10 +2144,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 50,
             "damage": 54
         },
-        "description": "** If you have no allies, healing yourself +150%, immunity to [Stun] and [Silence].\r\n    * **Evo A (Perfect Solo):** +200% healing.\r\n    * **Evo B (Survivor):** Also gain +50% max Ojas.\r\n    * **Note:** *Anti-team build. Solo survival specialist.*\r\n\r\n---\r\n\r\n### **SHIELDING SPECIALIZATIONS — 15 Skills**",
-        "lore_quote": "** *Anti-team build. Solo survival specialist.*\r\n\r\n---\r\n\r\n### **SHIELDING SPECIALIZATIONS — 15 Skills**",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Stun, Silence.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Solo): +200% healing.\r\n    * Evo B (Survivor): Also gain +50% max Ojas.\r\n    * Note: *Anti-team build. Solo survival specialist.*\r\n\r\n---\r\n\r\n### SHIELDING SPECIALIZATIONS — 15 Skills",
+        "description": "** If you have no allies, healing yourself +150%, immunity to [Stun] and [Silence].\r\n    * **Evo A (Perfect Solo):** +200% healing.\r\n    * **Evo B (Survivor):** Also gain +50% max Ojas.\r\n    * **Note:** *Anti-team build. Solo survival specialist.*\r\n\r\n---\r\n\r\n### **SHIELDING SPECIALIZATIONS \u2014 15 Skills**",
+        "lore_quote": "** *Anti-team build. Solo survival specialist.*\r\n\r\n---\r\n\r\n### **SHIELDING SPECIALIZATIONS \u2014 15 Skills**",
+        "tactical_brief": "Deploy Solo Medic to leverage STUN, SILENCE.  If you have no allies, healing yourself +150%, immunity to ...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Solo): +200% healing.\r\n    * Evo B (Survivor): Also gain +50% max Ojas.\r\n    * Note: *Anti-team build. Solo survival specialist.*\r\n\r\n---\r\n\r\n### SHIELDING SPECIALIZATIONS \u2014 15 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 50 Gnosis",
@@ -2193,7 +2193,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot use [Heal] glyphs. All [Shield] effects +75%. Shields last +2 turns.\r\n    * **Evo A (Perfect Purist):** +100% shields instead.\r\n    * **Evo B (Eternal Shields):** Shields never decay naturally.\r\n    * **Note:** *Pure shielding vs hybrid. Completely different resource management.*",
         "lore_quote": "** *Pure shielding vs hybrid. Completely different resource management.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield.",
+        "tactical_brief": "Deploy Shield Purist to leverage HEAL, SHIELD.  Cannot use [Heal] glyphs. All [Shield] effects +75%. Shield...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Purist): +100% shields instead.\r\n    * Evo B (Eternal Shields): Shields never decay naturally.\r\n    * Note: *Pure shielding vs hybrid. Completely different resource management.*",
         "gameplay_info": {
             "usage": [
@@ -2237,7 +2237,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Shields stack infinitely. For each 50 shield points on target, they gain +10% damage.\r\n    * **Evo A (Perfect Stacker):** Bonus every 40 points.\r\n    * **Evo B (Enhanced Stacker):** +15% damage per threshold.\r\n    * **Note:** *Offense through defense. Tank-DPS hybrid.*",
         "lore_quote": "** *Offense through defense. Tank-DPS hybrid.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Shield Stacker to leverage .  Shields stack infinitely. For each 50 shield points on targ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Stacker): Bonus every 40 points.\r\n    * Evo B (Enhanced Stacker): +15% damage per threshold.\r\n    * Note: *Offense through defense. Tank-DPS hybrid.*",
         "gameplay_info": {
             "usage": [
@@ -2278,7 +2278,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot proactively shield. When ally takes damage, automatically grant them 25 Shield. Cooldown: 2 turns per ally.\r\n    * **Evo A (Perfect Reaction):** 40 Shield instead.\r\n    * **Evo B (Frequent Reaction):** Cooldown 1 turn.\r\n    * **Note:** *Reactive vs proactive shielding. Different timing skill.*",
         "lore_quote": "** *Reactive vs proactive shielding. Different timing skill.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Reactive Shielder to leverage .  Cannot proactively shield. When ally takes damage, automati...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reaction): 40 Shield instead.\r\n    * Evo B (Frequent Reaction): Cooldown 1 turn.\r\n    * Note: *Reactive vs proactive shielding. Different timing skill.*",
         "gameplay_info": {
             "usage": [
@@ -2319,7 +2319,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Shields applied to full-health allies have +50% value. Shields on damaged allies -25% value.\r\n    * **Evo A (Perfect Proactive):** Full health bonus +75%.\r\n    * **Evo B (Tolerable Proactive):** No penalty on damaged allies.\r\n    * **Note:** *Opposite of reactive. Prediction-based gameplay.*",
         "lore_quote": "** *Opposite of reactive. Prediction-based gameplay.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Proactive Shielder to leverage .  Shields applied to full-health allies have +50% value. Shie...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Proactive): Full health bonus +75%.\r\n    * Evo B (Tolerable Proactive): No penalty on damaged allies.\r\n    * Note: *Opposite of reactive. Prediction-based gameplay.*",
         "gameplay_info": {
             "usage": [
@@ -2360,7 +2360,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** When shields break, deal damage to attacker equal to 75% of absorbed damage.\r\n    * **Evo A (Perfect Explosion):** 125% of absorbed damage.\r\n    * **Evo B (AoE Explosion):** Damage affects all enemies in 3x3 area.\r\n    * **Note:** *Offensive shielding. Counter-attack specialist.*",
         "lore_quote": "** *Offensive shielding. Counter-attack specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Exploding Shields to leverage .  When shields break, deal damage to attacker equal to 75% of...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Explosion): 125% of absorbed damage.\r\n    * Evo B (AoE Explosion): Damage affects all enemies in 3x3 area.\r\n    * Note: *Offensive shielding. Counter-attack specialist.*",
         "gameplay_info": {
             "usage": [
@@ -2401,7 +2401,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Move shields between allies. Transfer amount +25% (if moving 20, target gets 25).\r\n    * **Evo A (Perfect Transfer):** +50% bonus.\r\n    * **Evo B (Mass Transfer):** Can transfer from/to 3 allies simultaneously.\r\n    * **Note:** *Dynamic shield management. Tactical resource movement.*",
         "lore_quote": "** *Dynamic shield management. Tactical resource movement.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Shield Transfer to leverage .  Move shields between allies. Transfer amount +25% (if movin...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Transfer): +50% bonus.\r\n    * Evo B (Mass Transfer): Can transfer from/to 3 allies simultaneously.\r\n    * Note: *Dynamic shield management. Tactical resource movement.*",
         "gameplay_info": {
             "usage": [
@@ -2444,7 +2444,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Destroy ally's shield to [Heal] them for 150% of shield value.\r\n    * **Evo A (Perfect Sacrifice):** 200% conversion.\r\n    * **Evo B (Mass Sacrifice):** Affects all allies.\r\n    * **Note:** *Shield-to-heal conversion. Flexible resource adaptation.*",
         "lore_quote": "** *Shield-to-heal conversion. Flexible resource adaptation.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Shield Sacrifice to leverage HEAL.  Destroy ally's shield to [Heal] them for 150% of shield val...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Sacrifice): 200% conversion.\r\n    * Evo B (Mass Sacrifice): Affects all allies.\r\n    * Note: *Shield-to-heal conversion. Flexible resource adaptation.*",
         "gameplay_info": {
             "usage": [
@@ -2487,7 +2487,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Shields regenerate 10% of their original value per turn.\r\n    * **Evo A (Perfect Living):** 20% regeneration.\r\n    * **Evo B (Efficient Living):** Shields cost -30% KP.\r\n    * **Note:** *Sustainable shielding vs burst shields. Different economy.*",
         "lore_quote": "** *Sustainable shielding vs burst shields. Different economy.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Living Shield to leverage .  Shields regenerate 10% of their original value per turn.   ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Living): 20% regeneration.\r\n    * Evo B (Efficient Living): Shields cost -30% KP.\r\n    * Note: *Sustainable shielding vs burst shields. Different economy.*",
         "gameplay_info": {
             "usage": [
@@ -2528,7 +2528,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** When you shield an ally, adjacent allies gain 25% of that shield.\r\n    * **Evo A (Perfect Resonance):** 50% instead.\r\n    * **Evo B (Extended Resonance):** Affects 5x5 area.\r\n    * **Note:** *AoE shielding through single-target casts. Positioning matters.*",
         "lore_quote": "** *AoE shielding through single-target casts. Positioning matters.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Shield Resonance to leverage .  When you shield an ally, adjacent allies gain 25% of that s...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Resonance): 50% instead.\r\n    * Evo B (Extended Resonance): Affects 5x5 area.\r\n    * Note: *AoE shielding through single-target casts. Positioning matters.*",
         "gameplay_info": {
             "usage": [
@@ -2569,7 +2569,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Shields last only 1 turn but have +100% value and cost -50% KP.\r\n    * **Evo A (Perfect Temporary):** +150% value.\r\n    * **Evo B (Extended Temporary):** Last 2 turns.\r\n    * **Note:** *Fast cycling vs sustained shields. Different tempo.*",
         "lore_quote": "** *Fast cycling vs sustained shields. Different tempo.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Temporary Shields to leverage .  Shields last only 1 turn but have +100% value and cost -50%...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Temporary): +150% value.\r\n    * Evo B (Extended Temporary): Last 2 turns.\r\n    * Note: *Fast cycling vs sustained shields. Different tempo.*",
         "gameplay_info": {
             "usage": [
@@ -2610,7 +2610,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Shields never decay or expire but cost +50% KP and have -30% value.\r\n    * **Evo A (Perfect Eternal):** No value penalty.\r\n    * **Evo B (Efficient Eternal):** Only +25% KP cost.\r\n    * **Note:** *Permanent resources vs temporary. Long-game investment.*",
         "lore_quote": "** *Permanent resources vs temporary. Long-game investment.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Eternal Shields to leverage .  Shields never decay or expire but cost +50% KP and have -30...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Eternal): No value penalty.\r\n    * Evo B (Efficient Eternal): Only +25% KP cost.\r\n    * Note: *Permanent resources vs temporary. Long-game investment.*",
         "gameplay_info": {
             "usage": [
@@ -2651,7 +2651,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Steal 50% of enemy shield and grant it to ally.\r\n    * **Evo A (Perfect Theft):** Steal 75%.\r\n    * **Evo B (Mass Theft):** Affects 2 enemies and 2 allies.\r\n    * **Note:** *Offensive shielding. Anti-tank specialist.*",
         "lore_quote": "** *Offensive shielding. Anti-tank specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Shield Theft to leverage .  Steal 50% of enemy shield and grant it to ally.     * Evo A...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Theft): Steal 75%.\r\n    * Evo B (Mass Theft): Affects 2 enemies and 2 allies.\r\n    * Note: *Offensive shielding. Anti-tank specialist.*",
         "gameplay_info": {
             "usage": [
@@ -2692,7 +2692,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Each shield you cast this turn increases next shield's value by 25% (stacks).\r\n    * **Evo A (Perfect Multiplication):** +40% per shield.\r\n    * **Evo B (Sustained Multiplication):** Bonus persists across turns.\r\n    * **Note:** *Combo shielding. Rewards chaining casts.*",
         "lore_quote": "** *Combo shielding. Rewards chaining casts.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Shield Multiplication to leverage .  Each shield you cast this turn increases next shield's valu...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Multiplication): +40% per shield.\r\n    * Evo B (Sustained Multiplication): Bonus persists across turns.\r\n    * Note: *Combo shielding. Rewards chaining casts.*",
         "gameplay_info": {
             "usage": [
@@ -2733,7 +2733,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Convert shields to any resource: 20 Shield = 10 Bandwidth OR 3 KP OR 2 Coherence.\r\n    * **Evo A (Efficient Converter):** Conversion rates improved 50%.\r\n    * **Evo B (Multi-Converter):** Can convert to multiple resources.\r\n    * **Note:** *Shields as universal currency. Economic adaptation.*",
         "lore_quote": "** *Shields as universal currency. Economic adaptation.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Shield Converter to leverage .  Convert shields to any resource: 20 Shield = 10 Bandwidth O...",
         "mastery_perk": "Mastery Lvl 5: (Efficient Converter): Conversion rates improved 50%.\r\n    * Evo B (Multi-Converter): Can convert to multiple resources.\r\n    * Note: *Shields as universal currency. Economic adaptation.*",
         "gameplay_info": {
             "usage": [
@@ -2772,10 +2772,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 60,
             "damage": 72
         },
-        "description": "** For 2 turns, all shields +150% value but cost +100% KP.\r\n    * **Evo A (Perfect Overload):** +200% value.\r\n    * **Evo B (Efficient Overload):** Only +50% KP cost.\r\n    * **Note:** *Power spike vs sustained economy. Clutch moment tool.*\r\n\r\n---\r\n\r\n### **CLEANSING SPECIALIZATIONS — 15 Skills**",
-        "lore_quote": "** *Power spike vs sustained economy. Clutch moment tool.*\r\n\r\n---\r\n\r\n### **CLEANSING SPECIALIZATIONS — 15 Skills**",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Overload): +200% value.\r\n    * Evo B (Efficient Overload): Only +50% KP cost.\r\n    * Note: *Power spike vs sustained economy. Clutch moment tool.*\r\n\r\n---\r\n\r\n### CLEANSING SPECIALIZATIONS — 15 Skills",
+        "description": "** For 2 turns, all shields +150% value but cost +100% KP.\r\n    * **Evo A (Perfect Overload):** +200% value.\r\n    * **Evo B (Efficient Overload):** Only +50% KP cost.\r\n    * **Note:** *Power spike vs sustained economy. Clutch moment tool.*\r\n\r\n---\r\n\r\n### **CLEANSING SPECIALIZATIONS \u2014 15 Skills**",
+        "lore_quote": "** *Power spike vs sustained economy. Clutch moment tool.*\r\n\r\n---\r\n\r\n### **CLEANSING SPECIALIZATIONS \u2014 15 Skills**",
+        "tactical_brief": "Deploy Shield Overload to leverage .  For 2 turns, all shields +150% value but cost +100% KP.    ...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Overload): +200% value.\r\n    * Evo B (Efficient Overload): Only +50% KP cost.\r\n    * Note: *Power spike vs sustained economy. Clutch moment tool.*\r\n\r\n---\r\n\r\n### CLEANSING SPECIALIZATIONS \u2014 15 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 60 Gnosis",
@@ -2820,7 +2820,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot use [Heal] or [Shield] glyphs. [Cleanse] also deals 20 damage to enemies and grants 15 Ojas to cleansed ally.\r\n    * **Evo A (Perfect Purist):** Damage 35, heal 25.\r\n    * **Evo B (Aggressive Purist):** Also applies [Vulnerable] to enemies.\r\n    * **Note:** *Pure cleansing specialist. Offensive support.*",
         "lore_quote": "** *Pure cleansing specialist. Offensive support.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Cleanse, Vulnerable.",
+        "tactical_brief": "Deploy Cleansing Purist to leverage HEAL, SHIELD, CLEANSE, VULNERABLE.  Cannot use [Heal] or [Shield] glyphs. [Cleanse] also deals ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Purist): Damage 35, heal 25.\r\n    * Evo B (Aggressive Purist): Also applies [Vulnerable] to enemies.\r\n    * Note: *Pure cleansing specialist. Offensive support.*",
         "gameplay_info": {
             "usage": [
@@ -2869,7 +2869,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Cleanse] debuff and gain resources: +10 Bandwidth and +2 KP per debuff cleansed.\r\n    * **Evo A (Perfect Eater):** +15 Bandwidth, +3 KP.\r\n    * **Evo B (Healing Eater):** Also [Heal] 15 Ojas per debuff.\r\n    * **Note:** *Debuffs as resources. Economic cleansing build.*",
         "lore_quote": "** *Debuffs as resources. Economic cleansing build.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Heal.",
+        "tactical_brief": "Deploy Debuff Eater to leverage CLEANSE, HEAL.  [Cleanse] debuff and gain resources: +10 Bandwidth and +2 K...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Eater): +15 Bandwidth, +3 KP.\r\n    * Evo B (Healing Eater): Also [Heal] 15 Ojas per debuff.\r\n    * Note: *Debuffs as resources. Economic cleansing build.*",
         "gameplay_info": {
             "usage": [
@@ -2915,7 +2915,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Grant ally immunity to next debuff for 3 turns. When triggered, [Heal] them 20.\r\n    * **Evo A (Perfect Preemptive):** Immunity to next 2 debuffs.\r\n    * **Evo B (Extended Preemptive):** Duration 4 turns.\r\n    * **Note:** *Preventive vs reactive cleansing. Prediction gameplay.*",
         "lore_quote": "** *Preventive vs reactive cleansing. Prediction gameplay.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Preemptive Cleanser to leverage HEAL.  Grant ally immunity to next debuff for 3 turns. When trigge...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Preemptive): Immunity to next 2 debuffs.\r\n    * Evo B (Extended Preemptive): Duration 4 turns.\r\n    * Note: *Preventive vs reactive cleansing. Prediction gameplay.*",
         "gameplay_info": {
             "usage": [
@@ -2960,7 +2960,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** When ally receives debuff, automatically [Cleanse] it and grant 15 Shield. Cooldown: 3 turns per ally.\r\n    * **Evo A (Perfect Reactive):** 25 Shield instead.\r\n    * **Evo B (Frequent Reactive):** Cooldown 2 turns.\r\n    * **Note:** *Opposite of preemptive. Automatic counter-play.*",
         "lore_quote": "** *Opposite of preemptive. Automatic counter-play.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "tactical_brief": "Deploy Reactive Cleanser to leverage CLEANSE.  When ally receives debuff, automatically [Cleanse] it and g...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reactive): 25 Shield instead.\r\n    * Evo B (Frequent Reactive): Cooldown 2 turns.\r\n    * Note: *Opposite of preemptive. Automatic counter-play.*",
         "gameplay_info": {
             "usage": [
@@ -3005,7 +3005,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Cleanse] debuff from ally and apply it to enemy.\r\n    * **Evo A (Perfect Transfer):** Apply to 2 enemies.\r\n    * **Evo B (Enhanced Transfer):** Applied debuff +1 turn duration.\r\n    * **Note:** *Offensive cleansing. Turn weakness into strength.*",
         "lore_quote": "** *Offensive cleansing. Turn weakness into strength.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "tactical_brief": "Deploy Debuff Transfer to leverage CLEANSE.  [Cleanse] debuff from ally and apply it to enemy.     * Evo...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Transfer): Apply to 2 enemies.\r\n    * Evo B (Enhanced Transfer): Applied debuff +1 turn duration.\r\n    * Note: *Offensive cleansing. Turn weakness into strength.*",
         "gameplay_info": {
             "usage": [
@@ -3051,7 +3051,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Cleanse] 1 debuff from target. Chains to adjacent allies (up to 3 chains).\r\n    * **Evo A (Perfect Chain):** Up to 5 chains.\r\n    * **Evo B (Deep Chain):** [Cleanse] 2 debuffs from primary target.\r\n    * **Note:** *Position-dependent cleansing. Tactical formation play.*",
         "lore_quote": "** *Position-dependent cleansing. Tactical formation play.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Cleanse.",
+        "tactical_brief": "Deploy Cleansing Chain to leverage CLEANSE, CLEANSE.  [Cleanse] 1 debuff from target. Chains to adjacent allies (...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Chain): Up to 5 chains.\r\n    * Evo B (Deep Chain): [Cleanse] 2 debuffs from primary target.\r\n    * Note: *Position-dependent cleansing. Tactical formation play.*",
         "gameplay_info": {
             "usage": [
@@ -3098,7 +3098,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Choose specific debuff type to cleanse (e.g., only [Burn], only [Stun]). Chosen type cleansed from all allies simultaneously.\r\n    * **Evo A (Perfect Selection):** Can choose 2 types.\r\n    * **Evo B (Enhanced Selection):** Also gain +5 Bandwidth per debuff removed.\r\n    * **Note:** *Surgical cleansing vs blanket removal. Strategic priority.*",
         "lore_quote": "** *Surgical cleansing vs blanket removal. Strategic priority.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Burn, Stun.",
+        "tactical_brief": "Deploy Selective Cleanser to leverage BURN, STUN.  Choose specific debuff type to cleanse (e.g., only [Burn], ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Selection): Can choose 2 types.\r\n    * Evo B (Enhanced Selection): Also gain +5 Bandwidth per debuff removed.\r\n    * Note: *Surgical cleansing vs blanket removal. Strategic priority.*",
         "gameplay_info": {
             "usage": [
@@ -3144,7 +3144,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** For 3 turns, [Cleanse] also grants target +25% all effects for 2 turns.\r\n    * **Evo A (Perfect Amplifier):** +40% all effects.\r\n    * **Evo B (Extended Amplifier):** Duration 4 turns.\r\n    * **Note:** *Cleansing as offensive tool. Buff through purification.*",
         "lore_quote": "** *Cleansing as offensive tool. Buff through purification.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "tactical_brief": "Deploy Cleanse Amplifier to leverage CLEANSE.  For 3 turns, [Cleanse] also grants target +25% all effects ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Amplifier): +40% all effects.\r\n    * Evo B (Extended Amplifier): Duration 4 turns.\r\n    * Note: *Cleansing as offensive tool. Buff through purification.*",
         "gameplay_info": {
             "usage": [
@@ -3190,7 +3190,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Cleanse] all debuffs from target but they take 10 damage per debuff removed.\r\n    * **Evo A (Safe Overcharge):** Only 5 damage per debuff.\r\n    * **Evo B (Healing Overcharge):** After damage, [Heal] for 15 per debuff.\r\n    * **Note:** *Risk/reward cleansing. High-stakes purification.*",
         "lore_quote": "** *Risk/reward cleansing. High-stakes purification.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Heal.",
+        "tactical_brief": "Deploy Overcharge Cleanse to leverage CLEANSE, HEAL.  [Cleanse] all debuffs from target but they take 10 damage p...",
         "mastery_perk": "Mastery Lvl 5: (Safe Overcharge): Only 5 damage per debuff.\r\n    * Evo B (Healing Overcharge): After damage, [Heal] for 15 per debuff.\r\n    * Note: *Risk/reward cleansing. High-stakes purification.*",
         "gameplay_info": {
             "usage": [
@@ -3236,7 +3236,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** When you [Cleanse], apply that debuff to random enemy at 75% duration.\r\n    * **Evo A (Perfect Reflection):** Full duration.\r\n    * **Evo B (Controlled Reflection):** Choose target.\r\n    * **Note:** *Turn defense into offense. Cleansing counter-attacks.*",
         "lore_quote": "** *Turn defense into offense. Cleansing counter-attacks.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "tactical_brief": "Deploy Debuff Reflection to leverage CLEANSE.  When you [Cleanse], apply that debuff to random enemy at 75...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Reflection): Full duration.\r\n    * Evo B (Controlled Reflection): Choose target.\r\n    * Note: *Turn defense into offense. Cleansing counter-attacks.*",
         "gameplay_info": {
             "usage": [
@@ -3282,7 +3282,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Allies within 3x3 area automatically [Cleanse] 1 debuff per turn.\r\n    * **Evo A (Perfect Aura):** [Cleanse] 2 debuffs per turn.\r\n    * **Evo B (Extended Aura):** 5x5 area.\r\n    * **Note:** *Automatic cleansing zone. Positioning-based support.*",
         "lore_quote": "** *Automatic cleansing zone. Positioning-based support.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Cleanse.",
+        "tactical_brief": "Deploy Cleansing Aura to leverage CLEANSE, CLEANSE.  Allies within 3x3 area automatically [Cleanse] 1 debuff per...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Aura): [Cleanse] 2 debuffs per turn.\r\n    * Evo B (Extended Aura): 5x5 area.\r\n    * Note: *Automatic cleansing zone. Positioning-based support.*",
         "gameplay_info": {
             "usage": [
@@ -3330,7 +3330,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** For 3 turns, ally is immune to debuffs but also cannot receive [Heal] or [Shield].\r\n    * **Evo A (Perfect Lock):** Duration 4 turns.\r\n    * **Evo B (Partial Lock):** Can still receive [Shield].\r\n    * **Note:** *Trade-off immunity. Strategic sacrifice.*",
         "lore_quote": "** *Trade-off immunity. Strategic sacrifice.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Shield.",
+        "tactical_brief": "Deploy Debuff Immunity Lock to leverage HEAL, SHIELD, SHIELD.  For 3 turns, ally is immune to debuffs but also cannot rece...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Lock): Duration 4 turns.\r\n    * Evo B (Partial Lock): Can still receive [Shield].\r\n    * Note: *Trade-off immunity. Strategic sacrifice.*",
         "gameplay_info": {
             "usage": [
@@ -3377,7 +3377,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Cleanse] all debuffs from ally. You receive 50% of those debuffs.\r\n    * **Evo A (Tolerable Sacrifice):** Only receive 25%.\r\n    * **Evo B (Protected Sacrifice):** Debuffs you receive have -1 turn duration.\r\n    * **Note:** *Self-sacrifice cleansing. Team player specialist.*",
         "lore_quote": "** *Self-sacrifice cleansing. Team player specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse.",
+        "tactical_brief": "Deploy Cleansing Sacrifice to leverage CLEANSE.  [Cleanse] all debuffs from ally. You receive 50% of those d...",
         "mastery_perk": "Mastery Lvl 5: (Tolerable Sacrifice): Only receive 25%.\r\n    * Evo B (Protected Sacrifice): Debuffs you receive have -1 turn duration.\r\n    * Note: *Self-sacrifice cleansing. Team player specialist.*",
         "gameplay_info": {
             "usage": [
@@ -3423,7 +3423,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** [Cleanse] all debuffs from all allies. Grant 20 Shield per debuff removed. Once per duel.\r\n    * **Evo A (Perfect Purge):** 35 Shield per debuff.\r\n    * **Evo B (Healing Purge):** Also [Heal] 20 per debuff.\r\n    * **Note:** *Ultimate cleansing moment. Big reset button.*",
         "lore_quote": "** *Ultimate cleansing moment. Big reset button.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Heal.",
+        "tactical_brief": "Deploy Mass Purge to leverage CLEANSE, HEAL.  [Cleanse] all debuffs from all allies. Grant 20 Shield per ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Purge): 35 Shield per debuff.\r\n    * Evo B (Healing Purge): Also [Heal] 20 per debuff.\r\n    * Note: *Ultimate cleansing moment. Big reset button.*",
         "gameplay_info": {
             "usage": [
@@ -3469,10 +3469,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 65,
             "heal": 79
         },
-        "description": "** Passive: Allies automatically [Cleanse] 1 debuff at end of each turn.\r\n    * **Evo A (Perfect Perpetual):** [Cleanse] 2 debuffs.\r\n    * **Evo B (Enhanced Perpetual):** Also [Heal] 5 Ojas per cleanse.\r\n    * **Note:** *Automatic maintenance. Set-and-forget support.*\r\n\r\n---\r\n\r\n### **HYBRID SPECIALIZATIONS — 10 Skills**",
-        "lore_quote": "** *Automatic maintenance. Set-and-forget support.*\r\n\r\n---\r\n\r\n### **HYBRID SPECIALIZATIONS — 10 Skills**",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Cleanse, Cleanse, Heal.",
-        "mastery_perk": "Mastery Lvl 5: (Perfect Perpetual): [Cleanse] 2 debuffs.\r\n    * Evo B (Enhanced Perpetual): Also [Heal] 5 Ojas per cleanse.\r\n    * Note: *Automatic maintenance. Set-and-forget support.*\r\n\r\n---\r\n\r\n### HYBRID SPECIALIZATIONS — 10 Skills",
+        "description": "** Passive: Allies automatically [Cleanse] 1 debuff at end of each turn.\r\n    * **Evo A (Perfect Perpetual):** [Cleanse] 2 debuffs.\r\n    * **Evo B (Enhanced Perpetual):** Also [Heal] 5 Ojas per cleanse.\r\n    * **Note:** *Automatic maintenance. Set-and-forget support.*\r\n\r\n---\r\n\r\n### **HYBRID SPECIALIZATIONS \u2014 10 Skills**",
+        "lore_quote": "** *Automatic maintenance. Set-and-forget support.*\r\n\r\n---\r\n\r\n### **HYBRID SPECIALIZATIONS \u2014 10 Skills**",
+        "tactical_brief": "Deploy Perpetual Cleansing to leverage CLEANSE, CLEANSE, HEAL.  Passive: Allies automatically [Cleanse] 1 debuff at end of ...",
+        "mastery_perk": "Mastery Lvl 5: (Perfect Perpetual): [Cleanse] 2 debuffs.\r\n    * Evo B (Enhanced Perpetual): Also [Heal] 5 Ojas per cleanse.\r\n    * Note: *Automatic maintenance. Set-and-forget support.*\r\n\r\n---\r\n\r\n### HYBRID SPECIALIZATIONS \u2014 10 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 65 Gnosis",
@@ -3520,7 +3520,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** All [Heal] glyphs also grant 50% value as [Shield].\r\n    * **Evo A (Perfect Balance):** 75% value as shield.\r\n    * **Evo B (Enhanced Balance):** Also [Cleanse] 1 debuff.\r\n    * **Note:** *Three-way hybrid. Jack-of-all-trades build.*",
         "lore_quote": "** *Three-way hybrid. Jack-of-all-trades build.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Cleanse.",
+        "tactical_brief": "Deploy Balanced Healer to leverage HEAL, SHIELD, CLEANSE.  All [Heal] glyphs also grant 50% value as [Shield].     * E...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Balance): 75% value as shield.\r\n    * Evo B (Enhanced Balance): Also [Cleanse] 1 debuff.\r\n    * Note: *Three-way hybrid. Jack-of-all-trades build.*",
         "gameplay_info": {
             "usage": [
@@ -3569,7 +3569,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** All [Heal]/[Shield]/[Cleanse] also deal 15 damage to nearest enemy.\r\n    * **Evo A (Perfect Aggression):** 25 damage instead.\r\n    * **Evo B (Multi-Aggression):** Affects 2 enemies.\r\n    * **Note:** *Combat medic. Offensive support specialist.*",
         "lore_quote": "** *Combat medic. Offensive support specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Cleanse.",
+        "tactical_brief": "Deploy Aggressive Support to leverage HEAL, SHIELD, CLEANSE.  All [Heal]/[Shield]/[Cleanse] also deal 15 damage to neares...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Aggression): 25 damage instead.\r\n    * Evo B (Multi-Aggression): Affects 2 enemies.\r\n    * Note: *Combat medic. Offensive support specialist.*",
         "gameplay_info": {
             "usage": [
@@ -3616,9 +3616,9 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 60,
             "heal": 78
         },
-        "description": "** Convert between effects freely: [Heal] ↔ [Shield] ↔ [Cleanse] at 75% value. Cooldown: 2 turns.\r\n    * **Evo A (Perfect Transmutation):** 100% value.\r\n    * **Evo B (Frequent Transmutation):** Cooldown 1 turn.\r\n    * **Note:** *Ultimate flexibility. Adapt to any situation.*",
+        "description": "** Convert between effects freely: [Heal] \u2194 [Shield] \u2194 [Cleanse] at 75% value. Cooldown: 2 turns.\r\n    * **Evo A (Perfect Transmutation):** 100% value.\r\n    * **Evo B (Frequent Transmutation):** Cooldown 1 turn.\r\n    * **Note:** *Ultimate flexibility. Adapt to any situation.*",
         "lore_quote": "** *Ultimate flexibility. Adapt to any situation.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Cleanse.",
+        "tactical_brief": "Deploy Transmutation Master to leverage HEAL, SHIELD, CLEANSE.  Convert between effects freely: [Heal] \u2194 [Shield] \u2194 [Cleans...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Transmutation): 100% value.\r\n    * Evo B (Frequent Transmutation): Cooldown 1 turn.\r\n    * Note: *Ultimate flexibility. Adapt to any situation.*",
         "gameplay_info": {
             "usage": [
@@ -3663,7 +3663,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** For 2 turns, all support glyphs trigger twice at 75% potency each.\r\n    * **Evo A (Perfect Overload):** 100% potency each.\r\n    * **Evo B (Extended Overload):** Duration 3 turns.\r\n    * **Note:** *Double-casting everything. Explosive support moments.*",
         "lore_quote": "** *Double-casting everything. Explosive support moments.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Support Overload to leverage .  For 2 turns, all support glyphs trigger twice at 75% potenc...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Overload): 100% potency each.\r\n    * Evo B (Extended Overload): Duration 3 turns.\r\n    * Note: *Double-casting everything. Explosive support moments.*",
         "gameplay_info": {
             "usage": [
@@ -3704,7 +3704,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Lose 20% of max Ojas permanently. All support effects +100% for rest of duel.\r\n    * **Evo A (Tolerable Martyr):** Only lose 15%.\r\n    * **Evo B (Perfect Martyr):** +150% effects instead.\r\n    * **Note:** *Permanent sacrifice for power. All-in support build.*",
         "lore_quote": "** *Permanent sacrifice for power. All-in support build.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Martyr Complex to leverage .  Lose 20% of max Ojas permanently. All support effects +100%...",
         "mastery_perk": "Mastery Lvl 5: (Tolerable Martyr): Only lose 15%.\r\n    * Evo B (Perfect Martyr): +150% effects instead.\r\n    * Note: *Permanent sacrifice for power. All-in support build.*",
         "gameplay_info": {
             "usage": [
@@ -3745,7 +3745,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Each ally you support grants you +1 Ojas Integrity and +5 Bandwidth.\r\n    * **Evo A (Perfect Network):** +2 Integrity, +10 Bandwidth.\r\n    * **Evo B (Deep Network):** Also reduce cooldown by 1.\r\n    * **Note:** *Rewarded for spreading support. Team-focused economy.*",
         "lore_quote": "** *Rewarded for spreading support. Team-focused economy.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Support Network to leverage .  Each ally you support grants you +1 Ojas Integrity and +5 B...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Network): +2 Integrity, +10 Bandwidth.\r\n    * Evo B (Deep Network): Also reduce cooldown by 1.\r\n    * Note: *Rewarded for spreading support. Team-focused economy.*",
         "gameplay_info": {
             "usage": [
@@ -3786,7 +3786,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot support allies. All self-support +200%. Immune to all debuffs.\r\n    * **Evo A (Perfect Solo):** +300% self-support.\r\n    * **Evo B (Survivor Solo):** +100% max Ojas.\r\n    * **Note:** *Anti-team build. Pure survival specialist.*",
         "lore_quote": "** *Anti-team build. Pure survival specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Solo Healer to leverage .  Cannot support allies. All self-support +200%. Immune to al...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Solo): +300% self-support.\r\n    * Evo B (Survivor Solo): +100% max Ojas.\r\n    * Note: *Anti-team build. Pure survival specialist.*",
         "gameplay_info": {
             "usage": [
@@ -3831,7 +3831,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Link with ally for 3 turns: Share all [Heal]/[Shield]/[Cleanse] effects equally.\r\n    * **Evo A (Perfect Link):** Duration 4 turns.\r\n    * **Evo B (Multi-Link):** Can link with 2 allies.\r\n    * **Note:** *Partnership build. Duo specialist.*",
         "lore_quote": "** *Partnership build. Duo specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Cleanse.",
+        "tactical_brief": "Deploy Shared Fate to leverage HEAL, SHIELD, CLEANSE.  Link with ally for 3 turns: Share all [Heal]/[Shield]/[Clea...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Link): Duration 4 turns.\r\n    * Evo B (Multi-Link): Can link with 2 allies.\r\n    * Note: *Partnership build. Duo specialist.*",
         "gameplay_info": {
             "usage": [
@@ -3880,7 +3880,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** When any ally drops below 20% Ojas, automatically [Heal] 40, grant 30 Shield, [Cleanse] all debuffs. Cooldown: 5 turns.\r\n    * **Evo A (Perfect Emergency):** [Heal] 60, grant 50 Shield.\r\n    * **Evo B (Frequent Emergency):** Cooldown 3 turns.\r\n    * **Note:** *Ultimate save button. Clutch support specialist.*",
         "lore_quote": "** *Ultimate save button. Clutch support specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Cleanse, Heal.",
+        "tactical_brief": "Deploy Emergency Protocol to leverage HEAL, CLEANSE, HEAL.  When any ally drops below 20% Ojas, automatically [Heal] 40...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Emergency): [Heal] 60, grant 50 Shield.\r\n    * Evo B (Frequent Emergency): Cooldown 3 turns.\r\n    * Note: *Ultimate save button. Clutch support specialist.*",
         "gameplay_info": {
             "usage": [
@@ -3923,10 +3923,10 @@ window.SKILL_DB_THERAPEUTIC = [
             "cost": 55,
             "damage": 71
         },
-        "description": "** Passive: Every 3 turns, permanently increase all support effects by 5% (stacks infinitely).\r\n    * **Evo A (Rapid Sustained):** Triggers every 2 turns.\r\n    * **Evo B (Perfect Sustained):** +8% per trigger.\r\n    * **Note:** *Infinite scaling. Late-game support specialist.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS — 5 Skills**",
-        "lore_quote": "** *Infinite scaling. Late-game support specialist.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS — 5 Skills**",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
-        "mastery_perk": "Mastery Lvl 5: (Rapid Sustained): Triggers every 2 turns.\r\n    * Evo B (Perfect Sustained): +8% per trigger.\r\n    * Note: *Infinite scaling. Late-game support specialist.*\r\n\r\n---\r\n\r\n### UNIQUE BUILD ENABLERS — 5 Skills",
+        "description": "** Passive: Every 3 turns, permanently increase all support effects by 5% (stacks infinitely).\r\n    * **Evo A (Rapid Sustained):** Triggers every 2 turns.\r\n    * **Evo B (Perfect Sustained):** +8% per trigger.\r\n    * **Note:** *Infinite scaling. Late-game support specialist.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS \u2014 5 Skills**",
+        "lore_quote": "** *Infinite scaling. Late-game support specialist.*\r\n\r\n---\r\n\r\n### **UNIQUE BUILD ENABLERS \u2014 5 Skills**",
+        "tactical_brief": "Deploy Sustained Support to leverage .  Passive: Every 3 turns, permanently increase all support ef...",
+        "mastery_perk": "Mastery Lvl 5: (Rapid Sustained): Triggers every 2 turns.\r\n    * Evo B (Perfect Sustained): +8% per trigger.\r\n    * Note: *Infinite scaling. Late-game support specialist.*\r\n\r\n---\r\n\r\n### UNIQUE BUILD ENABLERS \u2014 5 Skills",
         "gameplay_info": {
             "usage": [
                 "Cost: 55 Gnosis",
@@ -3966,7 +3966,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** -50% max Ojas, but all support effects +150%.\r\n    * **Evo A (Perfect Glass):** +200% effects.\r\n    * **Evo B (Tolerable Glass):** Only -30% max Ojas.\r\n    * **Note:** *Extreme risk/reward. Fragile but powerful.*",
         "lore_quote": "** *Extreme risk/reward. Fragile but powerful.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Glass Support to leverage .  -50% max Ojas, but all support effects +150%.     * Evo A (...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Glass): +200% effects.\r\n    * Evo B (Tolerable Glass): Only -30% max Ojas.\r\n    * Note: *Extreme risk/reward. Fragile but powerful.*",
         "gameplay_info": {
             "usage": [
@@ -4007,7 +4007,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** +50% max Ojas, but all support effects -30%.\r\n    * **Evo A (Perfect Tank):** +75% max Ojas.\r\n    * **Evo B (Tolerable Tank):** Only -15% effect penalty.\r\n    * **Note:** *Opposite of glass. Survive vs power.*",
         "lore_quote": "** *Opposite of glass. Survive vs power.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. .",
+        "tactical_brief": "Deploy Tank Support to leverage .  +50% max Ojas, but all support effects -30%.     * Evo A (P...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Tank): +75% max Ojas.\r\n    * Evo B (Tolerable Tank): Only -15% effect penalty.\r\n    * Note: *Opposite of glass. Survive vs power.*",
         "gameplay_info": {
             "usage": [
@@ -4050,7 +4050,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** You [Heal] for 30% of all support value you provide to others.\r\n    * **Evo A (Perfect Vampire):** 50% instead.\r\n    * **Evo B (Enhanced Vampire):** Also gain 25% of shields you grant.\r\n    * **Note:** *Selfish support. Sustain through helping.*",
         "lore_quote": "** *Selfish support. Sustain through helping.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal.",
+        "tactical_brief": "Deploy Support Vampire to leverage HEAL.  You [Heal] for 30% of all support value you provide to othe...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Vampire): 50% instead.\r\n    * Evo B (Enhanced Vampire): Also gain 25% of shields you grant.\r\n    * Note: *Selfish support. Sustain through helping.*",
         "gameplay_info": {
             "usage": [
@@ -4096,7 +4096,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Cannot support yourself. All ally support +100%. When ally is at full health, you [Heal] 15.\r\n    * **Evo A (Perfect Selfless):** +150% ally support.\r\n    * **Evo B (Rewarded Selfless):** [Heal] 25 when ally full.\r\n    * **Note:** *Pure altruism. Team-only specialist.*",
         "lore_quote": "** *Pure altruism. Team-only specialist.*",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Heal.",
+        "tactical_brief": "Deploy Selfless Healer to leverage HEAL, HEAL.  Cannot support yourself. All ally support +100%. When ally ...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Selfless): +150% ally support.\r\n    * Evo B (Rewarded Selfless): [Heal] 25 when ally full.\r\n    * Note: *Pure altruism. Team-only specialist.*",
         "gameplay_info": {
             "usage": [
@@ -4144,7 +4144,7 @@ window.SKILL_DB_THERAPEUTIC = [
         },
         "description": "** Passive: All support glyphs cost -2 KP. When ally reaches full Ojas, gain +5 Ojas Integrity. [Heal]/[Shield]/[Cleanse] grant +1 Bandwidth each.\r\n    * **Evo A (Perfect Mastery):** Cost -3 KP, +8 Integrity.\r\n    * **Evo B (Deep Mastery):** Grant +2 Bandwidth per support action.\r\n    * **Note:** *Ultimate support synergy. Rewarded for perfection.*\r\n\r\n---",
         "lore_quote": "** *Ultimate support synergy. Rewarded for perfection.*\r\n\r\n---",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Shield, Cleanse.",
+        "tactical_brief": "Deploy Master Therapist to leverage HEAL, SHIELD, CLEANSE.  Passive: All support glyphs cost -2 KP. When ally reaches f...",
         "mastery_perk": "Mastery Lvl 5: (Perfect Mastery): Cost -3 KP, +8 Integrity.\r\n    * Evo B (Deep Mastery): Grant +2 Bandwidth per support action.\r\n    * Note: *Ultimate support synergy. Rewarded for perfection.*\r\n\r\n---",
         "gameplay_info": {
             "usage": [
@@ -4188,15 +4188,16 @@ window.SKILL_DB_THERAPEUTIC = [
         ],
         "stats": {
             "cooldown": 15,
-            "heal": 120
+            "heal": 120,
+            "cost": 72
         },
         "description": "Revive all fallen allies with 50% Ojas. They gain immunity for 2 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Resurrect, Heal, Immunity.",
+        "lore_quote": "\"The Architects break; we mend.\"",
+        "tactical_brief": "Deploy Mass Resurrection to leverage RESURRECT, HEAL, IMMUNITY. Revive all fallen allies with 50% Ojas. They gain immunity f...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 72 Gnosis",
                 "Cooldown: 15 Turns"
             ],
             "features": [
@@ -4237,15 +4238,16 @@ window.SKILL_DB_THERAPEUTIC = [
         ],
         "stats": {
             "cooldown": 12,
-            "heal": 122
+            "heal": 122,
+            "cost": 73
         },
         "description": "Create sanctuary zone. All allies inside heal 20 per turn and are immune to debuffs. Lasts 5 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Sanctuary, Heal, Immunity, Zone.",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Divine Sanctuary to leverage SANCTUARY, HEAL, IMMUNITY, ZONE. Create sanctuary zone. All allies inside heal 20 per turn an...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 73 Gnosis",
                 "Cooldown: 12 Turns"
             ],
             "features": [
@@ -4286,15 +4288,16 @@ window.SKILL_DB_THERAPEUTIC = [
         ],
         "stats": {
             "cooldown": 18,
-            "heal": 124
+            "heal": 124,
+            "cost": 74
         },
         "description": "Target ally cannot drop below 1 Ojas for 3 turns. They heal 30 per turn and are immune to Execute effects.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Immortality, Heal, Protection.",
+        "lore_quote": "\"Wholeness is our weapon against their fragmentation.\"",
+        "tactical_brief": "Deploy Eternal Life to leverage IMMORTALITY, HEAL, PROTECTION. Target ally cannot drop below 1 Ojas for 3 turns. They heal ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 74 Gnosis",
                 "Cooldown: 18 Turns"
             ],
             "features": [
@@ -4335,15 +4338,16 @@ window.SKILL_DB_THERAPEUTIC = [
         ],
         "stats": {
             "cooldown": 16,
-            "heal": 126
+            "heal": 126,
+            "cost": 75
         },
         "description": "Heal all allies to full Ojas. Remove all debuffs. Grant +50% damage and immunity for 2 turns.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Heal, Cleanse, Power, Immunity.",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Radiant Ascension to leverage HEAL, CLEANSE, POWER, IMMUNITY. Heal all allies to full Ojas. Remove all debuffs. Grant +50%...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 75 Gnosis",
                 "Cooldown: 16 Turns"
             ],
             "features": [
@@ -4384,15 +4388,16 @@ window.SKILL_DB_THERAPEUTIC = [
         ],
         "stats": {
             "cooldown": 20,
-            "damage": 128
+            "damage": 128,
+            "cost": 76
         },
         "description": "Permanent passive: When you would die, instead fully heal and gain 5 turns of immunity. Can only trigger once per duel.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Resurrect, Immortality, Ultimate.",
+        "lore_quote": "\"Mend the spirit, and the body follows.\"",
+        "tactical_brief": "Deploy Phoenix Rebirth to leverage RESURRECT, IMMORTALITY, ULTIMATE. Permanent passive: When you would die, instead fully heal an...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 76 Gnosis",
                 "Cooldown: 20 Turns"
             ],
             "features": [
@@ -4433,15 +4438,16 @@ window.SKILL_DB_THERAPEUTIC = [
         ],
         "stats": {
             "cooldown": 30,
-            "damage": 110
+            "damage": 110,
+            "cost": 66
         },
         "description": "ULTIMATE: Reset the entire duel state. All Ojas restored to maximum, all cooldowns reset, all debuffs removed, all resources refilled. Both players draw 5 cards.",
-        "lore_quote": "\"A technique from the Therapeutic engine.\"",
-        "tactical_brief": "Utilizes Therapeutic mechanics. Ultimate, Reset, Renewal, Miracle.",
+        "lore_quote": "\"Wholeness is our natural state.\"",
+        "tactical_brief": "Deploy Cosmic Renewal to leverage ULTIMATE, RESET, RENEWAL, MIRACLE. ULTIMATE: Reset the entire duel state. All Ojas restored to ...",
         "mastery_perk": "Mastery Lvl 5: Enhanced potency.",
         "gameplay_info": {
             "usage": [
-                "Cost: undefined Gnosis",
+                "Cost: 66 Gnosis",
                 "Cooldown: 30 Turns"
             ],
             "features": [

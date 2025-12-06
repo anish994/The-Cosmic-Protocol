@@ -1,0 +1,2173 @@
+[
+  {
+    "id": "c6dbae92-2de4-4bac-9f7b-1a168db41f94",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b5c215ed-d815-46fd-8a5c-5e48930044da",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a42118a9-946e-47c7-ac09-27e5779b02fb",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "101a88b2-c668-4440-a49f-7195518e5226",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "2ba23edb-058e-41e3-87ef-e1f08e5adf9f",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "f68cd58e-c2dd-40bc-bf9f-d131f23dad00",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "9c1705dd-df3a-49b0-918b-0abbd833b20a",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "6b64e09b-d964-4e57-9638-bf63b9d540ce",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "4669748a-9494-443a-b3f8-1664741c3af6",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "697f79ab-2df8-4910-a70b-6b8af682d28e",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "23668186-8679-4da5-84cd-1ed5d5ae0404",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "1e1e4b79-17d2-40ac-a80a-737a0f798d62",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3ed57080-e6c0-4707-abe6-e54dea637f9e",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3f4fbb0f-f5b7-47b0-8561-5d205cf12a81",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3b3a703f-ef41-4de7-998e-1107b8f9a62b",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "642cf858-d108-4e9b-8404-83c38ab25a2a",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5ca268df-e432-46a2-b974-5dad5cbb71e0",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "87070a3a-3300-4480-b151-fe89f919aef3",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0b513001-e124-438b-8f61-b2f0f227c82b",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5b32c86b-66e1-49ce-a1ef-edfefe35d78a",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "78459879-6dd9-4fe5-89b7-b6b8f69a0d12",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "dae0bfc4-8e5b-4660-a05f-49afac6d8920",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "942dad8c-6768-488f-a46f-9eba219aa528",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "762ca548-0c70-40ba-a68f-6b194532ebc7",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0ef6847f-8a24-4c46-85ac-6b4761348a3d",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0b0bd89e-7d0d-4ba4-90ec-6a3235c47e7b",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "479c0523-cd1c-481a-bf41-17e427500228",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "d1e8fde0-7ecf-4cec-991c-529fb6cefbe7",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ef12ac13-e905-4cb9-9411-432d75abb1bf",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0508df69-ee7b-4a66-bb5b-47e3ffae193b",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "cafcc02f-66c3-444e-8604-b2ebd504079e",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "dc02838b-6d71-4210-bf70-cd8df0b8d3f8",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "eb9bd298-77f7-4176-9817-386945a09941",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "740bad18-5aae-4e26-9875-807a6d53684a",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "fba892e8-f4aa-4d82-9acd-de87441495ab",
+    "context": "A high-intensity scene involving eldritch themes in the Karmic Wheel.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "df352f90-16a9-41a7-9959-8001c79604b0",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "305f4fa4-8103-42c9-b808-c8d66bffb78a",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "660e88ed-9dc8-4ec1-b456-40bbea696def",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "fedb98ea-7481-4a3a-b5f1-0ff810ae9b4e",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "eb405c33-a8b4-4d6c-a67f-e4c42f66a919",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a0dec4c7-2e53-4406-8980-15524679b95a",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "6abb0fae-0545-4205-8ab3-66216690fad5",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "6779a643-b64d-4e7b-b5a6-90c3ef5bb2e6",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0497148b-5390-46d0-b0c3-7f5f903e7399",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "531e6ced-83ec-4597-bd9e-4c9c4951b679",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b70c9656-6709-4627-89c5-d8dc45e6ee62",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b0aa7890-8dbf-42f6-bb07-dcfed2e5891a",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3b8761b2-bc69-4a54-a609-d8159a235e71",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "965d0694-4d6b-4569-be42-bf8d317a21a4",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "525434c6-42c0-4703-bcc1-30f185e6629f",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "cd7b03d7-8f0e-457c-a331-32eb6801122f",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ae7d6600-6337-4a1e-ab51-cb33130b5ab3",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "99a3374b-fc5b-4468-8182-63171b07ead4",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "19948421-6a95-4f38-9f68-a442dd212729",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "c974a634-f8c4-40d2-9b3f-2c593c6a23eb",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "143a4e9a-8784-49bd-a43b-52bfe5a755c4",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "2a538f32-5a4e-4730-bb92-99e8681feefd",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5d806324-5f39-4bea-b034-30e778043823",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ecef46bf-9866-4b02-a7c0-8e0eafeb364b",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "c77ddf9f-4b4c-4963-831f-5bc7da6e5df7",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0f87f0d2-278c-42fd-83b7-5ec1473af50f",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "54fa55ba-5cf1-4892-9790-642222cbada0",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "97708c96-fd60-404f-8df5-b5469d2d4451",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "86dd6719-ebd1-4f2d-a5a3-05e420277b4a",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "4125d7f8-9573-4900-b81c-9e961ada0748",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5588c806-7986-4881-a2e1-d94cee74a80e",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "2e3fe6ee-20a5-4a78-ac1d-041282da220b",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "aa845667-4649-4463-b25a-7373b61a2d30",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "f1061800-535d-4d13-9a12-71802b52bec8",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "4fb351ad-4668-4df0-8277-5d251735dbb0",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "09712d88-7c31-4d52-94f4-ad0b47693741",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "db03d804-0436-4866-9f34-da70f9b31844",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "32ff38f9-1e83-4e8b-bf0f-b09c59c0398b",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0099db52-30c1-41ed-9d06-4c79308238c8",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "45348984-413a-46b3-99c6-27166f16e188",
+    "context": "A high-intensity scene involving eldritch themes in the Karmic Wheel.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b00cec54-6b9c-49ae-b58a-3e71aa94ad20",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "01c10ade-ced4-429c-9a4c-413a07c36923",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "2bc5f23b-b757-4a27-bb61-c9ceb2d04dc0",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3d0ad94c-4deb-49e6-968b-17a344838362",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "df1e65ed-d357-4560-95d3-aec9799dadd4",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ba9e66be-3f7b-486e-84ec-bcbb60de5cb9",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "cfd35ecb-12d6-4081-8177-a855bb89b5bd",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5b2b062d-b0a5-450a-a841-635962e4714d",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "d10e4931-c268-49ce-8d66-8b14b9d2fa50",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "af198b42-df1f-4640-850f-802e211898ac",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "385c671f-d3a8-41dd-bfe0-f3cee1bd04d4",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ee133be6-c3d9-4005-ba4e-e24aa761fbe5",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "e8ada4d8-0977-4e1d-8be2-8be03fccda6d",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "44ac58c0-97e6-45d2-a11c-98691cc99953",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3f1f835c-fdd6-46ab-adf6-097532104972",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ef01d1a6-dd64-4886-912c-fef25b625364",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "07d1a1b3-3721-4778-a29f-f4c010250749",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7f7f63af-eb5a-48cf-a7b9-6fb869ba2810",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7a8e6746-dac1-4e7e-989e-9d76a218967c",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "142c8d3c-374a-4fcf-a80d-07ec81088d02",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "4aceff05-837a-4cee-8a3a-7212a42f6a11",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5a24c05b-7266-4e3d-a860-c20660ece72a",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b77deda6-8b85-41d7-a8d7-38c799dfe7e0",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "f49d1a03-a2f6-487c-a537-cf916d6ad84d",
+    "context": "A high-intensity scene involving eldritch themes in the Karmic Wheel.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0c70d795-1aee-4e1f-9f1f-7c53bee253ae",
+    "context": "A high-intensity scene involving eldritch themes in the Karmic Wheel.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7c55b08a-d489-4b45-a269-34f2d5ef5d65",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "be645ccd-e3cc-4108-9845-0ca8a72f2666",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "cbbeba24-5c1e-4fdf-88b8-d5a7dc6f9151",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "8a8a245c-847a-4c14-9004-53806ce5b735",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b1f3b533-7fcf-477e-82c7-f8b7345c7076",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a63545b8-809e-4965-b1ce-87ee873724b1",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3b78798a-7adb-4e25-9597-beba4c5d6aab",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "69d3533d-c766-47f1-9390-bee7fa166edb",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "e0eaea4e-8aa1-4a5d-8974-d6b555474f40",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "c65e712e-af44-4e6e-82b7-dc04345165ba",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "168d3bd4-79b6-4e2e-abf9-6945a8b9b945",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "1ffd6e4d-2f66-40e4-b39b-0c436679ff26",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "f6b2d7fb-f071-40e0-b9b5-61024109f15f",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "556005ce-4913-4c53-ab5c-339dcd7b8e0b",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0a96684c-3741-4cc0-9fdd-b1f2b01c0d7f",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "e4b0dc3f-c766-48e9-9650-4068031d7c5d",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "2d003d24-8d5b-484c-8bce-b3ec98092b37",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "92d9a1e2-966e-471b-bf4b-3866cf74d325",
+    "context": "A high-intensity scene involving eldritch themes in the Abyssal Trench.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "9b28e6d4-9b39-4990-8a77-4848d76f7d1b",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b9b6b2ac-9887-49cb-a893-78f3d6ef07d8",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "de7b1020-0f80-444c-9e71-5147fa37c0ed",
+    "context": "A high-intensity scene involving eldritch themes in the Sun-Spire.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "d8510389-dab3-40ce-a0c6-e1b8f4dcd9bf",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "acfd0eb3-f092-47af-8d08-01b3eb53299b",
+    "context": "A high-intensity scene involving eldritch themes in the Forgotten Crypt.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "efdde846-2735-4158-89fd-f8cc25f0762d",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5c125cea-51a4-4bc9-9fb9-e35301ca5c42",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "caa9daad-e310-4184-8670-358309d9a955",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b6ef507c-5973-447c-bc3b-45f1b9d3e567",
+    "context": "A high-intensity scene involving eldritch themes in the Crimson Battlefield.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "eb591c5f-94ca-4252-a745-4ee752b68dad",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "06dd979b-90ea-4054-8bd6-aa4069814d60",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "cf4b71b3-60d7-4706-b226-01389285c140",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5510eef2-c2bb-4522-bcc1-d35fc4443e48",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a9af4866-21c8-4463-9c38-637a963625f1",
+    "context": "A high-intensity scene involving eldritch themes in the Karmic Wheel.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7729bf01-0f93-4d14-b92a-879ac7be3cd7",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "cabd0289-fe34-4656-8409-d61f8772e4f1",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b77efc1c-9ef9-42f5-b11e-54aed414f913",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5c3cdd82-3316-400e-9d46-75aeed4ebb04",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "947cb4fe-8a69-4be8-8c1e-5fccaa5b3ff8",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "8772524b-a4d0-45dd-aa9f-f55b24a7241c",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "0612e006-c6df-454b-bdd7-b934a85408da",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "5405ac53-f45a-4a2b-90ff-8b0581636963",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ce7df53f-52d2-4251-903a-c23c764f971e",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "b168ea2a-9973-4054-945f-c58ecf2fc2c8",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7fa97cb5-3224-4b16-bbe2-f0c23f92a9dd",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "4dfe14aa-695b-472e-8bc2-ba1bc0a02d93",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "39d1d055-c84f-40d1-8b8d-50aa3a66b95d",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "d9438cad-d500-4360-9c36-1c1af65870d7",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "34ae8ab9-88c3-4be8-9733-5f1a876ecee3",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7ebb8bb5-42e6-4769-b620-5c00a39f5f36",
+    "context": "A high-intensity scene involving eldritch themes in the Soul Forge.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "fce0ef95-a5af-4ae9-9622-66d772c9cb53",
+    "context": "A high-intensity scene involving eldritch themes in the Echo Chamber.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "755eef13-c567-4e73-a718-37e5f8f66d26",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "6024366b-f2d2-448d-be85-22524f166960",
+    "context": "A high-intensity scene involving eldritch themes in the Rotting Gardens.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "2adca73e-d159-450a-8c87-eb89d2c37b7d",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "d2b841eb-31fb-406f-a05c-e1e0cd9cc06f",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "3ac7c1de-9189-4259-919d-5b152e13ee6e",
+    "context": "A high-intensity scene involving eldritch themes in the Frozen Wastes.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "add9a2fe-9777-4ab2-ac82-c0df060e30af",
+    "context": "A high-intensity scene involving eldritch themes in the Astral Nexus.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "de565ba5-b6b7-409f-b14e-983d70c012b2",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I don't know who I am anymore.",
+    "output": "Identity is a cage. Break the bars. Let the Void pour in and fill the hollow.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "50cd2027-675a-4489-98bc-fa6f4395e518",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ad28bb9d-eeea-458a-b8dd-586c75f45528",
+    "context": "A high-intensity scene involving eldritch themes in the Veiled Market.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "7caa70e0-770c-45c4-92a9-22cab01da10f",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "98d47855-825b-4d44-906e-fc6433a4e0e5",
+    "context": "A high-intensity scene involving eldritch themes in the Void Edge.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "ab4e5c86-038f-4196-bc89-0da8b8b8507b",
+    "context": "A high-intensity scene involving eldritch themes in the Obsidian Throne.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "8e6179b4-42c9-4bdd-9d35-38111a65cc85",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "08ad805d-b8c1-4073-8770-20106ff8f773",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "4510fdba-50ab-491a-94f5-0b1158acc512",
+    "context": "A high-intensity scene involving eldritch themes in the Whispering Archives.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "9f731783-73bc-4b02-bbcc-b49bc4310a69",
+    "context": "A high-intensity scene involving eldritch themes in the Karmic Wheel.",
+    "input": "Something is watching us.",
+    "output": "Everything is watching. The eyes of the universe are open, and they are hungry.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "84d059be-d480-4797-a886-bcd721f8c9f4",
+    "context": "A high-intensity scene involving eldritch themes in the Dream-Weaver's Den.",
+    "input": "The sky... it's bleeding.",
+    "output": "It is not blood. It is the memory of a star that screamed before it died. Do not look up.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  },
+  {
+    "id": "a370e688-63db-44cc-a178-6078efc72882",
+    "context": "A high-intensity scene involving eldritch themes in the Shattered Citadel.",
+    "input": "I hear whispers in the walls.",
+    "output": "They are not in the walls. They are in the spaces between. Do not listen, or you will become the sound.",
+    "emotion": "terrified",
+    "style": "eldritch",
+    "tags": [
+      "horror",
+      "madness",
+      "mystery"
+    ]
+  }
+]
