@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Cosmic Card Creator - Jotysh Engine</title>
-    <!-- NOTE: Lagna selector replaced with sleek mechanical slider (see workshop/test .html) -->
+     <!-- NOTE: Lagna selector replaced with sleek mechanical slider (see workshop/test .html) -->
     <style>
         :root {
             --bg-dark: #050508;
@@ -98,6 +98,67 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Compact boxed Jotysh badges for skill facets (small, centered, responsive) */
+        .facet-jotysh-badges {
+            display:flex;
+            gap:0.4rem;
+            margin:0.18em auto 0.28em auto; /* centered and spaced */
+            align-items:center;
+            justify-content:center;
+            flex-wrap:wrap; /* allow wrapping on small widths */
+            max-width: calc(100% - 1.4rem); /* keep inside card with padding */
+            box-sizing: border-box;
+        }
+        .facet-jotysh-badges .j-badge {
+            display:inline-flex;
+            align-items:center;
+            gap:0.22rem;
+            padding:0.10rem 0.45rem;
+            border-radius:7px;
+            background:rgba(255,255,255,0.04);
+            border:1px solid rgba(255,255,255,0.08);
+            font-size:0.68rem;
+            font-weight:600;
+            flex: 0 1 auto; /* shrinkable but not forced equal width */
+            min-width:48px;
+            max-width:40%; /* avoid any single badge taking too much space */
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            justify-content:center;
+            transition:box-shadow 0.15s, opacity 0.12s, transform 0.08s;
+        }
+        .facet-jotysh-badges .j-badge.planet { background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); }
+
+        /* Active/Enabled state */
+        .facet-jotysh-badges .j-badge.active { opacity:1; box-shadow: 0 6px 18px rgba(0,0,0,0.28); transform:translateY(-1px); }
+        /* Locked (after invocation) */
+        .facet-jotysh-badges .j-badge.locked { opacity:0.5; pointer-events:none; filter:grayscale(20%); }
+        /* Focus and keyboard visibility */
+        .facet-jotysh-badges .j-badge:focus { outline:2px solid rgba(99,102,241,0.18); outline-offset:2px; box-shadow:0 8px 20px rgba(16,24,40,0.12); }
+        .facet-jotysh-badges .j-badge[aria-disabled="true"] { cursor:not-allowed; }
+        .facet-jotysh-badges .j-badge .lock-icon { margin-left:6px; font-size:0.82em; opacity:0.85; }
+
+        /* small tweak for mobile */
+        @media (max-width:420px) {
+            .facet-jotysh-badges .j-badge { padding:0.08rem 0.36rem; font-size:0.62rem; }
+        }
+        .card-skill-facet .facet-narrative { margin-top:0.6rem; line-height:1.28; color:var(--text-main); }
+        @media (max-width:620px) {
+            .facet-jotysh-badges { gap:0.28rem; }
+            .facet-jotysh-badges .j-badge { min-width:40px; max-width:48%; padding:0.08rem 0.36rem; font-size:0.66rem; }
+        }
+
+        /* New 2x2 Jotysh grid styling (compact, top-right) */
+        /* Remove 2x2 grid styles (we now use a horizontal single-row layout) */
+
+        /* Modern rarity badge below the name */
+        .modern-tier-badge { display:block; margin-top:0.18rem; font-size:0.66rem; font-weight:700; padding:0.08rem 0.42rem; border-radius:6px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); color:var(--text-main); letter-spacing:0.4px; }
+
+        @media (max-width:620px) {
+            .modern-tier-badge { font-size:0.62rem; padding:0.06rem 0.32rem; }
         }
         .schematics-btn-illusion .schem-bottom { opacity:0.9; font-weight:600; }
 
@@ -1746,6 +1807,18 @@
         .jotysh-blueprint-modal.minimized .blueprint-legend { display:none; }
         .jotysh-blueprint-modal.minimized .jotysh-blueprint-header { padding: 0.45rem 0.6rem; }
         .jotysh-blueprint-modal.maximized { width: min(98vw, 1000px); height: calc(94vh); left:50%; transform: translateX(-50%); top:3vh; }
+
+        /* Card Name Modal (live-updating preview while typing) */
+        .card-name-modal { display:none; position:fixed; inset:0; z-index:99999; align-items:center; justify-content:center; }
+        .card-name-modal.visible { display:flex; }
+        .card-name-overlay { position:fixed; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.65)); /* no backdrop blur — keep page sharp */ }
+        .card-name-dialog { position:relative; width:min(560px, 94vw); background:linear-gradient(180deg, rgba(15,12,25,0.9), rgba(10,8,18,0.95)); border:1px solid rgba(255,255,255,0.04); padding:1rem; border-radius:12px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); z-index:999999; }
+        .card-name-header { display:flex; justify-content:space-between; align-items:center; gap:0.6rem; margin-bottom:0.6rem; }
+        .card-name-body input { width:100%; padding:0.65rem 0.8rem; border-radius:8px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color:var(--text-main); font-weight:600; }
+        .card-name-body .cosmic-btn { padding:0.5rem 0.9rem; }
+        .card-name-error { color:#fb7185; font-size:0.85rem; margin-top:0.4rem; }
+        .modal-close { background:transparent; border:none; color:var(--text-main); font-size:1.1rem; cursor:pointer; padding:0.2rem 0.4rem; }
+
         .jotysh-blueprint-header { display:flex; gap:0.8rem; align-items:center; justify-content:space-between; padding: 0.6rem 0.8rem; border-bottom:1px solid rgba(255,255,255,0.04); }
         .jotysh-blueprint-title { font-size:1.05rem; font-weight:700; }
         .jotysh-blueprint-close,
@@ -2672,12 +2745,85 @@
             border-color: rgba(139, 92, 246, 0.3);
         }
 
+        .search-action-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-action-btn:hover {
+            color: var(--accent-glow);
+            background: rgba(139,92,246,0.1);
+        }
+
+        .search-action-btn.active {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
         /* Tag chips styles (replaces quick-filters) */
-        .tag-filters { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem; }
-        .tag-chips { display:flex; gap:0.4rem; flex-wrap:wrap; }
-        .tag-chip { padding:0.28em 0.56em; border-radius:12px; border:1px solid rgba(255,255,255,0.06); background:rgba(24,24,32,0.6); color:#ccc; font-size:0.75em; cursor:pointer; transition:all 0.12s; }
-        .tag-chip.active { background:rgba(139,92,246,0.36); border-color:rgba(139,92,246,0.48); color:#fff; }
-        .tag-chip:hover { transform:translateY(-1px); color:#fff; }
+        .tag-chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .tag-chips-container.visible {
+            max-height: 120px; /* Approx 3 rows */
+            overflow-y: auto;
+            opacity: 1;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .tag-chip {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-dim);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tag-chip:hover {
+            background: rgba(139,92,246,0.15);
+            color: #fff;
+            border-color: rgba(139,92,246,0.3);
+        }
+
+        .tag-chip.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 10px rgba(139,92,246,0.2);
+        }
+
+        .tag-chip .count {
+            font-size: 0.6rem;
+            opacity: 0.6;
+            background: rgba(0,0,0,0.2);
+            padding: 0 4px;
+            border-radius: 6px;
+        }
         /* overflow dropdown removed; tag chips render inline */
 
         mark {
@@ -2887,20 +3033,27 @@
             flex: 1 1 0;
             min-width: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
             justify-content: flex-start;
-            word-break: break-word;
-            max-width: 180px;
+            word-break: normal;
+            max-width: 260px;
         }
         .compact-name {
-            font-size: 0.65rem;
+            font-size: 1.05rem;
             color: var(--accent-glow);
-            margin-top: 2px;
-            font-style: italic;
-            white-space: normal;
-            opacity: 0.85;
-            overflow-wrap: break-word;
-            word-break: break-word;
+            margin: 0.35em 0 0 0;
+            font-style: normal;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            opacity: 0.98;
+            line-height: 1.25;
+            display: block;
+            text-align: left;
+            max-width: 160px;
         }
         .compact-tier {
             font-size: 1.05rem;
@@ -2966,15 +3119,16 @@
         .compact-stats {
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            gap: 0.1em;
-            font-size: 0.7rem;
-            background: rgba(0,0,0,0.15);
-            border-radius: 4px;
-            padding: 0.1em 0.4em;
+            align-items: flex-start;
+            gap: 0.15em;
+            font-size: 0.75rem;
+            background: rgba(0,0,0,0.12);
+            border-radius: 6px;
+            padding: 0.12em 0.5em;
             margin-left: 0.5em;
-            min-width: 70px;
-            word-break: keep-all;
+            min-width: 90px;
+            max-width: 180px;
+            word-break: normal;
         }
         .mini-preview {
             background: linear-gradient(180deg, rgba(10, 14, 20, 0.9) 0%, rgba(6, 8, 12, 0.95) 100%);
@@ -3130,6 +3284,404 @@
             .nakshatra-btn:hover { transform: none; }
         }
 
+        /* Better touch feedback for interactive elements */
+        @media (hover: none) and (pointer: coarse) {
+            .blueprint-house:hover { transform: none; box-shadow: none; }
+            .nakshatra-btn:hover { transform: none; }
+        }
+
+        /* Gameplay Card Preview Styles - Premium Upgrade */
+        .gameplay-card-preview {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: linear-gradient(135deg, #18122b 0%, #2d1e4f 100%);
+            border: 1px solid #8b5cf6;
+            border-radius: 12px;
+            box-shadow: 0 0 25px #8b5cf6aa, 0 4px 18px #000a, 0 0 0 4px #312e8133;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            margin: 0.8rem auto;
+            max-width: 480px;
+            color: #e2e8f0;
+            gap: 0.8rem;
+            padding: 1rem 0.8rem 0.8rem 0.8rem;
+            animation: cardPulse 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes cardPulse {
+            0%,100% { box-shadow: 0 0 40px #8b5cf6aa, 0 4px 24px #000a, 0 0 0 8px #312e8133; }
+            50% { box-shadow: 0 0 60px #f59e0baa, 0 8px 32px #000a, 0 0 0 12px #f59e0b33; }
+        }
+
+        .gameplay-card-preview::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6, #10b981);
+            z-index: 10;
+        }
+
+        /* Cosmic Scrollbar for Card Preview */
+        .gameplay-card-preview::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .gameplay-card-preview::-webkit-scrollbar-track {
+            background: rgba(49, 46, 129, 0.1);
+            border-radius: 3px;
+        }
+
+        .gameplay-card-preview::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #3b82f6);
+            border-radius: 3px;
+            box-shadow: 0 0 4px rgba(139, 92, 246, 0.4);
+        }
+
+        .gameplay-card-preview::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #a78bfa, #60a5fa);
+            box-shadow: 0 0 6px rgba(139, 92, 246, 0.6);
+        }
+
+        .card-header {
+            padding: 0.8rem 1rem;
+            border-radius: 12px 12px 0 0;
+            border-bottom: 1px solid #a78bfa44;
+            background: linear-gradient(90deg, #312e81 0%, #8b5cf6 100%);
+            box-shadow: 0 2px 10px #8b5cf633;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-identity {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .card-archetype {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #f59e0b;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.1em;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            text-align: center;
+            background: linear-gradient(90deg, #f59e0b 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(245,158,11,0.12);
+            margin-bottom: 0.1em;
+            cursor: pointer; /* indicates editable */
+            transition: transform 140ms var(--easing-smooth), opacity 120ms ease;
+        }
+        .card-title:hover { transform: translateY(-1px); }
+        .card-title-icon { display:inline-block; width:18px; height:18px; margin-left:0.45rem; color:#ffd166; opacity:1; transform:translateY(0); transition: transform 140ms ease; vertical-align:middle; }
+        .card-title:hover .card-title-icon, .card-title:focus .card-title-icon { transform:translateY(-2px); }
+
+        /* Compact toggle button next to title */
+
+
+        /* Compact mode: hide right metadata and simplify left stack */
+        .gameplay-card-preview.compact-meta .meta-right { display:none; }
+        .gameplay-card-preview.compact-meta .meta-usage { display:none; }
+        .gameplay-card-preview.compact-meta .meta-primary { padding:0.28rem 0.6rem; font-size:0.92rem; }
+        .card-title:focus { outline: 2px solid rgba(139,92,246,0.18); outline-offset:4px; border-radius:6px; }
+
+        /* Compact card-level metadata row shown under the title */
+        .card-meta { display:flex; gap:0.5rem; align-items:center; justify-content:center; margin-top:0.45rem; flex-wrap:wrap; }
+        .card-meta .meta-item { background: rgba(255,255,255,0.02); padding:0.3rem 0.7rem; border-radius:8px; font-weight:700; color:var(--text-main); font-size:0.88rem; display:inline-flex; align-items:center; gap:0.45rem; }
+        .card-meta .meta-item svg { width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.25rem; fill:var(--accent-glow); opacity:0.95; }
+        /* responsive: hide less-important items on narrower widths */
+        @media (max-width: 720px) {
+            .card-meta .meta-item.meta-tags,
+            .card-meta .meta-item.meta-role { display:none; }
+        }
+        @media (max-width: 420px) {
+            .card-meta .meta-item.meta-cd { display:none; }
+            .card-meta { gap:0.35rem; }
+            .card-meta .meta-item { padding:0.22rem 0.45rem; font-size:0.82rem; }
+        }
+        .card-meta .meta-item b { font-weight:900; color:#f8e7b8; }
+
+        .card-badges {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .card-badge {
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.25em 0.8em;
+            background: linear-gradient(90deg, #312e81 0%, #8b5cf6 100%);
+            color: #fff;
+            box-shadow: 0 0 8px #8b5cf655;
+            margin: 0 0.2em;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .card-badge.lagna { border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; }
+        .card-badge.nakshatra { border: 1px solid rgba(16, 185, 129, 0.3); color: #6ee7b7; }
+
+        .card-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        /* Cosmic Scrollbar Styling */
+        .card-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .card-body::-webkit-scrollbar-track {
+            background: rgba(49, 46, 129, 0.2);
+            border-radius: 4px;
+        }
+
+        .card-body::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #3b82f6);
+            border-radius: 4px;
+            box-shadow: 0 0 6px rgba(139, 92, 246, 0.5);
+        }
+
+        .card-body::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #a78bfa, #60a5fa);
+            box-shadow: 0 0 8px rgba(139, 92, 246, 0.7);
+        }
+
+        .card-lore-section {
+            background: linear-gradient(90deg, #312e8144 0%, #8b5cf622 100%);
+            border-radius: 10px;
+            padding: 0.8em 1em;
+            margin-bottom: 0.8em;
+            box-shadow: 0 1px 6px #8b5cf622;
+        }
+
+        .card-lore-text {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #a78bfa;
+            text-align: center;
+            letter-spacing: 0.2px;
+            line-height: 1.5;
+        }
+
+        .card-slots-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .card-skill-facet {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 0.8rem; /* increased padding for badge breathing room */
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            transition: background 0.2s, border-color 0.2s;
+            position: relative;
+            overflow: hidden; /* keep children inside */
+        }
+
+        .card-skill-facet:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        /* Visual cue for primal (all toggles off) variants */
+        .card-skill-facet.primal-vibe {
+            background: linear-gradient(90deg, rgba(220,38,38,0.02), rgba(0,0,0,0.02));
+            border-color: rgba(220,38,38,0.18);
+            box-shadow: inset 0 0 0 1px rgba(220,38,38,0.04);
+        }
+
+        .empty-facet {
+            opacity: 0.5;
+            border-style: dashed;
+        }
+
+        .facet-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .facet-icon {
+            font-size: 1.2rem;
+        }
+
+        .facet-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .facet-tier {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .facet-narrative {
+            font-size: 0.85rem;
+            color: #c7d2fe;
+            line-height: 1.3;
+            font-style: italic;
+        }
+
+        .facet-tip {
+            font-size: 0.75rem;
+            color: #a78bfa;
+            line-height: 1.4;
+            background: rgba(139, 92, 246, 0.1);
+            padding: 0.3rem;
+            border-radius: 4px;
+            border-left: 3px solid #8b5cf6;
+        }
+
+        .facet-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: #a78bfa;
+            flex-wrap: wrap;
+        }
+
+        .facet-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+        }
+
+        .facet-tags {
+            display: flex;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+        }
+
+        .facet-jotysh {
+            display: flex;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+            margin-top: 0.2rem;
+        }
+
+        .card-footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 0.8rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+        }
+
+        .card-footer {
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1rem 1.5rem;
+        }
+
+        .footer-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-stat-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .footer-stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .card-actions-row {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .action-btn.primary {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .action-btn.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+        }
+
+        .action-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .empty-slot-row {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
         /* Nakshatra slider CSS removed — new slider will reuse Lagna slider styles for consistency */
     </style>
 </head>
@@ -3143,6 +3695,8 @@
     <div class="particle-container" id="particle-container"></div>
 
     <div class="cosmic-workspace">
+        <!-- Tiny Reset Button in Top Corner -->
+        <button onclick="clearBlueprint()" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; color: white; font-size: 0.7rem; padding: 0.2rem 0.4rem; cursor: pointer; z-index: 1000;" title="Reset Blueprint">↺</button>
         
         <!-- LEFT PANEL: Neural Archive / Skill Library -->
         <div class="cosmic-panel" id="left-panel">
@@ -3173,7 +3727,10 @@
                 </div>
                 <div class="panel-actions">
                     <button class="cosmic-btn" title="Reset">🔄</button>
-                    <button class="cosmic-btn primary" id="invoke-card-btn" title="Invoke card">🎴 Invoke Card</button>
+                    <!-- Slots filled indicator: non-clickable summary (was invoke button) -->
+                    <span id="slots-filled-indicator" class="cosmic-btn" style="pointer-events:none; background:rgba(139,92,246,0.02); color:var(--muted); font-weight:700;">
+                        <span style="margin-right:0.5rem;">🔢</span><span id="slots-filled-count">Slots: 0/12</span>
+                    </span>
                     <!-- Blueprint info (opens modal) -->
                     <button class="cosmic-btn" id="jotysh-blueprint-btn" title="Jotysh Blueprint" aria-controls="jotysh-blueprint-modal" aria-haspopup="dialog">ℹ️</button>
                 </div>
@@ -3224,6 +3781,11 @@
                         </div>
                     </div>
                     <div id="vedic-chart" class="vedic-chart"></div>
+                    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+                        <button class="action-btn primary" id="invoke-card-btn-preview" style="padding: 0.8rem 1.5rem; font-size: 1rem;" onclick="invokeCardFromJotysh()">
+                            <span>⚡ SYNC ACTION CODEX</span>
+                        </button>
+                    </div>
                     
             </div>
         </div>
@@ -3237,6 +3799,7 @@
                 </div>
                 <div class="panel-actions">
                     <button class="cosmic-btn" title="Save card">💾</button>
+                    <button class="cosmic-btn" title="View My Cards" onclick="window.open('my_cards.html', '_blank')">📚 My Cards</button>
                 </div>
             </div>
             <div class="panel-content">
@@ -3586,34 +4149,50 @@
             if (!t) return;
             if (selectedTags.has(t)) selectedTags.delete(t);
             else selectedTags.add(t);
-            renderTagFilters();
+            renderTagChips();
             renderSkillsGrid(document.getElementById('skill-search') ? document.getElementById('skill-search').value.trim().toLowerCase() : '');
             updateQuickFilters();
         }
 
         function clearSelectedTags() {
             selectedTags.clear();
-            renderTagFilters();
+            renderTagChips();
             renderSkillsGrid(document.getElementById('skill-search') ? document.getElementById('skill-search').value.trim().toLowerCase() : '');
             updateQuickFilters();
         }
 
-        function renderTagFilters() {
-            const tags = getSortedTagList();
-            // ensure 'siddhi' is always visible as a primary tag
-            if (!tags.includes('siddhi')) tags.unshift('siddhi');
-            const chips = document.getElementById('tagChips');
-            if (!chips) return;
-            chips.innerHTML = '';
-            tags.forEach(tag => {
-                const btn = document.createElement('button');
-                btn.className = 'tag-chip';
-                btn.textContent = tag;
-                btn.dataset.tag = tag;
-                if (selectedTags.has(tag)) btn.classList.add('active');
-                btn.addEventListener('click', () => toggleTag(tag));
-                chips.appendChild(btn);
+        function toggleTagsPanel() {
+            const container = document.getElementById('tag-chips-container');
+            const btn = document.getElementById('tags-toggle-btn');
+            container.classList.toggle('visible');
+            btn.classList.toggle('active');
+        }
+
+        function renderTagChips() {
+            const container = document.getElementById('tag-chips-container');
+            if (!container) return;
+
+            // Collect all tags and count frequency
+            const tagCounts = {};
+            ownedSkills.forEach(skill => {
+                if (skill.tags && Array.isArray(skill.tags)) {
+                    skill.tags.forEach(tag => {
+                        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                    });
+                }
             });
+
+            // Sort by count desc
+            const sortedTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]);
+
+            container.innerHTML = sortedTags.map(tag => {
+                const isActive = selectedTags.has(tag);
+                return `
+                    <div class="tag-chip ${isActive ? 'active' : ''}" onclick="toggleTag('${tag}')">
+                        ${tag} <span class="count">${tagCounts[tag]}</span>
+                    </div>
+                `;
+            }).join('');
         }
 
         function renderSkillArchive() {
@@ -3629,9 +4208,12 @@
                                 <button class="search-clear" title="Clear search">×</button>
                             </div>
                             <button class="search-help" title="Search Help">?</button>
+                            <button id="tags-toggle-btn" class="search-action-btn" title="Toggle Tags" onclick="toggleTagsPanel()" style="margin-left:auto; font-size:0.8rem; padding:0.2rem 0.5rem;">
+                                # TAGS
+                            </button>
                         </div>
-                        <div class="tag-filters">
-                            <div id="tagChips" class="tag-chips"></div>
+                        <div id="tag-chips-container" class="tag-chips-container">
+                            <!-- Populated by JS -->
                         </div>
                         <div class="engine-slider" id="engineRow"></div>
                         <div class="owned-body">
@@ -3654,7 +4236,7 @@
                     updateQuickFilters();
                 });
                 // Tag filters initialization
-                renderTagFilters();
+                renderTagChips();
                 // Function to highlight search matches
         function highlightText(text, search) {
             if (!search) return text;
@@ -3829,16 +4411,12 @@
                     miniDetail1 = skill.tactical_brief.split(/[.!?]/)[0].trim();
                 } else if (skill.flavor) {
                     miniDetail1 = skill.flavor.split(/[.!?]/)[0].trim();
-                } else if (skill.description) {
-                    miniDetail1 = skill.description.split(/[.!?]/)[0].trim();
-                }
+                } // removed description fallback to avoid duplicating short schematics blurb in owned list
                 // Second line: show healing, shield, or fusion info if present
                 if (stats.healing) {
                     miniDetail2 = `Healing: ${stats.healing}`;
                 } else if (stats.shield) {
                     miniDetail2 = `Shield: ${stats.shield}`;
-                } else if (skill.fusionIngredients) {
-                    miniDetail2 = 'Fusion Skill';
                 } else if (stats.combo) {
                     miniDetail2 = `Combo: ${stats.combo}`;
                 } else if (stats.versatility) {
@@ -3851,15 +4429,17 @@
                     <div class="compact-header">
                         <div class="compact-icon">${icon}</div>
                         <div class="compact-info">
-                            <div class="compact-name" style="color:${engineColor}; font-size:0.85em; font-weight:500; line-height:1;">${highlightText(skill.name, search)}</div>
                             <div class="compact-tier" style="color:${tierColor}; font-size:0.85em; font-weight:500; line-height:1;">${skill.tier}</div>
-                            ${miniDetail1 ? `<div class='compact-flavor'>${miniDetail1}</div>` : ''}
                             ${miniDetail2 ? `<div class='compact-flavor' style='color:#3b82f6;'>${miniDetail2}</div>` : ''}
                         </div>
                         <div class="compact-stats">
-                            <span title="Potency" style="color:#ef4444;font-size:0.8em;">🌟 ${power}</span>
-                            <span title="Neural Load" style="color:#3b82f6;font-size:0.8em;margin-left:0.5em;">🧠 ${cost}</span>
-                            <span title="Recalibration" style="color:#f59e0b;font-size:0.8em;margin-left:0.5em;">⏳ ${effCd.effective}</span>
+                            <!-- Essence Bar (visual-only) -->
+                            <div class="essence-bar-placeholder" style="width:140px;">
+                                <div class="stat-bar-track" aria-hidden="true" style="height:8px; background: rgba(255,255,255,0.05); border-radius:6px; overflow:hidden;">
+                                    <div class="stat-bar-fill essence-fill" style="width:50%; background: linear-gradient(90deg,#8b5cf6,#f59e0b); height:100%; border-radius:6px;"></div>
+                                </div>
+                            </div>
+                            <div class="compact-name" style="color:${engineColor};">${highlightText(skill.name, search)}</div>
                         </div>
                         <div class="schematics-btn-wrap">
                             <button class="schematics-btn-illusion"><span class="schem-top">Complete</span><span class="schem-bottom">Schematics</span></button>
@@ -3893,14 +4473,14 @@
             // Use creativity-first hints when available, otherwise fall back to examples
             const hints = (typeof generateVersatilityHints === 'function') ? generateVersatilityHints(skill) : { combine: examples.combat, transform: examples.exploration, story: examples.social };
 
-            // compute contextual caps and render stat cards
+            // compute contextual caps and replace numeric stat cards with an Essence bar placeholder
             const caps = computeGlobalStatCaps();
-            const potencyDesc = getGameplayDescriptor('potency', power, skill, caps);
-            const potencyHtml = renderStatCardHTML({ icon: '🌟', title: 'Potency', value: power, cap: caps.potencyCap, note: potencyDesc });
-            const neuralHtml = renderNeuralLoadUI(cost, skill, caps);
-            const effCd = computeEffectiveCooldown(skill, caps);
-            const cooldownDesc = getGameplayDescriptor('cooldown', effCd.effective, skill, caps) + (effCd.breakdown && effCd.breakdown.spamFactor > 0 ? ' • Anti-spam' : '');
-            const cooldownHtml = renderStatCardHTML({ icon: '⏳', title: 'Recalibration', value: effCd.effective, cap: caps.cooldownCap, unit: 'turns', note: cooldownDesc });
+            const essenceHtml = `<div class="essence-bar-placeholder" style="display:flex;gap:0.6rem;align-items:center;">
+                <div style="font-size:0.9rem;color:#ef4444;font-weight:700;">Essence</div>
+                <div class="stat-bar-track" aria-hidden="true" style="flex:1;height:10px;background:rgba(255,255,255,0.05);border-radius:6px;overflow:hidden;">
+                    <div class="stat-bar-fill essence-fill" style="width:50%;background:linear-gradient(90deg,#8b5cf6,#f59e0b);height:100%;"></div>
+                </div>
+            </div>`;
 
             modal.innerHTML = `
                 <div class="schematics-content" style="padding:1.2em; background:linear-gradient(180deg,rgba(10,14,20,0.97),rgba(6,8,12,0.98)); border-radius:12px; max-width:480px; margin:1.2em auto; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-height:70vh; overflow:auto; position:relative;">
@@ -3958,11 +4538,9 @@
                             ${flavor ? `<div style='font-size:0.85em;color:var(--accent-glow);margin-top:2px;font-style:italic;opacity:0.85;'>${flavor}</div>` : ''}
                         </div>
                     </div>
-                    <div style="margin-top:1.2em;display:grid;grid-template-columns:repeat(3,1fr);gap:0.7em;">
-                        ${potencyHtml}
-                        ${neuralHtml}
-                        ${cooldownHtml}
-                    </div>
+                    <div style="margin-top:1.2em;display:block;">
+                        ${essenceHtml}
+                    </div> 
                     <div class="schematics-desc-section">
                         <div class="desc-header">
                             <div class="desc-icon">📝</div>
@@ -4062,13 +4640,12 @@
             const tacticalTip = generateTacticalTip(skill, { power, cost, cooldown });
 
             const caps = computeGlobalStatCaps();
-            const previewPotencyDesc = getGameplayDescriptor('potency', power, skill, caps);
-            const previewNeuralDesc = getGameplayDescriptor('neural', cost, skill, caps);
-            const previewEffCd = computeEffectiveCooldown(skill, caps);
-            const previewCooldownDesc = getGameplayDescriptor('cooldown', previewEffCd.effective, skill, caps) + (previewEffCd.breakdown && previewEffCd.breakdown.spamFactor > 0 ? ' • Anti-spam' : '');
-            const previewPotencyHtml = renderStatCardHTML({ icon: '🌟', title: 'Potency', value: power, cap: caps.potencyCap, note: previewPotencyDesc });
-            const previewNeuralHtml = renderNeuralLoadUI(cost, skill, caps);
-            const previewCooldownHtml = renderStatCardHTML({ icon: '⏳', title: 'Recalibration', value: previewEffCd.effective, cap: caps.cooldownCap, unit: 'turns', note: previewCooldownDesc });
+            const previewEssenceHtml = `<div class="essence-bar-placeholder" style="display:flex;gap:0.6rem;align-items:center;">
+                <div style="font-size:0.9rem;color:#ef4444;font-weight:700;">Essence</div>
+                <div class="stat-bar-track" aria-hidden="true" style="flex:1;height:10px;background:rgba(255,255,255,0.05);border-radius:6px;overflow:hidden;">
+                    <div class="stat-bar-fill essence-fill" style="width:45%;background:linear-gradient(90deg,#8b5cf6,#f59e0b);height:100%;"></div>
+                </div>
+            </div>`;
 
             preview.innerHTML = `
                 <div class="preview-head">
@@ -4084,9 +4661,7 @@
                 </div>
 
                 <div class="preview-stats-grid">
-                    ${previewPotencyHtml}
-                    ${previewNeuralHtml}
-                    ${previewCooldownHtml}
+                    ${previewEssenceHtml}
                 </div>
 
                 <div class="preview-analysis-section">
@@ -4186,15 +4761,18 @@
         function generateNarrativeIntro(skill, context = {}) {
             const { power = 0, cost = 0, cooldown = 0, stats = {} } = context;
             const tier = (skill.tier || 'COMMON').toUpperCase();
-            const role = getNarrativeRole(skill).toLowerCase();
-            const tags = (skill.tags || []).map(t => t.toUpperCase());
-            const focus = tags.slice(0, 2).join(' / ') || 'GENERALIST';
-
-            const potencySource = stats.healing ? `${stats.healing} restorative output` : stats.shield ? `${stats.shield} barrier strength` : power ? `${power} raw potency` : 'support utility';
-            const loadDescriptor = cost > 60 ? 'heavy neural tax' : cost > 30 ? 'moderate synaptic draw' : 'minimal resonance drain';
-            const tempoDescriptor = cooldown > 12 ? 'slow reinitialization cadence' : cooldown > 5 ? 'balanced firing window' : 'rapid redeployment cycle';
-
-            return `A ${tier} ${role} matrix aligned to ${focus}. Exerts ${potencySource} while sustaining ${tempoDescriptor} and ${loadDescriptor}.`;
+            const tags = (skill.tags || []).slice(0, 2).join(' & ') || 'versatile';
+            
+            let potency = '';
+            if (stats.healing) potency = 'heals allies';
+            else if (stats.shield) potency = 'protects with shields';
+            else if (stats.damage) potency = 'deals damage';
+            else potency = 'provides support';
+            
+            const costDesc = cost > 60 ? 'high cost' : cost > 30 ? 'moderate cost' : 'low cost';
+            const cooldownDesc = cooldown > 12 ? 'long cooldown' : cooldown > 5 ? 'medium cooldown' : 'quick to reuse';
+            
+            return `A ${tier} skill focused on ${tags.toLowerCase()}. ${potency.charAt(0).toUpperCase() + potency.slice(1)} with ${costDesc} and ${cooldownDesc}.`;
         }
 
         function generateGameplayUse(skill) {
@@ -4203,34 +4781,36 @@
             const tips = [];
 
             if (stats.damage && stats.damage >= 120) {
-                tips.push('Use as an opener to shatter elite defenses; the burst damage punishes exposed cores.');
+                tips.push('Powerful burst damage - great for breaking tough enemies.');
             } else if (stats.damage && stats.damage > 0) {
-                tips.push('Chain with crowd-control or debuff tools to stretch its consistent damage throughput.');
+                tips.push('Steady damage output - reliable for most combat situations.');
             }
 
             if (stats.healing) {
-                tips.push('Rotate onto the frontline carrier when attrition stacks; its restorative pulse stabilizes the squad.');
+                tips.push('Restores health - keep allies fighting longer.');
             }
 
             if (stats.shield) {
-                tips.push('Pre-cast before telegraphed boss mechanics; the barrier buys an extra decision cycle.');
+                tips.push('Creates protective barriers - blocks incoming damage.');
             }
 
             if (stats.cooldown) {
-                tips.push(`Plan around a ${stats.cooldown}s reset — weave filler actions while it recharges.`);
+                tips.push(`Ready every ${stats.cooldown} seconds - plan your timing.`);
             }
 
             if (stats.cost) {
-                tips.push(stats.cost > 40 ? 'Reserve enough focus orbs first; the neural load will spike instability if spammed.' : 'Low cost lets you weave it between movement cancels without resource strain.');
+                tips.push(stats.cost > 40 ? 'Uses a lot of energy - save for important moments.' : 'Low energy cost - use freely in combat.');
             }
 
             if (!tips.length) {
-                if (tags.includes('HEAL')) tips.push('Primary sustain tool. Use to blunt attrition spikes.');
-                if (tags.includes('DAMAGE') || tags.includes('FIRE')) tips.push('Reliable DPS filler. Slip it into any gap in the rotation.');
+                if (tags.includes('HEAL')) tips.push('Healing skill - restores health to you or allies.');
+                if (tags.includes('DAMAGE') || tags.includes('FIRE')) tips.push('Damage skill - hurts enemies in various ways.');
+                if (tags.includes('SUPPORT')) tips.push('Support skill - helps allies or weakens enemies.');
+                if (tags.includes('DEFENSE')) tips.push('Defense skill - protects against attacks.');
             }
 
             if (!tips.length) {
-                tips.push('Versatile utility module. Adapt usage based on current combat variables.');
+                tips.push('Versatile skill - try it in different situations to see what happens.');
             }
 
             return tips.join(' ');
@@ -4316,6 +4896,35 @@
             const g = (bigint >> 8) & 255;
             const b = bigint & 255;
             return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
+        // Helper: render a Jotysh badge (returns HTML string)
+        function renderJotyshBadge({ type = 'house', label = '', icon = '', active = true, locked = false, tooltip = '', onClick = '' } = {}) {
+            const colors = {
+                house: '#8b5cf6',
+                planet: '#f59e0b',
+                sign: '#3b82f6',
+                nakshatra: '#a78bfa'
+            };
+            const color = colors[type] || '#64748b';
+
+            // decide classes
+            const classes = ['j-badge', type];
+            if (active) classes.push('active');
+            if (locked) classes.push('locked');
+
+            const aria = locked ? 'aria-disabled="true" tabindex="-1"' : `aria-disabled="false" tabindex="0"`;
+            const safeTooltip = (tooltip || '').toString().replace(/"/g, '&quot;');
+            const safeLabel = (label || '').toString().replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const lockHtml = locked ? ' <span class="lock-icon">🔒</span>' : '';
+
+            // Inline style uses subtle color tone if active
+            const style = active ? `background:${hexToRgba(color,0.08)};border-color:${hexToRgba(color,0.18)};color:${color};` : '';
+
+            // Clicking uses provided onClick string; if locked we omit it
+            const clickAttr = locked || !onClick ? '' : `onclick="${onClick}"`;
+
+            return `<button class="${classes.join(' ')}" style="${style}cursor:${locked ? 'not-allowed' : 'pointer'};" title="${safeTooltip}" ${aria} ${clickAttr} onkeydown="if((event.key==='Enter'||event.key===' ') && !(${locked})) { ${onClick} }">${icon} ${safeLabel}${lockHtml}</button>`;
         }
 
         // Infer sensible tags when a skill has no explicit tags array
@@ -4648,66 +5257,167 @@
         ];
 
         const NAKSHATRA_DATA = [
-            { id: 1, name: 'Ashwini', ruling: 'Ketu', deity: 'Ashwini Kumaras', symbol: 'Horse Head', quality: 'Light' },
-            { id: 2, name: 'Bharani', ruling: 'Venus', deity: 'Yama', symbol: 'Yoni', quality: 'Fierce' },
-            { id: 3, name: 'Krittika', ruling: 'Sun', deity: 'Agni', symbol: 'Razor/Flame', quality: 'Mixed' },
-            { id: 4, name: 'Rohini', ruling: 'Moon', deity: 'Brahma', symbol: 'Chariot', quality: 'Fixed' },
-            { id: 5, name: 'Mrigashira', ruling: 'Mars', deity: 'Soma', symbol: 'Deer Head', quality: 'Soft' },
-            { id: 6, name: 'Ardra', ruling: 'Rahu', deity: 'Rudra', symbol: 'Teardrop', quality: 'Sharp' },
-            { id: 7, name: 'Punarvasu', ruling: 'Jupiter', deity: 'Aditi', symbol: 'Quiver/Bow', quality: 'Movable' },
-            { id: 8, name: 'Pushya', ruling: 'Saturn', deity: 'Brihaspati', symbol: 'Cow Udder', quality: 'Light' },
-            { id: 9, name: 'Ashlesha', ruling: 'Mercury', deity: 'Nagas', symbol: 'Coiled Serpent', quality: 'Sharp' },
-            { id: 10, name: 'Magha', ruling: 'Ketu', deity: 'Pitrs', symbol: 'Throne', quality: 'Fierce' },
-            { id: 11, name: 'Purva Phalguni', ruling: 'Venus', deity: 'Bhaga', symbol: 'Hammock', quality: 'Fierce' },
-            { id: 12, name: 'Uttara Phalguni', ruling: 'Sun', deity: 'Aryaman', symbol: 'Fig Tree', quality: 'Fixed' },
-            { id: 13, name: 'Hasta', ruling: 'Moon', deity: 'Savitar', symbol: 'Hand/Fist', quality: 'Light' },
-            { id: 14, name: 'Chitra', ruling: 'Mars', deity: 'Tvashtar', symbol: 'Bright Jewel', quality: 'Soft' },
-            { id: 15, name: 'Swati', ruling: 'Rahu', deity: 'Vayu', symbol: 'Coral/Sword', quality: 'Movable' },
-            { id: 16, name: 'Vishakha', ruling: 'Jupiter', deity: 'Indra-Agni', symbol: 'Triumphal Gate', quality: 'Mixed' },
-            { id: 17, name: 'Anuradha', ruling: 'Saturn', deity: 'Mitra', symbol: 'Lotus', quality: 'Soft' },
-            { id: 18, name: 'Jyeshtha', ruling: 'Mercury', deity: 'Indra', symbol: 'Umbrella/Earring', quality: 'Sharp' },
-            { id: 19, name: 'Moola', ruling: 'Ketu', deity: 'Nirrti', symbol: 'Tied Roots', quality: 'Sharp' },
-            { id: 20, name: 'Purva Ashadha', ruling: 'Venus', deity: 'Apas', symbol: 'Elephant Tusk', quality: 'Fierce' },
-            { id: 21, name: 'Uttara Ashadha', ruling: 'Sun', deity: 'Vishvadevas', symbol: 'Planks', quality: 'Fixed' },
-            { id: 22, name: 'Shravana', ruling: 'Moon', deity: 'Vishnu', symbol: 'Three Footprints', quality: 'Movable' },
-            { id: 23, name: 'Dhanishta', ruling: 'Mars', deity: 'Vasus', symbol: 'Drum/Flute', quality: 'Movable' },
-            { id: 24, name: 'Shatabhisha', ruling: 'Rahu', deity: 'Varuna', symbol: 'Empty Circle', quality: 'Movable' },
-            { id: 25, name: 'Purva Bhadrapada', ruling: 'Jupiter', deity: 'Aja Ekapada', symbol: 'Funeral Cot', quality: 'Fierce' },
-            { id: 26, name: 'Uttara Bhadrapada', ruling: 'Saturn', deity: 'Ahir Budhnya', symbol: 'Twins/Back Legs', quality: 'Fixed' },
-            { id: 27, name: 'Revati', ruling: 'Mercury', deity: 'Pushan', symbol: 'Fish/Drum', quality: 'Soft' }
+            { id: 1, name: 'Ashwini', ruling: 'Ketu', deity: 'Ashwini Kumaras', symbol: 'Horse Head', quality: 'Light', archetype: 'The Healer', theme: 'Speed & Restoration', narrative: 'A swift intervention that cures ailments and accelerates destiny.', synergyTags: ['HEAL', 'SPEED', 'SUPPORT'] },
+            { id: 2, name: 'Bharani', ruling: 'Venus', deity: 'Yama', symbol: 'Yoni', quality: 'Fierce', archetype: 'The Bearer', theme: 'Birth & Death', narrative: 'A heavy burden carried with grace, birthing new realities from destruction.', synergyTags: ['CREATION', 'DESTRUCTION', 'EARTH'] },
+            { id: 3, name: 'Krittika', ruling: 'Sun', deity: 'Agni', symbol: 'Razor/Flame', quality: 'Mixed', archetype: 'The Cutter', theme: 'Purification & Severance', narrative: 'A sharp blade that cuts away the unnecessary to reveal the truth.', synergyTags: ['FIRE', 'DAMAGE', 'CRIT'] },
+            { id: 4, name: 'Rohini', ruling: 'Moon', deity: 'Brahma', symbol: 'Chariot', quality: 'Fixed', archetype: 'The Charmer', theme: 'Growth & Desire', narrative: 'A magnetic pull that fosters growth and attracts abundance.', synergyTags: ['GROWTH', 'BUFF', 'NATURE'] },
+            { id: 5, name: 'Mrigashira', ruling: 'Mars', deity: 'Soma', symbol: 'Deer Head', quality: 'Soft', archetype: 'The Seeker', theme: 'Search & Curiosity', narrative: 'A restless pursuit of the golden deer, leading to unexpected discoveries.', synergyTags: ['EXPLORATION', 'SPEED', 'AIR'] },
+            { id: 6, name: 'Ardra', ruling: 'Rahu', deity: 'Rudra', symbol: 'Teardrop', quality: 'Sharp', archetype: 'The Storm', theme: 'Destruction & Renewal', narrative: 'A violent storm that washes away the old to make way for the new.', synergyTags: ['STORM', 'DEBUFF', 'CHAOS'] },
+            { id: 7, name: 'Punarvasu', ruling: 'Jupiter', deity: 'Aditi', symbol: 'Quiver/Bow', quality: 'Movable', archetype: 'The Returner', theme: 'Renewal & Repetition', narrative: 'An arrow returned to the quiver, symbolizing second chances and endless supply.', synergyTags: ['RECURSION', 'AMMO', 'LIGHT'] },
+            { id: 8, name: 'Pushya', ruling: 'Saturn', deity: 'Brihaspati', symbol: 'Cow Udder', quality: 'Light', archetype: 'The Nurturer', theme: 'Nourishment & Care', narrative: 'A spiritual nourishment that strengthens the core and fosters wisdom.', synergyTags: ['BUFF', 'DEFENSE', 'SPIRIT'] },
+            { id: 9, name: 'Ashlesha', ruling: 'Mercury', deity: 'Nagas', symbol: 'Coiled Serpent', quality: 'Sharp', archetype: 'The Entangler', theme: 'Binding & Poison', narrative: 'A hypnotic embrace that binds enemies and strikes with hidden venom.', synergyTags: ['POISON', 'BIND', 'WATER'] },
+            { id: 10, name: 'Magha', ruling: 'Ketu', deity: 'Pitrs', symbol: 'Throne', quality: 'Fierce', archetype: 'The Ancestor', theme: 'Legacy & Authority', narrative: 'A connection to the lineage, drawing power from those who came before.', synergyTags: ['SUMMON', 'BUFF', 'FIRE'] },
+            { id: 11, name: 'Purva Phalguni', ruling: 'Venus', deity: 'Bhaga', symbol: 'Hammock', quality: 'Fierce', archetype: 'The Enjoyer', theme: 'Rest & Recreation', narrative: 'A moment of leisure that rejuvenates the spirit and invites fortune.', synergyTags: ['HEAL', 'LUCK', 'FIRE'] },
+            { id: 12, name: 'Uttara Phalguni', ruling: 'Sun', deity: 'Aryaman', symbol: 'Fig Tree', quality: 'Fixed', archetype: 'The Patron', theme: 'Support & Friendship', narrative: 'A reliable alliance that offers shade and support to the weary.', synergyTags: ['SUPPORT', 'DEFENSE', 'FIRE'] },
+            { id: 13, name: 'Hasta', ruling: 'Moon', deity: 'Savitar', symbol: 'Hand/Fist', quality: 'Light', archetype: 'The Artisan', theme: 'Skill & Craft', narrative: 'A dexterous hand that shapes reality through precise manifestation.', synergyTags: ['CRAFT', 'UTILITY', 'EARTH'] },
+            { id: 14, name: 'Chitra', ruling: 'Mars', deity: 'Tvashtar', symbol: 'Bright Jewel', quality: 'Soft', archetype: 'The Architect', theme: 'Design & Illusion', narrative: 'A dazzling structure that captivates the eye and hides the true intent.', synergyTags: ['ILLUSION', 'STRUCTURE', 'FIRE'] },
+            { id: 15, name: 'Swati', ruling: 'Rahu', deity: 'Vayu', symbol: 'Coral/Sword', quality: 'Movable', archetype: 'The Independent', theme: 'Freedom & Movement', narrative: 'A blade of grass bending in the wind, surviving through flexibility.', synergyTags: ['SPEED', 'DODGE', 'AIR'] },
+            { id: 16, name: 'Vishakha', ruling: 'Jupiter', deity: 'Indra-Agni', symbol: 'Triumphal Gate', quality: 'Mixed', archetype: 'The Achiever', theme: 'Goal & Ambition', narrative: 'A focused drive towards a singular goal, branching out only to conquer.', synergyTags: ['FOCUS', 'DAMAGE', 'FIRE'] },
+            { id: 17, name: 'Anuradha', ruling: 'Saturn', deity: 'Mitra', symbol: 'Lotus', quality: 'Soft', archetype: 'The Friend', theme: 'Devotion & Loyalty', narrative: 'A lotus blooming in the mud, symbolizing friendship that survives adversity.', synergyTags: ['SUPPORT', 'HEAL', 'WATER'] },
+            { id: 18, name: 'Jyeshtha', ruling: 'Mercury', deity: 'Indra', symbol: 'Umbrella/Earring', quality: 'Sharp', archetype: 'The Elder', theme: 'Seniority & Protection', narrative: 'A protective talisman that wards off danger and asserts dominance.', synergyTags: ['SHIELD', 'BUFF', 'WATER'] },
+            { id: 19, name: 'Moola', ruling: 'Ketu', deity: 'Nirrti', symbol: 'Tied Roots', quality: 'Sharp', archetype: 'The Root', theme: 'Foundation & Destruction', narrative: 'A deep excavation that uproots the old to lay a new foundation.', synergyTags: ['DESTRUCTION', 'ROOT', 'FIRE'] },
+            { id: 20, name: 'Purva Ashadha', ruling: 'Venus', deity: 'Apas', symbol: 'Elephant Tusk', quality: 'Fierce', archetype: 'The Invincible', theme: 'Victory & Water', narrative: 'An unyielding force that flows like water but strikes like a tusk.', synergyTags: ['DAMAGE', 'WATER', 'BUFF'] },
+            { id: 21, name: 'Uttara Ashadha', ruling: 'Sun', deity: 'Vishvadevas', symbol: 'Planks', quality: 'Fixed', archetype: 'The Universal', theme: 'Alliance & Victory', narrative: 'A bridge built of many planks, connecting disparate forces for victory.', synergyTags: ['TEAM', 'BUFF', 'EARTH'] },
+            { id: 22, name: 'Shravana', ruling: 'Moon', deity: 'Vishnu', symbol: 'Three Footprints', quality: 'Movable', archetype: 'The Listener', theme: 'Learning & Perception', narrative: 'A silent observer who learns the secrets of the universe through sound.', synergyTags: ['INTELLECT', 'DETECT', 'AIR'] },
+            { id: 23, name: 'Dhanishta', ruling: 'Mars', deity: 'Vasus', symbol: 'Drum/Flute', quality: 'Movable', archetype: 'The Wealthy', theme: 'Rhythm & Abundance', narrative: 'A rhythmic beat that synchronizes the flow of wealth and resources.', synergyTags: ['GOLD', 'BUFF', 'FIRE'] },
+            { id: 24, name: 'Shatabhisha', ruling: 'Rahu', deity: 'Varuna', symbol: 'Empty Circle', quality: 'Movable', archetype: 'The Healer', theme: 'Secrecy & Cure', narrative: 'A thousand physicians working in the shadows to cure the incurable.', synergyTags: ['HEAL', 'STEALTH', 'AIR'] },
+            { id: 25, name: 'Purva Bhadrapada', ruling: 'Jupiter', deity: 'Aja Ekapada', symbol: 'Funeral Cot', quality: 'Fierce', archetype: 'The Mystic', theme: 'Penance & Fire', narrative: 'A spiritual fire that burns away impurities through intense penance.', synergyTags: ['FIRE', 'PURIFY', 'SPIRIT'] },
+            { id: 26, name: 'Uttara Bhadrapada', ruling: 'Saturn', deity: 'Ahir Budhnya', symbol: 'Twins/Back Legs', quality: 'Fixed', archetype: 'The Deep', theme: 'Depth & Stability', narrative: 'A deep ocean of wisdom that remains calm on the surface but powerful below.', synergyTags: ['WATER', 'DEFENSE', 'SPIRIT'] },
+            { id: 27, name: 'Revati', ruling: 'Mercury', deity: 'Pushan', symbol: 'Fish/Drum', quality: 'Soft', archetype: 'The Shepherd', theme: 'Nourishment & Guidance', narrative: 'A guiding light that leads the flock to safe pastures and abundance.', synergyTags: ['GUIDE', 'BUFF', 'WATER'] }
         ];
 
         const NAKSHATRA_SPAN = 360 / 27;
 
         const HOUSES = [
-            { id: 1, name: '1st House', number: '1st', fullName: 'Sovereign Essence', bonus: 1.2, planet: 'Mars', desc: 'The Core of Identity & Vital Force', optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative', 'STRUCTURE'] },
-            { id: 2, name: '2nd House', number: '2nd', fullName: 'Vault of Abundance', bonus: 1.0, planet: 'Venus', desc: 'The Treasury of Wealth & Possessions', optimal: ['Gold Generation', 'Loot Skills', 'STASIS'] },
-            { id: 3, name: '3rd House', number: '3rd', fullName: 'Bridge of Expression', bonus: 1.0, planet: 'Mercury', desc: 'The Channel of Speed & Versatility', optimal: ['Quick-Cast', 'Multi-Hit', 'MIND'] },
-            { id: 4, name: '4th House', number: '4th', fullName: 'Roots of Stability', bonus: 1.1, planet: 'Moon', desc: 'The Foundation of Roots & Security', optimal: ['Healing', 'Shield', 'Sustain', 'STRUCTURE'] },
-            { id: 5, name: '5th House', number: '5th', fullName: 'Forge of Innovation', bonus: 1.15, planet: 'Sun', desc: 'The Crucible of Expression & Power', optimal: ['High Power', 'AoE', 'DISCORD'] },
-            { id: 6, name: '6th House', number: '6th', fullName: 'Arena of Conflict', bonus: 1.0, planet: 'Mercury', desc: 'The Battlefield of Combat & Rivalry', optimal: ['Anti-Enemy', 'Debuffs', 'DECAY'] },
-            { id: 7, name: '7th House', number: '7th', fullName: 'Harmony of Bonds', bonus: 1.0, planet: 'Venus', desc: 'The Equilibrium of Balance & Alliance', optimal: ['Support', 'Reflect'] },
-            { id: 8, name: '8th House', number: '8th', fullName: 'Cradle of Change', bonus: 1.1, planet: 'Mars', desc: 'The Catalyst of Transformation & Rebirth', optimal: ['DoT', 'Transform', 'DECAY'] },
-            { id: 9, name: '9th House', number: '9th', fullName: 'Wheel of Destiny', bonus: 1.2, planet: 'Jupiter', desc: 'The Vortex of Luck & Expansion', optimal: ['XP Gain', 'Wisdom', 'MIND'] },
-            { id: 10, name: '10th House', number: '10th', fullName: 'Throne of Command', bonus: 1.0, planet: 'Saturn', desc: 'The Citadel of Discipline & Authority', optimal: ['Defense', 'CC', 'STRUCTURE'] },
-            { id: 11, name: '11th House', number: '11th', fullName: 'Harvest of Rewards', bonus: 1.0, planet: 'Saturn', desc: 'The Bounty of Achievement & Networks', optimal: ['Reward Skills', 'Multipliers', 'DISCORD'] },
-            { id: 12, name: '12th House', number: '12th', fullName: 'Portal of Transcendence', bonus: 1.3, planet: 'Jupiter', desc: 'The Gateway of Spirit & Liberation', optimal: ['Ultimate Skills', 'Cleanse', 'STASIS'] }
+            { 
+                id: 1, name: '1st House', number: '1st', fullName: 'Sovereign Essence', bonus: 1.2, planet: 'Mars', 
+                desc: 'The Core of Identity & Vital Force', optimal: ['Self-Buffs', 'Offensive Skills', 'Initiative', 'STRUCTURE'],
+                archetype: 'The Protagonist', theme: 'Identity', narrative: 'The hero steps onto the stage.',
+                synergyTags: ['SELF', 'INITIATIVE', 'BODY'],
+                slotNarrative: (skill) => `"${skill.name}" is a signature action, always ready to express your core identity in any situation.`
+            },
+            { 
+                id: 2, name: '2nd House', number: '2nd', fullName: 'Vault of Abundance', bonus: 1.0, planet: 'Venus', 
+                desc: 'The Treasury of Wealth & Possessions', optimal: ['Gold Generation', 'Loot Skills', 'STASIS'],
+                archetype: 'The Treasury', theme: 'Resources', narrative: 'The hero gathers their tools.',
+                synergyTags: ['WEALTH', 'RESOURCE', 'VALUE'],
+                slotNarrative: (skill) => `"${skill.name}" is a resourceful action, available whenever you need to secure or enhance your assets.`
+            },
+            { 
+                id: 3, name: '3rd House', number: '3rd', fullName: 'Bridge of Expression', bonus: 1.0, planet: 'Mercury', 
+                desc: 'The Channel of Speed & Versatility', optimal: ['Quick-Cast', 'Multi-Hit', 'MIND'],
+                archetype: 'The Messenger', theme: 'Communication', narrative: 'The hero speaks and acts.',
+                synergyTags: ['SPEED', 'COMMUNICATION', 'DEXTERITY'],
+                slotNarrative: (skill) => `"${skill.name}" is a versatile action, always at hand for quick responses or creative plays.`
+            },
+            { 
+                id: 4, name: '4th House', number: '4th', fullName: 'Roots of Stability', bonus: 1.1, planet: 'Moon', 
+                desc: 'The Foundation of Roots & Security', optimal: ['Healing', 'Shield', 'Sustain', 'STRUCTURE'],
+                archetype: 'The Sanctuary', theme: 'Home', narrative: 'The hero finds their center.',
+                synergyTags: ['HOME', 'DEFENSE', 'EMOTION'],
+                slotNarrative: (skill) => `"${skill.name}" is a stabilizing action, always available to ground or protect you when needed.`
+            },
+            { 
+                id: 5, name: '5th House', number: '5th', fullName: 'Forge of Innovation', bonus: 1.15, planet: 'Sun', 
+                desc: 'The Crucible of Expression & Power', optimal: ['High Power', 'AoE', 'DISCORD'],
+                archetype: 'The Creator', theme: 'Creativity', narrative: 'The hero shines their light.',
+                synergyTags: ['CREATION', 'ROMANCE', 'INTELLECT'],
+                slotNarrative: (skill) => `"${skill.name}" is a creative action, ready to inspire or unleash power at any moment.`
+            },
+            { 
+                id: 6, name: '6th House', number: '6th', fullName: 'Arena of Conflict', bonus: 1.0, planet: 'Mercury', 
+                desc: 'The Battlefield of Combat & Rivalry', optimal: ['Anti-Enemy', 'Debuffs', 'DECAY'],
+                archetype: 'The Warrior', theme: 'Service', narrative: 'The hero faces their obstacles.',
+                synergyTags: ['SERVICE', 'CONFLICT', 'HEALTH'],
+                slotNarrative: (skill) => `"${skill.name}" is a decisive action, always ready to counter threats or solve problems.`
+            },
+            { 
+                id: 7, name: '7th House', number: '7th', fullName: 'Harmony of Bonds', bonus: 1.0, planet: 'Venus', 
+                desc: 'The Equilibrium of Balance & Alliance', optimal: ['Support', 'Reflect'],
+                archetype: 'The Partner', theme: 'Relationships', narrative: 'The hero meets their other.',
+                synergyTags: ['PARTNERSHIP', 'BALANCE', 'TRADE'],
+                slotNarrative: (skill) => `"${skill.name}" is a connecting action, always available to support or balance any situation.`
+            },
+            { 
+                id: 8, name: '8th House', number: '8th', fullName: 'Cradle of Change', bonus: 1.1, planet: 'Mars', 
+                desc: 'The Catalyst of Transformation & Rebirth', optimal: ['DoT', 'Transform', 'DECAY'],
+                archetype: 'The Phoenix', theme: 'Transformation', narrative: 'The hero undergoes metamorphosis.',
+                synergyTags: ['DEATH', 'REBIRTH', 'MYSTERY'],
+                slotNarrative: (skill) => `"${skill.name}" is a transformative action, always ready to shift the flow or turn the tide.`
+            },
+            { 
+                id: 9, name: '9th House', number: '9th', fullName: 'Wheel of Destiny', bonus: 1.2, planet: 'Jupiter', 
+                desc: 'The Vortex of Luck & Expansion', optimal: ['XP Gain', 'Wisdom', 'MIND'],
+                archetype: 'The Sage', theme: 'Wisdom', narrative: 'The hero seeks the truth.',
+                synergyTags: ['PHILOSOPHY', 'LUCK', 'TRAVEL'],
+                slotNarrative: (skill) => `"${skill.name}" is an enlightening action, always available to expand your options or unlock new paths.`
+            },
+            { 
+                id: 10, name: '10th House', number: '10th', fullName: 'Throne of Command', bonus: 1.0, planet: 'Saturn', 
+                desc: 'The Citadel of Discipline & Authority', optimal: ['Defense', 'CC', 'STRUCTURE'],
+                archetype: 'The Monarch', theme: 'Career', narrative: 'The hero commands the world.',
+                synergyTags: ['AUTHORITY', 'STATUS', 'KARMA'],
+                slotNarrative: (skill) => `"${skill.name}" is an authoritative action, always ready to assert control or shape outcomes.`
+            },
+            { 
+                id: 11, name: '11th House', number: '11th', fullName: 'Harvest of Rewards', bonus: 1.0, planet: 'Saturn', 
+                desc: 'The Bounty of Achievement & Networks', optimal: ['Reward Skills', 'Multipliers', 'DISCORD'],
+                archetype: 'The Networker', theme: 'Gains', narrative: 'The hero reaps the rewards.',
+                synergyTags: ['GAINS', 'FRIENDS', 'ASPIRATION'],
+                slotNarrative: (skill) => `"${skill.name}" is a rewarding action, always available to claim benefits or boost allies.`
+            },
+            { 
+                id: 12, name: '12th House', number: '12th', fullName: 'Portal of Transcendence', bonus: 1.3, planet: 'Jupiter', 
+                desc: 'The Gateway of Spirit & Liberation', optimal: ['Ultimate Skills', 'Cleanse', 'STASIS'],
+                archetype: 'The Mystic', theme: 'Liberation', narrative: 'The hero transcends the self.',
+                synergyTags: ['LOSS', 'SPIRIT', 'DREAM'],
+                slotNarrative: (skill) => `"${skill.name}" is a transcendent action, always ready to break limits or escape constraints.`
+            }
         ];
 
-        const PLANET_SYNERGIES = {
-            'Sun': { color: '#ffd700', symbol: '☉', keywords: ['Power', 'Leadership', 'Crit'], bonus: { power: 15, crit: 10 }, title: 'The Radiant Sovereign', lore: 'Solar energy ignites raw dominance and dazzling crits.' },
-            'Moon': { color: '#c0c0c0', symbol: '☽', keywords: ['Heal', 'Shield', 'Regen'], bonus: { healing: 20, cooldown: 15 }, title: 'The Silver Guardian', lore: 'Lunar tides restore and protect.' },
-            'Mars': { color: '#ff4444', symbol: '♂', keywords: ['Physical', 'Attack', 'Bleed'], bonus: { attackSpeed: 20, bleed: 10 }, title: 'The Crimson Warlord', lore: 'Aggression rewarded with relentless pressure.' },
-            'Mercury': { color: '#00ff88', symbol: '☿', keywords: ['Speed', 'Versatile', 'Combo'], bonus: { cooldown: -15, versatility: 15 }, title: 'The Quicksilver Trickster', lore: 'Swift minds chain skills effortlessly.' },
-            'Jupiter': { color: '#9966ff', symbol: '♃', keywords: ['XP', 'Wisdom', 'Ultimate'], bonus: { xp: 25, rewards: 10 }, title: 'The Sage King', lore: 'Fortune favors the enlightened.' },
-            'Venus': { color: '#ff69b4', symbol: '♀', keywords: ['Gold', 'Charm', 'Support'], bonus: { gold: 20, charm: 15 }, title: 'The Enchantress', lore: 'Beauty alchemizes struggle into rewards.' },
-            'Saturn': { color: '#4169e1', symbol: '♄', keywords: ['Defense', 'CC', 'Slow'], bonus: { defense: 20, dotResist: 15 }, title: 'The Iron Judge', lore: 'Discipline endures all onslaughts.' },
-            'Rahu': { color: '#8b008b', symbol: '☊', keywords: ['Chaos', 'Shadow'], bonus: { chaos: 25, stealth: 10 }, title: 'The Devouring Shadow', lore: 'Unorthodox tactics thrive in darkness.' },
-            'Ketu': { color: '#f0f0f0', symbol: '☋', keywords: ['Mystic', 'Transcend'], bonus: { spiritual: 20, immunity: 15 }, title: 'The Liberating Flame', lore: 'Transcend limits through detachment.' }
+        const PLANETS = {
+            'Sun': { 
+                color: '#ffd700', symbol: '☉', keywords: ['Power', 'Leadership', 'Crit'], bonus: { power: 15, crit: 10 }, title: 'The Radiant Sovereign', lore: 'Solar energy ignites raw dominance and dazzling crits.',
+                archetype: 'The King', theme: 'Soul', narrative: 'The central force that commands attention.', synergyTags: ['EGO', 'VITALITY', 'AUTHORITY']
+            },
+            'Moon': { 
+                color: '#c0c0c0', symbol: '☽', keywords: ['Heal', 'Shield', 'Regen'], bonus: { healing: 20, cooldown: 15 }, title: 'The Silver Guardian', lore: 'Lunar tides restore and protect.',
+                archetype: 'The Queen', theme: 'Mind', narrative: 'The reflective surface that nurtures and feels.', synergyTags: ['EMOTION', 'NURTURE', 'FLUX']
+            },
+            'Mars': { 
+                color: '#ff4444', symbol: '♂', keywords: ['Physical', 'Attack', 'Bleed'], bonus: { attackSpeed: 20, bleed: 10 }, title: 'The Crimson Warlord', lore: 'Aggression rewarded with relentless pressure.',
+                archetype: 'The Commander', theme: 'Energy', narrative: 'The driving force that conquers obstacles.', synergyTags: ['ACTION', 'COURAGE', 'CONFLICT']
+            },
+            'Mercury': { 
+                color: '#00ff88', symbol: '☿', keywords: ['Speed', 'Versatile', 'Combo'], bonus: { cooldown: -15, versatility: 15 }, title: 'The Quicksilver Trickster', lore: 'Swift minds chain skills effortlessly.',
+                archetype: 'The Prince', theme: 'Intellect', narrative: 'The agile mind that connects the dots.', synergyTags: ['COMMUNICATION', 'WIT', 'TRADE']
+            },
+            'Jupiter': { 
+                color: '#9966ff', symbol: '♃', keywords: ['XP', 'Wisdom', 'Ultimate'], bonus: { xp: 25, rewards: 10 }, title: 'The Sage King', lore: 'Fortune favors the enlightened.',
+                archetype: 'The Guru', theme: 'Wisdom', narrative: 'The expansive force that teaches and guides.', synergyTags: ['EXPANSION', 'OPTIMISM', 'LAW']
+            },
+            'Venus': { 
+                color: '#ff69b4', symbol: '♀', keywords: ['Gold', 'Charm', 'Support'], bonus: { gold: 20, charm: 15 }, title: 'The Enchantress', lore: 'Beauty alchemizes struggle into rewards.',
+                archetype: 'The Artist', theme: 'Love', narrative: 'The harmonious force that attracts and beautifies.', synergyTags: ['PLEASURE', 'RELATIONSHIP', 'ART']
+            },
+            'Saturn': { 
+                color: '#4169e1', symbol: '♄', keywords: ['Defense', 'CC', 'Slow'], bonus: { defense: 20, dotResist: 15 }, title: 'The Iron Judge', lore: 'Discipline endures all onslaughts.',
+                archetype: 'The Servant', theme: 'Discipline', narrative: 'The restricting force that structures and tests.', synergyTags: ['TIME', 'DELAY', 'STRUCTURE']
+            },
+            'Rahu': { 
+                color: '#8b008b', symbol: '☊', keywords: ['Chaos', 'Shadow'], bonus: { chaos: 25, stealth: 10 }, title: 'The Devouring Shadow', lore: 'Unorthodox tactics thrive in darkness.',
+                archetype: 'The Rebel', theme: 'Obsession', narrative: 'The shadow force that craves and disrupts.', synergyTags: ['ILLUSION', 'FOREIGN', 'INNOVATION']
+            },
+            'Ketu': { 
+                color: '#f0f0f0', symbol: '☋', keywords: ['Mystic', 'Transcend'], bonus: { spiritual: 20, immunity: 15 }, title: 'The Liberating Flame', lore: 'Transcend limits through detachment.',
+                archetype: 'The Ascetic', theme: 'Liberation', narrative: 'The dissolving force that detaches and frees.', synergyTags: ['SPIRIT', 'VOID', 'PAST']
+            }
         };
+        // Alias for backward compatibility if needed, but we should use PLANETS
+        const PLANET_SYNERGIES = PLANETS;
 
         function showPlanetInfo(planetName, event) {
-            const data = PLANET_SYNERGIES[planetName];
+            const data = PLANETS[planetName];
             const tooltip = document.getElementById('planet-tooltip');
             if (!data || !tooltip) return;
             tooltip.innerHTML = `
@@ -4751,56 +5461,82 @@
             document.getElementById('planet-tooltip')?.classList.remove('visible');
         }
 
-        const LAGNA_GAME_DATA = {
-            1: { stats: { power: 25, speed: 20, defense: 10 }, passives: [
-                { name: 'Pioneer Spirit', desc: '+15% first strike damage.' },
-                { name: 'Berserker Rage', desc: 'Every 3rd attack grants +20% attack speed.' }
-            ], synergies: ['Fire Skills', 'Physical Attacks', 'Bleed'], strategy: 'Lead with aggression and capitalize on opening blows.' },
-            2: { stats: { power: 15, speed: 5, defense: 30 }, passives: [
-                { name: 'Immovable Force', desc: '+25% Max HP, immune to knockback.' },
-                { name: 'Resource Magnet', desc: '+30% gold/material drops.' }
-            ], synergies: ['Earth Skills', 'Defensive', 'Healing'], strategy: 'Anchor teams with sustain and economic advantages.' },
-            3: { stats: { power: 15, speed: 25, defense: 10 }, passives: [
-                { name: 'Dual Nature', desc: '20% chance to double cast.' },
-                { name: 'Quick Learner', desc: '+35% XP gain.' }
-            ], synergies: ['Air Skills', 'Combos', 'Utility'], strategy: 'Chain rapid strikes and flexible responses.' },
-            4: { stats: { power: 10, speed: 10, defense: 25 }, passives: [
-                { name: 'Lunar Shield', desc: '+30% shield effectiveness.' },
-                { name: 'Emotional Strength', desc: '+20% healing received.' }
-            ], synergies: ['Water Skills', 'Support'], strategy: 'Lean into sustain-heavy play and protective roles.' },
-            5: { stats: { power: 30, speed: 15, defense: 10 }, passives: [
-                { name: 'Solar Radiance', desc: '+25% AoE damage.' },
-                { name: 'Majestic Presence', desc: '+15% crit chance.' }
-            ], synergies: ['Fire Skills', 'AoE', 'Crit'], strategy: 'Amplify showcase moves and empower nearby allies.' },
-            6: { stats: { power: 18, speed: 18, defense: 12 }, passives: [
-                { name: 'Battle Analyst', desc: 'Expose enemy weaknesses every 10s.' },
-                { name: 'Tactical Grind', desc: '+10% damage vs elites.' }
-            ], synergies: ['Debuff', 'Execute'], strategy: 'Apply pressure to bosses and rival builds.' },
-            7: { stats: { power: 15, speed: 12, defense: 18 }, passives: [
-                { name: 'Mirror Pact', desc: 'Reflect 10% damage taken.' },
-                { name: 'Alliance Keeper', desc: 'Buffs last +20% longer on allies.' }
-            ], synergies: ['Support', 'Reflect'], strategy: 'Balance offense/defense and keep allies fortified.' },
-            8: { stats: { power: 22, speed: 12, defense: 16 }, passives: [
-                { name: 'Phoenix Pulse', desc: 'Revives grant +20% power for 10s.' },
-                { name: 'Venom Engine', desc: '+15% DoT potency.' }
-            ], synergies: ['DoT', 'Transform'], strategy: 'Reward risky, metamorphic playstyles.' },
-            9: { stats: { power: 24, speed: 14, defense: 12 }, passives: [
-                { name: 'Fortune Surge', desc: '+40% XP when exploring.' },
-                { name: 'Pilgrim’s Insight', desc: '+10% rare drop rate.' }
-            ], synergies: ['XP', 'Wisdom'], strategy: 'Snowball with knowledge and expedition rewards.' },
-            10:{ stats: { power: 18, speed: 10, defense: 24 }, passives: [
-                { name: 'Command Aura', desc: 'Allies gain +8% defense.' },
-                { name: 'Time Anchor', desc: 'Enemies slowed by 12% in zones.' }
-            ], synergies: ['Defense', 'CC'], strategy: 'Stabilize battles with control and structure.' },
-            11:{ stats: { power: 16, speed: 18, defense: 16 }, passives: [
-                { name: 'Network Amplifier', desc: '+1 stack cap for buff effects.' },
-                { name: 'Chain Dividend', desc: '+5% damage per active ally buff.' }
-            ], synergies: ['Reward', 'Stack'], strategy: 'Thrive in ensemble builds and combo loops.' },
-            12:{ stats: { power: 20, speed: 12, defense: 18 }, passives: [
-                { name: 'Ethereal Cleanse', desc: 'Cleanse also grants 1s invulnerability.' },
-                { name: 'Astral Drift', desc: '+15% ultimate charge speed.' }
-            ], synergies: ['Mystic', 'Ultimate'], strategy: 'Transcend fights with spiritual finishers.' }
+        const LAGNA_DATA = {
+            1: { 
+                stats: { power: 25, speed: 20, defense: 10 }, 
+                passives: [{ name: 'Pioneer Spirit', desc: '+15% first strike damage.' }, { name: 'Berserker Rage', desc: 'Every 3rd attack grants +20% attack speed.' }], 
+                synergies: ['Fire Skills', 'Physical Attacks', 'Bleed'], strategy: 'Lead with aggression and capitalize on opening blows.',
+                archetype: 'The Pioneer', theme: 'Self-Discovery', narrative: 'A journey of self-assertion and blazing new trails.', synergyTags: ['INITIATIVE', 'COURAGE', 'SELF']
+            },
+            2: { 
+                stats: { power: 15, speed: 5, defense: 30 }, 
+                passives: [{ name: 'Immovable Force', desc: '+25% Max HP, immune to knockback.' }, { name: 'Resource Magnet', desc: '+30% gold/material drops.' }], 
+                synergies: ['Earth Skills', 'Defensive', 'Healing'], strategy: 'Anchor teams with sustain and economic advantages.',
+                archetype: 'The Builder', theme: 'Value Creation', narrative: 'A journey of building lasting value and tangible security.', synergyTags: ['STABILITY', 'WEALTH', 'SENSES']
+            },
+            3: { 
+                stats: { power: 15, speed: 25, defense: 10 }, 
+                passives: [{ name: 'Dual Nature', desc: '20% chance to double cast.' }, { name: 'Quick Learner', desc: '+35% XP gain.' }], 
+                synergies: ['Air Skills', 'Combos', 'Utility'], strategy: 'Chain rapid strikes and flexible responses.',
+                archetype: 'The Storyteller', theme: 'Connection', narrative: 'A journey of weaving tales and connecting disparate ideas.', synergyTags: ['COMMUNICATION', 'CURIOSITY', 'DUALITY']
+            },
+            4: { 
+                stats: { power: 10, speed: 10, defense: 25 }, 
+                passives: [{ name: 'Lunar Shield', desc: '+30% shield effectiveness.' }, { name: 'Emotional Strength', desc: '+20% healing received.' }], 
+                synergies: ['Water Skills', 'Support'], strategy: 'Lean into sustain-heavy play and protective roles.',
+                archetype: 'The Protector', theme: 'Emotional Depth', narrative: 'A journey of nurturing the soul and protecting the vulnerable.', synergyTags: ['NURTURE', 'HOME', 'EMOTION']
+            },
+            5: { 
+                stats: { power: 30, speed: 15, defense: 10 }, 
+                passives: [{ name: 'Solar Radiance', desc: '+25% AoE damage.' }, { name: 'Majestic Presence', desc: '+15% crit chance.' }], 
+                synergies: ['Fire Skills', 'AoE', 'Crit'], strategy: 'Amplify showcase moves and empower nearby allies.',
+                archetype: 'The Performer', theme: 'Creative Expression', narrative: 'A journey of shining brightly and inspiring others.', synergyTags: ['CREATIVITY', 'LEADERSHIP', 'JOY']
+            },
+            6: { 
+                stats: { power: 18, speed: 18, defense: 12 }, 
+                passives: [{ name: 'Battle Analyst', desc: 'Expose enemy weaknesses every 10s.' }, { name: 'Tactical Grind', desc: '+10% damage vs elites.' }], 
+                synergies: ['Debuff', 'Execute'], strategy: 'Apply pressure to bosses and rival builds.',
+                archetype: 'The Analyst', theme: 'Service & Perfection', narrative: 'A journey of refining the world and healing its flaws.', synergyTags: ['SERVICE', 'HEALTH', 'DETAIL']
+            },
+            7: { 
+                stats: { power: 15, speed: 12, defense: 18 }, 
+                passives: [{ name: 'Mirror Pact', desc: 'Reflect 10% damage taken.' }, { name: 'Alliance Keeper', desc: 'Buffs last +20% longer on allies.' }], 
+                synergies: ['Support', 'Reflect'], strategy: 'Balance offense/defense and keep allies fortified.',
+                archetype: 'The Diplomat', theme: 'Harmony', narrative: 'A journey of finding balance and creating beauty in union.', synergyTags: ['PARTNERSHIP', 'BALANCE', 'JUSTICE']
+            },
+            8: { 
+                stats: { power: 22, speed: 12, defense: 16 }, 
+                passives: [{ name: 'Phoenix Pulse', desc: 'Revives grant +20% power for 10s.' }, { name: 'Venom Engine', desc: '+15% DoT potency.' }], 
+                synergies: ['DoT', 'Transform'], strategy: 'Reward risky, metamorphic playstyles.',
+                archetype: 'The Alchemist', theme: 'Transformation', narrative: 'A journey of deep transformation and uncovering hidden truths.', synergyTags: ['MYSTERY', 'POWER', 'REBIRTH']
+            },
+            9: { 
+                stats: { power: 24, speed: 14, defense: 12 }, 
+                passives: [{ name: 'Fortune Surge', desc: '+40% XP when exploring.' }, { name: 'Pilgrim’s Insight', desc: '+10% rare drop rate.' }], 
+                synergies: ['XP', 'Wisdom'], strategy: 'Snowball with knowledge and expedition rewards.',
+                archetype: 'The Explorer', theme: 'Quest for Truth', narrative: 'A journey of seeking wisdom and expanding horizons.', synergyTags: ['PHILOSOPHY', 'ADVENTURE', 'FAITH']
+            },
+            10:{ 
+                stats: { power: 18, speed: 10, defense: 24 }, 
+                passives: [{ name: 'Command Aura', desc: 'Allies gain +8% defense.' }, { name: 'Time Anchor', desc: 'Enemies slowed by 12% in zones.' }], 
+                synergies: ['Defense', 'CC'], strategy: 'Stabilize battles with control and structure.',
+                archetype: 'The Strategist', theme: 'Legacy', narrative: 'A journey of building a legacy and mastering the material world.', synergyTags: ['AUTHORITY', 'STRUCTURE', 'ACHIEVEMENT']
+            },
+            11:{ 
+                stats: { power: 16, speed: 18, defense: 16 }, 
+                passives: [{ name: 'Network Amplifier', desc: '+1 stack cap for buff effects.' }, { name: 'Chain Dividend', desc: '+5% damage per active ally buff.' }], 
+                synergies: ['Reward', 'Stack'], strategy: 'Thrive in ensemble builds and combo loops.',
+                archetype: 'The Visionary', theme: 'Collective Progress', narrative: 'A journey of innovating for the future and connecting the collective.', synergyTags: ['INNOVATION', 'COMMUNITY', 'FREEDOM']
+            },
+            12:{ 
+                stats: { power: 20, speed: 12, defense: 18 }, 
+                passives: [{ name: 'Ethereal Cleanse', desc: 'Cleanse also grants 1s invulnerability.' }, { name: 'Astral Drift', desc: '+15% ultimate charge speed.' }], 
+                synergies: ['Mystic', 'Ultimate'], strategy: 'Transcend fights with spiritual finishers.',
+                archetype: 'The Dreamer', theme: 'Transcendence', narrative: 'A journey of dissolving boundaries and merging with the infinite.', synergyTags: ['SPIRIT', 'IMAGINATION', 'COMPASSION']
+            }
         };
+        // Alias for backward compatibility
+        const LAGNA_GAME_DATA = LAGNA_DATA;
 
         function initJotyshEngine() {
             loadLagnaFromStorage();
@@ -4815,6 +5551,7 @@
             commitBlueprintToChart();
             wireJotyshUI();
             updateInvokeButtonState();
+            renderCardPreview();
         }
 
         function populateLagnaOptions() {
@@ -4998,6 +5735,8 @@
             cascadeNakshatraAcrossHouses();
             try { refreshHouseNakshatraSets(); } catch (e) {}
             if (!options.skipScaleRefresh) updateNakshatraScale();
+            // Ensure visual preview stays live and reactive to chart changes
+            try { renderCardPreview(); } catch (e) { /* ignore if preview not ready */ }
         }
 
         function wireJotyshUI() {
@@ -5020,8 +5759,9 @@
             // Also support right-click+hold and keyboard opening
             if (blueprintBtn) blueprintBtn.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') openJotyshBlueprint(ev); });
 
-            const invokeBtn = document.getElementById('invoke-card-btn');
-            if (invokeBtn) invokeBtn.addEventListener('click', invokeCardFromJotysh);
+            // Ensure the main SYNC ACTION CODEX button (preview) is wired
+            const previewInvokeBtn = document.getElementById('invoke-card-btn-preview');
+            if (previewInvokeBtn) previewInvokeBtn.addEventListener('click', invokeCardFromJotysh);
 
             const battleBtn = document.getElementById('battle-btn');
             if (battleBtn) battleBtn.addEventListener('click', enterBattleSimulation);
@@ -5063,7 +5803,13 @@
             try {
                 const stored = JSON.parse(localStorage.getItem(JOTYSH_KEYS.slots) || '[]');
                 if (Array.isArray(stored) && stored.length === 12) {
-                    slottedGlyphs = stored;
+                    // Migrate older saved slots by ensuring an activeInfluences property exists
+                    slottedGlyphs = stored.map(s => {
+                        if (s && !s.activeInfluences) {
+                            return { ...s, activeInfluences: { house: true, planet: true, sign: true, nakshatra: true } };
+                        }
+                        return s;
+                    });
                 }
             } catch (err) {
                 console.warn('⚠️ Unable to load stored slots', err);
@@ -5072,6 +5818,8 @@
 
         function saveSlotsToStorage() {
             localStorage.setItem(JOTYSH_KEYS.slots, JSON.stringify(slottedGlyphs));
+            // Keep UI in sync with stored slots
+            try { updateInvokeButtonState(); } catch(e) {}
         }
 
         function setViewMode(mode) {
@@ -5116,6 +5864,7 @@
             updateNakshatraScale();
             // Notify external components (like the lagna slider) that the lagna changed
             try { window.dispatchEvent(new CustomEvent('lagna-rotated', { detail: { lagna: currentLagna } })); } catch (e) { /* ignore */ }
+            renderCardPreview();
         }
 
         function updateLagnaInfo() {
@@ -5256,6 +6005,15 @@
             HOUSES.forEach(house => {
                 const houseEl = container.querySelector(`.house[data-house-id='${house.id}']`);
                 if (!houseEl) return;
+
+                // If a Nakshatra has been applied via blueprint, prefer that override
+                if (house.appliedNakshatra) {
+                    const detail = { nakshatra: house.appliedNakshatra, pada: 1, absoluteDegree: null };
+                    houseNakshatraMap[house.id] = detail;
+                    updateHouseNakshatraLabel(houseEl, detail);
+                    return; // skip the anchored spread calc
+                }
+
                 const offset = ((house.id - 1) + 12) % 12;
                 const spreadDegree = (anchorDegree + (offset * 30)) % 360;
                 const detail = getNakshatraFromAbsoluteDegree(spreadDegree);
@@ -5515,7 +6273,7 @@
                 <div class="slotted-glyph">
                     <button class="remove-btn" onclick="removeGlyph(${index}); event.stopPropagation();">×</button>
                     <div style="font-weight:700; font-size:0.85rem;">${glyph.name}</div>
-                    <div style="font-size:0.7rem; color:var(--text-dim);">KP ${glyph.kp || 0} • CD ${glyph.cooldown || 0}s</div>
+                    <div style="font-size:0.75rem; color:var(--text-dim);">${(glyph.tags || []).slice(0,3).map(t => t).join(' • ') || 'Context: —'}</div>
                     <div style="display:flex; flex-wrap:wrap; gap:0.2rem; margin-top:0.2rem;">
                         ${(glyph.tags || []).slice(0,3).map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
                     </div>
@@ -5524,15 +6282,293 @@
             const houseEl = slot.closest('.house'); if (houseEl) houseEl.classList.add('filled');
         }
 
+        // Heuristics: return player-friendly descriptors (gameplay-first)
+        function inferPrimaryFunction(tagCounts, primaryRole) {
+            const tags = Object.keys(tagCounts || {}).map(t => t.toUpperCase());
+            const offenseTags = ['DAMAGE','OFFENSE','CRIT','AOE','DMG'];
+            const supportTags = ['HEAL','SUPPORT','BUFF','RECOVER'];
+            const defenseTags = ['DEFENSE','SHIELD','TANK','GUARD'];
+            if (tags.some(t => offenseTags.includes(t)) || primaryRole === 'Offense') return 'Offense';
+            if (tags.some(t => supportTags.includes(t)) || primaryRole === 'Support') return 'Support';
+            if (tags.some(t => defenseTags.includes(t)) || primaryRole === 'Defense') return 'Defense';
+            return 'Utility';
+        }
+
+        function inferUsageFromStats(totalPower, totalKP, avgCooldown, slotsFilled, dominantTags) {
+            const tags = (dominantTags || []).map(t => String(t).toUpperCase());
+            if (tags.includes('HEAL') || tags.includes('BUFF') || tags.includes('SUPPORT')) return 'Sustain';
+            if ((Number(avgCooldown) || 0) >= 10 || (totalPower || 0) >= 200) return 'Burst';
+            if ((totalKP || 0) <= 30 && (Number(avgCooldown) || 0) <= 4) return 'Filler';
+            return 'Versatile';
+        }
+
+        function renderCardPreview() {
+            const rightPanel = document.querySelector('#right-panel .panel-content');
+            if (!rightPanel) return;
+
+            // --- Save scroll position ---
+            let scrollTop = 0;
+            const oldCardBody = rightPanel.querySelector('.card-body');
+            if (oldCardBody) scrollTop = oldCardBody.scrollTop;
+
+            const filledSlots = slottedGlyphs.map((g, i) => g ? { ...g, houseId: i + 1 } : null).filter(Boolean);
+            const lagnaInfo = LAGNA_DATA[currentLagna];
+            const nakshatraInfo = getNakshatraFromAbsoluteDegree(getAnchoredNakshatraDegree());
+            const title = (invokedCard && invokedCard.name) || (window._currentCardName || ''); // prefer invokedCard name, then live-typed name, else blank
+
+            // Card-level narrative intro
+            let narrative = `<b>This codex is a living arsenal, shaped by your cosmic journey.</b> Each action is a unique response, ready to be invoked at any moment.`;
+
+            // Card-level "How to Use" block
+            let howToUseBlock = `
+                <div class="card-howto-section" style="background:rgba(139,92,246,0.08);border-radius:8px;padding:0.7em 1em;margin-bottom:0.7em;font-size:0.95em;color:#f59e0b;text-align:center;">
+                    <b>How to Use This Card:</b><br>
+                    At any moment in the game, you can tap any of these actions to respond to the world, solve challenges, or shape the story.<br>
+                    Each action is context-sensitive and can be used in combat, exploration, or social encounters.<br>
+                    <span style="color:#a78bfa;">Experiment and combine them freely—there’s no fixed order or limit.</span>
+                </div>
+            `;
+
+            // Build HTML for all 12 slots
+            // Aggregation for compact card-level meta (live) — narrative-driven (no numeric stat merging)
+            let tagCounts = {};
+            let elementCounts = {};
+            let slotsFilled = 0;
+            let slotsHtml = ''; 
+            for (let i = 0; i < 12; i++) {
+                const houseId = i + 1;
+                const glyph = slottedGlyphs[i];
+                const house = HOUSES.find(h => h.id === houseId);
+                const planet = PLANETS[house.planet];
+                // Prefer an explicitly applied Nakshatra (blueprint) for this house; else use calculated map or global anchor
+                const houseNakshatra = house.appliedNakshatra
+                    ? { nakshatra: house.appliedNakshatra, pada: 1, absoluteDegree: null }
+                    : (houseNakshatraMap[house.id] || nakshatraInfo);
+
+                if (glyph) {
+                    // Enhance the skill based on Jotysh context
+                    const enhanced = getEnhancedSkillForSlot(glyph, house, lagnaInfo, houseNakshatra, planet);
+
+                    // Colors/styles for Jotysh badges (derived from chart data; fallback colors provided)
+                    const houseColor = house?.color || '#8b5cf6';
+                    const planetColor = (planet && planet.color) || '#f59e0b';
+                    const signColor = (lagnaInfo && lagnaInfo.color) || '#3b82f6';
+                    const nakshatraColor = (houseNakshatra && (houseNakshatra.nakshatra?.color || houseNakshatra.color)) || '#a78bfa';
+
+                    // Respect per-slot toggles for visual state
+                    const toggles = glyph.activeInfluences || { house: true, planet: true, sign: true, nakshatra: true };
+
+                    const houseBadgeStyle = toggles.house ? `background:${hexToRgba(houseColor,0.06)};border-color:${hexToRgba(houseColor,0.14)};color:${houseColor};cursor:pointer;opacity:1;` : `background:rgba(0,0,0,0.12);border-color:rgba(255,255,255,0.04);color:#64748b;cursor:pointer;opacity:0.4;`;
+                    const planetBadgeStyle = toggles.planet ? `background:${hexToRgba(planetColor,0.06)};border-color:${hexToRgba(planetColor,0.14)};color:${planetColor};cursor:pointer;opacity:1;` : `background:rgba(0,0,0,0.12);border-color:rgba(255,255,255,0.04);color:#64748b;cursor:pointer;opacity:0.4;`;
+                    const signBadgeStyle = toggles.sign ? `background:${hexToRgba(signColor,0.06)};border-color:${hexToRgba(signColor,0.14)};color:${signColor};cursor:pointer;opacity:1;` : `background:rgba(0,0,0,0.12);border-color:rgba(255,255,255,0.04);color:#64748b;cursor:pointer;opacity:0.4;`;
+                    const nakshatraBadgeStyle = toggles.nakshatra ? `background:${hexToRgba(nakshatraColor,0.06)};border-color:${hexToRgba(nakshatraColor,0.14)};color:${nakshatraColor};cursor:pointer;opacity:1;` : `background:rgba(0,0,0,0.12);border-color:rgba(255,255,255,0.04);color:#64748b;cursor:pointer;opacity:0.4;`;
+
+                    // Narrative-driven aggregation (no numeric stat merging)
+                    slotsFilled++;
+                    // Count both base and contextual tags for dominant themes
+                    [...(glyph.tags || []), ...(enhanced.tags || [])].forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+                    elementCounts[house.planet] = (elementCounts[house.planet] || 0) + 1; 
+
+                    // Narrative: order-neutral, gameplay-relevant, curiosity-inspiring
+                    const narrativeText = house.slotNarrative
+                        ? house.slotNarrative(enhanced)
+                        : `"${enhanced.name}" is a unique action, always at your command.`;
+
+                    // Jotysh Influence: explicit, narrative, not just badges (show how each influence transforms the skill)
+                    const jotyshImpact = `
+                        <div class="facet-jotysh" style="font-size:0.9em; color:#f8e7a2;">
+                            <b>Jotysh Transformation:</b>
+                            <ul style="margin:0.2em 0 0 1.2em; padding:0; list-style:disc;">
+                                ${enhanced.jotyshEffects.map(e => `<li><b>${e.source}:</b> ${e.desc || ''}</li>`).join('')}
+                            </ul>
+                            <div style="margin-top:0.35rem;color:#e6e6e6;font-size:0.88em;"><b>Effect:</b> ${narrativeText}</div>
+                        </div>
+                    `;
+
+                    // Gameplay use: use prepared contextual tip
+                    const gameplayUse = `
+                        <div class="facet-tip">
+                            <b>How to use:</b> ${enhanced.gameplay || generateGameplayTip(enhanced)}
+                        </div>
+                    `;
+
+                    // Sample Use / Possible Outcomes
+                    const sampleUse = `
+                        <div class="facet-use" style="font-size:0.82em;color:#fbbf24;margin:0.2em 0 0.1em 0;">
+                            <b>Sample Use:</b> ${enhanced.narrative || generateSampleUse(enhanced)}
+                        </div>
+                        <div class="facet-outcomes" style="font-size:0.8em;color:#a78bfa;margin-bottom:0.1em;">
+                            <b>Possible Outcomes:</b> ${enhanced.outcomes || generatePossibleOutcomes(enhanced)}
+                        </div>
+                    `; 
+
+                    // Jotysh synergy tags (visual, but not stats)
+                    const synergyTags = [
+                        ...(house.synergyTags || []),
+                        ...(planet.synergyTags || []),
+                        ...(houseNakshatra?.nakshatra?.synergyTags || []),
+                        ...(lagnaInfo.synergyTags || [])
+                    ];
+                    const uniqueSynergyTags = [...new Set(synergyTags.filter(Boolean))];
+
+                    slotsHtml += `
+                        <div class="card-skill-facet ${enhanced.isPrimal ? 'primal-vibe' : ''}">
+                            <div class="facet-header" style="position:relative;">
+                                <span class="facet-icon">${getSkillIcon(enhanced.tags[0])}</span>
+                                <div class="facet-title-wrap" style="display:inline-block;vertical-align:top;">
+                                    <span class="facet-name" style="color:${getTierColor(enhanced.tier)}">${enhanced.name}</span>
+                                    <span class="facet-tier modern-tier-badge">${enhanced.tier}</span>
+
+                                    <!-- Horizontal Jotysh badges row under rarity -->
+                                    <div class="facet-jotysh-badges" style="margin-top:0.18em;">
+                                        ${renderJotyshBadge({
+                                            type: 'house',
+                                            label: house.number || house.name,
+                                            icon: '🏠',
+                                            active: (enhanced.activeInfluences && enhanced.activeInfluences.house) !== false,
+                                            locked: !!invokedCard,
+                                            tooltip: (enhanced.jotyshEffects.find(e => e.source==='House')||{}).desc || house.fullName || house.name,
+                                            onClick: `toggleInfluence(${i}, 'house')`
+                                        })}
+                                        ${renderJotyshBadge({
+                                            type: 'planet',
+                                            label: house.planet,
+                                            icon: planet.symbol || '',
+                                            active: (enhanced.activeInfluences && enhanced.activeInfluences.planet) !== false,
+                                            locked: !!invokedCard,
+                                            tooltip: (enhanced.jotyshEffects.find(e => e.source==='Planet')||{}).desc || planet.archetype || house.planet,
+                                            onClick: `toggleInfluence(${i}, 'planet')`
+                                        })}
+                                        ${renderJotyshBadge({
+                                            type: 'sign',
+                                            label: lagnaInfo.archetype || lagnaInfo.name || '',
+                                            icon: lagnaInfo.symbol || '',
+                                            active: (enhanced.activeInfluences && enhanced.activeInfluences.sign) !== false,
+                                            locked: !!invokedCard,
+                                            tooltip: (enhanced.jotyshEffects.find(e => e.source==='Lagna')||{}).desc || lagnaInfo.archetype || lagnaInfo.name,
+                                            onClick: `toggleInfluence(${i}, 'sign')`
+                                        })}
+                                        ${renderJotyshBadge({
+                                            type: 'nakshatra',
+                                            label: houseNakshatra?.nakshatra?.name || houseNakshatra?.name || '',
+                                            icon: '✦',
+                                            active: (enhanced.activeInfluences && enhanced.activeInfluences.nakshatra) !== false,
+                                            locked: !!invokedCard,
+                                            tooltip: (enhanced.jotyshEffects.find(e => e.source==='Nakshatra')||{}).desc || houseNakshatra?.nakshatra?.archetype || houseNakshatra?.name || '',
+                                            onClick: `toggleInfluence(${i}, 'nakshatra')`
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="facet-narrative">${narrativeText}</div>
+                            ${gameplayUse}
+                            ${sampleUse}
+                            ${jotyshImpact}
+                            <div class="facet-meta" style="margin-top:0.2em;">
+                                <span class="facet-tags">
+                                    ${uniqueSynergyTags.map(t => `<span class="mini-tag">${t}</span>`).join('')}
+                                </span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    slotsHtml += `
+                        <div class="card-skill-facet empty-facet">
+                            <div class="facet-header">
+                                <span class="facet-icon">❓</span>
+                                <span class="facet-name" style="color:#94a3b8;">Empty Slot</span>
+                            </div>
+                            <div class="facet-narrative">Awaiting a skill to complete the codex.</div>
+                        </div>
+                    `;
+                }
+            }
+
+            // Compute derived meta values for short preview
+            const dominantTags = Object.entries(tagCounts).sort((a,b)=>b[1]-a[1]).slice(0,2).map(e=>e[0]);
+            let primaryRole = 'Utility';
+            const offenseTags = ['DAMAGE','OFFENSE','CRIT','AOE','DMG'];
+            const supportTags = ['HEAL','SUPPORT','BUFF','RECOVER'];
+            const defenseTags = ['DEFENSE','SHIELD','TANK','GUARD'];
+            if (dominantTags.some(t => offenseTags.includes(t))) primaryRole = 'Offense';
+            else if (dominantTags.some(t => supportTags.includes(t))) primaryRole = 'Support';
+            else if (dominantTags.some(t => defenseTags.includes(t))) primaryRole = 'Defense';
+            const baseElement = Object.entries(elementCounts).sort((a,b)=>b[1]-a[1])[0]?.[0] || '—';
+            const topTagsText = dominantTags.length ? dominantTags.join(', ') : '—';
+
+            // Gameplay-first descriptors
+            const primaryFunction = inferPrimaryFunction(tagCounts, primaryRole);
+            // Narrative-driven usage descriptor (no numeric stats available)
+            let usageDescriptor = 'Flexible';
+            if (primaryRole === 'Offense') usageDescriptor = 'Engage / Burst';
+            else if (primaryRole === 'Support') usageDescriptor = 'Sustain / Support';
+            else if (primaryRole === 'Defense') usageDescriptor = 'Protect / Anchor';
+
+            rightPanel.innerHTML = `
+                <div class="gameplay-card-preview">
+                    <div class="card-header">
+                        <div class="card-identity">
+                            <span class="card-title" role="button" aria-label="Edit card name" tabindex="0"><span class="card-title-text">${title || '(Untitled)'}</span>
+                                <svg class="card-title-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z" fill="currentColor" opacity="0.95"/>
+                                    <path d="M20.71 7.04a1.003 1.003 0 000-1.42l-2.34-2.34a1.003 1.003 0 00-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z" fill="currentColor"/>
+                                </svg>
+                            </span>
+
+                            <div class="card-meta">
+                                <span class="meta-item meta-primary" title="Primary function (gameplay)" aria-label="Primary function"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>Primary: <b>${primaryFunction}</b></span>
+                                <span class="meta-item meta-usage" title="Usage intent (how this card is typically used)" aria-label="Usage intent"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2v-5h2v5z" fill="currentColor"/></svg>Usage: <b>${usageDescriptor}</b></span>
+
+                                <span class="meta-item meta-slots" title="Slots filled" aria-label="Slots filled"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 10V13h8v10h-8z" fill="currentColor"/></svg>Slots: <b>${slotsFilled}/12</b></span>
+                                <span class="meta-item meta-tags" title="Dominant tags" aria-label="Dominant tags"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5l-9 9c-.4.4-1 .4-1.4 0l-7-7c-.4-.4-.4-1 0-1.4l9-9c.4-.4 1-.4 1.4 0l7 7c.4.4.4 1 0 1.4z" fill="currentColor"/></svg>Tags: <b>${topTagsText}</b></span>
+                                <span class="meta-item meta-role" title="Inferred primary role" aria-label="Primary role"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.5h-2v-5h2v5z" fill="currentColor"/></svg>Role: <b>${primaryRole}</b></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-lore-section">
+                            <div class="card-lore-text">
+                                ${narrative}
+                            </div>
+                        </div>
+                        ${howToUseBlock}
+                        <div class="card-slots-list">
+                            ${slotsHtml}
+                        </div>
+                        <div class="card-footer-note">
+                            All actions are available at any time. Experiment and combine for infinite outcomes.
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // --- Restore scroll position ---
+            setTimeout(() => {
+                const newCardBody = rightPanel.querySelector('.card-body');
+                if (newCardBody) newCardBody.scrollTop = scrollTop;
+            }, 0);
+
+            // Re-attach event listener for the new invoke button since we replaced the HTML
+            // Note: Button moved to static location, no need to re-attach
+
+            // Re-apply compact button pressed state
+            const previewEl = document.querySelector('.gameplay-card-preview');
+            const compactBtn = previewEl ? previewEl.querySelector('.title-compact-btn') : null;
+            if (compactBtn) compactBtn.setAttribute('aria-pressed', compactPref ? 'true' : 'false');
+        }
+
         function handleHouseClick(index) {
             if (!selectedGlyph) {
                 showNotification('Select a skill in the Neural Archive first.', 'info');
                 return;
             }
-            slottedGlyphs[index] = { ...selectedGlyph };
+            // Ensure each slotted glyph carries per-influence toggles (defaults: all on)
+            slottedGlyphs[index] = { ...selectedGlyph, activeInfluences: { house: true, planet: true, sign: true, nakshatra: true } };
             renderHouseSlot(index);
             saveSlotsToStorage();
             updateInvokeButtonState();
+            renderCardPreview();
             playSound('select');
             // brief animated pulse for the house to show slotted state
             const houseEl = document.querySelector(`.house[data-house-id='${index+1}']`);
@@ -5547,6 +6583,21 @@
             renderHouseSlot(index);
             saveSlotsToStorage();
             updateInvokeButtonState();
+            renderCardPreview();
+        }
+
+        function toggleInfluence(slotIndex, type) {
+            // Prevent tampering with a card that's already been invoked
+            if (invokedCard) return;
+            if (typeof slotIndex !== 'number' || slotIndex < 0 || slotIndex >= 12) return;
+            const glyph = slottedGlyphs[slotIndex];
+            if (!glyph) return;
+            if (!glyph.activeInfluences) glyph.activeInfluences = { house: true, planet: true, sign: true, nakshatra: true };
+            // Flip the requested toggle
+            glyph.activeInfluences[type] = !glyph.activeInfluences[type];
+            saveSlotsToStorage();
+            playSound('click');
+            renderCardPreview();
         }
 
         function mapSkillToGlyph(skill) {
@@ -5562,13 +6613,262 @@
             };
         }
 
+        function generateGameplayTip(skill) {
+            const tags = skill.tags || [];
+            let tip = 'Try it out - you might discover something interesting!';
+            
+            if (tags.includes('FIRE')) {
+                tip = 'Burns enemies - watch them react to the flames.';
+            } else if (tags.includes('HEALING')) {
+                tip = 'Restores health - perfect when things get tough.';
+            } else if (tags.includes('AOE')) {
+                tip = 'Hits multiple targets - great for groups of enemies.';
+            } else if (tags.includes('SUPPORT')) {
+                tip = 'Helps allies - makes your team stronger.';
+            } else if (tags.includes('DEFENSE')) {
+                tip = 'Protects against damage - stay safe longer.';
+            } else if (tags.includes('BUFF')) {
+                tip = 'Makes you or allies better - feel the power boost.';
+            } else if (tags.includes('DEBUFF')) {
+                tip = 'Weakens enemies - turn the fight in your favor.';
+            } else if (tags.includes('SUMMON')) {
+                tip = 'Calls help - see what appears to aid you.';
+            } else if (tags.includes('STEALTH')) {
+                tip = 'Become hidden - sneak up or escape unnoticed.';
+            } else if (tags.includes('MIND')) {
+                tip = 'Affects thoughts - mind games can be fun.';
+            } else if (tags.includes('STRUCTURE')) {
+                tip = 'Creates things - build your advantage.';
+            } else if (tags.includes('DECAY')) {
+                tip = 'Damages over time - watch enemies weaken slowly.';
+            } else if (tags.includes('STASIS')) {
+                tip = 'Freezes or stops - control the battlefield.';
+            } else if (tags.includes('DISCORD')) {
+                tip = 'Creates chaos - mix things up dramatically.';
+            } else if (tags.includes('VOID')) {
+                tip = 'Absorbs or nullifies - counter powerful attacks.';
+            } else if (tags.includes('LIGHT')) {
+                tip = 'Illuminates or cleanses - reveal what\'s hidden.';
+            } else if (tags.includes('DARK')) {
+                tip = 'Shadows or obscures - mysterious effects await.';
+            } else if (tags.includes('EARTH')) {
+                tip = 'Grounds or stabilizes - feel the earth\'s power.';
+            } else if (tags.includes('WATER')) {
+                tip = 'Flows or adapts - flexible and fluid.';
+            } else if (tags.includes('AIR')) {
+                tip = 'Moves or disperses - swift and breezy.';
+            } else if (tags.includes('INITIATIVE')) {
+                tip = 'Starts things off - set your own pace.';
+            } else if (tags.includes('CRIT')) {
+                tip = 'High risk, high reward - go for the big hits.';
+            }
+            
+            return tip;
+        }
+
+        function generateSampleUse(skill) {
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            if (tags.includes('FIRE')) return 'Tap to unleash a burst of fire in battle, or intimidate a foe in dialogue.';
+            if (tags.includes('HEAL')) return 'Restore health to yourself or an ally, or calm a tense situation.';
+            if (tags.includes('AOE')) return 'Affect multiple targets at once—great for groups or crowd scenes.';
+            if (tags.includes('SUPPORT')) return 'Boost an ally\'s abilities, or sway a negotiation in your favor.';
+            if (tags.includes('DEFENSE')) return 'Block an incoming attack, or shield yourself from harm.';
+            if (tags.includes('BUFF')) return 'Empower yourself or a friend, or impress a crowd.';
+            if (tags.includes('DEBUFF')) return 'Weaken an enemy, or undermine an opponent\'s argument.';
+            if (tags.includes('SUMMON')) return 'Call for help—see what appears!';
+            if (tags.includes('STEALTH')) return 'Vanish from sight, or slip away from a tricky conversation.';
+            if (tags.includes('MIND')) return 'Influence thoughts, or read hidden motives.';
+            if (tags.includes('STRUCTURE')) return 'Create a barrier, or build a bridge to new opportunities.';
+            if (tags.includes('DECAY')) return 'Sap strength over time, or erode stubborn resistance.';
+            if (tags.includes('STASIS')) return 'Freeze the action, or pause a heated debate.';
+            if (tags.includes('DISCORD')) return 'Sow chaos, or disrupt the status quo.';
+            if (tags.includes('VOID')) return 'Nullify effects, or erase obstacles.';
+            if (tags.includes('LIGHT')) return 'Illuminate secrets, or inspire hope.';
+            if (tags.includes('DARK')) return 'Shroud intentions, or conceal your plans.';
+            if (tags.includes('EARTH')) return 'Stabilize the ground, or anchor a story.';
+            if (tags.includes('WATER')) return 'Adapt to change, or flow around problems.';
+            if (tags.includes('AIR')) return 'Move swiftly, or spread ideas.';
+            if (tags.includes('INITIATIVE')) return 'Take the first move, or set the tone.';
+            if (tags.includes('CRIT')) return 'Go for a decisive strike, or make a bold statement.';
+            return 'Try this action in any situation—combat, exploration, or story—and see what happens!';
+        }
+
+        function generatePossibleOutcomes(skill) {
+            const tags = (skill.tags || []).map(t => t.toUpperCase());
+            if (tags.includes('FIRE')) return 'May deal damage, frighten enemies, or clear obstacles.';
+            if (tags.includes('HEAL')) return 'May heal wounds, mend relationships, or restore hope.';
+            if (tags.includes('AOE')) return 'May affect groups, change the environment, or shift the balance.';
+            if (tags.includes('SUPPORT')) return 'May strengthen allies, unlock new paths, or win trust.';
+            if (tags.includes('DEFENSE')) return 'May block attacks, prevent harm, or buy time.';
+            if (tags.includes('BUFF')) return 'May boost stats, morale, or reputation.';
+            if (tags.includes('DEBUFF')) return 'May weaken foes, cause confusion, or open vulnerabilities.';
+            if (tags.includes('SUMMON')) return 'May bring allies, tools, or unexpected surprises.';
+            if (tags.includes('STEALTH')) return 'May avoid danger, gather secrets, or escape notice.';
+            if (tags.includes('MIND')) return 'May reveal secrets, change minds, or uncover truths.';
+            if (tags.includes('STRUCTURE')) return 'May create barriers, platforms, or safe zones.';
+            if (tags.includes('DECAY')) return 'May wear down defenses, cause slow effects, or unravel plans.';
+            if (tags.includes('STASIS')) return 'May freeze time, halt progress, or create openings.';
+            if (tags.includes('DISCORD')) return 'May cause chaos, disrupt plans, or force new outcomes.';
+            if (tags.includes('VOID')) return 'May erase effects, absorb attacks, or reset the field.';
+            if (tags.includes('LIGHT')) return 'May reveal, purify, or inspire.';
+            if (tags.includes('DARK')) return 'May conceal, confuse, or corrupt.';
+            if (tags.includes('EARTH')) return 'May stabilize, fortify, or root events.';
+            if (tags.includes('WATER')) return 'May heal, adapt, or connect.';
+            if (tags.includes('AIR')) return 'May speed up, scatter, or communicate.';
+            if (tags.includes('INITIATIVE')) return 'May seize the advantage, surprise foes, or start new arcs.';
+            if (tags.includes('CRIT')) return 'May land a critical blow, turn the tide, or impress the crowd.';
+            return 'May change the story, open new options, or surprise everyone—including you!';
+        }
+
+        // --- Advanced synergy helpers ---
+        function getDoshaForSlot(house, planet, lagna, nakshatra) {
+            if (!planet || !house) return null;
+            // Mars / The Crimson Warlord in 8th House -> Angaraka Dosha
+            if ((planet.title || planet.name) === 'The Crimson Warlord' && house.id === 8) {
+                return { name: 'Angaraka Dosha', effect: 'Unpredictable power surges, risk of self-damage.', synergy: ['DAMAGE','CHAOS','REBIRTH'] };
+            }
+            // Saturn / The Iron Judge in 6th -> Shani Dosha
+            if ((planet.title || planet.name) === 'The Iron Judge' && house.id === 6) {
+                return { name: 'Shani Dosha', effect: 'Skill cooldowns increased, but defense is boosted.', synergy: ['DEFENSE','SLOW','SERVICE'] };
+            }
+            // Moon / The Silver Guardian in 4th -> Chandra Dosha
+            if ((planet.title || planet.name) === 'The Silver Guardian' && house.id === 4) {
+                return { name: 'Chandra Dosha', effect: 'Healing is amplified, but emotional instability may occur.', synergy: ['HEAL','EMOTION','HOME'] };
+            }
+            // Venus / The Enchantress in 12th -> Shukra Dosha
+            if ((planet.title || planet.name) === 'The Enchantress' && house.id === 12) {
+                return { name: 'Shukra Dosha', effect: 'Skills gain mystic allure, but may cause unexpected losses.', synergy: ['SPIRIT','LOSS','BUFF'] };
+            }
+            return null;
+        }
+
+        function getPlanetaryAspectSynergy(house, planet, lagna, nakshatra) {
+            if (!planet || !house) return null;
+            const pName = planet.title || planet.name || '';
+            if (pName === 'The Sage King' && house.id === 9) {
+                return { name: 'Jupiterian Blessing', effect: 'Wisdom and XP skills are greatly amplified.', synergy: ['XP','WISDOM','BUFF'] };
+            }
+            if (pName === 'The Enchantress' && house.id === 2) {
+                return { name: 'Venusian Wealth', effect: 'Gold and resource skills yield extra rewards.', synergy: ['WEALTH','RESOURCE','BUFF'] };
+            }
+            if (pName === 'The Radiant Sovereign' && house.id === 5) {
+                return { name: 'Solar Inspiration', effect: 'Creativity and AoE skills deal bonus damage.', synergy: ['CREATION','AOE','CRIT'] };
+            }
+            if (pName === 'The Quicksilver Trickster' && house.id === 3) {
+                return { name: 'Mercurial Chain', effect: 'Combo and speed skills chain more efficiently.', synergy: ['SPEED','COMBO','UTILITY'] };
+            }
+            return null;
+        }
+
+        function getNakshatraSynergy(nakshatra) {
+            if (!nakshatra || !nakshatra.nakshatra) return null;
+            const n = nakshatra.nakshatra;
+            if (n.name === 'Ashwini') return { name: 'Healer\'s Surge', effect: 'Healing skills restore extra HP and cleanse debuffs.', synergy: ['HEAL','SPEED','SUPPORT'] };
+            if (n.name === 'Krittika') return { name: 'Blade of Purification', effect: 'Damage skills can remove enemy buffs.', synergy: ['FIRE','CRIT','PURIFY'] };
+            if (n.name === 'Pushya') return { name: 'Nurturer\'s Blessing', effect: 'Buff and defense skills last longer.', synergy: ['BUFF','DEFENSE','SPIRIT'] };
+            return null;
+        }
+
+        function getLagnaSynergy(lagna) {
+            if (!lagna) return null;
+            if (lagna.archetype === 'The Pioneer') return { name: 'Initiative Drive', effect: 'First-use skills gain bonus potency.', synergy: ['INITIATIVE','COURAGE'] };
+            if (lagna.archetype === 'The Protector') return { name: 'Guardian\'s Heart', effect: 'Defensive skills shield allies nearby.', synergy: ['DEFENSE','HOME'] };
+            if (lagna.archetype === 'The Performer') return { name: 'Creative Spark', effect: 'AoE and crit skills gain extra range.', synergy: ['CREATION','CRIT'] };
+            return null;
+        }
+
+        function getEnhancedSkillForSlot(skill, house, lagna, nakshatra, planet) {
+            if (!skill) return null;
+
+            // Respect per-slot toggles if present; default to all active
+            const toggles = (skill.activeInfluences) || { house: true, planet: true, sign: true, nakshatra: true };
+
+            const baseTags = (skill.tags || []).slice();
+            const synergyTags = [
+                ...(toggles.house ? (house?.synergyTags || []) : []),
+                ...(toggles.planet ? (planet?.synergyTags || []) : []),
+                ...(toggles.nakshatra ? (nakshatra?.nakshatra?.synergyTags || []) : []),
+                ...(toggles.sign ? (lagna?.synergyTags || []) : [])
+            ].filter(Boolean);
+
+            // Advanced: calculate dosha / aspect / nakshatra / lagna synergy
+            const dosha = toggles.planet ? getDoshaForSlot(house, planet, lagna, nakshatra) : null;
+            const aspect = toggles.planet ? getPlanetaryAspectSynergy(house, planet, lagna, nakshatra) : null;
+            const nakshatraSynergy = toggles.nakshatra ? getNakshatraSynergy(nakshatra) : null;
+            const lagnaSynergy = toggles.sign ? getLagnaSynergy(lagna) : null;
+
+            const tags = [...new Set([
+                ...baseTags,
+                ...synergyTags,
+                ...(dosha?.synergy || []),
+                ...(aspect?.synergy || []),
+                ...(nakshatraSynergy?.synergy || []),
+                ...(lagnaSynergy?.synergy || [])
+            ])];
+
+            const jotyshEffects = [];
+            if (toggles.house) jotyshEffects.push({ source: 'House', desc: house?.narrative || house?.theme || house?.name });
+            if (toggles.planet) jotyshEffects.push({ source: 'Planet', desc: planet?.narrative || planet?.archetype || house?.planet || '' });
+            if (toggles.nakshatra) jotyshEffects.push({ source: 'Nakshatra', desc: nakshatra?.nakshatra?.narrative || nakshatra?.nakshatra?.archetype || '' });
+            if (toggles.sign) jotyshEffects.push({ source: 'Lagna', desc: lagna?.narrative || lagna?.archetype || lagna?.theme || '' });
+            if (dosha) jotyshEffects.push({ source: 'Dosha', desc: `${dosha.name}: ${dosha.effect}` });
+            if (aspect) jotyshEffects.push({ source: 'Aspect', desc: `${aspect.name}: ${aspect.effect}` });
+            if (nakshatraSynergy) jotyshEffects.push({ source: 'Nakshatra Synergy', desc: `${nakshatraSynergy.name}: ${nakshatraSynergy.effect}` });
+            if (lagnaSynergy) jotyshEffects.push({ source: 'Lagna Synergy', desc: `${lagnaSynergy.name}: ${lagnaSynergy.effect}` });
+
+            const isPrimal = !Object.values(toggles).includes(true);
+
+            // Narrative: blend all synergy effects
+            let narrative = '';
+            if (isPrimal) {
+                narrative = `The raw, unfiltered essence of ${skill.name}. Dangerous, unpredictable, and stripped of cosmic guidance.`;
+            } else {
+                narrative = generateSkillStoryIntro(skill, {
+                    house: toggles.house ? house : null,
+                    planet: toggles.planet ? planet : null,
+                    nakshatra: toggles.nakshatra ? nakshatra : null,
+                    lagna: toggles.sign ? lagna : null
+                });
+                if (dosha) narrative += `<br><span style="color:#ef4444;"><b>${dosha.name}:</b> ${dosha.effect}</span>`;
+                if (aspect) narrative += `<br><span style="color:#fbbf24;"><b>${aspect.name}:</b> ${aspect.effect}</span>`;
+                if (nakshatraSynergy) narrative += `<br><span style="color:#10b981;"><b>${nakshatraSynergy.name}:</b> ${nakshatraSynergy.effect}</span>`;
+                if (lagnaSynergy) narrative += `<br><span style="color:#3b82f6;"><b>${lagnaSynergy.name}:</b> ${lagnaSynergy.effect}</span>`;
+            }
+
+            const gameplayTip = generateGameplayTip({ ...skill, tags });
+            const outcomes = generatePossibleOutcomes({ ...skill, tags });
+
+            return {
+                baseSkill: skill,
+                name: isPrimal ? `Primal ${skill.name}` : skill.name,
+                tier: skill.tier || 'Common',
+                tags,
+                synergyTags,
+                jotyshEffects,
+                narrative,
+                gameplay: gameplayTip,
+                outcomes,
+                activeInfluences: toggles,
+                isPrimal
+            };
+        }
+
+        function updateSlotsFilledIndicator() {
+            const filled = slottedGlyphs.filter(Boolean).length;
+            const indicator = document.getElementById('slots-filled-count');
+            if (indicator) indicator.textContent = `Slots: ${filled}/12`;
+            // visually dim if zero
+            const wrapper = document.getElementById('slots-filled-indicator');
+            if (wrapper) wrapper.classList.toggle('empty', filled === 0);
+        }
+
         function updateInvokeButtonState() {
             const filled = slottedGlyphs.filter(Boolean).length;
-            const invokeBtn = document.getElementById('invoke-card-btn');
-            if (invokeBtn) {
-                invokeBtn.disabled = filled === 0;
-                invokeBtn.textContent = filled ? `🎴 Invoke Card (${filled}/12)` : '🎴 Invoke Card';
-            }
+            // Update preview-level invoke button (the real action) instead of top header
+            const previewInvokeBtn = document.getElementById('invoke-card-btn-preview');
+            if (previewInvokeBtn) previewInvokeBtn.disabled = filled === 0;
+            // Update the slots indicator for top panel
+            updateSlotsFilledIndicator();
             const battleBtn = document.getElementById('battle-btn');
             if (battleBtn) battleBtn.disabled = !invokedCard;
         }
@@ -5584,23 +6884,382 @@
             showNotification(`Element Matrix tuned to ${currentBaseElement}`, 'info');
         }
 
+        function generateSkillStoryIntro(skill, slotMeta) {
+            // slotMeta: { house, planet, nakshatra, lagna }
+            // Build a rich, organic narrative based on active influences (robust to simple or object values)
+
+            slotMeta = slotMeta || {};
+            const base = skill.narrative || skill.flavor || skill.flavorText || '';
+            const lines = [];
+
+            const humanize = (value) => {
+                if (!value) return null;
+                if (typeof value === 'string') return value;
+                // common object fields we expect
+                return value.fullName || value.name || value.title || value.label || null;
+            };
+
+            // House
+            if (slotMeta.house) {
+                const h = slotMeta.house;
+                const name = humanize(h) || 'a mysterious House';
+                const theme = (h && (h.theme || h.archetype || h.narrative || h.description)) ? `(${h.theme || h.archetype || h.narrative || ''})` : '';
+                const short = (h && (h.archetype || h.theme)) ? `${h.archetype || h.theme}` : '';
+                lines.push(`In the <b>${name}</b> ${theme}, this skill leans into <i>${short || 'the house\'s essence'}</i> and reshapes its purpose.`);
+            }
+
+            // Planet
+            if (slotMeta.planet) {
+                const p = slotMeta.planet;
+                const name = humanize(p) || 'a distant planet';
+                const theme = p && (p.theme || p.archetype || p.narrative) ? `(${p.theme || p.archetype || p.narrative})` : '';
+                lines.push(`Touched by <b>${name}</b> ${theme}, it gains a flavor of <i>${p && (p.archetype || p.effect || 'cosmic influence')}</i>.`);
+            }
+
+            // Lagna / Sign
+            if (slotMeta.lagna) {
+                const l = slotMeta.lagna;
+                const name = humanize(l) || 'the Ascendant';
+                const arche = l && (l.archetype || l.theme || l.narrative) ? `${l.archetype || l.theme || l.narrative}` : '';
+                lines.push(`Shaped by the <b>${name}</b> ${arche ? `(${arche})` : ''}, it adopts a ${arche ? arche.toLowerCase() : 'distinct'} disposition.`);
+            }
+
+            // Nakshatra
+            if (slotMeta.nakshatra && slotMeta.nakshatra.nakshatra) {
+                const n = slotMeta.nakshatra.nakshatra;
+                lines.push(`Under the Nakshatra <b>${n.name}</b> (${n.archetype || n.effect || 'ancient theme'}), it resonates with <i>${n.narrative || 'mythic undertones'}</i>.`);
+            }
+
+            // Fallback if nothing active
+            if (!lines.length) {
+                return base
+                    ? `<span style="color:#fbbf24;">${base}</span> <i>(primal)</i>`
+                    : `The raw, primal essence of <b>${skill.name}</b> emerges, unpredictable and untamed.`;
+            }
+
+            // Blend with base narrative if present
+            const blended = base ? `<span style="color:#fbbf24;">${base}</span><br>` : '';
+            return blended + lines.join('<br>');
+        }
+
+        // Compute a deterministic signature for a set of slotted glyphs so duplicates are reliably detected
+        function computeSlotsSignature(slots) {
+            // input: array of slot objects (enhanced or saved)
+            // output: deterministic string representing id and toggles
+            const list = (slots || []).map(s => {
+                if (!s) return 'empty';
+                // prefer baseSkill id if available, then id, then name
+                const id = (s.baseSkill && s.baseSkill.id) || s.id || (s.name ? s.name.replace(/\|/g,'') : 'unknown');
+                const toggles = s.activeInfluences || s.activeInfluences === null ? s.activeInfluences : s.toggles || { house: true, planet: true, sign: true, nakshatra: true };
+                const t = ['house','planet','sign','nakshatra'].map(k => (toggles && toggles[k]) ? '1' : '0').join('');
+                return `${id}:${t}`;
+            });
+            return list.join('|');
+        }
+
         function invokeCardFromJotysh() {
             const filledSlots = slottedGlyphs.filter(Boolean);
             if (!filledSlots.length) {
                 showNotification('Slot at least one skill before invoking.', 'info');
                 return;
             }
-            const totalPower = filledSlots.reduce((sum, glyph) => sum + (glyph.power || 0), 0);
-            const totalKP = filledSlots.reduce((sum, glyph) => sum + (glyph.kp || 0), 0);
-            invokedCard = {
-                timestamp: Date.now(),
-                baseElement: currentBaseElement,
-                slots: filledSlots,
-                stats: { power: totalPower, kp: totalKP }
-            };
-            updateInvokeButtonState();
-            showNotification(`Invocation complete • Power ${totalPower} • KP ${totalKP}`, 'achievement');
+
+            const lagnaInfo = LAGNA_DATA[currentLagna];
+            const nakshatraInfo = getNakshatraFromAbsoluteDegree(getAnchoredNakshatraDegree());
+
+            // Create the full invoked card with all enhanced skills
+            const enhancedSlots = [];
+            for (let i = 0; i < 12; i++) {
+                const glyph = slottedGlyphs[i];
+                if (glyph) {
+                    const house = HOUSES.find(h => h.id === i + 1);
+                    const planet = PLANETS[house.planet];
+                    // Prefer appliedNakshatra if present (blueprint override), else use mapped or global anchor
+                    const houseNakshatra = house.appliedNakshatra
+                        ? { nakshatra: house.appliedNakshatra, pada: 1, absoluteDegree: null }
+                        : (houseNakshatraMap[house.id] || nakshatraInfo);
+
+                    const enhanced = getEnhancedSkillForSlot(glyph, house, lagnaInfo, houseNakshatra, planet);
+
+                    // Lock toggles after invocation
+                    enhanced.locked = true;
+
+                    // Add additional data for the card collection
+                    enhanced.icon = getSkillIcon(enhanced.tags[0]);
+                    
+                    // PATCH: Bake in Jotysh Data for Perfect Mapping
+                    enhanced.house = house.number;
+                    enhanced.planet = house.planet;
+                    enhanced.nakshatra = houseNakshatra?.nakshatra?.name || houseNakshatra?.name || 'Unknown';
+                    
+                    enhanced.tierColor = getTierColor(enhanced.tier);
+                    enhanced.houseFullName = house.fullName;
+                    enhanced.houseTheme = house.theme;
+                    enhanced.planetSymbol = planet.symbol;
+                    enhanced.planetName = house.planet;
+                    enhanced.planetColor = planet.color;
+                    enhanced.planetArchetype = planet.archetype;
+                    enhanced.nakshatraName = houseNakshatra?.nakshatra?.name || '';
+                    enhanced.nakshatraArchetype = houseNakshatra?.nakshatra?.archetype || '';
+                    enhanced.gameplayTip = generateGameplayTip(enhanced);
+                    enhanced.sampleUse = generateSampleUse(enhanced);
+                    enhanced.possibleOutcomes = generatePossibleOutcomes(enhanced);
+                    enhanced.synergyTags = [
+                        ...(house.synergyTags || []),
+                        ...(planet.synergyTags || []),
+                        ...(houseNakshatra?.nakshatra?.synergyTags || []),
+                        ...(lagnaInfo.synergyTags || [])
+                    ];
+
+                    // Generate Deep Narrative Intro
+                    enhanced.storyIntro = generateSkillStoryIntro(enhanced, {
+                        house: enhanced.house,
+                        planet: enhanced.planet,
+                        nakshatra: enhanced.nakshatra
+                    });
+
+                    enhancedSlots[i] = enhanced;
+                }
+            }
+
+            // Narrative-first: compute a tag-based summary instead of numeric stats
+            const themeCounts = {};
+            enhancedSlots.filter(Boolean).forEach(s => {
+                (s.tags || []).forEach(t => { themeCounts[t] = (themeCounts[t] || 0) + 1; });
+            });
+            const dominantTagsForInvoke = Object.entries(themeCounts).sort((a,b)=>b[1]-a[1]).slice(0,3).map(e=>e[0]);
+            const summary = dominantTagsForInvoke.length ? dominantTagsForInvoke.join(', ') : '—';
+
+            // Prompt for Card Name (custom modal with live preview)
+            function handleCardName(userCardName) {
+                const name = (userCardName || '').trim();
+                if (!name) {
+                    showNotification("Card invocation cancelled. A name is required.", "error");
+                    return;
+                }
+
+                // Check for identical configuration (same skills in same slots AND same influence toggles)
+                // Use canonical signatures for robust comparison even if saved cards have slightly different shapes
+                let cards = JSON.parse(localStorage.getItem('my_cosmic_cards') || '[]');
+                const currentSignature = computeSlotsSignature(enhancedSlots);
+
+                const configExists = cards.some(c => {
+                    // if saved card already has a precomputed signature, use it; else compute from its slottedGlyphs
+                    const savedSig = c.signature || computeSlotsSignature(c.slottedGlyphs || []);
+                    return savedSig === currentSignature;
+                });
+
+                if (configExists) {
+                    showNotification("This exact card configuration already exists! You cannot duplicate destiny.", "error");
+                    return;
+                }
+
+                // STEP 3 -> STEP 4 SNAPSHOT
+                // We freeze all data here. MyCards (Step 4) will just READ this.
+                invokedCard = {
+                    id: Date.now(),
+                    timestamp: Date.now(),
+                    name: name,
+                    
+                    // FROZEN METADATA (Snapshot of current chart state)
+                    archetype: lagnaInfo.archetype,
+                    theme: lagnaInfo.theme,
+                    lagnaInfo: { ...lagnaInfo }, // clone to prevent ref issues
+                    nakshatraInfo: { ...nakshatraInfo }, 
+                    
+                    // FROZEN SKILLS (The enhanced slots are already clones)
+                    slottedGlyphs: enhancedSlots, 
+                    signature: currentSignature,
+                    
+                    // FROZEN STATS (Narrative summary only)
+                    stats: { summary },
+                    baseElement: currentBaseElement
+                };
+
+                // Save to localStorage for the collection
+                cards.push(invokedCard);
+                localStorage.setItem('my_cosmic_cards', JSON.stringify(cards));
+
+                updateInvokeButtonState();
+                showNotification(`"${name}" invoked! Summary: ${summary}`, 'achievement');
+                closeCardNameModal(true); // keep the preview title after confirm
+            }
+
+            // Open the name modal; it will live-update the preview while the user types
+            openCardNameModal('', handleCardName, () => {
+                showNotification("Card invocation cancelled. A name is required.", "error");
+            });
         }
+
+        // Card name modal helper (opens a modal with input that live-updates the preview)
+        function openCardNameModal(defaultValue = '', onConfirm = () => {}, onCancel = () => {}) {
+            // expose callbacks so overlay/cancel can call them if needed
+            window._cardNameModalOnConfirm = onConfirm;
+            window._cardNameModalOnCancel = onCancel;
+            // remember the original name so cancel can revert
+            window._originalCardName = defaultValue || '';
+
+            const modal = document.getElementById('card-name-modal');
+            if (!modal) return;
+            modal.setAttribute('aria-hidden','false');
+            modal.classList.add('visible');
+            const input = modal.querySelector('#card-name-input');
+            const confirmBtn = modal.querySelector('#card-name-confirm');
+            const cancelBtn = modal.querySelector('#card-name-cancel');
+            const errorEl = modal.querySelector('#card-name-error');
+
+            // Reset state
+            if (errorEl) { errorEl.textContent = ''; errorEl.style.display = 'none'; }
+            input.value = defaultValue || '';
+            // track a live name so re-renders can preserve it until confirm
+            window._currentCardName = input.value || '';
+            const titleEl = document.querySelector('.card-title');
+            const titleTextEl = titleEl ? titleEl.querySelector('.card-title-text') : null;
+            if (titleTextEl) titleTextEl.textContent = input.value || '(Untitled)';
+
+            function updateState() {
+                const val = input.value;
+                confirmBtn.disabled = val.trim() === '';
+                if (titleTextEl) titleTextEl.textContent = val || '(Untitled)';
+                // persist live value globally so re-renders can pick it up
+                window._currentCardName = val || '';
+                if (val.trim() !== '') {
+                    errorEl.style.display = 'none';
+                }
+            }
+
+            function keyHandler(e) {
+                if (e.key === 'Enter') {
+                    if (!confirmBtn.disabled) confirmBtn.click();
+                } else if (e.key === 'Escape') {
+                    cancelCardNameModal();
+                }
+            }
+
+            // small debounce for live updates to avoid excessive reflows
+            let updateTimer = null;
+            function debouncedUpdate() {
+                clearTimeout(updateTimer);
+                updateTimer = setTimeout(updateState, 60);
+            }
+
+            input.addEventListener('input', debouncedUpdate);
+            input.addEventListener('keydown', keyHandler);
+            // initialize state once
+            updateState();
+
+            confirmBtn.onclick = () => {
+                const val = input.value.trim();
+                if (val === '') {
+                    if (errorEl) { errorEl.textContent = 'Please enter a name.'; errorEl.style.display = 'block'; }
+                    input.focus();
+                    return;
+                }
+                // call provided confirm handler and close modal preserving title
+                try { onConfirm(val); } catch (e) { console.error(e); }
+                // clear modal callbacks
+                window._cardNameModalOnConfirm = null;
+                window._cardNameModalOnCancel = null;
+                // update original so future cancels revert to the confirmed name
+                window._originalCardName = val;
+                closeCardNameModal(true);
+            };
+
+            cancelBtn.onclick = () => {
+                cancelCardNameModal();
+            };
+
+            setTimeout(() => input.focus(), 10);
+        }
+
+        // cancelCardNameModal: revert to the original name and close the modal (preserving the reverted title)
+        function cancelCardNameModal() {
+            const originalName = window._originalCardName || '';
+            // ensure we don't set an empty title — use placeholder when original is empty
+            window._currentCardName = originalName || '';
+            const titleEl = document.querySelector('.card-title');
+            const titleTextEl = titleEl ? titleEl.querySelector('.card-title-text') : null;
+            if (titleTextEl) titleTextEl.textContent = originalName || '(Untitled)';
+
+            if (window._cardNameModalOnCancel) {
+                try { window._cardNameModalOnCancel(); } catch(e) { console.error(e); }
+            }
+            window._cardNameModalOnConfirm = null;
+            window._cardNameModalOnCancel = null;
+            closeCardNameModal(true); // keep the reverted title visible
+        }
+
+        // closeCardNameModal(keepTitle = false): keepTitle = true will preserve the preview title (used after confirm)
+        function closeCardNameModal(keepTitle = false) {
+            const modal = document.getElementById('card-name-modal');
+            if (!modal) return;
+            modal.setAttribute('aria-hidden','true');
+            modal.classList.remove('visible');
+            const titleEl = document.querySelector('.card-title');
+            // revert to last confirmed name (or placeholder) when cancelling
+            const titleTextEl = titleEl ? titleEl.querySelector('.card-title-text') : null;
+            if (titleTextEl && !keepTitle) titleTextEl.textContent = (window._originalCardName || '(Untitled)');
+            // clear live name cache on cancel (revert to original)
+            if (!keepTitle) window._currentCardName = (window._originalCardName || '');
+            const dialog = modal.querySelector('.card-name-dialog');
+            if (dialog) {
+                const newDialog = dialog.cloneNode(true);
+                dialog.parentNode.replaceChild(newDialog, dialog);
+            }
+        }
+
+        // overlay click: confirm discard if user typed something different from original, then cancel
+        function cardNameOverlayClick() {
+            const input = document.getElementById('card-name-input');
+            const val = input ? input.value.trim() : '';
+            const original = window._originalCardName || '';
+
+            if (val !== '' && val !== original) {
+                if (!confirm('Discard changes to the name?')) return;
+            }
+            cancelCardNameModal();
+        }
+
+        // make the title clickable to reopen the naming modal and save changes inline
+        function enableCardTitleEditing() {
+            const container = document.querySelector('#right-panel .panel-content');
+            if (!container) return;
+            container.addEventListener('click', (e) => {
+                const t = e.target.closest('.card-title');
+                if (!t) return;
+                const defaultName = (invokedCard && invokedCard.name) || window._currentCardName || '';
+                openCardNameModal(defaultName, (name) => {
+                    // update invokedCard and persistent storage if this card already exists
+                    if (invokedCard) {
+                        invokedCard.name = name;
+                        let cards = JSON.parse(localStorage.getItem('my_cosmic_cards') || '[]');
+                        const idx = cards.findIndex(c => c.id === invokedCard.id);
+                        if (idx >= 0) { cards[idx].name = name; localStorage.setItem('my_cosmic_cards', JSON.stringify(cards)); }
+                    }
+                    window._currentCardName = name;
+                    renderCardPreview();
+                }, () => {
+                    // cancel - no-op
+                });
+            });
+        }
+
+        // enable once after load
+        setTimeout(enableCardTitleEditing, 40);
+
+        // Toggle compact meta view (persisted in localStorage)
+        function toggleCardMetaCompact() {
+            const current = localStorage.getItem('card_meta_compact') === '1';
+            const next = !current;
+            localStorage.setItem('card_meta_compact', next ? '1' : '0');
+            const preview = document.querySelector('.gameplay-card-preview');
+            if (preview) {
+                if (next) preview.classList.add('compact-meta'); else preview.classList.remove('compact-meta');
+                const btn = preview.querySelector('.title-compact-btn'); if (btn) btn.setAttribute('aria-pressed', next ? 'true' : 'false');
+            }
+        }
+
+
 
         function enterBattleSimulation() {
             if (!invokedCard) {
@@ -6236,6 +7895,24 @@
             console.log('🔄 Window focused, reloading skills...');
             const previousCount = ownedSkills.length;
             loadOwnedSkills();
+
+            // REFRESH SLOTTED GLYPHS (Live State Update)
+            // Ensure strict one-way flow: If definitions changed in Source, update Live Preview
+            let slotUpdates = 0;
+            slottedGlyphs = slottedGlyphs.map(glyph => {
+                if (!glyph) return null;
+                const fresh = ownedSkills.find(s => s.id === glyph.id);
+                if (fresh) {
+                    slotUpdates++;
+                    return { ...fresh }; // Update with fresh data
+                }
+                return glyph; 
+            });
+            
+            if (slotUpdates > 0) {
+                 console.log(`Updated ${slotUpdates} slotted skills with fresh source data`);
+                 renderCardPreview(); // Re-render the visual preview
+            }
             
             // Check if new skills were added
             setTimeout(() => {
@@ -6278,6 +7955,25 @@
             }, 100);
         };
     </script>
+
+    <!-- Card Name Modal (live-updates preview as you type) -->
+    <div id="card-name-modal" class="card-name-modal" aria-hidden="true">
+        <div class="card-name-overlay" onclick="cardNameOverlayClick()"></div>
+        <div class="card-name-dialog" role="dialog" aria-modal="true" aria-labelledby="card-name-title">
+            <div class="card-name-header">
+                <div id="card-name-title" style="font-weight:700;">Name Your Cosmic Artifact</div>
+                <button class="modal-close" onclick="cancelCardNameModal()" title="Close (keeps preview name)">×</button>
+            </div>
+            <div class="card-name-body">
+                <input id="card-name-input" type="text" placeholder="Enter artifact name" autocomplete="off" />
+                <div id="card-name-error" class="card-name-error" style="display:none;color:#fb7185;margin-top:0.5rem;font-size:0.85rem;"></div>
+                <div style="margin-top:0.6rem;display:flex;gap:0.5rem;justify-content:flex-end;">
+                    <button id="card-name-cancel" class="cosmic-btn">Cancel</button>
+                    <button id="card-name-confirm" class="cosmic-btn primary" disabled>Invoke</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Jotysh Blueprint Modal -->
     <div id="planet-tooltip" class="planet-tooltip"></div>
