@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>My Cosmic Cards</title>
+    <style>
+        :root {
+            --bg-dark: #050508;
+            --panel-bg: #0f0f16;
+            --panel-border: #1f1f2e;
+            --accent: #6d28d9;
+            --accent-glow: #8b5cf6;
+            --text-main: #e2e8f0;
+            --text-dim: #64748b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            height: 100vh; width: 100vw;
+            overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        /* Header */
+        .cosmic-header {
+            height: 56px;
+            background: linear-gradient(90deg, #312e81 0%, #8b5cf6 100%);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 2vw;
+            flex-shrink: 0;
+            z-index: 10;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .header-title { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
+        .cosmic-btn {
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; padding: 0.4em 1em; border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+        }
+        
+        /* Main Layout: Split View */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: row; /* Default: side-by-side */
+            overflow: hidden;
+            background: radial-gradient(ellipse at 60% 20%, #312e81 0%, #18122b 100%);
+        }
+
+        /* Left Panel: Card List */
+        .card-list-panel {
+            width: 320px;
+            background: rgba(15,15,22,0.95);
+            border-right: 1px solid var(--panel-border);
+            display: flex; flex-direction: column;
+            overflow-y: auto;
+            padding: 1rem;
+            gap: 0.8rem;
+        }
+        .card-list-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex; align-items: center; gap: 0.8rem;
+        }
+        .card-list-item:hover { background: rgba(255,255,255,0.06); }
+        .card-list-item.active {
+            background: rgba(139,92,246,0.15);
+            border-color: #8b5cf6;
+            box-shadow: 0 0 12px rgba(139,92,246,0.2);
+        }
+        .list-thumb { font-size: 1.5rem; }
+        .list-info { display: flex; flex-direction: column; }
+        .list-title { font-weight: 700; font-size: 0.95rem; color: #fff; }
+        .list-meta { font-size: 0.75rem; color: #a78bfa; }
+
+        /* Right Panel: Detail View */
+        .card-detail-panel {
+            flex: 1;
+            display: flex; align-items: flex-start; justify-content: flex-start;
+            padding: 1.2rem 0 1.2rem 0;
+            overflow-y: auto;
+            position: relative;
+            min-height: 100%;
+        }
+        
+        /* The Card Artifact Visuals */
+        .cosmic-card-artifact {
+            width: 100%; max-width: 960px;
+            background: linear-gradient(180deg, rgba(15, 10, 30, 0.98), rgba(30, 20, 50, 0.98));
+            border-radius: 28px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.9), 0 0 50px rgba(139,92,246,0.15);
+            padding: 2.5rem;
+            display: flex; flex-direction: column; gap: 1.8rem;
+            border: 2px solid rgba(139,92,246,0.3);
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Tier-based Card Glows */
+        .cosmic-card-artifact.tier-legendary { border-color: #f59e0b; box-shadow: 0 0 60px rgba(245,158,11,0.2), 0 20px 80px rgba(0,0,0,0.9); }
+        .cosmic-card-artifact.tier-epic { border-color: #a855f7; box-shadow: 0 0 60px rgba(168,85,247,0.2), 0 20px 80px rgba(0,0,0,0.9); }
+        .cosmic-card-artifact.tier-rare { border-color: #3b82f6; box-shadow: 0 0 60px rgba(59,130,246,0.2), 0 20px 80px rgba(0,0,0,0.9); }
+
+        .cosmic-card-artifact::before {
+            content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 60%);
+            pointer-events: none; z-index: 0;
+            animation: pulseAura 8s infinite alternate;
+        }
+        @keyframes pulseAura { from { opacity: 0.5; transform: scale(1); } to { opacity: 1; transform: scale(1.1); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Live update pulse for new cards */
+        .live-update-pulse { animation: livePulse 1.05s ease-out; box-shadow: 0 10px 30px rgba(139,92,246,0.14); transform-origin: center; }
+        @keyframes livePulse { 0% { transform: scale(0.985); opacity: 0.9; } 50% { transform: scale(1.03); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+
+        .artifact-header { 
+            display: flex; justify-content: space-between; align-items: flex-start; 
+            border-bottom: 1px solid rgba(167,139,250,0.15); padding-bottom: 1.5rem;
+            position: relative; z-index: 1;
+        }
+        .artifact-title-group { display: flex; flex-direction: column; gap: 0.2rem; }
+        .artifact-title { font-size: 2.4rem; font-weight: 900; background: linear-gradient(90deg, #f59e0b, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1.5px; line-height: 1.1; }
+        .artifact-meta { font-size: 1.1rem; color: #a78bfa; font-style: italic; opacity: 0.9; letter-spacing: 0.5px; }
+        .artifact-lore { font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; margin-top: 1rem; padding: 0.8rem; background: rgba(255,255,255,0.03); border-radius: 12px; border-left: 3px solid #8b5cf6; }
+        
+        /* Stats & Mods Bar */
+        .artifact-stats-bar {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;
+            padding: 1.2rem; background: rgba(255,255,255,0.02); border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: 0.3rem; }
+        .stat-label { color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+        .stat-value { color: #e2e8f0; font-weight: 800; font-size: 1rem; display: flex; align-items: center; gap: 0.4rem; }
+        .stat-value em { color: #fbbf24; font-style: normal; }
+
+        .artifact-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+            position: relative; z-index: 1;
+        }
+        .facet-node {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;
+            cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; overflow: hidden; backdrop-filter: blur(5px);
+        }
+        .facet-node:hover { 
+            background: rgba(255,255,255,0.07); border-color: #8b5cf6; 
+            transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+        }
+        .facet-node.empty { opacity: 0.4; cursor: default; border-style: dashed; background: transparent; }
+
+        .facet-top { display: flex; align-items: center; gap: 1rem; }
+        .facet-icon { font-size: 2.2rem; filter: drop-shadow(0 0 10px rgba(251,191,36,0.3)); }
+        .facet-name-wrap { display: flex; flex-direction: column; }
+        .facet-name { font-weight: 800; font-size: 1.1rem; line-height: 1.2; color: #fff; }
+        .facet-tier { font-size: 0.75rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+
+        .facet-desc { font-size: 0.9rem; color: #94a3b8; line-height: 1.5; font-style: italic; }
+        .facet-effects { margin: 0; padding-left: 1.2rem; color: #fbbf24; font-size: 0.85rem; list-style-type: circle; }
+        .facet-effects li { margin-bottom: 0.2rem; }
+        
+        .facet-jotysh { font-size: 0.7rem; color: #64748b; font-weight: 600; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.6rem; display: flex; justify-content: space-between; }
+        .facet-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag-mini { font-size: 0.65rem; background: rgba(139,92,246,0.15); color: #c7d2fe; padding: 0.2rem 0.6rem; border-radius: 6px; font-weight: 700; text-transform: uppercase; border: 1px solid rgba(139,92,246,0.2); }
+
+        .synergy-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4em;
+            background: linear-gradient(90deg, #232046 60%, #312e81 100%);
+            border: 2px solid #a78bfa;
+            box-shadow: 0 2px 12px #8b5cf655, 0 0 0 2px #312e8133;
+            border-radius: 14px;
+            padding: 0.5em 1em;
+            min-height: 2.2em;
+            align-items: center;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin-top: 0.2em;
+            margin-bottom: 0.2em;
+            position: relative;
+            z-index: 1;
+        }
+        .synergy-info {
+            margin-left: 0.4em;
+            color: #a78bfa;
+            font-size: 1.1em;
+            cursor: help;
+            vertical-align: middle;
+        }
+        .synergy-box .tag-mini {
+            margin: 0.1em 0.3em 0.1em 0;
+            background: linear-gradient(90deg, #8b5cf6 60%, #fbbf24 100%);
+            color: #232046;
+            border: none;
+            font-weight: 700;
+            border-radius: 6px;
+            padding: 0.18em 0.8em;
+            font-size: 0.93em;
+            box-shadow: 0 1px 6px #8b5cf633;
+            transition: background 0.2s;
+            position: relative;
+        }
+        .synergy-box .tag-mini[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            left: 50%; top: 120%;
+            transform: translateX(-50%);
+            background: #18122b;
+            color: #fbbf24;
+            padding: 0.4em 1em;
+            border-radius: 8px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            z-index: 10;
+            border: 1px solid #a78bfa;
+            box-shadow: 0 4px 12px #8b5cf655;
+        }
+        .synergy-tag-info {
+            margin-top: 0.7em;
+            background: linear-gradient(90deg, #232046 60%, #312e81 100%);
+            border: 1.5px solid #a78bfa;
+            border-radius: 10px;
+            color: #fbbf24;
+            font-size: 0.98em;
+            padding: 0.7em 1em;
+            box-shadow: 0 2px 12px #8b5cf655;
+            animation: fadeInTagInfo 0.25s cubic-bezier(0.4,0,0.2,1);
+            transition: opacity 0.2s;
+        }
+        @keyframes fadeInTagInfo {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .synergy-tag.active, .synergy-tag:focus {
+            outline: 2px solid #fbbf24;
+            background: linear-gradient(90deg, #fbbf24 60%, #8b5cf6 100%);
+            color: #232046;
+        }
+
+        .artifact-footer {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative; z-index: 1;
+        }
+        .seal-group { display: flex; align-items: center; gap: 1rem; }
+        .seal-text { font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: #f59e0b; font-weight: 900; letter-spacing: 1px; }
+        .invoked-badge { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; box-shadow: 0 0 15px rgba(245,158,11,0.3); }
+        .date-text { font-size: 0.85rem; color: #64748b; font-weight: 600; }
+
+        /* Modal Enhancements */
+        .modal-box { background: linear-gradient(180deg, #120c24, #1a1433); border: 2px solid #8b5cf6; box-shadow: 0 0 60px rgba(139,92,246,0.4); }
+        .modal-header { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1.5rem; }
+        .modal-icon { font-size: 4rem; filter: drop-shadow(0 0 20px rgba(251,191,36,0.4)); }
+        .modal-title-group h2 { font-size: 2.2rem; font-weight: 900; margin: 0; }
+        .modal-section-label { font-size: 0.8rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; display: block; }
+        .modal-narrative { font-size: 1.1rem; color: #e2e8f0; line-height: 1.7; font-style: italic; background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 12px; border-left: 4px solid #fbbf24; }
+        .modal-effects-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+        .modal-effects-list li { background: rgba(251,191,36,0.05); border: 1px solid rgba(251,191,36,0.1); padding: 1rem; border-radius: 10px; color: #fbbf24; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .modal-effects-list li span { font-size: 0.7rem; background: rgba(139,92,246,0.2); color: #c7d2fe; padding: 0.2rem 0.6rem; border-radius: 6px; }
+
+        /* Accessibility & Tooltips */
+        .high-contrast {
+            --bg-dark: #000;
+            --panel-bg: #000;
+            --text-main: #fff;
+            --accent: #fff;
+            --accent-glow: #fff;
+        }
+        .high-contrast .facet-node { border: 2px solid #fff; background: #000; }
+        .high-contrast .artifact-title { background: none; -webkit-text-fill-color: #fff; color: #fff; }
+        
+        .font-large { font-size: 1.2rem; }
+        .font-large .facet-name { font-size: 1.3rem; }
+        .font-large .facet-desc { font-size: 1.1rem; }
+
+        [data-tooltip] { position: relative; cursor: help; }
+        [data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%);
+            background: #1e1b4b; color: #fff; padding: 0.5rem 1rem; border-radius: 8px;
+            font-size: 0.8rem; white-space: nowrap; z-index: 100;
+            border: 1px solid #8b5cf6; box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        /* Empowered State */
+        .facet-node.empowered {
+            border-color: #fbbf24;
+            background: rgba(251, 191, 36, 0.1);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+        .facet-node.empowered::after {
+            content: "✨ EMPOWERED";
+            position: absolute; top: 0.5rem; right: 0.5rem;
+            font-size: 0.6rem; font-weight: 900; color: #fbbf24;
+            letter-spacing: 1px;
+        }
+
+        /* Scenario Suggestions */
+        .scenario-hint {
+            margin-top: 0.5rem; font-size: 0.8rem; color: #a78bfa;
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+        .scenario-hint::before { content: "💡"; }
+
+        /* Accessibility Controls */
+        .access-controls { display: flex; gap: 0.5rem; align-items: center; }
+        .access-btn {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; width: 32px; height: 32px; border-radius: 6px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+        }
+        .access-btn:hover { background: rgba(255,255,255,0.2); }
+
+        /* Mobile Landscape Optimization */
+        @media (max-width: 1100px) {
+            .artifact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .artifact-grid { grid-template-columns: 1fr; }
+            .cosmic-card-artifact { padding: 1.5rem; }
+            .artifact-title { font-size: 1.8rem; }
+        }
+
+        /* Phase 3: Living Narrative & Evolution */
+        .evolution-aura {
+            position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 24px; pointer-events: none; z-index: -1;
+            opacity: 0.3; transition: all 0.5s ease;
+        }
+        .mastery-level-1 .evolution-aura { box-shadow: inset 0 0 30px #3b82f6; }
+        .mastery-level-2 .evolution-aura { box-shadow: inset 0 0 50px #8b5cf6; border: 2px solid rgba(139,92,246,0.3); }
+        .mastery-level-3 .evolution-aura { 
+            box-shadow: inset 0 0 70px #f59e0b; border: 3px solid rgba(245,158,11,0.4);
+            animation: aura-pulse 3s infinite alternate;
+        }
+
+        @keyframes aura-pulse {
+            from { opacity: 0.2; transform: scale(1); }
+            to { opacity: 0.5; transform: scale(1.02); }
+        }
+
+        .mastery-badge {
+            background: rgba(0,0,0,0.5); border: 1px solid #fbbf24; color: #fbbf24;
+            padding: 0.2rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .progress-track {
+            width: 100%; height: 6px; background: rgba(255,255,255,0.1);
+            border-radius: 3px; margin-top: 0.5rem; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, #8b5cf6, #d946ef);
+            width: 0%; transition: width 1s ease-out;
+        }
+
+        .chronicle-section {
+            margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2);
+            border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .chronicle-entry {
+            display: flex; gap: 1rem; padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .chronicle-entry:last-child { border-bottom: none; }
+        .chronicle-date { font-size: 0.75rem; color: #64748b; min-width: 80px; }
+        .chronicle-event { font-size: 0.9rem; color: #e2e8f0; }
+        .chronicle-event strong { color: #fbbf24; }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; }
+        .modal-box { background: #18122b; padding: 2rem; border-radius: 16px; max-width: 600px; width: 90%; border: 1px solid #8b5cf6; box-shadow: 0 0 40px rgba(139,92,246,0.4); overflow-y: auto; max-height: 90vh; }
+        .modal-close { float: right; cursor: pointer; font-size: 1.5rem; color: #aaa; }
+
+        /* Unified Artifact Card Styles */
+        /* Massive, organized, cosmic artifact card */
+        .artifact-card {
+            width: 98vw;
+            max-width: 1400px;
+            min-height: 600px;
+            margin: 1.5rem auto 1.5rem auto;
+            background: radial-gradient(ellipse at 60% 20%, #312e81 0%, #18122b 100%);
+            border-radius: 36px;
+            border: 4px solid #8b5cf6;
+            box-shadow:
+                0 0 0 12px #8b5cf6aa,
+                0 12px 64px #18122b,
+                0 0 48px 12px #fbbf2433,
+                inset 0 0 48px #312e81;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.1fr 1.9fr;
+            /* ensure layout has a header+body+footer so footer can span across both columns */
+            grid-template-rows: auto 1fr auto;
+            gap: 2.5rem;
+            overflow: visible;
+            z-index: 1;
+            padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .artifact-card::after {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            inset: -16px;
+            border-radius: 44px;
+            border: 2.5px solid #fbbf24;
+            opacity: 0.16;
+            filter: blur(8px);
+            z-index: 0;
+            animation: cosmicGlow 6s infinite alternate;
+        }
+        @keyframes cosmicGlow {
+            from { opacity: 0.12; }
+            to { opacity: 0.28; }
+        }
+        .artifact-card.tier-legendary {
+            border-color: #f59e0b;
+            box-shadow:
+                0 0 0 16px #fbbf2433,
+                0 12px 64px #f59e0baa,
+                0 0 64px 16px #fbbf2444,
+                inset 0 0 64px #f59e0b;
+        }
+        .artifact-card.tier-epic {
+            border-color: #a855f7;
+            box-shadow:
+                0 0 0 16px #a78bfa33,
+                0 12px 64px #a855f7aa,
+                0 0 48px 12px #a78bfa44,
+                inset 0 0 48px #a855f7;
+        }
+        .artifact-card.tier-rare {
+            border-color: #3b82f6;
+            box-shadow:
+                0 0 0 16px #3b82f633,
+                0 12px 64px #3b82f6aa,
+                0 0 48px 12px #3b82f644,
+                inset 0 0 48px #3b82f6;
+        }
+        /* Section separation */
+        .artifact-card > .artifact-main {
+            grid-column: 1;
+            grid-row: 1 / span 2; /* header + body */
+            border-right: 2px solid rgba(139,92,246,0.13);
+            padding-right: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            min-width: 0;
+        }
+        .artifact-card > .artifact-side {
+            grid-column: 2;
+            grid-row: 1 / span 2; /* match the main column height */
+            padding-left: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            min-width: 0;
+            /* ensure the side column distributes space so the skills list fills available height */
+            justify-content: space-between;
+            height: 100%;
+        }
+        /* Ensure the skills list stretches to fill the side column */
+        .artifact-side .artifact-skill-list { flex: 1 1 auto; display: flex; flex-direction: column; gap: 0.8rem; }
+        .artifact-side .artifact-skill-list > .skill-item { flex: none; }
+        .artifact-side .jotysh-legend { flex: 0 0 auto; margin-top: 1.2em; }
+        .side-filler-art { opacity: 0.14; text-align: center; margin: 1.2em 0; }
+        .side-filler-art .filler-svg { width: 88px; height: 88px; display: inline-block; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45)); }
+        .side-filler-art .filler-text { color: #94a3b8; font-size: 0.95rem; margin-top: 0.6em; }
+        .side-filler-chronicle { background: rgba(255,255,255,0.02); border-radius: 10px; padding: 0.8em; max-height: 160px; overflow-y: auto; }
+        .side-filler-chronicle .chronicle-title { color: #fbbf24; font-weight:700; margin-bottom:0.6em; }
+        .chronicle-entry.small { display:flex; gap:0.6em; font-size:0.95rem; color:#cbd5e1; margin-bottom:0.5em; }
+        .chronicle-entry.small .chronicle-date { color:#64748b; min-width:70px; font-size:0.85rem; }
+        .chronicle-entry.small .chronicle-event { flex:1; }
+        /* Footer should sit on its own row spanning both columns */
+        .artifact-footer { grid-column: 1 / span 2; grid-row: 3; justify-self: stretch; }
+        @media (max-width: 1100px) {
+            .artifact-footer { grid-column: auto; grid-row: auto; }
+            .artifact-card > .artifact-side { height: auto; justify-content: flex-start; }
+            .side-filler-art { margin: 0.6em 0; }
+        }
+        /* Responsive: stack vertically on small screens */
+        @media (max-width: 1100px) {
+            .artifact-card {
+                grid-template-columns: 1fr;
+                padding: 1.2rem 0.4rem;
+                min-height: 0;
+                gap: 1.2rem;
+            }
+            .artifact-card > .artifact-main,
+            .artifact-card > .artifact-side {
+                border: none;
+                padding: 0;
+                gap: 1.2rem;
+            }
+        }
+        .artifact-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .artifact-title {
+            font-size: 2em;
+            font-weight: 900;
+            background: linear-gradient(90deg,#f59e0b,#8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1.5px;
+        }
+        .artifact-meta {
+            font-size: 1.1em;
+            color: #a78bfa;
+            font-style: italic;
+            margin-bottom: 0.3em;
+        }
+        .artifact-lore {
+            font-size: 1.05em;
+            color: #cbd5e1;
+            font-style: italic;
+            margin-bottom: 1.2em;
+            text-align: center;
+        }
+        /* Card Meta Section: Cosmic inscription */
+        .card-meta-section, .cosmic-inscription {
+            background: linear-gradient(90deg, #18122b 60%, #232046 100%);
+            border-radius: 18px;
+            border: 2.5px solid rgba(251,191,36,0.12);
+            box-shadow: 0 2px 18px rgba(251,191,36,0.12), 0 0 0 2px rgba(139,92,246,0.04);
+            padding: 1.1em 1.6em;
+            margin: 0.9em 0 1.6em 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4em 2.2em;
+            align-items: flex-start;
+            justify-content: center;
+            font-size: 1.03em;
+            color: #fbbf24;
+            position: relative;
+            z-index: 2;
+        }
+        .meta-block { min-width: 170px; max-width: 260px; flex: 1 1 200px; display:flex; flex-direction:column; gap:0.2em; align-items:flex-start; }
+        .meta-label { font-weight:900; color:#a78bfa; letter-spacing:1px; }
+        .meta-value { font-weight:800; color:#fff; font-size:1.06em; }
+        .meta-desc { color:#a78bfa; font-size:0.92em; font-style:italic; }
+        .meta-missing { color:#64748b; font-style:italic; }
+        .tier-badge { border-radius:8px; padding:0.15em 0.7em; font-weight:900; display:inline-block; }
+        .tier-legendary { background: linear-gradient(90deg,#fbbf24,#f59e0b); color:#232046; }
+        .tier-epic { background: linear-gradient(90deg,#a78bfa,#8b5cf6); color:#232046; }
+        .tier-rare { background: linear-gradient(90deg,#3b82f6,#a78bfa); color:#fff; }
+        .tier-common { background: #232046; color:#a78bfa; border:1px solid rgba(167,139,250,0.06); }
+        /* Alignment badge indicates whether the card has a defined house & planet */
+        .alignment-badge { display:inline-block; margin-left:0.6em; border-radius:6px; padding:0.08em 0.5em; font-weight:900; font-size:0.9em; }
+        .alignment-badge.aligned { background:#16a34a; color:#fff; box-shadow:0 4px 10px rgba(16,185,129,0.12); }
+        .alignment-badge.unaligned { background:#ef4444; color:#fff; box-shadow:0 4px 10px rgba(239,68,68,0.12); }
+        @media (max-width:1100px) {
+            .cosmic-inscription { justify-content:flex-start; gap:0.8em 1.2em; }
+            .meta-block { min-width: 140px; flex:1 1 140px; }
+        }
+        .artifact-stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2em;
+            margin-bottom: 1em;
+        }
+        .stat-item {
+            background: #232046;
+            border-radius: 8px;
+            padding: 0.4em 1em;
+            font-size: 1em;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .stat-label {
+            color: #a78bfa;
+            font-weight: 700;
+        }
+        .artifact-skill-list {
+            margin: 1em 0 0.8em 0;
+        }
+        .skill-block {
+            background: linear-gradient(90deg, #232046 80%, #312e81 100%);
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #8b5cf655;
+            margin-bottom: 0.8em;
+            padding: 1.1em 1em 0.8em 1em;
+            position: relative;
+            transition: box-shadow 0.2s;
+        }
+        .skill-block.empowered {
+            border: 2px solid #fbbf24;
+            box-shadow: 0 0 24px #fbbf24cc, 0 2px 12px #8b5cf655;
+            animation: empoweredPulse 1.5s infinite alternate;
+        }
+
+        /* Gameplay Breakdown styles */
+        .skill-gameplay-breakdown details { background: rgba(139,92,246,0.04); border-radius:8px; padding:0.6rem; }
+        .skill-gameplay-breakdown summary { list-style:none; }
+        .skill-gameplay-breakdown summary::-webkit-details-marker { display:none; }
+        /* Styled toggling summary (looks like a button) */
+        .skill-gameplay-breakdown summary {
+            display:flex; align-items:center; gap:0.6em;
+            background: linear-gradient(90deg,#232046 80%, #312e81 100%);
+            border-radius: 8px; padding: 0.5em 0.9em; font-size: 1.02em;
+            color: #a78bfa; font-weight:700; cursor:pointer; border: 1.2px solid rgba(167,139,250,0.14);
+            box-shadow: 0 1px 6px rgba(139,92,246,0.06); transition: background .18s, border-color .18s, color .18s;
+            user-select: none;
+        }
+        .skill-gameplay-breakdown summary .toggle-icon { width:22px; height:22px; display:inline-grid; place-items:center; background: rgba(255,255,255,0.02); border-radius:5px; color:#fbbf24; font-weight:900; transition: transform .22s ease, background .18s; }
+        .skill-gameplay-breakdown summary .toggle-icon::before { content: '+'; font-size:1.05em; }
+        .skill-gameplay-breakdown[open] summary { border-color:#fbbf24; color:#fbbf24; background: linear-gradient(90deg,#312e81 80%, #1f2937 100%); }
+        .skill-gameplay-breakdown[open] summary .toggle-icon { transform: rotate(90deg); }
+        .skill-gameplay-breakdown[open] summary .toggle-icon::before { content: '✕'; }
+        .skill-gameplay-breakdown .stat-row { display:flex; gap:1.2rem; margin-top:0.6rem; color:#e2e8f0; }
+        .skill-gameplay-breakdown .stat-row div { font-weight:700; }
+        .skill-gameplay-breakdown .examples { margin-top:0.4rem; color:#94a3b8; font-size:0.92rem; }
+        @keyframes empoweredPulse {
+            0% { box-shadow: 0 0 24px #fbbf24cc, 0 2px 12px #8b5cf655; }
+            100% { box-shadow: 0 0 48px #fbbf24cc, 0 2px 12px #8b5cf655; }
+        }
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 0.7em;
+            margin-bottom: 0.2em;
+        }
+        .skill-icon {
+            font-size: 1.7em;
+        }
+        .skill-name {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #e0e7ff;
+        }
+        .skill-tier {
+            font-size: 0.95em;
+            color: #a78bfa;
+            margin-left: 0.5em;
+        }
+        .skill-narrative {
+            font-style: italic;
+            color: #fbbf24;
+            margin-bottom: 0.3em;
+        }
+        .skill-jotysh {
+            font-size: 0.97em;
+            color: #a78bfa;
+            margin-bottom: 0.2em;
+        }
+        .skill-effects, .skill-jotysh-effects {
+            margin: 0.2em 0 0.2em 1.2em;
+            padding: 0;
+            color: #fbbf24;
+            font-size: 0.98em;
+        }
+        .skill-jotysh-effects {
+            color: #a78bfa;
+        }
+        .skill-tags, .skill-mods {
+            margin-top: 0.2em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4em;
+        }
+        .tag-mini, .mod-badge {
+            background: #312e81;
+            color: #fbbf24;
+            border-radius: 6px;
+            padding: 0.1em 0.7em;
+            font-size: 0.93em;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .mod-badge {
+            background: #a78bfa;
+            color: #232046;
+        }
+        .artifact-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.2em;
+            font-size: 0.98em;
+            color: #64748b;
+        }
+        .seal-text {
+            font-weight: 700;
+            color: #a78bfa;
+        }
+        .invoked-badge {
+            background: #fbbf24;
+            color: #232046;
+            border-radius: 8px;
+            padding: 0.2em 0.8em;
+            font-weight: 700;
+            margin-left: 1em;
+        }
+        .jotysh-legend {
+            margin-top: 2em;
+            background: #232046;
+            border-radius: 12px;
+            padding: 1em 1.5em;
+            color: #a78bfa;
+            font-size: 0.98em;
+            box-shadow: 0 2px 12px #8b5cf655;
+            max-width: 540px;
+        }
+        @media (max-width: 700px) {
+            .artifact-card { max-width: 98vw; padding: 0.7em 0.2em 0.7em 0.2em; margin: 0.5em auto 0.5em auto; }
+            .jotysh-legend { font-size: 0.92em; padding: 0.7em 0.5em; }
+            .card-detail-panel { padding: 0.5em 0 0.5em 0; }
+        }
+
+        .jotysh-slot .slot-house {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #a78bfa;
+        }
+        .jotysh-slot .slot-planet {
+            font-size: 1.5em;
+            margin: 0.1em 0;
+        }
+        .jotysh-slot .slot-nakshatra {
+            font-size: 0.9em;
+            color: #fbbf24;
+            font-style: italic;
+        }
+        .jotysh-slot .slot-skill-icon {
+            font-size: 2em;
+            margin-top: 0.2em;
+        }
+        .jotysh-slot .slot-skill-name {
+            font-size: 0.98em;
+            font-weight: 700;
+            color: #e0e7ff;
+            margin-top: 0.1em;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 80px;
+        }
+        .jotysh-center {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            width: 170px; height: 170px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #312e81 60%, #232046 100%);
+            box-shadow: 0 0 32px #a78bfa55;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            text-align: center;
+            padding: 1.2em 0.7em;
+        }
+        .jotysh-center .center-title {
+            font-size: 1.3em;
+            font-weight: 900;
+            background: linear-gradient(90deg,#f59e0b,#8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1.5px;
+        }
+        .jotysh-center .center-archetype {
+            font-size: 1em;
+            color: #a78bfa;
+            font-style: italic;
+        }
+        .jotysh-center .center-lore {
+            font-size: 0.98em;
+            color: #cbd5e1;
+            margin-top: 0.5em;
+        }
+        .jotysh-legend {
+            margin-top: 2.2em;
+            background: #232046;
+            border-radius: 12px;
+            padding: 1em 1.5em;
+            color: #a78bfa;
+            font-size: 0.98em;
+            box-shadow: 0 2px 12px #8b5cf655;
+            max-width: 420px;
+        }
+        @media (max-width: 600px) {
+            .jotysh-chart-wheel { width: 98vw; height: 98vw; max-width: 380px; max-height: 380px; }
+            .jotysh-slot { width: 60px; height: 60px; font-size: 0.85em; }
+            .jotysh-center { width: 110px; height: 110px; font-size: 0.9em; }
+            .jotysh-legend { font-size: 0.92em; padding: 0.7em 0.5em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-header">
+        <div class="header-title">My Cosmic Cards</div>
+        <div class="access-controls">
+            <button class="access-btn" onclick="toggleHighContrast()" title="Toggle High Contrast">🌓</button>
+            <button class="access-btn" onclick="changeFontSize(1)" title="Increase Font Size">A+</button>
+            <button class="access-btn" onclick="changeFontSize(-1)" title="Decrease Font Size">A-</button>
+            <button class="cosmic-btn" onclick="window.location.href='cosmic_card_creator.clone.html'">+ Create New</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Left: List -->
+        <div class="card-list-panel" id="card-list">
+            <!-- Items injected via JS -->
+        </div>
+
+        <!-- Right: Detail -->
+        <div class="card-detail-panel" id="card-detail">
+            <div class="empty-state">Select a card to view details</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="detailModal">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeModal()">×</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Jotysh Modal -->
+    <div id="jotysh-modal" style="display:none;position:fixed;left:0;top:0;width:100vw;height:100vh;background:rgba(24,18,43,0.92);z-index:9999;align-items:center;justify-content:center;">
+        <div id="jotysh-modal-content" style="background:#232046;border-radius:18px;box-shadow:0 8px 48px #8b5cf6aa;padding:2.2em 2em;max-width:420px;width:96vw;max-height:90vh;overflow:auto;position:relative;">
+            <button onclick="document.getElementById('jotysh-modal').style.display='none'" style="position:absolute;top:1em;right:1em;background:none;border:none;font-size:1.5em;color:#fbbf24;cursor:pointer;">✕</button>
+            <div id="jotysh-modal-body"></div>
+        </div>
+    </div>
+
+
+    <script>
+        let allCards = [];
+        let selectedId = null;
+        let deletedCardsStack = []; // Holds up to 2 recently deleted cards
+
+        // Live-sync helpers (keeps My Cards updated across tabs)
+        const CHANNEL_NAME = 'cosmic-cards';
+        let bc = null;
+        let lastRaw = localStorage.getItem('my_cosmic_cards');
+
+        function setupLiveSync() {
+            // BroadcastChannel for modern browsers
+            if ('BroadcastChannel' in window) {
+                try { bc = new BroadcastChannel(CHANNEL_NAME); bc.addEventListener('message', (e) => { if (e.data && e.data.type === 'cards-updated') refreshFromStorage(); }); } catch(e) { bc = null; }
+            }
+
+            // Storage event (fires across tabs/windows)
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'my_cosmic_cards' || e.key === 'my_cosmic_cards_timestamp') refreshFromStorage();
+            });
+
+            // Polling fallback for edge cases
+            setInterval(() => {
+                const raw = localStorage.getItem('my_cosmic_cards');
+                if (raw !== lastRaw) refreshFromStorage(raw);
+            }, 1200);
+        }
+
+        function notifyCardsUpdated() {
+            lastRaw = localStorage.getItem('my_cosmic_cards');
+            try { if (bc) bc.postMessage({ type: 'cards-updated' }); } catch(e){}
+            try { localStorage.setItem('my_cosmic_cards_timestamp', Date.now().toString()); } catch(e){}
+        }
+
+        function refreshFromStorage(raw) {
+            const rawData = raw ?? localStorage.getItem('my_cosmic_cards');
+            lastRaw = rawData;
+            const parsed = rawData ? JSON.parse(rawData) : [];
+            const prevIds = new Set(allCards.map(c => c.id));
+            allCards = parsed;
+            renderList();
+
+            // If a new card appeared, select + animate it
+            const newCard = parsed.find(c => !prevIds.has(c.id));
+            if (newCard) {
+                selectCard(newCard.id);
+                setTimeout(() => {
+                    const items = Array.from(document.querySelectorAll('.card-list-item'));
+                    const item = items.find(el => el.textContent.includes(newCard.name || ''));
+                    if (item) { item.classList.add('live-update-pulse'); setTimeout(()=>item.classList.remove('live-update-pulse'),1200); }
+                }, 80);
+            } else {
+                if (selectedId !== null) selectCard(selectedId);
+            }
+        }
+
+        // Phase 2: Dynamic World State for "Empowerment" logic
+        const currentWorldState = {
+            activePlanet: 'Sun', // Example: Sun is currently dominant
+            activeHouse: '1st',
+            scenario: 'Negotiation' // Example: Current game context
+        };
+
+        // Phase 3: Perfect Jotysh Mapping System
+        const jotyshSlots = [
+            { house: '1st', planet: 'Mars', planetIcon: '♂️', nakshatra: 'Ashwini' },
+            { house: '2nd', planet: 'Venus', planetIcon: '♀️', nakshatra: 'Bharani' },
+            { house: '3rd', planet: 'Mercury', planetIcon: '☿️', nakshatra: 'Krittika' },
+            { house: '4th', planet: 'Moon', planetIcon: '☽', nakshatra: 'Rohini' },
+            { house: '5th', planet: 'Sun', planetIcon: '☉', nakshatra: 'Mrigashira' },
+            { house: '6th', planet: 'Mercury', planetIcon: '☿️', nakshatra: 'Ardra' },
+            { house: '7th', planet: 'Venus', planetIcon: '♀️', nakshatra: 'Punarvasu' },
+            { house: '8th', planet: 'Mars', planetIcon: '♂️', nakshatra: 'Pushya' },
+            { house: '9th', planet: 'Jupiter', planetIcon: '♃', nakshatra: 'Ashlesha' },
+            { house: '10th', planet: 'Saturn', planetIcon: '♄', nakshatra: 'Magha' },
+            { house: '11th', planet: 'Saturn', planetIcon: '♄', nakshatra: 'Purva Phalguni' },
+            { house: '12th', planet: 'Jupiter', planetIcon: '♃', nakshatra: 'Uttara Phalguni' }
+        ];
+
+        // EXPANDED Tag explanations derived from Cosmic Card Creator data
+        const tagExplanations = {
+            // Elemental & Primal
+            FIRE: "Burns enemies, clears obstacles, or ignites passion.",
+            WATER: "Flows around problems, adapts to change, or connects emotions.",
+            EARTH: "Stabilizes ground, anchors reality, or fortifies defenses.",
+            AIR: "Moves swiftly, spreads ideas, or disperses fog.",
+            VOID: "Nullifies effects, absorbs attacks, or erases existence.",
+            LIGHT: "Illuminates secrets, inspires hope, or blinds foes.",
+            DARK: "Conceals intentions, shrouds movements, or gathers shadows.",
+            NATURE: "Fosters growth, commands beasts, or entangles foes.",
+            STORM: "Unleashes chaos, strikes quickly, or clears the air.",
+            ICE: "Freezes action, preserves states, or creates slippery terrain.",
+            ELECTRIC: "Powers machinery, shocks targets, or arcs between points.",
+
+            // Combat & Tactical
+            OFFENSE: "Drives conflict, attacks directly, or forces confrontation.",
+            DEFENSE: "Holds the line, endures hardship, or protects the vulnerable.",
+            SUPPORT: "Aids allies, facilitates teamwork, or bridges gaps.",
+            HEAL: "Restores vitality, mends wounds, or fixes broken things.",
+            SHIELD: "Protects against harm, blocks paths, or guards secrets.",
+            BUFF: "Enhances abilities, boosts morale, or sharpens skills.",
+            DEBUFF: "Weakens resolve, saps strength, or cripples movement.",
+            SUMMON: "Calls forth allies, constructs, or spirits to aid you.",
+            STEALTH: "Evades detection, strikes from shadows, or hides truth.",
+            AOE: "Affects wide areas, controls crowds, or shapes environment.",
+            CRIT: "Lands decisive blows, makes bold statements, or marks turning points.",
+            SPEED: "Increases pace, outruns danger, or acts first.",
+            DODGE: "Avoids consequences, slips interaction, or deflects blame.",
+            ROOT: "Holds fast, draws from history, or connects to origins.",
+            BIND: "Restricts movement, enforcing contracts, or trapping foes.",
+            AMMO: "Provides resources, reloads capability, or stocks supplies.",
+
+            // Mechanics & Control
+            STRUCTURE: "Builds barriers, shapes matter, or enforces order.",
+            DECAY: "Erodes defenses, ages objects, or spreads rot.",
+            STASIS: "Halts time, preserves moments, or immobilizes targets.",
+            DISCORD: "Sows confusion, breaks alliances, or disrupts rituals.",
+            CREATION: "Manifests new objects, births ideas, or crafts tools.",
+            DESTRUCTION: "Breaks objects, ends effects, or clears the board.",
+            PURIFY: "Cleanses toxins, removes curses, or absolves guilt.",
+            RECURSION: "Repeating effects, loops time, or echoes actions.",
+            REFLECT: "Turns attacks back, mirrors behavior, or redirects force.",
+            RANGE: "Reaches distant targets, influences from afar, or scouts ahead.",
+
+            // Narrative & Social
+            SOCIAL: "Navigates hierarchies, persuades others, or gathers rumors.",
+            MIND: "Influences thoughts, reads motives, or shatters psyche.",
+            SPIRIT: "Connects to divine, channels energy, or transcends limits.",
+            ILLUSION: "Deceives senses, creates decoys, or masks reality.",
+            CHAOS: "Unpredictable effects, wild magic, or random outcomes.",
+            ORDER: "Organizes chaos, creates patterns, or enforces laws.",
+            EGO: "Asserts self, commands respect, or focuses will.",
+            EMOTION: "Resonates with feelings, connects deeply, or overwhelms.",
+            INTELLECT: "Analyzes data, solves logic, or outwits foes.",
+            MYSTERY: "Obscures truth, invites curiosity, or holds secrets.",
+            WEALTH: "Generates resources, implies value, or buys influence.",
+            LEADERSHIP: "Inspires followers, organizes groups, or sets direction.",
+            ADVENTURE: "Seeks new horizons, takes risks, or pushes boundaries.",
+            COMMUNITY: "Unites people, gathers strength, or shares burdens.",
+            FREEDOM: "Breaks chains, defies gravity, or rejects control.",
+            INNOVATION: "Invents solutions, breaks tradition, or reimagines.",
+            TIME: "Manipulates duration, sees history, or delays outcomes.",
+            ART: "Expresses beauty, captivates audience, or refines reality.",
+            LUCK: "Tilts probability, finds serendipity, or gambles with fate.",
+            CRAFT: "Builds precision tools, repairs mechanics, or analyzes weak points.",
+            GUIDE: "Shows the path, leads the lost, or illuminates destiny.",
+            MEMETICS: "Spreads ideas, viral influence, or cultural shifts.",
+            
+            // Meta
+            FUSED: "A synthesis of multiple powers into a singular effect.",
+            VERSATILE: "Adapts to multiple roles or changes based on context.",
+            COMBO: "Becomes stronger when chained with other actions.",
+            PASSIVE: "Always active, providing constant benefit or aura."
+        };
+
+        // Fallback for truly unknown tags to make them sound cool
+        function getTagExplanation(tag) {
+            const upper = tag.toUpperCase();
+            if (tagExplanations[upper]) return tagExplanations[upper];
+            
+            // Dynamic fallback based on common suffixes or patterns
+            if (upper.endsWith('ING')) return `Active process of ${tag.toLowerCase()}.`;
+            if (upper.endsWith('ION')) return `The act or state of ${tag.toLowerCase()}.`;
+            
+            return `A specialized ${tag.toLowerCase()} resonance.`;
+        }
+
+        // Helper to get slot position in wheel
+        function getSlotPosition(idx, radius = 180, center = 210) {
+            const angle = ((idx - 2) / 12) * 2 * Math.PI; // 1st house at top
+            return {
+                left: center + radius * Math.sin(angle) - 45,
+                top: center - radius * Math.cos(angle) - 45
+            };
+        }
+
+
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        let currentFontSize = 100;
+        function changeFontSize(delta) {
+            currentFontSize = Math.max(80, Math.min(150, currentFontSize + delta));
+            document.documentElement.style.fontSize = `${currentFontSize}%`;
+        }
+
+        // Phase 3: Evolution Simulation
+        function simulateUsage(id) {
+            const card = allCards.find(c => c.id === id);
+            if (!card) return;
+
+            // Initialize if missing
+            if (!card.masteryLevel) card.masteryLevel = 1;
+            if (!card.masteryExp) card.masteryExp = 0;
+            if (!card.chronicle) card.chronicle = [];
+
+            // Add EXP
+            card.masteryExp += 25;
+            
+            // Level Up logic
+            if (card.masteryExp >= 100) {
+                card.masteryExp = 0;
+                card.masteryLevel = Math.min(3, card.masteryLevel + 1);
+                card.chronicle.push({
+                    date: new Date().toISOString().split('T')[0],
+                    event: `✨ <strong>Mastery Level ${card.masteryLevel}</strong> achieved through persistent resonance.`
+                });
+            } else {
+                card.chronicle.push({
+                    date: new Date().toISOString().split('T')[0],
+                    event: `Used in a <strong>${currentWorldState.scenario}</strong> scenario.`
+                });
+            }
+
+            // Keep only last 5 entries
+            if (card.chronicle.length > 5) card.chronicle.shift();
+
+            // Save and Refresh
+            localStorage.setItem('my_cosmic_cards', JSON.stringify(allCards));
+            notifyCardsUpdated();
+            selectCard(id);
+        }
+
+        // Simulate a single skill use and track per-skill mastery
+        function simulateSkillUse(cardId, slotIndex) {
+            const card = allCards.find(c => c.id === cardId);
+            if (!card) return;
+            const f = (card.slottedGlyphs || [])[slotIndex];
+            if (!f) return;
+
+            // Initialize per-skill mastery
+            if (!f.masteryLevel) f.masteryLevel = 1;
+            if (!f.masteryExp) f.masteryExp = 0;
+            if (!f.chronicle) f.chronicle = [];
+
+            // Add EXP based on potency (smaller increments) and record event
+            const stats = computeSkillStats(f);
+            const expGain = Math.max(5, Math.round(stats.potency / 25));
+            f.masteryExp += expGain;
+
+            if (f.masteryExp >= 50) {
+                f.masteryExp = 0;
+                f.masteryLevel = Math.min(5, f.masteryLevel + 1);
+                f.chronicle.push({ date: new Date().toISOString().split('T')[0], event: `✨ <strong>Skill Mastery ${f.masteryLevel}</strong> attained.` });
+            } else {
+                f.chronicle.push({ date: new Date().toISOString().split('T')[0], event: `Used in <strong>${currentWorldState.scenario}</strong>. (+${expGain} exp)` });
+            }
+
+            if (f.chronicle.length > 6) f.chronicle.shift();
+
+            // Persist and re-render card
+            localStorage.setItem('my_cosmic_cards', JSON.stringify(allCards));
+            notifyCardsUpdated();
+            selectCard(cardId);
+        }
+
+        function init() {
+            const raw = localStorage.getItem('my_cosmic_cards');
+            allCards = raw ? JSON.parse(raw) : [];
+            renderList();
+            
+            // Auto-select newest if available
+            if (allCards.length > 0) {
+                selectCard(allCards[allCards.length - 1].id);
+            } else {
+                document.getElementById('card-detail').innerHTML = `
+                    <div class="empty-state">
+                        <div>✨ No cards found.</div>
+                        <button onclick="window.location.href='cosmic_card_creator.clone.html'">Create Your First Card</button>
+                    </div>`;
+            }
+
+            // Start live synchronization
+            setupLiveSync();
+        }
+
+        function renderList() {
+            const listEl = document.getElementById('card-list');
+            if (allCards.length === 0) {
+                listEl.innerHTML = '<div style="padding:1rem;color:#64748b;text-align:center">No cards yet</div>';
+                return;
+            }
+            
+            listEl.innerHTML = allCards.map(c => {
+                const lagna = c.lagnaInfo || { archetype: 'Unknown' };
+                const date = new Date(c.timestamp || Date.now()).toLocaleDateString();
+                const isActive = c.id === selectedId ? 'active' : '';
+                return `
+                    <div class="card-list-item ${isActive}" onclick="selectCard(${c.id})">
+                        <div class="list-thumb">✨</div>
+                        <div class="list-info">
+                            <div class="list-title">${c.name || lagna.archetype + "'s Codex"}</div>
+                            <div class="list-meta">${date}</div>
+                        </div>
+                        <button onclick="event.stopPropagation(); confirmDeleteCard(${c.id})" title="Delete Card" style="margin-left:auto;background:none;border:none;color:#f87171;font-size:1.2em;cursor:pointer;opacity:0.7;transition:opacity 0.2s;">🗑️</button>
+                    </div>
+                `;
+            }).join('');
+            renderUndoBar();
+        }
+
+        function confirmDeleteCard(id) {
+            if (confirm("Are you sure you want to delete this card? This action can be undone immediately, but will be permanent if you delete more cards.")) {
+                deleteCard(id);
+            }
+        }
+
+        function deleteCard(id) {
+            const idx = allCards.findIndex(c => c.id === id);
+            if (idx === -1) return;
+            
+            // Remove and store for undo (max 2)
+            const [removed] = allCards.splice(idx, 1);
+            deletedCardsStack.unshift(removed);
+            if (deletedCardsStack.length > 2) deletedCardsStack.pop();
+            
+            // Save and refresh
+            localStorage.setItem('my_cosmic_cards', JSON.stringify(allCards));
+            notifyCardsUpdated();
+            
+            // Auto-select another card or show empty
+            if (allCards.length > 0) {
+                selectCard(allCards[0].id);
+            } else {
+                document.getElementById('card-detail').innerHTML = `<div class="empty-state">
+                    <div>✨ No cards found.</div>
+                    <button onclick="window.location.href='cosmic_card_creator.clone.html'">Create Your First Card</button>
+                </div>`;
+                selectedId = null;
+            }
+            renderList();
+        }
+
+        function renderUndoBar() {
+            let undoBar = document.getElementById('undo-bar');
+            if (!undoBar) {
+                undoBar = document.createElement('div');
+                undoBar.id = 'undo-bar';
+                undoBar.style.position = 'fixed';
+                undoBar.style.bottom = '24px';
+                undoBar.style.left = '50%';
+                undoBar.style.transform = 'translateX(-50%)';
+                undoBar.style.background = 'rgba(30,20,50,0.98)';
+                undoBar.style.border = '2px solid #8b5cf6';
+                undoBar.style.borderRadius = '12px';
+                undoBar.style.padding = '0.7rem 1.5rem';
+                undoBar.style.boxShadow = '0 4px 24px #8b5cf655';
+                undoBar.style.zIndex = '9999';
+                undoBar.style.display = 'none'; // Hidden by default
+                document.body.appendChild(undoBar);
+            }
+            
+            if (deletedCardsStack.length === 0) {
+                undoBar.style.display = 'none';
+                return;
+            }
+            
+            undoBar.style.display = 'flex';
+            undoBar.style.alignItems = 'center';
+            undoBar.style.gap = '1rem';
+            
+            undoBar.innerHTML = `
+                <span style="color:#fbbf24;font-weight:700;">Card deleted.</span>
+                <button onclick="undoDeleteCard(0)" class="cosmic-btn" style="background:rgba(139,92,246,0.3);border-color:#8b5cf6;">Undo</button>
+                ${deletedCardsStack.length > 1 ? `<button onclick="undoDeleteCard(1)" class="cosmic-btn" style="background:rgba(139,92,246,0.3);border-color:#8b5cf6;">Undo Previous</button>` : ''}
+                <span style="color:#64748b;font-size:0.8em;">(Last 2 saved)</span>
+                <button onclick="dismissUndo()" style="background:none;border:none;color:#94a3b8;cursor:pointer;font-size:1.2em;">×</button>
+            `;
+        }
+
+        function undoDeleteCard(idx) {
+            if (deletedCardsStack[idx]) {
+                allCards.push(deletedCardsStack[idx]);
+                // Remove from stack
+                deletedCardsStack.splice(idx, 1);
+                localStorage.setItem('my_cosmic_cards', JSON.stringify(allCards));
+                notifyCardsUpdated();
+                renderList();
+                selectCard(allCards[allCards.length - 1].id);
+            }
+        }
+
+        function dismissUndo() {
+            deletedCardsStack = [];
+            renderUndoBar();
+        }
+
+        function selectCard(id) {
+            selectedId = id;
+            renderList();
+
+            const card = allCards.find(c => c.id === id);
+            if (!card) return;
+
+            const lagna = card.lagnaInfo || { archetype: 'Unknown', theme: 'Mystery' };
+            // DEBUG: print card alignment and raw card data to the console for quick inspection
+            console.log('selectCard debug:', { selectedId: id, cardId: card.id, lagna, alignment: { house: lagna.house, planet: lagna.planet, nakshatra: lagna.nakshatra }, card });
+            const stats = card.cardStats || { power: 100, kp: 5 };
+            const mods = card.activeMods || [];
+            const cardLore = card.lore || lagna.lore || '';
+            const synergyTags = [];
+            (card.slottedGlyphs || []).forEach(f => { if (f && f.tags) synergyTags.push(...f.tags); });
+            const uniqueTags = [...new Set(synergyTags.filter(Boolean))];
+            // Render synergy tags with click/hold to show info
+            function renderSynergyBox(tags, activeTag) {
+                return `
+                    <div class="synergy-box" id="synergy-box">
+                        ${tags.length ? tags.map(t => `
+                            <span class="tag-mini synergy-tag" 
+                                data-tag="${t}"
+                                tabindex="0"
+                                onclick="showTagInfo('${t}')"
+                                onmousedown="showTagInfo('${t}')"
+                            >${t}</span>
+                        `).join('') : '<span style="color:#64748b;">None</span>'}
+                        <div class="synergy-info" style="margin-left:0.7em;" onclick="showSynergyHelp()">
+                            &#9432;
+                        </div>
+                        <div id="synergy-tag-info" class="synergy-tag-info" style="display:${activeTag ? 'block' : 'none'};">
+                            ${activeTag ? `<strong>${activeTag}</strong>: ${getTagExplanation(activeTag)}` : ''}
+                        </div>
+                        <div id="synergy-help-info" class="synergy-tag-info" style="display:none;">
+                            Synergy tags show the creative themes and strengths of this card’s skills. Use them as inspiration for story actions or to match scenario prompts.
+                        </div>
+                    </div>
+                `;
+            }
+            const synergySummary = renderSynergyBox(uniqueTags, window._activeSynergyTag || null);
+
+            // Jotysh Mod Summary
+            const jotyshMods = (card.jotyshMods || []).map(
+                m => `<span class="mod-badge">${m.effect || m}</span>`
+            ).join(' ');
+
+            // All active mods (card-wide)
+            const modsHtml = mods.map(m => `<span class="mod-badge">${m}</span>`).join(' ');
+
+            // Jotysh summary
+            const jotyshSummary = `${lagna.house || '1st'} House • ${lagna.planet || 'Sun'} • ${lagna.nakshatra || 'Ashwini'}`;
+
+            // Build the Jotysh wheel
+            const slotted = card.slottedGlyphs || [];
+            let slotsHtml = '';
+            for (let i = 0; i < 12; i++) {
+                const f = slotted[i];
+                
+                // STEP 4 SNAPSHOT: Use baked data if available
+                const hasBakedData = f && f.house && f.planet;
+                const slotMeta = {
+                    house: hasBakedData ? `${f.house} House` : jotyshSlots[i].house,
+                    planet: hasBakedData ? f.planet : jotyshSlots[i].planet,
+                    planetIcon: hasBakedData ? (f.planetSymbol || '✨') : jotyshSlots[i].planetIcon,
+                    nakshatra: hasBakedData ? f.nakshatra : jotyshSlots[i].nakshatra
+                };
+
+                const empowered = (window.currentWorldState && f && f.planet && f.planet === window.currentWorldState.activePlanet);
+                const empoweredClass = empowered ? 'empowered' : '';
+                slotsHtml += `
+                    <div class="jotysh-slot ${empoweredClass}" style="left:${getSlotPosition(i).left}px;top:${getSlotPosition(i).top}px;" 
+                        onclick="showJotyshModal(${id},${i})" title="House ${slotMeta.house} • ${slotMeta.planet} • ${slotMeta.nakshatra}">
+                        <div class="slot-house">${slotMeta.house}</div>
+                        <div class="slot-planet">${slotMeta.planetIcon || ''}</div>
+                        <div class="slot-nakshatra">${slotMeta.nakshatra}</div>
+                        ${f ? `<div class="slot-skill-icon">${f.icon || '✨'}</div>
+                               <div class="slot-skill-name">${f.name}</div>` : `<div class="slot-skill-icon" style="opacity:0.3;">🌑</div>
+                               <div class="slot-skill-name" style="opacity:0.5;">Empty</div>`}
+                    </div>
+                `;
+            }
+
+            // Center identity
+            const centerHtml = `
+                <div class="jotysh-center">
+                    <div class="center-title">${card.name || lagna.archetype + "'s Codex"}</div>
+                        <div class="center-archetype">${lagna.theme}</div>
+                    ${card.lagnaInfo && card.lagnaInfo.narrative ? `<div style="color:#a78bfa; font-style:italic; margin-bottom:0.8em; font-size:0.9em; text-align:center;">"${card.lagnaInfo.narrative}"</div>` : ''}
+                    ${cardLore ? `<div class="center-lore">${cardLore}</div>` : ''}
+                    <div style="margin-top:0.7em;">
+                        <span style="color:#fbbf24;font-weight:700;">Power:</span> ${stats.power}
+                        <span style="margin-left:1em;color:#a78bfa;font-weight:700;">KP:</span> ${stats.kp}
+                    </div>
+                </div>
+            `;
+
+            // Legend
+            const legendHtml = `
+                <div class="jotysh-legend">
+                    <strong>Jotysh Chart:</strong> This card is a living cosmic chart. Each slot is a house, with its own planet and nakshatra. 
+                    <br><br>
+                    <span style="color:#fbbf24;">Glowing slots</span> are currently empowered by the world state. 
+                    <br>
+                    <span style="color:#a78bfa;">Click any slot</span> to see how its cosmic position shapes the skill.
+                </div>
+            `;
+
+            // Footer
+            const footerHtml = `
+                <div class="artifact-footer" style="margin-top:2.2em;">
+                    <div class="seal-text">DESTINY SEAL #${card.id}</div>
+                    <div class="invoked-badge">Invoked</div>
+                    <div style="font-size:0.8rem; color:#64748b;">${new Date(card.timestamp || Date.now()).toLocaleDateString()}</div>
+                </div>
+            `;
+
+            // Phase 3: Evolution & Mastery Logic
+            const masteryLevel = card.masteryLevel || 1;
+            const masteryExp = card.masteryExp || 45; // 0-100
+            const masteryClass = `mastery-level-${masteryLevel}`;
+            const cardTier = card.tier || 'Common';
+            const tierClass = `tier-${cardTier.toLowerCase()}`;
+
+            // Skill list rendering
+            let skillListHtml = '';
+            // Accumulate card-level gameplay metrics
+            let cardTotals = { totalPotency: 0, neuralSum: 0, maxCooldown: 0, count: 0 };
+            // Collect chronicle entries across all skills for side filler display
+            let cardChronicleEntries = [];
+            (card.slottedGlyphs || []).forEach((f, i) => {
+                if (!f) return;
+                
+                // STEP 4: READ SNAPSHOT DATA
+                // If the skill has baked-in Jotysh data, use it. Otherwise fallback to static default.
+                const hasBakedData = f.house && f.planet;
+                
+                // Construct slot metadata from Snapshot or Default
+                const slotDisplay = {
+                    house: hasBakedData ? `${f.house} House` : jotyshSlots[i].house,
+                    planet: hasBakedData ? f.planet : jotyshSlots[i].planet,
+                    planetIcon: hasBakedData ? (f.planetSymbol || '✨') : jotyshSlots[i].planetIcon,
+                    nakshatra: hasBakedData ? f.nakshatra : jotyshSlots[i].nakshatra
+                };
+
+                const empowered = (window.currentWorldState && slotDisplay.planet === window.currentWorldState.activePlanet);
+                const empoweredClass = empowered ? 'empowered' : '';
+
+                // Fallback for cards created before the patch
+                let displayIntro = f.storyIntro;
+                if (!displayIntro) {
+                    // Generate on the fly if missing
+                    let jotyshLine = `In the <b>${slotDisplay.house}</b>`;
+                    if (slotDisplay.planet) jotyshLine += `, empowered by <b>${slotDisplay.planet}</b>`;
+                    if (slotDisplay.nakshatra) jotyshLine += `, under <b>${slotDisplay.nakshatra}</b>`;
+                    jotyshLine += ': ';
+                    displayIntro = `${jotyshLine}${f.narrative || ''} ${f.sampleUse || ''}`;
+                }
+
+                // --- NARRATIVE GAMEPLAY BREAKDOWN (No Mastery/Levels) ---
+                const stats = computeSkillStats(f);
+                // Update card totals
+                cardTotals.totalPotency += stats.potency;
+                cardTotals.neuralSum += stats.neural;
+                cardTotals.maxCooldown = Math.max(cardTotals.maxCooldown, stats.cooldown);
+                cardTotals.count += 1;
+
+                // Synergy
+                const synergy = (f.tags || []).length
+                    ? f.tags.map(t => `<span class="tag-mini">${t}</span>`).join(' ')
+                    : '<span style="color:#64748b;">None</span>';
+
+                // Chronicle (last 3 events)
+                const chronicle = (f.chronicle || []).slice(-3).map(e =>
+                    `<div class="chronicle-entry"><div class="chronicle-date">${e.date}</div><div class="chronicle-event">${e.event}</div></div>`
+                ).join('');
+                // Aggregate chronicle entries for use in the side filler when skill count is low
+                if (f.chronicle && f.chronicle.length) { f.chronicle.forEach(e => cardChronicleEntries.push(e)); }
+
+                const breakdownHtml = `
+                    <details class="skill-gameplay-breakdown" style="margin:0.7em 0 0.5em 0; background:rgba(139,92,246,0.07); border-radius:8px; padding:0.7em;">
+                        <summary>
+                            <span class="toggle-icon" aria-hidden="true"></span>
+                            <span class="summary-label">Gameplay Codex</span>
+                        </summary>
+                        <div style="margin-top:0.7em;">
+                            <div style="font-size:1.08em; color:#fbbf24; font-weight:700;">${stats.descriptor}</div>
+                            <div style="color:#cbd5e1; margin:0.5em 0 0.7em 0;">
+                                <em>${f.narrative || 'No narrative recorded.'}</em>
+                            </div>
+                            <div style="color:#a78bfa; font-size:0.97em; margin-bottom:0.5em;">
+                                <b>Essence:</b> ${stats.descriptor}
+                            </div>
+                            <div style="color:#94a3b8; font-size:0.97em; margin-bottom:0.5em;">
+                                <b>Synergy:</b> ${synergy}
+                            </div>
+                            <div style="margin:0.7em 0 0.5em 0;">
+                                <b style="color:#fbbf24;">Tactical Guidance:</b>
+                                <ul style="margin:0.3em 0 0 1.2em; color:#cbd5e1;">
+                                    ${stats.examples.map(e => `<li><b>${e.type}:</b> ${e.text}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div style="margin:0.7em 0 0.5em 0;">
+                                <b style="color:#a78bfa;">Recent Chronicle:</b>
+                                <div style="margin-top:0.3em;">${chronicle || '<span style="color:#64748b;">No recent events.</span>'}</div>
+                            </div>
+                        </div>
+                    </details>
+                `;
+
+                skillListHtml += `
+                    <div class="skill-block ${empoweredClass}">
+                        <div class="skill-header">
+                            <span class="skill-icon">${f.icon || '✨'}</span>
+                            <span class="skill-name">${f.name}</span>
+                            <span class="skill-tier" style="color:${getTierColor(f.tier)}">${f.tier || 'Common'}</span>
+                        </div>
+                        <div class="skill-narrative" style="color:#fbbf24;font-style:normal;font-weight:600;margin-bottom:0.5em;">
+                            ${displayIntro}
+                        </div>
+                        ${breakdownHtml}
+                        <div class="skill-jotysh">
+                            <span title="House">${slotDisplay.house}</span> • 
+                            <span title="Planet">${slotDisplay.planetIcon || ''} ${slotDisplay.planet}</span> • 
+                            <span title="Nakshatra">${slotDisplay.nakshatra}</span>
+                        </div>
+                        ${f.effects && f.effects.length ? `
+                            <ul class="skill-effects">
+                                ${f.effects.map(e => `<li>${e.desc || e}${e.source ? ` <span class="mod-badge">${e.source}</span>` : ''}</li>`).join('')}
+                            </ul>
+                        ` : ''}
+                        ${f.jotyshEffects && f.jotyshEffects.length ? `
+                            <ul class="skill-jotysh-effects">
+                                ${f.jotyshEffects.map(e => `<li>${e.desc || e}${e.source ? ` <span class="mod-badge">${e.source}</span>` : ''}</li>`).join('')}
+                            </ul>
+                        ` : ''}
+                        <div class="skill-tags">
+                            ${(f.tags || []).map(t => `<span class="tag-mini">${t}</span>`).join('')}
+                        </div>
+                        <div class="skill-mods">
+                            ${(f.mods || []).map(m => `<span class="mod-badge">${m}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            let sideFillerHtml = '';
+            if (!cardTotals.count) {
+                sideFillerHtml = `
+                    <div class="side-filler-art">
+                        <svg class="filler-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="88" height="88" aria-hidden="true">
+                            <defs>
+                                <radialGradient id="g1" cx="50%" cy="30%" r="60%">
+                                    <stop offset="0%" stop-color="#f59e0b" stop-opacity="1" />
+                                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.8" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="32" cy="32" r="28" fill="url(#g1)" />
+                            <path d="M32 18 L36 30 L48 32 L36 34 L32 46 L28 34 L16 32 L28 30 Z" fill="#fff" opacity="0.9" />
+                        </svg>
+                        <div class="filler-text">No skills slotted — <strong>add a skill</strong> to unlock new synergies.</div>
+                    </div>
+                `;
+            } else if (cardTotals.count < 3) {
+                const recent = cardChronicleEntries.slice(-3).map(e => `<div class="chronicle-entry small"><div class="chronicle-date">${e.date}</div><div class="chronicle-event">${e.event}</div></div>`).join('');
+                sideFillerHtml = `
+                    <div class="side-filler-chronicle">
+                        <div class="chronicle-title">Recent Chronicle</div>
+                        ${recent || '<div style="color:#64748b;">No recent events.</div>'}
+                    </div>
+                `;
+            }
+
+            document.getElementById('card-detail').innerHTML = `
+                <div class="artifact-card ${tierClass} ${masteryClass}">
+                    <div class="evolution-aura"></div>
+                    <div class="artifact-main">
+                        <div class="artifact-header">
+                            <div class="artifact-title">${card.name || lagna.archetype + "'s Codex"}</div>
+                        </div>
+                        <div class="cosmic-inscription">
+                            <div class="meta-block">
+                                <div class="meta-label">🌌 Theme</div>
+                                <div class="meta-value">${lagna.theme || '<span class="meta-missing">Unwritten</span>'}</div>
+                                <div class="meta-desc">This card’s creative theme: it guides narrative tone and synergy.</div>
+                            </div>
+                            <div class="meta-block">
+                                <div class="meta-label">🜁 Archetype</div>
+                                <div class="meta-value">${lagna.archetype || '<span class="meta-missing">Unbound</span>'}</div>
+                                <div class="meta-desc">Defines the card’s story role and typical moves.</div>
+                            </div>
+                            <div class="meta-block">
+                                <div class="meta-label">★ Tier</div>
+                                <div class="meta-value"><span class="tier-badge tier-${(card.tier||'common').toLowerCase()}">${card.tier || 'Common'}</span></div>
+                                <div class="meta-desc">${getTierNarrative(card.tier)}</div>
+                            </div>
+                            <div class="meta-block">
+                                <div class="meta-label">☉ Alignment <span class="alignment-badge ${ (lagna && lagna.house && lagna.planet) ? 'aligned' : 'unaligned' }" title="${ (lagna && lagna.house && lagna.planet) ? 'Aligned' : 'Unaligned' }">${ (lagna && lagna.house && lagna.planet) ? '✓' : '✕' }</span></div>
+                                <div class="meta-value">${lagna.house || '—'} • ${lagna.planet || '—'} • ${lagna.nakshatra || '—'}</div>
+                                <div class="meta-desc">${getAlignmentNarrative(lagna)}</div>
+                            </div>
+                            <div class="meta-block">
+                                <div class="meta-label">⏳ Origin</div>
+                                <div class="meta-value">${new Date(card.timestamp || Date.now()).toLocaleDateString()}</div>
+                                <div class="meta-desc">Forged or last invoked on this date.</div>
+                            </div>
+                        </div> 
+                        ${cardLore ? `<div class="artifact-lore">${cardLore}</div>` : ''}
+                        <div class="artifact-stats-bar">
+                            <div class="stat-item">
+                                <span class="stat-label">Power</span>
+                                <span class="stat-value"><em>⚡</em> ${stats.power}</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">KP</span>
+                                <span class="stat-value"><em>✦</em> ${stats.kp}</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Essence</span>
+                                <span class="stat-value" style="min-width:240px;">
+                                    <div class="essence-bar-placeholder" style="width:220px;">
+                                        <div class="stat-bar-track" aria-hidden="true" style="height:8px; background: rgba(255,255,255,0.05); border-radius:6px; overflow:hidden;">
+                                            <div class="stat-bar-fill essence-fill" style="width:50%; background: linear-gradient(90deg,#8b5cf6,#f59e0b); height:100%; border-radius:6px;"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Synergy</span>
+                                <span class="stat-value">${synergySummary}</span>
+                            </div>
+                            ${jotyshMods ? `<div class="stat-item"><span class="stat-label">Jotysh Mods</span> ${jotyshMods}</div>` : ''}
+                            ${modsHtml ? `<div class="stat-item"><span class="stat-label">Mods</span> ${modsHtml}</div>` : ''}
+                        </div>
+                    </div>
+                    <div class="artifact-side">
+                        <div class="artifact-skill-list">
+                            ${skillListHtml || '<div style="color:#64748b;text-align:center;">No skills slotted.</div>'}
+                        </div>
+                        ${sideFillerHtml || ''}
+                        <div class="jotysh-legend">
+                            <strong>Tip:</strong> Each skill is a cosmic power of this artifact.<br>
+                            <span style="color:#fbbf24;">Glowing skills</span> are currently empowered by the world state.<br>
+                            <span style="color:#a78bfa;">Jotysh effects</span> show how the cosmic chart changes each skill's narrative and gameplay.
+                        </div>
+                    </div>
+                    <div class="artifact-footer">
+                        <div>
+                            <span class="seal-text">DESTINY SEAL #${card.id}</span>
+                            <span class="invoked-badge">Invoked</span>
+                        </div>
+                        <div>${new Date(card.timestamp || Date.now()).toLocaleDateString()}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+
+        function showTagInfo(tag) {
+            window._activeSynergyTag = (window._activeSynergyTag === tag) ? null : tag;
+            // Re-render the card to update the synergy box
+            if (selectedId !== null) selectCard(selectedId);
+        }
+        function showSynergyHelp() {
+            window._activeSynergyTag = null;
+            // Show help info
+            setTimeout(() => {
+                const help = document.getElementById('synergy-help-info');
+                if (help) {
+                    help.style.display = 'block';
+                    setTimeout(() => { help.style.display = 'none'; }, 3200);
+                }
+            }, 30);
+        }
+
+        // Modal for slot details
+        function showJotyshModal(cardId, slotIdx) {
+            const card = allCards.find(c => c.id === cardId);
+            if (!card) return;
+            
+            const f = (card.slottedGlyphs || [])[slotIdx];
+            
+            // Prefer Snapshot Metadata if available, else fallback to default static chart
+            const hasBakedData = f && f.house && f.planet;
+            const slotMeta = {
+                house: hasBakedData ? `${f.house} House` : jotyshSlots[slotIdx].house,
+                planet: hasBakedData ? f.planet : jotyshSlots[slotIdx].planet,
+                planetIcon: hasBakedData ? (f.planetSymbol || '✨') : jotyshSlots[slotIdx].planetIcon,
+                nakshatra: hasBakedData ? f.nakshatra : jotyshSlots[slotIdx].nakshatra
+            };
+
+            let html = `
+                <div style="font-size:1.2em;font-weight:900;color:#fbbf24;">${slotMeta.house} <span style="font-size:0.9em;color:#a78bfa;">(${slotMeta.planet} • ${slotMeta.nakshatra})</span></div>
+                <div style="margin:0.7em 0 1.2em 0;">
+                    <span style="font-size:2em;">${slotMeta.planetIcon || ''}</span>
+                </div>
+            `;
+            if (f) {
+                html += `
+                    <div style="font-size:1.5em;">${f.icon || '✨'}</div>
+                    <div style="font-size:1.1em;font-weight:700;color:#e0e7ff;margin-bottom:0.3em;">${f.name}</div>
+                    <div style="color:#fbbf24;font-style:italic;margin-bottom:0.7em;">${f.narrative || ''}</div>
+                    <div style="margin-bottom:0.7em;">
+                        <strong style="color:#a78bfa;">Effects/Uses:</strong>
+                        <ul style="margin:0.3em 0 0 1.2em;padding:0;">
+                            ${
+                                Array.isArray(f.effects) && f.effects.length
+                                ? f.effects.map(e =>
+                                    `<li>${e.desc || e}${e.source ? ` <span class="mod-badge" style="margin-left:0.5em;">${e.source}</span>` : ''}</li>`
+                                ).join('')
+                                : (f.sampleUse ? `<li>${f.sampleUse}</li>` : '<li>No effects listed.</li>')
+                            }
+                        </ul>
+                    </div>
+                    <div style="margin-bottom:0.7em;">
+                        <strong style="color:#a78bfa;">Synergy:</strong>
+                        ${(f.tags || []).map(t => `<span class="tag-mini">${t}</span>`).join(' ')}
+                    </div>
+                    <div style="margin-bottom:0.7em;">
+                        <strong style="color:#a78bfa;">Jotysh Resonance:</strong>
+                        <span>${slotMeta.house}</span> • <span>${slotMeta.planet}</span> • <span>${slotMeta.nakshatra}</span>
+                    </div>
+                    <div>
+                        <strong style="color:#a78bfa;">Mods:</strong>
+                        ${(f.mods || []).map(m => `<span class="mod-badge">${m}</span>`).join(' ') || '<span style="color:#64748b;">None</span>'}
+                    </div>
+                `;
+            } else {
+                html += `<div style="color:#64748b;font-size:1.1em;">No skill slotted in this house.<br>Fill this slot to unlock its cosmic resonance!</div>`;
+            }
+            document.getElementById('jotysh-modal-body').innerHTML = html;
+            document.getElementById('jotysh-modal').style.display = 'flex';
+        }
+
+        // Compute gameplay stats for a skill with sensible fallbacks (used in Gameplay Breakdown)
+        function computeSkillStats(skill) {
+            const potency = skill.potency ?? skill.power ?? (skill.effects?.length ? 80 + skill.effects.length * 10 : 60);
+            const neural = skill.neural ?? skill.kp ?? (skill.tier === 'Legendary' ? 10 : skill.tier === 'Epic' ? 7 : skill.tier === 'Rare' ? 5 : 3);
+            const cooldown = skill.cooldown ?? skill.recalibration ?? (potency > 100 ? 3 : potency > 80 ? 2 : 1);
+            let descriptor = 'Balanced Utility';
+            if (potency >= 120) descriptor = 'High Impact';
+            else if (potency >= 90) descriptor = 'Strong';
+            else if (potency <= 70) descriptor = 'Quick Utility';
+            
+            // PRIORITY: Use Saved Snapshot Mechanics if available
+            // This ensures "Gameplay Fluidity" and "Story Creation" context are preserved
+            let examples = skill.examples;
+            
+            if (!examples && (skill.sampleUse || skill.gameplayTip || skill.possibleOutcomes)) {
+                 examples = [];
+                 if (skill.gameplayTip) examples.push({ type: 'Tactical Tip', text: skill.gameplayTip });
+                 if (skill.sampleUse) examples.push({ type: 'Sample Use', text: skill.sampleUse });
+                 if (skill.possibleOutcomes) examples.push({ type: 'Outcome', text: skill.possibleOutcomes });
+            }
+
+            // Fallback for older cards
+            if (!examples || examples.length === 0) {
+                 examples = [
+                    { type: 'Combat', text: `Use ${skill.name} to turn the tide in battle.` },
+                    { type: 'Exploration', text: `Apply ${skill.name} to overcome obstacles.` },
+                    { type: 'Social', text: `Leverage ${skill.name} in negotiations.` }
+                ];
+            }
+            return { potency, neural, cooldown, descriptor, examples };
+        }
+
+        function getTierColor(tier) {
+            switch(tier) {
+                case 'Legendary': return '#f59e0b';
+                case 'Rare': return '#3b82f6';
+                case 'Epic': return '#a855f7';
+                default: return '#8b5cf6';
+            }
+        }
+
+        function getTierNarrative(tier) {
+            switch((tier||'').toLowerCase()) {
+                case 'legendary': return 'A relic of legend, woven with cosmic fate.';
+                case 'epic': return 'A rare artifact, pulsing with arcane resonance.';
+                case 'rare': return 'A unique tool, prized by seekers of wonder.';
+                default: return 'A common card, ready for any story or test.';
+            }
+        }
+
+        function getAlignmentNarrative(lagna) {
+            if (!lagna || !lagna.house || !lagna.planet) return 'Unaligned to any cosmic house.';
+            const nak = lagna.nakshatra ? `, under ${lagna.nakshatra}` : '';
+            return `Guided by ${lagna.planet} in the ${lagna.house} House${nak}.`;
+        }
+        function openModal(f, slotIndex) {
+            const m = document.getElementById('detailModal');
+            const tierColor = getTierColor(f.tier);
+            const tagsHtml = (f.tags || []).map(t => `<span class="tag-mini">${t}</span>`).join('');
+            const slotMeta = jotyshSlots[slotIndex] || { house: 'N/A', planet: 'N/A', nakshatra: 'N/A' };
+            
+            // Phase 2: Strategic Guidance (Scenario Suggestions)
+            let guidanceHtml = '';
+            if (f.tags) {
+                if (f.tags.includes('Social')) guidanceHtml += `<li>Best used in <strong>Dialogues</strong> or <strong>Negotiations</strong>.</li>`;
+                if (f.tags.includes('Combat')) guidanceHtml += `<li>Effective during <strong>Physical Confrontations</strong>.</li>`;
+                if (f.tags.includes('Stealth')) guidanceHtml += `<li>Ideal for <strong>Infiltration</strong> or <strong>Evasion</strong>.</li>`;
+            }
+            if ((f.planet || slotMeta.planet) === currentWorldState.activePlanet) {
+                guidanceHtml += `<li style="color:#fbbf24;">Currently <strong>Empowered</strong> by the ${f.planet || slotMeta.planet}! Effects are doubled.</li>`;
+            }
+
+            let effectsHtml = '';
+            if (Array.isArray(f.effects) && f.effects.length) {
+                effectsHtml = `
+                    <div style="margin-top:1.5rem;">
+                        <span class="modal-section-label">In-Game Effects & Results</span>
+                        <ul class="modal-effects-list">
+                            ${f.effects.map(e => `<li>${e.desc || e} ${e.source ? `<span>${e.source}</span>` : ''}</li>`).join('')}
+                        </ul>
+                    </div>`;
+            } else {
+                effectsHtml = `
+                    <div style="margin-top:1.5rem;">
+                        <span class="modal-section-label">Sample Use</span>
+                        <div class="modal-narrative" style="border-left-color:#fbbf24; color:#fbbf24;">
+                            ${f.sampleUse || 'No sample use provided.'}
+                        </div>
+                    </div>`;
+            }
+
+            const modsHtml = (f.mods || []).map(mod => `<div style="color:#a78bfa; font-size:0.9rem; margin-bottom:0.3rem;">• ${mod}</div>`).join('');
+
+            document.getElementById('modalContent').innerHTML = `
+                <div class="modal-header">
+                    <div class="modal-icon">${f.icon || '✨'}</div>
+                    <div class="modal-title-group">
+                        <h2 style="color:${tierColor};">${f.name}</h2>
+                        <div class="facet-tier" style="color:${tierColor}; font-size:1rem;">${f.tier || 'Common'}</div>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom:1.5rem;">
+                    <span class="modal-section-label">Narrative Codex</span>
+                    <div class="modal-narrative">"${f.narrative || 'No narrative recorded.'}"</div>
+                </div>
+
+                ${effectsHtml}
+
+                ${guidanceHtml ? `
+                <div style="margin-top:1.5rem;">
+                    <span class="modal-section-label">Strategic Guidance</span>
+                    <ul class="modal-effects-list" style="border-left-color:#10b981;">
+                        ${guidanceHtml}
+                    </ul>
+                </div>
+                ` : ''}
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:2rem;">
+                    <div>
+                        <span class="modal-section-label">Jotysh Resonance</span>
+                        <div style="color:#a78bfa; font-size:1rem; display:flex; flex-direction:column; gap:0.4rem;">
+                            <div><strong>House:</strong> ${f.house || slotMeta.house}</div>
+                            <div><strong>Planet:</strong> ${f.planet || slotMeta.planet}</div>
+                            <div><strong>Nakshatra:</strong> ${f.nakshatra || slotMeta.nakshatra}</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="modal-section-label">Synergy Tags</span>
+                        <div class="facet-tags">
+                            ${tagsHtml || '<span style="color:#64748b;">None</span>'}
+                        </div>
+                    </div>
+                </div>
+
+                ${modsHtml ? `
+                <div style="margin-top:2rem;">
+                    <span class="modal-section-label">Applied Modifications</span>
+                    <div style="background:rgba(139,92,246,0.1); padding:1rem; border-radius:12px; border:1px solid rgba(139,92,246,0.2);">
+                        ${modsHtml}
+                    </div>
+                </div>
+                ` : ''}
+            `;
+            m.style.display = 'flex';
+        }
+
+        function closeModal() { document.getElementById('detailModal').style.display = 'none'; }
+        function escapeHtml(s) { return String(s||'').replace(/'/g, "\\'"); }
+
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>

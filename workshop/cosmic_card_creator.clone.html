@@ -2105,6 +2105,53 @@
             background: var(--accent-glow);
             box-shadow: 0 0 20px rgba(139,92,246,0.3);
         }
+
+        /* Compact synced indicator: small circle + label underneath (subtle & smooth) */
+        .synced-indicator {
+            background: transparent;
+            color: #e6fff9;
+            box-shadow: none;
+            font-weight: 700;
+            pointer-events: none;
+            cursor: default;
+            opacity: 1;
+            border: none;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            min-width: 32px;
+            padding: 0;
+            font-size: 0.68rem;
+            border-radius: 4px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .synced-indicator .synced-dot {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(180deg,#10b981 0%,#22d3ee 100%);
+            border-radius: 50%;
+            border: 1px solid rgba(16,185,129,0.9);
+            box-shadow: 0 0 8px rgba(16,185,129,0.22);
+            transition: transform 300ms ease, box-shadow 300ms ease;
+            animation: syncPulse 4s ease-in-out infinite;
+        }
+        .synced-indicator .synced-label {
+            display: block;
+            font-size: 0.62rem;
+            color: #bfffe8;
+            text-shadow: 0 0 6px rgba(16,185,129,0.12);
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            line-height: 1;
+        }
+        @keyframes syncPulse {
+            0% { transform: scale(1); box-shadow: 0 0 6px rgba(16,185,129,0.16); }
+            50% { transform: scale(1.05); box-shadow: 0 0 12px rgba(16,185,129,0.26); }
+            100% { transform: scale(1); box-shadow: 0 0 6px rgba(16,185,129,0.16); }
+        }
         
         /* === LEFT PANEL SPECIFIC === */
         #left-panel {
@@ -3715,10 +3762,13 @@
                     <span class="panel-icon">📚</span>
                     <span>Neural Archive</span>
                 </div>
-                <div class="panel-actions">
-                    <button class="cosmic-btn" onclick="syncSkills()" title="Sync from Fusion Lab">🔄 Sync</button>
-                    <button class="cosmic-btn" onclick="document.getElementById('skill-import-input').click()" title="Import JSON">📥 Import</button>
-                    <input type="file" id="skill-import-input" style="display:none" accept=".json" onchange="importSkills(this)">
+                <div class="panel-actions" style="gap:8px;">
+                    <span class="cosmic-btn synced-indicator" title="Archive is synced" role="status" aria-label="Synced">
+                        <span class="synced-dot" aria-hidden="true"></span>
+                        <span class="synced-label">Synced</span>
+                    </span>
+                    <!-- Hidden manual refresh target (kept for programmatic/manual sync logic) -->
+                    <button class="cosmic-btn manual-refresh" id="manual-refresh-btn" style="display:none" aria-hidden="true" onclick="syncSkills()"></button>
                 </div>
             </div>
             <div class="panel-content">
@@ -3833,8 +3883,7 @@
                     <span class="panel-icon">📊</span>
                     <span>Card Preview</span>
                 </div>
-                <div class="panel-actions">
-                    <button class="cosmic-btn" title="Save card">💾</button>
+                <div class="panel-actions" style="gap:8px;">
                     <button class="cosmic-btn" title="View My Cards" onclick="window.open('my_cards.html', '_blank')">📚 My Cards</button>
                 </div>
             </div>
@@ -4045,46 +4094,7 @@
             showNotification('Skills synced from Fusion Lab', 'info');
         }
 
-        function importSkills(input) {
-            const file = input.files[0];
-            if (!file) return;
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const importedSkills = JSON.parse(e.target.result);
-                    if (Array.isArray(importedSkills)) {
-                        // Merge with existing skills
-                        const currentSkills = JSON.parse(localStorage.getItem('cosmic_skills') || '[]');
-                        
-                        // Create a map of existing skills by ID for easy lookup
-                        const skillMap = new Map(currentSkills.map(s => [s.id, s]));
-                        
-                        let newCount = 0;
-                        importedSkills.forEach(skill => {
-                            if (!skillMap.has(skill.id)) {
-                                skillMap.set(skill.id, skill);
-                                newCount++;
-                            }
-                        });
-                        
-                        const mergedSkills = Array.from(skillMap.values());
-                        localStorage.setItem('cosmic_skills', JSON.stringify(mergedSkills));
-                        
-                        loadOwnedSkills();
-                        showNotification(`Imported ${newCount} new skills`, 'achievement');
-                    } else {
-                        showNotification('Invalid skill file format', 'error');
-                    }
-                } catch (err) {
-                    console.error('Import error:', err);
-                    showNotification('Failed to import skills', 'error');
-                }
-                // Reset input
-                input.value = '';
-            };
-            reader.readAsText(file);
-        }
 
         // === DATA LOADING ===
         let ownedSkills = [];
@@ -7205,6 +7215,9 @@
                 // Save to localStorage for the collection
                 cards.push(invokedCard);
                 localStorage.setItem('my_cosmic_cards', JSON.stringify(cards));
+                // Notify other tabs that cards were updated
+                try { if ('BroadcastChannel' in window) { new BroadcastChannel('cosmic-cards').postMessage({ type: 'cards-updated' }); } } catch(e) {}
+                try { localStorage.setItem('my_cosmic_cards_timestamp', Date.now().toString()); } catch(e) {}
 
                 updateInvokeButtonState();
                 showNotification(`"${name}" invoked! Summary: ${summary}`, 'achievement');
@@ -7360,7 +7373,7 @@
                         invokedCard.name = name;
                         let cards = JSON.parse(localStorage.getItem('my_cosmic_cards') || '[]');
                         const idx = cards.findIndex(c => c.id === invokedCard.id);
-                        if (idx >= 0) { cards[idx].name = name; localStorage.setItem('my_cosmic_cards', JSON.stringify(cards)); }
+                        if (idx >= 0) { cards[idx].name = name; localStorage.setItem('my_cosmic_cards', JSON.stringify(cards)); try { if ('BroadcastChannel' in window) { new BroadcastChannel('cosmic-cards').postMessage({ type: 'cards-updated' }); } } catch(e) {} try { localStorage.setItem('my_cosmic_cards_timestamp', Date.now().toString()); } catch(e) {} }
                     }
                     window._currentCardName = name;
                     renderCardPreview();
@@ -8065,7 +8078,7 @@
         }, false);
 
         // Manual refresh button
-        document.querySelector('#left-panel .cosmic-btn').onclick = () => {
+        document.querySelector('#left-panel .manual-refresh').onclick = () => {
             playSound('click');
             console.log('🔄 Manual refresh triggered');
             const previousCount = ownedSkills.length;
