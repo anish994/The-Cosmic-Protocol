@@ -2888,6 +2888,18 @@
             box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
         }
 
+        /* pulse animation when engine counts change */
+        .engine-pill.pulse {
+            animation: enginePulse 700ms cubic-bezier(.2,.9,.2,1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139,92,246,0.12);
+        }
+        @keyframes enginePulse {
+            0% { transform: translateY(0); opacity: 0.9; }
+            40% { transform: translateY(-4px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.98; }
+        }
+
         .owned-body {
             flex: 1;
             display: flex;
@@ -3695,9 +3707,7 @@
     <div class="particle-container" id="particle-container"></div>
 
     <div class="cosmic-workspace">
-        <!-- Tiny Reset Button in Top Corner -->
-        <button onclick="clearBlueprint()" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; color: white; font-size: 0.7rem; padding: 0.2rem 0.4rem; cursor: pointer; z-index: 1000;" title="Reset Blueprint">↺</button>
-        
+    
         <!-- LEFT PANEL: Neural Archive / Skill Library -->
         <div class="cosmic-panel" id="left-panel">
             <div class="panel-header">
@@ -3726,7 +3736,8 @@
                     <span>Jotysh Engine</span>
                 </div>
                 <div class="panel-actions">
-                    <button class="cosmic-btn" title="Reset">🔄</button>
+                    <button class="cosmic-btn" id="reset-slots-btn" title="Reset slots" aria-label="Reset slots">🔄</button>
+                    <button class="cosmic-btn" id="undo-slots-btn" title="Undo last reset" aria-label="Undo last reset" style="opacity:0.5; pointer-events:none; margin-left:0.25rem;">↩️</button>
                     <!-- Slots filled indicator: non-clickable summary (was invoke button) -->
                     <span id="slots-filled-indicator" class="cosmic-btn" style="pointer-events:none; background:rgba(139,92,246,0.02); color:var(--muted); font-weight:700;">
                         <span style="margin-right:0.5rem;">🔢</span><span id="slots-filled-count">Slots: 0/12</span>
@@ -3735,6 +3746,31 @@
                     <button class="cosmic-btn" id="jotysh-blueprint-btn" title="Jotysh Blueprint" aria-controls="jotysh-blueprint-modal" aria-haspopup="dialog">ℹ️</button>
                 </div>
             </div>
+            <style>
+                /* subtle clearing pulse used when resetting slots */
+                #slots-filled-indicator.clearing, #vedic-chart.clearing {
+                    animation: clearingPulse 320ms cubic-bezier(.2,.9,.2,1);
+                }
+                @keyframes clearingPulse {
+                    0% { transform: scale(1); opacity: 1; }
+                    50% { transform: scale(0.985); opacity: 0.6; }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+
+                /* highlight the house briefly when a duplicate slot attempt is made */
+                .house.highlight-duplicate {
+                    animation: duplicatePulse 720ms cubic-bezier(.2,.9,.2,1);
+                }
+                @keyframes duplicatePulse {
+                    0% { box-shadow: none; transform: translateY(0); }
+                    20% { box-shadow: 0 8px 20px rgba(255,90,90,0.08); transform: translateY(-4px); }
+                    100% { box-shadow: 0 0 0 rgba(255,90,90,0); transform: translateY(0); }
+                }
+
+                /* Undo button inactive and glow state */
+                #undo-slots-btn { opacity: 0.5; pointer-events: none; transition: all 200ms ease; }
+                #undo-slots-btn.glow { box-shadow: 0 0 12px #fbbf24, 0 0 4px #fff; border-color: #fbbf24; background: rgba(251,191,36,0.12); color: #fbbf24; opacity: 1 !important; pointer-events: auto; }
+            </style>
             <div class="panel-content">
                     <div style="display:flex; flex-direction:row; gap:0.3rem; margin-bottom:0.4rem;">
                         <!-- Lagna Slider: sleek mechanical replacement for gear-dial -->
@@ -4064,6 +4100,8 @@
                     );
                     console.log(`✅ Loaded ${ownedSkills.length} owned skills from Fusion Laboratory`);
                     renderSkillArchive();
+                    // Update engine header counts immediately when owned skills load
+                    renderEngineBlocks();
                 } else {
                     console.log('⚠️ No skills found in localStorage. Please visit workshop_phase3.html to fuse skills.');
                     renderEmptyState();
@@ -4105,6 +4143,8 @@
 
         // === OWNED SKILLS REVAMP ===
         let activeEngineFilter = 'ALL';
+        // Cache of engine counts to detect changes and animate pills
+        let engineCountsCache = {};
         // Rich engine definitions: id, label and icon — used to render pills and counts
         const ENGINES = [
             { id: 'ALL', label: 'All', icon: '🌌' },
@@ -4303,6 +4343,7 @@
         function renderEngineBlocks() {
             const row = document.getElementById('engineRow');
             if (!row) return;
+            const oldCounts = { ...engineCountsCache };
             row.innerHTML = '';
             ENGINES.forEach(engineObj => {
                 // compute count of skills matching this engine (respects FUSED logic in skillMatchesEngine)
@@ -4323,8 +4364,28 @@
                     renderSkillsGrid(searchVal.trim().toLowerCase());
                 };
                 row.appendChild(btn);
+
+                // Pulse if count changed
+                if (oldCounts[engineObj.id] !== undefined && oldCounts[engineObj.id] !== count) {
+                    btn.classList.add('pulse');
+                    setTimeout(() => btn.classList.remove('pulse'), 800);
+                }
+                engineCountsCache[engineObj.id] = count;
             });
         }
+
+        // Listen for external updates to skills database (e.g., Fusion Lab) and refresh owned UI
+        window.addEventListener('storage', (e) => {
+            if (!e.key) return;
+            if (e.key === 'cosmic_skills') {
+                // Reload owned skills and refresh counts & lists
+                loadOwnedSkills();
+                renderEngineBlocks();
+                renderSkillsGrid();
+                renderTagChips();
+                showNotification('Skill Database synchronized', 'info');
+            }
+        });
 
         function updateQuickFilters() {
             // Sync tag chip UI with `selectedTags`
@@ -5229,7 +5290,8 @@
         let activeSkillId = null;
         let selectedGlyph = null;
         let slottedGlyphs = new Array(12).fill(null);
-        let invokedCard = null;
+        let lastResetSlottedGlyphs = null;
+        let invokedCard = null; 
         let currentBaseElement = null;
         let currentLagna = 1;
         let currentNakshatra = 1;
@@ -5776,6 +5838,46 @@
             if (commitBtn) commitBtn.addEventListener('click', () => { commitBlueprintToChart(); });
             const clearBtn = document.getElementById('jotysh-blueprint-clear');
             if (clearBtn) clearBtn.addEventListener('click', () => { clearBlueprint(); });
+
+            // Reset slots (top header button next to slots counter)
+            const resetSlotsBtn = document.getElementById('reset-slots-btn');
+            const undoSlotsBtn = document.getElementById('undo-slots-btn');
+            if (resetSlotsBtn) resetSlotsBtn.addEventListener('click', () => {
+                // Save current state for undo (deep copy)
+                lastResetSlottedGlyphs = slottedGlyphs.map(g => g ? { ...g } : null);
+                // Enable Undo button
+                if (undoSlotsBtn) { undoSlotsBtn.style.opacity = '1'; undoSlotsBtn.style.pointerEvents = 'auto'; undoSlotsBtn.classList.add('glow'); }
+                // Smooth reset (no confirmation): show subtle pulse, then clear slots
+                const slotsEl = document.getElementById('slots-filled-indicator');
+                const chartEl = document.getElementById('vedic-chart');
+                if (slotsEl) slotsEl.classList.add('clearing');
+                if (chartEl) chartEl.classList.add('clearing');
+                setTimeout(() => {
+                    slottedGlyphs = new Array(12).fill(null);
+                    saveSlotsToStorage();
+                    renderVedicChart();
+                    renderCardPreview();
+                    updateInvokeButtonState();
+                    showNotification('Slots cleared', 'info');
+                    // remove visual cue shortly after
+                    setTimeout(() => { if (slotsEl) slotsEl.classList.remove('clearing'); if (chartEl) chartEl.classList.remove('clearing'); }, 260);
+                }, 180);
+            });
+
+            // Undo button logic
+            const undoBtnEl = document.getElementById('undo-slots-btn');
+            if (undoBtnEl) undoBtnEl.addEventListener('click', () => {
+                if (!lastResetSlottedGlyphs) return;
+                slottedGlyphs = lastResetSlottedGlyphs.map(g => g ? { ...g } : null);
+                saveSlotsToStorage();
+                renderVedicChart();
+                renderCardPreview();
+                updateInvokeButtonState();
+                showNotification('Undo: Chart restored', 'achievement');
+                // Disable Undo button
+                undoBtnEl.style.opacity = '0.5'; undoBtnEl.style.pointerEvents = 'none'; undoBtnEl.classList.remove('glow');
+                lastResetSlottedGlyphs = null;
+            });
         }
 
         function syncLagnaSelector() {
@@ -6563,11 +6665,27 @@
                 showNotification('Select a skill in the Neural Archive first.', 'info');
                 return;
             }
+
+            // Prevent duplicate slotting: disallow placing the same skill in multiple houses
+            const existingIndex = slottedGlyphs.findIndex((g) => g && g.id === selectedGlyph.id);
+            if (existingIndex !== -1 && existingIndex !== index) {
+                showNotification('This skill is already slotted in another house.', 'error');
+                playSound('click');
+                const existingHouse = document.querySelector(`.house[data-house-id='${existingIndex + 1}']`);
+                if (existingHouse) {
+                    existingHouse.classList.add('highlight-duplicate');
+                    setTimeout(() => existingHouse.classList.remove('highlight-duplicate'), 900);
+                }
+                return;
+            }
+
             // Ensure each slotted glyph carries per-influence toggles (defaults: all on)
             slottedGlyphs[index] = { ...selectedGlyph, activeInfluences: { house: true, planet: true, sign: true, nakshatra: true } };
             renderHouseSlot(index);
             saveSlotsToStorage();
             updateInvokeButtonState();
+            // Any chart change disables the pending undo snapshot
+            disableUndoAfterChange();
             renderCardPreview();
             playSound('select');
             // brief animated pulse for the house to show slotted state
@@ -6584,6 +6702,14 @@
             saveSlotsToStorage();
             updateInvokeButtonState();
             renderCardPreview();
+            // Changes to chart should disable the ability to undo a previous reset
+            disableUndoAfterChange();
+        }
+
+        function disableUndoAfterChange() {
+            const undoSlotsBtn = document.getElementById('undo-slots-btn');
+            if (undoSlotsBtn) { undoSlotsBtn.style.opacity = '0.5'; undoSlotsBtn.style.pointerEvents = 'none'; undoSlotsBtn.classList.remove('glow'); }
+            lastResetSlottedGlyphs = null;
         }
 
         function toggleInfluence(slotIndex, type) {

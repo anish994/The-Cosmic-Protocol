@@ -1116,71 +1116,6 @@
             padding-top: 0.5rem;
         }
 
-        /* Chat Interface */
-        .chat-interface {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 15, 0.98);
-            border: 1px solid var(--accent);
-            border-radius: 0 0 8px 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            padding: 1rem;
-            z-index: 1000;
-            margin-top: 4px;
-            min-height: 200px;
-            max-height: 400px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            padding-right: 0.5rem;
-        }
-
-        .chat-message {
-            display: flex;
-            gap: 0.75rem;
-            max-width: 90%;
-        }
-
-        .chat-message.user {
-            align-self: flex-end;
-            flex-direction: row-reverse;
-        }
-
-        .chat-message.ai {
-            align-self: flex-start;
-        }
-
-        .message-content {
-            background: rgba(255,255,255,0.05);
-            padding: 0.6rem 1rem;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #e2e8f0;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .chat-message.ai .message-content {
-            background: rgba(139,92,246,0.15);
-            border-color: rgba(139,92,246,0.3);
-            border-top-left-radius: 2px;
-        }
-
-        .chat-message.user .message-content {
-            background: var(--accent);
-            color: #fff;
-            border-top-right-radius: 2px;
-        }
-
         /* Controls Styling */
         .search-controls {
             display: flex;
@@ -1311,11 +1246,8 @@
                 <div class="smart-search-container">
                     <div class="search-input-wrapper">
                         <span class="search-icon">🔍</span>
-                        <input type="text" id="smart-search-input" class="smart-search-input" placeholder="Ask the AI or search skills..." autocomplete="off">
+                        <input type="text" id="smart-search-input" class="smart-search-input" placeholder="Search skills..." autocomplete="off">
                         <div class="search-actions">
-                            <button id="search-mode-toggle" class="search-action-btn" title="Toggle AI Chat Mode">
-                                🤖
-                            </button>
                             <button id="search-clear-btn" class="search-action-btn hidden" title="Clear">
                                 ✕
                             </button>
@@ -1330,15 +1262,6 @@
                         </div>
                         <div class="tooltip-grid" id="tooltip-grid"></div>
                         <div class="tooltip-footer">Press Enter for full results</div>
-                    </div>
-
-                    <!-- Chat Interface Container -->
-                    <div id="chat-interface" class="chat-interface hidden">
-                        <div class="chat-messages" id="chat-messages">
-                            <div class="chat-message ai">
-                                <div class="message-content">Hello! I am your Mystic Assistant. Ask me about skill synergies, fusion recipes, or lore.</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
@@ -1530,13 +1453,49 @@
             }
         }
 
-        // --- STATE ---
-        // Load from LocalStorage or use Default DB
-        let storedSkills = localStorage.getItem('cosmic_skills');
-        let knownSkills = storedSkills ? JSON.parse(storedSkills) : [];
+        // --- STATE & SOURCE OF TRUTH (Step 1) ---
+        // This page is the ORIGIN. It must construct the master list.
+        
+        let storedSkillsRaw = localStorage.getItem('cosmic_skills');
+        let storedSkillsList = storedSkillsRaw ? JSON.parse(storedSkillsRaw) : [];
+
+        // STRICT MERGE STRATEGY:
+        // 1. Start with fresh Base Skills from Code (The Definitions)
+        let knownSkills = [...SKILL_DB];
+
+        // 2. Index the Stored Skills to recover player progress (Owned status)
+        const storedMap = new Map(storedSkillsList.map(s => [s.id, s]));
+
+        // 3. Hydrate Base Skills with Persistent Flags
+        knownSkills = knownSkills.map(baseSkill => {
+            const stored = storedMap.get(baseSkill.id);
+            if (stored) {
+                // Preserve 'owned' status if acquired
+                if (stored.owned) baseSkill.owned = true;
+            }
+            return baseSkill;
+        });
+
+        // 4. Retrieve User-Created (Fused) Skills
+        // identifying them by checking if they are NOT in the Base Set
+        const baseIds = new Set(knownSkills.map(s => s.id));
+        const userFusedSkills = storedSkillsList.filter(s => !baseIds.has(s.id));
+
+        // 5. Combine: Base (Hydrated) + User Fused
+        knownSkills = [...knownSkills, ...userFusedSkills];
+
+        // 6. PERSIST: Establish the Source of Truth for Step 2
+        console.log(`[Step 1 Origin] Stabilized ${knownSkills.length} skills (${userFusedSkills.length} fused). Source updated.`);
+        localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
 
         // Online/offline state per-skill (persisted)
         let onlineStateMap = JSON.parse(localStorage.getItem('cosmic_skill_online') || '{}');
+
+        // Ensure any previously activated (online) skill is reflected as owned in knownSkills
+        try {
+            knownSkills.forEach(s => { if (onlineStateMap[s.id]) s.owned = true; });
+            localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
+        } catch (e) { console.warn('Failed to sync online state to owned flag', e); }
 
         // Favorites State
         let favoriteSkills = new Set(JSON.parse(localStorage.getItem('cosmic_favorites') || '[]'));
@@ -1695,6 +1654,19 @@
             onlineStateMap[skillId] = !current;
             localStorage.setItem('cosmic_skill_online', JSON.stringify(onlineStateMap));
 
+            // Also persist the "owned" flag into knownSkills so other pages (card creator) see it
+            try {
+                const skillObj = knownSkills.find(s => s.id === skillId);
+                if (skillObj) {
+                    skillObj.owned = !!onlineStateMap[skillId];
+                    // If turning offline, keep flag false (do not remove property to preserve history)
+                    saveProgress();
+                    // If the owned view is currently visible, refresh it
+                    const ownedListEl = document.getElementById('owned-list');
+                    if (ownedListEl && ownedListEl.style.display !== 'none') renderOwnedList();
+                }
+            } catch (err) { console.warn('Failed to persist owned state', err); }
+
             // Update button UI immediately
             const btn = document.querySelector(`button.status-btn[data-skill-id="${skillId}"]`);
             if (btn) {
@@ -1808,19 +1780,8 @@
             list.appendChild(fragment);
         }
 
-        // AUTO-UPDATE CHECK:
-        // If the loaded DB (SKILL_DB) is significantly larger than the stored one,
-        // it means we have a major content update. We should merge or reset.
-        console.log(`System Init: Loaded ${SKILL_DB.length} skills from database.`);
-        
-        if (SKILL_DB.length > knownSkills.length + 50) {
-            console.log("System Update Detected: Refreshing Skill Database...");
-            knownSkills = [...SKILL_DB];
-            localStorage.setItem('cosmic_skills', JSON.stringify(knownSkills));
-        } else if (knownSkills.length === 0) {
-             console.log("New User Detected: Seeding Database...");
-             knownSkills = [...SKILL_DB];
-        }
+        // (Auto-Merge Logic handled in initialization above)
+        console.log(`System Init: Loaded ${SKILL_DB.length} base skills from database.`);
 
         // Normalize knownSkills: retroactively mark fused skills and assign engine when obvious.
         function normalizeSkillFlags() {
@@ -1968,8 +1929,8 @@
             // Sorting Logic
             const sortMode = document.getElementById('sort-select') ? document.getElementById('sort-select').value : 'tier';
             let displaySkills = [...knownSkills];
-            // If the user typed a query and we're in search mode, rank and restrict by semantic search
-            if (filter && searchMode === 'search') {
+            // If the user typed a query, rank and restrict by semantic search
+            if (filter) {
                 const ranked = semanticSearch(filter, { selectedTags });
                 if (ranked && ranked.length) {
                     // Use ranked skills directly
@@ -2010,7 +1971,7 @@
 
             displaySkills.forEach(skill => {
                 // If filter is present and we used semantic search, skip brute-force token checks
-                if (filter && searchMode === 'search') {
+                if (filter) {
                     // displaySkills already came from ranked semantic search, so keep it
                 } else if (filter && !(
                     skill.name.toLowerCase().includes(filter) ||
@@ -2103,34 +2064,10 @@
                         
                         <!-- Damage -->
                         <div class="stat-bar-container">
-                            <div class="stat-bar-label">
-                                <span>DAMAGE OUTPUT</span>
-                                <span>${skill.stats.damage || 0}</span>
-                            </div>
-                            <div class="stat-bar-track">
-                                <div class="stat-bar-fill" style="width: ${getWidth(skill.stats.damage || 0, 60)}%; background: #ef4444;"></div>
-                            </div>
-                        </div>
-
-                        <!-- Cost -->
-                        <div class="stat-bar-container">
-                            <div class="stat-bar-label">
-                                <span>ENERGY COST</span>
-                                <span>${skill.stats.cost || 0}</span>
-                            </div>
-                            <div class="stat-bar-track">
-                                <div class="stat-bar-fill" style="width: ${getWidth(skill.stats.cost || 0, 30)}%; background: #3b82f6;"></div>
-                            </div>
-                        </div>
-
-                        <!-- Cooldown -->
-                        <div class="stat-bar-container">
-                            <div class="stat-bar-label">
-                                <span>RECHARGE RATE</span>
-                                <span>${skill.stats.cooldown || 0}s</span>
-                            </div>
-                            <div class="stat-bar-track">
-                                <div class="stat-bar-fill" style="width: ${getWidth(skill.stats.cooldown || 0, 15)}%; background: #f59e0b;"></div>
+                        <!-- Essence Bar placeholder (numberless visual only) -->
+                        <div class="essence-bar-placeholder" style="margin-top:0.6rem;">
+                            <div class="stat-bar-track" aria-hidden="true" style="height:8px; background: rgba(255,255,255,0.05); border-radius:6px; overflow:hidden;">
+                                <div class="stat-bar-fill essence-fill" style="width:50%; background: linear-gradient(90deg,#8b5cf6,#f59e0b); height:100%; border-radius:6px;"></div>
                             </div>
                         </div>
 
@@ -3079,7 +3016,6 @@
     // --- SMART SEARCH & AI ASSISTANT LOGIC ---
 
     let searchIndex = []; // { id, skill, tokenScores: {token: score}, norm }
-    let searchMode = 'search'; // 'search' or 'chat'
     let selectedTags = new Set();
     
     // Synonyms map to canonical tokens/tags
@@ -3095,7 +3031,6 @@
     // Initialize
     function initSmartSearch() {
         const searchInput = document.getElementById('smart-search-input');
-        const searchModeBtn = document.getElementById('search-mode-toggle');
         const searchClearBtn = document.getElementById('search-clear-btn');
         const massiveTooltip = document.getElementById('massive-tooltip');
         
@@ -3108,30 +3043,25 @@
         searchInput.addEventListener('input', handleSearchInput);
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                if (searchMode === 'chat') {
-                    handleChatSubmit();
+                const massiveTooltipEl = document.getElementById('massive-tooltip');
+                if (massiveTooltipEl && !massiveTooltipEl.classList.contains('hidden') && selectedTooltipIndex >= 0) {
+                    const tooltipGrid = document.getElementById('tooltip-grid');
+                    const items = Array.from(tooltipGrid.querySelectorAll('.tooltip-item'));
+                    const el = items[selectedTooltipIndex];
+                    if (el) el.click();
                 } else {
-                    const massiveTooltipEl = document.getElementById('massive-tooltip');
-                    if (massiveTooltipEl && !massiveTooltipEl.classList.contains('hidden') && selectedTooltipIndex >= 0) {
-                        const tooltipGrid = document.getElementById('tooltip-grid');
-                        const items = Array.from(tooltipGrid.querySelectorAll('.tooltip-item'));
-                        const el = items[selectedTooltipIndex];
-                        if (el) el.click();
-                    } else {
-                        renderSkillList(); 
-                        massiveTooltip.classList.add('hidden');
-                    }
+                    renderSkillList(); 
+                    massiveTooltip.classList.add('hidden');
                 }
             }
             // Keyboard navigation for tooltip grid
-            if (searchMode === 'search' && !document.getElementById('massive-tooltip').classList.contains('hidden')) {
+            if (!document.getElementById('massive-tooltip').classList.contains('hidden')) {
                 if (e.key === 'ArrowDown') { e.preventDefault(); selectNextTooltipItem(1); }
                 if (e.key === 'ArrowUp') { e.preventDefault(); selectNextTooltipItem(-1); }
                 if (e.key === 'Escape') { document.getElementById('massive-tooltip').classList.add('hidden'); }
             }
         });
         
-        searchModeBtn.addEventListener('click', toggleSearchMode);
         searchClearBtn.addEventListener('click', clearSearch);
         
         // Close tooltip when clicking outside
@@ -3257,31 +3187,6 @@
         console.log(`Indexed ${searchIndex.length} skills (TF-IDF with weights).`);
     }
 
-    function toggleSearchMode() {
-        const searchInput = document.getElementById('smart-search-input');
-        const searchModeBtn = document.getElementById('search-mode-toggle');
-        const massiveTooltip = document.getElementById('massive-tooltip');
-        const chatInterface = document.getElementById('chat-interface');
-
-        searchMode = searchMode === 'search' ? 'chat' : 'search';
-        
-        if (searchMode === 'chat') {
-            searchModeBtn.classList.add('active');
-            searchInput.placeholder = "Ask the Mystic AI...";
-            massiveTooltip.classList.add('hidden');
-            chatInterface.classList.remove('hidden');
-            searchInput.focus();
-        } else {
-            searchModeBtn.classList.remove('active');
-            searchInput.placeholder = "Search skills...";
-            chatInterface.classList.add('hidden');
-            searchInput.focus();
-            if (searchInput.value.trim()) {
-                handleSearchInput();
-            }
-        }
-    }
-
     function clearSearch() {
         const searchInput = document.getElementById('smart-search-input');
         const searchClearBtn = document.getElementById('search-clear-btn');
@@ -3309,8 +3214,6 @@
             renderSkillList();
             return;
         }
-
-        if (searchMode === 'chat') return;
 
         const results = semanticSearch(query, { selectedTags });
         renderMassiveTooltip(results);
@@ -3456,171 +3359,6 @@
             default: return '#94a3b8';
         }
     }
-
-    // --- MYSTIC BOT (ADVANCED CHAT) ---
-    const MysticBot = {
-        context: {
-            lastSkill: null,
-            lastIntent: null,
-            conversationHistory: []
-        },
-
-        intents: {
-            COUNT: /how many|count|number of/i,
-            FIND: /find|show|search|where is/i,
-            EXPLAIN: /what is|tell me about|explain|analyze|lore/i,
-            SUGGEST: /suggest|recommend|what goes with|synergy|combo/i,
-            FUSION: /fuse|fusion|recipe/i,
-            GREETING: /hello|hi|hey|greetings/i
-        },
-
-        process: function(query) {
-            const lowerQuery = query.toLowerCase();
-            
-            // 1. Detect Intent
-            let intent = 'CHAT';
-            for (const [key, regex] of Object.entries(this.intents)) {
-                if (regex.test(lowerQuery)) {
-                    intent = key;
-                    break;
-                }
-            }
-            this.context.lastIntent = intent;
-
-            // 2. Extract Entities (Engine, Tier, Tag)
-            const entities = this.extractEntities(lowerQuery);
-
-            // 3. Generate Response
-            return this.generateResponse(intent, entities, lowerQuery);
-        },
-
-        extractEntities: function(query) {
-            const engines = ['void', 'solar', 'nature', 'ice', 'blood', 'structure', 'decay', 'stasis', 'discord', 'mind'];
-            const tiers = ['legendary', 'rare', 'common', 'forbidden', 's', 'a', 'b'];
-            
-            return {
-                engine: engines.find(e => query.includes(e)),
-                tier: tiers.find(t => query.includes(t)),
-                tag: Object.keys(this.getAllTags()).find(t => query.includes(t.toLowerCase()))
-            };
-        },
-
-        getAllTags: function() {
-            const tags = {};
-            knownSkills.forEach(s => (s.tags || []).forEach(t => tags[t] = true));
-            return tags;
-        },
-
-        generateResponse: function(intent, entities, query) {
-            // GREETING
-            if (intent === 'GREETING') {
-                return this.randomPhrase([
-                    "The Void listens.",
-                    "Systems online. Awaiting query.",
-                    "Greetings, Architect.",
-                    "The archives are open."
-                ]);
-            }
-
-            // COUNT
-            if (intent === 'COUNT') {
-                let skills = knownSkills;
-                let label = "skills";
-                
-                if (entities.engine) {
-                    skills = skills.filter(s => (s.engine || '').toLowerCase() === entities.engine);
-                    label = `${entities.engine} skills`;
-                }
-                if (entities.tier) {
-                    const tierMap = { 's': 'LEGENDARY', 'legendary': 'LEGENDARY', 'a': 'RARE', 'rare': 'RARE', 'b': 'COMMON', 'common': 'COMMON' };
-                    const targetTier = tierMap[entities.tier] || entities.tier.toUpperCase();
-                    skills = skills.filter(s => s.tier === targetTier);
-                    label += ` of ${targetTier} tier`;
-                }
-                
-                return `I detect <strong>${skills.length}</strong> ${label} in the database.`;
-            }
-
-            // EXPLAIN / LORE
-            if (intent === 'EXPLAIN') {
-                if (entities.engine) {
-                    const engineDesc = {
-                        'void': "The Void is the absence that consumes. It focuses on entropy, silence, and erasure.",
-                        'solar': "Solar is the radiant truth. It burns away impurity with overwhelming heat and light.",
-                        'nature': "Nature is the unbridled growth. It entangles, poisons, and reclaims what was lost.",
-                        'ice': "Ice is the absolute stasis. It preserves perfection by halting time and motion.",
-                        'blood': "Blood is the vital sacrifice. It trades essence for power, often at a steep cost."
-                    };
-                    return engineDesc[entities.engine] || `The ${entities.engine} engine is a fundamental force of the protocol.`;
-                }
-                
-                // Check for specific skill name match
-                const foundSkill = knownSkills.find(s => query.includes(s.name.toLowerCase()));
-                if (foundSkill) {
-                    this.context.lastSkill = foundSkill;
-                    return `<strong>${foundSkill.name}</strong><br><em>${foundSkill.description}</em><br><br>Tactical Note: ${foundSkill.tactical_brief || "No tactical data available."}`;
-                }
-
-                // Fallback to Lore Generation
-                const randomLore = NARRATIVE_ENGINE.lore_templates[Math.floor(Math.random() * NARRATIVE_ENGINE.lore_templates.length)];
-                const filledLore = randomLore.replace('[A]', 'The Code').replace('[B]', 'The Fusion');
-                return `Accessing archives... <br><em>"${filledLore}"</em>`;
-            }
-
-            // SUGGEST / SYNERGY
-            if (intent === 'SUGGEST') {
-                if (this.context.lastSkill) {
-                    const s = this.context.lastSkill;
-                    // Find skills with same tags but different engine
-                    const synergy = knownSkills.find(k => k.id !== s.id && k.tags && s.tags && k.tags.some(t => s.tags.includes(t)));
-                    if (synergy) {
-                        return `If you are using <strong>${s.name}</strong>, consider pairing it with <strong>${synergy.name}</strong>. They share the '${synergy.tags.find(t => s.tags.includes(t))}' vector.`;
-                    }
-                }
-                return "Specify a skill first, and I will calculate optimal synergies.";
-            }
-
-            // DEFAULT / CHAT
-            return this.randomPhrase([
-                "Query unclear. The Void is silent.",
-                "Please refine your parameters.",
-                "I am listening, Architect.",
-                "Data insufficient for meaningful answer."
-            ]);
-        },
-
-        randomPhrase: function(phrases) {
-            return phrases[Math.floor(Math.random() * phrases.length)];
-        }
-    };
-
-    function handleChatSubmit() {
-        const searchInput = document.getElementById('smart-search-input');
-        const query = searchInput.value.trim();
-        if (!query) return;
-        
-        addChatMessage(query, 'user');
-        searchInput.value = '';
-        
-        // Simulate "thinking" delay
-        const thinkingTime = 400 + Math.random() * 600;
-        
-        setTimeout(() => {
-            const response = MysticBot.process(query);
-            addChatMessage(response, 'ai');
-        }, thinkingTime);
-    }
-
-    function addChatMessage(text, sender) {
-        const chatMessages = document.getElementById('chat-messages');
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `chat-message ${sender}`;
-        msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
-        chatMessages.appendChild(msgDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    // Removed old generateChatResponse in favor of MysticBot.process
 
     // Initialize Smart Search
     setTimeout(initSmartSearch, 1000); 
